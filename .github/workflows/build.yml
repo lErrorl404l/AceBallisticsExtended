@@ -1,0 +1,66 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  test-rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            ext/target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('ext/Cargo.toml') }}
+      - name: Install cross-compile targets
+        run: |
+          rustup target add x86_64-pc-windows-gnu
+          rustup target add x86_64-unknown-linux-gnu
+      - name: Rust unit tests
+        run: cargo test --verbose
+        working-directory: ext
+      - name: Build Windows extension
+        run: cargo build --release --target x86_64-pc-windows-gnu
+        working-directory: ext
+      - name: Build Linux extension
+        run: cargo build --release --target x86_64-unknown-linux-gnu
+        working-directory: ext
+      - name: Upload extension artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: abe-ext
+          path: |
+            ext/target/x86_64-pc-windows-gnu/release/abe_ballistics_ext.dll
+            ext/target/x86_64-unknown-linux-gnu/release/libabe_ballistics_ext.so
+
+  build-mod:
+    runs-on: ubuntu-latest
+    needs: test-rust
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup HEMTT
+        uses: arma-actions/hemtt@v1
+      - name: Download extension
+        uses: actions/download-artifact@v4
+        with:
+          name: abe-ext
+          path: ext/
+      - name: HEMTT check
+        run: hemtt check
+      - name: HEMTT build
+        run: hemtt build
+      - name: Upload mod build
+        uses: actions/upload-artifact@v4
+        with:
+          name: abe-mod
+          path: .hemttout/build/

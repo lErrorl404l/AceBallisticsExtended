@@ -1,0 +1,34 @@
+name = "Advanced Ballistics Extension"
+prefix = "abe"
+mainprefix = "z"
+version = "0.1.0"
+
+[files]
+include = [
+    "mod.cpp",
+    "ext/abe_ballistics_ext.dll",
+    "ext/libabe_ballistics_ext.so",
+    "data/weapons/**",
+    "data/ammo/**",
+    "data/armor/**",
+]
+exclude = [
+    "*.psd",
+    "*.blend",
+]
+
+[hemtt.build]
+optional_mod_folders = false
+
+[hemtt.launch.default]
+workshop = [
+    "450814997", # CBA_A3
+    "463939057", # ACE3
+]
+parameters = [
+    "-skipIntro",
+    "-noSplash",
+    "-showScriptErrors",
+    "-debug",
+    "-filePatching",
+]

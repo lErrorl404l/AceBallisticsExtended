@@ -1,0 +1,11 @@
+{
+    "class": "rhs_mag_100Rnd_762x51_M80",
+    "projectile": {
+        "model": "m80",
+        "mass_g": 9.5,
+        "caliber_mm": 7.62,
+        "bc_g7": 0.205,
+        "cdm_id": "g7",
+        "fragmentation": null
+    }
+}

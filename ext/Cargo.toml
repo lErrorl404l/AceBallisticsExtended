@@ -1,0 +1,22 @@
+[package]
+name = "abe_ballistics_ext"
+version = "0.1.0"
+edition = "2024"
+description = "Advanced Ballistics Extension - Rust physics engine for ARMA 3"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+jsonschema = "0.19"
+
+[dev-dependencies]
+glob = "0.3"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
