@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/lErrorl404l/AceBallisticsExtended/schemas/armor",
+  "title": "ABE Armor Material Configuration",
+  "description": "Armor material properties for the Advanced Ballistics Extension penetration model",
+  "type": "object",
+  "required": ["materialId", "densityGcm3", "hardnessBHN"],
+  "properties": {
+    "materialId": {
+      "type": "string",
+      "description": "Unique material identifier",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "displayName": {
+      "type": "string",
+      "description": "Human-readable material name"
+    },
+    "densityGcm3": {
+      "type": "number",
+      "description": "Material density in g/cm³",
+      "exclusiveMinimum": 0,
+      "maximum": 30
+    },
+    "hardnessBHN": {
+      "type": "number",
+      "description": "Brinell hardness number",
+      "exclusiveMinimum": 0,
+      "maximum": 1000
+    },
+    "tensileStrengthMpa": {
+      "type": "number",
+      "description": "Ultimate tensile strength in MPa",
+      "exclusiveMinimum": 0,
+      "maximum": 5000
+    },
+    "rhaEquivalent": {
+      "type": "number",
+      "description": "RHA equivalency multiplier (1.0 = same as RHA steel)",
+      "default": 1.0,
+      "exclusiveMinimum": 0,
+      "maximum": 10
+    },
+    "ductility": {
+      "type": "number",
+      "description": "Ductility factor (0=brittle, 1=highly ductile)",
+      "default": 0.5,
+      "minimum": 0,
+      "maximum": 1
+    },
+    "spallCoeff": {
+      "type": "number",
+      "description": "Spall generation coefficient (0=no spall, 1=heavy spall)",
+      "default": 0.5,
+      "minimum": 0,
+      "maximum": 1
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free-text notes about data source or assumptions"
+    }
+  }
+}

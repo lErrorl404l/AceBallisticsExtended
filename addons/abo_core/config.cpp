@@ -2,7 +2,7 @@ class CfgPatches {
     class abo_core {
         name = "Advanced Ballistics Extension - Core";
         author = "ABE Team";
-        requiredVersion = 2.0;
+        requiredVersion = 2.02;
         requiredAddons[] = {
             "cba_main",
             "cba_xeh"

@@ -1,0 +1,15 @@
+{
+  "ammoClass": "B_556x45_Ball",
+  "projectileMassG": 4.0,
+  "caliberMm": 5.56,
+  "cdmId": "g7",
+  "bcG1": 0.307,
+  "bcG7": 0.155,
+  "muzzleVelocityMs": 948.0,
+  "referenceBarrelLengthMm": 508.0,
+  "fragThresholdMs": 731.0,
+  "fragCount": 12,
+  "fragMassDist": "log_normal",
+  "projectileType": "fmj",
+  "notes": "M855A1 62-gr FMJ. Frag threshold ~2400 fps. BC from Litz."
+}

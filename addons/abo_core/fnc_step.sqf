@@ -5,10 +5,12 @@ private _tracked = GVAR(trackedBullets);
 private _toRemove = [];
 
 // Iterate all tracked bullets
+private _bulletIds = keys _tracked;
 {
     private _bulletId = _x;
-    private _state = _y;
-    _state params ["_pos", "_vel", "_fireTime", "_cdmId", "_bc", "_massG", "_caliberMm"];
+    private _state = _tracked get _bulletId;
+    if (!isNil "_state") then {
+        _state params ["_pos", "_vel", "_fireTime", "_cdmId", "_bc", "_massG", "_caliberMm"];
 
     // Find the projectile object
     private _projectile = _bulletId call BIS_fnc_objectFromNetId;
@@ -52,11 +54,12 @@ private _toRemove = [];
         _projectile setVelocity _newVel;
 
         // Update tracked state
-        _tracked setVariable [_bulletId, [_newPos, _newVel, _fireTime, _cdmId, _bc, _massG, _caliberMm]];
+        _tracked set [_bulletId, [_newPos, _newVel, _fireTime, _cdmId, _bc, _massG, _caliberMm]];
     };
-} forEach (_tracked getVariable ["all", []]);
+    };
+} forEach _bulletIds;
 
 // Clean up dead bullets
 {
-    _tracked setVariable [_x, nil];
+    _tracked deleteAt _x;
 } forEach _toRemove;

@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/lErrorl404l/AceBallisticsExtended/schemas/ammo",
+  "title": "ABE Ammo Configuration",
+  "description": "Ammunition/projectile configuration for the Advanced Ballistics Extension",
+  "type": "object",
+  "required": ["ammoClass", "projectileMassG", "caliberMm"],
+  "properties": {
+    "ammoClass": {
+      "type": "string",
+      "description": "ARMA 3 CfgAmmo class name this config applies to",
+      "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+    },
+    "projectileMassG": {
+      "type": "number",
+      "description": "Projectile mass in grams",
+      "exclusiveMinimum": 0,
+      "maximum": 50000
+    },
+    "caliberMm": {
+      "type": "number",
+      "description": "Projectile caliber in millimeters",
+      "exclusiveMinimum": 0,
+      "maximum": 200
+    },
+    "cdmId": {
+      "type": "string",
+      "description": "Drag model curve ID (g1, g7, g8, or custom curve name)",
+      "default": "g7"
+    },
+    "bcG1": {
+      "type": "number",
+      "description": "Ballistic coefficient (G1 model)",
+      "exclusiveMinimum": 0,
+      "maximum": 10
+    },
+    "bcG7": {
+      "type": "number",
+      "description": "Ballistic coefficient (G7 model)",
+      "exclusiveMinimum": 0,
+      "maximum": 10
+    },
+    "muzzleVelocityMs": {
+      "type": "number",
+      "description": "Muzzle velocity in m/s (from reference barrel length)",
+      "exclusiveMinimum": 0,
+      "maximum": 2500
+    },
+    "referenceBarrelLengthMm": {
+      "type": "number",
+      "description": "Barrel length used for muzzleVelocityMs measurement",
+      "exclusiveMinimum": 0,
+      "maximum": 2000
+    },
+    "fragThresholdMs": {
+      "type": "number",
+      "description": "Minimum velocity for fragmentation in m/s (-1 = no fragmentation)",
+      "default": -1
+    },
+    "fragCount": {
+      "type": "integer",
+      "description": "Expected number of fragments on fragmentation",
+      "default": 0,
+      "minimum": 0,
+      "maximum": 5000
+    },
+    "fragMassDist": {
+      "type": "string",
+      "description": "Fragment mass distribution model",
+      "enum": ["log_normal", "uniform", "mott"],
+      "default": "log_normal"
+    },
+    "projectileType": {
+      "type": "string",
+      "description": "Projectile construction type",
+      "enum": ["fmj", "soft_point", "hollow_point", "ap", "api", "tracer", "incendiary"],
+      "default": "fmj"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free-text notes about data source or assumptions"
+    }
+  }
+}

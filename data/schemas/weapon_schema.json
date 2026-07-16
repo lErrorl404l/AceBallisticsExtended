@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/lErrorl404l/AceBallisticsExtended/schemas/weapon",
+  "title": "ABE Weapon Configuration",
+  "description": "Weapon barrel and chamber configuration for the Advanced Ballistics Extension",
+  "type": "object",
+  "required": ["weaponClass", "barrelLengthMm", "caliberMm"],
+  "properties": {
+    "weaponClass": {
+      "type": "string",
+      "description": "ARMA 3 CfgWeapons class name this config applies to",
+      "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+    },
+    "barrelLengthMm": {
+      "type": "number",
+      "description": "Barrel length in millimeters",
+      "exclusiveMinimum": 0,
+      "maximum": 2000
+    },
+    "caliberMm": {
+      "type": "number",
+      "description": "Bullet caliber in millimeters",
+      "exclusiveMinimum": 0,
+      "maximum": 50
+    },
+    "chamberPressureMpa": {
+      "type": "number",
+      "description": "Maximum chamber pressure in MPa (SAAMI/CIP standard)",
+      "exclusiveMinimum": 0,
+      "maximum": 700
+    },
+    "riflingTwistMm": {
+      "type": "number",
+      "description": "Rifling twist rate in mm per revolution (e.g., 178 for 1:7\")",
+      "exclusiveMinimum": 0,
+      "maximum": 2000
+    },
+    "projectileMassG": {
+      "type": "number",
+      "description": "Projectile mass in grams (overrides ammo config)",
+      "exclusiveMinimum": 0,
+      "maximum": 1000
+    },
+    "cdmId": {
+      "type": "string",
+      "description": "Drag model curve ID (overrides ammo config)",
+      "examples": ["g1", "g7", "g8", "custom_m4_55gr"]
+    },
+    "zeroRangeM": {
+      "type": "number",
+      "description": "Zero range in meters",
+      "default": 100,
+      "minimum": 0,
+      "maximum": 1000
+    },
+    "effectiveRangeM": {
+      "type": "number",
+      "description": "Maximum effective range in meters",
+      "exclusiveMinimum": 0,
+      "maximum": 5000
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free-text notes about data source or assumptions"
+    }
+  }
+}

@@ -43,5 +43,6 @@ if !(isNull _projectile) then {
         _projectileMass,                                 // mass (g)
         _caliber                                         // caliber (mm)
     ];
-    GVAR(trackedBullets) setVariable [_bulletId, _state];
+    private _tracked = missionNamespace getVariable ["abe_abo_core_trackedBullets", createHashMap];
+    _tracked set [_bulletId, _state];
 };

@@ -25,6 +25,9 @@ if (_result select 0 != 0) exitWith {
 missionNamespace setVariable ["ABE_extension", _extensionName];
 missionNamespace setVariable ["ABE_aceMode", _acePresent];
 
+// Initialize bullet tracking hashmap
+GVAR(trackedBullets) = createHashMap;
+
 diag_log format ["[ABE] Initialized successfully (ACE3 mode: %1)", _acePresent];
 
 // Register EH for firing

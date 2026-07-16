@@ -1,0 +1,11 @@
+{
+  "materialId": "steel_rha",
+  "displayName": "RHA Steel (MIL-A-12560)",
+  "densityGcm3": 7.85,
+  "hardnessBHN": 280,
+  "tensileStrengthMpa": 900,
+  "rhaEquivalent": 1.0,
+  "ductility": 0.5,
+  "spallCoeff": 0.6,
+  "notes": "Standard rolled homogeneous armor. Reference material for all penetration models."
+}
