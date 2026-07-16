@@ -1,11 +1,11 @@
 {
-  "class": "rhs_weap_m4a1",
+  "class": "rhs_weap_m16a4",
   "caliber_mm": 5.56,
-  "barrel_length_mm": 368.3,
+  "barrel_length_mm": 508.0,
   "rifling_twist_mm": 177.8,
   "chamber_pressure_mpa": 380.0,
   "cdm_id": "g7",
   "projectile_mass_g": 4.0,
-  "muzzle_velocity_ms": 866.0,
+  "muzzle_velocity_ms": 906,
   "zero_range_m": 100.0
 }

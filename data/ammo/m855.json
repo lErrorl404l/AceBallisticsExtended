@@ -4,8 +4,9 @@
         "model": "m855",
         "mass_g": 4.0,
         "caliber_mm": 5.56,
-        "bc_g7": 0.157,
+        "bc_g7": 0.151,
         "cdm_id": "m855",
+        "source": "APG G7 BC=0.151 (US Army BRL, M855 62gr SS109/M855, ARL-TR-5182)",
         "fragmentation": {
             "threshold_vel_ms": 762.0,
             "avg_fragments": 12,

@@ -1,0 +1,11 @@
+{
+  "class": "B_65x39_Caseless_ms",
+  "projectile": {
+    "model": "6.5mm_CT_Tracer",
+    "mass_g": 7.0,
+    "caliber_mm": 6.5,
+    "bc_g7": 0.245,
+    "cdm_id": "g7",
+    "source": "Tracer variant, slightly lower BC than ball. 6.5mm CT tracer."
+  }
+}

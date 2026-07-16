@@ -1,0 +1,12 @@
+{
+  "class": "rhs_mag_30Rnd_762x39mm",
+  "projectile": {
+    "model": "M43",
+    "mass_g": 7.97,
+    "caliber_mm": 7.62,
+    "bc_g7": 0.138,
+    "cdm_id": "g1",
+    "source": "ACE3 rhs_B_762x39_Ball G1 BC=0.275, G7 approx 0.138. ACE3 ACE_bulletMass=7.97g (123gr). Type 56/M43 FMJ steel core.",
+    "fragmentation": null
+  }
+}

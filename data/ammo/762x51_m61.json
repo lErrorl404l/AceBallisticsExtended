@@ -1,0 +1,17 @@
+{
+    "class": "762x51_m61",
+    "projectile": {
+        "model": "M61 AP",
+        "mass_g": 10.0,
+        "caliber_mm": 7.62,
+        "bc_g7": 0.218,
+        "cdm_id": "g7",
+        "source": "M61 147gr 7.62x51mm AP. Steel core penetrator. G7 BC=0.218 (Litz, ARL-TR-5182).",
+        "fragmentation": {
+            "threshold_vel_ms": 950.0,
+            "avg_fragments": 3,
+            "mass_distribution": "log_normal",
+            "params": {"mean": 0.15, "std": 0.08}
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "class": "556x45_m193",
+    "projectile": {
+        "model": "M193 Ball",
+        "mass_g": 3.6,
+        "caliber_mm": 5.56,
+        "bc_g7": 0.132,
+        "cdm_id": "g7",
+        "source": "M193 55gr FMJ-BT. G7 BC=0.132 (Litz, Applied Ballistics). Frags above ~750 m/s.",
+        "fragmentation": {
+            "threshold_vel_ms": 750.0,
+            "avg_fragments": 10,
+            "mass_distribution": "log_normal",
+            "params": {"mean": 0.08, "std": 0.04}
+        }
+    }
+}

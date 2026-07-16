@@ -4,12 +4,12 @@
   "caliberMm": 5.45,
   "cdmId": "g7",
   "bcG1": 0.286,
-  "bcG7": 0.144,
+  "bcG7": 0.168,
   "muzzleVelocityMs": 910.0,
   "referenceBarrelLengthMm": 415.0,
   "fragThresholdMs": -1,
   "fragCount": 0,
   "fragMassDist": "none",
   "projectileType": "fmj",
-  "notes": "7N6M 53-gr FMJ. Steel core, no fragmentation. BC from Litz."
+  "notes": "7N6M 53-gr FMJ. Steel core, no fragmentation. G7 BC=0.168 per US Army BRL (ARL-TR-5182)."
 }

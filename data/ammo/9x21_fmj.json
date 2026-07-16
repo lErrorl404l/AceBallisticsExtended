@@ -1,0 +1,17 @@
+{
+    "class": "9x21_fmj",
+    "projectile": {
+        "model": "FMJ_124gr",
+        "mass_g": 8.0,
+        "caliber_mm": 9.0,
+        "bc_g7": 0.068,
+        "cdm_id": "g7",
+        "source": "9x21mm 124gr FMJ for Rook 40. G1 BC~0.150, G7 BC~0.068.",
+        "fragmentation": {
+            "threshold_vel_ms": 620.0,
+            "avg_fragments": 1,
+            "mass_distribution": "log_normal",
+            "params": {"mean": 0.25, "std": 0.12}
+        }
+    }
+}

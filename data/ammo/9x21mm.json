@@ -1,0 +1,11 @@
+{
+  "class": "B_9x21_Ball",
+  "projectile": {
+    "model": "FMJ_124gr",
+    "mass_g": 8.0,
+    "caliber_mm": 9.0,
+    "bc_g7": 0.075,
+    "cdm_id": "g1",
+    "source": "G1 BC ~0.150 for 124gr FMJ. G1 drag model (handgun). No fragmentation."
+  }
+}

@@ -1,0 +1,17 @@
+{
+    "class": "9mm_jhp",
+    "projectile": {
+        "model": "JHP_124gr",
+        "mass_g": 7.5,
+        "caliber_mm": 9.0,
+        "bc_g7": 0.054,
+        "cdm_id": "g7",
+        "source": "124gr 9mm JHP. G1 BC~0.160, G7 BC~0.054. Limited fragmentation at pistol velocities.",
+        "fragmentation": {
+            "threshold_vel_ms": 600.0,
+            "avg_fragments": 2,
+            "mass_distribution": "log_normal",
+            "params": {"mean": 0.20, "std": 0.10}
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "class": "srifle_LRR_base_F",
+  "caliber_mm": 10.36,
+  "barrel_length_mm": 690.0,
+  "rifling_twist_mm": 330.0,
+  "chamber_pressure_mpa": 380.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 27.0,
+  "muzzle_velocity_ms": 830.0,
+  "zero_range_m": 100.0
+}

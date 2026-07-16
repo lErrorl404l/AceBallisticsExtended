@@ -4,12 +4,12 @@
   "caliberMm": 7.62,
   "cdmId": "g7",
   "bcG1": 0.414,
-  "bcG7": 0.220,
+  "bcG7": 0.216,
   "muzzleVelocityMs": 830.0,
   "referenceBarrelLengthMm": 620.0,
   "fragThresholdMs": -1,
   "fragCount": 0,
   "fragMassDist": "none",
   "projectileType": "fmj",
-  "notes": "7N1 147-gr FMJ. SVD load. Mild steel core, no frag."
+  "notes": "7N1 152-gr FMJ. SVD load. G7 BC=0.216 per Hornady Doppler radar test (Firearms News, Fortier). Mild steel core, no frag."
 }

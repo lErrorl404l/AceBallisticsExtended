@@ -4,8 +4,9 @@
         "model": "m80",
         "mass_g": 9.5,
         "caliber_mm": 7.62,
-        "bc_g7": 0.205,
+        "bc_g7": 0.200,
         "cdm_id": "g7",
+        "source": "APG G7 BC=0.200 (US Army BRL, M80 149gr FMJ, AD0815788)",
         "fragmentation": null
     }
 }

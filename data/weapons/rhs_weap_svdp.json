@@ -1,0 +1,11 @@
+{
+  "class": "rhs_weap_svdp",
+  "caliber_mm": 7.62,
+  "barrel_length_mm": 619.76,
+  "rifling_twist_mm": 238.76,
+  "chamber_pressure_mpa": 360.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 9.7,
+  "muzzle_velocity_ms": 823.0,
+  "zero_range_m": 100.0
+}

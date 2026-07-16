@@ -1,0 +1,17 @@
+{
+    "class": "65x39_fmj",
+    "projectile": {
+        "model": "6.5mm_FMJ",
+        "mass_g": 7.9,
+        "caliber_mm": 6.5,
+        "bc_g7": 0.196,
+        "cdm_id": "g7",
+        "source": "Est. 122gr 6.5mm FMJ-BT (heavy MX loading). Litz 123gr SMK G7=0.230, conservative est. for FMJ.",
+        "fragmentation": {
+            "threshold_vel_ms": 780.0,
+            "avg_fragments": 6,
+            "mass_distribution": "log_normal",
+            "params": {"mean": 0.10, "std": 0.05}
+        }
+    }
+}

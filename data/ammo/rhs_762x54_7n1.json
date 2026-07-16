@@ -1,0 +1,12 @@
+{
+  "class": "rhs_mag_100Rnd_762x54",
+  "projectile": {
+    "model": "7N1",
+    "mass_g": 9.85,
+    "caliber_mm": 7.62,
+    "bc_g7": 0.216,
+    "cdm_id": "g1",
+    "source": "ACE3 rhs_B_762x54_Ball G7 BC=0.216 (Hornady Doppler radar, Firearms News Fortier 2021). ACE3 ACE_bulletMass=9.85g (152gr).",
+    "fragmentation": null
+  }
+}
