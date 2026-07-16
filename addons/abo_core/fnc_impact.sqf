@@ -1,7 +1,27 @@
 #include "script_component.hpp"
+/*
+ * Author: ABE Team
+ * Handles bullet impact with HitPart event. Computes impact angle,
+ * queries armor data, calls the extension for pen/ricochet/frag,
+ * and applies results to the target.
+ *
+ * Arguments:
+ * 0: target <Object>
+ * 1: shooter <Object>
+ * 2: projectile <Object>
+ * 3: posASL <Array>
+ * 4: velocity <Array>
+ * 5: speed <Number>
+ * 6: surfaceNormal <Array>
+ * 7: surfaceType <String>
+ * 8: ammoType <String>
+ *
+ * Return Value:
+ * None
+ *
+ * Public: No
+ */
 
-// Called from HitPart event handler
-// Standard HitPart params: target, shooter, projectile, position, velocity, speed, normal, surfaceType, ammo, oldDmg, newDmg, instigator, hitPartIndex
 params ["_target", "_shooter", "_projectile", "_posASL", "_vel", "_speed", "_normal", "_surfaceType", "_ammo"];
 
 private _extension = missionNamespace getVariable ["ABE_extension", "abe_ballistics_ext"];

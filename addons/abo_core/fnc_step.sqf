@@ -4,6 +4,24 @@ private _extension = missionNamespace getVariable ["ABE_extension", "abe_ballist
 private _tracked = GVAR(trackedBullets);
 private _toRemove = [];
 
+// ACE3 compat: purge ABE-tracked bullets from ACE3's tracking hashmap
+// ACE3's ace_advanced_ballistics_fnc_handleFirePFH iterates
+// ace_advanced_ballistics_allBullets each frame and applies native
+// trajectory updates.  ABE must prevent this for bullets it controls.
+// Layer C: periodic cleanup catches any bullets ACE3 added after Layers
+// A and B were applied (edge case: mission-time CBA setting reload).
+if (GVAR(ace3Overridden)) then {
+    private _aceAllBullets = missionNamespace getVariable ["ace_advanced_ballistics_allBullets", nil];
+    if (!isNil "_aceAllBullets" && {count _aceAllBullets > 0}) then {
+        private _bulletIds = keys _tracked;
+        {
+            if (_aceAllBullets deleteAt _x) then {
+                diag_log format ["[ABE] Purged bullet %1 from ACE3 tracking", _x];
+            };
+        } forEach _bulletIds;
+    };
+};
+
 // Iterate all tracked bullets
 private _bulletIds = keys _tracked;
 {

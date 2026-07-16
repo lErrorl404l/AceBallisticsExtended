@@ -6,6 +6,10 @@ class CfgPatches {
         requiredAddons[] = {
             "cba_main",
             "cba_xeh"
+            // NOTE: ACE3 addons (ace_ballistics, ace_advanced_ballistics) are NOT
+            // listed as hard dependencies — ABE works standalone without ACE3.
+            // ACE3 compatibility is enabled at runtime when ace_common is detected.
+            // See fnc_ace3_compat.sqf for the override mechanism.
         };
         units[] = {};
         weapons[] = {};
@@ -21,6 +25,10 @@ class CfgFunctions {
             class step {};
             class impact {};
             class health {};
+            // ACE3 ballistics override compatibility layer.
+            // Disables ace_advanced_ballistics module when ABE is active.
+            // Called from fnc_init.sqf at runtime if ACE3 is detected.
+            class ace3_compat {};
         };
     };
 };

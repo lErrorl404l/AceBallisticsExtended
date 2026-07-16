@@ -3,4 +3,6 @@ options.ignore = [
     "abe_abo_core_fnc_fire",
     "abe_abo_core_fnc_step",
     "abe_abo_core_fnc_health",
+    "abe_abo_core_fnc_impact",
+    "abe_abo_core_fnc_ace3_compat",
 ]
