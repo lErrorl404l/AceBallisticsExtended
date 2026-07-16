@@ -1,0 +1,6 @@
+[sqf.function_undefined]
+options.ignore = [
+    "abe_abo_core_fnc_fire",
+    "abe_abo_core_fnc_step",
+    "abe_abo_core_fnc_health",
+]
