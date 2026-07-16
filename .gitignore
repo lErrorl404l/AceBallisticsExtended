@@ -1,0 +1,36 @@
+# Build artifacts
+*.o
+*.so
+*.dll
+*.dylib
+*.pdb
+*.exe
+*.exp
+*.lib
+
+# Rust
+target/
+ext/target/
+
+# HEMTT
+*.hemttout/
+*.pbo
+*.pboproject
+HEMTTBuild/
+releases/
+keys/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated
+node_modules/
+*.log
