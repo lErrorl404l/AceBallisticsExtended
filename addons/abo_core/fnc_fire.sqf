@@ -29,7 +29,7 @@ private _fireResult = _extension callExtension [
         _projectileMass,
         _cdmId
     ]
-};
+];
 
 // Store bullet state for per-frame tracking
 if !(isNull _projectile) then {

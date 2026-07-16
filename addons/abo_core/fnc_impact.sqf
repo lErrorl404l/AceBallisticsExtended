@@ -30,7 +30,7 @@ private _impactResult = _extension callExtension [
         _impactAngle,
         getText (configFile >> "CfgAmmo" >> _ammo >> "ABO_projectileType")
     ]
-};
+];
 
 // Apply damage based on penetration result
 if (count _impactResult >= 4) then {

@@ -14,7 +14,7 @@ class CfgPatches {
 
 class CfgFunctions {
     class abe {
-        class core {
+        class abo_core {
             file = "z\abe\addons\abo_core";
             class init {};
             class fire {};
@@ -27,9 +27,6 @@ class CfgFunctions {
 
 class CfgWeapons {
     // Extended weapon configuration slots for ABE
-    class Rifle_Base_F;
-    class Rifle_Long_Base_F;
-    class Pistol_Base_F;
 
     class abe_weapon_base {
         ABO_barrelLength = -1;      // mm, negative = auto-detect from model
@@ -42,7 +39,6 @@ class CfgWeapons {
 };
 
 class CfgAmmo {
-    class BulletBase;
 
     class abe_ammo_base {
         ABO_cdmId = "g7";           // Default drag model

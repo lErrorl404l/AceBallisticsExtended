@@ -4,6 +4,10 @@
 // All physics kernels are pure functions. The C ABI layer handles
 // serialization, dispatch, and error reporting.
 
+// Skeleton: many physics API functions not yet wired to C ABI dispatchers.
+// Remove per-item allows as modules get wired in Phase 1+.
+#![allow(dead_code)]
+
 mod atmosphere;
 mod config;
 mod drag;

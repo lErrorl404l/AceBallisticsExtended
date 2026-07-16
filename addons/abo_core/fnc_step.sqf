@@ -14,7 +14,6 @@ private _toRemove = [];
     private _projectile = _bulletId call BIS_fnc_objectFromNetId;
     if (isNull _projectile) then {
         _toRemove pushBack _bulletId;
-        continue;
     };
 
     // Calculate delta time

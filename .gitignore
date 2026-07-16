@@ -34,3 +34,7 @@ Thumbs.db
 # Generated
 node_modules/
 *.log
+
+# Private keys (HEMTT signing)
+.hemttprivatekey
+.biprivatekey
