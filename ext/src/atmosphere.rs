@@ -50,6 +50,41 @@ pub fn density_at_altitude(altitude_m: f64) -> f64 {
     p / (R_SPECIFIC * t)
 }
 
+/// Surface roughness length for wind profile (m).
+/// Typical values: 0.03 (open grassland), 0.25 (hedgerows), 1.0 (suburban).
+pub const SURFACE_ROUGHNESS: f64 = 0.03;
+
+/// Reference height for input wind measurement (m).
+/// ARMA 3's wind is typically at ~2m above ground.
+pub const WIND_REF_HEIGHT: f64 = 2.0;
+
+/// Wind shear factor at a given altitude.
+///
+/// Uses the log-wind-profile law (von Kármán-Prandtl):
+///   U(z) = U_ref * ln(z / z₀) / ln(z_ref / z₀)
+///
+/// where:
+///   z  = altitude above ground (m)
+///   z₀ = surface roughness length (m)
+///   z_ref = reference height where U_ref is measured (2m default)
+///
+/// Returns the multiplier to apply to reference wind.
+/// Formula is valid in the surface layer (0-200m). Above 200m, the multiplier
+/// approaches a realistic upper bound (~2-3x surface wind).
+pub fn wind_shear_factor(altitude_m: f64) -> f64 {
+    if altitude_m <= WIND_REF_HEIGHT {
+        return 1.0; // At or below reference height, no adjustment
+    }
+
+    let z = altitude_m.min(200.0); // Cap at surface layer limit
+    let ln_z = z.ln();
+    let ln_z0 = SURFACE_ROUGHNESS.ln();
+    let ln_ref = WIND_REF_HEIGHT.ln();
+
+    let factor = (ln_z - ln_z0) / (ln_ref - ln_z0);
+    factor.max(1.0).min(3.0) // Sanity bounds
+}
+
 /// Convenience: density from altitude with temperature override
 pub fn density_from_altitude(altitude_m: f64, temp_c: f64) -> f64 {
     // Use given temperature if non-zero, otherwise ISA
@@ -109,6 +144,32 @@ mod tests {
     fn temperature_cold_at_high_alt() {
         let t_20k = temperature_at_altitude(20000.0);
         assert!(t_20k < 230.0); // Well below freezing
+    }
+
+    #[test]
+    fn wind_shear_at_reference_height() {
+        let f = wind_shear_factor(2.0);
+        assert!(
+            (f - 1.0).abs() < 0.01,
+            "At reference height, factor should be 1.0: {}",
+            f
+        );
+    }
+
+    #[test]
+    fn wind_increases_with_altitude() {
+        let f_10 = wind_shear_factor(10.0);
+        let f_50 = wind_shear_factor(50.0);
+        assert!(f_10 > 1.0, "Wind at 10m should be > reference");
+        assert!(f_50 > f_10, "Wind at 50m should be stronger than at 10m");
+    }
+
+    #[test]
+    fn wind_shear_bounded() {
+        let f_0 = wind_shear_factor(0.0);
+        assert!((f_0 - 1.0).abs() < 0.01, "At 0m, factor = 1.0: {}", f_0);
+        let f_300 = wind_shear_factor(300.0);
+        assert!(f_300 <= 3.0, "Wind factor capped at 3.0: {}", f_300);
     }
 
     #[test]

@@ -1,54 +1,88 @@
 #include "script_component.hpp"
 
-params ["_projectile", "_target", "_posASL", "_vel", "_massG", "_caliberMm", "_ammo"];
+// Called from HitPart event handler
+// Standard HitPart params: target, shooter, projectile, position, velocity, speed, normal, surfaceType, ammo, oldDmg, newDmg, instigator, hitPartIndex
+params ["_target", "_shooter", "_projectile", "_posASL", "_vel", "_speed", "_normal", "_surfaceType", "_ammo"];
 
 private _extension = missionNamespace getVariable ["ABE_extension", "abe_ballistics_ext"];
 
-// Determine armor properties at impact point
-private _armorThickness = 0;
-private _armorMaterial = "steel_rha";
-private _impactAngle = 0;
+// Impact angle from velocity vs surface normal
+// 0° = perpendicular (max pen), 90° = grazing
+private _velNorm = vectorNormalized _vel;
+private _impactAngleDeg = acos (abs (_velNorm vectorDotProduct _normal));
 
-if (_target isKindOf "LandVehicle" || _target isKindOf "Tank" || _target isKindOf "Car") then {
-    // Read vehicle armor config
-    private _hitPoint = _target worldToModel _posASL;
-    _armorThickness = getNumber (configOf _target >> "armor") * 0.005; // crude: armor→mm
-    _armorMaterial = "steel_rha";
-    _impactAngle = 0; // TODO: compute from surface normal
+// Pull tracked bullet state
+private _bulletId = _projectile call BIS_fnc_netId;
+private _bulletState = GVAR(trackedBullets) get _bulletId;
+private _massG = 0.01;
+private _caliberMm = 5.56;
+if (!isNil "_bulletState") then {
+    _massG = _bulletState select 5;
+    _caliberMm = _bulletState select 6;
+    GVAR(trackedBullets) deleteAt _bulletId;
 };
 
-private _speed = vectorMagnitude _vel;
+// ── Armor lookup ────────────────────────────────────────────
+private _armorThickness = 0.01;
+private _armorMaterial = "steel_rha";
+private _effectiveThickness = 0.01;
 
+if (_target isKindOf "CAManBase") then {
+    _armorThickness = 2.0;  // ~2mm RHA equivalent
+    _armorMaterial = "flesh";
+    _effectiveThickness = _armorThickness;
+} else {
+    if (_target isKindOf "LandVehicle" || _target isKindOf "Tank" || _target isKindOf "Car" || _target isKindOf "Air") then {
+        private _configArmor = getNumber (configOf _target >> "armor");
+        _armorThickness = _configArmor * 0.01;  // scaled to mm-equivalent
+
+        // Multi-hit degradation per vehicle-section
+        private _sectionKey = netId _target + str floor ((_target worldToModel _posASL) select 0);
+        private _armorState = GVAR(armorState) getOrDefault [_sectionKey, 1.0];
+        _effectiveThickness = (_armorThickness / (cos _impactAngleDeg max 0.01)) * _armorState;
+        GVAR(armorState) set [_sectionKey, _armorState * 0.85];
+    };
+};
+
+// ── Call extension ──────────────────────────────────────────
 private _impactResult = _extension callExtension [
     "impact",
     [
         _vel select 0, _vel select 1, _vel select 2,
         _massG,
         _caliberMm,
-        _armorThickness,
+        _effectiveThickness,
         _armorMaterial,
-        _impactAngle,
+        _impactAngleDeg,
         getText (configFile >> "CfgAmmo" >> _ammo >> "ABO_projectileType")
     ]
 ];
 
-// Apply damage based on penetration result
+// ── Apply results ───────────────────────────────────────────
 if (count _impactResult >= 4) then {
-    private _penetrated = _impactResult select 0;
-    private _residualVel = _impactResult select 1;
-    private _ricochet = _impactResult select 4;
-    private _fragments = _impactResult select 7;
+    private _penetrated = parseNumber (_impactResult select 0);
+    private _residualVel = parseNumber (_impactResult select 1);
+    private _ricochet = parseNumber (_impactResult select 4);
+    private _fragments = parseNumber (_impactResult select 7);
 
     if (_penetrated > 0 && _target isKindOf "CAManBase") then {
-        // Apply penetration damage to units
-        private _damage = (_residualVel / 900) * 0.5;
-        _target setHitIndex [0, _damage, false, _projectile];
+        _target setHitIndex [0, ((_residualVel / 900) * 0.5 * (_caliberMm / 5.56) min 1), false, _projectile];
     };
 
-    if (_ricochet > 0) then {
-        // Deflect projectile
-        private _newDir = direction _projectile + (_impactResult select 5);
-        private _newVel = [sin _newDir * _residualVel, cos _newDir * _residualVel, _vel select 2 * 0.5];
-        _projectile setVelocity _newVel;
+    if (_ricochet > 0 && !isNull _projectile) then {
+        private _reflectAngle = _ricochet * 10;
+        private _outDir = vectorNormalized (
+            _vel vectorAdd (_normal vectorMultiply (2 * (_velNorm vectorDotProduct _normal)))
+        );
+        _projectile setVelocity [
+            _outDir select 0 * _residualVel,
+            _outDir select 1 * _residualVel,
+            _outDir select 2 * _residualVel
+        ];
+    };
+
+    if (_fragments > 0 && _target isKindOf "CAManBase") then {
+        private _fragDamage = (_residualVel / 900) * 0.5 * (_caliberMm / 5.56);
+        _target setHitIndex [0, ((_fragDamage + _fragments * 0.1) min 1), false, _projectile];
     };
 };

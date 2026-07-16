@@ -25,8 +25,9 @@ if (_result select 0 != 0) exitWith {
 missionNamespace setVariable ["ABE_extension", _extensionName];
 missionNamespace setVariable ["ABE_aceMode", _acePresent];
 
-// Initialize bullet tracking hashmap
+// Initialize tracking hashmaps
 GVAR(trackedBullets) = createHashMap;
+GVAR(armorState) = createHashMap;
 
 diag_log format ["[ABE] Initialized successfully (ACE3 mode: %1)", _acePresent];
 
@@ -55,5 +56,14 @@ if (_acePresent) then {
     call FUNC(step);
     call FUNC(health);
 }, 0.0] call CBA_fnc_addPerFrameHandler;
+
+// Register HitPart handler on all vehicles (existing + future spawns)
+["AllVehicles", "init", {
+    params ["_vehicle"];
+    _vehicle addEventHandler ["HitPart", {
+        params ["_target", "_shooter", "_projectile", "_posASL", "_vel", "_speed", "_normal", "_surfaceType", "_ammo"];
+        [_target, _shooter, _projectile, _posASL, _vel, _speed, _normal, _surfaceType, _ammo] call FUNC(impact);
+    }];
+}] call CBA_fnc_addEventHandler;
 
 true

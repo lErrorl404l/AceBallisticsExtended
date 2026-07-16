@@ -167,14 +167,27 @@ pub fn evaluate(
     };
 
     // ── Fragments ──────────────────────────────────────────────────────────
-    let (fragments, spall_fragments) = if penetrated {
-        let frag_count =
-            (10.0 * (velocity_ms / 1000.0) * (projectile_mass_kg * 1000.0 / 10.0)).min(50.0) as i32;
-        let spall = (effective_thickness / 0.010 * 3.0).min(30.0) as i32;
-        (frag_count.max(2), spall.max(1))
+    // Use the explicit fragmentation module for projectile breakup,
+    // then add spall from armor deformation separately.
+    let frag_result = crate::fragmentation::evaluate(
+        velocity_ms,
+        projectile_mass_kg * 1000.0,
+        projectile_type,
+        300.0, // Low threshold: most fragmentation relevant for pen model
+        None,  // Use defaults; SQF provides specific config via ABO_* ammo params
+    );
+    let fragments = if penetrated {
+        frag_result.num_fragments.max(2)
+    } else if velocity_ms > 500.0 {
+        // Non-penetrating hit can still cause some projectile breakup
+        (frag_result.num_fragments / 2).max(0)
     } else {
-        // Non-penetrating hit can still spall
-        (0, (3.0 * (velocity_ms / 1000.0)).min(10.0) as i32)
+        0
+    };
+    let spall_fragments = if penetrated {
+        (effective_thickness / 0.010 * 3.0).min(30.0) as i32
+    } else {
+        (3.0 * (velocity_ms / 1000.0)).min(10.0) as i32
     };
 
     PenetrationResult {

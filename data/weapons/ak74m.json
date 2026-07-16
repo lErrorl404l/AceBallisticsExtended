@@ -1,0 +1,12 @@
+{
+  "weaponClass": "arifle_AK74M_F",
+  "barrelLengthMm": 415.0,
+  "caliberMm": 5.45,
+  "chamberPressureMpa": 360.0,
+  "riflingTwistMm": 200.0,
+  "projectileMassG": 3.43,
+  "cdmId": "g7",
+  "zeroRangeM": 100,
+  "effectiveRangeM": 500,
+  "notes": "AK-74M, 16.3\" barrel, 1:7.87\" twist, 7N6M pressure"
+}

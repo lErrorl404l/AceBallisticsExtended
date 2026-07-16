@@ -1,0 +1,12 @@
+{
+  "weaponClass": "arifle_M16A4_F",
+  "barrelLengthMm": 508.0,
+  "caliberMm": 5.56,
+  "chamberPressureMpa": 380.0,
+  "riflingTwistMm": 178.0,
+  "projectileMassG": 4.0,
+  "cdmId": "g7",
+  "zeroRangeM": 100,
+  "effectiveRangeM": 600,
+  "notes": "M16A4, 20\" barrel, 1:7\" twist, M855A1 pressure"
+}

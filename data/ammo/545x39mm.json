@@ -1,0 +1,15 @@
+{
+  "ammoClass": "B_545x39_Ball",
+  "projectileMassG": 3.43,
+  "caliberMm": 5.45,
+  "cdmId": "g7",
+  "bcG1": 0.286,
+  "bcG7": 0.144,
+  "muzzleVelocityMs": 910.0,
+  "referenceBarrelLengthMm": 415.0,
+  "fragThresholdMs": -1,
+  "fragCount": 0,
+  "fragMassDist": "none",
+  "projectileType": "fmj",
+  "notes": "7N6M 53-gr FMJ. Steel core, no fragmentation. BC from Litz."
+}

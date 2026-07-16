@@ -1,0 +1,11 @@
+{
+  "materialId": "ceramic_plate",
+  "displayName": "Al2O3 Ceramic Plate (SAPI-style)",
+  "densityGcm3": 3.85,
+  "hardnessBHN": 1200,
+  "tensileStrengthMpa": 260,
+  "rhaEquivalent": 3.5,
+  "ductility": 0.05,
+  "spallCoeff": 0.9,
+  "notes": "Ballistic ceramic. High hardness, low ductility. High spall. ~3.5x RHA per mm."
+}

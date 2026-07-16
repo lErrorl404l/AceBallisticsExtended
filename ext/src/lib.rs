@@ -13,6 +13,7 @@ mod atmosphere;
 mod config;
 mod drag;
 mod exterior;
+mod fragmentation;
 mod interior;
 mod penetration;
 
@@ -206,10 +207,11 @@ fn handle_step(args: &[&str]) -> String {
         0.0
     };
 
-    let vx = vel_x - drag_decel * (vel_x / speed.max(0.001)) * dt_s - wind_x;
-    let vy = vel_y - drag_decel * (vel_y / speed.max(0.001)) * dt_s - wind_y;
+    let wind_factor = atmosphere::wind_shear_factor(altitude_m);
+    let vx = vel_x - drag_decel * (vel_x / speed.max(0.001)) * dt_s - wind_x * wind_factor;
+    let vy = vel_y - drag_decel * (vel_y / speed.max(0.001)) * dt_s - wind_y * wind_factor;
     let vz = vel_z - drag_decel * (vel_z / speed.max(0.001)) * dt_s + atmosphere::GRAVITY * dt_s
-        - wind_z;
+        - wind_z * wind_factor;
 
     let new_speed = (vx.powi(2) + vy.powi(2) + vz.powi(2)).sqrt();
     let new_mach = exterior::calc_mach(new_speed, temp_c);
@@ -470,10 +472,11 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
     // Gravity
     let vz = vz + atmosphere::GRAVITY * params.dt_s;
 
-    // Wind (relative velocity)
-    let vx = vx - params.wind_x;
-    let vy = vy - params.wind_y;
-    let vz = vz - params.wind_z;
+    // Wind (relative velocity) with altitude-based wind shear
+    let wind_factor = atmosphere::wind_shear_factor(params.altitude_m);
+    let vx = vx - params.wind_x * wind_factor;
+    let vy = vy - params.wind_y * wind_factor;
+    let vz = vz - params.wind_z * wind_factor;
 
     // Position update
     let new_speed = (vx.powi(2) + vy.powi(2) + vz.powi(2)).sqrt();

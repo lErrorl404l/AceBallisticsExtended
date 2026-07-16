@@ -1,0 +1,15 @@
+{
+  "ammoClass": "B_762x51_Ball",
+  "projectileMassG": 9.65,
+  "caliberMm": 7.62,
+  "cdmId": "g7",
+  "bcG1": 0.406,
+  "bcG7": 0.215,
+  "muzzleVelocityMs": 850.0,
+  "referenceBarrelLengthMm": 560.0,
+  "fragThresholdMs": 600.0,
+  "fragCount": 8,
+  "fragMassDist": "log_normal",
+  "projectileType": "fmj",
+  "notes": "M80 147-gr FMJ. NATO standard. BC from Litz. Frag above 600 m/s."
+}
