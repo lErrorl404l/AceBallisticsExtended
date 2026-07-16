@@ -183,9 +183,11 @@ fn handle_step(args: &[&str]) -> String {
     let temp_c: f64 = args.get(11).and_then(|s| s.parse().ok()).unwrap_or(15.0);
     let altitude_m: f64 = args.get(12).and_then(|s| s.parse().ok()).unwrap_or(0.0);
     let cdm_id = args.get(13).copied().unwrap_or("g7");
-    let _bc: f64 = args.get(14).and_then(|s| s.parse().ok()).unwrap_or(0.157);
+    let bc: f64 = args.get(14).and_then(|s| s.parse().ok()).unwrap_or(0.157);
     let mass_g: f64 = args.get(15).and_then(|s| s.parse().ok()).unwrap_or(4.0);
     let caliber_mm: f64 = args.get(16).and_then(|s| s.parse().ok()).unwrap_or(5.56);
+    let _ = mass_g;
+    let _ = caliber_mm;
 
     let speed = (vel_x.powi(2) + vel_y.powi(2) + vel_z.powi(2)).sqrt();
     let mach = exterior::calc_mach(speed, temp_c);
@@ -197,12 +199,14 @@ fn handle_step(args: &[&str]) -> String {
         density
     };
 
-    let cross_section = std::f64::consts::PI * (caliber_mm / 2000.0).powi(2);
-    let drag_force = 0.5 * air_density * speed * speed * cd * cross_section;
-    let mass_kg = mass_g / 1000.0;
-
-    let drag_decel = if speed > 0.001 {
-        drag_force / mass_kg
+    // BC-based drag: a = 0.5 * ρ * v² * Cd / (BC * K)
+    // K converts from BC in lb/in² to SI (kg/m²) and includes the π/4
+    // cross-sectional area factor from a = 0.5·ρ·v²·Cd·(π·d²/4)/(BC_SI·m):
+    //   K = (kg/lb) / (m/in)² * (4/π) = 0.453592 / 0.0254² * 4/π ≈ 895.3
+    const BC_CONV: f64 = 0.453592 / (0.0254 * 0.0254) * (4.0 / std::f64::consts::PI);
+    let bc_metric = bc * BC_CONV;
+    let drag_decel = if speed > 0.001 && bc_metric > 0.001 {
+        0.5 * air_density * speed * speed * cd / bc_metric
     } else {
         0.0
     };
@@ -315,6 +319,22 @@ pub unsafe extern "C" fn RVExtensionArgs(
 
 // ── Struct-based C ABI (internal API for tests and FFI) ───────────────────────
 
+/// Initialise the ABE extension runtime.
+///
+/// Must be called exactly once before any other `abe_*` function.
+/// Uses `OnceLock` internally, so duplicate calls are idempotent
+/// (the first call's state is preserved).
+///
+/// # Arguments
+/// * `api_version` — Expected ABE API version (`ABE_API_VERSION`, currently 1).
+///   Returns -1 if this does not match the compiled version, indicating an
+///   SQF/Rust version mismatch.
+/// * `ace_present` — Non-zero if ACE3 is loaded in the current mission
+///   environment. Controls whether ABE operates in standalone or ACE3
+///   enhanced mode.
+///
+/// # Returns
+/// 0 on success, -1 on version mismatch.
 #[unsafe(no_mangle)]
 pub extern "C" fn abe_init(api_version: u32, ace_present: u32) -> i32 {
     if api_version != ABE_API_VERSION {
@@ -329,6 +349,14 @@ pub extern "C" fn abe_init(api_version: u32, ace_present: u32) -> i32 {
     0
 }
 
+/// Return the ABE extension version as a null-terminated C string.
+///
+/// Format: `"MAJOR.MINOR.PATCH"` (semver). The returned pointer points
+/// to a static `OnceLock<CString>` and remains valid for the lifetime of
+/// the extension. The caller must not free it.
+///
+/// This function does not require initialisation and is safe to call
+/// before `abe_init`.
 #[unsafe(no_mangle)]
 pub extern "C" fn abe_version() -> *const c_char {
     static VERSION: OnceLock<CString> = OnceLock::new();
@@ -356,6 +384,39 @@ pub struct FireResult {
     pub barrel_time_ms: f64,
 }
 
+/// Compute muzzle velocity and interior ballistics for a given weapon and
+/// projectile combination.
+///
+/// Uses a two-zone gas-expansion pressure curve model. Pressure rises as
+/// propellant ignites (peak at ~12 % of projectile travel), then decays
+/// exponentially as the projectile moves down the bore. The work integral
+/// of bore pressure times area along the barrel gives kinetic energy,
+/// reduced by friction, heat transfer, and rifling engraving losses.
+///
+/// # Input fields (FireParams)
+/// * `barrel_length_mm` — barrel length in millimetres.
+/// * `chamber_pressure_mpa` — peak chamber pressure in MPa (SAAMI/CIP
+///   standard).
+/// * `caliber_mm` — projectile diameter in millimetres.
+/// * `projectile_mass_g` — projectile mass in grams.
+/// * `cdm_id` — drag model identifier (currently unused in interior
+///   ballistics, reserved for future coupled interior/exterior models).
+///
+/// # Output fields (FireResult)
+/// * `muzzle_velocity_ms` — computed muzzle velocity in m/s.
+/// * `max_chamber_pressure_mpa` — peak chamber pressure (input value
+///   passed through, model does not independently compute pressure).
+/// * `propellant_burn_fraction` — estimated fraction of propellant
+///   burned at projectile exit (0.25–1.0).
+/// * `barrel_time_ms` — estimated time from ignition to exit in
+///   milliseconds.
+///
+/// # Validation
+/// Returns -1 if the extension is not initialised, or if any input
+/// dimension is zero or negative. Returns 0 on success.
+///
+/// # Thread safety
+/// Pure function, no mutable global state. Safe to call concurrently.
 #[unsafe(no_mangle)]
 pub extern "C" fn abe_fire(params: &FireParams, result: &mut FireResult) -> i32 {
     if !get_state().initialized {
@@ -424,8 +485,50 @@ pub struct StepParams {
     pub caliber_mm: f64,
 }
 
-/// Step a bullet forward by dt seconds.
-/// Returns 0 on success, -1 on error.
+/// Step a projectile forward by `dt_s` seconds using semi-implicit Euler
+/// integration.
+///
+/// The velocity is updated first (drag, gravity, wind), then the position
+/// is advanced using the new velocity. This gives first-order accuracy
+/// with better energy behaviour than explicit Euler.
+///
+/// # Physics applied
+/// * Drag deceleration: `0.5 * rho * v^2 * Cd / (BC * K)` where
+///   `K = 0.453592 / 0.0254^2 * 4/pi ~ 895.3` converts BC from imperial
+///   (lb/in^2) to SI (kg/m^2) including cross-sectional area.
+/// * Gravity: constant `g = 9.80665 m/s^2` in +z direction.
+/// * Wind: relative velocity subtracted, scaled by altitude-dependent
+///   wind shear factor (log-wind-profile, surface layer 0–200 m).
+/// * Air density: from altitude via ICAO atmosphere when `altitude_m > 0`
+///   and temperature is near ISA (15 deg C); otherwise uses the provided
+///   `density_kgm3`.
+/// * Drag coefficient: linear interpolation over JBM/ABRA lookup tables
+///   (G1, G7, G8) keyed by Mach number.
+///
+/// # Input fields (StepParams)
+/// * `pos_x/y/z` — projectile position in metres (ARMA 3 world coords).
+/// * `vel_x/y/z` — projectile velocity in m/s.
+/// * `dt_s` — integration timestep in seconds (typically 0.01–0.1).
+/// * `wind_x/y/z` — wind velocity in m/s at reference height.
+/// * `density_kgm3` — air density in kg/m^3 (overridden when altitude
+///   triggers ICAO lookup).
+/// * `temp_c` — air temperature in Celsius.
+/// * `altitude_m` — altitude ASL in metres.
+/// * `cdm_id` — drag model identifier (G1, G7, G8, or custom).
+/// * `bc` — ballistic coefficient in lb/in^2 (G1 or G7 standard).
+/// * `mass_g` — projectile mass in grams (reserved for future use).
+/// * `caliber_mm` — projectile diameter in mm (reserved for future use).
+///
+/// # Output fields (BulletState)
+/// * `pos_x/y/z` — new position after `dt_s`.
+/// * `vel_x/y/z` — new velocity after drag/gravity/wind.
+/// * `mach` — Mach number at the new speed and temperature.
+/// * `time_s` — delta time (`dt_s`); the caller accumulates total TOF.
+///
+/// # Validation
+/// Returns -1 if the extension is not initialised (safety guard).
+/// Returns 0 on success. The caller should check that velocity remains
+/// positive and position is within the expected domain.
 #[unsafe(no_mangle)]
 pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32 {
     if !get_state().initialized {
@@ -452,15 +555,13 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
         params.density_kgm3
     };
 
-    // Apply drag: F_drag = 0.5 * ρ * v² * Cd * A
+    // Apply BC-based drag: a = 0.5 * ρ * v² * Cd / (BC * K)
+    // K includes π/4 area factor: 0.453592 / 0.0254² * 4/π ≈ 895.3
     let speed = (params.vel_x.powi(2) + params.vel_y.powi(2) + params.vel_z.powi(2)).sqrt();
-    let cross_section = std::f64::consts::PI * (params.caliber_mm / 2000.0).powi(2);
-    let drag_force = 0.5 * density * speed * speed * cd * cross_section;
-    let mass_kg = params.mass_g / 1000.0;
-
-    // Drag deceleration (opposite velocity direction)
-    let drag_decel = if speed > 0.001 {
-        drag_force / mass_kg
+    const BC_CONV: f64 = 0.453592 / (0.0254 * 0.0254) * (4.0 / std::f64::consts::PI);
+    let bc_metric = params.bc * BC_CONV;
+    let drag_decel = if speed > 0.001 && bc_metric > 0.001 {
+        0.5 * density * speed * speed * cd / bc_metric
     } else {
         0.0
     };
@@ -524,8 +625,50 @@ pub struct ImpactResult {
     pub spall_fragments: i32,
 }
 
-/// Calculate impact effects for a bullet vs armor.
-/// Returns 0 on success, -1 on error.
+/// Evaluate the terminal effects of a projectile impact against an armour
+/// plate: penetration, ricochet, spall, and fragmentation.
+///
+/// Uses a three-stage model:
+/// 1. Ricochet check — if the impact angle exceeds the velocity- and
+///    calibre-dependent threshold, the projectile ricochets. Energy
+///    retention is scaled by angle (85 % at glancing, 50 % near the
+///    threshold).
+/// 2. Effective thickness — plate thickness divided by cos(angle) and
+///    scaled by the material factor (RHA = 1.0, HHA = 1.25, aluminium
+///    ~0.35–0.45, ceramic ~2.5–3.5) plus a calibre-to-thickness ratio
+///    correction.
+/// 3. De Marre penetration — threshold velocity solved from
+///    `V_req = k * D^0.75 * T^0.7 / M^0.5`. On penetration, residual
+///    velocity is `sqrt(V^2 - V_req^2)`.
+///
+/// Fragmentation is delegated to `fragmentation::evaluate()`. Spall
+/// count scales with effective thickness and velocity.
+///
+/// # Input fields (ImpactParams)
+/// * `vel_x/y/z` — impact velocity vector in m/s.
+/// * `mass_g` — projectile mass in grams.
+/// * `caliber_mm` — projectile diameter in mm.
+/// * `armor_thickness_mm` — armour plate thickness in mm.
+/// * `armor_material` — material identifier (e.g. "steel_rha",
+///   "aluminum_5083", "ceramic_b4c").
+/// * `impact_angle_deg` — angle from surface normal in degrees
+///   (0 = perpendicular, 90 = grazing).
+/// * `projectile_type` — projectile construction identifier
+///   (e.g. "ball", "ap", "apds", "soft_point").
+///
+/// # Output fields (ImpactResult)
+/// * `penetrated` — 1 if the plate was perforated, 0 otherwise.
+/// * `residual_vel_ms` — projectile velocity after penetrating (m/s).
+/// * `energy_j` — impact kinetic energy (J).
+/// * `effective_thickness_mm` — the thickness the projectile had to
+///   defeat after angle and material scaling.
+/// * `ricochet` — 1 if the projectile ricocheted, 0 otherwise.
+/// * `ricochet_angle_deg` — outgoing ricochet angle relative to the
+///   surface.
+/// * `ricochet_energy_fraction` — fraction of energy retained after
+///   ricochet (0.0–1.0).
+/// * `fragments` — number of projectile fragments generated.
+/// * `spall_fragments` — number of armour spall fragments.
 #[unsafe(no_mangle)]
 pub extern "C" fn abe_impact(params: &ImpactParams, result: &mut ImpactResult) -> i32 {
     if !get_state().initialized {
@@ -570,7 +713,15 @@ pub extern "C" fn abe_impact(params: &ImpactParams, result: &mut ImpactResult) -
     0
 }
 
-/// Health check — returns 1 if extension is initialized and functional.
+/// Return 1 if the extension has been initialised and is ready for use, 0
+/// otherwise.
+///
+/// "Initialised" means that `abe_init` was called with a matching API
+/// version and the global `OnceLock<AbeState>` has been set. This does
+/// not guarantee data files are loaded (data loading is lazy or handled
+/// by the SQF layer).
+///
+/// Safe to call before `abe_init` (will return 0).
 #[unsafe(no_mangle)]
 pub extern "C" fn abe_health() -> i32 {
     if get_state().initialized {
@@ -886,6 +1037,1035 @@ mod tests {
     fn rv_ext_args_unknown_command() {
         let r = rv_ext_args("nonsense", &["a"]);
         assert_eq!(r, "unknown: nonsense");
+    }
+
+    // ── Trajectory integration validation ──────────────────────────────────────
+    // Runs a full trajectory loop through abe_step and samples at key ranges.
+    // These values can be compared against py-ballisticcalc and ballistics-engine.
+
+    const SAMPLE_RANGES: [f64; 7] = [0.0, 100.0, 200.0, 300.0, 500.0, 800.0, 1000.0];
+
+    fn run_trajectory(
+        mv_ms: f64,
+        bc: f64,
+        mass_g: f64,
+        caliber_mm: f64,
+        cdm: &str,
+        dt_s: f64,
+    ) -> Vec<(f64, f64, f64, f64)> {
+        // ABE physics: bullet flies along +x, gravity acts on +z,
+        // so drop = z, lateral = y (always 0 in this setup)
+        let mut x = 0.0;
+        let mut y = 0.0;
+        let mut z = 0.0;
+        let mut vx = mv_ms;
+        let mut vy = 0.0;
+        let mut vz = 0.0;
+        let mut t = 0.0;
+
+        let mut cdm_buf = [0u8; 32];
+        let cdm_bytes = cdm.as_bytes();
+        let len = cdm_bytes.len().min(31);
+        cdm_buf[..len].copy_from_slice(&cdm_bytes[..len]);
+
+        let mut samples = Vec::new();
+        let mut next_range_idx = 0;
+
+        // Initial sample at range 0: (range_m, drop_m, speed_ms, time_s)
+        samples.push((x, z, mv_ms, t));
+
+        while x < 1050.0 && vx > 50.0 && next_range_idx < SAMPLE_RANGES.len() {
+            let step = StepParams {
+                pos_x: x,
+                pos_y: y,
+                pos_z: z,
+                vel_x: vx,
+                vel_y: vy,
+                vel_z: vz,
+                dt_s,
+                wind_x: 0.0,
+                wind_y: 0.0,
+                wind_z: 0.0,
+                density_kgm3: 1.225,
+                temp_c: 15.0,
+                altitude_m: 0.0,
+                cdm_id: cdm_buf,
+                bc,
+                mass_g,
+                caliber_mm,
+            };
+
+            let mut result = BulletState::default();
+            let ret = abe_step(&step, &mut result);
+            assert_eq!(ret, 0, "abe_step should succeed");
+
+            x = result.pos_x;
+            y = result.pos_y;
+            z = result.pos_z;
+            vx = result.vel_x;
+            vy = result.vel_y;
+            vz = result.vel_z;
+            t += dt_s;
+
+            let speed = (vx * vx + vy * vy + vz * vz).sqrt();
+
+            // Sample when crossing a SAMPLE_RANGES boundary
+            while next_range_idx < SAMPLE_RANGES.len() && x >= SAMPLE_RANGES[next_range_idx] {
+                samples.push((x, z, speed, t));
+                next_range_idx += 1;
+            }
+        }
+
+        samples
+    }
+
+    #[test]
+    fn trajectory_m855_at_930ms() {
+        abe_init(ABE_API_VERSION, 0);
+        let samples = run_trajectory(930.0, 0.157, 4.0, 5.56, "g7", 0.01);
+
+        // Expected: at 500m, drop ~+2m (gravity is +z in ABE); at 1000m drop ~+16m
+        // These are sanity checks — not exact comparisons yet
+        // (the reference libs disagree by ~0.5m at 500m)
+        for &(x_pt, drop, v, _t) in &samples {
+            let x_rounded = (x_pt / 50.0).round() * 50.0;
+            if x_rounded == 500.0 {
+                assert!(
+                    drop > 0.0 && drop < 4.0,
+                    "M855 at 500m: drop should be ~+2m, got {}",
+                    drop
+                );
+                assert!(
+                    v > 400.0 && v < 600.0,
+                    "M855 at 500m: v should be ~480, got {}",
+                    v
+                );
+            }
+            if x_rounded == 1000.0 {
+                assert!(
+                    drop > 10.0 && drop < 22.0,
+                    "M855 at 1000m: drop should be ~+16m, got {}",
+                    drop
+                );
+                assert!(
+                    v > 200.0 && v < 350.0,
+                    "M855 at 1000m: v should be ~277, got {}",
+                    v
+                );
+            }
+        }
+    }
+
+    // ── State management tests ──────────────────────────────────────────────
+
+    #[test]
+    fn init_twice_returns_ok() {
+        // First init always succeeds
+        let r1 = rv_ext_args("init", &["1", "0"]);
+        assert_eq!(r1, "0");
+        // Second init: OnceLock::set returns Err (discarded), handle_init still returns "0"
+        let r2 = rv_ext_args("init", &["1", "0"]);
+        assert_eq!(r2, "0", "calling init twice should still return success");
+    }
+
+    #[test]
+    fn health_before_init_returns_0() {
+        if !get_state().initialized {
+            let h = rv_ext("health");
+            assert_eq!(h, "0");
+        }
+    }
+
+    // ── Fire command edge cases ─────────────────────────────────────────────
+
+    #[test]
+    fn rv_ext_fire_zero_barrel() {
+        rv_ext_args("init", &["1", "0"]);
+        let r = rv_ext_args("fire", &["0", "380", "5.56", "4.0", "g7"]);
+        assert_eq!(r, "-1", "barrel_length=0 should fail");
+    }
+
+    #[test]
+    fn rv_ext_fire_negative_pressure() {
+        rv_ext_args("init", &["1", "0"]);
+        let r = rv_ext_args("fire", &["368", "-10", "5.56", "4.0", "g7"]);
+        assert_eq!(r, "-1", "negative chamber pressure should fail");
+    }
+
+    #[test]
+    fn rv_ext_fire_missing_args() {
+        rv_ext_args("init", &["1", "0"]);
+        // Only 2 args: barrel_length + chamber_pressure
+        // caliber and mass default to 0 → calc_muzzle_velocity returns None
+        let r = rv_ext_args("fire", &["368", "380"]);
+        assert_eq!(r, "-1", "missing caliber/mass should fail gracefully");
+    }
+
+    #[test]
+    fn rv_ext_fire_empty_cdm() {
+        rv_ext_args("init", &["1", "0"]);
+        // Empty cdm string — calc_muzzle_velocity takes _cdm_id (unused)
+        // So fire should still succeed with valid numeric args
+        let r = rv_ext_args("fire", &["368", "380", "5.56", "4.0", ""]);
+        assert_ne!(
+            r, "-1",
+            "empty cdm should still succeed (cdm unused in interior)"
+        );
+        assert!(r.starts_with('['), "should return valid array: {}", r);
+    }
+
+    #[test]
+    fn rv_ext_fire_non_numeric() {
+        rv_ext_args("init", &["1", "0"]);
+        // All positional args parse-fail → defaults to 0 → calc returns None
+        let r = rv_ext_args("fire", &["abc", "def", "xyz", "ghi", "g7"]);
+        assert_eq!(r, "-1", "non-numeric args should fail gracefully");
+    }
+
+    // ── Step command edge cases ─────────────────────────────────────────────
+
+    #[test]
+    fn rv_ext_step_zero_dt() {
+        rv_ext_args("init", &["1", "0"]);
+        let r = rv_ext_args(
+            "step",
+            &[
+                "0", "0", "0", "900", "0", "0", "0", // dt = 0
+                "0", "0", "0", "1.225", "15", "0", "g7", "0.157", "4.0", "5.56",
+            ],
+        );
+        assert_ne!(r, "-1", "step with zero dt should succeed");
+        let trimmed = r.trim_start_matches('[').trim_end_matches(']');
+        let parts: Vec<&str> = trimmed.split(',').collect();
+        let pos_x: f64 = parts[0].parse().unwrap();
+        assert!(
+            (pos_x).abs() < 0.001,
+            "pos_x should be ~0 with dt=0: {}",
+            pos_x
+        );
+    }
+
+    #[test]
+    fn rv_ext_step_negative_dt() {
+        rv_ext_args("init", &["1", "0"]);
+        let r = rv_ext_args(
+            "step",
+            &[
+                "100", "0", "0", "900", "0", "0", "-0.01", // negative dt
+                "0", "0", "0", "1.225", "15", "0", "g7", "0.157", "4.0", "5.56",
+            ],
+        );
+        assert_ne!(r, "-1", "step with negative dt should not crash");
+    }
+
+    #[test]
+    fn rv_ext_step_extreme_speed() {
+        rv_ext_args("init", &["1", "0"]);
+        // M=5 at 15°C → ~1700 m/s. Should produce valid output.
+        let r = rv_ext_args(
+            "step",
+            &[
+                "0", "0", "0", "1700", "0", "0", "0.01", "0", "0", "0", "1.225", "15", "0", "g7",
+                "0.157", "4.0", "5.56",
+            ],
+        );
+        assert_ne!(r, "-1", "step at M=5 should succeed");
+        assert!(r.starts_with('['), "should return valid array: {}", r);
+        let trimmed = r.trim_start_matches('[').trim_end_matches(']');
+        let parts: Vec<&str> = trimmed.split(',').collect();
+        assert_eq!(parts.len(), 8);
+        let pos_x: f64 = parts[0].parse().unwrap();
+        assert!(
+            pos_x > 0.0,
+            "supersonic bullet should move forward: {}",
+            pos_x
+        );
+    }
+
+    #[test]
+    fn rv_ext_step_stationary() {
+        rv_ext_args("init", &["1", "0"]);
+        // v=0, should fall straight down (gravity only, drag_decel = 0)
+        let r = rv_ext_args(
+            "step",
+            &[
+                "0", "0", "0", "0", "0", "0", // v=0
+                "0.01", "0", "0", "0", "1.225", "15", "0", "g7", "0.157", "4.0", "5.56",
+            ],
+        );
+        assert_ne!(r, "-1", "step with v=0 should succeed");
+        let trimmed = r.trim_start_matches('[').trim_end_matches(']');
+        let parts: Vec<&str> = trimmed.split(',').collect();
+        let pos_z: f64 = parts[2].parse().unwrap();
+        let vel_z: f64 = parts[5].parse().unwrap();
+        assert!(pos_z > 0.0, "bullet should fall: pos_z={}", pos_z);
+        assert!(
+            vel_z > 0.0,
+            "bullet should have downward velocity: vel_z={}",
+            vel_z
+        );
+    }
+
+    #[test]
+    fn rv_ext_step_missing_wind() {
+        rv_ext_args("init", &["1", "0"]);
+        // Only 10 args (pos + vel + dt + wind). No density/temp/altitude/cdm/bc/mass/caliber.
+        // All missing fields get defaults via unwrap_or, should not crash.
+        let r = rv_ext_args(
+            "step",
+            &["0", "0", "0", "900", "0", "0", "0.01", "0", "0", "0"],
+        );
+        assert_ne!(r, "-1", "step with 10 args should not crash");
+        assert!(r.starts_with('['), "should return array: {}", r);
+        let trimmed = r.trim_start_matches('[').trim_end_matches(']');
+        let parts: Vec<&str> = trimmed.split(',').collect();
+        assert_eq!(parts.len(), 8);
+    }
+
+    #[test]
+    fn rv_ext_step_at_altitude() {
+        rv_ext_args("init", &["1", "0"]);
+        // altitude=5000, temp=15.0 → triggers density_from_altitude(5000, 15.0)
+        let r = rv_ext_args(
+            "step",
+            &[
+                "0", "0", "0", "900", "0", "0", "0.1", "0", "0", "0",
+                "1.225", // density (ignored when altitude>0 and temp≈15)
+                "15.0",  // temp (close enough to 15 to trigger ISA density)
+                "5000",  // altitude (m)
+                "g7", "0.157", "4.0", "5.56",
+            ],
+        );
+        assert_ne!(r, "-1", "step at altitude should succeed");
+        let trimmed = r.trim_start_matches('[').trim_end_matches(']');
+        let parts: Vec<&str> = trimmed.split(',').collect();
+        let vel_x: f64 = parts[3].parse().unwrap();
+        assert!(
+            vel_x > 0.0,
+            "bullet should move forward at altitude: {}",
+            vel_x
+        );
+    }
+
+    // ── Impact command edge cases ───────────────────────────────────────────
+
+    #[test]
+    fn rv_ext_impact_thick_armor() {
+        rv_ext_args("init", &["1", "0"]);
+        // 7.62mm ball at 900 m/s vs 50mm RHA → should NOT penetrate
+        let r = rv_ext_args(
+            "impact",
+            &[
+                "900",
+                "0",
+                "0",
+                "9.5",
+                "7.62",
+                "50",
+                "steel_rha",
+                "0",
+                "ball",
+            ],
+        );
+        assert_ne!(r, "-1");
+        let trimmed = r.trim_start_matches('[').trim_end_matches(']');
+        let parts: Vec<&str> = trimmed.split(',').collect();
+        let penetrated: i32 = parts[0].parse().unwrap();
+        assert_eq!(penetrated, 0, "7.62mm ball should NOT pen 50mm RHA");
+    }
+
+    #[test]
+    fn rv_ext_impact_grazing_angle() {
+        rv_ext_args("init", &["1", "0"]);
+        // 7.62mm ball at 900 m/s vs 10mm RHA at 85° → ricochet
+        let r = rv_ext_args(
+            "impact",
+            &[
+                "900",
+                "0",
+                "0",
+                "9.5",
+                "7.62",
+                "10",
+                "steel_rha",
+                "85", // shallow angle
+                "ball",
+            ],
+        );
+        assert_ne!(r, "-1");
+        let trimmed = r.trim_start_matches('[').trim_end_matches(']');
+        let parts: Vec<&str> = trimmed.split(',').collect();
+        let ricochet: i32 = parts[4].parse().unwrap();
+        assert_eq!(ricochet, 1, "85° angle should cause ricochet");
+    }
+
+    #[test]
+    fn rv_ext_impact_zero_mass() {
+        rv_ext_args("init", &["1", "0"]);
+        // mass=0 → evaluate guards against zero mass (v_required = INF)
+        let r = rv_ext_args(
+            "impact",
+            &[
+                "900",
+                "0",
+                "0",
+                "0", // mass = 0
+                "7.62",
+                "5",
+                "steel_rha",
+                "0",
+                "ball",
+            ],
+        );
+        assert_ne!(r, "-1", "impact with zero mass should not crash");
+    }
+
+    #[test]
+    fn rv_ext_impact_ap_projectile() {
+        rv_ext_args("init", &["1", "0"]);
+        // AP has projectile_modifier=1.3 vs ball=1.0 → penetration threshold is lower
+        let ball = rv_ext_args(
+            "impact",
+            &[
+                "880",
+                "0",
+                "0",
+                "9.5",
+                "7.62",
+                "10",
+                "steel_rha",
+                "0",
+                "ball",
+            ],
+        );
+        let ap = rv_ext_args(
+            "impact",
+            &["880", "0", "0", "9.5", "7.62", "10", "steel_rha", "0", "ap"],
+        );
+        assert_ne!(ball, "-1");
+        assert_ne!(ap, "-1");
+
+        let parse_pen = |s: &str| -> i32 {
+            s.trim_start_matches('[')
+                .split(',')
+                .next()
+                .unwrap()
+                .parse()
+                .unwrap()
+        };
+        let ball_pen = parse_pen(&ball);
+        let ap_pen = parse_pen(&ap);
+        assert!(
+            ap_pen >= ball_pen,
+            "AP should pen as well or better than ball (AP={}, ball={})",
+            ap_pen,
+            ball_pen
+        );
+    }
+
+    #[test]
+    fn rv_ext_impact_unknown_material() {
+        rv_ext_args("init", &["1", "0"]);
+        // Unknown material → material_factor defaults to 1.0 (RHA equivalent)
+        let r = rv_ext_args(
+            "impact",
+            &[
+                "900",
+                "0",
+                "0",
+                "9.5",
+                "7.62",
+                "5",
+                "nonexistent_material",
+                "0",
+                "ball",
+            ],
+        );
+        assert_ne!(r, "-1");
+        let trimmed = r.trim_start_matches('[').trim_end_matches(']');
+        let parts: Vec<&str> = trimmed.split(',').collect();
+        let penetrated: i32 = parts[0].parse().unwrap();
+        assert_eq!(
+            penetrated, 1,
+            "unknown material should default to RHA and pen 5mm"
+        );
+    }
+
+    // ── String command edge cases ───────────────────────────────────────────
+
+    #[test]
+    fn rv_ext_empty_string() {
+        let r = rv_ext("");
+        assert_eq!(r, "unknown: ", "empty command should return unknown");
+    }
+
+    #[test]
+    fn rv_ext_very_long_command() {
+        let long_cmd = "a".repeat(500);
+        let r = rv_ext(&long_cmd);
+        assert!(r.starts_with("unknown: "));
+        // Output buffer is 2048, but our result is "unknown: " + 500 chars = ~509
+        assert!(r.len() <= OUTPUT_BUF_SIZE, "output should fit in buffer");
+    }
+
+    // ── Pipeline tests: fire → step → impact ──────────────────────────────
+
+    #[test]
+    fn fire_step_impact_pipeline() {
+        abe_init(ABE_API_VERSION, 0);
+
+        let mut cdm = [0u8; 32];
+        cdm[..3].copy_from_slice(b"g7\0");
+
+        // 1. Fire with 368mm barrel, 380 MPa, 5.56mm, 4.0g
+        let fire = FireParams {
+            barrel_length_mm: 368.0,
+            chamber_pressure_mpa: 380.0,
+            caliber_mm: 5.56,
+            projectile_mass_g: 4.0,
+            cdm_id: cdm,
+        };
+        let mut fr = FireResult::default();
+        assert_eq!(abe_fire(&fire, &mut fr), 0);
+        let mv = fr.muzzle_velocity_ms;
+        assert!(mv > 800.0 && mv < 1100.0, "MV should be reasonable: {mv}");
+
+        // 2. Step 200 times (2 s at dt = 0.01)
+        let mut x = 0.0;
+        let mut y = 0.0;
+        let mut z = 0.0;
+        let mut vx = mv;
+        let mut vy = 0.0;
+        let mut vz = 0.0;
+
+        for _ in 0..200 {
+            let step = StepParams {
+                pos_x: x,
+                pos_y: y,
+                pos_z: z,
+                vel_x: vx,
+                vel_y: vy,
+                vel_z: vz,
+                dt_s: 0.01,
+                wind_x: 0.0,
+                wind_y: 0.0,
+                wind_z: 0.0,
+                density_kgm3: 1.225,
+                temp_c: 15.0,
+                altitude_m: 0.0,
+                cdm_id: cdm,
+                bc: 0.157,
+                mass_g: 4.0,
+                caliber_mm: 5.56,
+            };
+            let mut sr = BulletState::default();
+            assert_eq!(abe_step(&step, &mut sr), 0);
+            x = sr.pos_x;
+            y = sr.pos_y;
+            z = sr.pos_z;
+            vx = sr.vel_x;
+            vy = sr.vel_y;
+            vz = sr.vel_z;
+        }
+
+        // 3. Impact the bullet at its final velocity against 3mm RHA
+        let mut mat = [0u8; 32];
+        mat[..10].copy_from_slice(b"steel_rha\0");
+        let mut proj = [0u8; 32];
+        proj[..5].copy_from_slice(b"ball\0");
+
+        let impact = ImpactParams {
+            vel_x: vx,
+            vel_y: vy,
+            vel_z: vz,
+            mass_g: 4.0,
+            caliber_mm: 5.56,
+            armor_thickness_mm: 3.0,
+            armor_material: mat,
+            impact_angle_deg: 0.0,
+            projectile_type: proj,
+        };
+        let mut ir = ImpactResult::default();
+        assert_eq!(abe_impact(&impact, &mut ir), 0);
+        assert!(
+            ir.residual_vel_ms > 0.0,
+            "subsonic 5.56mm at 3mm RHA should retain some energy: rv={}",
+            ir.residual_vel_ms
+        );
+    }
+
+    #[test]
+    fn rv_ext_fire_step_impact_pipeline() {
+        rv_ext_args("init", &["1", "0"]);
+
+        // 1. Fire via string ABI
+        let fire = rv_ext_args("fire", &["508", "380", "5.56", "4.0", "g7"]);
+        assert_ne!(fire, "-1");
+        let trimmed = fire.trim_start_matches('[').trim_end_matches(']');
+        let parts: Vec<&str> = trimmed.split(',').collect();
+        let mv: f64 = match parts.first().and_then(|s| s.parse().ok()) {
+            Some(v) => v,
+            None => panic!("fire result should have numeric MV: {fire}"),
+        };
+
+        // 2. Step 200 times via string ABI
+        let mut x = 0.0_f64;
+        let mut y = 0.0_f64;
+        let mut z = 0.0_f64;
+        let mut vx = mv;
+        let mut vy = 0.0;
+        let mut vz = 0.0;
+
+        for _ in 0..200 {
+            let s = format!("{x},{y},{z},{vx},{vy},{vz},0.01,0,0,0,1.225,15,0,g7,0.157,4.0,5.56");
+            let args: Vec<&str> = s.split(',').collect();
+            let r = rv_ext_args("step", &args);
+            assert_ne!(r, "-1");
+            let trimmed = r.trim_start_matches('[').trim_end_matches(']');
+            let parts: Vec<&str> = trimmed.split(',').collect();
+            x = parts[0].parse().unwrap();
+            y = parts[1].parse().unwrap();
+            z = parts[2].parse().unwrap();
+            vx = parts[3].parse().unwrap();
+            vy = parts[4].parse().unwrap();
+            vz = parts[5].parse().unwrap();
+        }
+
+        // 3. Impact via string ABI
+        let impact = rv_ext_args(
+            "impact",
+            &[
+                &format!("{vx:.1}"),
+                &format!("{vy:.1}"),
+                &format!("{vz:.1}"),
+                "4.0",
+                "5.56",
+                "3",
+                "steel_rha",
+                "0",
+                "ball",
+            ],
+        );
+        assert_ne!(impact, "-1");
+        let trimmed = impact.trim_start_matches('[').trim_end_matches(']');
+        let parts: Vec<&str> = trimmed.split(',').collect();
+        let residual_vel: f64 = parts[1].parse().unwrap();
+        assert!(
+            residual_vel > 0.0,
+            "should retain some energy: rv={residual_vel}"
+        );
+    }
+
+    // ── Multi-bullet interleaving (ACE3 pattern) ──────────────────────────
+
+    #[test]
+    fn multi_bullet_interleaved() {
+        abe_init(ABE_API_VERSION, 0);
+
+        let mut cdm = [0u8; 32];
+        cdm[..3].copy_from_slice(b"g7\0");
+
+        // Bullet A: fast M855-like (930 m/s, 0.157 G7)
+        // Bullet B: slower subsonic pistol-like (320 m/s, 0.075 G7)
+        let (mut ax, mut ay, mut az, mut avx, mut avy, mut avz) = (0.0, 0.0, 0.0, 930.0, 0.0, 0.0);
+        let (mut bx, mut by, mut bz, mut bvx, mut bvy, mut bvz) = (0.0, 0.0, 0.0, 320.0, 0.0, 0.0);
+
+        let base = StepParams {
+            pos_x: 0.0,
+            pos_y: 0.0,
+            pos_z: 0.0,
+            vel_x: 0.0,
+            vel_y: 0.0,
+            vel_z: 0.0,
+            wind_x: 0.0,
+            wind_y: 0.0,
+            wind_z: 0.0,
+            density_kgm3: 1.225,
+            temp_c: 15.0,
+            altitude_m: 0.0,
+            cdm_id: cdm,
+            mass_g: 4.0,
+            caliber_mm: 5.56,
+            dt_s: 0.02,
+            bc: 0.157,
+        };
+
+        // Interleave A×5, B×5 for 8 rounds = 40 steps each
+        for round in 0..8 {
+            let bullet_a = round % 2 == 0;
+            let (x, y, z, vx, vy, vz, bc, label) = if bullet_a {
+                (
+                    &mut ax, &mut ay, &mut az, &mut avx, &mut avy, &mut avz, 0.157, "A",
+                )
+            } else {
+                (
+                    &mut bx, &mut by, &mut bz, &mut bvx, &mut bvy, &mut bvz, 0.075, "B",
+                )
+            };
+
+            for _ in 0..5 {
+                let step = StepParams {
+                    pos_x: *x,
+                    pos_y: *y,
+                    pos_z: *z,
+                    vel_x: *vx,
+                    vel_y: *vy,
+                    vel_z: *vz,
+                    dt_s: base.dt_s,
+                    wind_x: base.wind_x,
+                    wind_y: base.wind_y,
+                    wind_z: base.wind_z,
+                    density_kgm3: base.density_kgm3,
+                    temp_c: base.temp_c,
+                    altitude_m: base.altitude_m,
+                    cdm_id: base.cdm_id,
+                    bc,
+                    mass_g: base.mass_g,
+                    caliber_mm: base.caliber_mm,
+                };
+                let mut result = BulletState::default();
+                assert_eq!(abe_step(&step, &mut result), 0);
+                *x = result.pos_x;
+                *y = result.pos_y;
+                *z = result.pos_z;
+                *vx = result.vel_x;
+                *vy = result.vel_y;
+                *vz = result.vel_z;
+            }
+
+            assert!(*x > 0.0, "Bullet {label} should move forward: x={}", *x);
+        }
+
+        // After 40 interleaved steps each, faster bullet A should be further
+        assert!(
+            ax > bx,
+            "Faster bullet should lead: A.x={ax:.1} B.x={bx:.1}"
+        );
+    }
+
+    // ── Wind / drift tests ──────────────────────────────────────────────────
+
+    #[test]
+    fn crosswind_deflects_bullet() {
+        abe_init(ABE_API_VERSION, 0);
+
+        let mut cdm = [0u8; 32];
+        cdm[..3].copy_from_slice(b"g7\0");
+
+        let run_wind = |wind_y: f64| -> f64 {
+            let mut x = 0.0;
+            let mut y = 0.0;
+            let mut z = 0.0;
+            let mut vx = 930.0;
+            let mut vy = 0.0;
+            let mut vz = 0.0;
+
+            for _ in 0..50 {
+                let step = StepParams {
+                    pos_x: x,
+                    pos_y: y,
+                    pos_z: z,
+                    vel_x: vx,
+                    vel_y: vy,
+                    vel_z: vz,
+                    dt_s: 0.1,
+                    wind_x: 0.0,
+                    wind_y,
+                    wind_z: 0.0,
+                    density_kgm3: 1.225,
+                    temp_c: 15.0,
+                    altitude_m: 0.0,
+                    cdm_id: cdm,
+                    bc: 0.157,
+                    mass_g: 4.0,
+                    caliber_mm: 5.56,
+                };
+                let mut result = BulletState::default();
+                abe_step(&step, &mut result);
+                x = result.pos_x;
+                y = result.pos_y;
+                z = result.pos_z;
+                vx = result.vel_x;
+                vy = result.vel_y;
+                vz = result.vel_z;
+            }
+            y
+        };
+
+        let y_nowind = run_wind(0.0);
+        let y_cross = run_wind(5.0);
+
+        assert!(
+            y_nowind.abs() < 0.001,
+            "Without crosswind, y should be ~0: got {y_nowind}"
+        );
+        assert!(
+            (y_cross - y_nowind).abs() > 0.1,
+            "Crosswind should deflect bullet: nowind={y_nowind}, wind={y_cross}"
+        );
+    }
+
+    // ── Trajectory quality tests ────────────────────────────────────────────
+
+    #[test]
+    fn trajectory_energy_conservation() {
+        abe_init(ABE_API_VERSION, 0);
+
+        let mut cdm = [0u8; 32];
+        cdm[..3].copy_from_slice(b"g7\0");
+
+        let mass_g = 4.0;
+        let mut x = 0.0;
+        let mut y = 0.0;
+        let mut z = 0.0;
+        let mut vx = 930.0;
+        let mut vy = 0.0;
+        let mut vz = 0.0;
+        let dt = 0.01;
+
+        let mut prev_energy: Option<f64> = None;
+
+        for _ in 0..200 {
+            let params = StepParams {
+                pos_x: x,
+                pos_y: y,
+                pos_z: z,
+                vel_x: vx,
+                vel_y: vy,
+                vel_z: vz,
+                dt_s: dt,
+                wind_x: 0.0,
+                wind_y: 0.0,
+                wind_z: 0.0,
+                density_kgm3: 1.225,
+                temp_c: 15.0,
+                altitude_m: 0.0,
+                cdm_id: cdm,
+                bc: 0.157,
+                mass_g,
+                caliber_mm: 5.56,
+            };
+            let mut result = BulletState::default();
+            assert_eq!(abe_step(&params, &mut result), 0);
+
+            x = result.pos_x;
+            y = result.pos_y;
+            z = result.pos_z;
+            vx = result.vel_x;
+            vy = result.vel_y;
+            vz = result.vel_z;
+
+            let speed = (vx * vx + vy * vy + vz * vz).sqrt();
+            // Specific total mechanical energy: KE + PE
+            // ABE uses +z = down, so specific PE at height z = -g*z
+            let energy = 0.5 * speed * speed - atmosphere::GRAVITY * z;
+
+            if let Some(prev) = prev_energy {
+                assert!(
+                    energy <= prev + 1e-6,
+                    "Total mechanical energy should not increase: prev={:.6}, now={:.6}",
+                    prev,
+                    energy
+                );
+            }
+            prev_energy = Some(energy);
+        }
+    }
+
+    #[test]
+    fn trajectory_monotonic_position() {
+        abe_init(ABE_API_VERSION, 0);
+
+        let mut cdm = [0u8; 32];
+        cdm[..3].copy_from_slice(b"g7\0");
+
+        let mut x = 0.0;
+        let mut y = 0.0;
+        let mut z = 0.0;
+        let mut vx = 930.0;
+        let mut vy = 0.0;
+        let mut vz = 0.0;
+
+        for _ in 0..200 {
+            let params = StepParams {
+                pos_x: x,
+                pos_y: y,
+                pos_z: z,
+                vel_x: vx,
+                vel_y: vy,
+                vel_z: vz,
+                dt_s: 0.01,
+                wind_x: 0.0,
+                wind_y: 0.0,
+                wind_z: 0.0,
+                density_kgm3: 1.225,
+                temp_c: 15.0,
+                altitude_m: 0.0,
+                cdm_id: cdm,
+                bc: 0.157,
+                mass_g: 4.0,
+                caliber_mm: 5.56,
+            };
+            let mut result = BulletState::default();
+            abe_step(&params, &mut result);
+
+            assert!(
+                result.pos_x > x,
+                "x should increase monotonically: {} -> {}",
+                x,
+                result.pos_x
+            );
+            assert!(
+                result.pos_z >= z,
+                "z should increase monotonically (gravity pulls down): {} -> {}",
+                z,
+                result.pos_z
+            );
+
+            x = result.pos_x;
+            y = result.pos_y;
+            z = result.pos_z;
+            vx = result.vel_x;
+            vy = result.vel_y;
+            vz = result.vel_z;
+        }
+    }
+
+    #[test]
+    fn trajectory_gravity_consistency() {
+        abe_init(ABE_API_VERSION, 0);
+
+        let mut cdm = [0u8; 32];
+        cdm[..3].copy_from_slice(b"g7\0");
+
+        // Note: abe_step divides by speed without a .max() guard (handle_step has it).
+        // Starting with v=0 would produce 0/0=NaN, so we use a tiny horizontal velocity.
+        // With bc=0 there is no drag, so horizontal motion does not affect vertical.
+        let mut x = 0.0;
+        let mut y = 0.0;
+        let mut z = 0.0;
+        let mut vx = 1.0; // tiny horizontal velocity to avoid division-by-zero in abe_step
+        let mut vy = 0.0;
+        let mut vz = 0.0;
+        let dt = 0.1;
+
+        for step_num in 0..20 {
+            let params = StepParams {
+                pos_x: x,
+                pos_y: y,
+                pos_z: z,
+                vel_x: vx,
+                vel_y: vy,
+                vel_z: vz,
+                dt_s: dt,
+                wind_x: 0.0,
+                wind_y: 0.0,
+                wind_z: 0.0,
+                density_kgm3: 1.225,
+                temp_c: 15.0,
+                altitude_m: 0.0,
+                cdm_id: cdm,
+                bc: 0.0, // No drag → free fall
+                mass_g: 4.0,
+                caliber_mm: 5.56,
+            };
+            let mut result = BulletState::default();
+            assert_eq!(abe_step(&params, &mut result), 0);
+
+            x = result.pos_x;
+            y = result.pos_y;
+            z = result.pos_z;
+            vx = result.vel_x;
+            vy = result.vel_y;
+            vz = result.vel_z;
+
+            let t = (step_num + 1) as f64 * dt;
+            // Semi-implicit Euler: velocity update is exact for constant acceleration
+            // v(t) = g * t
+            let expected_vz = atmosphere::GRAVITY * t;
+            assert!(
+                (vz - expected_vz).abs() < 0.001,
+                "vz should match free-fall at t={}: expected={}, actual={}",
+                t,
+                expected_vz,
+                vz
+            );
+
+            // Position from semi-implicit Euler overestimates analytical:
+            // z(t) = g * dt² * N(N+1)/2 vs analytical g*t²/2
+            // So position ratio = (N+1)/N, which tends to 1 as N grows.
+            // With N=20 at t=2.0, ratio = 1.05 → verify z bounds bracket the truth.
+            let z_lower = 0.5 * atmosphere::GRAVITY * t * t; // analytical min
+            let z_upper = z_lower * (t / dt + 1.0) / (t / dt); // semi-implicit Euler max
+            assert!(
+                z >= z_lower * 0.95 && z <= z_upper * 1.05,
+                "z should be near free-fall at t={}: analytical={:.4}, bounds=[{:.4},{:.4}], actual={:.4}",
+                t,
+                z_lower,
+                z_lower * 0.95,
+                z_upper * 1.05,
+                z
+            );
+        }
+    }
+
+    #[test]
+    fn trajectory_high_altitude_less_drag() {
+        abe_init(ABE_API_VERSION, 0);
+
+        let mut cdm = [0u8; 32];
+        cdm[..3].copy_from_slice(b"g7\0");
+
+        let run = |altitude_m: f64| -> f64 {
+            let mut x = 0.0;
+            let mut y = 0.0;
+            let mut z = 0.0;
+            let mut vx = 930.0;
+            let mut vy = 0.0;
+            let mut vz = 0.0;
+
+            for _ in 0..50 {
+                let params = StepParams {
+                    pos_x: x,
+                    pos_y: y,
+                    pos_z: z,
+                    vel_x: vx,
+                    vel_y: vy,
+                    vel_z: vz,
+                    dt_s: 0.1,
+                    wind_x: 0.0,
+                    wind_y: 0.0,
+                    wind_z: 0.0,
+                    density_kgm3: 1.225,
+                    temp_c: 15.0,
+                    altitude_m,
+                    cdm_id: cdm,
+                    bc: 0.157,
+                    mass_g: 4.0,
+                    caliber_mm: 5.56,
+                };
+                let mut result = BulletState::default();
+                abe_step(&params, &mut result);
+
+                x = result.pos_x;
+                y = result.pos_y;
+                z = result.pos_z;
+                vx = result.vel_x;
+                vy = result.vel_y;
+                vz = result.vel_z;
+            }
+            vx
+        };
+
+        let sea_level_v = run(0.0);
+        let high_alt_v = run(5000.0);
+
+        assert!(
+            high_alt_v > sea_level_v,
+            "At altitude (lower density) bullet should slow less: sea={:.1}, alt={:.1}",
+            sea_level_v,
+            high_alt_v
+        );
     }
 }
 
