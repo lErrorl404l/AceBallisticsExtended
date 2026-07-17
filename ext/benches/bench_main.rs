@@ -275,6 +275,314 @@ fn bench_multi_bullet(c: &mut Criterion) {
     });
 }
 
+// ── New benchmark groups ────────────────────────────────────────────────────
+
+fn bench_init_health(c: &mut Criterion) {
+    // Ensure clean state for bench
+    let _ = abe_init(1, 0);
+
+    c.bench_function("init/health_check", |b| {
+        b.iter(|| {
+            // get_state().initialized — the OnceLock::get check on every ABI call
+            black_box(abe_health())
+        })
+    });
+
+    c.bench_function("init/version_string", |b| {
+        b.iter(|| {
+            // OnceLock<CString> — cached on first call, then just .get()
+            black_box(abe_version())
+        })
+    });
+
+    c.bench_function("init/full_init", |b| {
+        // Re-init: OnceLock::set returns Err on second call, handle guards return "0"
+        b.iter(|| black_box(abe_init(1, 0)))
+    });
+}
+
+fn bench_multi_bullet_100(c: &mut Criterion) {
+    abe_init(1, 0);
+
+    let cdm = pack_id("g7");
+    const NUM_BULLETS: usize = 100;
+    const STEPS_EACH: usize = 30;
+
+    c.bench_function("multi_bullet/100x30_interleaved", |b| {
+        b.iter(|| {
+            let mut states: Vec<(f64, f64, f64, f64, f64, f64, f64)> =
+                Vec::with_capacity(NUM_BULLETS);
+            for i in 0..NUM_BULLETS {
+                let mv = 930.0 - i as f64 * 5.0; // spread: 930→430 m/s
+                let bc = 0.200 - i as f64 * 0.0015; // spread: 0.200→0.050
+                states.push((0.0, 0.0, 0.0, mv, 0.0, 0.0, bc));
+            }
+
+            for _step_idx in 0..STEPS_EACH {
+                for s in states.iter_mut() {
+                    let (x, y, z, vx, vy, vz, bc) = *s;
+                    let step = StepParams {
+                        pos_x: x,
+                        pos_y: y,
+                        pos_z: z,
+                        vel_x: vx,
+                        vel_y: vy,
+                        vel_z: vz,
+                        dt_s: 0.01,
+                        wind_x: 0.0,
+                        wind_y: 0.0,
+                        wind_z: 0.0,
+                        density_kgm3: 1.225,
+                        temp_c: 15.0,
+                        altitude_m: 0.0,
+                        cdm_id: cdm,
+                        bc,
+                        mass_g: 4.0,
+                        caliber_mm: 5.56,
+                    };
+                    let mut sr = BulletState::default();
+                    abe_step(&step, &mut sr);
+                    *s = (
+                        sr.pos_x, sr.pos_y, sr.pos_z, sr.vel_x, sr.vel_y, sr.vel_z, bc,
+                    );
+                }
+            }
+            black_box(states.len())
+        })
+    });
+}
+
+fn bench_full_pipeline_realistic(c: &mut Criterion) {
+    abe_init(1, 0);
+
+    let cdm = pack_id("g7");
+    let mat = pack_id("steel_rha");
+    let proj = pack_id("ap");
+
+    c.bench_function("pipeline/fire_500step_impact_realistic", |b| {
+        b.iter(|| {
+            // ── Fire: 7.62mm NATO M80 from M240 (24.8" barrel) ──────
+            let fire = FireParams {
+                barrel_length_mm: 630.0,
+                chamber_pressure_mpa: 360.0,
+                caliber_mm: 7.62,
+                projectile_mass_g: 9.5,
+                cdm_id: cdm,
+            };
+            let mut fr = FireResult::default();
+            abe_fire(&fire, &mut fr);
+            let mv = fr.muzzle_velocity_ms;
+
+            // ── 500 steps @ dt=0.01 with crosswind at altitude ──────
+            let mut x = 0.0;
+            let mut y = 0.0;
+            let mut z = 0.0;
+            let mut vx = mv;
+            let mut vy = 0.0;
+            let mut vz = 0.0;
+
+            for _ in 0..500 {
+                let step = StepParams {
+                    pos_x: x,
+                    pos_y: y,
+                    pos_z: z,
+                    vel_x: vx,
+                    vel_y: vy,
+                    vel_z: vz,
+                    dt_s: 0.01,
+                    wind_x: 5.0,
+                    wind_y: 3.0,
+                    wind_z: 0.0, // crosswind
+                    density_kgm3: 1.225,
+                    temp_c: 15.0,
+                    altitude_m: 500.0, // 500m ASL → ICAO density
+                    cdm_id: cdm,
+                    bc: 0.200, // G7 BC for M80 ball
+                    mass_g: 9.5,
+                    caliber_mm: 7.62,
+                };
+                let mut sr = BulletState::default();
+                abe_step(&step, &mut sr);
+                x = sr.pos_x;
+                y = sr.pos_y;
+                z = sr.pos_z;
+                vx = sr.vel_x;
+                vy = sr.vel_y;
+                vz = sr.vel_z;
+            }
+
+            // ── Impact: AP vs 10mm RHA at 30° ──────────────────────
+            let impact = ImpactParams {
+                vel_x: vx,
+                vel_y: vy,
+                vel_z: vz,
+                mass_g: 9.5,
+                caliber_mm: 7.62,
+                armor_thickness_mm: 10.0,
+                armor_material: mat,
+                impact_angle_deg: 30.0,
+                projectile_type: proj,
+            };
+            let mut ir = ImpactResult::default();
+            abe_impact(&impact, &mut ir);
+            black_box(ir)
+        })
+    });
+}
+
+fn bench_impact_variants(c: &mut Criterion) {
+    abe_init(1, 0);
+
+    let steel = pack_id("steel_rha");
+    let alum = pack_id("aluminum_5083");
+    let ceramic = pack_id("ceramic_b4c");
+    let ball = pack_id("ball");
+    let ap = pack_id("ap");
+    let apds = pack_id("apds");
+
+    c.bench_function("impact/ap_vs_10mm_rha", |b| {
+        let params = ImpactParams {
+            vel_x: 880.0,
+            vel_y: 0.0,
+            vel_z: 0.0,
+            mass_g: 9.5,
+            caliber_mm: 7.62,
+            armor_thickness_mm: 10.0,
+            armor_material: steel,
+            impact_angle_deg: 0.0,
+            projectile_type: ap,
+        };
+        b.iter(|| {
+            let mut result = ImpactResult::default();
+            abe_impact(black_box(&params), &mut result);
+            black_box(result)
+        })
+    });
+
+    c.bench_function("impact/ball_vs_aluminum_thin", |b| {
+        let params = ImpactParams {
+            vel_x: 650.0,
+            vel_y: 0.0,
+            vel_z: 0.0,
+            mass_g: 4.0,
+            caliber_mm: 5.56,
+            armor_thickness_mm: 3.0,
+            armor_material: alum,
+            impact_angle_deg: 0.0,
+            projectile_type: ball,
+        };
+        b.iter(|| {
+            let mut result = ImpactResult::default();
+            abe_impact(black_box(&params), &mut result);
+            black_box(result)
+        })
+    });
+
+    c.bench_function("impact/ricochet_at_80deg", |b| {
+        let params = ImpactParams {
+            vel_x: 750.0,
+            vel_y: 0.0,
+            vel_z: 0.0,
+            mass_g: 9.5,
+            caliber_mm: 7.62,
+            armor_thickness_mm: 5.0,
+            armor_material: steel,
+            impact_angle_deg: 80.0,
+            projectile_type: ball,
+        };
+        b.iter(|| {
+            let mut result = ImpactResult::default();
+            abe_impact(black_box(&params), &mut result);
+            black_box(result)
+        })
+    });
+
+    c.bench_function("impact/apds_vs_ceramic", |b| {
+        let params = ImpactParams {
+            vel_x: 1500.0,
+            vel_y: 0.0,
+            vel_z: 0.0,
+            mass_g: 4.5,
+            caliber_mm: 5.56,
+            armor_thickness_mm: 30.0,
+            armor_material: ceramic,
+            impact_angle_deg: 15.0,
+            projectile_type: apds,
+        };
+        b.iter(|| {
+            let mut result = ImpactResult::default();
+            abe_impact(black_box(&params), &mut result);
+            black_box(result)
+        })
+    });
+}
+
+fn bench_fire_variants(c: &mut Criterion) {
+    abe_init(1, 0);
+
+    let cdm = pack_id("g7");
+
+    c.bench_function("fire/5.56mm_m855", |b| {
+        let params = FireParams {
+            barrel_length_mm: 368.0,
+            chamber_pressure_mpa: 380.0,
+            caliber_mm: 5.56,
+            projectile_mass_g: 4.0,
+            cdm_id: cdm,
+        };
+        b.iter(|| {
+            let mut result = FireResult::default();
+            abe_fire(black_box(&params), &mut result);
+            black_box(result)
+        })
+    });
+
+    c.bench_function("fire/7.62mm_m80", |b| {
+        let params = FireParams {
+            barrel_length_mm: 630.0,
+            chamber_pressure_mpa: 360.0,
+            caliber_mm: 7.62,
+            projectile_mass_g: 9.5,
+            cdm_id: cdm,
+        };
+        b.iter(|| {
+            let mut result = FireResult::default();
+            abe_fire(black_box(&params), &mut result);
+            black_box(result)
+        })
+    });
+
+    c.bench_function("fire/9mm_parabellum", |b| {
+        let params = FireParams {
+            barrel_length_mm: 127.0,
+            chamber_pressure_mpa: 240.0,
+            caliber_mm: 9.01,
+            projectile_mass_g: 8.0,
+            cdm_id: cdm,
+        };
+        b.iter(|| {
+            let mut result = FireResult::default();
+            abe_fire(black_box(&params), &mut result);
+            black_box(result)
+        })
+    });
+
+    c.bench_function("fire/338_lapua", |b| {
+        let params = FireParams {
+            barrel_length_mm: 690.0,
+            chamber_pressure_mpa: 420.0,
+            caliber_mm: 8.58,
+            projectile_mass_g: 16.2,
+            cdm_id: cdm,
+        };
+        b.iter(|| {
+            let mut result = FireResult::default();
+            abe_fire(black_box(&params), &mut result);
+            black_box(result)
+        })
+    });
+}
+
 // ── Criterion harness ───────────────────────────────────────────────────────
 
 criterion_group!(
@@ -285,5 +593,10 @@ criterion_group!(
     bench_full_pipeline,
     bench_step_string_abi,
     bench_multi_bullet,
+    bench_init_health,
+    bench_multi_bullet_100,
+    bench_full_pipeline_realistic,
+    bench_impact_variants,
+    bench_fire_variants,
 );
 criterion_main!(benches);
