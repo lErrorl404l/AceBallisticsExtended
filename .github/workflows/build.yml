@@ -62,9 +62,9 @@ jobs:
 
       # ── HEMTT ───────────────────────────────────────────────────────
       - name: Setup HEMTT
-        run: curl -sSf https://hemtt.dev/install.sh | sh
-      - name: Verify HEMTT
-        run: hemtt --version
+        run: |
+          curl -sSf https://hemtt.dev/install.sh | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: HEMTT check
         run: hemtt check
