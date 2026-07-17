@@ -1,0 +1,11 @@
+{
+  "class": "DMR_07_base_F",
+  "caliber_mm": 6.5,
+  "barrel_length_mm": 640.0,
+  "rifling_twist_mm": 206.0,
+  "chamber_pressure_mpa": 427.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 9.072,
+  "muzzle_velocity_ms": 855.0,
+  "zero_range_m": 100.0
+}

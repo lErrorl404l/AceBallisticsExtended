@@ -1,0 +1,11 @@
+{
+  "class": "srifle_Cyrus_base_F",
+  "caliber_mm": 9.3,
+  "barrel_length_mm": 680.0,
+  "rifling_twist_mm": 356.0,
+  "chamber_pressure_mpa": 380.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 18.5,
+  "muzzle_velocity_ms": 800.0,
+  "zero_range_m": 100.0
+}

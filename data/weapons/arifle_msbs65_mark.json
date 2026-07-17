@@ -1,0 +1,11 @@
+{
+  "class": "arifle_MSBS65_Mark_base_F",
+  "caliber_mm": 6.5,
+  "barrel_length_mm": 508.0,
+  "rifling_twist_mm": 228.6,
+  "chamber_pressure_mpa": 427.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 9.072,
+  "muzzle_velocity_ms": 840.0,
+  "zero_range_m": 100.0
+}

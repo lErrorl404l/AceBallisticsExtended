@@ -1,0 +1,10 @@
+{
+  "class": "launch_MRAWS_base_F",
+  "caliber_mm": 84.0,
+  "barrel_length_mm": 1.0,
+  "chamber_pressure_mpa": 1.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 3200.0,
+  "muzzle_velocity_ms": 290.0,
+  "zero_range_m": 100.0
+}
