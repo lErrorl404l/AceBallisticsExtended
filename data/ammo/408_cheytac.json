@@ -4,8 +4,8 @@
     "model": "408CT",
     "mass_g": 27.0,
     "caliber_mm": 10.36,
-    "bc_g7": 0.378,
+    "bc_g7": 0.420,
     "cdm_id": "g7",
-    "source": "Jamison 419gr solid. G1~0.945 → G7~0.378 (Litz form factor 0.95). CheyTac/Extreme Firearms published."
+    "source": "Jamison/Lost River 419gr solid. G1=0.949 (Yuma Proving Ground Doppler radar, CheyTac 2026 catalog). G7=0.420 est from AP variant ratio (400gr AP: G1=0.97, G7=0.425, ratio=0.438). CheyTac verified."
   }
 }

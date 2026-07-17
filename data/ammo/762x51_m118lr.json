@@ -4,9 +4,9 @@
         "model": "M118LR",
         "mass_g": 11.34,
         "caliber_mm": 7.62,
-        "bc_g7": 0.240,
+        "bc_g7": 0.243,
         "cdm_id": "g7",
-        "source": "M118LR 175gr SMK (Sierra MatchKing). G7 BC=0.240 per Litz Doppler radar measurement (Applied Ballistics for Long Range Shooting, 4th Ed. §10.7). Confirmed by US Army ATAC testing for M24/M110 platforms.",
+        "source": "M118LR 175gr SMK (Sierra MatchKing #2275). G7 BC=0.243 Litz Doppler radar (DTIC ADA554683, Applied Ballistics §10.7). Sierra published G1: 0.505/0.496/0.485 stepped. US Army ATAC confirmed.",
         "fragmentation": null
     }
 }

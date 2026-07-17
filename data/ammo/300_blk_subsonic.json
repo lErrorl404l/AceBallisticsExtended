@@ -4,9 +4,9 @@
         "model": "M277_220gr_Subsonic",
         "mass_g": 14.3,
         "caliber_mm": 7.82,
-        "bc_g7": 0.234,
+        "bc_g7": 0.313,
         "cdm_id": "g7",
-        "source": ".300 AAC Blackout (7.62x35mm) subsonic. 220gr (14.3g) HPBT. MV ~305 m/s (~1000 fps, subsonic). G7 BC ~0.234 for 220gr subsonic .308-cal projectile (typical heavy subsonic match bullet). Caliber .308in = 7.82mm.",
+        "source": ".300 AAC Blackout subsonic 220gr SMK/HPBT. G7=0.313 (Barnes VOR-TX, Sierra SMK). MV~305 m/s subsonic. Barnes/Sierra factory BC data.",
         "fragmentation": null
     }
 }

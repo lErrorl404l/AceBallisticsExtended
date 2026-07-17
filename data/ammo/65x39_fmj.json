@@ -9,9 +9,9 @@
         "source": "Est. 122gr 6.5mm FMJ-BT (heavy MX loading). Litz 123gr SMK G7=0.230, conservative est. for FMJ.",
         "fragmentation": {
             "threshold_vel_ms": 780.0,
-            "avg_fragments": 6,
+            "avg_fragments": 2,
             "mass_distribution": "log_normal",
-            "params": {"mean": 0.10, "std": 0.05}
+            "params": {"mean": 0.15, "std": 0.08}
         }
     }
 }

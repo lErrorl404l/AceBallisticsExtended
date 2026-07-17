@@ -4,8 +4,8 @@
     "model": "FMJ_230gr",
     "mass_g": 15.0,
     "caliber_mm": 11.43,
-    "bc_g7": 0.085,
+    "bc_g7": 0.173,
     "cdm_id": "g1",
-    "source": "G1 BC ~0.170 for 230gr FMJ. G1 drag model (handgun). No fragmentation."
+    "source": "G1 BC=0.173 for 230gr FMJ (Federal/Speer average). Federal AE45AP 0.173, Speer 230gr TMJ RN 0.173. Winchester 230gr FMJ 0.162. G1 model for flat-base pistol bullets."
   }
 }

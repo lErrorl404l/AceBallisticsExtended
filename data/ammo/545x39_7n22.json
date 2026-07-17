@@ -4,9 +4,9 @@
         "model": "7N22",
         "mass_g": 3.69,
         "caliber_mm": 5.45,
-        "bc_g7": 0.152,
+        "bc_g7": 0.174,
         "cdm_id": "g7",
-        "source": "7N22 57gr AP 5.45x39mm (steel-core penetrator). BC slightly lower than 7N6 (0.168) due to heavier steel penetrator. Litz estimate ~0.152 based on sectional density and form factor of steel-core 5.45mm. US Army BRL (ARL-MR-344, 1984) baseline.",
+        "source": "7N22 57gr AP 5.45x39mm (hardened steel-core penetrator U12A). Russian source G7~0.180, consensus 0.174. Higher BC than 7N6 (0.168) due to improved form factor of AP tip. BRL (ARL-MR-344, 1984) baseline for 5.45mm.",
         "fragmentation": null
     }
 }

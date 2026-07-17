@@ -5,6 +5,7 @@
         "mass_g": 19.44,
         "caliber_mm": 8.585,
         "bc_g7": 0.381,
-        "source": "ACE3 data: 300gr Lapua, G7 BC=0.381 at ICAO"
+        "cdm_id": "g7",
+        "source": "ACE3 data: 300gr Lapua Scenar, G7 BC=0.381 at ICAO. Lapua factory: 250gr G1=0.648. Federal GM338LM2 300gr SMK G7=0.387. Value is within range."
     }
 }

@@ -4,9 +4,9 @@
         "model": "Slug_1oz",
         "mass_g": 28.0,
         "caliber_mm": 18.53,
-        "bc_g7": 0.120,
+        "bc_g7": 0.055,
         "cdm_id": "g7",
-        "source": "Vanilla Arma 3 config values. 12ga 1oz slug. G7 BC ~0.120 estimated for typical rifled slug (Litz §12.3 shotgun slug approximation).",
+        "source": "12ga 1oz rifled slug. Federal Power-Shok G1=0.110 → G7=0.055 (flat-base ×0.5 conversion). Federal Premium factory spec. Remington AccuTip sabot G1=0.145.",
         "fragmentation": null
     }
 }

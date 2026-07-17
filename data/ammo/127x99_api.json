@@ -4,7 +4,8 @@
         "model": "M8_API",
         "mass_g": 41.99,
         "caliber_mm": 12.954,
-        "bc_g7": 0.670,
-        "source": "ACE3 data: .50 BMG API M8, 648gr, G7 BC=0.670 at ASM, incendiary filler"
+        "bc_g7": 0.340,
+        "cdm_id": "g7",
+        "source": ".50 BMG M8 API 648gr. G7=0.340 (BRL ADA219106: drag identical to M33, G7=0.340). ACE3 had 0.670 which was G1 interpreted as G7."
     }
 }

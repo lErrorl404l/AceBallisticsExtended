@@ -4,7 +4,8 @@
         "model": "50_Beowulf",
         "mass_g": 21.64,
         "caliber_mm": 12.7,
-        "bc_g7": 0.21,
-        "source": "ACE3 data: 334gr ball, G1 BC=0.21 converted, at ASM"
+        "bc_g7": 0.210,
+        "cdm_id": "g1",
+        "source": "ACE3 data: 334gr ball, G1 BC=0.210 (Alexander Arms official). Alexander Arms: 335gr FMJ G1=0.210, 400gr Hawk FP G1=0.202."
     }
 }

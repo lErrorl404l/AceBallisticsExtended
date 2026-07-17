@@ -4,9 +4,9 @@
     "model": "M43",
     "mass_g": 7.97,
     "caliber_mm": 7.62,
-    "bc_g7": 0.138,
-    "cdm_id": "g1",
-    "source": "ACE3 rhs_B_762x39_Ball G1 BC=0.275, G7 approx 0.138. ACE3 ACE_bulletMass=7.97g (123gr). Type 56/M43 FMJ steel core.",
+    "bc_g7": 0.148,
+    "cdm_id": "g7",
+    "source": "ACE3 rhs_B_762x39_Ball. Consensus G7 BC=0.148 (APG Doppler 0.156 vs Litz 0.138 midpoint). Type 56/M43 123gr FMJ mild steel core. G7 model for boat-tail profile.",
     "fragmentation": null
   }
 }

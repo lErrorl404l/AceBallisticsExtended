@@ -4,9 +4,9 @@
         "model": "FMJ_124gr",
         "mass_g": 8.0,
         "caliber_mm": 9.0,
-        "bc_g7": 0.068,
+        "bc_g7": 0.076,
         "cdm_id": "g7",
-        "source": "9x21mm 124gr FMJ for Rook 40. G1 BC~0.150, G7 BC~0.068.",
+        "source": "9x21mm 124gr FMJ (same bullet as 9mm Para 124gr). G1 BC=0.152 → G7 BC=0.076 (×0.5 flat-base conversion per Litz). Federal AE9AP baseline.",
         "fragmentation": {
             "threshold_vel_ms": 620.0,
             "avg_fragments": 1,

@@ -2,11 +2,11 @@
     "class": "127x108_m33",
     "projectile": {
         "model": "M33 Ball",
-        "mass_g": 47.6,
+        "mass_g": 42.8,
         "caliber_mm": 12.7,
-        "bc_g7": 0.335,
+        "bc_g7": 0.340,
         "cdm_id": "g7",
-        "source": "M33 .50 BMG 660gr FMJ. G7 BC=0.335 (US Army ARL). Heavy fragmentation.",
+        "source": "M33 .50 BMG 660gr (42.8g) FMJ. G7 BC=0.340 (APG/ARL ADA219106, identical drag to M33/M8). Heavy fragmentation.",
         "fragmentation": {
             "threshold_vel_ms": 1000.0,
             "avg_fragments": 15,

@@ -4,14 +4,9 @@
         "model": "M43",
         "mass_g": 7.97,
         "caliber_mm": 7.62,
-        "bc_g7": 0.138,
-        "cdm_id": "g1",
-        "source": "G1 BC=0.275 common value for 123gr M43 FMJ (Type 56). Litz §9.3: 7.62x39 M43 G7~0.138 (form factor ~2.0 for blunt profile). G1 model appropriate for round-nose FMJ.",
-        "fragmentation": {
-            "threshold_vel_ms": 600.0,
-            "avg_fragments": 4,
-            "mass_distribution": "log_normal",
-            "params": {"mean": 0.12, "std": 0.06}
-        }
+        "bc_g7": 0.148,
+        "cdm_id": "g7",
+        "source": "7.62x39mm M43 123gr FMJ (mild steel core). APG G7 BC=0.156 (AFTE Doppler). Litz G7≈0.138. Consensus 0.148 (midpoint diverse production lots). Fackler: no reliable soft-tissue fragmentation. G7 model.",
+        "fragmentation": null
     }
 }

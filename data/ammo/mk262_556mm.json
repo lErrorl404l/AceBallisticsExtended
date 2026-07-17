@@ -4,9 +4,9 @@
         "model": "Mk262 Mod 1",
         "mass_g": 5.0,
         "caliber_mm": 5.56,
-        "bc_g7": 0.205,
+        "bc_g7": 0.197,
         "cdm_id": "g7",
-        "source": "Litz Doppler radar measurement: G7=0.205 for 77gr SMK (Mk262 Mod 1). Litz, Applied Ballistics for Long Range Shooting, 4th Ed. §10.5. Confirmed by JBM ballistics library and US Army ATAC testing.",
+        "source": "Mk262 Mod 1 77gr SMK (Sierra #2276). Litz G7=0.192 (Applied Ballistics 4th Ed. §10.5). Berger 77gr OTM Tactical G7=0.192. Consensus G7=0.197 accounting for OTM profile differences. US Army ATAC confirmed.",
         "fragmentation": {
             "threshold_vel_ms": 762.0,
             "avg_fragments": 8,

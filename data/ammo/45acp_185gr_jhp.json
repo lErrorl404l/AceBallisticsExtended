@@ -4,14 +4,9 @@
         "model": "JHP_185gr",
         "mass_g": 12.0,
         "caliber_mm": 11.43,
-        "bc_g7": 0.090,
+        "bc_g7": 0.110,
         "cdm_id": "g1",
-        "source": "Federal HST 185gr .45 ACP JHP. G1 BC≈0.180 per Federal factory data. G7≈G1×0.50 per Litz convention for handgun bullets. Litz, Ballistic Performance of Rifle Bullets, 3rd Ed. §13.5.",
-        "fragmentation": {
-            "threshold_vel_ms": 250.0,
-            "avg_fragments": 3,
-            "mass_distribution": "log_normal",
-            "params": {"mean": 0.05, "std": 0.02}
-        }
+        "source": ".45 ACP 185gr JHP. G1 BC=0.110 (Speer GDHP factory: 0.109-0.112). JHP expansion only — no fragmentation per FBI/IWBA.",
+        "fragmentation": null
     }
 }
