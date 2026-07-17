@@ -34,7 +34,11 @@ Thumbs.db
 # Generated
 node_modules/
 *.log
+__pycache__/
 
 # Private keys (HEMTT signing)
 .hemttprivatekey
 .biprivatekey
+
+# Docker credentials
+docker/.env

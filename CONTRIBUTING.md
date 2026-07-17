@@ -45,6 +45,23 @@ When adding a BC, include the source in the `notes` field:
 
 If measured BC is unavailable, estimate from projectile shape and mass using Litz's empirical correlations or the JBM BC calculator.
 
+### Using `infer_bc.py`
+
+Automates BC lookup/estimation from `ext/tools/infer_bc.py`:
+
+```bash
+# Diagnostic table of all 40+ reference entries
+python ext/tools/infer_bc.py
+# Infer BCs from JSON input, write ammo configs
+python ext/tools/infer_bc.py --input ammo.json --output-dir data/ammo
+# Skip reference DB, always estimate
+python ext/tools/infer_bc.py --input ammo.json --mode formula
+```
+
+Input: `{"ammo": [{"class": "B_556x45_Ball", "model": "M855", "mass_g": 4.0, "caliber_mm": 5.56, "type": "fmj", "cdm_id": "g7"}]}`
+
+Two modes: **infer** (default) matches against a built-in DB of published G7 BC values (Litz, US Army BRL, Hornady, Sierra, Lapua, JBM; 40+ projectiles across 13 calibres). **formula** estimates via form-factor heuristics when no reference exists.
+
 ### Drag Model Selection
 
 | Drag Model | Use Case                                      |
@@ -80,28 +97,14 @@ Reference data: JBM Ballistics (jbmballistics.com), ABRA drag curves, NATO AOP-5
 
 ### Testing Expectations
 
-- All physics functions are pure — no global state, no I/O
-- Interior: convergence with barrel length, sane MV ranges for known cartridges
-- Exterior: energy non-increasing, monotonic position, free-fall consistency
-- Drag: G7 < G1 at all Mach, transonic peak near M=1, smooth interpolation
-- Penetration: AP > ball against same target, ricochet at grazing angles
+- All functions are pure (no global state, no I/O)
+- Interior: convergence with barrel length, sane MV ranges
+- Exterior: energy non-increasing, monotonic position, free-fall
+- Drag: G7 < G1 at all Mach, transonic peak near M=1
+- Penetration: AP > ball, ricochet at grazing angles
 - Fragmentation: no fragmentation below threshold, mass conservation within 10%
 
-## Data Validation
-
-The Python validation harness in `tests/validate_data.py` checks:
-
-- JSON Schema compliance against `data/schemas/*.json`
-- File naming conventions (lowercase, underscores)
-- Field ranges (barrel length 50–2000 mm, chamber pressure 50–700 MPa, etc.)
-- BC value plausibility (0.01–10.0)
-- Cross-references between weapon caliber and ammo caliber
-
-```bash
-python tests/validate_data.py
-```
-
-All 230+ validation checks must pass for a data PR to be accepted.
+The Python validation harness (`tests/validate_data.py`) checks JSON schema compliance, field ranges, naming conventions, and cross-references. All 230+ checks must pass.
 
 ## PR Process
 
@@ -114,19 +117,22 @@ All 230+ validation checks must pass for a data PR to be accepted.
 | SQF functions  | camelCase       | `ABE_fnc_init`, `ABE_fnc_fire`   |
 | Rust types     | PascalCase      | `FireParams`, `BulletState`, `ImpactResult` |
 
-### Requirements
+### PR Workflow Checklist
 
-Every PR must include:
+Before opening a PR:
 
-1. **Tests** — Rust `#[test]` functions for any new code paths. Physics changes require trajectory integration tests.
-2. **No magic numbers** — All empirical constants must reference their source in a comment or the module header.
-3. **Schema validation** — New JSON configs must pass `cargo test` (deserialization) and `python tests/validate_data.py`.
-4. **LSP clean** — No new Rust compiler warnings or clippy lints. Run `cargo clippy` before pushing.
+- [ ] `cargo test` — 121 tests pass
+- [ ] `python tests/validate_data.py` — 230+ checks pass
+- [ ] `cargo clippy` — no new warnings
+- [ ] `cargo doc --no-deps` — clean
+- [ ] New JSON configs have a `notes` field with BC source
+- [ ] All empirical constants cite their source
+- [ ] Branch targets `main`, only relevant changes
 
 ### Review Process
 
-1. Automated checks: `cargo test`, `python tests/validate_data.py`, `cargo clippy`
-2. Manual review: physics model correctness, data source quality, edge case handling
+1. Automated: `cargo test` + `python tests/validate_data.py` + `cargo clippy`
+2. Manual: physics correctness, data quality, edge cases
 3. Merge after one approving review from a maintainer
 
 ### Commit Messages
@@ -154,6 +160,9 @@ cargo test && python tests/validate_data.py
 
 # Lint
 cargo clippy
+
+# Documentation
+cargo doc --no-deps --open
 ```
 
 For SQF changes, use `hemtt dev` which enables file patching for instant iteration without rebuilding PBOs.

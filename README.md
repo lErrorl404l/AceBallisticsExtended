@@ -2,6 +2,10 @@
 
 Realistic interior/exterior/terminal ballistics for ARMA 3 as an ACE3 enhancer or standalone mod. Uses a native Rust extension for all physics kernels with SQF glue and JSON configuration.
 
+## Build Status
+
+HEMTT ✅ • cargo test 121/121 ✅ • Python validation 230/230 ✅ • SQF 20/20 ✅ • clippy clean ✅ • cargo doc clean ✅
+
 ## Quick Start
 
 ### Build Requirements
@@ -65,40 +69,23 @@ JSON Config (data/)            — Community-contributable without a compiler
 
 ### Interior Ballistics (`interior.rs`)
 
-Two-zone gas-expansion pressure curve model. Pressure rises as propellant ignites (peak at approximately 12% of projectile travel), then decays exponentially as the projectile moves down the bore. The work integral `integral P(x) dx` along the barrel length is reduced by friction, heat transfer, and rifling engraving losses. Burn fraction follows an exponential approach to completion with barrel length. Barrel time derived from the average-velocity approximation `t = 2L / MV`.
-
-References: Heiney (Internal Ballistics), UK Defence Standard 13-100, Nennstiel's Interior Ballistics Model.
+Two-zone gas-expansion pressure curve model (Heiney, UK DefStan 13-100, Nennstiel). Pressure peaks at ~12 % of projectile travel, then decays exponentially. Work integral along the bore gives kinetic energy, reduced by friction, heat transfer, and rifling losses. Burn fraction exponential with barrel length; barrel time from `t = 2L / MV`.
 
 ### Exterior Ballistics (`exterior.rs`, `drag.rs`)
 
-Semi-implicit Euler integration of projectile trajectory. Drag deceleration computed as `0.5 * rho * v^2 * Cd / (BC * K)` where `K ≈ 895.3` converts ballistic coefficient from imperial (lb/in^2) to SI (kg/m^2) including cross-sectional area factor.
-
-Drag coefficients drawn from JBM Ballistics / ABRA lookup tables with linear interpolation between control points. Supported standard drag models: G1 (flat-base tangent ogive), G7 (boat-tail secant ogive, preferred for modern rifle bullets), G8 (flat-base secant ogive). The bullet's ballistic coefficient (BC) scales the drag curve.
-
-Coriolis and spin drift (Magnus effect) approximations are available in `exterior.rs` for azimuth computations, following McCoy's Modern Exterior Ballistics and NATO STANAG 4355 (AOP-55).
+Semi-implicit Euler integration. Drag: `0.5 * ρ * v² * Cd / (BC * K)` where `K ≈ 895.3` (lb/in²→kg/m² conversion). G1/G7/G8 drag tables from JBM/ABRA with linear interpolation. Coriolis and spin drift per McCoy and NATO STANAG 4355.
 
 ### Atmosphere Model (`atmosphere.rs`)
 
-ICAO/ISA standard atmosphere. Temperature follows the tropospheric lapse rate of -6.5 K/km to the tropopause at 11 km, then isothermal to 20 km. Pressure computed via the barometric formula `P = P0 * (T/T0)^(-g/(R*L))` in the troposphere and isothermal exponential decay above. Density from the ideal gas law `rho = P/(R*T)`. Wind shear follows the log-wind-profile (von Karman-Prandtl) in the surface layer (0–200 m).
-
-References: ICAO Doc 7488, ISO 2533:1975, MIL-STD-210C.
+ICAO/ISA standard atmosphere (ICAO Doc 7488, ISO 2533, MIL-STD-210C). Tropospheric lapse -6.5 K/km, isothermal above 11 km. Barometric formula + ideal gas law. Log-wind-profile wind shear (von Kármán-Prandtl, surface layer 0–200 m).
 
 ### Penetration Model (`penetration.rs`)
 
-Three-stage terminal ballistics model:
-1. **Ricochet check** — if impact angle exceeds the velocity- and caliber-dependent threshold, the projectile ricochets with energy retention scaled by angle
-2. **Effective thickness** — plate thickness divided by cosine of impact angle, scaled by material factor and caliber-to-thickness ratio
-3. **De Marre penetration** — threshold velocity `V_req = k * D^0.75 * T^0.7 / M^0.5`, with residual velocity `V_res = sqrt(V^2 - V_req^2)` on penetration
-
-Material factors: RHA = 1.0, HHA = 1.25, aluminum ≈ 0.35–0.45, ceramic ≈ 2.5–3.5, kevlar = 0.6. Projectile type modifiers: ball/FMJ = 1.0, AP = 1.3, APDS/APFSDS = 1.8.
-
-References: De Marre ballistics formula, Lanz-Odermatt (long rod penetrators), NIJ 0108.01.
+Three-stage terminal model (De Marre, Lanz-Odermatt, NIJ 0108.01): ricochet check → effective thickness (angle + material scaling) → threshold velocity `V_req = k·D^0.75·T^0.7 / M^0.5`. Material factors: RHA=1.0, HHA=1.25, Al=0.35–0.45, ceramic=2.5–3.5, kevlar=0.6.
 
 ### Fragmentation (`fragmentation.rs`)
 
-Velocity-threshold gated fragmentation with log-normal mass distribution. Fragment count scales with velocity ratio above threshold (762 m/s for M855-style rounds). Small fragments retain less velocity via power-law partitioning `V_frag = V_impact * (M_frag / M_total)^0.33`. Spray pattern uses base cone angle (15 deg FMJ, 8 deg AP, 25 deg soft/hollow point) with golden-angle azimuth for deterministic distribution.
-
-References: Nennstiel (1986), UK Defence Standard 13-100, FBI HPR fragmentation data.
+Velocity-threshold gated (762 m/s M855). Log-normal mass distribution; fragment count scales with velocity ratio. Velocity partition `V_frag = V_impact·(M_frag/M_total)^0.33`. Cone angles: FMJ=15°, AP=8°, HP=25°. Golden-angle azimuth (Nennstiel, UK DefStan 13-100, FBI HPR).
 
 ## Configuration Data
 
@@ -158,30 +145,51 @@ The override is reversible on mission end, restoring ACE3's setting for subseque
 
 ### Public API (C ABI)
 
-All functions are `extern "C"` and thread-safe via `OnceLock` global state:
+All functions are `extern "C"` and thread-safe via `OnceLock` global state.
+Two calling conventions — **string ABI** (SQF `callExtension`) and **struct C ABI** (fast path for native code):
 
-| Function       | Description                                            |
-|----------------|--------------------------------------------------------|
-| `abe_init()`   | Initialize extension with API version and ACE3 flag    |
-| `abe_version()`| Return semver string                                   |
-| `abe_health()` | Return 1 if initialized, 0 otherwise                   |
-| `abe_fire()`   | Compute muzzle velocity from barrel/chamber/ammo params|
-| `abe_step()`   | Integrate projectile state forward by delta time       |
-| `abe_impact()` | Evaluate penetration, ricochet, spall, fragmentation   |
-| `abe_free()`   | Release extension resources                            |
+| Call | Signature |
+|------|-----------|
+| `"init"` | `[api_version, ace_present]` → `"0"` \| `"-1"` |
+| `"version"` | (none) → `"MAJOR.MINOR.PATCH"` |
+| `"health"` | (none) → `"1"` \| `"0"` |
+| `"fire"` | `[barrelLengthMm, chamberPressureMpa, caliberMm, massG, cdmId]` → `[mv, pressure, burn, t_ms]` |
+| `"step"` | `[posX/Y/Z, velX/Y/Z, dt, windX/Y/Z, density, tempC, alt, cdmId, bc, mass, cal]` → `[posX/Y/Z, velX/Y/Z, mach, dt]` |
+| `"impact"` | `[velX/Y/Z, mass, cal, armorThick, material, angle, projType]` → `[pen, resVel, energy, effThick, ric, ricAngle, ricEner, frags, spall]` |
+
+Struct equivalents (`abe_init`, `abe_version`, `abe_health`, `abe_fire`, `abe_step`, `abe_impact`) accept `&FireParams` / `&StepParams` / `&ImpactParams` and are ~6× faster. All struct types are `#[repr(C)]` with `[u8; 32]` arrays for string fields. See [`ext/src/lib.rs`](ext/src/lib.rs).
 
 ## Testing
 
 ```bash
-# Rust unit tests (95 tests covering all physics modules)
-cargo test
-
-# Data validation (230 Python validation checks)
-python tests/validate_data.py
-
-# SQF integration tests (via HEMTT)
-hemtt test
+cargo test                  # 121 unit + integration tests
+cargo test --lib            # 95 unit tests
+cargo test --test sqf_compat_test  # 26 integration tests
+python tests/validate_data.py  # 230 data validation checks
+hemtt test                     # SQF headless runtime (20/20)
 ```
+
+Energy non-increasing, monotonic position, free-fall, and transonic
+consistency are enforced across all physics modules.
+
+## Benchmarks
+
+`cargo bench` (criterion):
+
+| Benchmark | Throughput |
+|-----------|-----------|
+| `fire/struct_abi` | ~50 M calls/s |
+| `step/struct_abi` | ~30 M calls/s |
+| `impact/struct_abi` | ~40 M calls/s |
+| `step/string_abi` | ~5 M calls/s |
+| `pipeline/fire_500step_impact` | ~100k pipelines/s |
+
+Struct ABI ≈ 6× faster than string dispatch. Prefer `abe_*` for per-frame loops.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) — adding data, inferring BCs, physics
+improvements, PR workflow, and commit conventions.
 
 ## License
 
