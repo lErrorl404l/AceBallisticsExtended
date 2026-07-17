@@ -170,6 +170,85 @@ pub struct WeatherState {
     pub non_isa: NonIsaAtmosphere,
 }
 
+// ── Humidity Correction Functions ──────────────────────────────────────────────
+
+/// Compute air density corrected for water vapour (kg/m³).
+///
+/// Moist air is lighter than dry air at the same temperature and pressure
+/// because water molecules (M ≈ 18 g/mol) displace heavier nitrogen and
+/// oxygen molecules (M ≈ 29 g/mol).
+///
+/// Uses the virtual-temperature correction:
+///   ρ = P / (R_dry · T_v)
+///   T_v = T / (1 - 0.379 · e / P)
+///   e  = (RH / 100) · e_sat(T)
+///
+/// where e_sat(T) is the saturation vapour pressure from the Magnus
+/// formula (Alduchov & Eskridge 1996).
+///
+/// # Arguments
+/// * `altitude_m` — Altitude above sea level (m).  Pressure is computed
+///   from the ISA standard atmosphere at this altitude.
+/// * `temp_c` — Ambient temperature (°C).
+/// * `humidity_pct` — Relative humidity (0–100 %).
+///
+/// # Returns
+/// Air density in kg/m³.
+pub fn density_with_humidity(altitude_m: f64, temp_c: f64, humidity_pct: f64) -> f64 {
+    let temp_k = temp_c + 273.15;
+    let pressure_pa = pressure_at_altitude(altitude_m);
+
+    // Saturation vapour pressure → actual vapour pressure
+    let e_sat = saturation_vapor_pressure(temp_c);
+    let e = (humidity_pct / 100.0) * e_sat;
+
+    // Virtual temperature: moist air is lighter
+    let t_v = temp_k / (1.0 - 0.379 * e / pressure_pa.max(1.0));
+
+    pressure_pa / (GAS_CONSTANT_DRY_AIR * t_v)
+}
+
+/// Compute Mach number with humidity correction for speed of sound.
+///
+/// Water vapour increases the speed of sound because it reduces the
+/// average molecular weight of the air mixture, increasing the adiabatic
+/// speed of sound for a given temperature:
+///   c_moist = c_dry · sqrt(1 + 0.51 · q)
+///
+/// where q is the specific humidity (kg water vapour per kg moist air):
+///   q ≈ 0.622 · e / P
+///
+/// The dry speed of sound uses the standard formula:
+///   c_dry = 331.3 · sqrt(1 + T/273.15)
+///
+/// # Arguments
+/// * `velocity_ms` — Projectile velocity (m/s).
+/// * `temp_c` — Ambient temperature (°C).
+/// * `humidity_pct` — Relative humidity (0–100 %).
+///
+/// # Returns
+/// Mach number (dimensionless).
+pub fn mach_with_humidity(velocity_ms: f64, temp_c: f64, humidity_pct: f64) -> f64 {
+    if velocity_ms <= 0.0 {
+        return 0.0;
+    }
+
+    let pressure_pa = pressure_at_altitude(0.0); // sea-level reference
+
+    // Specific humidity
+    let e_sat = saturation_vapor_pressure(temp_c);
+    let e = (humidity_pct / 100.0) * e_sat;
+    let q = 0.622 * e / pressure_pa.max(1.0);
+
+    // Speed of sound in dry air
+    let c_dry = 331.3 * (1.0 + temp_c / 273.15).sqrt();
+
+    // Moisture correction
+    let c_moist = c_dry * (1.0 + 0.51 * q).sqrt();
+
+    velocity_ms / c_moist
+}
+
 // ── Non-ISA Functions ─────────────────────────────────────────────────────────
 
 const MAGNUS_A: f64 = 17.625;
@@ -546,5 +625,117 @@ mod tests {
             (s1 - s2).abs() < 1e-15,
             "wind_shear_power_law deterministic"
         );
+    }
+
+    // ── Humidity Correction Tests ─────────────────────────────────────────
+
+    #[test]
+    fn humidity_reduces_density_direct() {
+        // At sea level, 20 °C: dry vs humid
+        let d_dry = density_with_humidity(0.0, 20.0, 0.0);
+        let d_humid = density_with_humidity(0.0, 20.0, 80.0);
+        assert!(
+            d_humid < d_dry,
+            "humid air should be less dense: dry={:.6}, humid={:.6}",
+            d_dry,
+            d_humid
+        );
+        // Effect should be small but measurable: at 20 °C / 80 % RH,
+        // density reduction is ~1–2 %
+        let reduction_pct = (d_dry - d_humid) / d_dry * 100.0;
+        assert!(
+            reduction_pct > 0.1,
+            "humidity should reduce density by > 0.1 % @ 20 °C / 80 %: {:.3}%",
+            reduction_pct
+        );
+        assert!(
+            reduction_pct < 5.0,
+            "humidity should not reduce density by > 5 % @ 20 °C: {:.3}%",
+            reduction_pct
+        );
+    }
+
+    #[test]
+    fn humidity_increases_speed_of_sound() {
+        let mach_dry = mach_with_humidity(340.0, 20.0, 0.0);
+        let mach_humid = mach_with_humidity(340.0, 20.0, 80.0);
+        // At the same velocity, higher SoS → lower Mach
+        assert!(
+            mach_humid < mach_dry,
+            "humid air increases SoS → lower Mach: dry={:.6}, humid={:.6}",
+            mach_dry,
+            mach_humid
+        );
+        // Speed of sound increase should be small (~0.1–1 %)
+        let sos_dry = 340.0 / mach_dry;
+        let sos_humid = 340.0 / mach_humid;
+        let sos_increase_pct = (sos_humid - sos_dry) / sos_dry * 100.0;
+        assert!(
+            sos_increase_pct > 0.02,
+            "humidity should increase SoS measurably: {:.3}%",
+            sos_increase_pct
+        );
+        assert!(
+            sos_increase_pct < 2.0,
+            "humidity should increase SoS by < 2 %: {:.3}%",
+            sos_increase_pct
+        );
+    }
+
+    #[test]
+    fn high_humidity_effect_is_small_at_low_temp() {
+        // At 5 °C, the saturation vapour pressure is low, so even 90 % RH
+        // has a very small effect on density.
+        let d_dry = density_with_humidity(0.0, 5.0, 0.0);
+        let d_humid = density_with_humidity(0.0, 5.0, 90.0);
+
+        let reduction_pct = (d_dry - d_humid) / d_dry * 100.0;
+        assert!(
+            reduction_pct < 1.0,
+            "at 5 °C / 90 % RH, density reduction should be < 1 %: {:.4}%",
+            reduction_pct
+        );
+    }
+
+    #[test]
+    fn humidity_effect_grows_with_temperature() {
+        // At high temperature, e_sat is much larger → humidity matters more.
+        let d_cool = density_with_humidity(0.0, 10.0, 80.0);
+        let d_hot = density_with_humidity(0.0, 35.0, 80.0);
+
+        // The density difference between dry and humid should be larger
+        // at 35 °C than at 10 °C (holding RH constant).
+        let dry = density_with_humidity(0.0, 10.0, 0.0);
+        let diff_cool = (dry - d_cool) / dry;
+        let diff_hot = (dry - d_hot) / dry;
+
+        assert!(
+            diff_hot > diff_cool,
+            "humidity effect should be larger at higher temperature: cool={:.6}, hot={:.6}",
+            diff_cool,
+            diff_hot
+        );
+    }
+
+    #[test]
+    fn density_with_humidity_deterministic() {
+        let a = density_with_humidity(500.0, 20.0, 50.0);
+        let b = density_with_humidity(500.0, 20.0, 50.0);
+        assert!((a - b).abs() < 1e-15, "density_with_humidity deterministic");
+    }
+
+    #[test]
+    fn mach_with_humidity_deterministic() {
+        let a = mach_with_humidity(800.0, 20.0, 50.0);
+        let b = mach_with_humidity(800.0, 20.0, 50.0);
+        assert!((a - b).abs() < 1e-15, "mach_with_humidity deterministic");
+    }
+
+    #[test]
+    fn mach_is_reasonable() {
+        // At 15 °C, dry, 800 m/s → Mach ~ 2.35
+        let m = mach_with_humidity(800.0, 15.0, 0.0);
+        assert!(m > 2.0, "Mach should be > 2 at 800 m/s: {}", m);
+        assert!(m < 3.0, "Mach should be < 3 at 800 m/s: {}", m);
     }
 }

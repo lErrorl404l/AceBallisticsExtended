@@ -14,6 +14,7 @@ use std::collections::HashMap;
 use std::sync::OnceLock;
 
 use crate::behind_armor_debris::{self, BehindArmorDebrisParams};
+use crate::heat_penetration::{self, HeatJetParams};
 
 static MATERIAL_CACHE: OnceLock<HashMap<&'static str, f64>> = OnceLock::new();
 
@@ -173,7 +174,8 @@ fn projectile_modifier(proj_type: &str) -> f64 {
         "ap" | "armor_piercing" => 1.3, // Hardened core
         "apds" | "apfsds" => 1.8,       // Sub-caliber long rod
         "apcr" => 1.5,                  // Tungsten carbide core
-        "heat" | "he" => 0.3,           // Shaped charge jet
+        "heat" => 1.0,                  // HEAT — handled by heat_penetration module
+        "he" => 0.3,                    // High explosive
         "incendiary" => 0.9,
         "tracer" => 0.95,
         _ => 1.0,
@@ -309,6 +311,47 @@ pub fn evaluate(
         };
     }
 
+    // ── HEAT / shaped charge branch ──────────────────────────────────────────
+    // For shaped-charge warheads we bypass the kinetic De Marre model and
+    // instead use the physics-based shaped-charge jet penetration module.
+    let proj_lower = projectile_type.to_lowercase();
+    if proj_lower == "heat" {
+        let target_density = heat_penetration::target_density_from_material(armor_material);
+        let params = HeatJetParams {
+            jet_tip_velocity_ms: 0.0,    // auto-computed from cone geometry
+            jet_mass_kg: 0.0,            // auto-estimated from liner
+            standoff_m: 3.0 * caliber_m, // typical tactical standoff
+            caliber_m,
+            cone_half_angle_deg: 28.0, // modern HEAT compromise
+            liner_material: "copper".to_string(),
+            liner_density_kgm3: 8960.0,
+            target_armor_material: armor_material.to_string(),
+            target_density_kgm3: target_density,
+            impact_angle_deg,
+            era_thickness_m: 0.0, // no ERA info from current callers
+            armor_thickness_m,
+        };
+
+        let heat_result = heat_penetration::evaluate_heat_jet(&params);
+        let penetrated = heat_result.penetration_depth_mm > (armor_thickness_m * 1000.0);
+        let bad = &heat_result.behind_armor_effects;
+
+        return PenetrationResult {
+            penetrated,
+            residual_velocity: heat_result.residual_jet_velocity_ms,
+            effective_thickness: armor_thickness_m,
+            ricochet: false,
+            ricochet_angle: 0.0,
+            ricochet_energy_fraction: 0.0,
+            fragments: if heat_result.jet_disrupted { 5 } else { 0 },
+            spall_fragments: bad.num_spall_fragments,
+            spall_cone_angle: bad.spall_cone_angle_deg,
+            debris_spray_cone: bad.debris_spray_cone_deg,
+            temp_cavity_diameter: bad.temp_cavity_diameter_mm,
+            temp_cavity_volume: bad.temp_cavity_volume_cc,
+        };
+    }
+
     // ── De Marre penetration ───────────────────────────────────────────────
     // V_required = k * D^0.75 * T^0.7 / M^0.5
     // where k is a material/construction constant (~6100 for RHA)
@@ -384,6 +427,173 @@ pub fn evaluate(
         debris_spray_cone: bad_result.debris_spray_cone_deg,
         temp_cavity_diameter: bad_result.temp_cavity_diameter_mm,
         temp_cavity_volume: bad_result.temp_cavity_volume_cc,
+    }
+}
+
+// ── V₅₀ / V₀ Statistical Penetration ───────────────────────────────────────────
+
+/// Statistical penetration parameters for probabilistic armor assessment.
+///
+/// V₅₀ is the velocity at which a projectile has a 50% probability of
+/// perforating a given armor configuration. V₀ is the velocity at which
+/// the probability drops to a specified threshold (typically ≤5 %).
+/// σ characterizes the statistical spread due to material and manufacturing
+/// variances.
+#[derive(Debug, Clone, Copy)]
+pub struct PenetrationStatistics {
+    /// Velocity at which P(penetration) = 50 % (m/s)
+    pub v50_ms: f64,
+    /// Velocity at which P(penetration) ≈ threshold (m/s)
+    pub v0_ms: f64,
+    /// Standard deviation of the V₅₀ distribution (m/s)
+    pub sigma_ms: f64,
+    /// Confidence level for the reported values (0.0–100.0 %)
+    pub confidence_pct: f64,
+}
+
+/// Compute the probability of penetration at a given impact velocity
+/// using the logistic distribution.
+///
+/// The logistic CDF models the transition zone between the "never
+/// penetrates" and "always penetrates" regimes:
+///
+/// ```text
+/// P(v) = 1 / (1 + exp(−π · (v − V₅₀) / (√3 · σ)))
+/// ```
+///
+/// where `π / √3 ≈ 1.814` scales the logistic distribution to have the
+/// same variance as a normal distribution with standard deviation σ.
+pub fn penetration_probability(velocity_ms: f64, v50_ms: f64, sigma_ms: f64) -> f64 {
+    if sigma_ms <= 0.0 {
+        return if velocity_ms >= v50_ms { 1.0 } else { 0.0 };
+    }
+    let z = std::f64::consts::PI * (velocity_ms - v50_ms) / (sigma_ms * 3.0_f64.sqrt());
+    1.0 / (1.0 + (-z).exp())
+}
+
+/// Estimate the V₅₀ velocity for a given projectile / armor combination.
+///
+/// V₅₀ is typically 2–10 % above the deterministic threshold velocity
+/// (V_req). The multiplier varies by armor material class:
+///
+/// | Material class  | Multiplier  | σ (% of V₅₀) |
+/// |-----------------|------------|---------------|
+/// | RHA steel       | 1.02–1.05  | 1–2 %         |
+/// | HHA steel       | 1.03–1.06  | 1–2 %         |
+/// | Aluminum        | 1.02–1.04  | 1–2 %         |
+/// | Ceramic         | 1.05–1.10  | 3–5 %         |
+/// | Composite       | 1.04–1.08  | 2–4 %         |
+///
+/// # Arguments
+/// * `v_required_ms` — deterministic minimum velocity for penetration (m/s)
+/// * `projectile_type` — projectile type identifier (for modifier)
+/// * `caliber_m` — projectile diameter (m) — used for caliber corrections
+/// * `armor_material` — armor material identifier
+pub fn penetration_v50(
+    v_required_ms: f64,
+    projectile_type: &str,
+    caliber_m: f64,
+    armor_material: &str,
+) -> f64 {
+    if v_required_ms <= 0.0 || v_required_ms.is_infinite() {
+        return f64::INFINITY;
+    }
+
+    // Material-specific V₅₀ multiplier (V₅₀ / V_required)
+    let multiplier = match armor_material.to_lowercase().as_str() {
+        // Steel family — tight spread, small overmatch
+        s if s.contains("rha") || s == "steel_rha" => 1.03,
+        s if s.contains("hha") || s == "steel_hha" => 1.04,
+        s if s.contains("mil_dtl") => 1.04,
+        // Aluminum — similar to RHA
+        s if s.contains("aluminum") || s.contains("al_") => 1.03,
+        // Ceramics — wide spread, higher overmatch needed
+        s if s.contains("ceramic") || s.contains("ad90") || s.contains("ad95") => 1.08,
+        // Composites — moderate spread
+        s if s.contains("composite") || s.contains("kevlar") || s.contains("dyneema") => 1.06,
+        // Transparent armor
+        s if s.contains("glass") || s.contains("acrylic") || s.contains("polycarbonate") => 1.05,
+        // Building materials
+        s if s.contains("concrete") || s.contains("gypsum") || s.contains("drywall") => 1.04,
+        // Default — mild steel / unknown
+        _ => 1.04,
+    };
+
+    // Projectile-type modifier: sub-caliber and APFSDS rounds tend to have
+    // less V₅₀ variability than ball rounds
+    let proj_factor = match projectile_type.to_lowercase().as_str() {
+        "apfsds" | "apds" => 1.0, // No extra multiplier — precise penetrators
+        "ap" | "armor_piercing" | "apcr" => 1.01,
+        "ball" | "fmj" => 1.02, // More variability with ball ammunition
+        _ => 1.01,
+    };
+
+    // Small caliber effect: sub-10 mm projectiles may need slightly higher
+    // overmatch against heterogeneous armor
+    let cal_factor = if caliber_m > 0.0 && caliber_m < 0.010 {
+        1.02
+    } else {
+        1.0
+    };
+
+    v_required_ms * multiplier * proj_factor * cal_factor
+}
+
+/// Estimate the V₀ velocity (penetration threshold).
+///
+/// V₀ is defined as the velocity at which the penetration probability
+/// drops to `threshold_p` (typically 0.05 for the 5 % threshold).
+///
+/// For the logistic distribution the inverse CDF is:
+///
+/// ```text
+/// V₀ = V₅₀ + (√3 · σ / π) · ln(Pₜ / (1 − Pₜ))
+/// ```
+pub fn penetration_v0(v50_ms: f64, sigma_ms: f64, threshold_p: f64) -> f64 {
+    if sigma_ms <= 0.0 {
+        return v50_ms;
+    }
+    // Clamp threshold to valid range for the log-odds transform
+    let p = threshold_p.clamp(1e-12, 0.5 - 1e-12);
+    let ln_odds = (p / (1.0 - p)).ln();
+    v50_ms + (sigma_ms * 3.0_f64.sqrt() / std::f64::consts::PI) * ln_odds
+}
+
+/// Compute sigma (standard deviation) for a given armor material and V₅₀.
+///
+/// Provides typical σ as a percentage of V₅₀ based on armor material class.
+pub fn penetration_sigma(v50_ms: f64, armor_material: &str) -> f64 {
+    let frac = match armor_material.to_lowercase().as_str() {
+        s if s.contains("ceramic") || s.contains("ad90") || s.contains("ad95") => 0.04,
+        s if s.contains("composite") || s.contains("kevlar") || s.contains("dyneema") => 0.03,
+        s if s.contains("glass") || s.contains("acrylic") => 0.03,
+        s if s.contains("concrete") => 0.025,
+        s if s.contains("rha") || s == "steel_rha" => 0.015,
+        s if s.contains("hha") || s == "steel_hha" => 0.015,
+        s if s.contains("aluminum") || s.contains("al_") => 0.015,
+        _ => 0.02,
+    };
+    v50_ms * frac
+}
+
+/// Build a `PenetrationStatistics` struct from the input parameters.
+///
+/// This is a convenience function that computes V₅₀, V₀ (at the default
+/// 5 % threshold), σ, and returns them together.
+pub fn penetration_statistics(
+    v_required_ms: f64,
+    projectile_type: &str,
+    caliber_m: f64,
+    armor_material: &str,
+    threshold_p: f64,
+) -> PenetrationStatistics {
+    let v50 = penetration_v50(v_required_ms, projectile_type, caliber_m, armor_material);
+    let sigma = penetration_sigma(v50, armor_material);
+    PenetrationStatistics {
+        v50_ms: v50,
+        v0_ms: penetration_v0(v50, sigma, threshold_p),
+        sigma_ms: sigma,
+        confidence_pct: 95.0,
     }
 }
 
@@ -560,6 +770,56 @@ mod tests {
         assert!(
             (ratio - 4.0).abs() < 0.001,
             "P/L at 60° should be ~4× 0° for n=2: ratio={ratio}"
+        );
+    }
+
+    // ── V₅₀ / V₀ ─────────────────────────────────────────────────────────────
+
+    #[test]
+    fn v0_is_less_than_v50() {
+        // V₀ (5% threshold) must be strictly less than V₅₀ for any σ > 0
+        let v0 = super::penetration_v0(870.0, 15.0, 0.05);
+        assert!(
+            v0 < 870.0,
+            "V₀ should be less than V₅₀: v0={v0:.1}, v50=870.0"
+        );
+        assert!(
+            v0 > 800.0 && v0 < 870.0,
+            "V₀ should be between 800-870 m/s for σ=15: v0={v0:.1}"
+        );
+    }
+
+    #[test]
+    fn penetration_probability_at_v50_is_half() {
+        // At v = V₅₀, P = 0.5 exactly
+        let p = super::penetration_probability(870.0, 870.0, 15.0);
+        assert!(
+            (p - 0.5).abs() < 1e-12,
+            "P(V₅₀) should be exactly 0.5: p={p}"
+        );
+    }
+
+    #[test]
+    fn penetration_probability_far_above_v50_approaches_one() {
+        // At v >> V₅₀, P → 1
+        let p = super::penetration_probability(870.0 + 10.0 * 15.0, 870.0, 15.0);
+        assert!(p > 0.9999, "P(v >> V₅₀) should approach 1: p={p}");
+    }
+
+    #[test]
+    fn penetration_probability_far_below_v50_approaches_zero() {
+        // At v << V₅₀, P → 0
+        let p = super::penetration_probability(870.0 - 10.0 * 15.0, 870.0, 15.0);
+        assert!(p < 0.0001, "P(v << V₅₀) should approach 0: p={p}");
+    }
+
+    #[test]
+    fn penetration_v50_ceramic_higher_than_rha() {
+        let rha_v50 = super::penetration_v50(800.0, "ball", 0.00762, "steel_rha");
+        let ceramic_v50 = super::penetration_v50(800.0, "ball", 0.00762, "ceramic_b4c");
+        assert!(
+            ceramic_v50 > rha_v50,
+            "Ceramic V₅₀ should be higher than RHA V₅₀: ceramic={ceramic_v50:.1}, rha={rha_v50:.1}"
         );
     }
 }
