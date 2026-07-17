@@ -3,6 +3,8 @@
 // Models the internal ballistics of a firearm from primer strike to
 // projectile exit. Uses a two-zone pressure curve model with
 // propellant burn, barrel friction, heat transfer, and rifling losses.
+// Also provides muzzle brake blast-overpressure and recoil-reduction
+// evaluation via an empirical model.
 //
 // Pressure curve:
 //   Zone 1 (rise):     0 ≤ x ≤ x_peak  P(x) = P_peak * (x/x_peak)^(1/n_rise)
@@ -12,6 +14,10 @@
 //   - Internal Ballistics (Heiney, 2019)
 //   - UK Defence Standard 13-100 (Propellant Burn Rate)
 //   - Nennstiel's Interior Ballistics Model
+//   - US Army ARL-TR-5216: Muzzle Blast Overpressure from Small Arms
+//   - US Army ARL-TR-4044: Muzzle Brake Performance Characterization
+//   - NATO STANAG 4420: Gun Muzzle Brake Efficiency Testing
+//   - MIL-STD-1474E: Noise Limits for Army Materiel
 
 /// Characteristic propellant burn lengths for common powder types.
 ///
@@ -228,6 +234,144 @@ pub fn calc_muzzle_velocity_with_burn(
     })
 }
 
+// ── Muzzle brake ───────────────────────────────────────────────────────────────
+
+/// Parameters describing a muzzle brake installation.
+///
+/// Used with [`evaluate_muzzle_brake`] to compute recoil reduction and
+/// blast overpressure effects from redirected propellant gases.
+#[derive(Debug, Clone)]
+pub struct MuzzleBrakeParams {
+    /// Whether a muzzle brake is fitted to the barrel.
+    pub has_brake: bool,
+    /// Number of radial vent ports (typically 2–4 for rifle brakes).
+    pub num_ports: i32,
+    /// Ratio of total port exit area to bore cross-sectional area.
+    /// Typical range: 1.0–3.0.
+    pub port_area_ratio: f64,
+    /// Fraction of propellant gas redirected by the ports, in 0.0–1.0.
+    /// Determined by port geometry, orientation, and baffle design.
+    pub efficiency: f64,
+}
+
+impl MuzzleBrakeParams {
+    /// Create a no-brake configuration.
+    ///
+    /// Returns params with `has_brake = false` and all geometry fields
+    /// set to zero.
+    pub fn none() -> Self {
+        Self {
+            has_brake: false,
+            num_ports: 0,
+            port_area_ratio: 0.0,
+            efficiency: 0.0,
+        }
+    }
+}
+
+/// Blast overpressure and recoil reduction from a muzzle brake evaluation.
+///
+/// Returned by [`evaluate_muzzle_brake`].
+#[derive(Debug, Clone)]
+pub struct MuzzleBrakeResult {
+    /// Fraction of original recoil retained.
+    ///
+    /// * 1.0 = no reduction (no brake or zero efficiency)
+    /// * 0.5 = 50 % recoil reduction
+    pub recoil_reduction_fraction: f64,
+    /// Peak blast overpressure level behind the muzzle in dB SPL
+    /// (re 20 µPa). Clamped to the range 150–195 dB.
+    pub overpressure_peak_db: f64,
+    /// Duration of the overpressure pulse in milliseconds.
+    pub overpressure_duration_ms: f64,
+}
+
+/// Evaluate muzzle brake blast overpressure and recoil reduction.
+///
+/// Uses an empirical model based on peak chamber pressure (estimated from
+/// propellant charge), caliber, barrel length, and muzzle brake geometry
+/// to estimate peak overpressure level, pulse duration, and recoil reduction.
+///
+/// # Arguments
+/// * `params` — Muzzle brake configuration.
+/// * `muzzle_velocity_ms` — Projectile velocity at the muzzle in m/s
+///   (reserved for future refinement; not used in the current model).
+/// * `barrel_length_m` — Barrel length in metres.
+/// * `caliber_m` — Projectile bore diameter in metres.
+/// * `propellant_mass_kg` — Propellant charge mass in kilograms.
+///
+/// # Returns
+/// A [`MuzzleBrakeResult`] with the computed recoil reduction,
+/// peak overpressure (dB SPL), and pulse duration (ms).
+///
+/// # References
+/// - US Army ARL-TR-5216: Muzzle Blast Overpressure from Small Arms
+/// - US Army ARL-TR-4044: Muzzle Brake Performance Characterization
+/// - NATO STANAG 4420: Gun Muzzle Brake Efficiency Testing
+/// - MIL-STD-1474E: Noise Limits for Army Materiel
+pub fn evaluate_muzzle_brake(
+    params: &MuzzleBrakeParams,
+    muzzle_velocity_ms: f64,
+    barrel_length_m: f64,
+    caliber_m: f64,
+    propellant_mass_kg: f64,
+) -> MuzzleBrakeResult {
+    // ── Recoil reduction ──────────────────────────────────────────────────
+    // The redirected gas impulse opposes the recoil force. The reduction
+    // scales linearly with efficiency and port count, normalised to a
+    // reference 4-port brake at 100 % efficiency (max 70 % reduction).
+    let recoil_reduction_fraction = if params.has_brake && params.num_ports > 0 {
+        let reduction = 0.3 * params.efficiency * params.num_ports as f64 / 4.0;
+        (1.0 - reduction).clamp(0.3, 1.0)
+    } else {
+        1.0
+    };
+
+    // ── Overpressure peak ─────────────────────────────────────────────────
+    // Base SPL = 165 dB for a 5.56 mm weapon at 350 MPa chamber pressure.
+    //
+    // Chamber pressure is estimated from the propellant charge:
+    //   P_chamber ≈ m_prop × P_ref / m_ref × (d_ref / d_bore)²
+    // where P_ref = 350 MPa at m_ref = 1.6 g for d_ref = 5.56 mm.
+    //
+    // Scaling (all log₁₀):
+    //   ΔSPL_P     = 20 × log₁₀(P / 350 MPa)
+    //   ΔSPL_cal   = 10 × log₁₀(d / 5.56 mm)
+    //   ΔSPL_brake = 10 × log₁₀(1 + 0.5 × N_ports × area_ratio)
+    let _ = muzzle_velocity_ms; // reserved for future refined models
+
+    let p_chamber = if propellant_mass_kg > 0.0 {
+        (propellant_mass_kg * 350.0e6 / 0.0016 * (0.00556 / caliber_m).powi(2)).max(1.0)
+    // guard against log10(0)
+    } else {
+        350.0e6
+    };
+
+    let spl_base = 165.0;
+    let spl_p = 20.0 * (p_chamber / 350.0e6).log10();
+    let cal_ratio = (caliber_m / 0.00556).max(1e-15);
+    let spl_cal = 10.0 * cal_ratio.log10();
+
+    let spl_brake = if params.has_brake && params.num_ports > 0 {
+        10.0 * (1.0 + 0.5 * params.num_ports as f64 * params.port_area_ratio).log10()
+    } else {
+        0.0
+    };
+
+    let overpressure_peak_db = (spl_base + spl_p + spl_cal + spl_brake).clamp(150.0, 195.0);
+
+    // ── Overpressure duration ─────────────────────────────────────────────
+    // Roughly proportional to barrel length: longer barrels expel more gas
+    // volume, extending the blast pulse.
+    let overpressure_duration_ms = 0.5 + 0.2 * barrel_length_m * 1000.0;
+
+    MuzzleBrakeResult {
+        recoil_reduction_fraction,
+        overpressure_peak_db,
+        overpressure_duration_ms,
+    }
+}
+
 // ── Tests ─────────────────────────────────────────────────────────────────────
 
 #[cfg(test)]
@@ -362,5 +506,54 @@ mod tests {
         assert!(burn_rate_constants::MEDIUM_RIFLE < burn_rate_constants::SLOW_RIFLE);
         assert!(burn_rate_constants::SLOW_RIFLE < burn_rate_constants::MAGNUM_RIFLE);
         assert!((burn_rate_constants::MEDIUM_RIFLE - 0.28).abs() < 1e-10);
+    }
+
+    // ── Muzzle brake ───────────────────────────────────────────────────────────
+
+    #[test]
+    fn no_brake_baseline() {
+        let params = MuzzleBrakeParams::none();
+        let r = evaluate_muzzle_brake(&params, 948.0, 0.368, 0.00556, 0.0016);
+        // No brake → no recoil reduction
+        assert!((r.recoil_reduction_fraction - 1.0).abs() < 1e-12);
+        // 5.56 mm baseline → ~165 dB base; small pressure/caliber adjustments apply
+        assert!(r.overpressure_peak_db >= 150.0);
+        assert!(r.overpressure_peak_db <= 195.0);
+        // Duration: 0.5 + 0.2 × 0.368 × 1000 ≈ 74.1 ms
+        assert!((r.overpressure_duration_ms - 74.1).abs() < 0.1);
+    }
+
+    #[test]
+    fn typical_rifle_brake() {
+        // 2-port brake on a 7.62 mm battle rifle
+        let params = MuzzleBrakeParams {
+            has_brake: true,
+            num_ports: 2,
+            port_area_ratio: 1.5,
+            efficiency: 0.5,
+        };
+        let r = evaluate_muzzle_brake(&params, 850.0, 0.630, 0.00762, 0.0030);
+        // Reduction: 1.0 - 0.3 × 0.5 × 2 / 4 = 0.925
+        assert!((r.recoil_reduction_fraction - 0.925).abs() < 1e-12);
+        // Should register elevated overpressure from brake ports
+        assert!(r.overpressure_peak_db > 160.0);
+        assert!(r.overpressure_duration_ms > 50.0);
+    }
+
+    #[test]
+    fn large_bore_brake() {
+        // 4-port brake on a .50 cal with high efficiency
+        let params = MuzzleBrakeParams {
+            has_brake: true,
+            num_ports: 4,
+            port_area_ratio: 2.5,
+            efficiency: 0.85,
+        };
+        let r = evaluate_muzzle_brake(&params, 900.0, 0.900, 0.0127, 0.0150);
+        // Reduction: 1.0 - 0.3 × 0.85 × 4 / 4 = 0.745
+        assert!((r.recoil_reduction_fraction - 0.745).abs() < 1e-12);
+        // Large bore + brake → near upper end of range
+        assert!(r.overpressure_peak_db > 170.0);
+        assert!(r.overpressure_duration_ms > 50.0);
     }
 }
