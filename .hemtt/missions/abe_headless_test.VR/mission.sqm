@@ -1,0 +1,81 @@
+version=13;
+class Mission
+{
+    addOns[] = {"A3_Data_F", "A3_Characters_F", "A3_Weapons_F", "CBA_A3"};
+    addOnsAuto[] = {"A3_Data_F", "A3_Characters_F", "A3_Weapons_F"};
+    randomSeed = 12345678;
+    class Intel
+    {
+        briefingName = "ABE Headless Test";
+        briefingDescription = "Automated headless test for the ABE ballistics extension";
+        startTime = "12:00";
+        startDate = "01/01/2035";
+        year = 2035;
+        month = 1;
+        day = 1;
+        hour = 12;
+        minute = 0;
+        season = 0;
+        weather = 0;
+        windForce = 0;
+        windDirection = 0;
+        waves = 0;
+        forecastWeather = 0;
+        forecastWindForce = 0;
+        forecastWindDirection = 0;
+        forecastWaves = 0;
+        fog = 0;
+        rain = 0;
+        overcast = 0;
+        humidity = 30;
+        minHumidity = 10;
+        maxHumidity = 90;
+        gusts = 0;
+        lightnings = 0;
+        missionType = 0;
+        playerCount = 1;
+        class CharacterIDs
+        {
+            items = 0;
+        };
+    };
+    class Groups
+    {
+        items = 1;
+        class Item0
+        {
+            side = "WEST";
+            class Vehicles
+            {
+                items = 1;
+                class Item0
+                {
+                    position[] = {0, 0, 0};
+                    id = 0;
+                    side = "WEST";
+                    vehicle = "B_Soldier_F";
+                    player = "PLAYER COMMANDER";
+                    leader = 1;
+                    skill = 0.60000002;
+                    init = "_this setBehaviour ""CARELESS""; _this disableAI ""MOVE""; _this disableAI ""TARGET""; _this disableAI ""AUTOTARGET"";";
+                    class Inventory
+                    {
+                        class uniform
+                        {
+                            typeName = "U_B_CombatUniform_mcam";
+                            isBackpack = 0;
+                            class magazines
+                            {
+                                items = 0;
+                            };
+                        };
+                    };
+                };
+            };
+        };
+    };
+};
+class Markers
+{
+    items = 0;
+};

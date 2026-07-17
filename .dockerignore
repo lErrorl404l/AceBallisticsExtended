@@ -1,0 +1,35 @@
+.git/
+.gitignore
+.gitattributes
+.gitmodules
+
+# Rust build artifacts
+ext/target/
+
+# HEMTT build output
+HEMTTBuild/
+releases/
+keys/
+*.pbo
+*.hemttout/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node/etc
+node_modules/
+*.log
+
+# Docker
+docker/.env
+docker/.env.example
+
+# Docs
+CONTRIBUTING.md

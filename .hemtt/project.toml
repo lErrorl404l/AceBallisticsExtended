@@ -5,6 +5,7 @@ mainprefix = "z"
 major = 0
 minor = 1
 patch = 0
+git_hash = 0
 
 [files]
 include = [
@@ -34,4 +35,31 @@ parameters = [
     "-showScriptErrors",
     "-debug",
     "-filePatching",
+]
+
+[hemtt.launch.headless]
+workshop = [
+    "450814997", # CBA_A3
+]
+parameters = [
+    "-skipIntro",
+    "-noSplash",
+    "-showScriptErrors",
+    "-world=empty",
+    "-name=abe_test",
+    "-config=.hemtt/server.cfg",
+]
+executable = "arma3server_x64"
+
+[hemtt.launch.test]
+extends = "default"
+workshop = [
+    "450814997", # CBA_A3
+]
+parameters = [
+    "-skipIntro",
+    "-noSplash",
+    "-showScriptErrors",
+    "-name=abe_test",
+    "-init=playMission 'abe_headless_test.VR'",
 ]
