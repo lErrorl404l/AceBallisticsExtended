@@ -1,0 +1,214 @@
+{
+  "standard": "STANAG 4569",
+  "edition": "5.0",
+  "title": "Protection Levels for Occupants of Armoured Vehicles",
+  "date": "2021",
+  "test_cases": [
+    {
+      "id": "level_1_556_ss109",
+      "level": 1,
+      "threat": "5.56x45mm SS109 (M855)",
+      "velocity_ms": 900.0,
+      "velocity_tolerance_ms": 30.0,
+      "projectile_mass_g": 4.0,
+      "caliber_mm": 5.56,
+      "core_material": "steel_lead",
+      "expected_protection_mm_rha": 3.0,
+      "protection_tolerance_mm": 1.0,
+      "armor_config": {
+        "material": "steel_rha",
+        "obliquity_deg": 0
+      },
+      "expected_result": "no_perforation",
+      "hit_criteria": "no full perforation of witness plate",
+      "notes": "Level 1: 5.56x45 SS109 at 900±30 m/s, P(t) ≥ 50% at ~3mm RHA. This level defeats typical pistol and rifle threats from small arms."
+    },
+    {
+      "id": "level_1_556_nato_m193",
+      "level": 1,
+      "threat": "5.56x45mm M193",
+      "velocity_ms": 997.0,
+      "velocity_tolerance_ms": 30.0,
+      "projectile_mass_g": 3.56,
+      "caliber_mm": 5.56,
+      "core_material": "lead_antimony",
+      "expected_protection_mm_rha": 3.0,
+      "protection_tolerance_mm": 1.0,
+      "armor_config": {
+        "material": "steel_rha",
+        "obliquity_deg": 0
+      },
+      "expected_result": "no_perforation",
+      "notes": "Level 1 alternate: 5.56x45 M193 at 997±30 m/s."
+    },
+    {
+      "id": "level_2_762_api_bz",
+      "level": 2,
+      "threat": "7.62x39mm API BZ",
+      "velocity_ms": 695.0,
+      "velocity_tolerance_ms": 20.0,
+      "projectile_mass_g": 7.7,
+      "caliber_mm": 7.62,
+      "core_material": "hardened_steel",
+      "expected_protection_mm_rha": 8.0,
+      "protection_tolerance_mm": 2.0,
+      "armor_config": {
+        "material": "steel_rha",
+        "obliquity_deg": 0
+      },
+      "expected_result": "no_perforation",
+      "notes": "Level 2: 7.62x39 API BZ at 695±20 m/s. P(t) ≥ 50% at ~8mm RHA. Defeats intermediate-power API threats."
+    },
+    {
+      "id": "level_2_556_ss109_30deg",
+      "level": 2,
+      "threat": "5.56x45mm SS109 (M855)",
+      "velocity_ms": 900.0,
+      "velocity_tolerance_ms": 30.0,
+      "projectile_mass_g": 4.0,
+      "caliber_mm": 5.56,
+      "core_material": "steel_lead",
+      "expected_protection_mm_rha": 6.0,
+      "protection_tolerance_mm": 2.0,
+      "armor_config": {
+        "material": "steel_rha",
+        "obliquity_deg": 30
+      },
+      "expected_result": "no_perforation",
+      "notes": "Level 2 alternate: 5.56x45 SS109 at 30° obliquity."
+    },
+    {
+      "id": "level_3_762_nato_ball",
+      "level": 3,
+      "threat": "7.62x51mm NATO ball (M80)",
+      "velocity_ms": 830.0,
+      "velocity_tolerance_ms": 20.0,
+      "projectile_mass_g": 9.5,
+      "caliber_mm": 7.62,
+      "core_material": "lead_antimony",
+      "expected_protection_mm_rha": 12.0,
+      "protection_tolerance_mm": 2.0,
+      "armor_config": {
+        "material": "steel_rha",
+        "obliquity_deg": 0
+      },
+      "expected_result": "no_perforation",
+      "hit_criteria": "no full perforation, witness plate not struck by spall",
+      "notes": "Level 3: 7.62x51mm M80 ball at 830±20 m/s. P(t) ≥ 50% at ~12mm RHA. This level defines the standard for full-power NATO ball ammo."
+    },
+    {
+      "id": "level_3_556_ss109_30deg",
+      "level": 3,
+      "threat": "5.56x45mm SS109 (M855)",
+      "velocity_ms": 900.0,
+      "velocity_tolerance_ms": 30.0,
+      "projectile_mass_g": 4.0,
+      "caliber_mm": 5.56,
+      "core_material": "steel_lead",
+      "expected_protection_mm_rha": 5.0,
+      "protection_tolerance_mm": 1.0,
+      "armor_config": {
+        "material": "steel_rha",
+        "obliquity_deg": 45
+      },
+      "expected_result": "no_perforation",
+      "notes": "Level 3 alternate: 5.56x45 SS109 at 45° obliquity defeats spall."
+    },
+    {
+      "id": "level_3_blast_frag",
+      "level": 3,
+      "threat": "155mm HE fragment (0.5g to 20g FSP)",
+      "velocity_ms": null,
+      "velocity_tolerance_ms": null,
+      "projectile_mass_g": null,
+      "caliber_mm": null,
+      "core_material": "fsp",
+      "expected_protection_mm_rha": null,
+      "protection_tolerance_mm": null,
+      "armor_config": {
+        "material": "steel_rha",
+        "obliquity_deg": 0
+      },
+      "expected_result": "no_perforation",
+      "notes": "Level 3 also requires protection against blast overpressure and fragment simulation projectiles (FSP) from 155mm HE airburst. Minimum V50 for 1.1g FSP is 600 m/s."
+    },
+    {
+      "id": "level_4_762_nato_ap",
+      "level": 4,
+      "threat": "7.62x51mm NATO AP (M61)",
+      "velocity_ms": 830.0,
+      "velocity_tolerance_ms": 20.0,
+      "projectile_mass_g": 9.9,
+      "caliber_mm": 7.62,
+      "core_material": "hardened_steel",
+      "expected_protection_mm_rha": 20.0,
+      "protection_tolerance_mm": 3.0,
+      "armor_config": {
+        "material": "steel_rha",
+        "obliquity_deg": 0
+      },
+      "expected_result": "no_perforation",
+      "hit_criteria": "no full perforation of witness plate",
+      "notes": "Level 4: 7.62x51mm AP M61 at 830±20 m/s. P(t) ≥ 50% at ~20mm RHA. Defeats standard AP rounds from full-power battle rifles."
+    },
+    {
+      "id": "level_4_145_api",
+      "level": 4,
+      "threat": "14.5x114mm API B32",
+      "velocity_ms": 911.0,
+      "velocity_tolerance_ms": 25.0,
+      "projectile_mass_g": 22.0,
+      "caliber_mm": 14.5,
+      "core_material": "hardened_steel",
+      "expected_protection_mm_rha": 20.0,
+      "protection_tolerance_mm": 3.0,
+      "armor_config": {
+        "material": "steel_rha",
+        "obliquity_deg": 0
+      },
+      "expected_result": "no_perforation",
+      "notes": "Level 4 alternate: 14.5x114mm API B32 at 911±25 m/s. This is a secondary Level 4 criterion for heavy machine gun threats."
+    },
+    {
+      "id": "level_4_30cal_ap_m2",
+      "level": 4,
+      "threat": ".30-06 M2 AP",
+      "velocity_ms": 878.0,
+      "velocity_tolerance_ms": 20.0,
+      "projectile_mass_g": 10.4,
+      "caliber_mm": 7.62,
+      "core_material": "hardened_steel",
+      "expected_protection_mm_rha": 21.0,
+      "protection_tolerance_mm": 3.0,
+      "armor_config": {
+        "material": "steel_rha",
+        "obliquity_deg": 0
+      },
+      "expected_result": "no_perforation",
+      "notes": "Level 4 alternate: .30-06 M2 AP at 878±20 m/s. Slightly more energetic than 7.62mm AP."
+    },
+    {
+      "id": "level_4_762_nato_ap_30deg",
+      "level": 4,
+      "threat": "7.62x51mm NATO AP (M61)",
+      "velocity_ms": 830.0,
+      "velocity_tolerance_ms": 20.0,
+      "projectile_mass_g": 9.9,
+      "caliber_mm": 7.62,
+      "core_material": "hardened_steel",
+      "expected_protection_mm_rha": 16.0,
+      "protection_tolerance_mm": 2.0,
+      "armor_config": {
+        "material": "steel_rha",
+        "obliquity_deg": 30
+      },
+      "expected_result": "no_perforation",
+      "notes": "Level 4: 7.62x51mm AP at 30° obliquity."
+    }
+  ],
+  "references": [
+    "STANAG 4569 Edition 5 (2021) - Protection Levels for Occupants of Armoured Vehicles",
+    "NIJ 0108.01 - Ballistic Resistant Protective Materials",
+    "ARL-TR-4632 - V50 Ballistic Test Data Analysis"
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "standard": "Common Ammunition Calibration",
+  "version": "1.0.0",
+  "title": "Common Small Arms Ammunition Reference Data for Ballistic Calibration",
+  "notes": "Compiled from ARL-TR-4632, TM 5-855-1, NATO D14, and manufacturer specifications. These reference penetration curves serve as calibration points for ballistic solvers.",
+  "test_cases": [
+    {
+      "id": "ammo_556_m193",
+      "name": "5.56×45mm M193 Ball",
+      "caliber_mm": 5.56,
+      "case_length_mm": 45.0,
+      "projectile_mass_g": 3.56,
+      "projectile_mass_gr": 55.0,
+      "muzzle_velocity_ms": 991.0,
+      "muzzle_velocity_fps": 3250.0,
+      "muzzle_energy_j": 1748.0,
+      "bc_g1": 0.254,
+      "bc_g7": 0.130,
+      "core_material": "lead_antimony",
+      "jacket_material": "gilding_metal",
+      "penetration_curves": [
+        {
+          "target_material": "steel_rha",
+          "obliquity_deg": 0,
+          "data_points": [
+            {"thickness_mm": 1.6, "v50_ms": 150},
+            {"thickness_mm": 3.18, "v50_ms": 280},
+            {"thickness_mm": 6.35, "v50_ms": 520},
+            {"thickness_mm": 9.53, "v50_ms": 760}
+          ]
+        },
+        {
+          "target_material": "steel_rha",
+          "obliquity_deg": 30,
+          "data_points": [
+            {"thickness_mm": 1.6, "v50_ms": 180},
+            {"thickness_mm": 3.18, "v50_ms": 320},
+            {"thickness_mm": 6.35, "v50_ms": 600}
+          ]
+        }
+      ],
+      "reference": "ARL-TR-4632; BRL MR 2584"
+    },
+    {
+      "id": "ammo_556_m855",
+      "name": "5.56×45mm M855 (SS109) Ball",
+      "caliber_mm": 5.56,
+      "case_length_mm": 45.0,
+      "projectile_mass_g": 4.0,
+      "projectile_mass_gr": 62.0,
+      "muzzle_velocity_ms": 915.0,
+      "muzzle_velocity_fps": 3000.0,
+      "muzzle_energy_j": 1675.0,
+      "bc_g1": 0.307,
+      "bc_g7": 0.157,
+      "core_material": "steel_lead",
+      "jacket_material": "gilding_metal",
+      "penetration_curves": [
+        {
+          "target_material": "steel_rha",
+          "obliquity_deg": 0,
+          "data_points": [
+            {"thickness_mm": 1.6, "v50_ms": 160},
+            {"thickness_mm": 3.18, "v50_ms": 300},
+            {"thickness_mm": 6.35, "v50_ms": 560},
+            {"thickness_mm": 10.0, "v50_ms": 910}
+          ]
+        },
+        {
+          "target_material": "steel_rha",
+          "obliquity_deg": 30,
+          "data_points": [
+            {"thickness_mm": 1.6, "v50_ms": 190},
+            {"thickness_mm": 3.18, "v50_ms": 350},
+            {"thickness_mm": 6.35, "v50_ms": 650}
+          ]
+        }
+      ],
+      "reference": "ARL-TR-4632; ARL-CR-570"
+    },
+    {
+      "id": "ammo_762_m80",
+      "name": "7.62×51mm M80 Ball",
+      "caliber_mm": 7.62,
+      "case_length_mm": 51.0,
+      "projectile_mass_g": 9.5,
+      "projectile_mass_gr": 147.0,
+      "muzzle_velocity_ms": 838.0,
+      "muzzle_velocity_fps": 2750.0,
+      "muzzle_energy_j": 3336.0,
+      "bc_g1": 0.395,
+      "bc_g7": 0.200,
+      "core_material": "lead_antimony",
+      "jacket_material": "gilding_metal",
+      "penetration_curves": [
+        {
+          "target_material": "steel_rha",
+          "obliquity_deg": 0,
+          "data_points": [
+            {"thickness_mm": 3.18, "v50_ms": 280},
+            {"thickness_mm": 6.35, "v50_ms": 500},
+            {"thickness_mm": 10.0, "v50_ms": 710},
+            {"thickness_mm": 12.7, "v50_ms": 830},
+            {"thickness_mm": 15.0, "v50_ms": 920},
+            {"thickness_mm": 20.0, "v50_ms": 1080}
+          ]
+        },
+        {
+          "target_material": "steel_rha",
+          "obliquity_deg": 30,
+          "data_points": [
+            {"thickness_mm": 6.35, "v50_ms": 580},
+            {"thickness_mm": 10.0, "v50_ms": 820},
+            {"thickness_mm": 12.7, "v50_ms": 950}
+          ]
+        }
+      ],
+      "reference": "ARL-TR-4632; BRL MR 2404"
+    },
+    {
+      "id": "ammo_762_m61_ap",
+      "name": "7.62×51mm M61 AP",
+      "caliber_mm": 7.62,
+      "case_length_mm": 51.0,
+      "projectile_mass_g": 9.9,
+      "projectile_mass_gr": 153.0,
+      "muzzle_velocity_ms": 838.0,
+      "muzzle_velocity_fps": 2750.0,
+      "muzzle_energy_j": 3477.0,
+      "bc_g1": 0.359,
+      "bc_g7": 0.182,
+      "core_material": "hardened_steel",
+      "jacket_material": "gilding_metal",
+      "penetration_curves": [
+        {
+          "target_material": "steel_rha",
+          "obliquity_deg": 0,
+          "data_points": [
+            {"thickness_mm": 6.35, "v50_ms": 310},
+            {"thickness_mm": 12.7, "v50_ms": 490},
+            {"thickness_mm": 20.0, "v50_ms": 760},
+            {"thickness_mm": 25.4, "v50_ms": 900}
+          ]
+        },
+        {
+          "target_material": "steel_rha",
+          "obliquity_deg": 30,
+          "data_points": [
+            {"thickness_mm": 6.35, "v50_ms": 350},
+            {"thickness_mm": 12.7, "v50_ms": 620},
+            {"thickness_mm": 20.0, "v50_ms": 950}
+          ]
+        }
+      ],
+      "reference": "ARL-TR-4632; BRL MR 2175"
+    },
+    {
+      "id": "ammo_30_06_m2_ball",
+      "name": ".30-06 M2 Ball",
+      "caliber_mm": 7.62,
+      "case_length_mm": 63.0,
+      "projectile_mass_g": 9.7,
+      "projectile_mass_gr": 150.0,
+      "muzzle_velocity_ms": 852.0,
+      "muzzle_velocity_fps": 2795.0,
+      "muzzle_energy_j": 3520.0,
+      "bc_g1": 0.400,
+      "bc_g7": 0.205,
+      "core_material": "lead_antimony",
+      "jacket_material": "cupronickel",
+      "penetration_curves": [
+        {
+          "target_material": "steel_rha",
+          "obliquity_deg": 0,
+          "data_points": [
+            {"thickness_mm": 3.18, "v50_ms": 180},
+            {"thickness_mm": 6.35, "v50_ms": 310},
+            {"thickness_mm": 12.7, "v50_ms": 710},
+            {"thickness_mm": 15.0, "v50_ms": 880}
+          ]
+        }
+      ],
+      "reference": "ARL-TR-4632; BRL Report 1611"
+    },
+    {
+      "id": "ammo_30_06_m2_ap",
+      "name": ".30-06 M2 AP",
+      "caliber_mm": 7.62,
+      "case_length_mm": 63.0,
+      "projectile_mass_g": 10.4,
+      "projectile_mass_gr": 160.0,
+      "muzzle_velocity_ms": 878.0,
+      "muzzle_velocity_fps": 2880.0,
+      "muzzle_energy_j": 4008.0,
+      "bc_g1": 0.370,
+      "bc_g7": 0.190,
+      "core_material": "hardened_steel",
+      "jacket_material": "cupronickel",
+      "penetration_curves": [
+        {
+          "target_material": "steel_rha",
+          "obliquity_deg": 0,
+          "data_points": [
+            {"thickness_mm": 6.35, "v50_ms": 350},
+            {"thickness_mm": 10.0, "v50_ms": 530},
+            {"thickness_mm": 12.7, "v50_ms": 630},
+            {"thickness_mm": 20.0, "v50_ms": 830},
+            {"thickness_mm": 25.4, "v50_ms": 1010}
+          ]
+        }
+      ],
+      "reference": "ARL-TR-4632; TM 5-855-1"
+    },
+    {
+      "id": "ammo_762_39_api",
+      "name": "7.62×39mm API BZ",
+      "caliber_mm": 7.62,
+      "case_length_mm": 39.0,
+      "projectile_mass_g": 7.7,
+      "projectile_mass_gr": 119.0,
+      "muzzle_velocity_ms": 695.0,
+      "muzzle_velocity_fps": 2280.0,
+      "muzzle_energy_j": 1860.0,
+      "bc_g1": 0.335,
+      "bc_g7": 0.170,
+      "core_material": "hardened_steel",
+      "jacket_material": "gilding_metal",
+      "penetration_curves": [
+        {
+          "target_material": "steel_rha",
+          "obliquity_deg": 0,
+          "data_points": [
+            {"thickness_mm": 3.18, "v50_ms": 220},
+            {"thickness_mm": 6.35, "v50_ms": 470},
+            {"thickness_mm": 8.0, "v50_ms": 640},
+            {"thickness_mm": 10.0, "v50_ms": 820}
+          ]
+        }
+      ],
+      "reference": "STANAG 4569 Ed.5; Jane's; TM 5-855-1"
+    },
+    {
+      "id": "ammo_556_m995_ap",
+      "name": "5.56×45mm M995 AP",
+      "caliber_mm": 5.56,
+      "case_length_mm": 45.0,
+      "projectile_mass_g": 4.1,
+      "projectile_mass_gr": 63.0,
+      "muzzle_velocity_ms": 1000.0,
+      "muzzle_velocity_fps": 3280.0,
+      "muzzle_energy_j": 2050.0,
+      "bc_g1": 0.290,
+      "bc_g7": 0.148,
+      "core_material": "tungsten_carbide",
+      "jacket_material": "gilding_metal",
+      "penetration_curves": [
+        {
+          "target_material": "steel_rha",
+          "obliquity_deg": 0,
+          "data_points": [
+            {"thickness_mm": 6.35, "v50_ms": 280},
+            {"thickness_mm": 12.7, "v50_ms": 600},
+            {"thickness_mm": 18.0, "v50_ms": 900}
+          ]
+        }
+      ],
+      "reference": "NATO D14; ARL estimates"
+    },
+    {
+      "id": "ammo_9mm_fmj_124",
+      "name": "9×19mm FMJ 124gr",
+      "caliber_mm": 9.01,
+      "case_length_mm": 19.0,
+      "projectile_mass_g": 8.0,
+      "projectile_mass_gr": 124.0,
+      "muzzle_velocity_ms": 370.0,
+      "muzzle_velocity_fps": 1214.0,
+      "muzzle_energy_j": 548.0,
+      "bc_g1": 0.155,
+      "bc_g7": 0.080,
+      "core_material": "lead",
+      "jacket_material": "gilding_metal",
+      "penetration_curves": [
+        {
+          "target_material": "steel_rha",
+          "obliquity_deg": 0,
+          "data_points": [
+            {"thickness_mm": 1.0, "v50_ms": 140},
+            {"thickness_mm": 2.0, "v50_ms": 280},
+            {"thickness_mm": 3.0, "v50_ms": 420}
+          ]
+        }
+      ],
+      "reference": "NIJ 0101.06; FBI ballistic test data"
+    },
+    {
+      "id": "ammo_762_54r_lps",
+      "name": "7.62×54mmR LPS Ball",
+      "caliber_mm": 7.62,
+      "case_length_mm": 54.0,
+      "projectile_mass_g": 9.6,
+      "projectile_mass_gr": 148.0,
+      "muzzle_velocity_ms": 828.0,
+      "muzzle_velocity_fps": 2720.0,
+      "muzzle_energy_j": 3290.0,
+      "bc_g1": 0.388,
+      "bc_g7": 0.198,
+      "core_material": "lead_antimony",
+      "jacket_material": "gilding_metal",
+      "penetration_curves": [
+        {
+          "target_material": "steel_rha",
+          "obliquity_deg": 0,
+          "data_points": [
+            {"thickness_mm": 6.35, "v50_ms": 480},
+            {"thickness_mm": 10.0, "v50_ms": 690},
+            {"thickness_mm": 12.7, "v50_ms": 800}
+          ]
+        }
+      ],
+      "reference": "ARL estimates; comparable to 7.62x51mm ball"
+    },
+    {
+      "id": "ammo_127_99_m2",
+      "name": "12.7×99mm M2 Ball (.50 BMG)",
+      "caliber_mm": 12.7,
+      "case_length_mm": 99.0,
+      "projectile_mass_g": 42.8,
+      "projectile_mass_gr": 660.0,
+      "muzzle_velocity_ms": 882.0,
+      "muzzle_velocity_fps": 2894.0,
+      "muzzle_energy_j": 16650.0,
+      "bc_g1": 0.625,
+      "bc_g7": 0.320,
+      "core_material": "lead_steel",
+      "jacket_material": "gilding_metal",
+      "penetration_curves": [
+        {
+          "target_material": "steel_rha",
+          "obliquity_deg": 0,
+          "data_points": [
+            {"thickness_mm": 12.7, "v50_ms": 280},
+            {"thickness_mm": 19.0, "v50_ms": 450},
+            {"thickness_mm": 25.4, "v50_ms": 600}
+          ]
+        }
+      ],
+      "reference": "TM 5-855-1; ARL estimates"
+    }
+  ],
+  "references": [
+    "ARL-TR-4632 - V50 Ballistic Test Data Analysis (2009)",
+    "TM 5-855-1 - Fundamentals of Protective Design for Conventional Weapons",
+    "NIJ 0101.06 - Ballistic Resistance of Body Armor (2008)",
+    "STANAG 4569 Ed.5 - Protection Levels for Occupants of Armoured Vehicles (2021)",
+    "NATO D14 - NATO Average Wounding Criteria (2000)"
+  ]
+}

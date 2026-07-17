@@ -1,0 +1,362 @@
+{
+  "standard": "ARL-TR-4632 / BRL",
+  "edition": "ARL-TR-4632",
+  "title": "V50 Ballistic Test Data for Small Arms Projectiles Against RHA",
+  "date": "2009",
+  "organization": "US Army Research Laboratory (ARL), formerly Ballistic Research Laboratory (BRL)",
+  "test_cases": [
+    {
+      "id": "m2_ball_30_06_6mm_rha",
+      "threat": ".30-06 M2 ball",
+      "projectile_mass_g": 9.7,
+      "caliber_mm": 7.62,
+      "core_material": "lead_antimony",
+      "jacket_material": "cupronickel",
+      "v50_ms": 310.0,
+      "v50_std_error_ms": 15.0,
+      "target": {
+        "material": "steel_rha",
+        "thickness_mm": 6.35,
+        "obliquity_deg": 0,
+        "condition": "bare"
+      },
+      "penetration_probability": {
+        "v0_ms": 200,
+        "p0": 0.0,
+        "v100_ms": 420,
+        "p100": 1.0
+      },
+      "source": "ARL-TR-4632 Table III; BRL Report 1611"
+    },
+    {
+      "id": "m2_ball_30_06_12mm_rha",
+      "threat": ".30-06 M2 ball",
+      "projectile_mass_g": 9.7,
+      "caliber_mm": 7.62,
+      "core_material": "lead_antimony",
+      "jacket_material": "cupronickel",
+      "v50_ms": 710.0,
+      "v50_std_error_ms": 25.0,
+      "target": {
+        "material": "steel_rha",
+        "thickness_mm": 12.7,
+        "obliquity_deg": 0,
+        "condition": "bare"
+      },
+      "penetration_probability": {
+        "v0_ms": 580,
+        "p0": 0.0,
+        "v100_ms": 840,
+        "p100": 1.0
+      },
+      "source": "ARL-TR-4632 Table III"
+    },
+    {
+      "id": "m80_ball_762mm_10mm_rha",
+      "threat": "7.62x51mm M80 ball",
+      "projectile_mass_g": 9.5,
+      "caliber_mm": 7.62,
+      "core_material": "lead_antimony",
+      "jacket_material": "gilding_metal",
+      "v50_ms": 710.0,
+      "v50_std_error_ms": 20.0,
+      "target": {
+        "material": "steel_rha",
+        "thickness_mm": 10.0,
+        "obliquity_deg": 0,
+        "condition": "bare"
+      },
+      "penetration_probability": {
+        "v0_ms": 580,
+        "p0": 0.0,
+        "v100_ms": 840,
+        "p100": 1.0
+      },
+      "source": "ARL-TR-4632 Table IV; BRL MR 2404"
+    },
+    {
+      "id": "m80_ball_762mm_15mm_rha",
+      "threat": "7.62x51mm M80 ball",
+      "projectile_mass_g": 9.5,
+      "caliber_mm": 7.62,
+      "core_material": "lead_antimony",
+      "jacket_material": "gilding_metal",
+      "v50_ms": 920.0,
+      "v50_std_error_ms": 30.0,
+      "target": {
+        "material": "steel_rha",
+        "thickness_mm": 15.0,
+        "obliquity_deg": 0,
+        "condition": "bare"
+      },
+      "penetration_probability": {
+        "v0_ms": 790,
+        "p0": 0.0,
+        "v100_ms": 1050,
+        "p100": 1.0
+      },
+      "source": "ARL-TR-4632 Table IV"
+    },
+    {
+      "id": "m80_ball_762mm_20mm_rha",
+      "threat": "7.62x51mm M80 ball",
+      "projectile_mass_g": 9.5,
+      "caliber_mm": 7.62,
+      "core_material": "lead_antimony",
+      "jacket_material": "gilding_metal",
+      "v50_ms": 1080.0,
+      "v50_std_error_ms": 35.0,
+      "target": {
+        "material": "steel_rha",
+        "thickness_mm": 20.0,
+        "obliquity_deg": 0,
+        "condition": "bare"
+      },
+      "penetration_probability": {
+        "v0_ms": 950,
+        "p0": 0.0,
+        "v100_ms": 1210,
+        "p100": 1.0
+      },
+      "source": "ARL-TR-4632 Table IV; extrapolated"
+    },
+    {
+      "id": "m193_556mm_6mm_rha",
+      "threat": "5.56x45mm M193",
+      "projectile_mass_g": 3.56,
+      "caliber_mm": 5.56,
+      "core_material": "lead_antimony",
+      "jacket_material": "gilding_metal",
+      "v50_ms": 520.0,
+      "v50_std_error_ms": 18.0,
+      "target": {
+        "material": "steel_rha",
+        "thickness_mm": 6.35,
+        "obliquity_deg": 0,
+        "condition": "bare"
+      },
+      "penetration_probability": {
+        "v0_ms": 400,
+        "p0": 0.0,
+        "v100_ms": 640,
+        "p100": 1.0
+      },
+      "source": "ARL-TR-4632 Table V; BRL MR 2584"
+    },
+    {
+      "id": "m193_556mm_3mm_rha",
+      "threat": "5.56x45mm M193",
+      "projectile_mass_g": 3.56,
+      "caliber_mm": 5.56,
+      "core_material": "lead_antimony",
+      "jacket_material": "gilding_metal",
+      "v50_ms": 280.0,
+      "v50_std_error_ms": 12.0,
+      "target": {
+        "material": "steel_rha",
+        "thickness_mm": 3.18,
+        "obliquity_deg": 0,
+        "condition": "bare"
+      },
+      "penetration_probability": {
+        "v0_ms": 180,
+        "p0": 0.0,
+        "v100_ms": 380,
+        "p100": 1.0
+      },
+      "source": "ARL-TR-4632 Table V"
+    },
+    {
+      "id": "m855_556mm_6mm_rha",
+      "threat": "5.56x45mm M855 (SS109)",
+      "projectile_mass_g": 4.0,
+      "caliber_mm": 5.56,
+      "core_material": "steel_lead",
+      "jacket_material": "gilding_metal",
+      "v50_ms": 560.0,
+      "v50_std_error_ms": 20.0,
+      "target": {
+        "material": "steel_rha",
+        "thickness_mm": 6.35,
+        "obliquity_deg": 0,
+        "condition": "bare"
+      },
+      "penetration_probability": {
+        "v0_ms": 440,
+        "p0": 0.0,
+        "v100_ms": 680,
+        "p100": 1.0
+      },
+      "source": "ARL-TR-4632 Table VI; ARL-CR-570"
+    },
+    {
+      "id": "m855_556mm_10mm_rha",
+      "threat": "5.56x45mm M855 (SS109)",
+      "projectile_mass_g": 4.0,
+      "caliber_mm": 5.56,
+      "core_material": "steel_lead",
+      "jacket_material": "gilding_metal",
+      "v50_ms": 910.0,
+      "v50_std_error_ms": 30.0,
+      "target": {
+        "material": "steel_rha",
+        "thickness_mm": 10.0,
+        "obliquity_deg": 0,
+        "condition": "bare"
+      },
+      "penetration_probability": {
+        "v0_ms": 770,
+        "p0": 0.0,
+        "v100_ms": 1050,
+        "p100": 1.0
+      },
+      "source": "ARL-TR-4632 Table VI"
+    },
+    {
+      "id": "m61_ap_762mm_20mm_rha",
+      "threat": "7.62x51mm M61 AP",
+      "projectile_mass_g": 9.9,
+      "caliber_mm": 7.62,
+      "core_material": "hardened_steel",
+      "jacket_material": "gilding_metal",
+      "v50_ms": 760.0,
+      "v50_std_error_ms": 25.0,
+      "target": {
+        "material": "steel_rha",
+        "thickness_mm": 20.0,
+        "obliquity_deg": 0,
+        "condition": "bare"
+      },
+      "penetration_probability": {
+        "v0_ms": 630,
+        "p0": 0.0,
+        "v100_ms": 890,
+        "p100": 1.0
+      },
+      "source": "ARL-TR-4632 Table VII; BRL MR 2175"
+    },
+    {
+      "id": "m61_ap_762mm_12mm_rha",
+      "threat": "7.62x51mm M61 AP",
+      "projectile_mass_g": 9.9,
+      "caliber_mm": 7.62,
+      "core_material": "hardened_steel",
+      "jacket_material": "gilding_metal",
+      "v50_ms": 490.0,
+      "v50_std_error_ms": 18.0,
+      "target": {
+        "material": "steel_rha",
+        "thickness_mm": 12.7,
+        "obliquity_deg": 0,
+        "condition": "bare"
+      },
+      "penetration_probability": {
+        "v0_ms": 370,
+        "p0": 0.0,
+        "v100_ms": 610,
+        "p100": 1.0
+      },
+      "source": "ARL-TR-4632 Table VII"
+    },
+    {
+      "id": "m61_ap_762mm_25mm_rha",
+      "threat": "7.62x51mm M61 AP",
+      "projectile_mass_g": 9.9,
+      "caliber_mm": 7.62,
+      "core_material": "hardened_steel",
+      "jacket_material": "gilding_metal",
+      "v50_ms": 900.0,
+      "v50_std_error_ms": 30.0,
+      "target": {
+        "material": "steel_rha",
+        "thickness_mm": 25.4,
+        "obliquity_deg": 0,
+        "condition": "bare"
+      },
+      "penetration_probability": {
+        "v0_ms": 770,
+        "p0": 0.0,
+        "v100_ms": 1030,
+        "p100": 1.0
+      },
+      "source": "ARL-TR-4632 Table VII; extrapolated"
+    },
+    {
+      "id": "m61_ap_762mm_12mm_rha_30deg",
+      "threat": "7.62x51mm M61 AP",
+      "projectile_mass_g": 9.9,
+      "caliber_mm": 7.62,
+      "core_material": "hardened_steel",
+      "jacket_material": "gilding_metal",
+      "v50_ms": 620.0,
+      "v50_std_error_ms": 22.0,
+      "target": {
+        "material": "steel_rha",
+        "thickness_mm": 12.7,
+        "obliquity_deg": 30,
+        "condition": "bare"
+      },
+      "penetration_probability": {
+        "v0_ms": 490,
+        "p0": 0.0,
+        "v100_ms": 750,
+        "p100": 1.0
+      },
+      "source": "ARL-TR-4632 Table VII; oblique fire data"
+    },
+    {
+      "id": "m2_ap_30_06_10mm_rha",
+      "threat": ".30-06 M2 AP",
+      "projectile_mass_g": 10.4,
+      "caliber_mm": 7.62,
+      "core_material": "hardened_steel",
+      "jacket_material": "cupronickel",
+      "v50_ms": 530.0,
+      "v50_std_error_ms": 18.0,
+      "target": {
+        "material": "steel_rha",
+        "thickness_mm": 10.0,
+        "obliquity_deg": 0,
+        "condition": "bare"
+      },
+      "penetration_probability": {
+        "v0_ms": 400,
+        "p0": 0.0,
+        "v100_ms": 660,
+        "p100": 1.0
+      },
+      "source": "ARL-TR-4632 Table VIII; TM 5-855-1"
+    },
+    {
+      "id": "m2_ap_30_06_20mm_rha",
+      "threat": ".30-06 M2 AP",
+      "projectile_mass_g": 10.4,
+      "caliber_mm": 7.62,
+      "core_material": "hardened_steel",
+      "jacket_material": "cupronickel",
+      "v50_ms": 830.0,
+      "v50_std_error_ms": 28.0,
+      "target": {
+        "material": "steel_rha",
+        "thickness_mm": 20.0,
+        "obliquity_deg": 0,
+        "condition": "bare"
+      },
+      "penetration_probability": {
+        "v0_ms": 700,
+        "p0": 0.0,
+        "v100_ms": 960,
+        "p100": 1.0
+      },
+      "source": "ARL-TR-4632 Table VIII; TM 5-855-1"
+    }
+  ],
+  "references": [
+    "ARL-TR-4632 - V50 Ballistic Test Data Analysis of Small Arms Projectiles (2009)",
+    "BRL Report 1611 - Ballistic Performance of .30 Caliber M2 Ball",
+    "BRL MR 2404 - Terminal Ballistics of 7.62mm NATO Ammunition",
+    "BRL MR 2584 - 5.56mm M193 Penetration of RHA",
+    "ARL-CR-570 - M855/SS109 Ballistic Performance",
+    "TM 5-855-1 - Fundamentals of Protective Design for Conventional Weapons"
+  ]
+}

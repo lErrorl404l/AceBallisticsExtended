@@ -1,0 +1,211 @@
+{
+  "standard": "NIJ 0101.06",
+  "edition": "0101.06",
+  "title": "Ballistic Resistance of Body Armor",
+  "date": "2008",
+  "test_cases": [
+    {
+      "id": "nij_iiia_9mm_fmj",
+      "level": "IIIA",
+      "threat": "9x19mm FMJ RN",
+      "velocity_ms": 436.0,
+      "velocity_tolerance_ms": 15.0,
+      "projectile_mass_g": 8.0,
+      "caliber_mm": 9.0,
+      "core_material": "lead",
+      "expected_protection_mm_rha": null,
+      "armor_config": {
+        "material": "soft_armor_kevlar",
+        "thickness_mm": null,
+        "backface_deformation_max_mm": 44.0
+      },
+      "expected_result": "no_perforation",
+      "hit_criteria": "4 of 6 shots must stop; BFS ≤ 44mm",
+      "notes": "Level IIIA: 9mm 124gr FMJ at 436±15 m/s. Standard police body armor threat. 6-shot test pattern."
+    },
+    {
+      "id": "nij_iiia_44mag_sjhp",
+      "level": "IIIA",
+      "threat": ".44 Magnum SJHP",
+      "velocity_ms": 467.0,
+      "velocity_tolerance_ms": 15.0,
+      "projectile_mass_g": 15.55,
+      "caliber_mm": 10.9,
+      "core_material": "lead",
+      "expected_protection_mm_rha": null,
+      "armor_config": {
+        "material": "soft_armor_kevlar",
+        "thickness_mm": null,
+        "backface_deformation_max_mm": 44.0
+      },
+      "expected_result": "no_perforation",
+      "notes": "Level IIIA alternate: .44 Magnum 240gr SJHP at 467±15 m/s."
+    },
+    {
+      "id": "nij_iii_m80_ball",
+      "level": "III",
+      "threat": "7.62x51mm M80 ball",
+      "velocity_ms": 838.0,
+      "velocity_tolerance_ms": 15.0,
+      "projectile_mass_g": 9.5,
+      "caliber_mm": 7.62,
+      "core_material": "lead_antimony",
+      "expected_protection_mm_rha": null,
+      "armor_config": {
+        "material": "hard_armor_ceramic_composite",
+        "thickness_mm": null,
+        "backface_deformation_max_mm": null
+      },
+      "expected_result": "no_perforation",
+      "hit_criteria": "6 of 6 shots must stop; no perforation of armor package",
+      "notes": "Level III: 7.62x51mm M80 ball at 838±15 m/s. 6-shot test pattern at 0° obliquity. Must defeat 6 consecutive hits. Typically requires ceramic or AR500 steel plate."
+    },
+    {
+      "id": "nij_iii_m80_ball_30deg",
+      "level": "III",
+      "threat": "7.62x51mm M80 ball",
+      "velocity_ms": 838.0,
+      "velocity_tolerance_ms": 15.0,
+      "projectile_mass_g": 9.5,
+      "caliber_mm": 7.62,
+      "core_material": "lead_antimony",
+      "expected_protection_mm_rha": null,
+      "armor_config": {
+        "material": "hard_armor_ceramic_composite",
+        "obliquity_deg": 30,
+        "backface_deformation_max_mm": null
+      },
+      "expected_result": "no_perforation",
+      "notes": "Level III: 7.62x51mm M80 ball at 30° obliquity (partial test)."
+    },
+    {
+      "id": "nij_iii_762_ball_alternate",
+      "level": "III",
+      "threat": "7.62x51mm M80 ball",
+      "velocity_ms": 847.0,
+      "velocity_tolerance_ms": 15.0,
+      "projectile_mass_g": 9.5,
+      "caliber_mm": 7.62,
+      "core_material": "lead_antimony",
+      "expected_protection_mm_rha": 12.0,
+      "protection_tolerance_mm": 2.0,
+      "armor_config": {
+        "material": "steel_rha_reference",
+        "obliquity_deg": 0
+      },
+      "expected_result": "no_perforation",
+      "notes": "Level III RHA reference: ~12mm RHA equivalent at 847±15 m/s (alternative M80 test)."
+    },
+    {
+      "id": "nij_iii_556_m193",
+      "level": "III",
+      "threat": "5.56x45mm M193",
+      "velocity_ms": 991.0,
+      "velocity_tolerance_ms": 20.0,
+      "projectile_mass_g": 3.56,
+      "caliber_mm": 5.56,
+      "core_material": "lead_antimony",
+      "expected_protection_mm_rha": null,
+      "armor_config": {
+        "material": "hard_armor_ceramic_composite",
+        "thickness_mm": null
+      },
+      "expected_result": "no_perforation",
+      "notes": "Level III special threat: 5.56x45mm M193 at 991±20 m/s. Many Level III plates also stop this round."
+    },
+    {
+      "id": "nij_iii_556_m855",
+      "level": "III",
+      "threat": "5.56x45mm M855 (SS109)",
+      "velocity_ms": 945.0,
+      "velocity_tolerance_ms": 20.0,
+      "projectile_mass_g": 4.0,
+      "caliber_mm": 5.56,
+      "core_material": "steel_lead",
+      "expected_protection_mm_rha": null,
+      "armor_config": {
+        "material": "hard_armor_ceramic_composite",
+        "thickness_mm": null
+      },
+      "expected_result": "no_perforation",
+      "notes": "Level III special threat: 5.56x45mm M855 at 945±20 m/s. Harder to stop than M193 due to steel penetrator tip."
+    },
+    {
+      "id": "nij_iv_30_06_m2_ap",
+      "level": "IV",
+      "threat": ".30-06 M2 AP",
+      "velocity_ms": 878.0,
+      "velocity_tolerance_ms": 15.0,
+      "projectile_mass_g": 10.4,
+      "caliber_mm": 7.62,
+      "core_material": "hardened_steel",
+      "expected_protection_mm_rha": null,
+      "armor_config": {
+        "material": "hard_armor_ceramic_composite",
+        "thickness_mm": null,
+        "backface_deformation_max_mm": null
+      },
+      "expected_result": "no_perforation",
+      "hit_criteria": "1 of 1 shot must stop; no perforation of armor package; witness plate must show no evidence of perforation",
+      "notes": "Level IV: .30-06 M2 AP at 878±15 m/s. 1-shot test. This is the highest NIJ level for body armor. Typically requires ceramic or composite armor plate."
+    },
+    {
+      "id": "nij_iv_m61_ap",
+      "level": "IV",
+      "threat": "7.62x51mm M61 AP",
+      "velocity_ms": 838.0,
+      "velocity_tolerance_ms": 15.0,
+      "projectile_mass_g": 9.9,
+      "caliber_mm": 7.62,
+      "core_material": "hardened_steel",
+      "expected_protection_mm_rha": null,
+      "armor_config": {
+        "material": "hard_armor_ceramic_composite",
+        "thickness_mm": null
+      },
+      "expected_result": "no_perforation",
+      "notes": "Level IV alternate: 7.62x51mm M61 AP at 838±15 m/s. Many Level IV plates are rated against this threat as a secondary standard."
+    },
+    {
+      "id": "nij_iv_556_m995_ap",
+      "level": "IV",
+      "threat": "5.56x45mm M995 AP",
+      "velocity_ms": 1000.0,
+      "velocity_tolerance_ms": 25.0,
+      "projectile_mass_g": 4.1,
+      "caliber_mm": 5.56,
+      "core_material": "tungsten_carbide",
+      "expected_protection_mm_rha": 18.0,
+      "protection_tolerance_mm": 3.0,
+      "armor_config": {
+        "material": "hard_armor_ceramic_composite",
+        "thickness_mm": null
+      },
+      "expected_result": "no_perforation",
+      "notes": "Level IV special threat: 5.56x45mm M995 AP at 1000±25 m/s. Tungsten carbide core penetrator. Requires ~18mm RHA equivalent."
+    },
+    {
+      "id": "nij_iv_30_06_m2_ap_rha_ref",
+      "level": "IV",
+      "threat": ".30-06 M2 AP",
+      "velocity_ms": 878.0,
+      "velocity_tolerance_ms": 15.0,
+      "projectile_mass_g": 10.4,
+      "caliber_mm": 7.62,
+      "core_material": "hardened_steel",
+      "expected_protection_mm_rha": 21.0,
+      "protection_tolerance_mm": 3.0,
+      "armor_config": {
+        "material": "steel_rha_reference",
+        "obliquity_deg": 0
+      },
+      "expected_result": "no_perforation",
+      "notes": "Level IV RHA reference: ~21mm RHA equivalent for .30-06 M2 AP at 878 m/s, 0° obliquity."
+    }
+  ],
+  "references": [
+    "NIJ Standard 0101.06 (2008) - Ballistic Resistance of Body Armor",
+    "NIJ Standard 0108.01 (1985) - Ballistic Resistant Protective Materials",
+    "ARL-TR-4632 - V50 Ballistic Test Data Analysis"
+  ]
+}
