@@ -343,6 +343,163 @@ pub fn density_from_weather(weather: &WeatherState) -> f64 {
     density_non_isa(weather.altitude_m, &weather.non_isa)
 }
 
+// ── Precipitation Effects ─────────────────────────────────────────────────────
+
+/// Broad caliber classification for rain drag coupling.
+pub enum CaliberClass {
+    /// Rifle and intermediate cartridges (typical BC > 0.2).
+    /// Coupling coefficient k ≈ 0.15.
+    Rifle,
+    /// Pistol and subsonic cartridges (typical BC < 0.2).
+    /// Coupling coefficient k ≈ 0.25.
+    Pistol,
+}
+
+/// Precipitation parameters affecting ballistic trajectories.
+///
+/// Models the influence of rain and snow on projectile drag and
+/// lateral drift.  The physics involves:
+///   - Momentum transfer from impacting hydrometeors
+///   - Boundary-layer disruption on the projectile surface
+///   - Slight density change from airborne water (negligible below
+///     cloud base — the virtual-temperature correction already
+///     handles water vapour)
+pub struct PrecipitationParams {
+    /// Rainfall intensity (mm/hour).  Range: 0–150 mm/hr.
+    ///
+    /// Empirical intensity classes:
+    ///   - 0.0:         No rain
+    ///   - 0.1–0.5:    Drizzle
+    ///   - 0.5–2.5:    Light rain
+    ///   - 2.5–10:     Moderate rain
+    ///   - 10–50:      Heavy rain
+    ///   - 50–150+:    Extreme / torrential
+    pub rain_rate_mm_per_hour: f64,
+    /// `true` when the precipitation is snowfall (affects terminal
+    /// velocity and drag differently from rain).
+    pub is_snowfall: bool,
+    /// Altitude of the cloud base above sea level (m).  Below this
+    /// altitude the air is sub-saturated; above, saturated.
+    pub cloud_base_altitude_m: f64,
+    /// Ambient temperature (°C).  Used together with `is_snowfall`
+    /// to distinguish rain vs freezing rain vs snow.
+    pub temperature_c: f64,
+}
+
+/// Drag-coefficient adjustment caused by precipitation.
+///
+/// Rain and snow increase aerodynamic drag by roughening the
+/// projectile surface and altering the boundary layer.  The ratio
+/// is relative to dry-air conditions (1.0 = no effect).
+pub struct PrecipitationDragCoefficient {
+    /// Drag multiplier relative to dry conditions.
+    /// Typical: 1.0 (none) … 1.15 (moderate rain) … 1.3 (heavy rain).
+    pub cd_ratio: f64,
+    /// Human-readable validity note (e.g. "moderate rain, rifle").
+    pub validity_note: &'static str,
+}
+
+/// Estimate the terminal velocity of falling hydrometeors (m/s).
+///
+/// Rain drops: larger drops (higher rain rates) fall faster.
+/// Empirical logarithmic fit:
+///
+///   Vt = 4.0 + 2.5 × ln(1 + R)
+///
+/// where R = rain rate (mm/hr).  Snowflakes are modelled at a
+/// constant 1.5 m/s.
+///
+/// # Arguments
+/// * `rain_params` — Current precipitation parameters.
+///
+/// # Returns
+/// Terminal velocity in m/s, capped at 9.5 m/s for rain.
+fn rain_drop_terminal_velocity(rain_params: &PrecipitationParams) -> f64 {
+    if rain_params.is_snowfall {
+        return 1.5;
+    }
+    let r = rain_params.rain_rate_mm_per_hour.max(0.0);
+    let vt = 4.0 + 2.5 * (1.0 + r).ln();
+    vt.min(9.5)
+}
+
+/// Effective ballistic coefficient reduced by rain or snowfall.
+///
+/// Hydrometeor impacts increase drag by disturbing the boundary
+/// layer and transferring momentum.  The empirical exponential
+/// model is:
+///
+///   BC_eff = BC × exp(-k × R / 1000)
+///
+/// where:
+///   R = rain rate (mm/hour)
+///   k = caliber-dependent coupling coefficient
+///       - Rifle:  k ≈ 0.15 (larger BC, less relative effect)
+///       - Pistol: k ≈ 0.25 (smaller BC, more relative effect)
+///
+/// The divisor 1000 normalises rain rate into a dimensionless
+/// intensity scale.
+///
+/// # Arguments
+/// * `rain_params` — Current precipitation parameters.
+/// * `base_bc` — Ballistic coefficient under dry conditions (G1 or G7).
+/// * `caliber` — Classification into Rifle or Pistol class.
+///
+/// # Returns
+/// Effective ballistic coefficient accounting for precipitation drag.
+pub fn precipitation_unadjusted_bc(
+    rain_params: &PrecipitationParams,
+    base_bc: f64,
+    caliber: CaliberClass,
+) -> f64 {
+    let k = match caliber {
+        CaliberClass::Rifle => 0.15,
+        CaliberClass::Pistol => 0.25,
+    };
+    let intensity = rain_params.rain_rate_mm_per_hour.max(0.0);
+    base_bc * (-k * intensity / 1000.0).exp()
+}
+
+/// Additional lateral drift velocity imparted by rain droplets (m/s).
+///
+/// Rain droplets carry horizontal momentum from the ambient crosswind.
+/// When a projectile passes through falling rain, glancing impacts
+/// transfer a small fraction of that momentum laterally:
+///
+///   v_drift = v_wind × (Vt_drop / V_bullet) × η
+///
+/// where:
+///   v_wind    = crosswind speed (m/s)
+///   Vt_drop   = hydrometeor terminal velocity (m/s)
+///   V_bullet  = projectile velocity at the range point (m/s)
+///   η         = empirical coupling efficiency (≈ 0.01 = 1 %)
+///
+/// The effect is tiny (typically < 0.01 m/s) and only matters at
+/// very long ranges or extreme rain rates.
+///
+/// # Arguments
+/// * `rain_params` — Current precipitation parameters.
+/// * `crosswind_speed_ms` — Crosswind component perpendicular to
+///   the line of fire (m/s).
+/// * `bullet_velocity_ms` — Projectile velocity at this range
+///   point (m/s).
+///
+/// # Returns
+/// Additional drift velocity (m/s) from precipitation momentum
+/// transfer.  Returns zero when rain rate is zero or bullet
+/// velocity is non-positive.
+pub fn rain_drift_velocity(
+    rain_params: &PrecipitationParams,
+    crosswind_speed_ms: f64,
+    bullet_velocity_ms: f64,
+) -> f64 {
+    if rain_params.rain_rate_mm_per_hour <= 0.0 || bullet_velocity_ms <= 0.0 {
+        return 0.0;
+    }
+    let vt = rain_drop_terminal_velocity(rain_params);
+    crosswind_speed_ms * (vt / bullet_velocity_ms) * 0.01
+}
+
 // ── Tests ─────────────────────────────────────────────────────────────────────
 
 #[cfg(test)]
@@ -737,5 +894,132 @@ mod tests {
         let m = mach_with_humidity(800.0, 15.0, 0.0);
         assert!(m > 2.0, "Mach should be > 2 at 800 m/s: {}", m);
         assert!(m < 3.0, "Mach should be < 3 at 800 m/s: {}", m);
+    }
+
+    // ── Precipitation Tests ───────────────────────────────────────────────
+
+    #[test]
+    fn no_rain_leaves_bc_unchanged() {
+        let dry = PrecipitationParams {
+            rain_rate_mm_per_hour: 0.0,
+            is_snowfall: false,
+            cloud_base_altitude_m: 1000.0,
+            temperature_c: 20.0,
+        };
+        let bc = precipitation_unadjusted_bc(&dry, 0.500, CaliberClass::Rifle);
+        assert!((bc - 0.500).abs() < 1e-12, "No rain → BC unchanged: {}", bc);
+    }
+
+    #[test]
+    fn light_rain_reduces_bc_slightly() {
+        let light_rain = PrecipitationParams {
+            rain_rate_mm_per_hour: 2.0,
+            is_snowfall: false,
+            cloud_base_altitude_m: 800.0,
+            temperature_c: 15.0,
+        };
+        let bc = precipitation_unadjusted_bc(&light_rain, 0.500, CaliberClass::Rifle);
+        assert!(bc < 0.500, "Light rain should reduce BC: {}", bc);
+        assert!(
+            (0.500 - bc) < 0.001,
+            "Light rain reduction should be tiny (< 0.001): {}",
+            0.500 - bc
+        );
+    }
+
+    #[test]
+    fn heavy_rain_reduces_bc_significantly() {
+        let heavy_rain = PrecipitationParams {
+            rain_rate_mm_per_hour: 50.0,
+            is_snowfall: false,
+            cloud_base_altitude_m: 600.0,
+            temperature_c: 25.0,
+        };
+        let bc_rifle = precipitation_unadjusted_bc(&heavy_rain, 0.500, CaliberClass::Rifle);
+        let expected_rifle = 0.500 * f64::exp(-0.15 * 50.0 / 1000.0);
+        assert!(
+            (bc_rifle - expected_rifle).abs() < 1e-12,
+            "Rifle BC in heavy rain: expected {:.6}, got {:.6}",
+            expected_rifle,
+            bc_rifle
+        );
+
+        let bc_pistol = precipitation_unadjusted_bc(&heavy_rain, 0.150, CaliberClass::Pistol);
+        let expected_pistol = 0.150 * f64::exp(-0.25 * 50.0 / 1000.0);
+        assert!(
+            (bc_pistol - expected_pistol).abs() < 1e-12,
+            "Pistol BC in heavy rain: expected {:.6}, got {:.6}",
+            expected_pistol,
+            bc_pistol
+        );
+    }
+
+    #[test]
+    fn snowfall_uses_reduced_terminal_velocity() {
+        let snow = PrecipitationParams {
+            rain_rate_mm_per_hour: 10.0,
+            is_snowfall: true,
+            cloud_base_altitude_m: 500.0,
+            temperature_c: -5.0,
+        };
+        let drift = rain_drift_velocity(&snow, 5.0, 800.0);
+        // Snow vt ≈ 1.5 m/s → drift = 5 × (1.5/800) × 0.01 ≈ 9.375e-5
+        let expected = 5.0 * (1.5 / 800.0) * 0.01;
+        assert!(
+            (drift - expected).abs() < 1e-12,
+            "Snow drift: expected {:.10}, got {:.10}",
+            expected,
+            drift
+        );
+    }
+
+    #[test]
+    fn rain_drift_scales_with_crosswind() {
+        let rain = PrecipitationParams {
+            rain_rate_mm_per_hour: 25.0,
+            is_snowfall: false,
+            cloud_base_altitude_m: 700.0,
+            temperature_c: 18.0,
+        };
+        let d1 = rain_drift_velocity(&rain, 2.0, 800.0);
+        let d2 = rain_drift_velocity(&rain, 10.0, 800.0);
+        assert!(d2 > d1, "Higher crosswind → higher drift: {} > {}", d2, d1);
+        assert!(
+            (d2 / d1 - 5.0).abs() < 1e-9,
+            "5× crosswind → 5× drift (ratio={})",
+            d2 / d1
+        );
+    }
+
+    #[test]
+    fn zero_rain_rate_gives_zero_drift() {
+        let dry = PrecipitationParams {
+            rain_rate_mm_per_hour: 0.0,
+            is_snowfall: false,
+            cloud_base_altitude_m: 1000.0,
+            temperature_c: 20.0,
+        };
+        let d = rain_drift_velocity(&dry, 10.0, 800.0);
+        assert!((d - 0.0).abs() < 1e-12, "No rain → zero drift: {}", d);
+    }
+
+    #[test]
+    fn precipitation_functions_deterministic() {
+        let rain = PrecipitationParams {
+            rain_rate_mm_per_hour: 15.0,
+            is_snowfall: false,
+            cloud_base_altitude_m: 800.0,
+            temperature_c: 20.0,
+        };
+        let bc1 = precipitation_unadjusted_bc(&rain, 0.350, CaliberClass::Rifle);
+        let bc2 = precipitation_unadjusted_bc(&rain, 0.350, CaliberClass::Rifle);
+        assert!(
+            (bc1 - bc2).abs() < 1e-15,
+            "precipitation_unadjusted_bc deterministic"
+        );
+
+        let d1 = rain_drift_velocity(&rain, 5.0, 750.0);
+        let d2 = rain_drift_velocity(&rain, 5.0, 750.0);
+        assert!((d1 - d2).abs() < 1e-15, "rain_drift_velocity deterministic");
     }
 }
