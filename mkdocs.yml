@@ -1,0 +1,17 @@
+site_name: Advanced Ballistics Extension (ABE)
+site_url: https://lerrorl404l.github.io/AceBallisticsExtended/
+repo_url: https://github.com/lErrorl404l/AceBallisticsExtended
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - code.highlight
+    - content.tabs.link
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - Data Format: data-format.md
+  - Module Guide: module-guide.md
+  - Testing: testing.md
+plugins:
+  - search
