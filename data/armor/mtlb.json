@@ -1,0 +1,44 @@
+{
+  "vehicle": "rhs_mtlb_vv",
+  "plates": [
+    {
+      "name": "hull_front_upper",
+      "material": "steel_rha",
+      "thickness_mm": 6.5,
+      "angle_deg": 62.0
+    },
+    {
+      "name": "hull_front_lower",
+      "material": "steel_rha",
+      "thickness_mm": 10.0,
+      "angle_deg": 45.0
+    },
+    {
+      "name": "hull_sides",
+      "material": "steel_rha",
+      "thickness_mm": 7.0,
+      "angle_deg": 0.0,
+      "backing": "twaron_liner",
+      "backing_thickness_mm": 6,
+      "backing_angle_deg": 0.0
+    },
+    {
+      "name": "hull_rear",
+      "material": "steel_rha",
+      "thickness_mm": 7.0,
+      "angle_deg": 0.0
+    },
+    {
+      "name": "hull_top",
+      "material": "steel_rha",
+      "thickness_mm": 5.0,
+      "angle_deg": 80.0
+    },
+    {
+      "name": "hull_belly",
+      "material": "steel_rha",
+      "thickness_mm": 5.0,
+      "angle_deg": 0.0
+    }
+  ]
+}

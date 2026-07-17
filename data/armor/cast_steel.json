@@ -1,0 +1,11 @@
+{
+  "materialId": "cast_steel",
+  "displayName": "Cast Armor Steel (Soviet cast turret, MIL-S-21885)",
+  "densityGcm3": 7.85,
+  "hardnessBHN": 250,
+  "tensileStrengthMpa": 750,
+  "rhaEquivalent": 0.85,
+  "ductility": 0.4,
+  "spallCoeff": 0.7,
+  "notes": "Cast armor steel per MIL-S-21885. Density 7.85. BHN ~240-260 (softer than rolled RHA). UTS ~700-800 MPa. RHAe ~0.8-0.9 per mm vs KE — inferior to rolled RHA due to casting defects, anisotropy, and lower hardness. Used in T-72 and BMP-series cast turrets. Soviet cast turrets typically 85-90% the ballistic efficiency of rolled plate of same thickness."
+}

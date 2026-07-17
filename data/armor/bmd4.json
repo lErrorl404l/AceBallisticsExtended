@@ -1,0 +1,65 @@
+{
+  "vehicle": "rhs_bmd4_vdv",
+  "plates": [
+    {
+      "name": "hull_front_upper",
+      "material": "aluminum_5083",
+      "thickness_mm": 43,
+      "angle_deg": 60.0
+    },
+    {
+      "name": "hull_front_lower",
+      "material": "aluminum_5083",
+      "thickness_mm": 55,
+      "angle_deg": 50.0
+    },
+    {
+      "name": "hull_sides",
+      "material": "aluminum_5083",
+      "thickness_mm": 12.0,
+      "angle_deg": 0.0
+    },
+    {
+      "name": "hull_rear",
+      "material": "aluminum_5083",
+      "thickness_mm": 10.0,
+      "angle_deg": 10.0
+    },
+    {
+      "name": "hull_top",
+      "material": "aluminum_5083",
+      "thickness_mm": 5.0,
+      "angle_deg": 80.0
+    },
+    {
+      "name": "hull_belly",
+      "material": "aluminum_5083",
+      "thickness_mm": 5.0,
+      "angle_deg": 0.0
+    },
+    {
+      "name": "turret_front",
+      "material": "aluminum_5083",
+      "thickness_mm": 65,
+      "angle_deg": 25.0
+    },
+    {
+      "name": "turret_sides",
+      "material": "aluminum_5083",
+      "thickness_mm": 15.0,
+      "angle_deg": 15.0
+    },
+    {
+      "name": "turret_rear",
+      "material": "aluminum_5083",
+      "thickness_mm": 8.0,
+      "angle_deg": 20.0
+    },
+    {
+      "name": "turret_top",
+      "material": "aluminum_5083",
+      "thickness_mm": 5.0,
+      "angle_deg": 80.0
+    }
+  ]
+}

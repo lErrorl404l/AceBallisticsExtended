@@ -1,0 +1,11 @@
+{
+  "materialId": "lead_alloy",
+  "displayName": "Lead Alloy (BMP-3 armor insert, radiation shielding)",
+  "densityGcm3": 11.34,
+  "hardnessBHN": 5,
+  "tensileStrengthMpa": 15,
+  "rhaEquivalent": 0.04,
+  "ductility": 0.7,
+  "spallCoeff": 0.3,
+  "notes": "Lead alloy (Pb-Sb 1-6% antimony). Density 11.34 g/cm³ — high density with minimal structural strength. BHN ~4-6 (pure lead 5), UTS ~10-20 MPa. RHAe ~0.03-0.05 per mm vs KE — negligible ballistic resistance per thickness. Used in some armor composites (BMP-3) as high-density filler and for x-ray/radiation shielding. Very ductile — deforms rather than fragments on impact. Not a structural armor material."
+}

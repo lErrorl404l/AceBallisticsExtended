@@ -1,0 +1,11 @@
+{
+  "materialId": "laminated_glass",
+  "displayName": "Laminated Armored Glass (vehicle windscreen, MIL-PRF-32348)",
+  "densityGcm3": 2.5,
+  "hardnessBHN": 600,
+  "tensileStrengthMpa": 50,
+  "rhaEquivalent": 0.15,
+  "ductility": 0.1,
+  "spallCoeff": 0.8,
+  "notes": "Laminated armored glass per MIL-PRF-32348. Float glass + polyvinyl butyral (PVB) interlayer construction. Density ~2.5 g/cm³, surface hardness ~600 HK. RHAe ~0.12-0.18 per mm vs KE. Provides small-arms protection at considerable thickness (50-100mm typical). Brittle outer layers spall on impact; PVB interlayer retains fragments. Used for vehicle windscreens (M-ATV, Stryker, JLTV). SpallCoeff high due to glass fragmentation."
+}

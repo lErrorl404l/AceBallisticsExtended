@@ -1,0 +1,68 @@
+{
+  "vehicle": "rhs_t72bb_tv",
+  "plates": [
+    {
+      "name": "hull_front_upper",
+      "material": "stef_composite",
+      "thickness_mm": 60,
+      "angle_deg": 68.0
+    },
+    {
+      "name": "hull_front_lower",
+      "material": "stef_composite",
+      "thickness_mm": 44,
+      "angle_deg": 62.0
+    },
+    {
+      "name": "hull_sides",
+      "material": "steel_rha",
+      "thickness_mm": 60.0,
+      "angle_deg": 0.0,
+      "backing": "twaron_liner",
+      "backing_thickness_mm": 8,
+      "backing_angle_deg": 0.0
+    },
+    {
+      "name": "hull_rear",
+      "material": "steel_rha",
+      "thickness_mm": 40.0,
+      "angle_deg": 15.0
+    },
+    {
+      "name": "hull_top",
+      "material": "steel_rha",
+      "thickness_mm": 30.0,
+      "angle_deg": 80.0
+    },
+    {
+      "name": "hull_belly",
+      "material": "steel_rha",
+      "thickness_mm": 20.0,
+      "angle_deg": 0.0
+    },
+    {
+      "name": "turret_front",
+      "material": "kvarts_composite",
+      "thickness_mm": 179,
+      "angle_deg": 30.0
+    },
+    {
+      "name": "turret_sides",
+      "material": "steel_rha",
+      "thickness_mm": 246,
+      "angle_deg": 10.0
+    },
+    {
+      "name": "turret_rear",
+      "material": "steel_rha",
+      "thickness_mm": 65.0,
+      "angle_deg": 10.0
+    },
+    {
+      "name": "turret_top",
+      "material": "steel_rha",
+      "thickness_mm": 30.0,
+      "angle_deg": 80.0
+    }
+  ]
+}

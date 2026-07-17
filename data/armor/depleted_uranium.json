@@ -1,0 +1,11 @@
+{
+  "materialId": "depleted_uranium",
+  "displayName": "Depleted Uranium Alloy (DU-0.75Ti, M1A1HA/M1A2 turret inserts)",
+  "densityGcm3": 19.05,
+  "hardnessBHN": 450,
+  "tensileStrengthMpa": 1000,
+  "rhaEquivalent": 1.8,
+  "ductility": 0.2,
+  "spallCoeff": 0.9,
+  "notes": "Depleted uranium alloy (DU-0.75%Ti). Density 19.05 g/cm³, BHN 450 (quenched). Self-sharpening behavior gives ~1.5-2.0x RHA per mm against KE threats per ARL research. Pyrophoric — fragments ignite on impact. Used in M1A1HA/M1A2 turret front inserts. Higher density improves Lanz-Odermatt performance for long-rod penetrators. Health hazard as armor: DU particulate is chemically toxic and radiologically hazardous."
+}

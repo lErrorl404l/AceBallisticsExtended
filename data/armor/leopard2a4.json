@@ -1,0 +1,75 @@
+{
+  "vehicle": "RHS_Leopard2A4_German",
+  "plates": [
+    {
+      "name": "hull_front_upper",
+      "material": "burlington_composite",
+      "thickness_mm": 74,
+      "angle_deg": 60.0
+    },
+    {
+      "name": "hull_front_lower",
+      "material": "burlington_composite",
+      "thickness_mm": 87,
+      "angle_deg": 55.0
+    },
+    {
+      "name": "hull_sides_front",
+      "material": "hha_steel",
+      "thickness_mm": 35.0,
+      "angle_deg": 0.0,
+      "backing": "kevlar_liner",
+      "backing_thickness_mm": 10
+    },
+    {
+      "name": "hull_sides_rear",
+      "material": "steel_rha",
+      "thickness_mm": 25.0,
+      "angle_deg": 0.0,
+      "backing": "kevlar_liner",
+      "backing_thickness_mm": 10
+    },
+    {
+      "name": "hull_rear",
+      "material": "steel_rha",
+      "thickness_mm": 25.0,
+      "angle_deg": 20.0
+    },
+    {
+      "name": "hull_top",
+      "material": "steel_rha",
+      "thickness_mm": 20.0,
+      "angle_deg": 80.0
+    },
+    {
+      "name": "hull_belly",
+      "material": "steel_rha",
+      "thickness_mm": 20.0,
+      "angle_deg": 0.0
+    },
+    {
+      "name": "turret_front",
+      "material": "burlington_composite",
+      "thickness_mm": 162,
+      "angle_deg": 45.0
+    },
+    {
+      "name": "turret_sides",
+      "material": "burlington_composite",
+      "thickness_mm": 93,
+      "angle_deg": 20.0
+    },
+    {
+      "name": "turret_rear",
+      "material": "steel_rha",
+      "thickness_mm": 25.0,
+      "angle_deg": 10.0
+    },
+    {
+      "name": "turret_top",
+      "material": "steel_rha",
+      "thickness_mm": 20.0,
+      "angle_deg": 85.0
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "vehicle": "rhs_bmp1d_msv",
+  "plates": [
+    {
+      "name": "hull_front_upper",
+      "material": "steel_rha",
+      "thickness_mm": 10.0,
+      "angle_deg": 60.0
+    },
+    {
+      "name": "hull_front_lower",
+      "material": "steel_rha",
+      "thickness_mm": 11.5,
+      "angle_deg": 55.0
+    },
+    {
+      "name": "hull_sides",
+      "material": "cast_steel",
+      "thickness_mm": 16.0,
+      "angle_deg": 0.0,
+      "backing": "twaron_liner",
+      "backing_thickness_mm": 6,
+      "backing_angle_deg": 0.0
+    },
+    {
+      "name": "hull_rear",
+      "material": "steel_rha",
+      "thickness_mm": 10.0,
+      "angle_deg": 14.0
+    },
+    {
+      "name": "hull_top",
+      "material": "steel_rha",
+      "thickness_mm": 5.0,
+      "angle_deg": 80.0
+    },
+    {
+      "name": "hull_belly",
+      "material": "steel_rha",
+      "thickness_mm": 7.0,
+      "angle_deg": 0.0
+    },
+    {
+      "name": "turret_front",
+      "material": "steel_rha",
+      "thickness_mm": 17.5,
+      "angle_deg": 30.0
+    },
+    {
+      "name": "turret_sides",
+      "material": "steel_rha",
+      "thickness_mm": 17.0,
+      "angle_deg": 32.0
+    },
+    {
+      "name": "turret_rear",
+      "material": "steel_rha",
+      "thickness_mm": 9.0,
+      "angle_deg": 25.0
+    },
+    {
+      "name": "turret_top",
+      "material": "steel_rha",
+      "thickness_mm": 1.0,
+      "angle_deg": 80.0
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "vehicle": "rhs_m1078a1p2_wd",
+  "plates": [
+    {
+      "name": "cab_front",
+      "material": "mild_steel",
+      "thickness_mm": 3.0,
+      "angle_deg": 45.0
+    },
+    {
+      "name": "cab_sides",
+      "material": "mild_steel",
+      "thickness_mm": 2.0,
+      "angle_deg": 0.0
+    },
+    {
+      "name": "hull_belly",
+      "material": "mild_steel",
+      "thickness_mm": 2.0,
+      "angle_deg": 0.0
+    },
+    {
+      "name": "hull_rear",
+      "material": "mild_steel",
+      "thickness_mm": 2.0,
+      "angle_deg": 0.0
+    },
+    {
+      "name": "hull_top",
+      "material": "mild_steel",
+      "thickness_mm": 2.0,
+      "angle_deg": 80.0
+    },
+    {
+      "name": "cargo_bed",
+      "material": "mild_steel",
+      "thickness_mm": 2.0,
+      "angle_deg": 0.0
+    }
+  ]
+}

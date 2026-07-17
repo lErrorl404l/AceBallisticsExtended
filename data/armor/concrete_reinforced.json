@@ -1,0 +1,11 @@
+{
+  "materialId": "concrete_reinforced",
+  "displayName": "Reinforced Concrete (MIL-STD-810 / DoD bunker spec)",
+  "densityGcm3": 2.4,
+  "hardnessBHN": 80,
+  "tensileStrengthMpa": 5,
+  "rhaEquivalent": 0.10,
+  "ductility": 0.05,
+  "spallCoeff": 0.95,
+  "notes": "Reinforced concrete per ASMRB/TM 5-855-1. General KE multiplier: 0.10-0.15 (military bunker spec). Lower against heavy AP (0.04-0.06), higher vs shaped charges (~0.20). 0.10 selected as general-purpose KE value."
+}

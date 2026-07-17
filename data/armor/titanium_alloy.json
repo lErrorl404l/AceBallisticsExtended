@@ -1,0 +1,11 @@
+{
+  "materialId": "titanium_alloy",
+  "displayName": "Ti-6Al-4V Titanium Alloy",
+  "densityGcm3": 4.43,
+  "hardnessBHN": 340,
+  "tensileStrengthMpa": 950,
+  "rhaEquivalent": 0.9,
+  "ductility": 0.4,
+  "spallCoeff": 0.5,
+  "notes": "Ti-6Al-4V per MIL-T-9046J. Fails by adiabatic shear plugging (MIL-A-46077, TMS/JOM Montgomery). Spall liner required in vehicle applications. RHAe=0.9 is conservative; mass efficiency=1.5 gives ~0.85 thickness basis; against long-rod penetrators is 1.0-1.2× RHA per ARL Gooch."
+}

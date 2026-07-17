@@ -1,0 +1,11 @@
+{
+  "materialId": "wood_hardwood",
+  "displayName": "Hardwood (Oak / MIL-T-43402 spec)",
+  "densityGcm3": 0.75,
+  "hardnessBHN": 4,
+  "tensileStrengthMpa": 90,
+  "rhaEquivalent": 0.025,
+  "ductility": 0.25,
+  "spallCoeff": 0.5,
+  "notes": "Hardwood (oak). ASMRB reference: 0.012 for pure oak. DAAAM ballistic testing (2019): 100mm oak stopped 9mm FMJ (3-4mm RHA equiv = 0.03-0.04). 0.025 is a conservative general-purpose average. Real value varies with grain, moisture, species."
+}
