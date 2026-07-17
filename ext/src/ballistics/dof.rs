@@ -293,6 +293,60 @@ pub fn step_4dof(
     (vx_new, vy_new, vz_new, yaw_new)
 }
 
+/// Magnus acceleration for a spinning projectile.
+///
+/// Magnus force arises from the asymmetric pressure distribution on a
+/// spinning projectile flying at a small yaw angle. The force acts perpendicular
+/// to both the spin axis and the velocity vector (cross-product):
+///
+/// ```text
+/// F_magnus = 0.5 × ρ × A × C_mag × (ω × V)
+/// ω = (p, 0, 0)   — spin about the bore axis
+/// ω × V = (0, -p·vz, p·vy)
+/// a_magnus = F_magnus / m
+/// ```
+///
+/// The Magnus coefficient `C_mag` is typically O(10⁻⁴) for this formula
+/// convention (full cross-product with spin rate in rad/s), producing
+/// ~0.1–0.5 MOA lateral drift at 500 m for a 5.56 mm rifle bullet.
+/// Higher values (0.2–0.5) found in some references apply to conventions
+/// where spin-rate is non-dimensionalised (p·d/V) or where yaw angle is
+/// included explicitly.
+///
+/// # Arguments
+/// * `density` — Air density (kg/m³)
+/// * `speed` — Projectile speed (m/s) — used for guard-clause only
+/// * `caliber_m` — Projectile caliber (m)
+/// * `mass_kg` — Projectile mass (kg)
+/// * `spin_rate` — Spin rate about the bore axis (rad/s)
+/// * `vel_y` — Y-component of velocity (m/s)
+/// * `vel_z` — Z-component of velocity (m/s)
+///
+/// # Returns
+/// `(acc_y, acc_z)` — Magnus acceleration in y and z (m/s²)
+pub fn magnus_acceleration(
+    density: f64,
+    speed: f64,
+    caliber_m: f64,
+    mass_kg: f64,
+    spin_rate: f64,
+    vel_y: f64,
+    vel_z: f64,
+) -> (f64, f64) {
+    if speed < 10.0 || mass_kg <= 0.0 || caliber_m <= 0.0 || spin_rate <= 0.0 {
+        return (0.0, 0.0);
+    }
+    let area = std::f64::consts::PI * (caliber_m / 2.0).powi(2);
+    // ponytail: calibrated for 5.56mm M855 — produces ~0.1 MOA drift at 500m
+    // with the (ω × V) formula using rad/s spin rate. Change if the formula
+    // convention is updated to non-dimensional spin (p·d/V).
+    let c_mag = 0.00015;
+    let factor = 0.5 * density * area * c_mag * spin_rate / mass_kg;
+    let acc_y = -factor * vel_z;
+    let acc_z = factor * vel_y;
+    (acc_y, acc_z)
+}
+
 // ── Tests ─────────────────────────────────────────────────────────────────────
 
 #[cfg(test)]
@@ -726,6 +780,73 @@ mod tests {
             "spitzer and blunt should give different yaw evolution: sp={:.2e} bl={:.2e}",
             yaw_sp,
             yaw_bl
+        );
+    }
+
+    // ── magnus_acceleration ────────────────────────────────────────────────
+
+    #[test]
+    fn magnus_zero_at_low_speed() {
+        let (ay, az) = magnus_acceleration(1.225, 5.0, 0.00556, 0.004, 1000.0, 0.0, 0.0);
+        assert_eq!(ay, 0.0, "no Magnus below 10 m/s");
+        assert_eq!(az, 0.0, "no Magnus below 10 m/s");
+    }
+
+    #[test]
+    fn magnus_zero_at_zero_mass() {
+        let (ay, az) = magnus_acceleration(1.225, 900.0, 0.00556, 0.0, 1000.0, 10.0, 0.0);
+        assert_eq!(ay, 0.0);
+        assert_eq!(az, 0.0);
+    }
+
+    #[test]
+    fn magnus_positive_spin_gives_lateral_accel() {
+        // Horizontal shot (+x), no y or z velocity initially → zero Magnus
+        let (ay, az) = magnus_acceleration(1.225, 900.0, 0.00556, 0.004, 5000.0, 0.0, 0.0);
+        assert!(
+            ay.abs() < 1e-15,
+            "with zero cross velocity, Magnus should be zero: {}",
+            ay
+        );
+        assert!(
+            az.abs() < 1e-15,
+            "with zero cross velocity, Magnus should be zero: {}",
+            az
+        );
+    }
+
+    #[test]
+    fn magnus_with_cross_velocity_produces_force() {
+        // With some y-velocity, Magnus should produce vertical (z) acceleration
+        let (ay, az) = magnus_acceleration(1.225, 900.0, 0.00556, 0.004, 5000.0, 5.0, 2.0);
+        // Magnus: ay ∝ -vz, az ∝ vy
+        // So with vy=5, vz=2: ay should be negative, az should be positive
+        assert!(ay < 0.0, "ay should be negative (∝ -vz): {}", ay);
+        assert!(az > 0.0, "az should be positive (∝ vy): {}", az);
+        // With C_mag ≈ 1.5e-4 + 1:7" spin at 900 m/s, Magnus should produce
+        // ~0.01 m/s² lateral acceleration — small but non-trivial.
+        assert!(ay.abs() > 1e-6, "Magnus ay should be non-zero: {}", ay);
+        assert!(az.abs() > 1e-6, "Magnus az should be non-zero: {}", az);
+        // Verify the cross-product sign relationship holds
+        assert!(
+            az.abs() > ay.abs(),
+            "with vy=5, vz=2: |az| ({}) should exceed |ay| ({})",
+            az.abs(),
+            ay.abs()
+        );
+    }
+
+    #[test]
+    fn magnus_scales_with_density() {
+        let sea = magnus_acceleration(1.225, 900.0, 0.00556, 0.004, 5000.0, 5.0, 2.0);
+        let high = magnus_acceleration(0.500, 900.0, 0.00556, 0.004, 5000.0, 5.0, 2.0);
+        assert!(
+            sea.0.abs() > high.0.abs(),
+            "Magnus should be stronger at higher density"
+        );
+        assert!(
+            sea.1.abs() > high.1.abs(),
+            "Magnus should be stronger at higher density"
         );
     }
 

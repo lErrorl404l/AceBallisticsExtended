@@ -760,6 +760,10 @@ pub struct StepParams {
     pub mass_g: f64,
     /// Projectile calibre in millimetres (reserved for future use).
     pub caliber_mm: f64,
+    /// Rifling twist rate in metres per turn (e.g. 0.178 for 1:7").
+    /// Used for Magnus force spin rate computation.
+    /// Set to 0.0 to disable Magnus effects.
+    pub twist_rate_m: f64,
 }
 
 /// Step a projectile forward by `dt_s` seconds using semi-implicit Euler
@@ -835,7 +839,9 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
     // Apply BC-based drag: a = 0.5 * ρ * v² * Cd / (BC * K)
     // K includes π/4 area factor: 0.453592 / 0.0254² * 4/π ≈ 895.3
     const BC_CONV: f64 = 0.453592 / (0.0254 * 0.0254) * (4.0 / std::f64::consts::PI);
-    let bc_metric = params.bc * BC_CONV;
+    // BC varies with Mach — interpolate through transonic region
+    let effective_bc = drag::bc_at_mach(params.bc, mach, cdm_str);
+    let bc_metric = effective_bc * BC_CONV;
     let mut drag_decel = if speed > 0.001 && bc_metric > 0.001 {
         0.5 * density * speed * speed * cd / bc_metric
     } else {
@@ -886,9 +892,28 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
         drag_decel *= ind_drag_mult;
     }
 
+    // ── Magnus force (lateral drift from spin) ─────────────────────────────────
+    // Magnus acceleration acts on the y-z plane perpendicular to the spin axis.
+    let (mag_y, mag_z) = if params.twist_rate_m > 0.0 && speed > 10.0 && params.mass_g > 0.0 {
+        let spin_rate = 2.0 * std::f64::consts::PI * speed / params.twist_rate_m;
+        let mass_kg = params.mass_g / 1000.0;
+        let caliber_m = params.caliber_mm / 1000.0;
+        dof::magnus_acceleration(
+            density,
+            speed,
+            caliber_m,
+            mass_kg,
+            spin_rate,
+            params.vel_y,
+            params.vel_z,
+        )
+    } else {
+        (0.0, 0.0)
+    };
+
     let vx = params.vel_x - drag_decel * (params.vel_x / speed) * params.dt_s;
-    let vy = params.vel_y - drag_decel * (params.vel_y / speed) * params.dt_s;
-    let vz = params.vel_z - drag_decel * (params.vel_z / speed) * params.dt_s;
+    let vy = params.vel_y - drag_decel * (params.vel_y / speed) * params.dt_s + mag_y * params.dt_s;
+    let vz = params.vel_z - drag_decel * (params.vel_z / speed) * params.dt_s + mag_z * params.dt_s;
 
     // Gravity
     let vz = vz + atmosphere::GRAVITY * params.dt_s;
@@ -947,6 +972,9 @@ pub struct ImpactParams {
     /// (e.g. `b"ball\0"`, `b"ap\0"`, `b"apds\0"`, `b"soft_point\0"`).
     /// Padded to 32 bytes.
     pub projectile_type: [u8; 32],
+    /// Yaw angle at impact in degrees (0 = perfectly aligned).
+    /// Reduces penetration effectiveness: see `penetration::evaluate_yaw`.
+    pub yaw_angle_deg: f64,
 }
 
 /// Output from [`abe_impact`].
@@ -1041,7 +1069,9 @@ pub extern "C" fn abe_impact(params: &ImpactParams, result: &mut ImpactResult) -
         Err(_) => "ball",
     };
 
-    let pen_result = penetration::evaluate(
+    let yaw_angle_deg = params.yaw_angle_deg;
+
+    let pen_result = penetration::evaluate_yaw(
         speed,
         params.mass_g / 1000.0,
         params.caliber_mm / 1000.0,
@@ -1049,6 +1079,7 @@ pub extern "C" fn abe_impact(params: &ImpactParams, result: &mut ImpactResult) -
         params.impact_angle_deg,
         material_str,
         proj_str,
+        yaw_angle_deg,
     );
 
     *result = ImpactResult {
@@ -1215,6 +1246,7 @@ mod tests {
             bc: 0.157,
             mass_g: 4.0,
             caliber_mm: 5.56,
+            twist_rate_m: 0.178,
         };
 
         let mut result = BulletState::default();
@@ -1243,6 +1275,7 @@ mod tests {
             armor_material: mat,
             impact_angle_deg: 0.0,
             projectile_type: proj,
+            yaw_angle_deg: 0.0,
         };
 
         let mut result = ImpactResult::default();
@@ -1446,6 +1479,7 @@ mod tests {
                 bc,
                 mass_g,
                 caliber_mm,
+                twist_rate_m: 0.178,
             };
 
             let mut result = BulletState::default();
@@ -1910,6 +1944,7 @@ mod tests {
                 bc: 0.157,
                 mass_g: 4.0,
                 caliber_mm: 5.56,
+                twist_rate_m: 0.0,
             };
             let mut sr = BulletState::default();
             assert_eq!(abe_step(&step, &mut sr), 0);
@@ -1937,6 +1972,7 @@ mod tests {
             armor_material: mat,
             impact_angle_deg: 0.0,
             projectile_type: proj,
+            yaw_angle_deg: 0.0,
         };
         let mut ir = ImpactResult::default();
         assert_eq!(abe_impact(&impact, &mut ir), 0);
@@ -2039,6 +2075,7 @@ mod tests {
             cdm_id: cdm,
             mass_g: 4.0,
             caliber_mm: 5.56,
+            twist_rate_m: 0.178,
             dt_s: 0.02,
             bc: 0.157,
         };
@@ -2075,6 +2112,7 @@ mod tests {
                     bc,
                     mass_g: base.mass_g,
                     caliber_mm: base.caliber_mm,
+                    twist_rate_m: base.twist_rate_m,
                 };
                 let mut result = BulletState::default();
                 assert_eq!(abe_step(&step, &mut result), 0);
@@ -2132,6 +2170,7 @@ mod tests {
                     bc: 0.157,
                     mass_g: 4.0,
                     caliber_mm: 5.56,
+                    twist_rate_m: 0.0, // disable Magnus — crosswind-only test
                 };
                 let mut result = BulletState::default();
                 abe_step(&step, &mut result);
@@ -2197,6 +2236,7 @@ mod tests {
                 bc: 0.157,
                 mass_g,
                 caliber_mm: 5.56,
+                twist_rate_m: 0.178,
             };
             let mut result = BulletState::default();
             assert_eq!(abe_step(&params, &mut result), 0);
@@ -2258,6 +2298,7 @@ mod tests {
                 bc: 0.157,
                 mass_g: 4.0,
                 caliber_mm: 5.56,
+                twist_rate_m: 0.178,
             };
             let mut result = BulletState::default();
             abe_step(&params, &mut result);
@@ -2321,6 +2362,7 @@ mod tests {
                 bc: 0.0, // No drag → free fall
                 mass_g: 4.0,
                 caliber_mm: 5.56,
+                twist_rate_m: 0.178,
             };
             let mut result = BulletState::default();
             assert_eq!(abe_step(&params, &mut result), 0);
@@ -2396,6 +2438,7 @@ mod tests {
                     bc: 0.157,
                     mass_g: 4.0,
                     caliber_mm: 5.56,
+                    twist_rate_m: 0.178,
                 };
                 let mut result = BulletState::default();
                 abe_step(&params, &mut result);

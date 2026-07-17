@@ -319,6 +319,42 @@ pub static BCSCALE_M193: &[(f64, f64)] = &[
     (5.00, 0.940),
 ];
 
+/// Interpolate ballistic coefficient between Mach regimes.
+///
+/// The effective BC changes through the transonic region because the drag
+/// coefficient shape changes.  This function applies a simple three-regime
+/// model with linear interpolation in the transonic band (Mach 0.8–1.2):
+///
+/// | Regime      | Mach       | BC factor                    |
+/// |-------------|------------|------------------------------|
+/// | Subsonic    | ≤ 0.8      | `subsonic_factor × bc_ref`   |
+/// | Transonic   | 0.8 – 1.2  | linear interpolation         |
+/// | Supersonic  | ≥ 1.2      | `supersonic_factor × bc_ref` |
+///
+/// Default factors (from published G1/G7 data):
+/// - G7 boat-tail: subsonic +15 %
+/// - G1 flat-base: subsonic +5 %
+/// - Supersonic: factor ≈ 1.0 (reference BC measured at Mach 1.5–2.5)
+pub fn bc_at_mach(bc_reference: f64, mach: f64, cdm_id: &str) -> f64 {
+    let (subsonic_factor, supersonic_factor) = match cdm_id {
+        "g1" => (1.05, 1.00), // G1: BC ~5% higher subsonic
+        "g7" => (1.15, 1.00), // G7 boat-tail: BC ~15% higher subsonic
+        "gl" => (1.10, 1.00),
+        _ => (1.05, 1.00),
+    };
+
+    if mach >= 1.2 {
+        bc_reference * supersonic_factor
+    } else if mach <= 0.8 {
+        bc_reference * subsonic_factor
+    } else {
+        // Transonic — linear interpolation between subsonic and supersonic
+        let t = (mach - 0.8) / 0.4; // 0 at M 0.8, 1 at M 1.2
+        let factor = subsonic_factor + t * (supersonic_factor - subsonic_factor);
+        bc_reference * factor
+    }
+}
+
 // ── Tests ─────────────────────────────────────────────────────────────────────
 
 #[cfg(test)]
@@ -494,5 +530,108 @@ mod tests {
     fn bcscale_clamps_high() {
         let bc = BCScale::new(BCSCALE_M855);
         assert!((bc.scale_factor(10.0) - bc.scale_factor(5.0)).abs() < 1e-12);
+    }
+
+    // ── bc_at_mach ──────────────────────────────────────────────────────────
+
+    #[test]
+    fn bc_at_mach_supersonic_uses_reference() {
+        // At Mach ≥ 1.2, BC should be near reference (supersonic_factor ≈ 1.0)
+        let bc = bc_at_mach(0.200, 2.0, "g7");
+        assert!(
+            (bc - 0.200).abs() < 0.001,
+            "supersonic G7 BC should stay near reference: {}",
+            bc
+        );
+    }
+
+    #[test]
+    fn bc_at_mach_subsonic_g7_higher() {
+        let bc = bc_at_mach(0.200, 0.5, "g7");
+        // G7 subsonic factor = 1.15
+        assert!(
+            (bc - 0.230).abs() < 0.001,
+            "G7 subsonic BC should be ~0.230: {}",
+            bc
+        );
+    }
+
+    #[test]
+    fn bc_at_mach_transonic_interpolates() {
+        let bc_low = bc_at_mach(0.200, 0.8, "g7");
+        let bc_high = bc_at_mach(0.200, 1.2, "g7");
+        let bc_mid = bc_at_mach(0.200, 1.0, "g7");
+
+        // At Mach 1.0 (midpoint of transonic), should be between subsonic and supersonic
+        assert!(
+            bc_mid > bc_high,
+            "transonic midpoint ({}) should be above supersonic value ({})",
+            bc_mid,
+            bc_high
+        );
+        assert!(
+            bc_mid < bc_low,
+            "transonic midpoint ({}) should be below subsonic value ({})",
+            bc_mid,
+            bc_low
+        );
+    }
+
+    #[test]
+    fn bc_at_mach_g1_subsonic_factor() {
+        // G1 subsonic factor = 1.05
+        let bc = bc_at_mach(0.300, 0.5, "g1");
+        assert!(
+            (bc - 0.315).abs() < 0.001,
+            "G1 subsonic BC should be ~0.315: {}",
+            bc
+        );
+    }
+
+    #[test]
+    fn bc_at_mach_unknown_defaults_to_g1() {
+        let bc = bc_at_mach(0.200, 0.5, "custom_ammo");
+        // Defaults to G1 subsonic factor = 1.05
+        assert!(
+            (bc - 0.210).abs() < 0.001,
+            "unknown CDM defaults to G1 subsonic BC ~0.210: {}",
+            bc
+        );
+    }
+
+    #[test]
+    fn bc_at_mach_smooth_at_boundaries() {
+        // Verify no discontinuity at Mach 0.8 and Mach 1.2
+        let just_below = bc_at_mach(0.200, 0.799, "g7");
+        let at_boundary = bc_at_mach(0.200, 0.8, "g7");
+        let just_above = bc_at_mach(0.200, 0.801, "g7");
+        assert!(
+            (just_below - at_boundary).abs() < 0.001,
+            "discontinuity at M=0.8: {:.6} vs {:.6}",
+            just_below,
+            at_boundary
+        );
+        assert!(
+            (at_boundary - just_above).abs() < 0.005,
+            "large jump at M=0.8: {:.6} vs {:.6}",
+            at_boundary,
+            just_above
+        );
+
+        let just_below = bc_at_mach(0.200, 1.199, "g7");
+        let at_boundary = bc_at_mach(0.200, 1.2, "g7");
+        let just_above = bc_at_mach(0.200, 1.201, "g7");
+        assert!(
+            (just_below - at_boundary).abs() < 0.001,
+            "discontinuity at M=1.2: {:.6} vs {:.6}",
+            just_below,
+            at_boundary
+        );
+        assert!(
+            (at_boundary - just_above).abs() < 0.001,
+            "discontinuity at M=1.2: {:.6} vs {:.6}",
+            at_boundary,
+            just_above
+        );
     }
 }
