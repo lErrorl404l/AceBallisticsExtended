@@ -1,11 +1,12 @@
 {
-    "class": "rhs_weap_m24",
-    "caliber_mm": 7.62,
-    "barrel_length_mm": 610.0,
-    "rifling_twist_mm": 285.0,
-    "chamber_pressure_mpa": 380.0,
-    "cdm_id": "g7",
-    "projectile_mass_g": 11.3,
-    "muzzle_velocity_ms": 805.0,
-    "zero_range_m": 100.0
+  "class": "rhs_weap_m24",
+  "caliber_mm": 7.62,
+  "barrel_length_mm": 610.0,
+  "rifling_twist_mm": 285.0,
+  "chamber_pressure_mpa": 380.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 11.3,
+  "muzzle_velocity_ms": 805.0,
+  "zero_range_m": 100.0,
+  "twist_rate_mm": 285.0
 }

@@ -9,5 +9,6 @@
   "muzzleVelocityMs": 880,
   "zeroRangeM": 100,
   "effectiveRangeM": 600,
-  "notes": "M4A1 standard 14.5\" barrel, 1:7\" twist, M855A1 pressure. MV 880 m/s M855"
+  "notes": "M4A1 standard 14.5\" barrel, 1:7\" twist, M855A1 pressure. MV 880 m/s M855",
+  "twist_rate_mm": 178.0
 }

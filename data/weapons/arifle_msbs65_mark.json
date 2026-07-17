@@ -7,5 +7,6 @@
   "cdm_id": "g7",
   "projectile_mass_g": 9.072,
   "muzzle_velocity_ms": 840.0,
-  "zero_range_m": 100.0
+  "zero_range_m": 100.0,
+  "twist_rate_mm": 228.6
 }

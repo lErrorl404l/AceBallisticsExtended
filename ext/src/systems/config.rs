@@ -24,7 +24,10 @@ pub struct WeaponConfig {
     /// Barrel length in millimetres.
     pub barrel_length_mm: f64,
     /// Rifling twist rate in mm per revolution (optional, default 0).
+    ///
+    /// Accepts both `rifling_twist_mm` and `twist_rate_mm` JSON keys.
     #[serde(default)]
+    #[serde(alias = "twist_rate_mm")]
     pub rifling_twist_mm: f64,
     /// Peak chamber pressure in MPa (SAAMI/CIP).
     pub chamber_pressure_mpa: f64,

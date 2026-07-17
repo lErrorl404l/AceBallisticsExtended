@@ -40,6 +40,20 @@
       "exclusiveMinimum": 0,
       "maximum": 10
     },
+    "bcSupersonicFactor": {
+      "type": "number",
+      "description": "BC scale factor in supersonic regime (Mach ≥ 1.2). Reference BC is typically measured at supersonic speeds (Mach 1.5-2.5), so this is usually 1.0.",
+      "default": 1.0,
+      "minimum": 0.1,
+      "maximum": 2.0
+    },
+    "bcSubsonicFactor": {
+      "type": "number",
+      "description": "BC scale factor in subsonic regime (Mach ≤ 0.8). G7 boat-tail projectiles typically recover to ~1.15× reference BC subsonically. G1 flat-base: ~1.05×.",
+      "default": 1.05,
+      "minimum": 0.1,
+      "maximum": 2.0
+    },
     "muzzleVelocityMs": {
       "type": "number",
       "description": "Muzzle velocity in m/s (from reference barrel length)",

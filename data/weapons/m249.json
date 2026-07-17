@@ -9,5 +9,6 @@
   "muzzleVelocityMs": 915,
   "zeroRangeM": 100,
   "effectiveRangeM": 800,
-  "notes": "M249 SAW, 20.5\" barrel, 1:7\" twist. MV 915 m/s M855"
+  "notes": "M249 SAW, 20.5\" barrel, 1:7\" twist. MV 915 m/s M855",
+  "twist_rate_mm": 178.0
 }

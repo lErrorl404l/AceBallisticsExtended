@@ -35,6 +35,12 @@
       "exclusiveMinimum": 0,
       "maximum": 2000
     },
+    "twist_rate_mm": {
+      "type": "number",
+      "description": "Twist rate in mm per revolution (alias for riflingTwistMm / rifling_twist_mm)",
+      "exclusiveMinimum": 0,
+      "maximum": 2000
+    },
     "projectileMassG": {
       "type": "number",
       "description": "Projectile mass in grams (overrides ammo config)",

@@ -729,6 +729,7 @@ def generate_weapon_json(class_name: str, data: dict[str, Any]) -> dict[str, Any
         "caliber_mm": data["caliber_mm"],
         "barrel_length_mm": data["barrel_length_mm"],
         "rifling_twist_mm": data.get("rifling_twist_mm", 0.0),
+        "twist_rate_mm": data.get("rifling_twist_mm", 0.0),
         "chamber_pressure_mpa": data["chamber_pressure_mpa"],
         "cdm_id": data.get("cdm_id", "g7"),
         "projectile_mass_g": data["projectile_mass_g"],

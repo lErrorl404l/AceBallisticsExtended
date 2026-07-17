@@ -9,5 +9,6 @@
   "muzzleVelocityMs": 880,
   "zeroRangeM": 100,
   "effectiveRangeM": 500,
-  "notes": "AK-74M, 16.3\" barrel, 1:7.87\" twist, 7N6M pressure. MV 880 m/s 7N6"
+  "notes": "AK-74M, 16.3\" barrel, 1:7.87\" twist, 7N6M pressure. MV 880 m/s 7N6",
+  "twist_rate_mm": 200.0
 }
