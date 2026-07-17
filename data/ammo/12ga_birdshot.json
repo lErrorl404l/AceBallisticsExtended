@@ -8,9 +8,9 @@
         "cdm_id": "g7",
         "source": "12ga 70mm (2 3/4\") hunting load. #7.5 shot (~2.4mm / 0.095\" per pellet). ~350 pellets @ ~0.08g each, total shot mass ~28g. MV ~400 m/s. Pattern spread ~4% of range (typical improved cylinder choke).",
         "notes": "shotgun \u2014 multi-projectile (pellets), uses custom drag/spread model. Individual pellet penetration ~0.5-1.0mm RHAe at close range.",
-        "frag_mass_mean": 0.0,
+        "frag_mass_mean": 0.08,
         "frag_mass_std": 0.0,
-        "ricochet_angle_deg": 0.0,
+        "ricochet_angle_deg": 20.0,
         "tracer_burn_time_s": 0.0,
         "incendiary": false,
         "incendiary_ignition_temp_k": 0.0

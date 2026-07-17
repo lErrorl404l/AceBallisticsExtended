@@ -17,9 +17,9 @@
             },
             "notes": "EPR construction: copper jacket, steel penetrator, fragmented core. Similar fragmentation behavior to M855A1/M80A1."
         },
-        "frag_mass_mean": 0.0,
-        "frag_mass_std": 0.0,
-        "ricochet_angle_deg": 0.0,
+        "frag_mass_mean": 2.0,
+        "frag_mass_std": 0.8,
+        "ricochet_angle_deg": 20.0,
         "tracer_burn_time_s": 0.0,
         "incendiary": false,
         "incendiary_ignition_temp_k": 0.0

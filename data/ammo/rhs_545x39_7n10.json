@@ -8,9 +8,9 @@
         "cdm_id": "g7",
         "source": "7N10 enhanced penetration 5.45x39mm (55gr). Russian source G7~0.176 (higher than 7N6 due to improved form factor). ACE3 ACE_bulletMass=3.43g base.",
         "fragmentation": null,
-        "frag_mass_mean": 0.0,
-        "frag_mass_std": 0.0,
-        "ricochet_angle_deg": 0.0,
+        "frag_mass_mean": 1.5,
+        "frag_mass_std": 0.5,
+        "ricochet_angle_deg": 20.0,
         "tracer_burn_time_s": 0.0,
         "incendiary": false,
         "incendiary_ignition_temp_k": 0.0

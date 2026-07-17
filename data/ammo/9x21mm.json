@@ -7,9 +7,9 @@
         "bc_g7": 0.075,
         "cdm_id": "g1",
         "source": "G1 BC ~0.150 for 124gr FMJ. G1 drag model (handgun). No fragmentation.",
-        "frag_mass_mean": 0.0,
-        "frag_mass_std": 0.0,
-        "ricochet_angle_deg": 0.0,
+        "frag_mass_mean": 0.5,
+        "frag_mass_std": 0.3,
+        "ricochet_angle_deg": 20.0,
         "tracer_burn_time_s": 0.0,
         "incendiary": false,
         "incendiary_ignition_temp_k": 0.0

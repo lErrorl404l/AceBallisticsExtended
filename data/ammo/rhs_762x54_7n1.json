@@ -8,9 +8,9 @@
         "cdm_id": "g1",
         "source": "ACE3 rhs_B_762x54_Ball G7 BC=0.216 (Hornady Doppler radar, Firearms News Fortier 2021). ACE3 ACE_bulletMass=9.85g (152gr).",
         "fragmentation": null,
-        "frag_mass_mean": 0.0,
-        "frag_mass_std": 0.0,
-        "ricochet_angle_deg": 0.0,
+        "frag_mass_mean": 2.0,
+        "frag_mass_std": 0.8,
+        "ricochet_angle_deg": 20.0,
         "tracer_burn_time_s": 0.0,
         "incendiary": false,
         "incendiary_ignition_temp_k": 0.0

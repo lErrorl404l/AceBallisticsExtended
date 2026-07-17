@@ -8,9 +8,9 @@
         "cdm_id": "g7",
         "source": "124gr 9mm JHP. G7 BC~0.054. JHP expansion only \u2014 no fragmentation (FBI: 99%+ weight retention in 143-load test). Speer/Hornady factory data.",
         "fragmentation": null,
-        "frag_mass_mean": 0.0,
-        "frag_mass_std": 0.0,
-        "ricochet_angle_deg": 0.0,
+        "frag_mass_mean": 0.5,
+        "frag_mass_std": 0.3,
+        "ricochet_angle_deg": 25.0,
         "tracer_burn_time_s": 0.0,
         "incendiary": false,
         "incendiary_ignition_temp_k": 0.0

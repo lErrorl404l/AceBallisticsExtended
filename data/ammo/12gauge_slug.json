@@ -8,9 +8,9 @@
         "cdm_id": "g7",
         "source": "12ga 1oz rifled slug. Federal Power-Shok G1=0.110 \u2192 G7=0.055 (flat-base \u00d70.5 conversion). Federal Premium factory spec. Remington AccuTip sabot G1=0.145.",
         "fragmentation": null,
-        "frag_mass_mean": 0.0,
-        "frag_mass_std": 0.0,
-        "ricochet_angle_deg": 0.0,
+        "frag_mass_mean": 20.0,
+        "frag_mass_std": 5.0,
+        "ricochet_angle_deg": 30.0,
         "tracer_burn_time_s": 0.0,
         "incendiary": false,
         "incendiary_ignition_temp_k": 0.0

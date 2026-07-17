@@ -8,9 +8,9 @@
         "cdm_id": "g7",
         "source": "Vanilla Arma 3 config values. Titan AA missile 70mm, 1.5kg.",
         "notes": "launcher munition \u2014 uses custom drag model",
-        "frag_mass_mean": 0.0,
-        "frag_mass_std": 0.0,
-        "ricochet_angle_deg": 0.0,
+        "frag_mass_mean": 5.0,
+        "frag_mass_std": 3.0,
+        "ricochet_angle_deg": 35.0,
         "tracer_burn_time_s": 0.0,
         "incendiary": false,
         "incendiary_ignition_temp_k": 0.0

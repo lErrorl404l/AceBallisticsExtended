@@ -8,9 +8,9 @@
         "cdm_id": "g7",
         "source": "Lapua 250gr Scenar G7=0.310 (Lapua factory data). Confirmed by Litz, Applied Ballistics for Long Range Shooting, 4th Ed. \u00a711.5, Doppler radar measurements show 0.305-0.312 range.",
         "fragmentation": null,
-        "frag_mass_mean": 0.0,
-        "frag_mass_std": 0.0,
-        "ricochet_angle_deg": 0.0,
+        "frag_mass_mean": 2.0,
+        "frag_mass_std": 0.8,
+        "ricochet_angle_deg": 20.0,
         "tracer_burn_time_s": 0.0,
         "incendiary": false,
         "incendiary_ignition_temp_k": 0.0

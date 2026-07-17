@@ -4,7 +4,7 @@
   "caliberMm": 7.62,
   "cdmId": "g7",
   "bcG1": 0.406,
-  "bcG7": 0.200,
+  "bcG7": 0.2,
   "muzzleVelocityMs": 850.0,
   "referenceBarrelLengthMm": 560.0,
   "fragThresholdMs": 790.0,
@@ -12,5 +12,6 @@
   "fragMassDist": "log_normal",
   "projectileType": "fmj",
   "source": "APG/US Army BRL G7 BC=0.200 (M80 149gr FMJ, AD0815788, Piddington & Maynard 1966)",
-  "notes": "M80 149-gr FMJ. NATO standard. G7 BC=0.200 per APG/US Army BRL (AD0815788). Frag above 600 m/s."
+  "notes": "M80 149-gr FMJ. NATO standard. G7 BC=0.200 per APG/US Army BRL (AD0815788). Frag above 600 m/s.",
+  "ricochet_angle_deg": 20.0
 }

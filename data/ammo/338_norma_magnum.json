@@ -7,9 +7,9 @@
         "bc_g7": 0.381,
         "cdm_id": "g7",
         "source": "ACE3 data: 300gr Lapua Scenar, G7 BC=0.381 at ICAO. Lapua factory: 250gr G1=0.648. Federal GM338LM2 300gr SMK G7=0.387. Value is within range.",
-        "frag_mass_mean": 0.0,
-        "frag_mass_std": 0.0,
-        "ricochet_angle_deg": 0.0,
+        "frag_mass_mean": 2.0,
+        "frag_mass_std": 0.8,
+        "ricochet_angle_deg": 20.0,
         "tracer_burn_time_s": 0.0,
         "incendiary": false,
         "incendiary_ignition_temp_k": 0.0

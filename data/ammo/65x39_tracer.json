@@ -7,9 +7,9 @@
         "bc_g7": 0.245,
         "cdm_id": "g7",
         "source": "Tracer variant of fictional 6.5mm CT. BC estimated ~4% below ball based on M856 tracer vs M855 relationship (Litz \u00a78.5 tracer BC degradation).",
-        "frag_mass_mean": 0.0,
-        "frag_mass_std": 0.0,
-        "ricochet_angle_deg": 0.0,
+        "frag_mass_mean": 1.2,
+        "frag_mass_std": 0.4,
+        "ricochet_angle_deg": 20.0,
         "tracer_burn_time_s": 2.5,
         "incendiary": false,
         "incendiary_ignition_temp_k": 0.0

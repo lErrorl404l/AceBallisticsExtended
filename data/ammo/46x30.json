@@ -8,9 +8,9 @@
         "cdm_id": "g7",
         "source": "HK MP7 4.6x30mm DM11 FMJ, 31gr @ 725 m/s (180mm barrel). G7 BC ~0.082 (HK data, C.I.P. STANAG 4620). AP variant (DM21) available with hardened steel penetrator.",
         "notes": "PDW round \u2014 intermediate penetration, optimized for body armor defeat at close range",
-        "frag_mass_mean": 0.0,
-        "frag_mass_std": 0.0,
-        "ricochet_angle_deg": 0.0,
+        "frag_mass_mean": 0.5,
+        "frag_mass_std": 0.3,
+        "ricochet_angle_deg": 20.0,
         "tracer_burn_time_s": 0.0,
         "incendiary": false,
         "incendiary_ignition_temp_k": 0.0
