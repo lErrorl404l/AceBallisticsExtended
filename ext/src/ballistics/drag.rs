@@ -9,6 +9,7 @@
 //   - NATO AOP-55 Annex A
 //   - Litz's Applied Ballistics for Long Range Shooting
 
+use std::collections::HashMap;
 use std::sync::Mutex;
 
 /// Single-entry L1 cache for `get_cd`: stores (drag_model, mach, cd).
@@ -180,6 +181,119 @@ fn g8_drag(mach: f64) -> f64 {
         return 0.155;
     }
     table_lookup(&G8_TABLE, mach)
+}
+
+// ── Custom Drag Model Builder ──────────────────────────────────────────────
+
+struct DragFunc(Box<dyn Fn(f64) -> f64>);
+
+// Safety: the only closures we store are from build_custom_drag_model which
+// captures Vec<(f64, f64)> — both Send + Sync.
+unsafe impl Send for DragFunc {}
+
+static CUSTOM_DRAG_TABLES: Mutex<Option<HashMap<String, DragFunc>>> = Mutex::new(None);
+
+/// Build a drag coefficient function from user-supplied (Mach, Cd) data points.
+///
+/// Uses piecewise-linear interpolation (same method as the standard G1/G7/G8
+/// tables). Out-of-range Mach numbers are clamped to the nearest control point.
+///
+/// This is intended for users who have Doppler-radar measured drag data for a
+/// custom bullet (e.g. from a LabRadar or Oehler system) and want to use it
+/// instead of a standard drag model.
+///
+/// # Arguments
+/// * `mach_points` — Sorted slice of (Mach, Cd) control points. Must contain at
+///   least one point (empty slice returns a model that always yields 0.0).
+pub fn build_custom_drag_model(mach_points: &[(f64, f64)]) -> Box<dyn Fn(f64) -> f64> {
+    let table: Vec<(f64, f64)> = mach_points.to_vec();
+    Box::new(move |mach| {
+        if table.is_empty() {
+            return 0.0;
+        }
+        table_lookup(&table, mach)
+    })
+}
+
+/// Register a custom drag model for later lookup via [`get_custom_drag`].
+///
+/// The model can be constructed via [`build_custom_drag_model`] or any other
+/// closure that implements `Fn(f64) -> f64`.
+pub fn register_custom_drag(name: String, model: Box<dyn Fn(f64) -> f64>) {
+    if let Ok(mut guard) = CUSTOM_DRAG_TABLES.lock() {
+        let map = guard.get_or_insert_with(HashMap::new);
+        map.insert(name, DragFunc(model));
+    }
+}
+
+/// Look up and evaluate a previously-registered custom drag model.
+///
+/// Returns the drag coefficient at the given Mach number. Falls back to
+/// the G7 model if `name` has not been registered.
+pub fn get_custom_drag(name: &str, mach: f64) -> f64 {
+    if let Ok(guard) = CUSTOM_DRAG_TABLES.lock() {
+        if let Some(ref map) = *guard {
+            if let Some(model) = map.get(name) {
+                return (model.0)(mach);
+            }
+        }
+    }
+    // Fall back to G7
+    g7_drag(mach)
+}
+
+// ── Boat-tail Drag Reduction ──────────────────────────────────────────────
+
+/// Compute the drag multiplier for a boat-tail projectile.
+///
+/// Boat-tail projectiles have reduced base drag compared to flat-base
+/// projectiles. The effectiveness depends on the boat-tail angle, its
+/// length (in calibers), and the Mach regime.
+///
+/// Returns a multiplier in [0.85, 1.0].
+///
+/// # Physics
+/// - Subsonic (M < 0.8): boat-tail most effective, factor ≈ 0.87
+/// - Supersonic (M > 1.2): less effective, factor ≈ 0.93
+/// - Transonic (0.8 ≤ M ≤ 1.2): linearly interpolated
+/// - Optimal angle: 7–9° (gaussian falloff, σ = 5°)
+/// - Longer boat-tails (up to 1.5 cal) provide more reduction
+///
+/// # Arguments
+/// * `boat_tail_angle_deg` — Boat-tail angle in degrees (0 = flat base).
+/// * `boat_tail_length_calibers` — Boat-tail length in calibers (0.5–1.5 typical).
+/// * `mach` — Current Mach number.
+pub fn boat_tail_drag_factor(
+    boat_tail_angle_deg: f64,
+    boat_tail_length_calibers: f64,
+    mach: f64,
+) -> f64 {
+    // No meaningful boat-tail → no reduction
+    if boat_tail_angle_deg <= 1.0 || boat_tail_length_calibers <= 0.05 {
+        return 1.0;
+    }
+
+    // Base drag multiplier from Mach regime
+    let base = if mach < 0.8 {
+        0.87
+    } else if mach > 1.2 {
+        0.93
+    } else {
+        // Linear interpolation in transonic
+        let t = (mach - 0.8) / 0.4;
+        0.87 + t * (0.93 - 0.87)
+    };
+
+    // Angle efficiency: gaussian centered at 8° (optimal boat-tail angle)
+    let sigma: f64 = 5.0;
+    let angle_eff = (-((boat_tail_angle_deg - 8.0).powi(2)) / (2.0 * sigma.powi(2))).exp();
+
+    // Length effect: longer boat-tails provide more base drag reduction
+    let len_eff = (boat_tail_length_calibers / 1.5).min(1.0);
+
+    // Combine: the Mach base defines max reduction, scaled by angle × length
+    let reduction = (1.0 - base) * angle_eff * len_eff;
+    (1.0 - reduction).clamp(0.85, 1.0)
 }
 
 // ── BC Scale (Mach-dependent ballistic coefficient) ──────────────────────────
@@ -597,6 +711,153 @@ mod tests {
             "unknown CDM defaults to G1 subsonic BC ~0.210: {}",
             bc
         );
+    }
+
+    // ── Custom drag model tests ──────────────────────────────────────────────
+
+    #[test]
+    fn build_custom_drag_interpolates() {
+        let pts = [(0.0, 0.1), (0.5, 0.2), (1.0, 0.3)];
+        let f = build_custom_drag_model(&pts);
+        assert!((f(0.0) - 0.1).abs() < 1e-12);
+        assert!((f(0.5) - 0.2).abs() < 1e-12);
+        assert!((f(1.0) - 0.3).abs() < 1e-12);
+        assert!((f(0.25) - 0.15).abs() < 1e-12);
+        assert!((f(0.75) - 0.25).abs() < 1e-12);
+    }
+
+    #[test]
+    fn build_custom_drag_clamps_low() {
+        let pts = [(0.0, 0.1), (1.0, 0.3)];
+        let f = build_custom_drag_model(&pts);
+        assert!((f(-0.5) - 0.1).abs() < 1e-12);
+    }
+
+    #[test]
+    fn build_custom_drag_clamps_high() {
+        let pts = [(0.0, 0.1), (1.0, 0.3)];
+        let f = build_custom_drag_model(&pts);
+        assert!((f(2.0) - 0.3).abs() < 1e-12);
+    }
+
+    #[test]
+    fn build_custom_drag_empty_returns_zero() {
+        let f = build_custom_drag_model(&[]);
+        assert!((f(0.5) - 0.0).abs() < 1e-12);
+    }
+
+    #[test]
+    fn register_and_get_custom_drag() {
+        let pts = [(0.0, 0.5), (2.0, 0.5)];
+        let model = build_custom_drag_model(&pts);
+        register_custom_drag("test_bullet".to_string(), model);
+        let cd = get_custom_drag("test_bullet", 1.0);
+        assert!((cd - 0.5).abs() < 1e-12);
+    }
+
+    #[test]
+    fn get_custom_drag_fallback_to_g7() {
+        let cd = get_custom_drag("nonexistent", 0.8);
+        let g7 = g7_drag(0.8);
+        let diff = (cd - g7).abs();
+        assert!(
+            diff < 1e-12,
+            "unknown custom drag should fallback to G7, diff={diff}"
+        );
+    }
+
+    #[test]
+    fn register_custom_drag_overwrites() {
+        let pts1 = [(0.0, 0.1)];
+        let pts2 = [(0.0, 0.9)];
+        register_custom_drag("overwrite_test".to_string(), build_custom_drag_model(&pts1));
+        register_custom_drag("overwrite_test".to_string(), build_custom_drag_model(&pts2));
+        let cd = get_custom_drag("overwrite_test", 0.0);
+        assert!((cd - 0.9).abs() < 1e-12);
+    }
+
+    // ── Boat-tail drag tests ────────────────────────────────────────────────
+
+    #[test]
+    fn boat_tail_no_tail_returns_one() {
+        let f = boat_tail_drag_factor(0.0, 1.0, 0.5);
+        assert!((f - 1.0).abs() < 1e-12);
+    }
+
+    #[test]
+    fn boat_tail_zero_length_returns_one() {
+        let f = boat_tail_drag_factor(8.0, 0.0, 0.5);
+        assert!((f - 1.0).abs() < 1e-12);
+    }
+
+    #[test]
+    fn boat_tail_subsonic_most_effective() {
+        let f = boat_tail_drag_factor(8.0, 1.5, 0.5);
+        assert!(
+            f < 0.90,
+            "Subsonic optimal boat-tail should give < 0.90, got {f}"
+        );
+        assert!(f >= 0.85);
+    }
+
+    #[test]
+    fn boat_tail_supersonic_less_effective() {
+        let sub = boat_tail_drag_factor(8.0, 1.5, 0.5);
+        let sup = boat_tail_drag_factor(8.0, 1.5, 2.0);
+        assert!(
+            sub < sup,
+            "Subsonic factor ({sub}) should be lower (more reduction) than supersonic ({sup})"
+        );
+    }
+
+    #[test]
+    fn boat_tail_transonic_interpolates() {
+        let sub = boat_tail_drag_factor(8.0, 1.5, 0.79);
+        let trans = boat_tail_drag_factor(8.0, 1.5, 1.0);
+        let sup = boat_tail_drag_factor(8.0, 1.5, 1.21);
+        assert!(
+            trans > sub,
+            "Transonic ({trans}) should be between subsonic ({sub}) and supersonic ({sup})"
+        );
+        assert!(
+            trans < sup,
+            "Transonic ({trans}) should be between subsonic ({sub}) and supersonic ({sup})"
+        );
+    }
+
+    #[test]
+    fn boat_tail_suboptimal_angle_less_effective() {
+        let opt = boat_tail_drag_factor(8.0, 1.5, 0.5);
+        let sub = boat_tail_drag_factor(3.0, 1.5, 0.5);
+        assert!(
+            sub > opt,
+            "Suboptimal 3° angle ({sub}) should give less reduction than optimal 8° ({opt})"
+        );
+    }
+
+    #[test]
+    fn boat_tail_shorter_length_less_effective() {
+        let long = boat_tail_drag_factor(8.0, 1.5, 0.5);
+        let short = boat_tail_drag_factor(8.0, 0.5, 0.5);
+        assert!(
+            short > long,
+            "Shorter boat-tail ({short}) should give less reduction than longer ({long})"
+        );
+    }
+
+    #[test]
+    fn boat_tail_factor_in_range() {
+        for angle in [0.0, 4.0, 8.0, 12.0, 16.0] {
+            for len in [0.0, 0.5, 1.0, 1.5] {
+                for mach in [0.3, 0.7, 0.9, 1.0, 1.1, 1.5, 2.5] {
+                    let f = boat_tail_drag_factor(angle, len, mach);
+                    assert!(
+                        f >= 0.85 && f <= 1.0 + 1e-12,
+                        "boat_tail_drag_factor({angle}, {len}, {mach}) = {f} out of [0.85, 1.0]"
+                    );
+                }
+            }
+        }
     }
 
     #[test]

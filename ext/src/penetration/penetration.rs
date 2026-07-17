@@ -227,6 +227,90 @@ fn check_shatter(
     true
 }
 
+/// Check whether an AP projectile experiences interface defeat against
+/// hard ceramic-backed armor.
+///
+/// Interface defeat occurs when a hard ceramic face (e.g. B4C, SiC, AD95)
+/// backed by a ductile material (UHMWPE, aluminum, steel) erodes the
+/// projectile at the ceramic interface. The ceramic causes the projectile
+/// tip to deform/erode, and the ductile backing traps the debris,
+/// significantly reducing penetration.
+///
+/// # Conditions
+/// - Projectile is AP, APDS, APFSDS, or APCR
+/// - Armor face is a hard ceramic (b4c, sic, ad95 in material name)
+/// - Backing material is ductile (UHMWPE, aluminum, steel, dyneema, kevlar)
+/// - Impact velocity < 900 m/s (above critical velocity the projectile
+///   overmatches the ceramic before it can fully erode)
+/// - Ceramic thickness > 0.5 × projectile caliber (ensures dwell time)
+///
+/// # Returns
+/// `true` if interface defeat conditions are met. Callers should multiply
+/// the penetration by [`interface_defeat_penetration_multiplier`] when
+/// this returns `true`.
+pub fn check_interface_defeat(
+    velocity_ms: f64,
+    projectile_type: &str,
+    armor_material: &str,
+    backing_material: &str,
+    caliber_m: f64,
+    armor_thickness_m: f64,
+) -> bool {
+    // Only hard-core projectiles can be eroded at the interface
+    let lower_proj = projectile_type.to_lowercase();
+    let is_ap = lower_proj == "ap"
+        || lower_proj == "armor_piercing"
+        || lower_proj == "apds"
+        || lower_proj == "apfsds"
+        || lower_proj == "apcr";
+    if !is_ap {
+        return false;
+    }
+
+    // Check for hard ceramic face material
+    let lower_armor = armor_material.to_lowercase();
+    let is_hard_ceramic =
+        lower_armor.contains("b4c") || lower_armor.contains("sic") || lower_armor.contains("ad95");
+    if !is_hard_ceramic {
+        return false;
+    }
+
+    // Interface defeat requires a ductile backing to trap debris
+    let lower_back = backing_material.to_lowercase();
+    let is_ductile_backing = lower_back.contains("uhmwpe")
+        || lower_back.contains("aluminum")
+        || lower_back.contains("steel")
+        || lower_back.contains("dyneema")
+        || lower_back.contains("kevlar");
+    if !is_ductile_backing {
+        return false;
+    }
+
+    // Interface defeat only works below critical velocity
+    if velocity_ms >= 900.0 {
+        return false;
+    }
+
+    // Ceramic must be thick enough to sustain dwell
+    if armor_thickness_m <= 0.5 * caliber_m {
+        return false;
+    }
+
+    true
+}
+
+/// Compute the penetration multiplier when interface defeat occurs.
+///
+/// Returns a value in [0.4, 0.7] corresponding to 30–60% reduction in
+/// penetration depth. Higher velocities near the critical threshold
+/// (900 m/s) produce less reduction (multiplier ≈ 0.7), while lower
+/// velocities produce greater erosion (multiplier ≈ 0.4).
+pub fn interface_defeat_penetration_multiplier(velocity_ms: f64) -> f64 {
+    let v = velocity_ms.clamp(0.0, 900.0);
+    let mult = 0.4 + 0.3 * (v / 900.0);
+    mult.clamp(0.4, 0.7)
+}
+
 /// Projectile type modifier
 fn projectile_modifier(proj_type: &str) -> f64 {
     match proj_type.to_lowercase().as_str() {
@@ -240,6 +324,81 @@ fn projectile_modifier(proj_type: &str) -> f64 {
         "tracer" => 0.95,
         _ => 1.0,
     }
+}
+
+/// Compute the mass lost by a projectile during armour penetration.
+///
+/// Uses a Poncelet-form erosion model where the mass-loss fraction scales
+/// with the square of impact velocity, material hardness, and relative
+/// penetration depth. Harder armour (ceramic/B₄C) produces 15–40 % mass
+/// loss depending on velocity; steel/RHA produces 5–20 %.
+///
+/// # Arguments
+/// * `velocity_ms` - Impact velocity (m/s)
+/// * `mass_kg` - Projectile mass before penetration (kg)
+/// * `caliber_m` - Projectile caliber (m)
+/// * `armor_material` - Armour material identifier string
+/// * `penetration_depth_m` - Total penetration depth through armour (m)
+///
+/// # Returns
+/// Eroded mass in kilograms (≤ `mass_kg`). Returns 0.0 for invalid inputs.
+///
+/// # Formula
+/// ```text
+/// Δm / m = k_mat × (v / 800)² × sqrt(P / D)
+/// ```
+/// where `k_mat` is the material erosion coefficient derived from
+/// [`material_factor`], `v` is impact velocity, `P` is penetration depth,
+/// and `D` is caliber.
+pub fn erode_projectile_mass(
+    velocity_ms: f64,
+    mass_kg: f64,
+    caliber_m: f64,
+    armor_material: &str,
+    penetration_depth_m: f64,
+) -> f64 {
+    if mass_kg <= 0.0 || penetration_depth_m <= 0.0 || velocity_ms <= 0.0 || caliber_m <= 0.0 {
+        return 0.0;
+    }
+
+    let mat_factor = material_factor(armor_material);
+
+    // Poncelet form: erosion rate ∝ dynamic pressure (ρ·v²) and material hardness.
+    // Normalise to 800 m/s reference velocity.
+    let vel_factor = (velocity_ms / 800.0).powi(2);
+
+    // Depth factor: cumulative erosion grows with sqrt of relative penetration depth.
+    let depth_factor = (penetration_depth_m / caliber_m).sqrt().min(5.0);
+
+    // Base erosion fraction: calibrated so RHA (mat_factor=1.0) at 800 m/s
+    // through 1-caliber depth gives ~10 % mass loss.
+    let raw_fraction = 0.10 * mat_factor * vel_factor * depth_factor;
+
+    // Clamp to material-specific ranges
+    let lower_mat = armor_material.to_lowercase();
+    let is_ceramic = lower_mat.contains("ceramic")
+        || lower_mat.contains("b4c")
+        || lower_mat.contains("sic")
+        || lower_mat.contains("ad90")
+        || lower_mat.contains("ad95")
+        || lower_mat.contains("mar_ceramic");
+    let is_steel = lower_mat.contains("steel")
+        || lower_mat.contains("rha")
+        || lower_mat.contains("hha")
+        || lower_mat.contains("armox")
+        || lower_mat.contains("hardox")
+        || lower_mat.contains("mil_dtl")
+        || lower_mat.contains("dual_hardness");
+
+    let clamped = if is_ceramic {
+        raw_fraction.clamp(0.15, 0.40)
+    } else if is_steel {
+        raw_fraction.clamp(0.05, 0.20)
+    } else {
+        raw_fraction.clamp(0.03, 0.35)
+    };
+
+    (clamped * mass_kg).min(mass_kg)
 }
 
 /// Per-projectile-type De Marre calibration constants.
@@ -1202,6 +1361,173 @@ mod tests {
         ));
     }
 
+    // ── Interface Defeat ─────────────────────────────────────────────────────
+
+    #[test]
+    fn interface_defeat_ap_vs_b4c_with_uhmwpe_backing() {
+        assert!(super::check_interface_defeat(
+            800.0,
+            "ap",
+            "ceramic_b4c",
+            "uhmwpe",
+            0.00762,
+            0.010
+        ));
+    }
+
+    #[test]
+    fn interface_defeat_apds_vs_sic_with_aluminum_backing() {
+        assert!(super::check_interface_defeat(
+            700.0,
+            "apds",
+            "ceramic_sic",
+            "aluminum_5083",
+            0.00762,
+            0.010
+        ));
+    }
+
+    #[test]
+    fn interface_defeat_fails_for_ball_ammo() {
+        assert!(!super::check_interface_defeat(
+            800.0,
+            "ball",
+            "ceramic_b4c",
+            "uhmwpe",
+            0.00762,
+            0.010
+        ));
+    }
+
+    #[test]
+    fn interface_defeat_fails_without_ductile_backing() {
+        assert!(!super::check_interface_defeat(
+            800.0,
+            "ap",
+            "ceramic_b4c",
+            "concrete",
+            0.00762,
+            0.010
+        ));
+    }
+
+    #[test]
+    fn interface_defeat_fails_above_critical_velocity() {
+        assert!(!super::check_interface_defeat(
+            950.0,
+            "ap",
+            "ceramic_b4c",
+            "uhmwpe",
+            0.00762,
+            0.010
+        ));
+    }
+
+    #[test]
+    fn interface_defeat_fails_when_ceramic_too_thin() {
+        // caliber = 7.62mm, thickness = 3mm < 0.5 * 7.62 = 3.81mm
+        assert!(!super::check_interface_defeat(
+            800.0,
+            "ap",
+            "ceramic_b4c",
+            "uhmwpe",
+            0.00762,
+            0.003
+        ));
+    }
+
+    #[test]
+    fn interface_defeat_works_with_ad95() {
+        assert!(super::check_interface_defeat(
+            750.0,
+            "armor_piercing",
+            "ad95",
+            "steel_rha",
+            0.0127,
+            0.012
+        ));
+    }
+
+    #[test]
+    fn interface_defeat_apcr_vs_b4c() {
+        assert!(super::check_interface_defeat(
+            600.0,
+            "apcr",
+            "b4c_tile",
+            "aluminum_7039",
+            0.00762,
+            0.006
+        ));
+    }
+
+    #[test]
+    fn interface_defeat_fails_on_rha_face() {
+        assert!(!super::check_interface_defeat(
+            800.0,
+            "ap",
+            "steel_rha",
+            "uhmwpe",
+            0.00762,
+            0.010
+        ));
+    }
+
+    #[test]
+    fn interface_defeat_multiplier_range() {
+        let m_low = super::interface_defeat_penetration_multiplier(300.0);
+        let m_high = super::interface_defeat_penetration_multiplier(900.0);
+        assert!(m_low >= 0.4 && m_low <= 0.7);
+        assert!(m_high >= 0.4 && m_high <= 0.7);
+        assert!(
+            m_low < m_high,
+            "Lower velocity should give stronger reduction"
+        );
+    }
+
+    #[test]
+    fn interface_defeat_multiplier_clamps() {
+        let below = super::interface_defeat_penetration_multiplier(-100.0);
+        let above = super::interface_defeat_penetration_multiplier(1000.0);
+        assert!((below - 0.4).abs() < 1e-12, "below={below}");
+        assert!((above - 0.7).abs() < 1e-12, "above={above}");
+    }
+
+    #[test]
+    fn interface_defeat_apfsds_with_dyneema_backing() {
+        assert!(super::check_interface_defeat(
+            850.0,
+            "apfsds",
+            "sic_ceramic",
+            "dyneema_liner",
+            0.00762,
+            0.010
+        ));
+    }
+
+    #[test]
+    fn interface_defeat_kevlar_backing() {
+        assert!(super::check_interface_defeat(
+            800.0,
+            "armor_piercing",
+            "ceramic_b4c",
+            "kevlar_liner",
+            0.00762,
+            0.010
+        ));
+    }
+
+    #[test]
+    fn interface_defeat_velocity_boundary_just_below() {
+        assert!(super::check_interface_defeat(
+            899.999,
+            "ap",
+            "b4c",
+            "steel_rha",
+            0.00762,
+            0.010
+        ));
+    }
+
     #[test]
     fn yaw_multiplier_bounds() {
         // Verify the yaw multiplier is in [0.5, 1.0]
@@ -1223,6 +1549,86 @@ mod tests {
             (ratio - 2.0).abs() < 0.01,
             "50° yaw should cap at 2× effective thickness, got ratio={}",
             ratio
+        );
+    }
+
+    // ── erode_projectile_mass ─────────────────────────────────────────────────
+
+    #[test]
+    fn erosion_ceramic_more_than_steel() {
+        let steel_loss = super::erode_projectile_mass(850.0, 0.0095, 0.00762, "steel_rha", 0.010);
+        let ceramic_loss =
+            super::erode_projectile_mass(850.0, 0.0095, 0.00762, "ceramic_b4c", 0.010);
+        assert!(
+            ceramic_loss > steel_loss,
+            "Ceramic should erode more projectile than steel: {ceramic_loss} vs {steel_loss}"
+        );
+    }
+
+    #[test]
+    fn erosion_fraction_in_expected_range() {
+        // M80 ball through 10mm RHA at 850 m/s → 5–20 %
+        let loss = super::erode_projectile_mass(850.0, 0.0095, 0.00762, "steel_rha", 0.010);
+        let fraction = loss / 0.0095;
+        assert!(
+            fraction >= 0.05 && fraction <= 0.20,
+            "Steel erosion fraction should be 0.05–0.20, got {fraction:.3}"
+        );
+    }
+
+    #[test]
+    fn erosion_ceramic_fraction_in_expected_range() {
+        // AP through 15mm B4C at 900 m/s → 15–40 %
+        let loss = super::erode_projectile_mass(900.0, 0.0040, 0.00556, "ceramic_b4c", 0.015);
+        let fraction = loss / 0.0040;
+        assert!(
+            fraction >= 0.15 && fraction <= 0.40,
+            "Ceramic erosion fraction should be 0.15–0.40, got {fraction:.3}"
+        );
+    }
+
+    #[test]
+    fn erosion_higher_velocity_more_mass_loss() {
+        let slow = super::erode_projectile_mass(400.0, 0.0095, 0.00762, "steel_rha", 0.010);
+        let fast = super::erode_projectile_mass(900.0, 0.0095, 0.00762, "steel_rha", 0.010);
+        assert!(
+            fast > slow,
+            "Higher velocity should cause more erosion: {fast} vs {slow}"
+        );
+    }
+
+    #[test]
+    fn erosion_zero_inputs_return_zero() {
+        assert_eq!(
+            super::erode_projectile_mass(0.0, 0.0095, 0.00762, "steel_rha", 0.010),
+            0.0
+        );
+        assert_eq!(
+            super::erode_projectile_mass(850.0, 0.0, 0.00762, "steel_rha", 0.010),
+            0.0
+        );
+        assert_eq!(
+            super::erode_projectile_mass(850.0, 0.0095, 0.00762, "steel_rha", 0.0),
+            0.0
+        );
+    }
+
+    #[test]
+    fn erosion_never_exceeds_mass() {
+        let loss = super::erode_projectile_mass(2000.0, 0.001, 0.00556, "ceramic_b4c", 0.050);
+        assert!(
+            loss <= 0.001 + 1e-12,
+            "Erosion should not exceed projectile mass: {loss} > 0.001"
+        );
+    }
+
+    #[test]
+    fn erosion_deeper_pen_more_loss() {
+        let shallow = super::erode_projectile_mass(850.0, 0.0095, 0.00762, "steel_rha", 0.005);
+        let deep = super::erode_projectile_mass(850.0, 0.0095, 0.00762, "steel_rha", 0.020);
+        assert!(
+            deep >= shallow,
+            "Deeper penetration should cause at least as much erosion"
         );
     }
 }
