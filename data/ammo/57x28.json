@@ -1,0 +1,12 @@
+{
+    "class": "B_57x28_Ball",
+    "projectile": {
+        "model": "SS190",
+        "mass_g": 2.0,
+        "caliber_mm": 5.7,
+        "bc_g7": 0.090,
+        "cdm_id": "g7",
+        "source": "FN SS190 31gr @ 715 m/s (263mm barrel). G7 BC ~0.090. Steel-core AP bullet (penetrates CRISAT at 200m). Alternative loading: SS197SR 40gr @ 520 m/s (sporting load).",
+        "notes": "PDW/pistol round — high velocity light projectile, steel core for armor piercing"
+    }
+}

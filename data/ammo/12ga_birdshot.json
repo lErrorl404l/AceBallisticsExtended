@@ -1,0 +1,12 @@
+{
+    "class": "B_12Gauge_Pellets",
+    "projectile": {
+        "model": "Birdshot_75",
+        "mass_g": 28.0,
+        "caliber_mm": 18.53,
+        "bc_g7": 0.0,
+        "cdm_id": "g7",
+        "source": "12ga 70mm (2 3/4\") hunting load. #7.5 shot (~2.4mm / 0.095\" per pellet). ~350 pellets @ ~0.08g each, total shot mass ~28g. MV ~400 m/s. Pattern spread ~4% of range (typical improved cylinder choke).",
+        "notes": "shotgun — multi-projectile (pellets), uses custom drag/spread model. Individual pellet penetration ~0.5-1.0mm RHAe at close range."
+    }
+}
