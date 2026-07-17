@@ -62,12 +62,9 @@ jobs:
 
       # ── HEMTT ───────────────────────────────────────────────────────
       - name: Setup HEMTT
-        run: |
-          curl -sSfL -o /tmp/hemtt.zip \
-            https://github.com/BrettMayson/HEMTT/releases/latest/download/linux-x64.zip
-          sudo unzip -o /tmp/hemtt.zip -d /usr/local/bin
-          sudo chmod +x /usr/local/bin/hemtt
-          hemtt --version
+        run: curl -sSf https://hemtt.dev/install.sh | sh
+      - name: Verify HEMTT
+        run: hemtt --version
 
       - name: HEMTT check
         run: hemtt check
