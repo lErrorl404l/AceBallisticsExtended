@@ -1,0 +1,11 @@
+{
+  "materialId": "armox_600",
+  "displayName": "ARMOX 600 (SSAB)",
+  "densityGcm3": 7.85,
+  "hardnessBHN": 600,
+  "tensileStrengthMpa": 2000,
+  "rhaEquivalent": 1.20,
+  "ductility": 0.25,
+  "spallCoeff": 0.55,
+  "notes": "Swedish ARMOX 600 armor steel by SSAB. 600 HBW hardness. ~1.20x RHAe per mm vs AP threats. Higher ballistic protection grade than ARMOX 500, used in combat vehicles requiring elevated protection levels. Similar to MIL-DTL-46100 HHA at the upper bound."
+}

@@ -1,0 +1,11 @@
+{
+  "materialId": "relikt_era",
+  "displayName": "Relikt ERA (NII Stali)",
+  "densityGcm3": 3.2,
+  "hardnessBHN": 300,
+  "tensileStrengthMpa": 400,
+  "rhaEquivalent": 2.0,
+  "ductility": 0.1,
+  "spallCoeff": 0.8,
+  "notes": "Russian Relikt ERA (NII Stali). Improved over Kontakt-5: ~1.8-2.2x vs KE (APFSDS), ~2.5-3.0x vs HEAT. Multi-layer design with enhanced flyer plate velocity. Better performance against advanced APFSDS (M829A3, DM63 class). Tandem charge resistance is moderate. BHN not directly applicable for ERA — value is placeholder. SpallCoeff high: ERA generates significant backplane spall."
+}

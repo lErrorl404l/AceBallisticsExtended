@@ -1,0 +1,11 @@
+{
+  "materialId": "malachite_era",
+  "displayName": "Malachite ERA (NII Stali/Kurganmashzavod)",
+  "densityGcm3": 3.5,
+  "hardnessBHN": 350,
+  "tensileStrengthMpa": 450,
+  "rhaEquivalent": 2.0,
+  "ductility": 0.1,
+  "spallCoeff": 0.75,
+  "notes": "Russian Malachite ERA. New generation with improved tandem charge defeat capability vs Relikt. ~2.0x vs KE, ~3.0x vs HEAT. Multi-layer design with optimized initiation sequence to disrupt tandem warheads. Fielded on T-14 Armata, T-15, T-90M. Reduced collateral damage vs older ERA (lighter, less side effect). BHN is placeholder — ERA does not have Brinell hardness."
+}

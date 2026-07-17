@@ -1,0 +1,11 @@
+{
+  "materialId": "armox_500",
+  "displayName": "ARMOX 500 (SSAB)",
+  "densityGcm3": 7.85,
+  "hardnessBHN": 500,
+  "tensileStrengthMpa": 1600,
+  "rhaEquivalent": 1.10,
+  "ductility": 0.3,
+  "spallCoeff": 0.5,
+  "notes": "Swedish ARMOX 500 armor steel by SSAB. 500 HBW hardness. ~1.10x RHAe per mm vs AP threats. Good ballistic performance and weldability. Used in APCs, IFVs, and naval applications. EN 10294-2 compliant."
+}

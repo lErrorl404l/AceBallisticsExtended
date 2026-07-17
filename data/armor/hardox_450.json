@@ -1,0 +1,11 @@
+{
+  "materialId": "hardox_450",
+  "displayName": "Hardox 450 (SSAB)",
+  "densityGcm3": 7.85,
+  "hardnessBHN": 450,
+  "tensileStrengthMpa": 1400,
+  "rhaEquivalent": 0.95,
+  "ductility": 0.4,
+  "spallCoeff": 0.45,
+  "notes": "Swedish Hardox 450 structural/abrasion-resistant steel by SSAB. 450 HBW hardness. ~0.95x RHAe per mm. Primarily a structural/abrasion steel used in vehicle hulls where some ballistic protection is beneficial but not primary. Wear-resistant construction steel, not certified armor plate. Better ductility than dedicated armor grades."
+}
