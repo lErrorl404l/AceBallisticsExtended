@@ -240,6 +240,37 @@ pub fn initialize_data(data_dir: &Path) -> Result<(), String> {
         .map_err(|_| "Data already initialized".to_string())
 }
 
+/// Configuration for a single ERA zone on a vehicle.
+///
+/// Each zone covers an angular arc around the vehicle's azimuth,
+/// with a specific ERA tile material and thickness.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct EraZoneConfig {
+    /// Human-readable zone name (e.g. `"front_arc"`, `"side_left"`).
+    pub zone_name: String,
+    /// Start angle of coverage in degrees (0 = vehicle front).
+    pub coverage_angle_start_deg: f64,
+    /// End angle of coverage in degrees.
+    pub coverage_angle_end_deg: f64,
+    /// ERA material identifier (e.g. `"k1"`, `"k5"`).
+    pub era_material: String,
+    /// ERA tile thickness in millimetres.
+    pub era_thickness_mm: f64,
+    /// ERA explosive layer density in g/cm³.
+    pub era_density_gcc: f64,
+}
+
+/// Per-vehicle ERA zone configuration.
+///
+/// Deserialised from the JSON ERA config files in `data/era/`.
+/// Holds a list of named zones, each defining an angular coverage
+/// arc with material and thickness parameters.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct EraConfiguration {
+    /// Ordered list of ERA coverage zones.
+    pub era_zones: Vec<EraZoneConfig>,
+}
+
 // ── Tests ─────────────────────────────────────────────────────────────────────
 
 #[cfg(test)]
