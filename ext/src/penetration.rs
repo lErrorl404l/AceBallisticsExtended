@@ -13,6 +13,8 @@
 use std::collections::HashMap;
 use std::sync::OnceLock;
 
+use crate::behind_armor_debris::{self, BehindArmorDebrisParams};
+
 static MATERIAL_CACHE: OnceLock<HashMap<&'static str, f64>> = OnceLock::new();
 
 /// Build the material factor lookup table.
@@ -202,6 +204,14 @@ pub struct PenetrationResult {
     pub fragments: i32,
     /// Number of armour spall fragments generated.
     pub spall_fragments: i32,
+    /// Full cone angle of the spall spray (degrees).
+    pub spall_cone_angle: f64,
+    /// Core debris spray cone angle (degrees).
+    pub debris_spray_cone: f64,
+    /// Diameter of the temporary cavity formed in the armour (mm).
+    pub temp_cavity_diameter: f64,
+    /// Volume of the temporary cavity (cc / cm³).
+    pub temp_cavity_volume: f64,
 }
 
 /// Evaluate penetration of a projectile against an armor plate.
@@ -270,6 +280,19 @@ pub fn evaluate(
         let residual_v = velocity_ms * energy_retention.sqrt();
         let ricochet_angle = (90.0 - impact_angle_deg) * 0.9; // Specular-ish
 
+        let bad_rico = behind_armor_debris::evaluate_bad(&BehindArmorDebrisParams {
+            impact_velocity_ms: velocity_ms,
+            projectile_mass_kg,
+            caliber_m,
+            armor_thickness_m,
+            armor_material: armor_material.to_string(),
+            impact_angle_deg,
+            projectile_type: projectile_type.to_string(),
+            projectile_fragments: 0,
+            residual_velocity_ms: residual_v,
+            penetrated: false,
+        });
+
         return PenetrationResult {
             penetrated: false,
             residual_velocity: residual_v,
@@ -278,7 +301,11 @@ pub fn evaluate(
             ricochet_angle: ricochet_angle.max(5.0),
             ricochet_energy_fraction: energy_retention,
             fragments: 0,
-            spall_fragments: (4.0 * (impact_angle_deg / 90.0)) as i32,
+            spall_fragments: bad_rico.num_spall_fragments,
+            spall_cone_angle: bad_rico.spall_cone_angle_deg,
+            debris_spray_cone: bad_rico.debris_spray_cone_deg,
+            temp_cavity_diameter: bad_rico.temp_cavity_diameter_mm,
+            temp_cavity_volume: bad_rico.temp_cavity_volume_cc,
         };
     }
 
@@ -331,11 +358,18 @@ pub fn evaluate(
     } else {
         0
     };
-    let spall_fragments = if penetrated {
-        (effective_thickness / 0.010 * 3.0).min(30.0) as i32
-    } else {
-        (3.0 * (velocity_ms / 1000.0)).min(10.0) as i32
-    };
+    let bad_result = behind_armor_debris::evaluate_bad(&BehindArmorDebrisParams {
+        impact_velocity_ms: velocity_ms,
+        projectile_mass_kg,
+        caliber_m,
+        armor_thickness_m,
+        armor_material: armor_material.to_string(),
+        impact_angle_deg,
+        projectile_type: projectile_type.to_string(),
+        projectile_fragments: fragments,
+        residual_velocity_ms: residual_velocity,
+        penetrated,
+    });
 
     PenetrationResult {
         penetrated,
@@ -345,7 +379,11 @@ pub fn evaluate(
         ricochet_angle: 0.0,
         ricochet_energy_fraction: 0.0,
         fragments,
-        spall_fragments,
+        spall_fragments: bad_result.num_spall_fragments,
+        spall_cone_angle: bad_result.spall_cone_angle_deg,
+        debris_spray_cone: bad_result.debris_spray_cone_deg,
+        temp_cavity_diameter: bad_result.temp_cavity_diameter_mm,
+        temp_cavity_volume: bad_result.temp_cavity_volume_cc,
     }
 }
 
