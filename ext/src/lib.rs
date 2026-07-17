@@ -365,22 +365,50 @@ pub extern "C" fn abe_version() -> *const c_char {
         .as_ptr()
 }
 
+/// Input parameters for [`abe_fire`].
+///
+/// Describes the weapon and projectile combination for interior
+/// ballistics computation. All dimensional values are in SI-related
+/// units (mm, g, MPa) for convenient SQF interop.
 #[repr(C)]
 #[derive(Debug, Clone, Copy)]
 pub struct FireParams {
+    /// Barrel length in millimetres (e.g. 368.0 for an M4).
     pub barrel_length_mm: f64,
+
+    /// Peak chamber pressure in MPa (SAAMI/CIP standard value).
     pub chamber_pressure_mpa: f64,
+
+    /// Projectile diameter / bore calibre in millimetres.
     pub caliber_mm: f64,
+
+    /// Projectile mass in grams.
     pub projectile_mass_g: f64,
+
+    /// Drag model identifier as a null-terminated ASCII string
+    /// (e.g. `b"g7\0"`, `b"g1\0"`, `b"g8\0"`). Padded to 32 bytes.
     pub cdm_id: [u8; 32],
 }
 
+/// Output from [`abe_fire`].
+///
+/// Contains the computed muzzle velocity, pressure, and barrel-time
+/// estimates from the interior ballistics model.
 #[repr(C)]
 #[derive(Debug, Clone, Copy)]
 pub struct FireResult {
+    /// Computed muzzle velocity in m/s.
     pub muzzle_velocity_ms: f64,
+
+    /// Peak chamber pressure in MPa (input value passed through;
+    /// the model does not independently compute pressure).
     pub max_chamber_pressure_mpa: f64,
+
+    /// Estimated fraction of propellant burned at projectile exit
+    /// (range 0.25–1.0).
     pub propellant_burn_fraction: f64,
+
+    /// Estimated barrel time from ignition to exit in milliseconds.
     pub barrel_time_ms: f64,
 }
 
@@ -450,38 +478,76 @@ pub extern "C" fn abe_fire(params: &FireParams, result: &mut FireResult) -> i32 
     }
 }
 
+/// Output from [`abe_step`].
+///
+/// Contains the updated projectile position, velocity, Mach number,
+/// and step time after one integration step.
 #[repr(C)]
 #[derive(Debug, Clone, Copy)]
 pub struct BulletState {
+    /// New x-position in ARMA 3 world coordinates (metres).
     pub pos_x: f64,
+    /// New y-position (metres).
     pub pos_y: f64,
+    /// New z-position — ABE uses +z for downward (gravity) direction.
     pub pos_z: f64,
+    /// New x-velocity component after drag, gravity, and wind (m/s).
     pub vel_x: f64,
+    /// New y-velocity component (m/s).
     pub vel_y: f64,
+    /// New z-velocity component (m/s).
     pub vel_z: f64,
+    /// Mach number at the new speed and current temperature.
     pub mach: f64,
+    /// Integration timestep (delta time in seconds); the caller
+    /// accumulates total time-of-flight externally.
     pub time_s: f64,
 }
 
+/// Input parameters for [`abe_step`].
+///
+/// Describes the current projectile state, environment, and
+/// projectile properties for one semi-implicit Euler integration
+/// step.
 #[repr(C)]
 #[derive(Debug, Clone, Copy)]
 pub struct StepParams {
+    /// Current x-position (metres).
     pub pos_x: f64,
+    /// Current y-position (metres).
     pub pos_y: f64,
+    /// Current z-position (metres, +z = downward).
     pub pos_z: f64,
+    /// Current x-velocity (m/s).
     pub vel_x: f64,
+    /// Current y-velocity (m/s).
     pub vel_y: f64,
+    /// Current z-velocity (m/s).
     pub vel_z: f64,
+    /// Integration timestep in seconds (typically 0.01–0.1).
     pub dt_s: f64,
+    /// Wind velocity x-component at reference height (m/s).
     pub wind_x: f64,
+    /// Wind velocity y-component (crosswind) at reference height (m/s).
     pub wind_y: f64,
+    /// Wind velocity z-component at reference height (m/s).
     pub wind_z: f64,
+    /// Air density in kg/m³ (overridden when `altitude_m > 0` and
+    /// `temp_c ≈ 15` triggers ICAO atmosphere lookup).
     pub density_kgm3: f64,
+    /// Air temperature in degrees Celsius.
     pub temp_c: f64,
+    /// Altitude above sea level in metres (0 = sea level).
     pub altitude_m: f64,
+    /// Drag model identifier as a null-terminated ASCII string
+    /// (e.g. `b"g7\0"`, `b"g1\0"`, `b"g8\0"`). Padded to 32 bytes.
     pub cdm_id: [u8; 32],
+    /// Ballistic coefficient in lb/in² (G1 or G7 standard). The
+    /// extension converts internally to SI via `K ≈ 895.3`.
     pub bc: f64,
+    /// Projectile mass in grams (reserved for future use).
     pub mass_g: f64,
+    /// Projectile calibre in millimetres (reserved for future use).
     pub caliber_mm: f64,
 }
 
@@ -597,31 +663,64 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
     0
 }
 
+/// Input parameters for [`abe_impact`].
+///
+/// Describes a projectile impact against an armour plate for
+/// terminal ballistics evaluation.
 #[repr(C)]
 #[derive(Debug, Clone, Copy)]
 pub struct ImpactParams {
+    /// Impact velocity x-component (m/s).
     pub vel_x: f64,
+    /// Impact velocity y-component (m/s).
     pub vel_y: f64,
+    /// Impact velocity z-component (m/s).
     pub vel_z: f64,
+    /// Projectile mass in grams.
     pub mass_g: f64,
+    /// Projectile calibre in millimetres.
     pub caliber_mm: f64,
+    /// Armour plate thickness in millimetres.
     pub armor_thickness_mm: f64,
+    /// Armour material identifier as a null-terminated ASCII string
+    /// (e.g. `b"steel_rha\0"`, `b"aluminum_5083\0"`, `b"ceramic_b4c\0"`).
+    /// Padded to 32 bytes.
     pub armor_material: [u8; 32],
+    /// Impact angle from surface normal in degrees
+    /// (0 = perpendicular, 90 = grazing).
     pub impact_angle_deg: f64,
+    /// Projectile type identifier as a null-terminated ASCII string
+    /// (e.g. `b"ball\0"`, `b"ap\0"`, `b"apds\0"`, `b"soft_point\0"`).
+    /// Padded to 32 bytes.
     pub projectile_type: [u8; 32],
 }
 
+/// Output from [`abe_impact`].
+///
+/// Contains the terminal effects of a projectile impact against
+/// armour: penetration status, residual velocity, ricochet
+/// information, and fragmentation counts.
 #[repr(C)]
 #[derive(Debug, Clone, Copy)]
 pub struct ImpactResult {
+    /// 1 if the plate was perforated, 0 otherwise.
     pub penetrated: i32,
+    /// Projectile velocity remaining after penetrating the plate (m/s).
     pub residual_vel_ms: f64,
+    /// Impact kinetic energy (joules).
     pub energy_j: f64,
+    /// Effective armour thickness the projectile had to defeat after
+    /// angle and material scaling (millimetres).
     pub effective_thickness_mm: f64,
+    /// 1 if the projectile ricocheted, 0 otherwise.
     pub ricochet: i32,
+    /// Outgoing ricochet angle relative to the surface (degrees).
     pub ricochet_angle_deg: f64,
+    /// Fraction of kinetic energy retained after ricochet (0.0–1.0).
     pub ricochet_energy_fraction: f64,
+    /// Number of projectile fragments generated.
     pub fragments: i32,
+    /// Number of armour spall fragments generated.
     pub spall_fragments: i32,
 }
 

@@ -44,16 +44,29 @@ fn projectile_modifier(proj_type: &str) -> f64 {
     }
 }
 
-/// Result of a penetration evaluation
+/// Result of a penetration evaluation.
+///
+/// Returned by [`evaluate`] with the outcome of a projectile impact
+/// against an armour plate: whether it penetrated, residual velocity,
+/// ricochet information, and fragment counts.
 #[derive(Debug, Clone)]
 pub struct PenetrationResult {
+    /// Whether the projectile fully perforated the plate.
     pub penetrated: bool,
+    /// Residual velocity after penetration in m/s.
     pub residual_velocity: f64,
+    /// Effective armour thickness after angle and material scaling
+    /// in metres.
     pub effective_thickness: f64,
+    /// Whether the projectile ricocheted off the surface.
     pub ricochet: bool,
+    /// Outgoing ricochet angle relative to the surface in degrees.
     pub ricochet_angle: f64,
+    /// Fraction of kinetic energy retained after ricochet (0.0–1.0).
     pub ricochet_energy_fraction: f64,
+    /// Number of projectile fragments generated.
     pub fragments: i32,
+    /// Number of armour spall fragments generated.
     pub spall_fragments: i32,
 }
 

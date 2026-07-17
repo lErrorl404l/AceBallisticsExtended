@@ -10,19 +10,30 @@ use std::path::Path;
 
 // ── Data structures ───────────────────────────────────────────────────────────
 
+/// Configuration for a weapon system.
+///
+/// Deserialised from the JSON weapon config files in `data/weapons/`.
+/// Maps to a single CfgWeapons class in ARMA 3.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct WeaponConfig {
+    /// CfgWeapons class name (e.g. `"rhs_weap_m4a1"`).
     pub class: String,
+    /// Barrel calibre in millimetres.
     pub caliber_mm: f64,
+    /// Barrel length in millimetres.
     pub barrel_length_mm: f64,
+    /// Rifling twist rate in mm per revolution (optional, default 0).
     #[serde(default)]
     pub rifling_twist_mm: f64,
+    /// Peak chamber pressure in MPa (SAAMI/CIP).
     pub chamber_pressure_mpa: f64,
+    /// Drag model curve identifier (default `"g7"`).
     #[serde(default = "default_cdm")]
     pub cdm_id: String,
-    pub projectile_mass_g: f64,
+    /// Published muzzle velocity in m/s (optional, for reference).
     #[serde(default)]
     pub muzzle_velocity_ms: f64,
+    /// Zero range in metres (default 100 m).
     #[serde(default = "default_zero")]
     pub zero_range_m: f64,
 }
@@ -34,44 +45,75 @@ fn default_zero() -> f64 {
     100.0
 }
 
+/// Configuration for an ammunition type.
+///
+/// Deserialised from the JSON ammo config files in `data/ammo/`.
+/// Maps to a single CfgAmmo class in ARMA 3.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct AmmoConfig {
+    /// CfgAmmo class name.
     pub class: String,
+    /// Projectile physical and ballistic properties.
     pub projectile: ProjectileConfig,
 }
 
+/// Physical and ballistic properties of a projectile.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ProjectileConfig {
+    /// Projectile model name (e.g. `"M855"`, `"M80"`).
     pub model: String,
+    /// Projectile mass in grams.
     pub mass_g: f64,
+    /// Projectile calibre in millimetres.
     pub caliber_mm: f64,
+    /// Ballistic coefficient for the G7 drag model.
     pub bc_g7: f64,
+    /// Drag model curve identifier (default `"g7"`).
     #[serde(default = "default_cdm")]
     pub cdm_id: String,
+    /// Optional fragmentation parameters (velocity threshold,
+    /// fragment count, mass distribution).
     #[serde(default)]
     pub fragmentation: Option<FragmentationConfig>,
 }
 
+/// Fragmentation behaviour parameters for a projectile.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct FragmentationConfig {
+    /// Minimum impact velocity for fragmentation to occur (m/s).
     pub threshold_vel_ms: f64,
+    /// Average number of fragments generated.
     pub avg_fragments: u32,
+    /// Mass distribution model (typically `"log_normal"`).
     pub mass_distribution: String,
+    /// Distribution parameters (e.g. `{"mean": 0.08, "std": 0.04}`).
     pub params: HashMap<String, f64>,
 }
 
+/// Armour configuration for a vehicle.
+///
+/// Deserialised from the JSON armour config files in `data/armor/`.
+/// Contains a list of armour plates with material and thickness data.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ArmorConfig {
+    /// Vehicle class name (e.g. `"rhs_btr80a_msv"`).
     pub vehicle: String,
+    /// List of armour plates covering the vehicle.
     pub plates: Vec<ArmorPlate>,
 }
 
+/// A single armour plate with position, material, and thickness.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ArmorPlate {
+    /// Plate identifier (e.g. `"hull_front"`, `"hull_side"`).
     pub name: String,
+    /// Material identifier (e.g. `"steel_rha"`, `"aluminum_5083"`).
     pub material: String,
+    /// Plate thickness in millimetres.
     pub thickness_mm: f64,
+    /// Plate angle from vertical in degrees.
     pub angle_deg: f64,
+    /// Optional backing material (e.g. `"spall_liner_kevlar"`).
     pub backing: Option<String>,
 }
 

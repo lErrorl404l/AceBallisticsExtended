@@ -13,13 +13,21 @@
 //   - UK Defence Standard 13-100 (Propellant Burn Rate)
 //   - Nennstiel's Interior Ballistics Model
 
-/// Result of interior ballistics calculation
+/// Result of an interior ballistics calculation.
+///
+/// Returned by [`calc_muzzle_velocity`] with the computed muzzle
+/// velocity, peak pressure, burn completeness, and barrel time.
 #[derive(Debug, Clone)]
 pub struct MuzzleVelocityResult {
-    pub muzzle_velocity: f64,          // m/s
-    pub max_chamber_pressure: f64,     // Pa
-    pub propellant_burn_fraction: f64, // 0.0-1.0 fraction burned at exit
-    pub barrel_time_ms: f64,           // time from ignition to exit
+    /// Muzzle velocity in metres per second.
+    pub muzzle_velocity: f64,
+    /// Peak chamber pressure in Pascals (same value as the input
+    /// — the model does not independently recompute pressure).
+    pub max_chamber_pressure: f64,
+    /// Fraction of propellant burned at projectile exit (0.0–1.0).
+    pub propellant_burn_fraction: f64,
+    /// Time from ignition to muzzle exit in milliseconds.
+    pub barrel_time_ms: f64,
 }
 
 /// Calculate muzzle velocity using a two-zone pressure curve model.

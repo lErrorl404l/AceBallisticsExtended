@@ -12,21 +12,34 @@
 
 use std::collections::HashMap;
 
-/// Fragment data for a single fragment
+/// Data for a single projectile fragment.
 #[derive(Debug, Clone)]
 pub struct Fragment {
+    /// Fragment mass in grams.
     pub mass_g: f64,
+    /// Fragment velocity in m/s (mass-weighted partitioning from
+    /// impact velocity).
     pub speed_ms: f64,
+    /// Spray cone half-angle in degrees.
     pub cone_angle_deg: f64,
+    /// Azimuth angle in degrees (deterministic via golden-angle
+    /// distribution).
     pub azimuth_deg: f64,
 }
 
-/// Result of fragmentation simulation
+/// Result of a fragmentation simulation.
+///
+/// Returned by [`evaluate`] with the generated fragment list and
+/// summary statistics.
 #[derive(Debug, Clone)]
 pub struct FragmentationResult {
+    /// Individual fragment data.
     pub fragments: Vec<Fragment>,
+    /// Total number of fragments generated.
     pub num_fragments: i32,
+    /// Average fragment mass in grams.
     pub average_mass_g: f64,
+    /// Maximum spray cone half-angle across all fragments (degrees).
     pub max_spray_angle_deg: f64,
 }
 
