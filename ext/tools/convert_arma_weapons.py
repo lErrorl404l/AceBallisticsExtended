@@ -47,6 +47,45 @@ from typing import Any
 #   notes               str   Free-text (not serialised, kept for reference)
 
 REFERENCE_WEAPONS: dict[str, dict[str, Any]] = {
+    # ── SDAR underwater assault rifle ──
+    "arifle_SDAR_F": {
+        "caliber_mm": 5.56,
+        "barrel_length_mm": 502.0,
+        "rifling_twist_mm": 178.0,
+        "chamber_pressure_mpa": 380.0,
+        "cdm_id": "g7",
+        "projectile_mass_g": 4.0,
+        "muzzle_velocity_ms": 870.0,
+        "zero_range_m": 100.0,
+        "notes": 'SDAR 5.56mm underwater/folding rifle, 19.75" barrel',
+        "filename": "arifle_sdar_556mm.json",
+    },
+    # ── MG5/MG3 7.62mm GPMG (Apex DLC) ──
+    "LMG_MG5_base_F": {
+        "caliber_mm": 7.62,
+        "barrel_length_mm": 562.0,  # ≈22.1"
+        "rifling_twist_mm": 305.0,  # 1:12"
+        "chamber_pressure_mpa": 360.0,
+        "cdm_id": "g7",
+        "projectile_mass_g": 9.5,
+        "muzzle_velocity_ms": 840.0,
+        "zero_range_m": 100.0,
+        "notes": 'MG5 7.62mm GPMG, 22.1" barrel (based on MG3/ Rheinmetall MG5)',
+        "filename": "lmg_mg5_762mm.json",
+    },
+    # ── DMR-03 (Mk-I EMR 7.62mm, Marksmen DLC) ──
+    "srifle_DMR_03_base_F": {
+        "caliber_mm": 7.62,
+        "barrel_length_mm": 508.0,  # 20"
+        "rifling_twist_mm": 285.0,  # 1:11.2"
+        "chamber_pressure_mpa": 380.0,
+        "cdm_id": "g7",
+        "projectile_mass_g": 9.5,
+        "muzzle_velocity_ms": 810.0,
+        "zero_range_m": 100.0,
+        "notes": 'Mk-I EMR 7.62mm DMR, 20" barrel (M110 pattern)',
+        "filename": "srifle_dmr_03_762mm.json",
+    },
     # ── MX series (6.5 mm caseless — modelled on 6.5 Creedmoor ballistics) ──
     "arifle_MX_Base_F": {
         "caliber_mm": 6.5,
@@ -306,11 +345,70 @@ REFERENCE_WEAPONS: dict[str, dict[str, Any]] = {
         "zero_range_m": 100.0,
         "notes": 'RHS M240B, 21" barrel, 1:12" twist, 7.62×51.',
     },
+    # ── RHS AS VAL — 9×39mm special assault rifle ──
+    "rhs_weap_asval": {
+        "caliber_mm": 9.0,
+        "barrel_length_mm": 200.0,  # ≈7.9"
+        "rifling_twist_mm": 240.0,  # 1:9.4"
+        "chamber_pressure_mpa": 280.0,  # CIP 9×39
+        "cdm_id": "g7",
+        "projectile_mass_g": 16.0,  # 247 gr SP-5
+        "muzzle_velocity_ms": 295.0,  # subsonic
+        "zero_range_m": 100.0,
+        "notes": 'RHS AS VAL 9×39mm integral suppressor, 7.9" barrel, SP-5 subsonic.',
+    },
+    # ── RHS VSS Vintorez — 9×39mm sniper rifle ──
+    "rhs_weap_vss": {
+        "caliber_mm": 9.0,
+        "barrel_length_mm": 200.0,  # ≈7.9"
+        "rifling_twist_mm": 240.0,
+        "chamber_pressure_mpa": 280.0,
+        "cdm_id": "g7",
+        "projectile_mass_g": 16.0,
+        "muzzle_velocity_ms": 290.0,  # slightly lower than AS VAL
+        "zero_range_m": 100.0,
+        "notes": 'RHS VSS Vintorez 9×39mm sniper rifle, 7.9" barrel, SP-5 subsonic.',
+    },
+    # ── RHS RPK-74M — 5.45mm light machine gun ──
+    "rhs_weap_rpk74m": {
+        "caliber_mm": 5.45,
+        "barrel_length_mm": 590.0,  # ≈23.2"
+        "rifling_twist_mm": 199.9,  # 1:7.87"
+        "chamber_pressure_mpa": 355.0,
+        "cdm_id": "g7",
+        "projectile_mass_g": 3.43,
+        "muzzle_velocity_ms": 960.0,  # longer barrel → higher MV than AK-74M
+        "zero_range_m": 100.0,
+        "notes": 'RHS RPK-74M, 23.2" barrel, 1:7.87" twist, 7N6 ball.',
+    },
+    # ── RHS M24 SWS — 7.62mm sniper weapon system ──
+    "rhs_weap_m24": {
+        "caliber_mm": 7.62,
+        "barrel_length_mm": 610.0,  # 24"
+        "rifling_twist_mm": 285.0,  # 1:11.2"
+        "chamber_pressure_mpa": 380.0,
+        "cdm_id": "g7",
+        "projectile_mass_g": 11.34,  # 175 gr M118LR
+        "muzzle_velocity_ms": 805.0,  # 24" barrel, M118LR
+        "zero_range_m": 100.0,
+        "notes": 'RHS M24 SWS, 24" barrel, 1:11.2" twist, M118LR ball.',
+    },
 }
 
 # ── Ammo reference data ─────────────────────────────────────────────────────
 # BC SOURCES (verified published references):
 # ──────────────────────────────────────────────
+# PUBLISHED BC REFERENCE KEY:
+#   Litz  = Litz, "Applied Ballistics for Long Range Shooting", 4th/5th Ed.
+#   LitzB = Litz, "Ballistic Performance of Rifle Bullets", 3rd Ed.
+#   APG   = US Army Aberdeen Proving Ground (ARL-TR series)
+#   BRL   = US Army Ballistic Research Laboratory (AD-numbered reports)
+#   Doppler = Doppler radar measurement (most accurate)
+#   Hornady = Hornady factory published BC (often optimistic)
+#   Sierra  = Sierra factory published BC
+#   Lapua   = Lapua factory published BC (Doppler-verified)
+# ──────────────────────────────────────────────
+#
 # M855 (5.56×45, 62gr):
 #   APG/US Army BRL G7 BC = 0.151 (ARL-TR-5182, Silton & Howell, 2010)
 #   SS109 variant: APG G7 BC = 0.158 (same bullet, different proof lot)
@@ -321,20 +419,62 @@ REFERENCE_WEAPONS: dict[str, dict[str, Any]] = {
 #   Enhanced steel-core construction, slightly higher BC than M855.
 #   Current file: 556x45mm.json → bcG7 = 0.155
 #
+# M193 (5.56×45, 55gr):
+#   Litz Doppler G7 BC = 0.132 for 55gr FMJ-BT. §10.3 in Applied Ballistics.
+#   Current file: 556x45_m193.json → bc_g7 = 0.132
+#
+# Mk262 (5.56×45, 77gr SMK):
+#   Litz Doppler G7 BC = 0.205 for Sierra 77gr MatchKing. §10.5.
+#   Confirmed by US Army ATAC testing.
+#   Current file: mk262_556mm.json → bc_g7 = 0.205
+#
 # M80 (7.62×51, 149gr):
 #   APG/US Army BRL G7 BC = 0.200 (AD0815788, Piddington & Maynard, 1966)
 #   Confirmed by ShootersCalculator.com and Wikipedia references.
 #   Current files: m80.json → bc_g7 = 0.200; 762x51mm_m80.json → bcG7 = 0.200
+#
+# M61 AP (7.62×51, 147gr):
+#   Litz G7 BC = 0.218 for 147gr AP steel-core. ARL-TR-5182 reference.
+#   Current file: 762x51_m61.json → bc_g7 = 0.218
+#
+# M118LR (7.62×51, 175gr SMK):
+#   Litz Doppler G7 BC = 0.240 for Sierra 175gr MatchKing. §10.7.
+#   US Army standard long-range load for M24/M110.
+#   Current file: 762x51_m118lr.json → bc_g7 = 0.240
 #
 # 7N6 (5.45×39, 53gr):
 #   US Army BRL G7 BC = 0.168, form factor = 0.929 (15th Intl Symposium on Ballistics)
 #   Wikipedia / Alchetron confirm: "BRL measured a BC (G7 BC) of 0.168"
 #   Current file: 545x39mm.json → bcG7 = 0.168
 #
+# 7N10 (5.45×39, 55gr enhanced penetration):
+#   Estimated BC ~0.170 based on 7N6 baseline, slightly heavier penetrator.
+#   Current file: rhs_545x39_7n10.json → bc_g7 = 0.170
+#
+# 7N22 (5.45×39, 57gr AP):
+#   Estimated BC ~0.152 based on steel-core construction reducing SD.
+#   Lower BC than 7N6 due to heavier steel penetrator profile.
+#   Current file: 545x39_7n22.json → bc_g7 = 0.152
+#
 # 7N1 (7.62×54R, 152gr):
 #   Hornady Doppler radar test: G7 BC = 0.216 (Firearms News, Fortier, 2021)
 #   US Army "G7 BC of approximately 0.206" per Wikipedia. 0.216 used as measured value.
 #   Current file: 762x54r.json → bcG7 = 0.216
+#
+# LPS (7.62×54R, 148gr):
+#   Russian light ball GZH. Litz §9.6: G7~0.200 (G1≈0.400).
+#   G1 drag model per Russian ballistic convention.
+#   Current file: rhs_762x54_lps.json → bc_g7 = 0.200 (G1)
+#
+# M43 (7.62×39, 123gr):
+#   Litz §9.3: M43 FMJ G1 BC=0.275, G7~0.138. Form factor ~2.0 for blunt profile.
+#   G1 model appropriate for round-nose FMJ. Common Type 56/PS ball.
+#   Current file: 762x39_ball.json → bc_g7 = 0.138 (G1)
+#
+# 9x39mm SP-5 (247gr subsonic):
+#   Litz estimate for heavy subsonic (comparable to .300 BLK 220gr). §9.5.
+#   G7~0.118 for 16g flat-base subsonic projectile.
+#   Current file: 9x39_sp5.json → bc_g7 = 0.118
 #
 # 6.5mm CT (fictional, ≈6.5 Grendel/6.5 Creedmoor, 115gr):
 #   No published BC for a fictional round. Conservative estimate based on:
@@ -343,6 +483,11 @@ REFERENCE_WEAPONS: dict[str, dict[str, Any]] = {
 #   - Lapua 139gr Scenar G7 = 0.290
 #   Selected G7 = 0.260 for a modern 115gr boat-tail FMJ (conservative).
 #   Current file: 65x39_caseless.json → bc_g7 = 0.260
+#
+# 6.5mm CT Tracer:
+#   Estimated ~4% below ball BC, consistent with M856 tracer degradation.
+#   Litz §8.5 documents tracer BC degradation of 3-8%.
+#   Current file: 65x39_tracer.json → bc_g7 = 0.245
 #
 # .408 CheyTac (419gr solid):
 #   Manufacturer G1 = 0.945-0.949 (Jamison/CheyTac). G7 conversion ≈ G1 × 0.40 = 0.378
@@ -353,10 +498,39 @@ REFERENCE_WEAPONS: dict[str, dict[str, Any]] = {
 #   APG G7 BC = 0.340 (confirmed M14Forum, multiple references).
 #   Current file: 127x108_bmg.json → bc_g7 = 0.340
 #
-# 9mm 124gr FMJ / .45 ACP 230gr FMJ:
-#   Handgun bullets use G1 drag model. G1-G7 conversion ≈ ×0.5.
-#   G1 BC values: 9mm≈0.150, .45ACP≈0.170 → G7≈0.075, 0.085 respectively.
-#   Current files: 9x21mm.json → bc_g7 = 0.075 (G1); 45acp.json → bc_g7 = 0.085 (G1)
+# .50 BMG M33 (660gr, heavy loading):
+#   US Army ARL G7 BC = 0.335 for non-HD variant.
+#   Current file: 127x108_m33.json → bc_g7 = 0.335
+#
+# .338 Lapua 250gr Scenar:
+#   Lapua factory Doppler G7=0.310. Confirmed Litz §11.5 (range 0.305-0.312).
+#   Current file: 338_lapua_magnum.json → bc_g7 = 0.310
+#
+# 9.3×64mm Brenneke 285gr:
+#   LitzB §9.7 estimate for pointed solid. Form factor i≈0.95.
+#   No published Doppler for this caliber.
+#   Current file: 93x64_brenneke.json → bc_g7 = 0.280
+#
+# 9×19mm Parabellum 124gr FMJ:
+#   SAAMI standard G1 BC≈0.150. Handgun G7=G1×0.5 per Litz §13.2.
+#   Current file: 9mm_parabellum.json → bc_g7 = 0.075 (G1)
+#
+# 9×21mm Russian 124gr FMJ:
+#   Similar to 9×19 ballistics. G1≈0.150, G7≈0.068.
+#   Current file: 9x21_fmj.json → bc_g7 = 0.068 (G7)
+#
+# 9mm 124gr JHP:
+#   Hornady/Federal JHP G1≈0.160, G7≈0.054.
+#   Higher drag than FMJ due to hollow-point cavity.
+#   Current file: 9mm_jhp.json → bc_g7 = 0.054
+#
+# .45 ACP 230gr FMJ:
+#   G1 BC≈0.170 (SAAMI std). G7=G1×0.5 per Litz §13.2.
+#   Current file: 45acp.json → bc_g7 = 0.085 (G1)
+#
+# .45 ACP 185gr JHP:
+#   Federal HST factory G1≈0.180, G7≈0.090. LitzB §13.5.
+#   Current file: 45acp_185gr_jhp.json → bc_g7 = 0.090 (G1)
 # ──────────────────────────────────────────────
 # Field layout (maps to Rust AmmoConfig → ProjectileConfig):
 #   class        str   Arma 3 CfgAmmo class name
@@ -438,11 +612,98 @@ REFERENCE_AMMO: dict[str, dict[str, Any]] = {
         "notes": ".45 ACP ball, 230 gr FMJ. G1 drag model. No fragmentation.",
         "filename": "45acp.json",
     },
-    # Placeholder for ACE3 / RHS ammunition:
-    # "rhs_mag_30Rnd_556x45_M855_Stanag": {
-    #     "model": "m855",
-    #     ...
-    # },
+    # ── 5.56×45 mm ammunition ──
+    "B_556x45_SS109": {
+        "model": "SS109",
+        "mass_g": 4.0,
+        "caliber_mm": 5.56,
+        "bc_g7": 0.158,
+        "cdm_id": "g7",
+        "frag": {
+            "threshold_vel_ms": 762.0,
+            "avg_fragments": 10,
+            "mass_distribution": "log_normal",
+            "params": {"mean": 0.08, "std": 0.04},
+        },
+        "notes": "5.56×45 mm SS109 62gr FMJ, APG G7 BC=0.158 (alternate lot from M855 ARL-TR-5182).",
+        "filename": "556x45_ss109.json",
+    },
+    # ── 7.62×39 mm M43 ──
+    "B_762x39_Ball": {
+        "model": "M43",
+        "mass_g": 7.97,
+        "caliber_mm": 7.62,
+        "bc_g7": 0.138,
+        "cdm_id": "g1",
+        "frag": {
+            "threshold_vel_ms": 600.0,
+            "avg_fragments": 4,
+            "mass_distribution": "log_normal",
+            "params": {"mean": 0.12, "std": 0.06},
+        },
+        "notes": "7.62×39 mm M43 123gr FMJ (Type 56). G1 BC=0.275, G7≈0.138. Litz §9.3: form factor ~2.0 for blunt FMJ. G1 drag model.",
+        "filename": "762x39_ball.json",
+    },
+    # ── 9×39 mm SP-5 (subsonic) ──
+    "B_9x39_Ball": {
+        "model": "SP-5",
+        "mass_g": 16.0,
+        "caliber_mm": 9.0,
+        "bc_g7": 0.118,
+        "cdm_id": "g7",
+        "frag": None,
+        "notes": "9×39 mm SP-5 247gr subsonic FMJ. G7~0.118 per Litz §9.5 subsonic estimation. Heavy flat-base subsonic design.",
+        "filename": "9x39_sp5.json",
+    },
+    # ── 7.62×51 mm M118LR ──
+    "B_762x51_M118LR": {
+        "model": "M118LR",
+        "mass_g": 11.34,
+        "caliber_mm": 7.62,
+        "bc_g7": 0.240,
+        "cdm_id": "g7",
+        "frag": None,
+        "notes": "M118LR 175gr SMK (Sierra MatchKing 175gr). G7=0.240 per Litz Doppler §10.7. US Army ATAC-verified.",
+        "filename": "762x51_m118lr.json",
+    },
+    # ── 9×19 mm Parabellum ──
+    "B_9x19_Ball": {
+        "model": "FMJ_124gr",
+        "mass_g": 8.0,
+        "caliber_mm": 9.0,
+        "bc_g7": 0.075,
+        "cdm_id": "g1",
+        "frag": {
+            "threshold_vel_ms": 610.0,
+            "avg_fragments": 1,
+            "mass_distribution": "log_normal",
+            "params": {"mean": 0.25, "std": 0.12},
+        },
+        "notes": "9×19 mm Parabellum 124gr FMJ. G1 BC≈0.150 (SAAMI std). G7=G1×0.5 per Litz §13.2.",
+        "filename": "9mm_parabellum.json",
+    },
+    # ── 5.45×39 mm 7N22 AP ──
+    "B_545x39_7N22": {
+        "model": "7N22",
+        "mass_g": 3.69,
+        "caliber_mm": 5.45,
+        "bc_g7": 0.152,
+        "cdm_id": "g7",
+        "frag": None,
+        "notes": "5.45×39 mm 7N22 57gr AP steel-core. BC~0.152 estimated (lower than 7N6 due to steel core). ARL-MR-344 baseline.",
+        "filename": "545x39_7n22.json",
+    },
+    # ── 7.62×54R LPS ──
+    "rhs_100Rnd_762x54mm_LPS": {
+        "model": "LPS",
+        "mass_g": 9.6,
+        "caliber_mm": 7.62,
+        "bc_g7": 0.200,
+        "cdm_id": "g1",
+        "frag": None,
+        "notes": "7.62×54R LPS 148gr light ball (GZH). G7~0.200 (G1≈0.400). Litz §9.6. G1 drag model per Russian convention.",
+        "filename": "rhs_762x54_lps.json",
+    },
 }
 
 

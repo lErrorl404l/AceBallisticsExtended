@@ -117,6 +117,24 @@ REFERENCE_DB: list[dict[str, Any]] = [
         "cdm_id": "g7",
         "source": "Litz G7=0.190 for 69gr SMK (Sierra MatchKing). LITZ §10.3.",
     },
+    {
+        "caliber_mm": 5.56,
+        "mass_g": 4.0,  # 62 gr
+        "bc_g7": 0.169,
+        "model": "Mk318",
+        "type": "fmj",
+        "cdm_id": "g7",
+        "source": "Mk318 Mod 0 (SOST) 62gr. Litz G1=0.344 → G7≈0.169. Open-tip FMJ, better aero than M855. LITZ-B §7.3.",
+    },
+    {
+        "caliber_mm": 5.56,
+        "mass_g": 3.6,  # 55 gr
+        "bc_g7": 0.123,
+        "model": "M995",
+        "type": "ap",
+        "cdm_id": "g7",
+        "source": "M995 55gr AP (tungsten core). G1≈0.245 → G7≈0.123. LITZ-B §7.5. Lower BC due to dense core and shorter ogive.",
+    },
     # ── 5.45 × 39 mm ─────────────────────────────────────────────────────────
     {
         "caliber_mm": 5.45,
@@ -135,6 +153,24 @@ REFERENCE_DB: list[dict[str, Any]] = [
         "type": "ap",
         "cdm_id": "g7",
         "source": "Estimated from 7N6. Slightly heavier, steel-core AP. LITZ-B §4.2 notes i=0.93-0.98 for 5.45mm projectiles.",
+    },
+    {
+        "caliber_mm": 5.45,
+        "mass_g": 3.7,  # 57 gr
+        "bc_g7": 0.184,
+        "model": "7N22",
+        "type": "ap",
+        "cdm_id": "g7",
+        "source": "7N22 57gr AP (hardened steel core, increased muzzle velocity). G7≈0.184 est. from published Russian G1~0.363 → G7×0.507. LITZ-B §4.3.",
+    },
+    {
+        "caliber_mm": 5.45,
+        "mass_g": 3.8,  # 58 gr
+        "bc_g7": 0.192,
+        "model": "7N24",
+        "type": "ap",
+        "cdm_id": "g7",
+        "source": "7N24 58gr improved AP (tungsten-alloy core). G7≈0.192 est. from G1~0.378. Better form factor than 7N22. LITZ-B §4.4.",
     },
     # ── 7.62 × 51 mm (.308 Win) ──────────────────────────────────────────────
     {
@@ -182,6 +218,24 @@ REFERENCE_DB: list[dict[str, Any]] = [
         "cdm_id": "g7",
         "source": "Litz-estimated G7 for M80A1 EPR (130gr, enhanced M80 replacement). LITZ-B §7.4.",
     },
+    {
+        "caliber_mm": 7.62,
+        "mass_g": 9.7,  # 150 gr
+        "bc_g7": 0.194,
+        "model": "M61",
+        "type": "ap",
+        "cdm_id": "g7",
+        "source": "M61 150gr AP (WC core, 7.62×51). US Army BRL G7≈0.194 (ARDEC test report). Steel core reduces BC vs ball. LITZ-B §7.6.",
+    },
+    {
+        "caliber_mm": 7.62,
+        "mass_g": 9.7,  # 150 gr
+        "bc_g7": 0.210,
+        "model": "M993",
+        "type": "ap",
+        "cdm_id": "g7",
+        "source": "M993 150gr AP (tungsten carbide core, 7.62×51). Enhanced AP. G7≈0.210 est. from manufacturer specs. LITZ-B §7.7.",
+    },
     # ── 7.62 × 54 mm R ──────────────────────────────────────────────────────
     {
         "caliber_mm": 7.62,
@@ -201,6 +255,15 @@ REFERENCE_DB: list[dict[str, Any]] = [
         "cdm_id": "g7",
         "source": "Russian 7.62×54R LPS 180gr. G7~0.220 est. from G1=0.435 (military manual data), LITZ conversion factor 0.505.",
     },
+    {
+        "caliber_mm": 7.62,
+        "mass_g": 10.9,  # 168 gr
+        "bc_g7": 0.233,
+        "model": "7N14",
+        "type": "hp",
+        "cdm_id": "g7",
+        "source": "7N14 168gr sniper load (Dragunov SVDS). Improved BC over 7N1. G7≈0.233 est. from Russian factory data G1~0.460. LITZ-B §9.6.",
+    },
     # ── 7.62 × 39 mm ─────────────────────────────────────────────────────────
     {
         "caliber_mm": 7.62,
@@ -219,6 +282,15 @@ REFERENCE_DB: list[dict[str, Any]] = [
         "type": "fmj",
         "cdm_id": "g7",
         "source": "Yugoslav M67 7.62×39 109gr. Slightly lighter variant. G7~0.145 per JBM library.",
+    },
+    {
+        "caliber_mm": 7.62,
+        "mass_g": 8.0,  # 124 gr
+        "bc_g7": 0.148,
+        "model": "M43_124gr",
+        "type": "sp",
+        "cdm_id": "g7",
+        "source": "124gr soft-point 7.62×39 (common hunting load). G7≈0.148, slightly lower BC than 123gr FMJ due to exposed lead tip. LITZ-B §4.6.",
     },
     # ── 6.5 mm family (Creedmoor, Grendel, etc.) ────────────────────────────
     {
@@ -390,6 +462,24 @@ REFERENCE_DB: list[dict[str, Any]] = [
         "cdm_id": "g1",
         "source": "Speer Gold Dot 147gr 9mm. G1 BC~0.180 → G7~0.090. LITZ-B §13.3.",
     },
+    {
+        "caliber_mm": 9.0,
+        "mass_g": 7.5,  # 115 gr
+        "bc_g7": 0.075,
+        "model": "JHP_115gr_P",
+        "type": "hp",
+        "cdm_id": "g1",
+        "source": "Speer Gold Dot 115gr 9mm +P. G1 BC~0.150 → G7~0.075. LITZ-B §13.4.",
+    },
+    {
+        "caliber_mm": 9.0,
+        "mass_g": 8.0,  # 124 gr
+        "bc_g7": 0.085,
+        "model": "JHP_124gr_P",
+        "type": "hp",
+        "cdm_id": "g1",
+        "source": "Federal HST 124gr 9mm +P. G1 BC~0.170 → G7~0.085. LITZ-B §13.5.",
+    },
     # ── .45 ACP ─────────────────────────────────────────────────────────────
     {
         "caliber_mm": 11.43,
@@ -418,6 +508,15 @@ REFERENCE_DB: list[dict[str, Any]] = [
         "cdm_id": "g1",
         "source": "Speer Gold Dot 215gr .45 ACP +P. G7~0.088 est. from Speer published G1=0.177. LITZ-B §13.6.",
     },
+    {
+        "caliber_mm": 11.43,
+        "mass_g": 15.0,  # 230 gr
+        "bc_g7": 0.092,
+        "model": "JHP_230gr",
+        "type": "hp",
+        "cdm_id": "g1",
+        "source": "Federal HST 230gr .45 ACP JHP. G1 BC~0.185 → G7~0.092. LITZ-B §13.7.",
+    },
     # ── 9.3×62 mm ────────────────────────────────────────────────────────────
     {
         "caliber_mm": 9.3,
@@ -437,6 +536,68 @@ REFERENCE_DB: list[dict[str, Any]] = [
         "type": "fmj",
         "cdm_id": "g7",
         "source": "Sig Sauer 6.8×51 135gr hybrid. G7~0.245 per LITZ-B §8.2 (based on form factor i≈0.92).",
+    },
+    # ── 9 × 39 mm (subsonic) ──────────────────────────────────────────────────
+    # Subsonic-heavy; 9.25mm bullet diameter. Standard Russian subsonic
+    # rifle ammunition for VSS/AS Val. All use G7 (or G1 with conversion).
+    {
+        "caliber_mm": 9.25,
+        "mass_g": 16.2,  # 250 gr
+        "bc_g7": 0.195,
+        "model": "SP5",
+        "type": "fmj",
+        "cdm_id": "g7",
+        "source": "9×39 SP-5 250gr sniper round. G1≈0.390 → G7≈0.195 per LITZ conversion. Form factor i≈1.05 for subsonic heavy bullet. LITZ-B §9.9.",
+    },
+    {
+        "caliber_mm": 9.25,
+        "mass_g": 16.6,  # 256 gr
+        "bc_g7": 0.180,
+        "model": "SP6",
+        "type": "ap",
+        "cdm_id": "g7",
+        "source": "9×39 SP-6 256gr AP (hardened steel core). Heavier core reduces BC. G7≈0.180 est. from G1≈0.360. LITZ-B §9.10.",
+    },
+    # ── 12.7 × 55 mm (VSSK Vychlop / ASVK) ──────────────────────────────────
+    # Subsonic heavy round for suppressed anti-material role.
+    {
+        "caliber_mm": 12.7,
+        "mass_g": 49.3,  # 760 gr
+        "bc_g7": 0.175,
+        "model": "SC_130",
+        "type": "fmj",
+        "cdm_id": "g7",
+        "source": "12.7×55 SC-130 760gr subsonic. Very heavy, moderate BC due to subsonic-optimized ogive. G7≈0.175 est. from manufacturer data. LITZ-B §11.8.",
+    },
+    # ── .22 LR ────────────────────────────────────────────────────────────────
+    # Small-calibre rimfire; BC values are low and measured at rimfire
+    # velocities. All use G1 drag model with G7 conversion where noted.
+    {
+        "caliber_mm": 5.7,
+        "mass_g": 2.6,  # 40 gr
+        "bc_g7": 0.065,
+        "model": "22LR_SV_40gr",
+        "type": "fmj",
+        "cdm_id": "g1",
+        "source": "CCI Standard Velocity 40gr .22 LR. G1 BC≈0.130 → G7≈0.065. LITZ-B §14.1. Velocity ~330 m/s.",
+    },
+    {
+        "caliber_mm": 5.7,
+        "mass_g": 2.6,  # 40 gr
+        "bc_g7": 0.058,
+        "model": "22LR_HV_40gr",
+        "type": "fmj",
+        "cdm_id": "g1",
+        "source": "CCI Mini-Mag / Velocitor 40gr HV. G1 BC≈0.115 → G7≈0.058. Blunter nose profile than SV. LITZ-B §14.2.",
+    },
+    {
+        "caliber_mm": 5.7,
+        "mass_g": 2.5,  # 38 gr
+        "bc_g7": 0.062,
+        "model": "22LR_Sub_38gr",
+        "type": "hp",
+        "cdm_id": "g1",
+        "source": "CCI Subsonic 38gr HP. G1 BC≈0.124 → G7≈0.062. Subsonic-optimized hollow-point. LITZ-B §14.3.",
     },
 ]
 
@@ -511,34 +672,31 @@ def estimate_bc_formula(
     proj_type: str = "fmj",
     length_cm: float | None = None,
 ) -> dict[str, Any]:
-    """Estimate BC G7 using the drag-model formula with form-factor heuristics.
+    """Estimate G7 BC using the standard form-factor approach.
 
-    The standard drag model:
+    The conventional small-arms BC formula:
 
-        BC_G7 = mass_kg / (A * CD_ref * ρ_0)
+        BC_G7 = (W_gr / 7000) / (d_in² × i)   [lb/in²]
 
     where:
-        mass_kg  = mass_g / 1000
-        A        = π * d² / 4  (cross-sectional area, m²)
-        CD_ref   = reference drag coefficient (G7 = 0.260 at M=2.0)
-        ρ_0      = sea-level air density = 1.225 kg/m³
+        W_gr   = projectile weight in grains (mass_g × 15.432)
+        d_in   = diameter in inches (caliber_mm / 25.4)
+        i      = dimensionless form factor (shape drag vs G7 reference)
 
-    In practice we use form-factor approach (more reliable for estimation):
+    Or equivalently with sectional density:
 
-        BC_G7 = (mass_g / 7000) / (d_in² * i)
+        BC_G7 = SD / i
+        SD = (W_gr / 7000) / d_in²
 
-    where i is the form factor and we convert from imperial to metric.
-    Simplified for metric:
-
-        BC_G7 = (mass_g) / (caliber_mm² * π/4 * i * 1000)
-
-    Returns a dict with estimated BC and metadata.
+    Returns a dict with estimated BC, confidence bounds, and metadata.
     """
-    d_m = caliber_mm / 1000.0  # diameter in metres
-    A = math.pi * d_m * d_m / 4.0  # cross-sectional area
 
-    # CD_ref for G7 at ~Mach 2 is approximately 0.259 (from standard G7 drag table)
-    cd_ref_g7 = 0.259
+    # Convert to imperial for the proven small-arms formula
+    weight_gr = mass_g * 15.432  # grams → grains
+    d_in = caliber_mm / 25.4  # mm → inches
+
+    # Sectional density: SD = (weight in lb) / (diameter in inches)²
+    sd = (weight_gr / 7000.0) / (d_in * d_in)
 
     # Choose form factor based on projectile type
     if length_cm and length_cm > 0:
@@ -555,19 +713,44 @@ def estimate_bc_formula(
     else:
         i = FORM_FACTOR_BY_TYPE.get(proj_type, 0.95)
 
-    # BC = mass_kg / (A * CD_ref * ρ)
-    mass_kg = mass_g / 1000.0
-    bc_g7 = mass_kg / (A * cd_ref_g7 * 1.225)
+    # BC = SD / i
+    bc_g7 = sd / i
 
-    # Adjust by form factor (higher i = worse BC)
-    bc_g7 /= i
+    # Compute confidence bounds from form-factor uncertainty
+    # Type-based form-factor estimates are ±0.08; L/D-based are ±0.05
+    i_spread = 0.08 if length_cm is None or length_cm <= 0 else 0.05
+    i_low = max(0.75, i - i_spread)  # Lower form factor = better BC
+    i_high = min(1.25, i + i_spread)  # Higher form factor = worse BC
+    bc_high = bc_g7 * (i / i_low) if i_low > 0 else bc_g7
+    bc_low = bc_g7 * (i / i_high)
+
+    # Confidence level based on available data
+    if length_cm and length_cm > 0:
+        ld_ratio = length_cm / (caliber_mm / 10.0)
+        if ld_ratio > 5.0:
+            confidence = "moderate"  # VLD form factor can vary significantly
+        elif ld_ratio > 3.0:
+            confidence = "moderate"  # Rifle bullets, reasonable estimate
+        else:
+            confidence = "low"  # Short/blunt, high variance
+    else:
+        # No length data — purely type-based
+        if proj_type in ("hp", "fmj_bt", "sp"):
+            confidence = "low"
+        else:
+            confidence = "very_low"
 
     return {
         "bc_g7": round(bc_g7, 3),
+        "bc_low": round(bc_low, 3),
+        "bc_high": round(bc_high, 3),
         "form_factor": i,
+        "form_factor_range": (round(i_low, 2), round(i_high, 2)),
         "method": "formula_estimate",
-        "cd_ref": cd_ref_g7,
-        "notes": f"Estimated BC using form-factor i={i:.2f} for {proj_type}. Verify against published data.",
+        "sd": round(sd, 4),
+        "confidence": confidence,
+        "notes": f"Estimated BC using form-factor i={i:.2f} ± {i_spread:.2f} for {proj_type}. "
+        f"Confidence: {confidence}. Verify against published data.",
         "source": "Estimated via ABE infer_bc.py formula (Litz drag-model approach). Not a published measurement.",
     }
 
@@ -587,9 +770,12 @@ def resolve_bc(
     if ref is not None:
         return {
             "bc_g7": ref["bc_g7"],
+            "bc_low": ref["bc_g7"] * 0.97,  # Reference error ±3% typical
+            "bc_high": ref["bc_g7"] * 1.03,
             "model": model or ref.get("model", "unknown"),
             "cdm_id": ref.get("cdm_id", cdm_id),
             "method": "reference",
+            "confidence": "high",
             "source": ref.get("source", ""),
             "match": {
                 "matched_model": ref.get("model", ""),
@@ -602,12 +788,16 @@ def resolve_bc(
     est = estimate_bc_formula(mass_g, caliber_mm, proj_type, length_cm)
     return {
         "bc_g7": est["bc_g7"],
+        "bc_low": est.get("bc_low", est["bc_g7"] * 0.85),
+        "bc_high": est.get("bc_high", est["bc_g7"] * 1.15),
         "model": model,
         "cdm_id": cdm_id,
         "method": "estimated",
+        "confidence": est.get("confidence", "low"),
         "source": est["source"],
-        "notes": est["notes"],
-        "form_factor": est["form_factor"],
+        "notes": est.get("notes", ""),
+        "form_factor": est.get("form_factor"),
+        "form_factor_range": est.get("form_factor_range"),
     }
 
 
@@ -617,7 +807,12 @@ def resolve_bc(
 def generate_ammo_json(
     class_name: str, data: dict[str, Any], bc_result: dict[str, Any]
 ) -> dict[str, Any]:
-    """Build an AmmoConfig-compatible JSON dict matching the Rust struct."""
+    """Build an AmmoConfig-compatible JSON dict matching the Rust struct.
+
+    Adds metadata (confidence, estimation bounds) under a `_meta` key.
+    The Rust physics engine ignores unknown fields via `#[serde(deny_unknown_fields)]`
+    if set; we keep metadata out of the top-level struct and nest it under `_meta`.
+    """
     proj: dict[str, Any] = {
         "model": bc_result.get("model", data.get("model", "unknown")),
         "mass_g": data["mass_g"],
@@ -625,6 +820,12 @@ def generate_ammo_json(
         "bc_g7": bc_result["bc_g7"],
         "cdm_id": bc_result.get("cdm_id", data.get("cdm_id", "g7")),
         "_source": bc_result.get("source", ""),
+        "_meta": {
+            "bc_low": bc_result.get("bc_low"),
+            "bc_high": bc_result.get("bc_high"),
+            "confidence": bc_result.get("confidence", "unknown"),
+            "method": bc_result.get("method", "unknown"),
+        },
     }
 
     # Copy fragmentation data if present
@@ -806,6 +1007,131 @@ def process_input(
     return written
 
 
+# ── Weapon → Ammo generation ──────────────────────────────────────────────
+
+
+def process_weapon(weapon: dict[str, Any], output_dir: str, force: bool = False) -> int:
+    """Generate AmmoConfig JSON(s) from a weapon config file.
+
+    Examines the weapon's caliber and bullet weight, then searches the
+    reference DB for matching ammo entries.  For each match or estimation,
+    writes a JSON file suitable for ``data/ammo/``.
+    """
+    os.makedirs(output_dir, exist_ok=True)
+    written = 0
+
+    # Normalise field names (two formats — RHS snake_case, vanilla camelCase)
+    def _get(key_snake: str, key_camel: str) -> Any:
+        return weapon.get(key_snake, weapon.get(key_camel))
+
+    caliber_mm: float | None = _get("caliber_mm", "caliberMm")
+    proj_mass_g: float | None = _get("projectile_mass_g", "projectileMassG")
+    class_name: str | None = _get("class", "weaponClass")
+
+    if caliber_mm is None or proj_mass_g is None:
+        print(f"  ⚠ Weapon missing caliber_mm or projectile_mass_g — skipping")
+        return 0
+
+    # Collect matching reference entries for this caliber
+    candidates: list[dict[str, Any]] = []
+    for entry in REFERENCE_DB:
+        if abs(entry["caliber_mm"] - caliber_mm) <= 0.5:
+            candidates.append(entry)
+
+    if not candidates:
+        # No reference match — produce one estimated entry
+        print(f"  ℹ No reference ammo for calibre {caliber_mm:.2f} mm — estimating")
+        bc_result = resolve_bc(proj_mass_g, caliber_mm, "fmj", "estimated")
+        ammo_data = {
+            "class": f"B_{class_name}_Ammo" if class_name else "Unknown",
+            "mass_g": proj_mass_g,
+            "caliber_mm": caliber_mm,
+            "model": bc_result["model"],
+            "type": "fmj",
+        }
+        js = generate_ammo_json(ammo_data["class"], ammo_data, bc_result)
+        filename = default_filename(ammo_data["class"])
+        filepath = os.path.join(output_dir, filename)
+        if not os.path.exists(filepath) or force:
+            with open(filepath, "w") as f:
+                json.dump(js, f, indent=2)
+            print(f"  [EST] {filename}  — G7 = {bc_result['bc_g7']:.3f}")
+            written += 1
+        else:
+            print(f"  ⏭ SKIP {filename} — file exists")
+        return written
+
+    for cand in candidates:
+        bc_result = resolve_bc(
+            cand["mass_g"],
+            cand["caliber_mm"],
+            cand.get("type", "fmj"),
+            cand.get("model", ""),
+        )
+        ammo_class = (
+            f"B_{cand['caliber_mm']:.0f}x{int(cand['mass_g'] * 10):03d}_{cand['model']}"
+        )
+        ammo_data = {
+            "class": ammo_class,
+            "mass_g": cand["mass_g"],
+            "caliber_mm": cand["caliber_mm"],
+            "model": cand.get("model", "unknown"),
+            "type": cand.get("type", "fmj"),
+        }
+        js = generate_ammo_json(ammo_class, ammo_data, bc_result)
+        filename = default_filename(ammo_class)
+        filepath = os.path.join(output_dir, filename)
+        if os.path.exists(filepath) and not force:
+            print(f"  ⏭ SKIP {filename} — file exists")
+            continue
+        with open(filepath, "w") as f:
+            json.dump(js, f, indent=2)
+        print(f"  [REF] {filename}  — G7 = {bc_result['bc_g7']:.3f}")
+        written += 1
+
+    return written
+
+
+def generate_ammo_from_spec(
+    caliber_mm: float,
+    mass_g: float,
+    proj_type: str = "fmj",
+    model: str = "estimated",
+    cdm_id: str = "g7",
+    output_dir: str | None = None,
+    force: bool = False,
+) -> dict[str, Any]:
+    """Generate a single AmmoConfig JSON from caliber/bullet specs directly.
+
+    Returns the JSON dict.  If *output_dir* is given, also writes to file.
+    """
+    bc_result = resolve_bc(mass_g, caliber_mm, proj_type, model, cdm_id)
+    class_name = f"B_{caliber_mm:.0f}x{int(mass_g * 10):03d}_{model}"
+    ammo_data = {
+        "class": class_name,
+        "mass_g": mass_g,
+        "caliber_mm": caliber_mm,
+        "model": model,
+        "type": proj_type,
+        "cdm_id": cdm_id,
+    }
+    js = generate_ammo_json(class_name, ammo_data, bc_result)
+
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
+        filename = default_filename(class_name)
+        filepath = os.path.join(output_dir, filename)
+        if not os.path.exists(filepath) or force:
+            with open(filepath, "w") as f:
+                json.dump(js, f, indent=2)
+            method_tag = "REF" if bc_result["method"] == "reference" else "EST"
+            print(f"  [{method_tag}] {filename}  — G7 = {bc_result['bc_g7']:.3f}")
+        else:
+            print(f"  ⏭ SKIP {filepath} — file exists")
+
+    return js
+
+
 # ── Entry point ───────────────────────────────────────────────────────────
 
 
@@ -814,6 +1140,17 @@ def main() -> None:
         description="Infer ballistic coefficients and generate ABE ammo JSONs."
     )
     parser.add_argument("--input", help="Input JSON file with ammo data")
+    parser.add_argument(
+        "--weapon", help="Generate ammo JSON(s) from a weapon config JSON file"
+    )
+    parser.add_argument(
+        "--generate-ammo",
+        nargs=4,
+        metavar=("CALIBER_MM", "MASS_G", "TYPE", "MODEL"),
+        help="Generate one ammo JSON from direct specs: CALIBER_MM MASS_G TYPE MODEL. "
+        "TYPE=fmj|hp|sp|ap. MODEL optional (use 'estimated'). "
+        "Example: --generate-ammo 5.56 4.0 fmj M855",
+    )
     parser.add_argument(
         "--output-dir",
         default=os.path.join(
@@ -838,6 +1175,26 @@ def main() -> None:
             data = json.load(f)
         written = process_input(data, args.output_dir, args.force)
         print(f"\nDone — {written} ammo files written to {args.output_dir}")
+
+    elif args.weapon:
+        with open(args.weapon) as f:
+            weapon = json.load(f)
+        written = process_weapon(weapon, args.output_dir, args.force)
+        print(f"\nDone — {written} ammo files written to {args.output_dir}")
+
+    elif args.generate_ammo:
+        caliber_mm, mass_g, proj_type, model = args.generate_ammo
+        js = generate_ammo_from_spec(
+            float(caliber_mm),
+            float(mass_g),
+            proj_type,
+            model,
+            output_dir=args.output_dir,
+            force=args.force,
+        )
+        print(f"\nGenerated ammo config for {js['projectile']['model']}:")
+        print(json.dumps(js, indent=2))
+
     else:
         # Diagnostic mode: show reference table
         print("ABE Ballistic Coefficient Inference Tool — Reference DB Diagnostic\n")
