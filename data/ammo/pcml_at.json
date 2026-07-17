@@ -7,6 +7,12 @@
         "bc_g7": 0.0,
         "cdm_id": "g7",
         "source": "Vanilla Arma 3 config values. PCML AT missile 150mm, 7.0kg.",
-        "notes": "launcher munition — uses custom drag model"
+        "notes": "launcher munition \u2014 uses custom drag model",
+        "frag_mass_mean": 0.0,
+        "frag_mass_std": 0.0,
+        "ricochet_angle_deg": 0.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
     }
 }

@@ -1,12 +1,18 @@
 {
-  "class": "rhs_mag_30Rnd_545x39_AK",
-  "projectile": {
-    "model": "7N6",
-    "mass_g": 3.43,
-    "caliber_mm": 5.45,
-    "bc_g7": 0.168,
-    "cdm_id": "g7",
-    "source": "ACE3 rhs_B_545x39_Ball G7 BC=0.168 (US Army BRL, 7N6 53gr FMJ, ARL-TR-5182). ACE3 ACE_bulletMass=3.43g.",
-    "fragmentation": null
-  }
+    "class": "rhs_mag_30Rnd_545x39_AK",
+    "projectile": {
+        "model": "7N6",
+        "mass_g": 3.43,
+        "caliber_mm": 5.45,
+        "bc_g7": 0.168,
+        "cdm_id": "g7",
+        "source": "ACE3 rhs_B_545x39_Ball G7 BC=0.168 (US Army BRL, 7N6 53gr FMJ, ARL-TR-5182). ACE3 ACE_bulletMass=3.43g.",
+        "fragmentation": null,
+        "frag_mass_mean": 0.0,
+        "frag_mass_std": 0.0,
+        "ricochet_angle_deg": 0.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
+    }
 }

@@ -4,8 +4,14 @@
         "model": "M8_API",
         "mass_g": 41.99,
         "caliber_mm": 12.954,
-        "bc_g7": 0.340,
+        "bc_g7": 0.34,
         "cdm_id": "g7",
-        "source": ".50 BMG M8 API 648gr. G7=0.340 (BRL ADA219106: drag identical to M33, G7=0.340). ACE3 had 0.670 which was G1 interpreted as G7."
+        "source": ".50 BMG M8 API 648gr. G7=0.340 (BRL ADA219106: drag identical to M33, G7=0.340). ACE3 had 0.670 which was G1 interpreted as G7.",
+        "frag_mass_mean": 0.0,
+        "frag_mass_std": 0.0,
+        "ricochet_angle_deg": 0.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": true,
+        "incendiary_ignition_temp_k": 550.0
     }
 }

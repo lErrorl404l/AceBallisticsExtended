@@ -6,12 +6,21 @@
         "caliber_mm": 9.0,
         "bc_g7": 0.076,
         "cdm_id": "g7",
-        "source": "9x21mm 124gr FMJ (same bullet as 9mm Para 124gr). G1 BC=0.152 → G7 BC=0.076 (×0.5 flat-base conversion per Litz). Federal AE9AP baseline.",
+        "source": "9x21mm 124gr FMJ (same bullet as 9mm Para 124gr). G1 BC=0.152 \u2192 G7 BC=0.076 (\u00d70.5 flat-base conversion per Litz). Federal AE9AP baseline.",
         "fragmentation": {
             "threshold_vel_ms": 620.0,
             "avg_fragments": 1,
             "mass_distribution": "log_normal",
-            "params": {"mean": 0.25, "std": 0.12}
-        }
+            "params": {
+                "mean": 0.25,
+                "std": 0.12
+            }
+        },
+        "frag_mass_mean": 0.0,
+        "frag_mass_std": 0.0,
+        "ricochet_angle_deg": 0.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
     }
 }

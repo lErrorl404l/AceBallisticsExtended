@@ -4,9 +4,15 @@
         "model": "JHP_185gr",
         "mass_g": 12.0,
         "caliber_mm": 11.43,
-        "bc_g7": 0.110,
+        "bc_g7": 0.11,
         "cdm_id": "g1",
-        "source": ".45 ACP 185gr JHP. G1 BC=0.110 (Speer GDHP factory: 0.109-0.112). JHP expansion only — no fragmentation per FBI/IWBA.",
-        "fragmentation": null
+        "source": ".45 ACP 185gr JHP. G1 BC=0.110 (Speer GDHP factory: 0.109-0.112). JHP expansion only \u2014 no fragmentation per FBI/IWBA.",
+        "fragmentation": null,
+        "frag_mass_mean": 0.0,
+        "frag_mass_std": 0.0,
+        "ricochet_angle_deg": 0.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
     }
 }

@@ -6,7 +6,13 @@
         "caliber_mm": 9.0,
         "bc_g7": 0.118,
         "cdm_id": "g7",
-        "source": "9x39mm SP-5 247gr subsonic FMJ. G7 BC~0.118 (Litz estimate for heavy subsonic, comparable to .300 BLK 220gr). Muzzle velocity ~290 m/s. Litz, Applied Ballistics for Long Range Shooting, §9.5 (subsonic BC estimation).",
-        "fragmentation": null
+        "source": "9x39mm SP-5 247gr subsonic FMJ. G7 BC~0.118 (Litz estimate for heavy subsonic, comparable to .300 BLK 220gr). Muzzle velocity ~290 m/s. Litz, Applied Ballistics for Long Range Shooting, \u00a79.5 (subsonic BC estimation).",
+        "fragmentation": null,
+        "frag_mass_mean": 0.0,
+        "frag_mass_std": 0.0,
+        "ricochet_angle_deg": 0.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
     }
 }

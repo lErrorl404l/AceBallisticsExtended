@@ -79,6 +79,24 @@ pub struct ProjectileConfig {
     /// fragment count, mass distribution).
     #[serde(default)]
     pub fragmentation: Option<FragmentationConfig>,
+    /// Mean fragment mass in grams for log-normal distribution (0 = auto).
+    #[serde(default)]
+    pub frag_mass_mean: Option<f64>,
+    /// Standard deviation of fragment mass in grams (0 = auto).
+    #[serde(default)]
+    pub frag_mass_std: Option<f64>,
+    /// Maximum ricochet angle in degrees; 0 uses default calc.
+    #[serde(default)]
+    pub ricochet_angle_deg: Option<f64>,
+    /// Tracer burn duration in seconds; 0 or None = no tracer.
+    #[serde(default)]
+    pub tracer_burn_time_s: Option<f64>,
+    /// Whether projectile has incendiary effect.
+    #[serde(default)]
+    pub incendiary: Option<bool>,
+    /// Ignition temperature of incendiary filler in Kelvin.
+    #[serde(default)]
+    pub incendiary_ignition_temp_k: Option<f64>,
 }
 
 /// Fragmentation behaviour parameters for a projectile.
@@ -325,6 +343,62 @@ mod tests {
             config.plates[1].backing.as_deref(),
             Some("spall_liner_kevlar")
         );
+    }
+
+    #[test]
+    fn ammo_config_new_option_fields_default_to_none() {
+        let json = r#"
+        {
+            "class": "test_ammo",
+            "projectile": {
+                "model": "test",
+                "mass_g": 4.0,
+                "caliber_mm": 5.56,
+                "bc_g7": 0.157,
+                "cdm_id": "g7"
+            }
+        }
+        "#;
+
+        let config: AmmoConfig = serde_json::from_str(json).unwrap();
+        // All new fields should default to None when absent from JSON
+        assert!(config.projectile.frag_mass_mean.is_none());
+        assert!(config.projectile.frag_mass_std.is_none());
+        assert!(config.projectile.ricochet_angle_deg.is_none());
+        assert!(config.projectile.tracer_burn_time_s.is_none());
+        assert!(config.projectile.incendiary.is_none());
+        assert!(config.projectile.incendiary_ignition_temp_k.is_none());
+    }
+
+    #[test]
+    fn ammo_config_new_option_fields_with_values() {
+        let json = r#"
+        {
+            "class": "test_ammo_tracer_api",
+            "projectile": {
+                "model": "test",
+                "mass_g": 4.0,
+                "caliber_mm": 5.56,
+                "bc_g7": 0.157,
+                "cdm_id": "g7",
+                "frag_mass_mean": 0.05,
+                "frag_mass_std": 0.025,
+                "ricochet_angle_deg": 15.0,
+                "tracer_burn_time_s": 2.5,
+                "incendiary": true,
+                "incendiary_ignition_temp_k": 550.0
+            }
+        }
+        "#;
+
+        let config: AmmoConfig = serde_json::from_str(json).unwrap();
+        let p = &config.projectile;
+        assert_eq!(p.frag_mass_mean, Some(0.05));
+        assert_eq!(p.frag_mass_std, Some(0.025));
+        assert_eq!(p.ricochet_angle_deg, Some(15.0));
+        assert_eq!(p.tracer_burn_time_s, Some(2.5));
+        assert_eq!(p.incendiary, Some(true));
+        assert_eq!(p.incendiary_ignition_temp_k, Some(550.0));
     }
 
     #[test]

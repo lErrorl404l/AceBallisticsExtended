@@ -4,9 +4,15 @@
         "model": "LPS",
         "mass_g": 9.6,
         "caliber_mm": 7.62,
-        "bc_g7": 0.210,
+        "bc_g7": 0.21,
         "cdm_id": "g7",
         "source": "7.62x54R LPS 148gr light ball (GZH). LabRadar measured G7=0.214 (Sniper's Hide 41-shot string). Consensus 0.210. G7 model for boat-tail profile. Mild steel core. ACE3 ACE_bulletMass=9.6g.",
-        "fragmentation": null
+        "fragmentation": null,
+        "frag_mass_mean": 0.0,
+        "frag_mass_std": 0.0,
+        "ricochet_angle_deg": 0.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
     }
 }

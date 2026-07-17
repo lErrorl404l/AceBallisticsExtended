@@ -23,6 +23,28 @@
       "exclusiveMinimum": 0,
       "maximum": 200
     },
+    "ballistic_properties": {
+      "type": "object",
+      "description": "Interior ballistics parameters for propellant burn rate customization",
+      "default": {},
+      "properties": {
+        "char_length": {
+          "type": "number",
+          "description": "Mayer-Krause characteristic burn length in meters. Fast pistol powders ~0.15–0.18, medium rifle ~0.25–0.30, slow magnum ~0.35–0.45.",
+          "default": 0.28,
+          "minimum": 0.05,
+          "maximum": 0.60
+        },
+        "burn_rate_coeff": {
+          "type": "number",
+          "description": "Burn rate efficiency scale factor. >1.0 = faster burn (higher MV), <1.0 = slower burn (lower MV).",
+          "default": 1.0,
+          "minimum": 0.1,
+          "maximum": 3.0
+        }
+      },
+      "additionalProperties": false
+    },
     "cdmId": {
       "type": "string",
       "description": "Drag model curve ID (g1, g7, g8, or custom curve name)",
@@ -89,6 +111,36 @@
       "description": "Projectile construction type",
       "enum": ["fmj", "soft_point", "hollow_point", "ap", "api", "tracer", "incendiary"],
       "default": "fmj"
+    },
+    "frag_mass_mean": {
+      "type": "number",
+      "description": "Mean fragment mass in grams for log-normal distribution",
+      "default": 0.0
+    },
+    "frag_mass_std": {
+      "type": "number",
+      "description": "Standard deviation of fragment mass in grams",
+      "default": 0.0
+    },
+    "ricochet_angle_deg": {
+      "type": "number",
+      "description": "Maximum ricochet angle in degrees; 0 uses default calc",
+      "default": 0.0
+    },
+    "tracer_burn_time_s": {
+      "type": "number",
+      "description": "Tracer burn duration in seconds; 0 = no tracer",
+      "default": 0.0
+    },
+    "incendiary": {
+      "type": "boolean",
+      "description": "Whether projectile has incendiary effect",
+      "default": false
+    },
+    "incendiary_ignition_temp_k": {
+      "type": "number",
+      "description": "Ignition temperature of incendiary filler in Kelvin",
+      "default": 0.0
     },
     "notes": {
       "type": "string",

@@ -7,6 +7,12 @@
         "bc_g7": 0.218,
         "cdm_id": "g7",
         "source": "M61 AP 150gr steel-core (hardened steel penetrator). Litz G7=0.218 (Applied Ballistics). APG estimate ~0.205. Using Litz value pending new Doppler data. No soft-tissue fragmentation; core penetrates intact.",
-        "fragmentation": null
+        "fragmentation": null,
+        "frag_mass_mean": 0.0,
+        "frag_mass_std": 0.0,
+        "ricochet_angle_deg": 0.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
     }
 }

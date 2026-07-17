@@ -5,6 +5,12 @@
         "mass_g": 48.2,
         "caliber_mm": 13.01,
         "bc_g7": 0.519,
-        "source": "ACE3 data: Russian 12.7x55mm subsonic SC-130 PT2, G7 BC=0.519 at ICAO"
+        "source": "ACE3 data: Russian 12.7x55mm subsonic SC-130 PT2, G7 BC=0.519 at ICAO",
+        "frag_mass_mean": 0.0,
+        "frag_mass_std": 0.0,
+        "ricochet_angle_deg": 0.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
     }
 }

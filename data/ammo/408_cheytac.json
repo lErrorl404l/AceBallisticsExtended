@@ -1,11 +1,17 @@
 {
-  "class": "B_408_Ball",
-  "projectile": {
-    "model": "408CT",
-    "mass_g": 27.0,
-    "caliber_mm": 10.36,
-    "bc_g7": 0.420,
-    "cdm_id": "g7",
-    "source": "Jamison/Lost River 419gr solid. G1=0.949 (Yuma Proving Ground Doppler radar, CheyTac 2026 catalog). G7=0.420 est from AP variant ratio (400gr AP: G1=0.97, G7=0.425, ratio=0.438). CheyTac verified."
-  }
+    "class": "B_408_Ball",
+    "projectile": {
+        "model": "408CT",
+        "mass_g": 27.0,
+        "caliber_mm": 10.36,
+        "bc_g7": 0.42,
+        "cdm_id": "g7",
+        "source": "Jamison/Lost River 419gr solid. G1=0.949 (Yuma Proving Ground Doppler radar, CheyTac 2026 catalog). G7=0.420 est from AP variant ratio (400gr AP: G1=0.97, G7=0.425, ratio=0.438). CheyTac verified.",
+        "frag_mass_mean": 0.0,
+        "frag_mass_std": 0.0,
+        "ricochet_angle_deg": 0.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
+    }
 }

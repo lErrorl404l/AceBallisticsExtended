@@ -7,6 +7,12 @@
         "bc_g7": 0.0,
         "cdm_id": "g7",
         "source": "Vanilla Arma 3 config values. 12ga 00 buckshot, 9 pellets @ 3.14g each, ~28.3g total.",
-        "notes": "shotgun — multi-projectile, uses custom drag model"
+        "notes": "shotgun \u2014 multi-projectile, uses custom drag model",
+        "frag_mass_mean": 0.0,
+        "frag_mass_std": 0.0,
+        "ricochet_angle_deg": 0.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
     }
 }

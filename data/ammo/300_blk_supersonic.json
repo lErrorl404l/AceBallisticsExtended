@@ -11,8 +11,17 @@
             "threshold_vel_ms": 580.0,
             "avg_fragments": 6,
             "mass_distribution": "log_normal",
-            "params": {"mean": 0.12, "std": 0.06},
+            "params": {
+                "mean": 0.12,
+                "std": 0.06
+            },
             "notes": "110gr FMJ. Limited fragmentation at ~610 m/s MV; barely above frag threshold."
-        }
+        },
+        "frag_mass_mean": 0.0,
+        "frag_mass_std": 0.0,
+        "ricochet_angle_deg": 0.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
     }
 }

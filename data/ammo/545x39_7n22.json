@@ -7,6 +7,12 @@
         "bc_g7": 0.174,
         "cdm_id": "g7",
         "source": "7N22 57gr AP 5.45x39mm (hardened steel-core penetrator U12A). Russian source G7~0.180, consensus 0.174. Higher BC than 7N6 (0.168) due to improved form factor of AP tip. BRL (ARL-MR-344, 1984) baseline for 5.45mm.",
-        "fragmentation": null
+        "fragmentation": null,
+        "frag_mass_mean": 0.0,
+        "frag_mass_std": 0.0,
+        "ricochet_angle_deg": 0.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
     }
 }

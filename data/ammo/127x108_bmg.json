@@ -1,20 +1,26 @@
 {
-  "class": "B_127x108_Ball",
-  "projectile": {
-    "model": "M33",
-    "mass_g": 42.0,
-    "caliber_mm": 12.7,
-    "bc_g7": 0.340,
-    "cdm_id": "g7",
-    "source": "APG G7 BC=0.340 (US ARL, M33 650gr FMJ)",
-    "fragmentation": {
-      "threshold_vel_ms": 700.0,
-      "avg_fragments": 15,
-      "mass_distribution": "log_normal",
-      "params": {
-        "mean": 0.15,
-        "std": 0.08
-      }
+    "class": "B_127x108_Ball",
+    "projectile": {
+        "model": "M33",
+        "mass_g": 42.0,
+        "caliber_mm": 12.7,
+        "bc_g7": 0.34,
+        "cdm_id": "g7",
+        "source": "APG G7 BC=0.340 (US ARL, M33 650gr FMJ)",
+        "fragmentation": {
+            "threshold_vel_ms": 700.0,
+            "avg_fragments": 15,
+            "mass_distribution": "log_normal",
+            "params": {
+                "mean": 0.15,
+                "std": 0.08
+            }
+        },
+        "frag_mass_mean": 0.0,
+        "frag_mass_std": 0.0,
+        "ricochet_angle_deg": 0.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
     }
-  }
 }

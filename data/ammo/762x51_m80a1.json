@@ -10,8 +10,17 @@
             "threshold_vel_ms": 550.0,
             "avg_fragments": 28,
             "mass_distribution": "log_normal",
-            "params": {"mean": 0.10, "std": 0.05},
+            "params": {
+                "mean": 0.1,
+                "std": 0.05
+            },
             "notes": "Only copper jacket fragments. Steel penetrator and copper slug survive as separate projectiles. Jacket fragments completely; 25-32 fragments typical."
-        }
+        },
+        "frag_mass_mean": 0.0,
+        "frag_mass_std": 0.0,
+        "ricochet_angle_deg": 0.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
     }
 }

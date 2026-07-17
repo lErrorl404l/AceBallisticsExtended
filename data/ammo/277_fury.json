@@ -11,8 +11,17 @@
             "threshold_vel_ms": 550.0,
             "avg_fragments": 25,
             "mass_distribution": "log_normal",
-            "params": {"mean": 0.10, "std": 0.05},
+            "params": {
+                "mean": 0.1,
+                "std": 0.05
+            },
             "notes": "EPR construction: copper jacket, steel penetrator, fragmented core. Similar fragmentation behavior to M855A1/M80A1."
-        }
+        },
+        "frag_mass_mean": 0.0,
+        "frag_mass_std": 0.0,
+        "ricochet_angle_deg": 0.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
     }
 }
