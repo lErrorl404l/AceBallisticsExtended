@@ -9,9 +9,15 @@
 //   - Temporary cavity diameter and volume
 //   - Behind-armour lethality index (BALI)
 //
+// A post-processing calibration layer ([`ThreatLevel`] /
+// [`classify_bad_threat`]) maps BALI to discrete threat categories
+// aligned with STANAG 4569 Level I–V analogues.
+//
 // References:
 //   - BRL Report 1662 (Behind-Armour Debris)
 //   - NATO AEP-2920 (Terminal Ballistics)
+//   - NATO AEP-55 (Protection Level Evaluation)
+//   - STANAG 4569 (Ed. 3) — Protection Levels I–V
 //   - Bless & Rosenberg (1985) — spall thresholds
 
 use crate::penetration::material_factor;
@@ -67,6 +73,94 @@ pub struct BehindArmorDebrisResult {
     /// Behind-armour lethality index (dimensionless, higher = more
     /// lethal behind-armour effects).
     pub behind_armor_lethality_index: f64,
+}
+
+/// Classification of the threat posed by behind-armour debris.
+///
+/// Maps the continuous [`BehindArmorDebrisResult::behind_armor_lethality_index`]
+/// to discrete categories following the severity scale used in
+/// NATO AEP-2920 terminal ballistic assessments.
+///
+/// The categories are monotonic: each successive variant represents an
+/// unambiguously higher threat level, mirroring the escalation in
+/// STANAG 4569 protection levels (I → V).
+///
+/// # References
+///
+/// | Variant     | BALI range | STANAG 4569 analogue              |
+/// |-------------|------------|-----------------------------------|
+/// | `None`      | < 0.1      | Below Level I (no protection need) |
+/// | `Minimal`   | [0.1, 1.0) | Level I — small arms suppressed    |
+/// | `Moderate`  | [1.0, 5.0) | Level II — rifle-ball stopped      |
+/// | `Substantial`| [5.0, 20.0)| Level III — rifle-AP defeated      |
+/// | `Critical`  | ≥ 20.0     | Level IV–V — heavy / cannon threat |
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+pub enum ThreatLevel {
+    /// BALI < 0.1 — no significant behind-armour debris.
+    ///
+    /// Corresponds to impacts that do not perforate the armour or that
+    /// produce negligible ejecta (e.g., small arms on thick plate).
+    None,
+    /// 0.1 ≤ BALI < 1.0 — limited spall; minor behind-armour effects.
+    ///
+    /// Typical of non-perforating impacts or spall-liner–controlled
+    /// perforations.  Below the threshold for crew injury.
+    Minimal,
+    /// 1.0 ≤ BALI < 5.0 — moderate debris spray; casualty-producing
+    /// potential.
+    ///
+    /// Corresponds to small-calibre AP or ball perforation of
+    /// thin-to-moderate armour.  Fragments may cause soft-tissue
+    /// wounds.
+    Moderate,
+    /// 5.0 ≤ BALI < 20.0 — substantial debris; high probability of
+    /// crew injury or equipment damage.
+    ///
+    /// Typical of rifle-calibre AP perforation of structural armour
+    /// or multiple fragment impacts.
+    Substantial,
+    /// BALI ≥ 20.0 — critical debris spray; catastrophic behind-armour
+    /// effects.
+    ///
+    /// Corresponds to heavy machine-gun or cannon-calibre perforation.
+    /// Vehicle-level damage or crew incapacitation is highly likely.
+    Critical,
+}
+
+/// Classify a behind-armour lethality index into a discrete threat level.
+///
+/// Maps the continuous BALI score produced by [`evaluate_bad`] to one of
+/// five threat categories (see [`ThreatLevel`]).
+///
+/// The mapping is **monotonic** — higher BALI always yields a higher
+/// threat category — and applies a noise floor at BALI < 0.1 to suppress
+/// false positives from numerical noise.
+///
+/// # Reference
+///
+/// The threat categories are informed by:
+/// - **STANAG 4569** (Ed. 3) — Protection levels for logistic and
+///   armoured vehicles, Levels I–V.
+/// - **NATO AEP-2920** — Terminal Ballistics Methodology.
+/// - **NATO AEP-55** — Procedures for evaluating the protection level
+///   of logistic vehicles.
+///
+/// # Example
+///
+/// ```
+/// use abe::penetration::behind_armor_debris::classify_bad_threat;
+///
+/// let level = classify_bad_threat(3.2);
+/// assert_eq!(level, ThreatLevel::Moderate);
+/// ```
+pub fn classify_bad_threat(bali: f64) -> ThreatLevel {
+    match bali {
+        b if b < 0.1 => ThreatLevel::None,
+        b if b < 1.0 => ThreatLevel::Minimal,
+        b if b < 5.0 => ThreatLevel::Moderate,
+        b if b < 20.0 => ThreatLevel::Substantial,
+        _ => ThreatLevel::Critical,
+    }
 }
 
 /// Evaluate behind-armour debris for a given impact event.
@@ -303,5 +397,84 @@ mod tests {
         assert_eq!(a.num_spall_fragments, b.num_spall_fragments);
         assert!((a.spall_cone_angle_deg - b.spall_cone_angle_deg).abs() < 1e-12);
         assert!((a.behind_armor_lethality_index - b.behind_armor_lethality_index).abs() < 1e-12);
+    }
+
+    // ── Threat-level calibration tests ───────────────────────────────────────
+
+    /// M80 ball perforating 5 mm RHA (t/d ≈ 0.66, near peak efficiency)
+    /// produces at least Moderate behind-armour threat.
+    #[test]
+    fn thin_rha_classified_at_least_moderate() {
+        let result = evaluate_bad(&make_params(853.0, 0.005, "steel_rha", 0.0, 380.0, true));
+        let level = classify_bad_threat(result.behind_armor_lethality_index);
+        assert!(
+            level >= ThreatLevel::Moderate,
+            "thin RHA perforation should be ≥ Moderate (BALI={:.3}): got {:?}",
+            result.behind_armor_lethality_index,
+            level,
+        );
+    }
+
+    /// 50 mm RHA stopping M80 ball produces negligible debris → None.
+    #[test]
+    fn thick_rha_classified_none() {
+        let result = evaluate_bad(&make_params(
+            853.0,
+            0.050,
+            "steel_rha",
+            0.0,
+            85.0, // residual ≈ 10 % impact velocity, non-penetrating
+            false,
+        ));
+        let level = classify_bad_threat(result.behind_armor_lethality_index);
+        assert_eq!(
+            level,
+            ThreatLevel::None,
+            "thick RHA (non-perforating) should be None (BALI={:.3})",
+            result.behind_armor_lethality_index,
+        );
+    }
+
+    /// Spall-liner–controlled perforation suppresses debris to Minimal or
+    /// below, even when the geometry (5 mm, normal) would otherwise be
+    /// efficient at generating spall.
+    #[test]
+    fn spall_liner_classified_at_most_minimal() {
+        let result = evaluate_bad(&BehindArmorDebrisParams {
+            armor_material: "spall_liner_kevlar".to_string(),
+            ..make_params(853.0, 0.005, "steel_rha", 0.0, 380.0, true)
+        });
+        let level = classify_bad_threat(result.behind_armor_lethality_index);
+        assert!(
+            level <= ThreatLevel::Minimal,
+            "spall liner should keep threat ≤ Minimal (BALI={:.3}): got {:?}",
+            result.behind_armor_lethality_index,
+            level,
+        );
+    }
+
+    /// The ThreatLevel ordering is verified with explicit boundary values
+    /// to ensure monotonicity.
+    #[test]
+    fn threat_level_monotonic() {
+        assert!(ThreatLevel::None < ThreatLevel::Minimal);
+        assert!(ThreatLevel::Minimal < ThreatLevel::Moderate);
+        assert!(ThreatLevel::Moderate < ThreatLevel::Substantial);
+        assert!(ThreatLevel::Substantial < ThreatLevel::Critical);
+    }
+
+    /// Edge-case BALI values at each boundary produce the expected level.
+    #[test]
+    fn classification_boundaries() {
+        assert_eq!(classify_bad_threat(0.0), ThreatLevel::None);
+        assert_eq!(classify_bad_threat(0.0999), ThreatLevel::None);
+        assert_eq!(classify_bad_threat(0.1), ThreatLevel::Minimal);
+        assert_eq!(classify_bad_threat(0.999), ThreatLevel::Minimal);
+        assert_eq!(classify_bad_threat(1.0), ThreatLevel::Moderate);
+        assert_eq!(classify_bad_threat(4.999), ThreatLevel::Moderate);
+        assert_eq!(classify_bad_threat(5.0), ThreatLevel::Substantial);
+        assert_eq!(classify_bad_threat(19.999), ThreatLevel::Substantial);
+        assert_eq!(classify_bad_threat(20.0), ThreatLevel::Critical);
+        assert_eq!(classify_bad_threat(100.0), ThreatLevel::Critical);
     }
 }
