@@ -128,6 +128,7 @@ fn simulate_trajectory(
             bc,
             mass_g,
             caliber_mm,
+            twist_rate_m: 0.0,
         };
 
         let mut result = BulletState::default();

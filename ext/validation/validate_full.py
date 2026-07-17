@@ -139,6 +139,7 @@ class ImpactParams(ctypes.Structure):
         ("armor_material", ctypes.c_char * 32),
         ("impact_angle_deg", ctypes.c_double),
         ("projectile_type", ctypes.c_char * 32),
+        ("yaw_angle_deg", ctypes.c_double),
     ]
 
 
@@ -163,7 +164,7 @@ STRUCT_SIZES = {
     "FireResult": (ctypes.sizeof(FireResult), 32),
     "StepParams": (ctypes.sizeof(StepParams), 160),
     "BulletState": (ctypes.sizeof(BulletState), 64),
-    "ImpactParams": (ctypes.sizeof(ImpactParams), 120),
+    "ImpactParams": (ctypes.sizeof(ImpactParams), 128),
     "ImpactResult": (ctypes.sizeof(ImpactResult), 64),
 }
 

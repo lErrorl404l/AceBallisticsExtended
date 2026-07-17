@@ -91,6 +91,7 @@ fn bench_step(c: &mut Criterion) {
             bc: 0.157,
             mass_g: 4.0,
             caliber_mm: 5.56,
+            twist_rate_m: 0.0,
         };
         b.iter(|| {
             let mut result = BulletState::default();
@@ -117,6 +118,7 @@ fn bench_impact(c: &mut Criterion) {
             armor_material: mat,
             impact_angle_deg: 0.0,
             projectile_type: proj,
+            yaw_angle_deg: 0.0,
         };
         b.iter(|| {
             let mut result = ImpactResult::default();
@@ -169,6 +171,7 @@ fn bench_full_pipeline(c: &mut Criterion) {
                     bc: 0.157,
                     mass_g: 4.0,
                     caliber_mm: 5.56,
+                    twist_rate_m: 0.0,
                 };
                 let mut sr = BulletState::default();
                 abe_step(&step, &mut sr);
@@ -191,6 +194,7 @@ fn bench_full_pipeline(c: &mut Criterion) {
                 armor_material: mat,
                 impact_angle_deg: 0.0,
                 projectile_type: proj,
+                yaw_angle_deg: 0.0,
             };
             let mut ir = ImpactResult::default();
             abe_impact(&impact, &mut ir);
@@ -261,6 +265,7 @@ fn bench_multi_bullet(c: &mut Criterion) {
                         bc,
                         mass_g: 4.0,
                         caliber_mm: 5.56,
+                        twist_rate_m: 0.0,
                     };
                     let mut sr = BulletState::default();
                     abe_step(&step, &mut sr);
@@ -339,6 +344,7 @@ fn bench_multi_bullet_100(c: &mut Criterion) {
                         bc,
                         mass_g: 4.0,
                         caliber_mm: 5.56,
+                        twist_rate_m: 0.0,
                     };
                     let mut sr = BulletState::default();
                     abe_step(&step, &mut sr);
@@ -400,6 +406,7 @@ fn bench_full_pipeline_realistic(c: &mut Criterion) {
                     bc: 0.200, // G7 BC for M80 ball
                     mass_g: 9.5,
                     caliber_mm: 7.62,
+                    twist_rate_m: 0.0,
                 };
                 let mut sr = BulletState::default();
                 abe_step(&step, &mut sr);
@@ -422,6 +429,7 @@ fn bench_full_pipeline_realistic(c: &mut Criterion) {
                 armor_material: mat,
                 impact_angle_deg: 30.0,
                 projectile_type: proj,
+                yaw_angle_deg: 0.0,
             };
             let mut ir = ImpactResult::default();
             abe_impact(&impact, &mut ir);
@@ -451,6 +459,7 @@ fn bench_impact_variants(c: &mut Criterion) {
             armor_material: steel,
             impact_angle_deg: 0.0,
             projectile_type: ap,
+            yaw_angle_deg: 0.0,
         };
         b.iter(|| {
             let mut result = ImpactResult::default();
@@ -470,6 +479,7 @@ fn bench_impact_variants(c: &mut Criterion) {
             armor_material: alum,
             impact_angle_deg: 0.0,
             projectile_type: ball,
+            yaw_angle_deg: 0.0,
         };
         b.iter(|| {
             let mut result = ImpactResult::default();
@@ -489,6 +499,7 @@ fn bench_impact_variants(c: &mut Criterion) {
             armor_material: steel,
             impact_angle_deg: 80.0,
             projectile_type: ball,
+            yaw_angle_deg: 0.0,
         };
         b.iter(|| {
             let mut result = ImpactResult::default();
@@ -508,6 +519,7 @@ fn bench_impact_variants(c: &mut Criterion) {
             armor_material: ceramic,
             impact_angle_deg: 15.0,
             projectile_type: apds,
+            yaw_angle_deg: 0.0,
         };
         b.iter(|| {
             let mut result = ImpactResult::default();

@@ -87,6 +87,7 @@ fn simulate(
             bc,
             mass_g,
             caliber_mm,
+            twist_rate_m: 0.0,
         };
 
         let mut result = BulletState::default();
@@ -507,6 +508,7 @@ fn negative_range_graceful() {
         bc: 0.157,
         mass_g: 4.0,
         caliber_mm: 5.56,
+        twist_rate_m: 0.0,
     };
 
     // Run a few backward steps — should not crash
@@ -695,6 +697,7 @@ fn extreme_crosswind() {
                 bc,
                 mass_g,
                 caliber_mm,
+                twist_rate_m: 0.0,
             };
             let mut result = BulletState::default();
             if abe_step(&step, &mut result) != 0 {

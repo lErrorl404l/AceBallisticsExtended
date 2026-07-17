@@ -343,6 +343,7 @@ fn cabi_step_identity_single() {
         bc: 0.157,
         mass_g: 0.0,
         caliber_mm: 0.0,
+        twist_rate_m: 0.0,
     };
 
     // C FFI path
@@ -393,6 +394,7 @@ fn cabi_step_identity_multi_step_with_wind() {
         bc: 0.157,
         mass_g: 0.0,
         caliber_mm: 0.0,
+        twist_rate_m: 0.0,
     };
 
     for step_idx in 0..20 {
@@ -479,6 +481,7 @@ fn cabi_step_identity_zero_wind_gravity_only() {
         bc: 0.0, // no drag
         mass_g: 0.0,
         caliber_mm: 0.0,
+        twist_rate_m: 0.0,
     };
 
     // C ABI path
@@ -521,6 +524,7 @@ fn cabi_impact_identity_penetration() {
         armor_material: mat,
         impact_angle_deg: 0.0,
         projectile_type: proj,
+        yaw_angle_deg: 0.0,
     };
 
     // C FFI path
@@ -586,6 +590,7 @@ fn cabi_impact_identity_ricochet() {
         armor_material: mat,
         impact_angle_deg: 85.0,
         projectile_type: proj,
+        yaw_angle_deg: 0.0,
     };
 
     // C FFI path
@@ -649,6 +654,7 @@ fn cabi_impact_identity_ap_over_ball() {
             armor_material: mat,
             impact_angle_deg: 0.0,
             projectile_type: *proj,
+            yaw_angle_deg: 0.0,
         };
         let mut result = ImpactResult::default();
         assert_eq!(abe_impact(&params, &mut result), 0);
