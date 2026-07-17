@@ -1233,6 +1233,124 @@ fn sqf_error_recovery() {
     assert_eq!(h, "1", "state not corrupted by error commands: health={h}");
 }
 
+// ── P0 Handlers: zeroing, shooter, component, wound ────────────────────────────
+//
+// Tests for the new P0 C ABI dispatch handlers that were wired in
+// RVExtensionArgs alongside the existing init/fire/step/impact handlers.
+
+#[test]
+fn rv_ext_zeroing_basic() {
+    rv_ext_args("init", &["1", "0"]);
+    // 63 mm sight height, 100 m zero range, 948 m/s MV
+    let r = rv_ext_args("zeroing", &["63", "100", "948"]);
+    assert!(r.len() > 2, "zeroing result should have content: {r}");
+    assert!(r.starts_with('['), "zeroing result should be an array: {r}");
+    // Typical 5.56mm zero at 100m → ~3.5 MOA with 63mm sight height
+    // Parse the result: "[3.5]"
+    let inner = r.trim_start_matches('[').trim_end_matches(']');
+    let moa: f64 = inner.parse().expect("zeroing result should be numeric MOA");
+    assert!(
+        moa > 0.0 && moa < 20.0,
+        "zero MOA should be plausible: {moa}"
+    );
+}
+
+#[test]
+fn rv_ext_zeroing_no_sight_fails() {
+    rv_ext_args("init", &["1", "0"]);
+    // Zero sight height, 100 m zero, 948 m/s — only drop compensation remains
+    let r = rv_ext_args("zeroing", &["0", "100", "948"]);
+    // Drop comp ~1.88 MOA — result should be a positive number
+    assert!(r.starts_with('['), "zeroing result should be an array: {r}");
+    let inner = r.trim_start_matches('[').trim_end_matches(']');
+    let moa: f64 = inner.parse().expect("zeroing result should be numeric MOA");
+    assert!(
+        moa > 0.0 && moa < 10.0,
+        "drop-comp MOA should be plausible: {moa}"
+    );
+}
+
+#[test]
+fn rv_ext_shooter_prone_bipod() {
+    rv_ext_args("init", &["1", "0"]);
+    // 2.0 MOA base, prone, bipod, 72 BPM, breath hold (0), advanced, 300 m
+    let r = rv_ext_args(
+        "shooter",
+        &["2.0", "prone", "bipod", "72", "0", "advanced", "300"],
+    );
+    assert!(
+        r.contains(","),
+        "shooter result should be comma-separated: {r}"
+    );
+    assert!(r.starts_with('['), "shooter result should be an array: {r}");
+    let parts: Vec<&str> = r
+        .trim_start_matches('[')
+        .trim_end_matches(']')
+        .split(',')
+        .collect();
+    assert_eq!(parts.len(), 3, "shooter result should have 3 fields: {r}");
+    let moa: f64 = parts[0].parse().expect("first field should be MOA");
+    assert!(
+        moa > 0.0 && moa < 10.0,
+        "shooter MOA should be plausible: {moa}"
+    );
+}
+
+#[test]
+fn rv_ext_component_engine() {
+    rv_ext_args("init", &["1", "0"]);
+    // MBT, front hit, 120mm APFSDS at 1600 m/s, 0°, armour penetrated
+    let r = rv_ext_args(
+        "component",
+        &[
+            "mbt", "front", "120", "4600", "1600", "apfsds", "0", "900", "1",
+        ],
+    );
+    assert!(
+        r.starts_with('['),
+        "component result should be an array: {r}"
+    );
+    let parts: Vec<&str> = r
+        .trim_start_matches('[')
+        .trim_end_matches(']')
+        .split(',')
+        .collect();
+    assert_eq!(parts.len(), 3, "component result should have 3 fields: {r}");
+    let mob_kill: f64 = parts[0]
+        .parse()
+        .expect("mobility kill prob should be numeric");
+    assert!(
+        mob_kill >= 0.0 && mob_kill <= 1.0,
+        "mobility kill prob in [0,1]: {mob_kill}"
+    );
+    // 120mm APFSDS to MBT front at 1600 m/s → high kill probability
+    assert!(
+        mob_kill > 0.3,
+        "APFSDS vs MBT front should have significant kill prob: {mob_kill}"
+    );
+}
+
+#[test]
+fn rv_ext_wound_basic() {
+    rv_ext_args("init", &["1", "0"]);
+    // 7.62mm NATO ball at 850 m/s into soft tissue
+    let r = rv_ext_args("wound", &["850", "0", "0", "9.5", "7.62", "ball"]);
+    assert!(r.starts_with('['), "wound result should be an array: {r}");
+    let parts: Vec<&str> = r
+        .trim_start_matches('[')
+        .trim_end_matches(']')
+        .split(',')
+        .collect();
+    assert_eq!(parts.len(), 5, "wound result should have 5 fields: {r}");
+    let pen_mm: f64 = parts[0]
+        .parse()
+        .expect("penetration depth should be numeric");
+    assert!(
+        pen_mm > 50.0,
+        "rifle round should penetrate deeply: {pen_mm}mm"
+    );
+}
+
 // ── Struct-based C ABI entry points ─────────────────────────────────────────
 //
 // Uses abe_init/abe_health/abe_version directly (struct C ABI).
