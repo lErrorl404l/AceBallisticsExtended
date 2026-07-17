@@ -9,12 +9,15 @@
 
 #![allow(dead_code)]
 
+pub mod aerodynamic_jump;
 pub mod aps;
 pub mod armor_array;
 mod atmosphere;
 pub mod ballistic_cap;
 pub mod barrel_harmonics;
+pub mod barrier_penetration;
 pub mod behind_armor_debris;
+pub mod body_armor;
 pub mod combined_effects;
 pub mod component_damage;
 pub mod component_kill_prob;
@@ -29,12 +32,16 @@ mod floor_ceiling;
 mod fragmentation;
 pub mod frangible_ammo;
 mod frozen_ground;
+pub mod heat_penetration;
+pub mod hesh_penetration;
 mod interior;
 pub mod interior_wall;
 pub mod laser_solution;
+pub mod long_rod;
 pub mod lot_variation;
 pub mod multi_bounce;
 pub mod penetration;
+pub mod platform_pitch_yaw;
 pub mod predictive_era;
 pub mod schematics;
 pub mod security_glass;
@@ -44,6 +51,7 @@ pub mod sight_height;
 pub mod soft_tissue;
 pub mod solution_table;
 pub mod spin_drift_direction;
+pub mod stability;
 pub mod tire_penetration;
 mod trace;
 mod tracer_burnout;
