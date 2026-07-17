@@ -1,0 +1,10 @@
+{
+    "class": "B_50BW_Ball_F",
+    "projectile": {
+        "model": "50_Beowulf",
+        "mass_g": 21.64,
+        "caliber_mm": 12.7,
+        "bc_g7": 0.21,
+        "source": "ACE3 data: 334gr ball, G1 BC=0.21 converted, at ASM"
+    }
+}

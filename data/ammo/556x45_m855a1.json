@@ -1,0 +1,17 @@
+{
+    "class": "ACE_556x45_M855A1_Ball",
+    "projectile": {
+        "model": "M855A1",
+        "mass_g": 4.02,
+        "caliber_mm": 5.69,
+        "bc_g7": 0.152,
+        "source": "Definitive BC: Bryan Litz Ballistic Performance of Rifle Bullets: G1=0.291, G7=0.149; ARL/US Army consensus G7=0.151-0.154",
+        "fragmentation": {
+            "threshold_vel_ms": 550.0,
+            "avg_fragments": 25,
+            "mass_distribution": "log_normal",
+            "params": {"mean": 0.05, "std": 0.025},
+            "notes": "Only copper jacket fragments. Steel penetrator (~19gr) and copper slug (~24gr) survive as separate projectiles. Jacket fragments completely into many small pieces."
+        }
+    }
+}

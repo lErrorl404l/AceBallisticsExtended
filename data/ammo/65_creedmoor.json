@@ -1,0 +1,10 @@
+{
+    "class": "ACE_65_Creedmor_Ball",
+    "projectile": {
+        "model": "6.5_Creedmoor",
+        "mass_g": 9.072,
+        "caliber_mm": 6.706,
+        "bc_g7": 0.317,
+        "source": "ACE3 data: Lapua Scenar 140gr, G7 BC=0.317 at ICAO"
+    }
+}

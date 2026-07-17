@@ -1,0 +1,10 @@
+{
+    "class": "B_338_NM_Ball",
+    "projectile": {
+        "model": "338_NM",
+        "mass_g": 19.44,
+        "caliber_mm": 8.585,
+        "bc_g7": 0.381,
+        "source": "ACE3 data: 300gr Lapua, G7 BC=0.381 at ICAO"
+    }
+}

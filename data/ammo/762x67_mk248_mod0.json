@@ -1,0 +1,10 @@
+{
+    "class": "ACE_762x67_Ball_Mk248_Mod_0",
+    "projectile": {
+        "model": "Mk248_Mod_0",
+        "mass_g": 12.312,
+        "caliber_mm": 7.823,
+        "bc_g7": 0.268,
+        "source": "ACE3 data: Mk248 Mod 0 190gr, G7 BC=0.268 at ICAO"
+    }
+}

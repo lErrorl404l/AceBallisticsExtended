@@ -1,0 +1,10 @@
+{
+    "class": "B_570x28_Ball",
+    "projectile": {
+        "model": "SS190",
+        "mass_g": 2.0,
+        "caliber_mm": 5.7,
+        "bc_g7": 0.084,
+        "source": "ACE3 data: FN SS190 31gr, G7 BC=0.084 at ICAO"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "class": "ACE_762x51_M80A1EPR_Ball",
+    "projectile": {
+        "model": "M80A1",
+        "mass_g": 8.42,
+        "caliber_mm": 7.823,
+        "bc_g7": 0.185,
+        "source": "Definitive BC: JBM drag calc from M80A1 dimensions yields ~0.190 G7; 68ics.blog analysis avg 0.180; TFB 'conservative 0.185 G7 BC'",
+        "fragmentation": {
+            "threshold_vel_ms": 550.0,
+            "avg_fragments": 28,
+            "mass_distribution": "log_normal",
+            "params": {"mean": 0.10, "std": 0.05},
+            "notes": "Only copper jacket fragments. Steel penetrator and copper slug survive as separate projectiles. Jacket fragments completely; 25-32 fragments typical."
+        }
+    }
+}

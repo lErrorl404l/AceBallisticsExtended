@@ -1,0 +1,17 @@
+{
+    "class": "B_580x42_Ball",
+    "projectile": {
+        "model": "DBP87",
+        "mass_g": 4.45,
+        "caliber_mm": 5.8,
+        "bc_g7": 0.170,
+        "cdm_id": "g7",
+        "source": "Vanilla Arma 3 config values. 5.8x42mm DBP87 68gr FMJ for Type 95/CAR-95. G7 BC ~0.170 estimated (comparable to 5.56mm SS109, slightly lower due to smaller caliber).",
+        "fragmentation": {
+            "threshold_vel_ms": 730.0,
+            "avg_fragments": 8,
+            "mass_distribution": "log_normal",
+            "params": {"mean": 0.10, "std": 0.05}
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "class": "ACE_762x67_Ball_Berger_Hybrid_OTM",
+    "projectile": {
+        "model": "Berger_Hybrid_OTM",
+        "mass_g": 14.904,
+        "caliber_mm": 7.823,
+        "bc_g7": 0.368,
+        "source": "ACE3 data: Berger 230gr Hybrid OTM, G7 BC=0.368 at ICAO"
+    }
+}

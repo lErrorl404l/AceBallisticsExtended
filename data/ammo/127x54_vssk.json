@@ -1,0 +1,10 @@
+{
+    "class": "B_127x54_Ball",
+    "projectile": {
+        "model": "STs130_PT2",
+        "mass_g": 48.2,
+        "caliber_mm": 13.01,
+        "bc_g7": 0.519,
+        "source": "ACE3 data: Russian 12.7x55mm subsonic SC-130 PT2, G7 BC=0.519 at ICAO"
+    }
+}

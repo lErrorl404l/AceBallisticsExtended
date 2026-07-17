@@ -1,0 +1,12 @@
+{
+    "class": "B_12Gauge_Slug",
+    "projectile": {
+        "model": "Slug_1oz",
+        "mass_g": 28.0,
+        "caliber_mm": 18.53,
+        "bc_g7": 0.120,
+        "cdm_id": "g7",
+        "source": "Vanilla Arma 3 config values. 12ga 1oz slug. G7 BC ~0.120 estimated for typical rifled slug (Litz §12.3 shotgun slug approximation).",
+        "fragmentation": null
+    }
+}
