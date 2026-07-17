@@ -176,6 +176,57 @@ pub fn material_factor(material: &str) -> f64 {
     }
 }
 
+/// Check whether an AP projectile catastrophically shatters against hard armor.
+///
+/// Shatter occurs when a hard but brittle AP projectile strikes very hard
+/// ceramic / dual-hardness armor at high velocity. The penetrator fractures
+/// and penetration drops drastically — the projectile fails before the armor does.
+///
+/// Returns `true` when ALL of the following hold:
+/// - Projectile is AP or armor_piercing
+/// - Armor material is a hard ceramic (ceramic, B4C, SiC, AD90, AD95, etc.)
+///   or dual-hardness steel / mars_armor
+/// - Impact velocity exceeds ~700 m/s
+/// - Impact angle is within the shatter zone (< 60° from normal)
+fn check_shatter(
+    velocity_ms: f64,
+    projectile_type: &str,
+    armor_material: &str,
+    impact_angle_deg: f64,
+) -> bool {
+    // Only AP projectiles are hard enough to shatter
+    let lower_proj = projectile_type.to_lowercase();
+    if lower_proj != "ap" && lower_proj != "armor_piercing" {
+        return false;
+    }
+
+    // Check for hard ceramic / dual-hardness armor materials
+    let lower_mat = armor_material.to_lowercase();
+    let is_hard_armor = lower_mat.contains("ceramic")
+        || lower_mat.contains("b4c")
+        || lower_mat.contains("sic")
+        || lower_mat.contains("ad90")
+        || lower_mat.contains("ad95")
+        || lower_mat.contains("dual_hardness")
+        || lower_mat.contains("mars_armor");
+
+    if !is_hard_armor {
+        return false;
+    }
+
+    // Velocity threshold — AP vs ceramic shatter typically above ~700 m/s
+    if velocity_ms <= 700.0 {
+        return false;
+    }
+
+    // Very oblique impacts don't produce the shatter condition
+    if impact_angle_deg >= 60.0 {
+        return false;
+    }
+
+    true
+}
+
 /// Projectile type modifier
 fn projectile_modifier(proj_type: &str) -> f64 {
     match proj_type.to_lowercase().as_str() {
@@ -188,6 +239,37 @@ fn projectile_modifier(proj_type: &str) -> f64 {
         "incendiary" => 0.9,
         "tracer" => 0.95,
         _ => 1.0,
+    }
+}
+
+/// Per-projectile-type De Marre calibration constants.
+///
+/// Returns the De Marre coefficient `k` for the given projectile type.
+/// Lower `k` = more efficient penetration (lower required velocity).
+/// These values are calibrated for the De Marre formula with D and T in metres
+/// and M in kilograms:
+///
+/// ```text
+/// V_required = k * D^0.75 * T^0.7 / M^0.5
+/// ```
+///
+/// | Projectile type  | k       | Notes                           |
+/// |------------------|---------|---------------------------------|
+/// | ball / fmj       | 91000   | Standard full metal jacket      |
+/// | ap / armor_piercing | 70000 | Hardened steel core            |
+/// | apds / apfsds    | 50500   | Sub-calibre long rod, most eff. |
+/// | apcr             | 60700   | Tungsten carbide core           |
+/// | heat             | 100000  | Inefficient by KE (shaped chrg) |
+/// | soft_point / hollow_point | 95000 | Deforms on impact, less eff. |
+pub fn de_marre_k(projectile_type: &str) -> f64 {
+    match projectile_type.to_lowercase().as_str() {
+        "ball" | "fmj" => 91000.0,
+        "ap" | "armor_piercing" => 70000.0,
+        "apds" | "apfsds" => 50500.0,
+        "apcr" => 60700.0,
+        "heat" => 100000.0,
+        "soft_point" | "hollow_point" => 95000.0,
+        _ => 91000.0,
     }
 }
 
@@ -297,7 +379,6 @@ pub fn evaluate_yaw(
     yaw_angle_deg: f64,
 ) -> PenetrationResult {
     let mat_factor = material_factor(armor_material);
-    let proj_mod = projectile_modifier(projectile_type);
 
     let angle_rad = impact_angle_deg.to_radians();
     let cos_angle = angle_rad.cos().max(0.087); // Clamp at ~85° max
@@ -418,12 +499,58 @@ pub fn evaluate_yaw(
         };
     }
 
+    // ── Shatter check (AP vs hard ceramic/dual-hardness armor) ──────────────
+    // AP projectiles can catastrophically shatter against hard armor at high
+    // velocity. When shatter occurs the penetrator fractures and penetration
+    // drops drastically — the projectile fails before the armor does.
+    if check_shatter(
+        velocity_ms,
+        projectile_type,
+        armor_material,
+        impact_angle_deg,
+    ) {
+        let frag_result = crate::fragmentation::evaluate(
+            velocity_ms,
+            projectile_mass_kg * 1000.0,
+            projectile_type,
+            300.0,
+            None,
+        );
+        let bad_shatter = behind_armor_debris::evaluate_bad(&BehindArmorDebrisParams {
+            impact_velocity_ms: velocity_ms,
+            projectile_mass_kg,
+            caliber_m,
+            armor_thickness_m,
+            armor_material: armor_material.to_string(),
+            impact_angle_deg,
+            projectile_type: projectile_type.to_string(),
+            projectile_fragments: frag_result.num_fragments.max(4),
+            residual_velocity_ms: 0.0,
+            penetrated: false,
+        });
+        return PenetrationResult {
+            penetrated: false,
+            residual_velocity: 0.0,
+            effective_thickness,
+            ricochet: false,
+            ricochet_angle: 0.0,
+            ricochet_energy_fraction: 0.0,
+            fragments: (frag_result.num_fragments * 3).max(6), // catastrophic breakup
+            spall_fragments: bad_shatter.num_spall_fragments,
+            spall_cone_angle: bad_shatter.spall_cone_angle_deg,
+            debris_spray_cone: bad_shatter.debris_spray_cone_deg,
+            temp_cavity_diameter: bad_shatter.temp_cavity_diameter_mm,
+            temp_cavity_volume: bad_shatter.temp_cavity_volume_cc,
+        };
+    }
+
     // ── De Marre penetration ───────────────────────────────────────────────
     // V_required = k * D^0.75 * T^0.7 / M^0.5
-    // where k is a material/construction constant (~6100 for RHA)
+    // where k is the De Marre coefficient, calibrated per projectile type.
+    // Lower k = more efficient penetration (requires less velocity).
     //
     // Simplified: if velocity exceeds De Marre threshold, penetration occurs
-    let k = 91000.0 / proj_mod;
+    let k = de_marre_k(projectile_type);
 
     let v_required = if caliber_m > 0.0 && effective_thickness > 0.0 && projectile_mass_kg > 0.0 {
         let d = caliber_m;
@@ -976,6 +1103,103 @@ mod tests {
             !r.ricochet,
             "Yaw alone (20°) at 0° impact angle should not cause ricochet"
         );
+    }
+
+    // ── Shatter ───────────────────────────────────────────────────────────────
+
+    #[test]
+    fn ap_round_shatters_on_ceramic_at_high_vel() {
+        assert!(super::check_shatter(850.0, "ap", "ceramic_b4c", 0.0));
+    }
+
+    #[test]
+    fn ball_round_does_not_shatter_on_ceramic() {
+        assert!(!super::check_shatter(850.0, "ball", "ceramic_b4c", 0.0));
+    }
+
+    #[test]
+    fn ap_round_does_not_shatter_on_rha() {
+        assert!(!super::check_shatter(850.0, "ap", "steel_rha", 0.0));
+    }
+
+    #[test]
+    fn ap_round_does_not_shatter_below_threshold() {
+        assert!(!super::check_shatter(600.0, "ap", "ceramic_b4c", 0.0));
+    }
+
+    #[test]
+    fn ap_round_does_not_shatter_at_oblique_angle() {
+        assert!(!super::check_shatter(850.0, "ap", "ceramic_b4c", 70.0));
+    }
+
+    #[test]
+    fn ap_round_shatters_on_dual_hardness_steel() {
+        assert!(super::check_shatter(
+            850.0,
+            "ap",
+            "dual_hardness_steel",
+            0.0
+        ));
+    }
+
+    #[test]
+    fn ap_round_shatters_on_mars_armor() {
+        assert!(super::check_shatter(
+            850.0,
+            "armor_piercing",
+            "mars_armor",
+            0.0
+        ));
+    }
+
+    #[test]
+    fn ap_round_shatters_on_sic() {
+        assert!(super::check_shatter(800.0, "ap", "ceramic_sic", 30.0));
+    }
+
+    #[test]
+    fn ap_round_shatters_on_ad95() {
+        assert!(super::check_shatter(750.0, "ap", "ad95", 0.0));
+    }
+
+    #[test]
+    fn evaluate_yaw_returns_shatter_result() {
+        // AP vs ceramic at 900 m/s, 0° → should shatter (penetrated=false)
+        let r = super::evaluate_yaw(900.0, 0.0095, 0.00762, 0.010, 0.0, "ceramic_b4c", "ap", 0.0);
+        assert!(
+            !r.penetrated,
+            "AP vs ceramic at 900 m/s should shatter and not penetrate"
+        );
+        // Shatter produces lots of fragments
+        assert!(r.fragments >= 6, "Shatter should produce >= 6 fragments");
+        assert!(
+            (r.residual_velocity - 0.0).abs() < 1e-6,
+            "Shatter should leave zero residual velocity"
+        );
+    }
+
+    #[test]
+    fn evaluate_yaw_ap_does_not_shatter_on_rha() {
+        // AP vs RHA at 900 m/s — no shatter, normal penetration logic
+        let r = super::evaluate_yaw(900.0, 0.0095, 0.00762, 0.010, 0.0, "steel_rha", "ap", 0.0);
+        // Whether it pens or not is up to De Marre, but shatter should not intervene.
+        // Against RHA (non-ceramic) the shatter check returns false, so we
+        // should NOT see the shatter signature: residual velocity > 0.
+        assert!(
+            r.residual_velocity > 0.0,
+            "Non-shatter AP should retain residual velocity: got {}",
+            r.residual_velocity
+        );
+    }
+
+    #[test]
+    fn check_shatter_armor_piercing_string() {
+        assert!(super::check_shatter(
+            800.0,
+            "armor_piercing",
+            "ceramic_al2o3",
+            0.0
+        ));
     }
 
     #[test]
