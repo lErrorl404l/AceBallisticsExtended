@@ -10,8 +10,98 @@
 //   - UK Ordnance Board formulae
 //   - NIJ 0108.01 ballistic resistance
 
+use std::collections::HashMap;
+use std::sync::OnceLock;
+
+static MATERIAL_CACHE: OnceLock<HashMap<&'static str, f64>> = OnceLock::new();
+
+/// Build the material factor lookup table.
+fn build_material_cache() -> HashMap<&'static str, f64> {
+    let mut m = HashMap::new();
+    m.insert("steel_rha", 1.0);
+    m.insert("steel_hha", 1.25);
+    m.insert("aluminum_5083", 0.35);
+    m.insert("aluminum_7039", 0.45);
+    m.insert("ceramic_al2o3", 2.5);
+    m.insert("ceramic_sic", 3.0);
+    m.insert("ceramic_b4c", 3.5);
+    m.insert("composite_kevlar", 0.6);
+    m.insert("composite_glass", 0.4);
+    m.insert("spall_liner", 0.1);
+    m.insert("concrete", 0.15);
+    m.insert("wood", 0.05);
+    m.insert("steel_structural", 0.7);
+    m.insert("mild_steel", 0.7);
+    m.insert("cast_steel", 0.85);
+    m.insert("depleted_uranium", 1.8);
+    m.insert("titanium_alloy", 0.9);
+    m.insert("lead_alloy", 0.04);
+    m.insert("burlington_composite", 2.0);
+    m.insert("chobham_composite", 2.2);
+    m.insert("dorchester_composite", 2.5);
+    m.insert("stanag_composite", 2.0);
+    m.insert("textolite_composite", 0.35);
+    m.insert("mexas_composite", 1.8);
+    m.insert("stef_composite", 1.9);
+    m.insert("kvarts_composite", 2.1);
+    m.insert("k_active_composite", 2.3);
+    m.insert("laminated_glass", 0.15);
+    m.insert("texolite_composite", 0.35);
+    m.insert("uhmwpe", 0.25);
+    m.insert("rubber_elastomer", 0.015);
+    m.insert("spall_liner_kevlar", 0.25);
+    m.insert("kevlar_liner", 0.25);
+    m.insert("twaron_liner", 0.22);
+    m.insert("dyneema_liner", 0.30);
+    m.insert("gypsum", 0.02);
+    m.insert("gypsum_board", 0.02);
+    m.insert("drywall", 0.02);
+    m.insert("stud_timber", 0.04);
+    m.insert("plywood", 0.035);
+    m.insert("osb", 0.035);
+    m.insert("adobe", 0.08);
+    m.insert("rammed_earth", 0.08);
+    m.insert("carbon_fiber", 0.20);
+    m.insert("fiberglass", 0.12);
+    m.insert("grp", 0.12);
+    m.insert("mil_dtl_46100_class1", 1.30);
+    m.insert("mil_dtl_46100_class3", 1.40);
+    m.insert("mil_dtl_46100_class4", 1.50);
+    m.insert("dual_hardness_steel", 1.10);
+    m.insert("mars_armor", 1.10);
+    m.insert("armor_tip_steel", 1.15);
+    m.insert("rubber_solid", 0.08);
+    m.insert("hard_rubber", 0.08);
+    m.insert("ceramic_ad90", 2.2);
+    m.insert("ad90", 2.2);
+    m.insert("ceramic_ad95", 2.4);
+    m.insert("ad95", 2.4);
+    m.insert("mar_ceramic", 2.8);
+    m.insert("perforated_armor", 0.60);
+    m.insert("perf_steel", 0.60);
+    m.insert("slotted_armor", 0.55);
+    m.insert("slotted_steel", 0.55);
+    m.insert("acrylic", 0.04);
+    m.insert("acrylic_standalone", 0.04);
+    m.insert("polycarbonate", 0.06);
+    m.insert("polycarbonate_standalone", 0.06);
+    m.insert("concrete_reinforced", 0.15);
+    m.insert("wood_hardwood", 0.05);
+    m.insert("hha_steel", 1.25);
+    m.insert("ceramic_plate", 2.5);
+    m.insert("rha_steel", 1.0);
+    m
+}
+
 /// Material hardness factor relative to RHA
 pub fn material_factor(material: &str) -> f64 {
+    // O(1) cache lookup — built once on first call
+    let cache = MATERIAL_CACHE.get_or_init(build_material_cache);
+    let key = material.to_lowercase();
+    if let Some(&val) = cache.get(key.as_str()) {
+        return val;
+    }
+    // Fallback match (preserves all existing behavior)
     match material.to_lowercase().as_str() {
         "steel_rha" => 1.0,
         "steel_hha" => 1.25, // High-hardness armor
@@ -259,6 +349,62 @@ pub fn evaluate(
     }
 }
 
+// ── Lanz-Odermatt (Long Rod Penetrator Model) ──────────────────────────────────
+
+/// Compute the normalised penetration ratio P/L using the Lanz-Odermatt
+/// formula, corrected for SI units (expects m/s, converts to km/s internally).
+///
+/// Returns the dimensionless penetration depth / rod length ratio.
+///
+/// # Formula
+/// ```text
+/// P/L = sqrt(ρₚ / ρₜ) · (v² − vₘᵢₙ²) / (k · cos(θ)ⁿ)
+/// ```
+///
+/// where:
+/// - `ρₚ` — projectile density (kg/m³) — e.g. 17 500 for tungsten
+/// - `ρₜ` — target density (kg/m³) — e.g. 7 850 for RHA steel
+/// - `v`  — impact velocity **in km/s** (converted from m/s internally)
+/// - `vₘᵢₙ` — minimum eroding velocity **in km/s**
+/// - `k`  — material constant (~2.0 for RHA)
+/// - `θ`  — impact angle from normal (degrees)
+/// - `n`  — angle exponent (~2.0 for long rods)
+///
+/// # Example (APFSDS vs RHA)
+/// ```
+/// # use abe_ballistics_ext::penetration::lanz_odermatt_depth;
+/// let p_over_l = lanz_odermatt_depth(
+///     1600.0,     // 1.6 km/s
+///     700.0,      // v_min = 700 m/s → 0.7 km/s
+///     17500.0,    // tungsten density
+///     7850.0,     // RHA density
+///     2.0,        // k
+///     0.0,        // 0° impact
+///     2.0,        // n
+/// );
+/// // P/L should be ~1.5 for a typical APFSDS at 1.6 km/s
+/// assert!(p_over_l > 0.5 && p_over_l < 3.0, "P/L = {p_over_l}");
+/// ```
+pub fn lanz_odermatt_depth(
+    velocity_ms: f64,
+    v_min_ms: f64,
+    rho_p: f64,
+    rho_t: f64,
+    k: f64,
+    angle_deg: f64,
+    n: f64,
+) -> f64 {
+    if velocity_ms <= 0.0 || rho_t <= 0.0 || k <= 0.0 {
+        return 0.0;
+    }
+
+    let cos_angle = angle_deg.to_radians().cos().max(0.087); // clamp at ~85°
+    let v_km = velocity_ms / 1000.0;
+    let v_min_km = v_min_ms / 1000.0;
+
+    (rho_p / rho_t).sqrt() * (v_km.powi(2) - v_min_km.powi(2)) / (k * cos_angle.powf(n))
+}
+
 // ── Tests ─────────────────────────────────────────────────────────────────────
 
 #[cfg(test)]
@@ -334,6 +480,48 @@ mod tests {
         assert!(
             fast.penetrated || !slow.penetrated,
             "Higher velocity should pen at least as well"
+        );
+    }
+
+    // ── Lanz-Odermatt ────────────────────────────────────────────────────────
+
+    #[test]
+    fn lanz_odermatt_apfsds_vs_rha_plausible() {
+        // APFSDS at 1600 m/s, 4.6 kg, 120mm gun, vs RHA at 0°
+        // Expect P/L ~1.5 (rod length ~600mm → pen depth ~900mm RHAe)
+        let p_over_l = super::lanz_odermatt_depth(
+            1600.0,  // 1.6 km/s
+            700.0,   // v_min = 700 m/s → 0.7 km/s
+            17500.0, // tungsten density
+            7850.0,  // RHA density
+            2.0,     // material constant
+            0.0,     // 0° impact
+            2.0,     // angle exponent
+        );
+        assert!(
+            p_over_l > 0.5 && p_over_l < 3.0,
+            "APFSDS P/L should be ~1.5, got {p_over_l}"
+        );
+    }
+
+    #[test]
+    fn lanz_odermatt_zero_velocity_no_pen() {
+        let p_over_l = super::lanz_odermatt_depth(0.0, 700.0, 17500.0, 7850.0, 2.0, 0.0, 2.0);
+        assert_eq!(p_over_l, 0.0);
+    }
+
+    #[test]
+    fn lanz_odermatt_cos_denom_increases_pl_at_angle() {
+        // With cosⁿ in the denominator, P/L increases at oblique angles
+        // (long-rod tunnelling effect in Lanz-Odermatt model).
+        // cos(60°) = 0.5, cos² = 0.25 → P/L = 4× baseline for n=2
+        let at_0 = super::lanz_odermatt_depth(1600.0, 700.0, 17500.0, 7850.0, 2.0, 0.0, 2.0);
+        let at_60 = super::lanz_odermatt_depth(1600.0, 700.0, 17500.0, 7850.0, 2.0, 60.0, 2.0);
+        let ratio = at_60 / at_0;
+        // n=2 → ratio ≈ 1/0.5² = 4.0
+        assert!(
+            (ratio - 4.0).abs() < 0.001,
+            "P/L at 60° should be ~4× 0° for n=2: ratio={ratio}"
         );
     }
 }

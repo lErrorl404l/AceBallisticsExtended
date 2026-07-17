@@ -9,6 +9,13 @@
 //   - NATO AOP-55 Annex A
 //   - Litz's Applied Ballistics for Long Range Shooting
 
+use std::sync::Mutex;
+
+/// Single-entry L1 cache for `get_cd`: stores (drag_model, mach, cd).
+/// Covers the hot-path case where the same bullet is re-queried at the
+/// same Mach number across consecutive steps.
+static CD_L1_CACHE: Mutex<Option<(String, f64, f64)>> = Mutex::new(None);
+
 /// Linear interpolation in a sorted (mach, cd) lookup table.
 #[inline]
 fn table_lookup(table: &[(f64, f64)], mach: f64) -> f64 {
@@ -118,12 +125,28 @@ const G8_TABLE: [(f64, f64); 20] = [
 /// - "g8": G8 standard projectile (flat-base, secant ogive)
 /// - custom model IDs via lookup table (future)
 pub fn get_cd(drag_model: &str, mach: f64) -> f64 {
-    match drag_model.to_lowercase().as_str() {
+    // L1 cache: check if we already computed this exact (model, mach) pair
+    if let Ok(cache) = CD_L1_CACHE.lock() {
+        if let Some((ref model, cached_mach, cached_cd)) = *cache {
+            if model.as_str() == drag_model && cached_mach == mach {
+                return cached_cd;
+            }
+        }
+    }
+
+    let cd = match drag_model.to_lowercase().as_str() {
         "g1" => g1_drag(mach),
         "g7" => g7_drag(mach),
         "g8" => g8_drag(mach),
         _ => g7_drag(mach), // Default to G7
+    };
+
+    // Store in cache for next call
+    if let Ok(mut cache) = CD_L1_CACHE.lock() {
+        *cache = Some((drag_model.to_string(), mach, cd));
     }
+
+    cd
 }
 
 /// G1 drag curve — standard reference for flat-base tangent-ogive bullets.
