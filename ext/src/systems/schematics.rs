@@ -458,6 +458,64 @@ mod tests {
         assert!(ids.contains(&"bmp_3"), "Should contain BMP-3");
         assert!(ids.contains(&"btr_82a"), "Should contain BTR-82A");
         assert!(ids.contains(&"stryker_m1126"), "Should contain Stryker");
+        assert!(ids.contains(&"t90m"), "Should contain T-90M");
+        assert!(
+            ids.contains(&"leopard_2a7plus"),
+            "Should contain Leopard 2A7+"
+        );
+        assert!(
+            ids.contains(&"challenger_2_tes"),
+            "Should contain Challenger 2 TES"
+        );
+        assert!(ids.contains(&"btr82a"), "Should contain BTR-82A (btr82a)");
+    }
+
+    #[test]
+    fn new_vehicles_have_detailed_zones() {
+        setup();
+        let detailed_ids = &[
+            "t90m",
+            "leopard_2a7plus",
+            "challenger_2_tes",
+            "m2a3_bradley",
+            "btr82a",
+        ];
+        let detailed_zones = &[
+            "turret_front",
+            "turret_side",
+            "turret_top",
+            "hull_front",
+            "hull_side",
+            "hull_side_upper",
+            "hull_side_lower",
+        ];
+        for id in detailed_ids {
+            let schem = load_schematic(id)
+                .unwrap_or_else(|| panic!("Vehicle '{}' not found in schematic database", id));
+            for zone in detailed_zones {
+                assert!(
+                    schem.zones.contains_key(*zone),
+                    "Vehicle '{}' is missing required zone '{}'",
+                    id,
+                    zone,
+                );
+                let z = schem.zones.get(*zone).unwrap();
+                assert!(
+                    z.layers.len() >= 2,
+                    "Vehicle '{}' zone '{}' has only {} layers (min 2)",
+                    id,
+                    zone,
+                    z.layers.len(),
+                );
+                assert!(
+                    z.layers.len() <= 6,
+                    "Vehicle '{}' zone '{}' has {} layers (max 6)",
+                    id,
+                    zone,
+                    z.layers.len(),
+                );
+            }
+        }
     }
 
     #[test]
