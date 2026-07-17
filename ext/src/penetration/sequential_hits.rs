@@ -112,7 +112,28 @@ const RHA_TEMPER_THRESHOLD_C: f64 = 300.0;
 /// Minimum impact energy (J) required to remove a spall liner.
 const SPALL_LINER_ENERGY_J: f64 = 500.0;
 
+/// Ratio of calibre for "tight cluster" threshold (≤3× calibre = grouped hit).
+const TIGHT_CLUSTER_CAL_RATIO: f64 = 3.0;
+
 // ── Public API ───────────────────────────────────────────────────────────────────
+
+/// Cumulative armor degradation state across sequential impacts.
+///
+/// Tracks hit count, total absorbed energy, and spatial clustering to
+/// model the progressive weakening of armor under sustained fire.
+#[derive(Debug, Clone)]
+pub struct DegradationAccumulator {
+    /// Total number of hits on the plate.
+    pub total_hits: i32,
+    /// Total kinetic energy absorbed by the plate (J).
+    pub total_energy_absorbed_j: f64,
+    /// Miner-style cumulative damage index in `[0.0, 1.0]`.
+    /// 0.0 = pristine, 1.0 = fully degraded.
+    pub cumulative_damage_index: f64,
+    /// Multiplier for tightly grouped hits in `[0.0, 1.0]`.
+    /// Higher values mean hits are more tightly clustered.
+    pub zone_cluster_penalty: f64,
+}
 
 /// Compute proximity degradation factor between two hit locations.
 ///
@@ -354,6 +375,96 @@ pub fn evaluate_sequential_hits(params: &SequentialHitParams) -> SequentialHitRe
         zone_degradation_factor,
         cumulative_damage: d_cum,
         estimated_remaining_hits_to_failure: remaining,
+    }
+}
+
+/// Sigmoid function: `1.0 / (1.0 + exp(-x))`.
+///
+/// Maps any real input to `(0.0, 1.0)`, centred at `x=0` → `0.5`.
+fn sigmoid(x: f64) -> f64 {
+    1.0 / (1.0 + (-x).exp())
+}
+
+/// Compute the armor degradation factor from a [`DegradationAccumulator`].
+///
+/// Returns a multiplier in `[0.70, 1.0]` applied to effective armor thickness:
+/// - `1.0` = full strength
+/// - `0.70` = maximum degradation from cumulative damage alone
+///
+/// The reduction scales with the cumulative damage index (up to 15 %) and
+/// the zone cluster penalty (up to 10 %).  The floor prevents complete
+/// armor negation from degradation alone — a cracked plate still provides
+/// some protection.
+pub fn armor_degradation_factor(
+    accumulator: &DegradationAccumulator,
+    _params: &SequentialHitParams,
+) -> f64 {
+    let mut factor = 1.0;
+
+    // Miner's cumulative damage reduces effective thickness by up to 15 %.
+    factor -= 0.15 * accumulator.cumulative_damage_index;
+
+    // Tightly grouped hits degrade locally by up to 10 %.
+    factor -= 0.1 * accumulator.zone_cluster_penalty;
+
+    factor.clamp(0.70, 1.0)
+}
+
+/// Compute the [`DegradationAccumulator`] from prior hit history.
+///
+/// Analyzes hit count, total absorbed energy, and spatial clustering to
+/// quantify how much cumulative damage the armor has sustained.
+///
+/// - `cumulative_damage_index` uses a sigmoid of `(hits − 3) / 3` to
+///   capture non-linear fatigue progression.
+/// - `zone_cluster_penalty` grows with the fraction of hits within 3×
+///   calibre of another hit, saturating via `1 − exp(−ratio × 2)`.
+pub fn compute_degradation_accumulator(
+    prior_hits: &[HitRecord],
+    params: &SequentialHitParams,
+) -> DegradationAccumulator {
+    let total_hits = prior_hits.len() as i32;
+    let total_energy_absorbed_j: f64 = prior_hits.iter().map(|h| h.impact_energy_j).sum();
+
+    if total_hits == 0 {
+        return DegradationAccumulator {
+            total_hits: 0,
+            total_energy_absorbed_j: 0.0,
+            cumulative_damage_index: 0.0,
+            zone_cluster_penalty: 0.0,
+        };
+    }
+
+    // Sigmoid cumulative damage index: near 0 at 0-2 hits, ~0.5 at 3,
+    // approaching 1.0 as hits increase.
+    let x = (total_hits as f64 - 3.0) / 3.0;
+    let cumulative_damage_index = sigmoid(x);
+
+    // Zone cluster penalty: fraction of hits within 3× calibre of another
+    // hit.  Tightly grouped impacts cause more localised degradation.
+    let tight_threshold = TIGHT_CLUSTER_CAL_RATIO * params.caliber_m;
+    let mut tight_count = 0;
+    for i in 0..prior_hits.len() {
+        let has_nearby = prior_hits.iter().enumerate().any(|(j, other)| {
+            if i == j {
+                return false;
+            }
+            let dx = prior_hits[i].hit_x_m - other.hit_x_m;
+            let dy = prior_hits[i].hit_y_m - other.hit_y_m;
+            (dx * dx + dy * dy).sqrt() <= tight_threshold
+        });
+        if has_nearby {
+            tight_count += 1;
+        }
+    }
+    let tight_hit_ratio = tight_count as f64 / total_hits as f64;
+    let zone_cluster_penalty = 1.0 - (-tight_hit_ratio * 2.0).exp();
+
+    DegradationAccumulator {
+        total_hits,
+        total_energy_absorbed_j,
+        cumulative_damage_index,
+        zone_cluster_penalty,
     }
 }
 
@@ -957,5 +1068,66 @@ mod tests {
         let cal = 0.01;
         let f = edge_proximity_factor(0.0, 0.0, 1.0, 1.0, cal);
         assert!((f - 0.7).abs() < 1e-10, "corner should be 0.7, got {f}");
+    }
+
+    // ── Armor degradation (Gap 6) ────────────────────────────────────────
+
+    #[test]
+    fn degradation_no_hits_factor_one() {
+        let params = default_params();
+        let acc = compute_degradation_accumulator(&[], &params);
+        let factor = armor_degradation_factor(&acc, &params);
+        assert!(
+            (factor - 1.0).abs() < 0.05,
+            "no hits should give factor near 1.0, got {factor}",
+        );
+    }
+
+    #[test]
+    fn degradation_single_hit_no_meaningful_degradation() {
+        let hits = vec![hit(0.5, 0.5, 1000.0, "ap")];
+        let params = default_params();
+        let acc = compute_degradation_accumulator(&hits, &params);
+        let factor = armor_degradation_factor(&acc, &params);
+        assert!(
+            factor > 0.90,
+            "single hit should not meaningfully degrade armor, got {factor}",
+        );
+    }
+
+    #[test]
+    fn degradation_few_hits_scattered_factor_near_one() {
+        // 3 scattered hits in different regions → low cluster penalty
+        let hits = vec![
+            hit(0.1, 0.1, 1000.0, "ap"),
+            hit(0.5, 0.1, 1000.0, "ap"),
+            hit(0.9, 0.9, 1000.0, "ap"),
+        ];
+        let params = default_params();
+        let acc = compute_degradation_accumulator(&hits, &params);
+        let factor = armor_degradation_factor(&acc, &params);
+        assert!(
+            factor > 0.85,
+            "scattered hits should have factor near 1.0, got {factor}",
+        );
+    }
+
+    #[test]
+    fn degradation_many_hits_clustered_significantly_reduced() {
+        // 6 tightly clustered hits → high CDI + cluster penalty
+        let hits: Vec<_> = (0..6)
+            .map(|i| hit(0.5 + 0.001 * i as f64, 0.5, 3300.0, "ap"))
+            .collect();
+        let params = default_params();
+        let acc = compute_degradation_accumulator(&hits, &params);
+        let factor = armor_degradation_factor(&acc, &params);
+        assert!(
+            factor < 0.90,
+            "clustered hits should significantly reduce factor, got {factor}",
+        );
+        assert!(
+            factor >= 0.70,
+            "factor should not drop below 0.70, got {factor}",
+        );
     }
 }
