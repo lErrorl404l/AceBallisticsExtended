@@ -6,7 +6,7 @@
         "caliber_mm": 5.56,
         "bc_g7": 0.205,
         "cdm_id": "g7",
-        "_source": "Litz Doppler radar measurement: G7=0.205 for 77gr SMK (Mk262 Mod 1). Litz, Applied Ballistics for Long Range Shooting, 4th Ed. §10.5. Confirmed by JBM ballistics library and US Army ATAC testing.",
+        "source": "Litz Doppler radar measurement: G7=0.205 for 77gr SMK (Mk262 Mod 1). Litz, Applied Ballistics for Long Range Shooting, 4th Ed. §10.5. Confirmed by JBM ballistics library and US Army ATAC testing.",
         "fragmentation": {
             "threshold_vel_ms": 762.0,
             "avg_fragments": 8,

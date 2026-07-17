@@ -11,5 +11,6 @@
   "fragCount": 12,
   "fragMassDist": "log_normal",
   "projectileType": "fmj",
+  "source": "Litz estimate G7 BC~0.155 (M855A1 62gr enhanced FMJ, steel-core construction, Applied Ballistics)",
   "notes": "M855A1 62-gr enhanced FMJ. Frag threshold ~2400 fps. G7 BC ~0.155 (Litz estimate, enhanced construction)."
 }

@@ -1,0 +1,12 @@
+{
+    "class": "rhs_100Rnd_762x54mm_LPS",
+    "projectile": {
+        "model": "LPS",
+        "mass_g": 9.6,
+        "caliber_mm": 7.62,
+        "bc_g7": 0.200,
+        "cdm_id": "g1",
+        "source": "7.62x54R LPS 148gr light ball (GZH). G7 BC~0.200 (G1≈0.400). Litz §9.6. ACE3 ACE_bulletMass=9.6g. Mild steel core, boat-tail profile. G1 drag model due to Russian ballistic convention.",
+        "fragmentation": null
+    }
+}

@@ -6,6 +6,6 @@
     "caliber_mm": 6.5,
     "bc_g7": 0.245,
     "cdm_id": "g7",
-    "source": "Tracer variant, slightly lower BC than ball. 6.5mm CT tracer."
+        "source": "Tracer variant of fictional 6.5mm CT. BC estimated ~4% below ball based on M856 tracer vs M855 relationship (Litz §8.5 tracer BC degradation)."
   }
 }

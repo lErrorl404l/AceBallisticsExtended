@@ -1,0 +1,11 @@
+{
+    "class": "rhs_weap_asval",
+    "caliber_mm": 9.0,
+    "barrel_length_mm": 200.0,
+    "rifling_twist_mm": 240.0,
+    "chamber_pressure_mpa": 280.0,
+    "cdm_id": "g7",
+    "projectile_mass_g": 16.0,
+    "muzzle_velocity_ms": 295.0,
+    "zero_range_m": 100.0
+}

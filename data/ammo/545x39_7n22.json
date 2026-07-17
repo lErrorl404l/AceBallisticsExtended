@@ -1,0 +1,12 @@
+{
+    "class": "B_545x39_7N22",
+    "projectile": {
+        "model": "7N22",
+        "mass_g": 3.69,
+        "caliber_mm": 5.45,
+        "bc_g7": 0.152,
+        "cdm_id": "g7",
+        "source": "7N22 57gr AP 5.45x39mm (steel-core penetrator). BC slightly lower than 7N6 (0.168) due to heavier steel penetrator. Litz estimate ~0.152 based on sectional density and form factor of steel-core 5.45mm. US Army BRL (ARL-MR-344, 1984) baseline.",
+        "fragmentation": null
+    }
+}

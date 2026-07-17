@@ -11,5 +11,6 @@
   "fragCount": 8,
   "fragMassDist": "log_normal",
   "projectileType": "fmj",
+  "source": "APG/US Army BRL G7 BC=0.200 (M80 149gr FMJ, AD0815788, Piddington & Maynard 1966)",
   "notes": "M80 149-gr FMJ. NATO standard. G7 BC=0.200 per APG/US Army BRL (AD0815788). Frag above 600 m/s."
 }

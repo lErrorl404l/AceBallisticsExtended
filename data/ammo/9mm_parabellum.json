@@ -1,0 +1,17 @@
+{
+    "class": "B_9x19_Ball",
+    "projectile": {
+        "model": "FMJ_124gr",
+        "mass_g": 8.0,
+        "caliber_mm": 9.0,
+        "bc_g7": 0.075,
+        "cdm_id": "g1",
+        "source": "9x19mm Parabellum 124gr FMJ. G1 BC≈0.150 (SAAMI standard reference). G7≈0.075 per Litz handgun conversion. Litz §13.2: typical pistol bullet G7=G1×0.5. Frag threshold ~610 m/s.",
+        "fragmentation": {
+            "threshold_vel_ms": 610.0,
+            "avg_fragments": 1,
+            "mass_distribution": "log_normal",
+            "params": {"mean": 0.25, "std": 0.12}
+        }
+    }
+}

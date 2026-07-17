@@ -11,5 +11,6 @@
   "fragCount": 0,
   "fragMassDist": "none",
   "projectileType": "fmj",
+  "source": "US Army BRL G7 BC=0.168 (ARL-TR-5182, 7N6 53gr FMJ, 15th Intl Symposium on Ballistics)",
   "notes": "7N6M 53-gr FMJ. Steel core, no fragmentation. G7 BC=0.168 per US Army BRL (ARL-TR-5182)."
 }

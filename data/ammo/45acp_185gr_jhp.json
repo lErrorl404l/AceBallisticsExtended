@@ -6,7 +6,7 @@
         "caliber_mm": 11.43,
         "bc_g7": 0.090,
         "cdm_id": "g1",
-        "_source": "Federal HST 185gr .45 ACP JHP. G1 BC≈0.180 per Federal factory data. G7≈G1×0.50 per Litz convention for handgun bullets. Litz, Ballistic Performance of Rifle Bullets, 3rd Ed. §13.5.",
+        "source": "Federal HST 185gr .45 ACP JHP. G1 BC≈0.180 per Federal factory data. G7≈G1×0.50 per Litz convention for handgun bullets. Litz, Ballistic Performance of Rifle Bullets, 3rd Ed. §13.5.",
         "fragmentation": {
             "threshold_vel_ms": 250.0,
             "avg_fragments": 3,

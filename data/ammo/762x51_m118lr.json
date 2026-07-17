@@ -1,0 +1,12 @@
+{
+    "class": "B_762x51_M118LR",
+    "projectile": {
+        "model": "M118LR",
+        "mass_g": 11.34,
+        "caliber_mm": 7.62,
+        "bc_g7": 0.240,
+        "cdm_id": "g7",
+        "source": "M118LR 175gr SMK (Sierra MatchKing). G7 BC=0.240 per Litz Doppler radar measurement (Applied Ballistics for Long Range Shooting, 4th Ed. §10.7). Confirmed by US Army ATAC testing for M24/M110 platforms.",
+        "fragmentation": null
+    }
+}

@@ -6,7 +6,7 @@
         "caliber_mm": 9.3,
         "bc_g7": 0.280,
         "cdm_id": "g7",
-        "_source": "Litz-estimated G7 for 9.3×64mm Brenneke 285gr pointed solid. Litz, Ballistic Performance of Rifle Bullets, 3rd Ed. §9.7. Form factor i≈0.95 for modest meplat. No Doppler-published BC for this caliber.",
+        "source": "Litz-estimated G7 for 9.3×64mm Brenneke 285gr pointed solid. Litz, Ballistic Performance of Rifle Bullets, 3rd Ed. §9.7. Form factor i≈0.95 for modest meplat. No Doppler-published BC for this caliber.",
         "fragmentation": null
     }
 }

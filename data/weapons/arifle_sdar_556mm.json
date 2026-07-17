@@ -1,0 +1,11 @@
+{
+    "class": "arifle_SDAR_F",
+    "caliber_mm": 5.56,
+    "barrel_length_mm": 502.0,
+    "rifling_twist_mm": 178.0,
+    "chamber_pressure_mpa": 380.0,
+    "cdm_id": "g7",
+    "projectile_mass_g": 4.0,
+    "muzzle_velocity_ms": 870.0,
+    "zero_range_m": 100.0
+}

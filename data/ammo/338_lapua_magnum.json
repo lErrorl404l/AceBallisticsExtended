@@ -6,7 +6,7 @@
         "caliber_mm": 8.6,
         "bc_g7": 0.310,
         "cdm_id": "g7",
-        "_source": "Lapua 250gr Scenar G7=0.310 (Lapua factory data). Confirmed by Litz, Applied Ballistics for Long Range Shooting, 4th Ed. §11.5, Doppler radar measurements show 0.305-0.312 range.",
+        "source": "Lapua 250gr Scenar G7=0.310 (Lapua factory data). Confirmed by Litz, Applied Ballistics for Long Range Shooting, 4th Ed. §11.5, Doppler radar measurements show 0.305-0.312 range.",
         "fragmentation": null
     }
 }
