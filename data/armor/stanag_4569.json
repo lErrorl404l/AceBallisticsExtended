@@ -1,0 +1,32 @@
+[
+  {
+    "level": "L1",
+    "ke_threat_mj": 0.585,
+    "ce_threat_mj": 0.033,
+    "typical_threat": "7.62x39mm API"
+  },
+  {
+    "level": "L2",
+    "ke_threat_mj": 0.600,
+    "ce_threat_mj": 0.100,
+    "typical_threat": "7.62x51mm AP"
+  },
+  {
+    "level": "L3",
+    "ke_threat_mj": 2.000,
+    "ce_threat_mj": 0.500,
+    "typical_threat": "12.7x99mm AP"
+  },
+  {
+    "level": "L4",
+    "ke_threat_mj": 4.500,
+    "ce_threat_mj": 1.800,
+    "typical_threat": "14.5x114mm AP"
+  },
+  {
+    "level": "L5",
+    "ke_threat_mj": 6.000,
+    "ce_threat_mj": 3.000,
+    "typical_threat": "25mm APDS"
+  }
+]

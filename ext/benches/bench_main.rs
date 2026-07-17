@@ -886,7 +886,12 @@ fn bench_predictive_era(c: &mut Criterion) {
         threat_caliber_mm: 125.0,
     };
     c.bench_function("predictive_era/ke_threat", |b| {
-        b.iter(|| black_box(predictive_era::evaluate_predictive_era(black_box(&params))))
+        b.iter(|| {
+            black_box(predictive_era::evaluate_predictive_era(
+                black_box(&params),
+                None,
+            ))
+        })
     });
 }
 

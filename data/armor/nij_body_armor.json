@@ -1,0 +1,27 @@
+[
+  {
+    "nij_level": "IIA",
+    "v50_threat_velocity_ms": 373.0,
+    "coverage_factor": 0.80
+  },
+  {
+    "nij_level": "II",
+    "v50_threat_velocity_ms": 398.0,
+    "coverage_factor": 0.82
+  },
+  {
+    "nij_level": "IIIA",
+    "v50_threat_velocity_ms": 436.0,
+    "coverage_factor": 0.85
+  },
+  {
+    "nij_level": "III",
+    "v50_threat_velocity_ms": 847.0,
+    "coverage_factor": 0.90
+  },
+  {
+    "nij_level": "IV",
+    "v50_threat_velocity_ms": 878.0,
+    "coverage_factor": 0.92
+  }
+]

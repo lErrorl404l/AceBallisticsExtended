@@ -1,0 +1,28 @@
+{
+  "era_zones": [
+    {
+      "zone_name": "front_arc",
+      "coverage_angle_start_deg": -45.0,
+      "coverage_angle_end_deg": 45.0,
+      "era_material": "k1",
+      "era_thickness_mm": 10.0,
+      "era_density_gcc": 2.5
+    },
+    {
+      "zone_name": "side_left",
+      "coverage_angle_start_deg": 135.0,
+      "coverage_angle_end_deg": 225.0,
+      "era_material": "k1",
+      "era_thickness_mm": 10.0,
+      "era_density_gcc": 2.5
+    },
+    {
+      "zone_name": "side_right",
+      "coverage_angle_start_deg": 45.0,
+      "coverage_angle_end_deg": 135.0,
+      "era_material": "k1",
+      "era_thickness_mm": 10.0,
+      "era_density_gcc": 2.5
+    }
+  ]
+}

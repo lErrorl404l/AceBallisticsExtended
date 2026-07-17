@@ -1,0 +1,12 @@
+{
+  "era_zones": [
+    {
+      "zone_name": "front_arc",
+      "coverage_angle_start_deg": -45.0,
+      "coverage_angle_end_deg": 45.0,
+      "era_material": "era_kontakt5",
+      "era_thickness_mm": 10.0,
+      "era_density_gcc": 2.7
+    }
+  ]
+}
