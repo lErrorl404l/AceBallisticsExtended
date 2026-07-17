@@ -165,6 +165,83 @@ pub struct PredictiveERAResult {
     pub within_time_gate: bool,
 }
 
+use crate::systems::config::EraZoneConfig;
+
+// ── Zone selection ────────────────────────────────────────────────────────────
+
+/// Select the ERA zone covering a given impact azimuth angle.
+///
+/// # Angle convention
+/// 0° = vehicle north / nose.  Angles increase **clockwise** in ARMA
+/// coordinates.  Each zone defines the **shorter** arc between its start
+/// and end angles (coverage ≤ 180°).  When `coverage_angle_start_deg >
+/// coverage_angle_end_deg` the arc wraps through 0° (e.g. 315°→45°
+/// covers 315°–360° and 0°–45°).
+///
+/// # Arguments
+/// * `impact_angle_deg` — Impact azimuth relative to vehicle front (degrees).
+/// * `era_zones` — Slice of [`EraZoneConfig`] entries to search.
+///
+/// # Returns
+/// `Some(&EraZoneConfig)` for the first matching zone, or `None` when
+/// no zone covers the angle (caller should fall back to default ERA
+/// behaviour).
+pub fn select_era_zone(
+    impact_angle_deg: f64,
+    era_zones: &[EraZoneConfig],
+) -> Option<&EraZoneConfig> {
+    if era_zones.is_empty() {
+        return None;
+    }
+    // Normalise impact angle to [0, 360).
+    let angle = impact_angle_deg % 360.0;
+    let angle = if angle < 0.0 { angle + 360.0 } else { angle };
+
+    for zone in era_zones {
+        let start = zone.coverage_angle_start_deg % 360.0;
+        let start = if start < 0.0 { start + 360.0 } else { start };
+        let end = zone.coverage_angle_end_deg % 360.0;
+        let end = if end < 0.0 { end + 360.0 } else { end };
+
+        let in_zone = if start <= end {
+            angle >= start && angle <= end
+        } else {
+            // Arc wraps through 0°.
+            angle >= start || angle <= end
+        };
+
+        if in_zone {
+            return Some(zone);
+        }
+    }
+
+    None
+}
+
+/// Compute flyer-plate mass (kg) from zone-specific ERA tile parameters.
+///
+/// Assumes a standard tile area of ~100 cm² (0.01 m²), matching the
+/// reference used for [`DEFAULT_FLYER_MASS_KG`].
+fn zone_flyer_mass(zone: &EraZoneConfig) -> f64 {
+    zone.era_density_gcc * zone.era_thickness_mm * 0.01
+}
+
+/// Effectiveness multiplier for known ERA materials.
+///
+/// Returns a factor applied to the base effectiveness when a zone-specific
+/// material is provided. Unknown materials default to 1.0 (no adjustment).
+fn zone_material_multiplier(material: &str) -> f64 {
+    match material.to_lowercase().as_str() {
+        "k1" | "kontakt-1" => 1.0,
+        "k5" | "kontakt-5" => 1.3,
+        "relikt" => 1.5,
+        "nora" => 1.2,
+        "heavy_era" | "heavy" => 1.4,
+        "light_era" | "light" => 0.8,
+        _ => 1.0,
+    }
+}
+
 // ── Helpers ────────────────────────────────────────────────────────────────────
 
 /// Determine whether the threat is within the sensor's detection cone.
@@ -357,7 +434,10 @@ fn resolve_era_parameters(era_type: &PredictiveERAType) -> (f64, f64, f64, f64, 
 /// (D-ERA) and an explicit flyer mass.  The flyer velocity defaults to
 /// `DEFAULT_FLYER_VELOCITY_MS` (1000 m/s, Afghanit reference).  The
 /// reaction time defaults to `AFGHANIT_REACTION_TIME_US` (0.15 µs).
-pub fn evaluate_predictive_era(params: &PredictiveERAParams) -> PredictiveERAResult {
+pub fn evaluate_predictive_era(
+    params: &PredictiveERAParams,
+    era_zone: Option<&EraZoneConfig>,
+) -> PredictiveERAResult {
     // ── 1. Guard: zero or negative velocity produces inert result ────────
     if params.threat_velocity_ms <= 0.0 {
         return PredictiveERAResult {
@@ -373,8 +453,19 @@ pub fn evaluate_predictive_era(params: &PredictiveERAParams) -> PredictiveERARes
     }
 
     // ── 2. Resolve type parameters ───────────────────────────────────────
-    let (flyer_mass_kg, flyer_velocity_ms, detection_range_m, reaction_time_s, velocity_threshold) =
-        resolve_era_parameters(&params.era_type);
+    let (
+        mut flyer_mass_kg,
+        flyer_velocity_ms,
+        detection_range_m,
+        reaction_time_s,
+        velocity_threshold,
+    ) = resolve_era_parameters(&params.era_type);
+
+    // ── 2b. Zone-specific parameter override ─────────────────────────────
+    let zone_material: Option<&str> = era_zone.map(|z| z.era_material.as_str());
+    if let Some(zone) = era_zone {
+        flyer_mass_kg = zone_flyer_mass(zone);
+    }
 
     // ── 3. Time-gate check ───────────────────────────────────────────────
     let (gate_duration_s, _cooldown_s) = match params.era_type {
@@ -489,15 +580,17 @@ pub fn evaluate_predictive_era(params: &PredictiveERAParams) -> PredictiveERARes
 
     // ── 10. Effective thickness multiplier ───────────────────────────────
     let base_mult = base_effectiveness(params.threat_type);
+    // Apply zone-specific material modifier when available.
+    let material_mult = zone_material.map_or(1.0, zone_material_multiplier);
     let interceptor_effectiveness = timing_factor * COUPLING_EFFICIENCY;
     let effective_thickness_multiplier = if flyer_plate_struck {
-        // Scale from 1.0 (no effect) up to base_mult (perfect intercept)
-        1.0 + (base_mult - 1.0) * timing_factor * sensor_acquired as u8 as f64
+        // Scale from 1.0 (no effect) up to base_mult × material_mult (perfect intercept)
+        1.0 + (base_mult * material_mult - 1.0) * timing_factor * sensor_acquired as u8 as f64
     } else {
         // DynamicERA without flyer: a modest fixed multiplier.
         // Kontakt-5 reference: ~1.3–1.6× vs KE, ~2.0–2.5× vs HEAT.
         match params.era_type {
-            PredictiveERAType::DynamicERA { .. } => 1.0 + (base_mult - 1.0) * 0.35,
+            PredictiveERAType::DynamicERA { .. } => 1.0 + (base_mult * material_mult - 1.0) * 0.35,
             _ => 1.0,
         }
     };
@@ -585,7 +678,7 @@ mod tests {
             time_since_last_fire_s: 5.0,
             threat_caliber_mm: 7.62,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         assert!(r.deployed, "P-ERA should deploy against KE threat");
         assert!(r.sensor_acquired, "Sensor should acquire at 30 m");
         assert!(
@@ -618,7 +711,7 @@ mod tests {
             time_since_last_fire_s: 2.0,
             threat_caliber_mm: 30.0,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         assert!(r.deployed, "P-ERA should deploy against HEAT");
         assert!(
             r.effective_thickness_multiplier > 3.0,
@@ -647,7 +740,7 @@ mod tests {
             time_since_last_fire_s: 5.0,
             threat_caliber_mm: 7.62,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         assert!(!r.deployed, "P-ERA should not deploy out of sensor range");
         assert!(!r.sensor_acquired, "Sensor should not acquire at 200 m");
         assert_eq!(
@@ -675,7 +768,7 @@ mod tests {
             time_since_last_fire_s: 5.0,
             threat_caliber_mm: 7.62,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         assert!(!r.deployed, "D-ERA should not deploy below KE threshold");
         assert_eq!(
             r.effective_thickness_multiplier, 1.0,
@@ -697,7 +790,7 @@ mod tests {
             time_since_last_fire_s: 5.0,
             threat_caliber_mm: 7.62,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         assert!(r.deployed, "D-ERA should deploy above KE threshold");
         assert!(
             r.effective_thickness_multiplier > 1.0,
@@ -724,7 +817,7 @@ mod tests {
             time_since_last_fire_s: 5.0,
             threat_caliber_mm: 30.0,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         assert!(!r.deployed, "D-ERA should not deploy below HEAT threshold");
     }
 
@@ -742,7 +835,7 @@ mod tests {
             time_since_last_fire_s: 5.0,
             threat_caliber_mm: 30.0,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         assert!(r.deployed, "D-ERA should deploy above HEAT threshold");
     }
 
@@ -763,7 +856,7 @@ mod tests {
             time_since_last_fire_s: 0.05,
             threat_caliber_mm: 7.62,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         assert!(!r.within_time_gate, "Should be outside time gate");
         assert!(!r.deployed, "Time gate should block deployment");
     }
@@ -783,7 +876,7 @@ mod tests {
             time_since_last_fire_s: 0.5,
             threat_caliber_mm: 7.62,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         assert!(r.within_time_gate, "Should be within time gate");
     }
 
@@ -804,7 +897,7 @@ mod tests {
             time_since_last_fire_s: 5.0,
             threat_caliber_mm: 12.7,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         assert!(r.deployed, "Hybrid should deploy above threshold");
         assert!(
             r.sensor_acquired,
@@ -835,7 +928,7 @@ mod tests {
             time_since_last_fire_s: 5.0,
             threat_caliber_mm: 12.7,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         assert!(!r.deployed, "Hybrid should not deploy below threshold");
         assert_eq!(r.effective_thickness_multiplier, 1.0);
     }
@@ -861,7 +954,7 @@ mod tests {
             time_since_last_fire_s: 5.0,
             threat_caliber_mm: 7.62,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         assert!(r.deployed, "P-ERA should deploy");
         assert!(
             r.timing_optimal,
@@ -894,7 +987,7 @@ mod tests {
             time_since_last_fire_s: 5.0,
             threat_caliber_mm: 7.62,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         assert!(r.deployed, "P-ERA should deploy (sensor acquired)");
         assert!(
             !r.timing_optimal,
@@ -923,7 +1016,7 @@ mod tests {
             time_since_last_fire_s: 5.0,
             threat_caliber_mm: 7.62,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         // The system deploys (sensor acquired) but the flyer arrives at
         // the armour after the threat has already struck.
         if r.deployed {
@@ -952,8 +1045,8 @@ mod tests {
             time_since_last_fire_s: 3.0,
             threat_caliber_mm: 7.62,
         };
-        let a = evaluate_predictive_era(&params);
-        let b = evaluate_predictive_era(&params);
+        let a = evaluate_predictive_era(&params, None);
+        let b = evaluate_predictive_era(&params, None);
         assert_eq!(a, b, "predictive ERA evaluation must be deterministic");
     }
 
@@ -974,7 +1067,7 @@ mod tests {
             time_since_last_fire_s: 5.0,
             threat_caliber_mm: 7.62,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         assert!(!r.deployed);
         assert!(!r.flyer_plate_struck);
         assert_eq!(r.effective_thickness_multiplier, 1.0);
@@ -998,7 +1091,7 @@ mod tests {
             time_since_last_fire_s: 5.0,
             threat_caliber_mm: 100.0,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         assert!(r.deployed, "P-ERA should engage missile threats");
         assert!(r.flyer_plate_struck, "Flyer should strike missile");
     }
@@ -1022,7 +1115,7 @@ mod tests {
             time_since_last_fire_s: 0.05, // just fired 50 ms ago
             threat_caliber_mm: 7.62,
         };
-        let r = evaluate_predictive_era(&params);
+        let r = evaluate_predictive_era(&params, None);
         // Time-gate check uses DEFAULT_TIME_GATE_S (0.2 s) for non-TimeGatedERA types.
         // 0.05 s < 0.2 s → not within time gate
         assert!(
@@ -1030,5 +1123,217 @@ mod tests {
             "Own round should be blocked by time gate"
         );
         assert!(!r.deployed, "ERA should not deploy on own round");
+    }
+
+    // ── ERA zone selection tests ──────────────────────────────────────────
+
+    #[test]
+    fn select_zone_direct_hit_matches_hull_front() {
+        let zones = vec![
+            EraZoneConfig {
+                zone_name: "hull_front".into(),
+                coverage_angle_start_deg: 315.0,
+                coverage_angle_end_deg: 45.0,
+                era_material: "k5".into(),
+                era_thickness_mm: 15.0,
+                era_density_gcc: 3.0,
+            },
+            EraZoneConfig {
+                zone_name: "side_right".into(),
+                coverage_angle_start_deg: 45.0,
+                coverage_angle_end_deg: 135.0,
+                era_material: "k1".into(),
+                era_thickness_mm: 10.0,
+                era_density_gcc: 2.5,
+            },
+        ];
+
+        let zone = select_era_zone(0.0, &zones);
+        assert!(zone.is_some(), "0° should match a zone");
+        assert_eq!(zone.unwrap().zone_name, "hull_front");
+    }
+
+    #[test]
+    fn select_zone_side_hit_matches_side_right() {
+        let zones = vec![
+            EraZoneConfig {
+                zone_name: "hull_front".into(),
+                coverage_angle_start_deg: 315.0,
+                coverage_angle_end_deg: 45.0,
+                era_material: "k5".into(),
+                era_thickness_mm: 15.0,
+                era_density_gcc: 3.0,
+            },
+            EraZoneConfig {
+                zone_name: "side_right".into(),
+                coverage_angle_start_deg: 45.0,
+                coverage_angle_end_deg: 135.0,
+                era_material: "k1".into(),
+                era_thickness_mm: 10.0,
+                era_density_gcc: 2.5,
+            },
+        ];
+
+        let zone = select_era_zone(90.0, &zones);
+        assert!(zone.is_some(), "90° should match a zone");
+        assert_eq!(zone.unwrap().zone_name, "side_right");
+    }
+
+    #[test]
+    fn select_zone_no_match_returns_none() {
+        let zones = vec![
+            EraZoneConfig {
+                zone_name: "hull_front".into(),
+                coverage_angle_start_deg: 315.0,
+                coverage_angle_end_deg: 45.0,
+                era_material: "k5".into(),
+                era_thickness_mm: 15.0,
+                era_density_gcc: 3.0,
+            },
+            EraZoneConfig {
+                zone_name: "side_right".into(),
+                coverage_angle_start_deg: 45.0,
+                coverage_angle_end_deg: 135.0,
+                era_material: "k1".into(),
+                era_thickness_mm: 10.0,
+                era_density_gcc: 2.5,
+            },
+        ];
+
+        assert!(select_era_zone(180.0, &zones).is_none());
+    }
+
+    #[test]
+    fn select_zone_empty_slice_returns_none() {
+        assert!(select_era_zone(0.0, &[]).is_none());
+    }
+
+    #[test]
+    fn select_zone_rollover_boundary() {
+        let zones = vec![EraZoneConfig {
+            zone_name: "hull_front".into(),
+            coverage_angle_start_deg: 315.0,
+            coverage_angle_end_deg: 45.0,
+            era_material: "k5".into(),
+            era_thickness_mm: 15.0,
+            era_density_gcc: 3.0,
+        }];
+
+        assert_eq!(
+            select_era_zone(315.0, &zones).unwrap().zone_name,
+            "hull_front"
+        );
+        assert_eq!(
+            select_era_zone(359.0, &zones).unwrap().zone_name,
+            "hull_front"
+        );
+        assert_eq!(
+            select_era_zone(0.0, &zones).unwrap().zone_name,
+            "hull_front"
+        );
+        assert_eq!(
+            select_era_zone(45.0, &zones).unwrap().zone_name,
+            "hull_front"
+        );
+        assert!(select_era_zone(90.0, &zones).is_none());
+    }
+
+    #[test]
+    fn select_zone_negative_angle_normalises() {
+        let zones = vec![EraZoneConfig {
+            zone_name: "hull_front".into(),
+            coverage_angle_start_deg: 315.0,
+            coverage_angle_end_deg: 45.0,
+            era_material: "k5".into(),
+            era_thickness_mm: 15.0,
+            era_density_gcc: 3.0,
+        }];
+
+        assert_eq!(
+            select_era_zone(-45.0, &zones).unwrap().zone_name,
+            "hull_front"
+        );
+        // -45° normalises to 315°, which is the start boundary.
+        assert!(select_era_zone(-46.0, &zones).is_none());
+    }
+
+    #[test]
+    fn select_zone_negative_start_angle_normalises() {
+        // Zone config with negative start angle (e.g. -45° → 315°).
+        let zones = vec![EraZoneConfig {
+            zone_name: "hull_front".into(),
+            coverage_angle_start_deg: -45.0,
+            coverage_angle_end_deg: 45.0,
+            era_material: "k5".into(),
+            era_thickness_mm: 15.0,
+            era_density_gcc: 3.0,
+        }];
+
+        assert_eq!(
+            select_era_zone(0.0, &zones).unwrap().zone_name,
+            "hull_front"
+        );
+        assert_eq!(
+            select_era_zone(330.0, &zones).unwrap().zone_name,
+            "hull_front"
+        );
+        assert!(select_era_zone(90.0, &zones).is_none());
+        assert!(select_era_zone(180.0, &zones).is_none());
+    }
+
+    // ── Zone flyer mass tests ─────────────────────────────────────────────
+
+    #[test]
+    fn zone_flyer_mass_computed_from_density_and_thickness() {
+        let zone = EraZoneConfig {
+            zone_name: "test".into(),
+            coverage_angle_start_deg: 0.0,
+            coverage_angle_end_deg: 90.0,
+            era_material: "k5".into(),
+            era_thickness_mm: 15.0,
+            era_density_gcc: 3.0,
+        };
+        let mass = zone_flyer_mass(&zone);
+        let expected = 3.0 * 15.0 * 0.01;
+        assert!(
+            (mass - expected).abs() < 1e-12,
+            "Expected {expected} kg, got {mass} kg"
+        );
+    }
+
+    #[test]
+    fn zone_flyer_mass_default_thickness() {
+        let zone = EraZoneConfig {
+            zone_name: "test".into(),
+            coverage_angle_start_deg: 0.0,
+            coverage_angle_end_deg: 90.0,
+            era_material: "k1".into(),
+            era_thickness_mm: 10.0,
+            era_density_gcc: 2.5,
+        };
+        let mass = zone_flyer_mass(&zone);
+        let expected = 2.5 * 10.0 * 0.01;
+        assert!(
+            (mass - expected).abs() < 1e-12,
+            "Expected {expected} kg, got {mass} kg"
+        );
+    }
+
+    // ── Zone material multiplier tests ────────────────────────────────────
+
+    #[test]
+    fn zone_material_multiplier_known_materials() {
+        assert!((zone_material_multiplier("k1") - 1.0).abs() < 1e-12);
+        assert!((zone_material_multiplier("K5") - 1.3).abs() < 1e-12);
+        assert!((zone_material_multiplier("relikt") - 1.5).abs() < 1e-12);
+        assert!((zone_material_multiplier("nora") - 1.2).abs() < 1e-12);
+        assert!((zone_material_multiplier("heavy_era") - 1.4).abs() < 1e-12);
+        assert!((zone_material_multiplier("LIGHT") - 0.8).abs() < 1e-12);
+    }
+
+    #[test]
+    fn zone_material_multiplier_unknown_defaults_to_one() {
+        assert!((zone_material_multiplier("unknown").abs() - 1.0).abs() < 1e-12);
+        assert!((zone_material_multiplier("").abs() - 1.0).abs() < 1e-12);
     }
 }

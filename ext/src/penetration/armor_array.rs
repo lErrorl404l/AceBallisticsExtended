@@ -299,6 +299,135 @@ pub fn spaced_hard_face_array(
     ]
 }
 
+/// Evaluate a front armour plate with an optional backing layer.
+///
+/// If `backing_material` and `backing_thickness_mm` are provided, the front
+/// plate is evaluated first. If the projectile perforates it, the residual
+/// velocity is used to evaluate the backing layer with projectile mass
+/// eroded during front-plate penetration.
+///
+/// If no backing is present the function behaves identically to
+/// [`crate::penetration::evaluate`].
+///
+/// # Arguments
+/// * `thickness_mm` — Front plate thickness in millimetres.
+/// * `material` — Front plate material identifier.
+/// * `angle_deg` — Front plate angle from normal (0 = perpendicular).
+/// * `backing_material` — Optional backing material.
+/// * `backing_thickness_mm` — Optional backing thickness in millimetres.
+/// * `projectile_ke_j` — Projectile kinetic energy at impact (J).
+/// * `projectile_type` — Projectile type string ("ball", "ap", "apfsds", etc.).
+///
+/// # Returns
+/// A [`PenetrationResult`] describing whether the total armor was perforated.
+pub fn evaluate_armor_with_backing(
+    thickness_mm: f64,
+    material: &str,
+    angle_deg: f64,
+    backing_material: Option<&str>,
+    backing_thickness_mm: Option<f64>,
+    projectile_ke_j: f64,
+    projectile_type: &str,
+) -> crate::penetration::PenetrationResult {
+    // Estimate typical projectile mass & caliber from type for KE→velocity conversion
+    let (mass_kg, caliber_m) = projectile_defaults(projectile_type);
+    let velocity_ms = (2.0 * projectile_ke_j / mass_kg).sqrt();
+
+    // No backing → single-plate evaluation
+    let (back_mat, back_thick) = match (backing_material, backing_thickness_mm) {
+        (Some(m), Some(t)) if t > 0.0 => (m, t / 1000.0),
+        _ => {
+            return crate::penetration::evaluate(
+                velocity_ms,
+                mass_kg,
+                caliber_m,
+                thickness_mm / 1000.0,
+                angle_deg,
+                material,
+                projectile_type,
+                None,
+            );
+        }
+    };
+
+    // Evaluate the front plate
+    let front = crate::penetration::evaluate(
+        velocity_ms,
+        mass_kg,
+        caliber_m,
+        thickness_mm / 1000.0,
+        angle_deg,
+        material,
+        projectile_type,
+        None,
+    );
+
+    if !front.penetrated {
+        return front;
+    }
+
+    // Projectile perforated the front plate — compute residual mass after erosion
+    let eroded = crate::penetration::erode_projectile_mass(
+        velocity_ms,
+        mass_kg,
+        caliber_m,
+        material,
+        thickness_mm / 1000.0,
+    );
+    let residual_mass = (mass_kg - eroded).max(mass_kg * 0.1); // cap at 90 % loss
+
+    // Evaluate the backing layer with residual velocity and mass
+    let back = crate::penetration::evaluate(
+        front.residual_velocity,
+        residual_mass,
+        caliber_m,
+        back_thick,
+        0.0, // backing is typically mounted at normal
+        back_mat,
+        projectile_type,
+        None,
+    );
+
+    // Combine front + back into a single result
+    crate::penetration::PenetrationResult {
+        penetrated: back.penetrated,
+        residual_velocity: back.residual_velocity,
+        effective_thickness: front.effective_thickness + back.effective_thickness,
+        ricochet: front.ricochet || back.ricochet,
+        ricochet_angle: if front.ricochet {
+            front.ricochet_angle
+        } else {
+            back.ricochet_angle
+        },
+        ricochet_energy_fraction: front.ricochet_energy_fraction
+            * back.ricochet_energy_fraction.max(0.01),
+        fragments: front.fragments + back.fragments,
+        spall_fragments: front.spall_fragments + back.spall_fragments,
+        spall_cone_angle: front.spall_cone_angle.max(back.spall_cone_angle),
+        debris_spray_cone: front.debris_spray_cone.max(back.debris_spray_cone),
+        temp_cavity_diameter: front.temp_cavity_diameter.max(back.temp_cavity_diameter),
+        temp_cavity_volume: front.temp_cavity_volume + back.temp_cavity_volume,
+    }
+}
+
+/// Return estimated projectile mass (kg) and caliber (m) for a given type.
+///
+/// Used by [`evaluate_armor_with_backing`] to convert kinetic energy (J)
+/// into impact velocity for the penetration model. Values represent
+/// common small-arms / autocannon rounds.
+fn projectile_defaults(projectile_type: &str) -> (f64, f64) {
+    match projectile_type.to_lowercase().as_str() {
+        "ball" | "fmj" => (0.0095, 0.00762),          // 7.62×51 NATO M80
+        "ap" | "armor_piercing" => (0.0100, 0.00762), // 7.62×51 AP M61
+        "apfsds" | "apds" => (0.0037, 0.0060),        // sub-calibre long rod
+        "apcr" => (0.0080, 0.00762),                  // 7.62×51 APCR
+        "soft_point" | "hollow_point" => (0.0095, 0.00762),
+        "he" => (0.1000, 0.0200),   // 20mm HE
+        "heat" => (0.1000, 0.0200), // 20mm HEAT
+        _ => (0.0095, 0.00762),     // fallback: 7.62 ball
+    }
+}
+
 /// Convenience: typical perforated plate + backing array.
 pub fn perforated_array(
     perf_thickness_m: f64,
@@ -441,5 +570,110 @@ mod tests {
         let plates = spaced_hard_face_array(0.006, "steel_hha", 0.2, 0.010, "steel_rha");
         assert_eq!(plates.len(), 2);
         assert!((plates[0].gap_to_next_m - 0.2).abs() < 1e-6);
+    }
+
+    // ── Armor-with-backing tests ──────────────────────────────────────────────
+
+    /// M80 ball KE = 0.5 × 0.0095 × 853² ≈ 3456 J
+    const M80_KE_J: f64 = 3456.0;
+
+    #[test]
+    fn front_plate_alone_stops() {
+        // 15mm RHA stops M80 ball at 853 m/s
+        let r = evaluate_armor_with_backing(15.0, "steel_rha", 0.0, None, None, M80_KE_J, "ball");
+        assert!(!r.penetrated, "15mm RHA should stop M80 ball");
+    }
+
+    #[test]
+    fn thin_front_pens_without_backing() {
+        // 6mm RHA is penetrated by M80 ball
+        let r = evaluate_armor_with_backing(6.0, "steel_rha", 0.0, None, None, M80_KE_J, "ball");
+        assert!(r.penetrated, "6mm RHA should be perforated by M80 ball");
+    }
+
+    #[test]
+    fn backing_stops_what_front_alone_cannot() {
+        // Front 6mm RHA alone: projectile gets through
+        let alone =
+            evaluate_armor_with_backing(6.0, "steel_rha", 0.0, None, None, M80_KE_J, "ball");
+        assert!(alone.penetrated, "6mm RHA alone should be perforated");
+
+        // 6mm RHA + 20mm Al 5083 backing: the interface disrupts the
+        // projectile so the backing stops it
+        let backed = evaluate_armor_with_backing(
+            6.0,
+            "steel_rha",
+            0.0,
+            Some("aluminum_5083"),
+            Some(20.0),
+            M80_KE_J,
+            "ball",
+        );
+        assert!(
+            !backed.penetrated,
+            "6mm RHA + 20mm Al backing should stop M80 ball",
+        );
+    }
+
+    #[test]
+    fn backing_adds_effective_thickness() {
+        // Without backing the effective thickness is just the front plate
+        let no_back =
+            evaluate_armor_with_backing(6.0, "steel_rha", 0.0, None, None, M80_KE_J, "ball");
+        // With backing the total effective thickness increases
+        let with_back = evaluate_armor_with_backing(
+            6.0,
+            "steel_rha",
+            0.0,
+            Some("aluminum_5083"),
+            Some(20.0),
+            M80_KE_J,
+            "ball",
+        );
+        assert!(
+            with_back.effective_thickness > no_back.effective_thickness,
+            "backing should increase effective thickness: {:.6} vs {:.6}",
+            with_back.effective_thickness,
+            no_back.effective_thickness,
+        );
+    }
+
+    #[test]
+    fn backed_array_vs_monolithic() {
+        // Use a thin front plate that IS perforated so the backing
+        // contributes to effective thickness.
+        let alone =
+            evaluate_armor_with_backing(6.0, "steel_rha", 0.0, None, None, M80_KE_J, "ball");
+        assert!(alone.penetrated, "6mm RHA alone should be perforated");
+
+        // 6mm RHA + 20mm Al 5083: backing stops the projectile,
+        // effective thickness includes both layers
+        let backed = evaluate_armor_with_backing(
+            6.0,
+            "steel_rha",
+            0.0,
+            Some("aluminum_5083"),
+            Some(20.0),
+            M80_KE_J,
+            "ball",
+        );
+        assert!(!backed.penetrated, "backed should stop the projectile");
+        assert!(
+            backed.effective_thickness > alone.effective_thickness,
+            "backed should have higher effective thickness: {:.6} vs {:.6}",
+            backed.effective_thickness,
+            alone.effective_thickness,
+        );
+    }
+
+    #[test]
+    fn projectile_defaults_by_type() {
+        let (m_ball, c_ball) = super::projectile_defaults("ball");
+        assert!((m_ball - 0.0095).abs() < 1e-6);
+        assert!((c_ball - 0.00762).abs() < 1e-6);
+
+        let (m_ap, c_ap) = super::projectile_defaults("ap");
+        assert!((m_ap - 0.0100).abs() < 1e-6);
+        assert!((c_ap - 0.00762).abs() < 1e-6);
     }
 }
