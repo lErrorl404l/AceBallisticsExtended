@@ -104,7 +104,9 @@ const DEFAULT_CLICK_MRAD: f64 = 0.1;
 ///
 /// Uses the exact trigonometric formula:
 ///
-///     mrad = atan(drop_m / range_m) × 1000
+/// ```text
+/// mrad = atan(drop_m / range_m) × 1000
+/// ```
 ///
 /// For small angles (< 300 mrad) the small-angle approximation
 /// `(drop_m / range_m) × 1000` is within 1.5 % of the exact value.
@@ -127,7 +129,9 @@ pub fn drop_to_mrad(drop_cm: f64, range_m: f64) -> f64 {
 ///
 /// Same mathematical relationship as `drop_to_mrad`:
 ///
-///     mrad = atan(deflection_m / range_m) × 1000
+/// ```text
+/// mrad = atan(deflection_m / range_m) × 1000
+/// ```
 ///
 /// # Arguments
 /// * `deflection_cm` — lateral projectile deflection (centimetres).

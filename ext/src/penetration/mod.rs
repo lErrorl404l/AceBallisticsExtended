@@ -1,0 +1,11 @@
+mod penetration;
+pub use penetration::*;
+pub mod armor_array;
+pub mod barrier_penetration;
+pub mod behind_armor_debris;
+pub mod fragmentation;
+pub mod heat_penetration;
+pub mod hesh_penetration;
+pub mod long_rod;
+pub mod multi_bounce;
+pub mod sequential_hits;

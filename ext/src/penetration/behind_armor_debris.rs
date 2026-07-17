@@ -145,9 +145,10 @@ pub fn evaluate_bad(params: &BehindArmorDebrisParams) -> BehindArmorDebrisResult
     let debris_spray_cone_deg = 10.0 + 20.0 * angle_rad.sin() + 3.0 * t_d_ratio.min(1.5);
 
     // ── Debris velocity ──────────────────────────────────────────────────
-    // Behind-armour debris travels at a fraction of the residual velocity.
-    // For non-penetrating hits the residual is very low, so debris is slow.
-    let debris_velocity_ms = params.residual_velocity_ms * 0.4;
+    // Verolme angle-dependent model: V_debris(θ) = V_residual × cos(1.92θ)
+    // At 0° (normal): full residual → more energetic BAD at normal impact.
+    // At 45°: drops to ~0.06× → less BAD at oblique impacts.
+    let debris_velocity_ms = params.residual_velocity_ms * (1.92 * angle_rad).cos();
 
     // ── Temporary cavity ─────────────────────────────────────────────────
     // Energy density (J/m³) in the impact zone drives cavity expansion.

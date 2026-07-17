@@ -110,15 +110,15 @@ pub fn material_factor(material: &str) -> f64 {
         "steel_hha" => 1.25, // High-hardness armor
         "aluminum_5083" => 0.35,
         "aluminum_7039" => 0.45,
-        "ceramic_al2o3" => 2.5, // High hardness but brittle
-        "ceramic_sic" => 3.0,
-        "ceramic_b4c" => 3.5,
+        "ceramic_al2o3" => 2.2, // Generic Al2O3 SAPI-style plate ~2.0-2.4; AD95 is 2.4
+        "ceramic_sic" => 3.5,   // Sintered SiC standalone tile RHAe ~3.0-4.0
+        "ceramic_b4c" => 4.5,   // Standalone B4C tile RHAe ~4.0-5.0; ESAPI array ~5.0
         "composite_kevlar" => 0.6, // Per unit thickness
-        "composite_glass" => 0.4,
-        "spall_liner" => 0.1, // Spall liner, minimal structural resistance
-        "concrete" => 0.15,
-        "wood" => 0.05,
-        "steel_structural" | "mild_steel" => 0.7,
+        "composite_glass" => 0.55, // S2-glass/phenolic RHAe ~0.5-0.7 per ARL
+        "spall_liner" => 0.1,   // Spall liner, minimal structural resistance
+        "concrete" => 0.12,     // ASMRB 0.11 for 1:3:5 mix; harmonized with concrete_reinforced
+        "wood" => 0.03,         // ASMRB 0.012 oak; DAAAM 2019: 100mm oak=3-4mm RHAe → 0.03-0.04
+        "steel_structural" | "mild_steel" => 0.55, // vs AP ~0.50-0.55; vs ball ~0.70
         "cast_steel" => 0.85,
         "depleted_uranium" => 1.8,
         "titanium_alloy" => 0.9,
@@ -136,7 +136,7 @@ pub fn material_factor(material: &str) -> f64 {
         "texolite_composite" => 0.35,
         "uhmwpe" => 0.25,
         "rubber_elastomer" => 0.015,
-        "spall_liner_kevlar" | "kevlar_liner" => 0.25,
+        "spall_liner_kevlar" | "kevlar_liner" => 0.20, // M113 LFTE: 0.15-0.20 for spall-only role
         "twaron_liner" => 0.22,
         "dyneema_liner" => 0.30,
         "gypsum" | "gypsum_board" | "drywall" => 0.02,
@@ -148,21 +148,30 @@ pub fn material_factor(material: &str) -> f64 {
         "mil_dtl_46100_class1" => 1.30,
         "mil_dtl_46100_class3" => 1.40,
         "mil_dtl_46100_class4" => 1.50,
-        "dual_hardness_steel" | "mars_armor" => 1.10,
+        "dual_hardness_steel" | "mars_armor" => 1.25, // MIL-A-46099C 600+BHN face; ARL shows V50 15-25% above RHA
         "armor_tip_steel" => 1.15,
         "rubber_solid" | "hard_rubber" => 0.08,
-        "ceramic_ad90" | "ad90" => 2.2,
+        "ceramic_ad90" | "ad90" => 2.0, // AD90 (90% Al2O3) ~1.8-2.0 RHAe vs 7.62 AP
         "ceramic_ad95" | "ad95" => 2.4,
         "mar_ceramic" => 2.8,
         "perforated_armor" | "perf_steel" => 0.60,
         "slotted_armor" | "slotted_steel" => 0.55,
         "acrylic" | "acrylic_standalone" => 0.04,
         "polycarbonate" | "polycarbonate_standalone" => 0.06,
-        "concrete_reinforced" => 0.15,
+        "concrete_reinforced" => 0.12, // ASMRB 0.11 for 1:3:5; harmonized with concrete key
         "wood_hardwood" => 0.05,
         "hha_steel" => 1.25,
         "ceramic_plate" => 2.5,
         "rha_steel" => 1.0,
+        // ── Grades missing code keys per IRL Validation Report ──────────────
+        "armox_500" => 1.10,
+        "armox_600" => 1.35,
+        "hardox_450" => 0.80,
+        "relikt_era" => 2.00,
+        "malachite_era" => 2.00,
+        "tungsten_carbide" => 2.75,
+        "titanium_diboride" => 3.75,
+        "aluminum_7075" => 0.48,
         _ => 1.0,
     }
 }

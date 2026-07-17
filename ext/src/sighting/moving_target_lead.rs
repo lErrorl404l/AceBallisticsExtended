@@ -94,13 +94,17 @@ const GRAVITY: f64 = 9.806_65;
 ///
 /// Uses the Mil relation formula:
 ///
-///     lead_mrad = (target_speed × TOF / range) × 1000
+/// ```text
+/// lead_mrad = (target_speed × TOF / range) × 1000
+/// ```
 ///
 /// # Example
 ///
 /// A target moving at 10 m/s crossing at 300 m with 0.35 s TOF:
 ///
-///     lead = 10 × 0.35 / 300 × 1000 ≈ 11.7 mrad (11.7 MIL)
+/// ```text
+/// lead = 10 × 0.35 / 300 × 1000 ≈ 11.7 mrad (11.7 MIL)
+/// ```
 pub fn crossing_lead(speed_ms: f64, tof_s: f64, range_m: f64) -> f64 {
     if range_m <= 0.0 || tof_s <= 0.0 || speed_ms <= 0.0 {
         return 0.0;

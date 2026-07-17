@@ -9,62 +9,40 @@
 
 #![allow(dead_code)]
 
-pub mod aerodynamic_jump;
-pub mod aps;
-pub mod armor_array;
-mod atmosphere;
-pub mod backsplash;
-pub mod ballistic_cap;
-pub mod barrel_harmonics;
-pub mod barrier_penetration;
-pub mod behind_armor_debris;
-pub mod body_armor;
-pub mod calibration;
-pub mod combined_effects;
-pub mod component_damage;
-pub mod component_kill_prob;
-pub mod config;
-pub mod degradation;
-pub mod dispersion;
-pub mod dof;
-pub mod drag;
-pub mod dynamic_armor;
-pub mod exterior;
-mod floor_ceiling;
-mod fragmentation;
-pub mod frangible_ammo;
-mod frozen_ground;
-pub mod ground_skip;
-pub mod heat_penetration;
-pub mod hesh_penetration;
-mod interior;
-pub mod interior_wall;
-pub mod laser_solution;
-pub mod long_rod;
-pub mod lot_variation;
-pub mod moving_target_lead;
-pub mod multi_bounce;
-pub mod mv_temperature;
-pub mod overpenetration;
+// ── Module groups ───────────────────────────────────────────────────────────────
+mod ballistics;
+pub(crate) use ballistics::{atmosphere, interior};
+pub use ballistics::{
+    ballistic_cap, barrel_harmonics, dof, drag, exterior, mv_temperature, stability,
+};
+
 pub mod penetration;
-pub mod platform_pitch_yaw;
-pub mod predictive_era;
-pub mod reticle_conversion;
-pub mod schematics;
-pub mod security_glass;
-pub mod sequential_hits;
-pub mod shooter_error;
-pub mod sight_height;
-pub mod soft_tissue;
-pub mod solution_table;
-pub mod spin_drift_direction;
-pub mod stability;
-pub mod tire_penetration;
-mod trace;
-mod tracer_burnout;
-pub mod underwater;
-pub mod wind_uncertainty;
-pub mod zero_manager;
+pub use penetration::{
+    armor_array, barrier_penetration, behind_armor_debris, fragmentation, heat_penetration,
+    hesh_penetration, long_rod, multi_bounce, sequential_hits,
+};
+
+mod effects;
+pub use effects::{
+    backsplash, body_armor, combined_effects, component_damage, component_kill_prob, degradation,
+    frangible_ammo, ground_skip, interior_wall, overpenetration, security_glass, soft_tissue,
+    tire_penetration, underwater,
+};
+// floor_ceiling and frozen_ground are accessible as effects::floor_ceiling within the crate
+
+mod sighting;
+pub use sighting::{
+    aerodynamic_jump, dispersion, laser_solution, moving_target_lead, platform_pitch_yaw,
+    reticle_conversion, shooter_error, sight_height, solution_table, spin_drift_direction,
+    zero_manager,
+};
+
+mod systems;
+pub use systems::{
+    aps, calibration, config, dynamic_armor, lot_variation, predictive_era, schematics,
+    wind_uncertainty,
+};
+pub(crate) use systems::{trace, tracer_burnout};
 
 use std::ffi::{CStr, CString};
 use std::fmt::Write;

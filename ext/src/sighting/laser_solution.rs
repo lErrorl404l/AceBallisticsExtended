@@ -167,7 +167,9 @@ fn interpolate_ballistic_table(
 ///
 /// For a shot at angle θ from horizontal:
 ///
-///     effective_range = measured_range × cos(θ)
+/// ```text
+/// effective_range = measured_range × cos(θ)
+/// ```
 ///
 /// At 30° incline this gives 0.866 × measured range, at 45° it gives
 /// 0.707 × measured range. Level fire (0°) returns the same range.
