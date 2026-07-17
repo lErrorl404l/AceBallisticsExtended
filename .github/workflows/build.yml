@@ -64,7 +64,7 @@ jobs:
       - name: Setup HEMTT
         run: |
           curl -sSfL https://github.com/BrettMayson/HEMTT/releases/latest/download/hemtt-x86_64-unknown-linux-gnu.tar.gz \
-            | tar xz -C /usr/local/bin hemtt
+            | sudo tar xz -C /usr/local/bin hemtt
           hemtt --version
 
       - name: HEMTT check
