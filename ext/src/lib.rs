@@ -9,13 +9,30 @@
 
 #![allow(dead_code)]
 
+pub mod armor_array;
 mod atmosphere;
+pub mod combined_effects;
+pub mod component_damage;
+pub mod component_kill_prob;
 mod config;
-mod drag;
-mod exterior;
+pub mod drag;
+pub mod exterior;
+mod floor_ceiling;
 mod fragmentation;
+pub mod frangible_ammo;
+mod frozen_ground;
 mod interior;
-mod penetration;
+pub mod interior_wall;
+pub mod lot_variation;
+pub mod penetration;
+pub mod predictive_era;
+pub mod schematics;
+pub mod sequential_hits;
+pub mod shooter_error;
+pub mod sight_height;
+pub mod tire_penetration;
+mod trace;
+mod tracer_burnout;
 
 use std::ffi::{CStr, CString};
 use std::fmt::Write;
@@ -606,11 +623,11 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
         Err(_) => "g7",
     };
 
+    // ponytail: compute speed once — was duplicated for Mach and drag
+    let speed = (params.vel_x.powi(2) + params.vel_y.powi(2) + params.vel_z.powi(2)).sqrt();
+
     // Get drag coefficient at current Mach
-    let mach = exterior::calc_mach(
-        (params.vel_x.powi(2) + params.vel_y.powi(2) + params.vel_z.powi(2)).sqrt(),
-        params.temp_c,
-    );
+    let mach = exterior::calc_mach(speed, params.temp_c);
 
     let cd = drag::get_cd(cdm_str, mach);
 
@@ -623,7 +640,6 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
 
     // Apply BC-based drag: a = 0.5 * ρ * v² * Cd / (BC * K)
     // K includes π/4 area factor: 0.453592 / 0.0254² * 4/π ≈ 895.3
-    let speed = (params.vel_x.powi(2) + params.vel_y.powi(2) + params.vel_z.powi(2)).sqrt();
     const BC_CONV: f64 = 0.453592 / (0.0254 * 0.0254) * (4.0 / std::f64::consts::PI);
     let bc_metric = params.bc * BC_CONV;
     let drag_decel = if speed > 0.001 && bc_metric > 0.001 {

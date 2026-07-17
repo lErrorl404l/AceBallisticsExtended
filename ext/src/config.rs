@@ -7,6 +7,7 @@
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::path::Path;
+use std::sync::OnceLock;
 
 // ── Data structures ───────────────────────────────────────────────────────────
 
@@ -183,6 +184,39 @@ pub fn load_armor_configs(path: &Path) -> Result<Vec<ArmorConfig>, String> {
     }
 
     Ok(configs)
+}
+
+// ── Global data registry ───────────────────────────────────────────────────────
+
+/// Registry of loaded configuration data.
+pub struct DataRegistry {
+    pub weapons: Vec<WeaponConfig>,
+    pub ammo: Vec<AmmoConfig>,
+    pub armor: Vec<ArmorConfig>,
+}
+
+static DATA_REGISTRY: OnceLock<DataRegistry> = OnceLock::new();
+
+/// Get a reference to the global data registry.
+pub fn get_data_registry() -> Option<&'static DataRegistry> {
+    DATA_REGISTRY.get()
+}
+
+/// Initialize the global data registry.
+pub fn initialize_data(data_dir: &Path) -> Result<(), String> {
+    if DATA_REGISTRY.get().is_some() {
+        return Ok(());
+    }
+    let weapons = load_weapon_configs(&data_dir.join("weapons"))?;
+    let ammo = load_ammo_configs(&data_dir.join("ammo"))?;
+    let armor = load_armor_configs(&data_dir.join("armor"))?;
+    DATA_REGISTRY
+        .set(DataRegistry {
+            weapons,
+            ammo,
+            armor,
+        })
+        .map_err(|_| "Data already initialized".to_string())
 }
 
 // ── Tests ─────────────────────────────────────────────────────────────────────

@@ -583,6 +583,431 @@ fn bench_fire_variants(c: &mut Criterion) {
     });
 }
 
+// ── New module benchmarks ─────────────────────────────────────────────────────
+
+use abe_ballistics_ext::combined_effects::{CombinedAmmoParams, CombinedType};
+use abe_ballistics_ext::component_damage::{
+    AmmoStoredType, ComponentConfig, ComponentFireState, ComponentType, CrewProtection, EngineType,
+    FireStatus, FireSuppression, FuelType,
+};
+use abe_ballistics_ext::component_kill_prob::{ComponentKillParams, HitZone, VehicleType};
+use abe_ballistics_ext::frangible_ammo::{FrangibleAmmoParams, FrangibleType};
+use abe_ballistics_ext::lot_variation::{AmmoGrade, LotVariationParams};
+use abe_ballistics_ext::predictive_era::{PredictiveERAParams, PredictiveERAType};
+use abe_ballistics_ext::sequential_hits::{HitRecord, SequentialHitParams};
+use abe_ballistics_ext::shooter_error::{
+    BreathPhase, ExperienceLevel, ShooterParams, ShooterStance, SupportType,
+};
+use abe_ballistics_ext::tire_penetration::{ImpactZone, TirePenetrationParams, TireType};
+
+fn bench_sight_height(c: &mut Criterion) {
+    c.bench_function("sight_height/zero_angle_linear", |b| {
+        b.iter(|| {
+            black_box(sight_height::zero_angle_linear(
+                black_box(0.05),
+                black_box(100.0),
+                black_box(900.0),
+            ))
+        })
+    });
+}
+
+fn bench_shooter_error(c: &mut Criterion) {
+    let shooter = ShooterParams {
+        stance: ShooterStance::Prone,
+        support: SupportType::Bipod,
+        heart_rate_bpm: 80.0,
+        breathing: BreathPhase::Hold,
+        fatigue_fraction: 0.1,
+        experience: ExperienceLevel::Expert,
+        base_shooter_moa: 1.0,
+    };
+    c.bench_function("shooter_error/total_system_moa", |b| {
+        b.iter(|| {
+            black_box(shooter_error::total_system_moa(
+                black_box(1.5),
+                black_box(&shooter),
+            ))
+        })
+    });
+}
+
+fn bench_material_factor(c: &mut Criterion) {
+    let materials = [
+        "steel_rha",
+        "aluminum_5083",
+        "ceramic_b4c",
+        "concrete",
+        "glass",
+    ];
+    c.bench_function("penetration/material_factor_5", |b| {
+        b.iter(|| {
+            let mut sum = 0.0f64;
+            for m in &materials {
+                sum += black_box(penetration::material_factor(black_box(m)));
+            }
+            black_box(sum)
+        })
+    });
+}
+
+fn bench_spin_drift(c: &mut Criterion) {
+    c.bench_function("exterior/spin_drift", |b| {
+        b.iter(|| {
+            black_box(exterior::spin_drift(
+                black_box(12.0),
+                black_box(900.0),
+                black_box(0.5),
+                black_box(450.0),
+            ))
+        })
+    });
+}
+
+fn bench_get_cd(c: &mut Criterion) {
+    let machs = [0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 3.0];
+    c.bench_function("drag/get_cd_g7_10mach", |b| {
+        b.iter(|| {
+            let mut sum = 0.0f64;
+            for &m in &machs {
+                sum += black_box(drag::get_cd(black_box("g7"), black_box(m)));
+            }
+            black_box(sum)
+        })
+    });
+}
+
+fn bench_penetration_multilayer(c: &mut Criterion) {
+    c.bench_function("penetration/evaluate_3plate", |b| {
+        b.iter(|| {
+            let mut v = 850.0f64;
+            let mass_kg = 0.0095;
+            let cal_m = 0.00762;
+            let plates = [
+                ("steel_rha", 0.010),
+                ("aluminum_5083", 0.020),
+                ("steel_rha", 0.005),
+            ];
+            for (mat, thick) in plates {
+                let r = penetration::evaluate(
+                    black_box(v),
+                    black_box(mass_kg),
+                    black_box(cal_m),
+                    black_box(thick),
+                    black_box(0.0),
+                    black_box(mat),
+                    black_box("ap"),
+                );
+                v = r.residual_velocity;
+            }
+            black_box(v)
+        })
+    });
+}
+
+fn bench_interior_wall(c: &mut Criterion) {
+    use abe_ballistics_ext::interior_wall::{
+        evaluate_interior_wall, standard_stud_wall, WallLayerConfig,
+    };
+    let layers = standard_stud_wall();
+    c.bench_function("interior_wall/standard_stud", |b| {
+        b.iter(|| {
+            black_box(evaluate_interior_wall(
+                black_box(&layers),
+                black_box(800.0),
+                black_box(0.0095),
+                black_box(0.00762),
+                black_box(0.0),
+                black_box("ball"),
+            ))
+        })
+    });
+}
+
+fn bench_armor_array(c: &mut Criterion) {
+    use abe_ballistics_ext::armor_array::{evaluate_armor_array, ArrayPlate};
+    let plates = [
+        ArrayPlate {
+            thickness_m: 0.010,
+            material: "steel_rha",
+            angle_from_vertical_deg: 0.0,
+            gap_to_next_m: 0.050,
+            open_area_fraction: 0.0,
+        },
+        ArrayPlate {
+            thickness_m: 0.005,
+            material: "ceramic_b4c",
+            angle_from_vertical_deg: 10.0,
+            gap_to_next_m: 0.030,
+            open_area_fraction: 0.0,
+        },
+        ArrayPlate {
+            thickness_m: 0.008,
+            material: "steel_rha",
+            angle_from_vertical_deg: 0.0,
+            gap_to_next_m: 0.020,
+            open_area_fraction: 0.0,
+        },
+        ArrayPlate {
+            thickness_m: 0.004,
+            material: "aluminum_5083",
+            angle_from_vertical_deg: 5.0,
+            gap_to_next_m: 0.0,
+            open_area_fraction: 0.0,
+        },
+    ];
+    c.bench_function("armor_array/4plate_spaced", |b| {
+        b.iter(|| {
+            black_box(evaluate_armor_array(
+                black_box(&plates),
+                black_box(1200.0),
+                black_box(0.0045),
+                black_box(0.00556),
+                black_box("apds"),
+            ))
+        })
+    });
+}
+
+fn bench_frangible(c: &mut Criterion) {
+    let params = FrangibleAmmoParams {
+        frangible_type: FrangibleType::LeadFrangible,
+        impact_velocity_ms: 900.0,
+        mass_g: 4.0,
+        caliber_mm: 5.56,
+    };
+    c.bench_function("frangible/impact_steel", |b| {
+        b.iter(|| {
+            black_box(frangible_ammo::evaluate_frangible_impact(
+                black_box(&params),
+                black_box("steel_rha"),
+            ))
+        })
+    });
+}
+
+fn bench_tire_penetration(c: &mut Criterion) {
+    let params = TirePenetrationParams {
+        tire_type: TireType::Highway,
+        impact_zone: ImpactZone::Tread,
+        projectile_caliber_mm: 7.62,
+        projectile_mass_g: 9.5,
+        impact_velocity_ms: 850.0,
+        projectile_type: "ball",
+        tire_pressure_kpa: 220.0,
+        run_flat_present: false,
+    };
+    c.bench_function("tire/penetration", |b| {
+        b.iter(|| {
+            black_box(tire_penetration::evaluate_tire_penetration(black_box(
+                &params,
+            )))
+        })
+    });
+}
+
+fn bench_sequential_hits(c: &mut Criterion) {
+    let params = SequentialHitParams {
+        material: "steel_rha".to_string(),
+        plate_width_m: 0.5,
+        plate_height_m: 0.5,
+        plate_thickness_m: 0.010,
+        caliber_m: 0.00762,
+        prior_hits: vec![
+            HitRecord {
+                hit_x_m: 0.25,
+                hit_y_m: 0.25,
+                impact_energy_j: 3400.0,
+                projectile_type: "ap".to_string(),
+                zone_id: 0,
+            },
+            HitRecord {
+                hit_x_m: 0.26,
+                hit_y_m: 0.24,
+                impact_energy_j: 3200.0,
+                projectile_type: "ap".to_string(),
+                zone_id: 0,
+            },
+            HitRecord {
+                hit_x_m: 0.27,
+                hit_y_m: 0.26,
+                impact_energy_j: 3100.0,
+                projectile_type: "ball".to_string(),
+                zone_id: 0,
+            },
+        ],
+        spall_liner_present: true,
+        ambient_temp_c: 20.0,
+    };
+    c.bench_function("sequential_hits/3hit", |b| {
+        b.iter(|| {
+            black_box(sequential_hits::evaluate_sequential_hits(black_box(
+                &params,
+            )))
+        })
+    });
+}
+
+fn bench_lot_variation(c: &mut Criterion) {
+    let params = LotVariationParams {
+        grade: AmmoGrade::Service,
+        nominal_mv_ms: 830.0,
+        nominal_bc: 0.200,
+        temperature_c: 15.0,
+        lot_count: 50,
+    };
+    c.bench_function("lot_variation/stats_50", |b| {
+        b.iter(|| black_box(lot_variation::lot_variation_statistics(black_box(&params))))
+    });
+}
+
+fn bench_predictive_era(c: &mut Criterion) {
+    let params = PredictiveERAParams {
+        era_type: PredictiveERAType::PredictiveERA {
+            detection_range_m: 100.0,
+            reaction_time_us: 0.15,
+            flyer_velocity_ms: 1000.0,
+        },
+        threat_velocity_ms: 1500.0,
+        threat_type: "ke",
+        threat_range_m: 80.0,
+        impact_angle_deg: 0.0,
+        time_since_last_fire_s: 5.0,
+        threat_caliber_mm: 125.0,
+    };
+    c.bench_function("predictive_era/ke_threat", |b| {
+        b.iter(|| black_box(predictive_era::evaluate_predictive_era(black_box(&params))))
+    });
+}
+
+fn bench_component_kill_prob(c: &mut Criterion) {
+    let params = ComponentKillParams {
+        vehicle_type: VehicleType::MBT,
+        hit_zone: HitZone::Front,
+        projectile_caliber_mm: 125.0,
+        projectile_mass_g: 7000.0,
+        impact_velocity_ms: 1500.0,
+        projectile_type: "apfsds",
+        impact_angle_deg: 0.0,
+        residual_velocity_ms: 1200.0,
+        energy_j: 5_040_000.0,
+        armor_penetrated: true,
+    };
+    c.bench_function("component_kill_prob/mbt_front", |b| {
+        b.iter(|| {
+            black_box(component_kill_prob::evaluate_component_kill_probability(
+                black_box(&params),
+            ))
+        })
+    });
+}
+
+fn bench_combined_effects(c: &mut Criterion) {
+    let params = CombinedAmmoParams {
+        combined_type: CombinedType::API,
+        projectile_mass_g: 42.0,
+        caliber_mm: 12.7,
+        filler_mass_g: 18.0,
+        impact_velocity_ms: 900.0,
+        armor_penetrated: true,
+        residual_velocity_ms: 600.0,
+        impact_angle_deg: 0.0,
+    };
+    c.bench_function("combined_effects/api_50cal", |b| {
+        b.iter(|| {
+            black_box(combined_effects::evaluate_combined_effects(black_box(
+                &params,
+            )))
+        })
+    });
+}
+
+fn bench_fire_propagation(c: &mut Criterion) {
+    let fire_states = vec![
+        ComponentFireState {
+            component_index: 0,
+            fire_status: FireStatus::Burning,
+            fire_intensity: 0.7,
+        },
+        ComponentFireState {
+            component_index: 1,
+            fire_status: FireStatus::NoFire,
+            fire_intensity: 0.0,
+        },
+        ComponentFireState {
+            component_index: 2,
+            fire_status: FireStatus::NoFire,
+            fire_intensity: 0.0,
+        },
+        ComponentFireState {
+            component_index: 3,
+            fire_status: FireStatus::NoFire,
+            fire_intensity: 0.0,
+        },
+    ];
+    let configs = vec![
+        ComponentConfig {
+            component: ComponentType::FuelTank {
+                fuel_type: FuelType::Diesel,
+            },
+            local_armor_thickness_mm: 5.0,
+            local_armor_material: "steel_rha",
+            local_angle_deg: 0.0,
+        },
+        ComponentConfig {
+            component: ComponentType::Engine {
+                engine_type: EngineType::Diesel,
+            },
+            local_armor_thickness_mm: 10.0,
+            local_armor_material: "steel_rha",
+            local_angle_deg: 0.0,
+        },
+        ComponentConfig {
+            component: ComponentType::AmmoRack {
+                ammo_type: AmmoStoredType::SmallArms,
+            },
+            local_armor_thickness_mm: 8.0,
+            local_armor_material: "steel_rha",
+            local_angle_deg: 0.0,
+        },
+        ComponentConfig {
+            component: ComponentType::Crew {
+                protection_level: CrewProtection::Light,
+            },
+            local_armor_thickness_mm: 5.0,
+            local_armor_material: "steel_rha",
+            local_angle_deg: 0.0,
+        },
+    ];
+    c.bench_function("component_damage/fire_propagation", |b| {
+        b.iter(|| {
+            black_box(component_damage::evaluate_fire_propagation(
+                black_box(&fire_states),
+                black_box(&configs),
+                black_box(FireSuppression::Automatic),
+                black_box(0.5),
+                black_box(false),
+            ))
+        })
+    });
+}
+
+fn bench_crew_refined(c: &mut Criterion) {
+    c.bench_function("component_damage/crew_refined", |b| {
+        b.iter(|| {
+            black_box(component_damage::evaluate_crew_refined(
+                black_box(CrewProtection::SpallLiner),
+                black_box(800.0),
+                black_box(40),
+                black_box(30.0),
+                black_box(15.0),
+                black_box("ap"),
+                black_box(3),
+            ))
+        })
+    });
+}
+
 // ── Criterion harness ───────────────────────────────────────────────────────
 
 criterion_group!(
@@ -598,5 +1023,22 @@ criterion_group!(
     bench_full_pipeline_realistic,
     bench_impact_variants,
     bench_fire_variants,
+    bench_sight_height,
+    bench_shooter_error,
+    bench_material_factor,
+    bench_spin_drift,
+    bench_get_cd,
+    bench_penetration_multilayer,
+    bench_interior_wall,
+    bench_armor_array,
+    bench_frangible,
+    bench_tire_penetration,
+    bench_sequential_hits,
+    bench_lot_variation,
+    bench_predictive_era,
+    bench_component_kill_prob,
+    bench_combined_effects,
+    bench_fire_propagation,
+    bench_crew_refined,
 );
 criterion_main!(benches);

@@ -11,7 +11,7 @@
 //   - NIJ 0108.01 ballistic resistance
 
 /// Material hardness factor relative to RHA
-fn material_factor(material: &str) -> f64 {
+pub fn material_factor(material: &str) -> f64 {
     match material.to_lowercase().as_str() {
         "steel_rha" => 1.0,
         "steel_hha" => 1.25, // High-hardness armor
@@ -25,8 +25,52 @@ fn material_factor(material: &str) -> f64 {
         "spall_liner" => 0.1, // Spall liner, minimal structural resistance
         "concrete" => 0.15,
         "wood" => 0.05,
-        "steel_structural" => 0.7, // Mild steel
-        _ => 1.0,                  // Default to RHA
+        "steel_structural" | "mild_steel" => 0.7,
+        "cast_steel" => 0.85,
+        "depleted_uranium" => 1.8,
+        "titanium_alloy" => 0.9,
+        "lead_alloy" => 0.04,
+        "burlington_composite" => 2.0,
+        "chobham_composite" => 2.2,
+        "dorchester_composite" => 2.5,
+        "stanag_composite" => 2.0,
+        "textolite_composite" => 0.35,
+        "mexas_composite" => 1.8,
+        "stef_composite" => 1.9,
+        "kvarts_composite" => 2.1,
+        "k_active_composite" => 2.3,
+        "laminated_glass" => 0.15,
+        "texolite_composite" => 0.35,
+        "uhmwpe" => 0.25,
+        "rubber_elastomer" => 0.015,
+        "spall_liner_kevlar" | "kevlar_liner" => 0.25,
+        "twaron_liner" => 0.22,
+        "dyneema_liner" => 0.30,
+        "gypsum" | "gypsum_board" | "drywall" => 0.02,
+        "stud_timber" => 0.04,
+        "plywood" | "osb" => 0.035,
+        "adobe" | "rammed_earth" => 0.08,
+        "carbon_fiber" => 0.20,
+        "fiberglass" | "grp" => 0.12,
+        "mil_dtl_46100_class1" => 1.30,
+        "mil_dtl_46100_class3" => 1.40,
+        "mil_dtl_46100_class4" => 1.50,
+        "dual_hardness_steel" | "mars_armor" => 1.10,
+        "armor_tip_steel" => 1.15,
+        "rubber_solid" | "hard_rubber" => 0.08,
+        "ceramic_ad90" | "ad90" => 2.2,
+        "ceramic_ad95" | "ad95" => 2.4,
+        "mar_ceramic" => 2.8,
+        "perforated_armor" | "perf_steel" => 0.60,
+        "slotted_armor" | "slotted_steel" => 0.55,
+        "acrylic" | "acrylic_standalone" => 0.04,
+        "polycarbonate" | "polycarbonate_standalone" => 0.06,
+        "concrete_reinforced" => 0.15,
+        "wood_hardwood" => 0.05,
+        "hha_steel" => 1.25,
+        "ceramic_plate" => 2.5,
+        "rha_steel" => 1.0,
+        _ => 1.0,
     }
 }
 
