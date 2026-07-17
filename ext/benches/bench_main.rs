@@ -706,9 +706,7 @@ fn bench_penetration_multilayer(c: &mut Criterion) {
 }
 
 fn bench_interior_wall(c: &mut Criterion) {
-    use abe_ballistics_ext::interior_wall::{
-        evaluate_interior_wall, standard_stud_wall, WallLayerConfig,
-    };
+    use abe_ballistics_ext::interior_wall::{evaluate_interior_wall, standard_stud_wall};
     let layers = standard_stud_wall();
     c.bench_function("interior_wall/standard_stud", |b| {
         b.iter(|| {
