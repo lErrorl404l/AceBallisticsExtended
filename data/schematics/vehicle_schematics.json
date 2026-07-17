@@ -1,0 +1,631 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "description": "Multi-layer armor schematics for NATO and Russian combat vehicles",
+    "sources": [
+      "Jane's Armour & Artillery 2023-2024",
+      "TM 9-2350-388-10 (Abrams)",
+      "NATO STANAG 4569 Level 4-6",
+      "Ogorkiewicz R.M., Technology of Tanks",
+      "Warford J.M., Armor Validation of Soviet/Russian MBTs",
+      "CITEFA / US Army RDECOM armor reports",
+      "Hunnicutt R.P., Abrams: A History of the American Main Battle Tank"
+    ]
+  },
+  "vehicles": [
+    {
+      "vehicle_id": "m1a2_abrams_sepv2",
+      "display_name": "M1A2 Abrams SEP v2",
+      "nation": "USA",
+      "type": "mbt",
+      "zones": {
+        "turret_front": {
+          "total_rhae_mm": 850.0,
+          "notes": "Burlington/Chobham array with HHA face, SiC ceramic + fiberglass composite, RHA backer",
+          "layers": [
+            { "material": "steel_hha", "thickness_mm": 31.75, "angle_deg": 32.0, "gap_to_next_mm": 15.0 },
+            { "material": "ceramic_sic", "thickness_mm": 120.0, "angle_deg": 32.0, "gap_to_next_mm": 10.0 },
+            { "material": "burlington_composite", "thickness_mm": 220.0, "angle_deg": 32.0, "gap_to_next_mm": 10.0 },
+            { "material": "steel_rha", "thickness_mm": 25.4, "angle_deg": 32.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 12.7, "angle_deg": 32.0 }
+          ]
+        },
+        "turret_side": {
+          "total_rhae_mm": 400.0,
+          "notes": "Burlington composite with steel backer",
+          "layers": [
+            { "material": "steel_hha", "thickness_mm": 25.4, "angle_deg": 20.0, "gap_to_next_mm": 10.0 },
+            { "material": "burlington_composite", "thickness_mm": 100.0, "angle_deg": 20.0, "gap_to_next_mm": 10.0 },
+            { "material": "steel_rha", "thickness_mm": 25.4, "angle_deg": 20.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 10.0, "angle_deg": 20.0 }
+          ]
+        },
+        "hull_front": {
+          "total_rhae_mm": 600.0,
+          "notes": "Lower glacis: HHA + Burlington composite + RHA",
+          "layers": [
+            { "material": "steel_hha", "thickness_mm": 25.4, "angle_deg": 55.0, "gap_to_next_mm": 12.0 },
+            { "material": "burlington_composite", "thickness_mm": 160.0, "angle_deg": 55.0, "gap_to_next_mm": 10.0 },
+            { "material": "steel_rha", "thickness_mm": 20.0, "angle_deg": 55.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 10.0, "angle_deg": 55.0 }
+          ]
+        },
+        "hull_side": {
+          "total_rhae_mm": 200.0,
+          "notes": "HHA side skirts with RHA side hull, spall liner",
+          "layers": [
+            { "material": "steel_hha", "thickness_mm": 35.0, "angle_deg": 0.0, "gap_to_next_mm": 8.0 },
+            { "material": "steel_rha", "thickness_mm": 25.0, "angle_deg": 0.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 10.0, "angle_deg": 0.0 }
+          ]
+        },
+        "hull_rear": {
+          "total_rhae_mm": 80.0,
+          "notes": "Light RHA protection with spall liner",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 25.0, "angle_deg": 20.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 8.0, "angle_deg": 20.0 }
+          ]
+        },
+        "turret_top": {
+          "total_rhae_mm": 80.0,
+          "notes": "Light overhead protection",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 20.0, "angle_deg": 80.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 80.0 }
+          ]
+        }
+      }
+    },
+    {
+      "vehicle_id": "leopard_2a6",
+      "display_name": "Leopard 2A6",
+      "nation": "Germany",
+      "type": "mbt",
+      "zones": {
+        "turret_front": {
+          "total_rhae_mm": 750.0,
+          "notes": "Perforated armor + composite array + RHA spall liner. Wedge-shaped turret with advanced composite modules.",
+          "layers": [
+            { "material": "steel_hha", "thickness_mm": 25.0, "angle_deg": 35.0, "gap_to_next_mm": 20.0 },
+            { "material": "ceramic_ad95", "thickness_mm": 90.0, "angle_deg": 35.0, "gap_to_next_mm": 15.0 },
+            { "material": "composite_glass", "thickness_mm": 180.0, "angle_deg": 35.0, "gap_to_next_mm": 10.0 },
+            { "material": "steel_rha", "thickness_mm": 30.0, "angle_deg": 35.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 10.0, "angle_deg": 35.0 }
+          ]
+        },
+        "turret_side": {
+          "total_rhae_mm": 350.0,
+          "notes": "Composite modules on turret sides",
+          "layers": [
+            { "material": "steel_hha", "thickness_mm": 20.0, "angle_deg": 15.0, "gap_to_next_mm": 10.0 },
+            { "material": "composite_glass", "thickness_mm": 120.0, "angle_deg": 15.0, "gap_to_next_mm": 10.0 },
+            { "material": "steel_rha", "thickness_mm": 60.0, "angle_deg": 15.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 8.0, "angle_deg": 15.0 }
+          ]
+        },
+        "hull_front": {
+          "total_rhae_mm": 500.0,
+          "notes": "Composite wedge on hull glacis",
+          "layers": [
+            { "material": "steel_hha", "thickness_mm": 25.0, "angle_deg": 60.0, "gap_to_next_mm": 15.0 },
+            { "material": "composite_glass", "thickness_mm": 140.0, "angle_deg": 60.0, "gap_to_next_mm": 10.0 },
+            { "material": "steel_rha", "thickness_mm": 25.0, "angle_deg": 60.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 10.0, "angle_deg": 60.0 }
+          ]
+        },
+        "hull_side": {
+          "total_rhae_mm": 100.0,
+          "notes": "Steel side hull with spall liner",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 50.0, "angle_deg": 0.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 8.0, "angle_deg": 0.0 }
+          ]
+        },
+        "hull_rear": {
+          "total_rhae_mm": 60.0,
+          "notes": "Light RHA rear protection",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 25.0, "angle_deg": 15.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 15.0 }
+          ]
+        },
+        "turret_top": {
+          "total_rhae_mm": 60.0,
+          "notes": "Overhead protection",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 15.0, "angle_deg": 80.0, "gap_to_next_mm": 0.0 },
+            { "material": "composite_glass", "thickness_mm": 20.0, "angle_deg": 80.0 }
+          ]
+        }
+      }
+    },
+    {
+      "vehicle_id": "challenger_2",
+      "display_name": "Challenger 2",
+      "nation": "UK",
+      "type": "mbt",
+      "zones": {
+        "turret_front": {
+          "total_rhae_mm": 800.0,
+          "notes": "Dorchester (2nd-gen Chobham) array: ceramic/composite modules in steel cavity",
+          "layers": [
+            { "material": "steel_hha", "thickness_mm": 28.0, "angle_deg": 30.0, "gap_to_next_mm": 10.0 },
+            { "material": "ceramic_al2o3", "thickness_mm": 100.0, "angle_deg": 30.0, "gap_to_next_mm": 10.0 },
+            { "material": "dorchester_composite", "thickness_mm": 200.0, "angle_deg": 30.0, "gap_to_next_mm": 15.0 },
+            { "material": "steel_rha", "thickness_mm": 25.0, "angle_deg": 30.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 10.0, "angle_deg": 30.0 }
+          ]
+        },
+        "turret_side": {
+          "total_rhae_mm": 450.0,
+          "notes": "Dorchester composite on turret sides (unusually thick for a western MBT)",
+          "layers": [
+            { "material": "dorchester_composite", "thickness_mm": 100.0, "angle_deg": 10.0, "gap_to_next_mm": 10.0 },
+            { "material": "steel_rha", "thickness_mm": 80.0, "angle_deg": 10.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 10.0, "angle_deg": 10.0 }
+          ]
+        },
+        "hull_front": {
+          "total_rhae_mm": 550.0,
+          "notes": "Dorchester composite in hull glacis",
+          "layers": [
+            { "material": "steel_hha", "thickness_mm": 25.0, "angle_deg": 60.0, "gap_to_next_mm": 10.0 },
+            { "material": "dorchester_composite", "thickness_mm": 160.0, "angle_deg": 60.0, "gap_to_next_mm": 10.0 },
+            { "material": "steel_rha", "thickness_mm": 22.0, "angle_deg": 60.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 8.0, "angle_deg": 60.0 }
+          ]
+        },
+        "hull_side": {
+          "total_rhae_mm": 100.0,
+          "notes": "Steel hull with spall liner",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 55.0, "angle_deg": 0.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 8.0, "angle_deg": 0.0 }
+          ]
+        },
+        "hull_rear": {
+          "total_rhae_mm": 60.0,
+          "notes": "RHA rear plate",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 30.0, "angle_deg": 15.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 15.0 }
+          ]
+        },
+        "turret_top": {
+          "total_rhae_mm": 50.0,
+          "notes": "Overhead armor",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 20.0, "angle_deg": 80.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 80.0 }
+          ]
+        }
+      }
+    },
+    {
+      "vehicle_id": "t_90a",
+      "display_name": "T-90A",
+      "nation": "Russia",
+      "type": "mbt",
+      "zones": {
+        "turret_front": {
+          "total_rhae_mm": 600.0,
+          "notes": "Cast steel turret with Kvarts (quartz/alumina) composite filler + STEF inner lining",
+          "layers": [
+            { "material": "cast_steel", "thickness_mm": 50.0, "angle_deg": 30.0, "gap_to_next_mm": 20.0 },
+            { "material": "kvarts_composite", "thickness_mm": 150.0, "angle_deg": 30.0, "gap_to_next_mm": 15.0 },
+            { "material": "stef_composite", "thickness_mm": 80.0, "angle_deg": 30.0, "gap_to_next_mm": 10.0 },
+            { "material": "steel_rha", "thickness_mm": 20.0, "angle_deg": 30.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 8.0, "angle_deg": 30.0 }
+          ]
+        },
+        "turret_side": {
+          "total_rhae_mm": 300.0,
+          "notes": "Cast turret side with steel array",
+          "layers": [
+            { "material": "cast_steel", "thickness_mm": 80.0, "angle_deg": 10.0, "gap_to_next_mm": 0.0 },
+            { "material": "steel_rha", "thickness_mm": 60.0, "angle_deg": 10.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 10.0 }
+          ]
+        },
+        "hull_front": {
+          "total_rhae_mm": 550.0,
+          "notes": "Upper glacis: steel + STEF composite + RHA with Kontakt-5 ERA over plate",
+          "layers": [
+            { "material": "era_kontakt5", "thickness_mm": 20.0, "angle_deg": 68.0, "gap_to_next_mm": 30.0 },
+            { "material": "steel_rha", "thickness_mm": 25.0, "angle_deg": 68.0, "gap_to_next_mm": 15.0 },
+            { "material": "stef_composite", "thickness_mm": 150.0, "angle_deg": 68.0, "gap_to_next_mm": 10.0 },
+            { "material": "steel_rha", "thickness_mm": 20.0, "angle_deg": 68.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 8.0, "angle_deg": 68.0 }
+          ]
+        },
+        "hull_side": {
+          "total_rhae_mm": 160.0,
+          "notes": "Steel hull side with rubber side skirts and spall liner",
+          "layers": [
+            { "material": "rubber_solid", "thickness_mm": 8.0, "angle_deg": 0.0, "gap_to_next_mm": 5.0 },
+            { "material": "steel_rha", "thickness_mm": 60.0, "angle_deg": 0.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 8.0, "angle_deg": 0.0 }
+          ]
+        },
+        "hull_rear": {
+          "total_rhae_mm": 50.0,
+          "notes": "RHA rear with spall liner",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 40.0, "angle_deg": 15.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 15.0 }
+          ]
+        },
+        "turret_top": {
+          "total_rhae_mm": 60.0,
+          "notes": "Cast turret roof",
+          "layers": [
+            { "material": "cast_steel", "thickness_mm": 30.0, "angle_deg": 80.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 80.0 }
+          ]
+        }
+      }
+    },
+    {
+      "vehicle_id": "t_72b3",
+      "display_name": "T-72B3",
+      "nation": "Russia",
+      "type": "mbt",
+      "zones": {
+        "turret_front": {
+          "total_rhae_mm": 500.0,
+          "notes": "Cast steel turret with Kvarts composite filler (alumina balls in rubber matrix) and textolite inner lining",
+          "layers": [
+            { "material": "cast_steel", "thickness_mm": 50.0, "angle_deg": 30.0, "gap_to_next_mm": 25.0 },
+            { "material": "kvarts_composite", "thickness_mm": 130.0, "angle_deg": 30.0, "gap_to_next_mm": 15.0 },
+            { "material": "textolite_composite", "thickness_mm": 30.0, "angle_deg": 30.0, "gap_to_next_mm": 10.0 },
+            { "material": "cast_steel", "thickness_mm": 25.0, "angle_deg": 30.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 30.0 }
+          ]
+        },
+        "turret_side": {
+          "total_rhae_mm": 300.0,
+          "notes": "Cast turret side wall",
+          "layers": [
+            { "material": "cast_steel", "thickness_mm": 80.0, "angle_deg": 10.0, "gap_to_next_mm": 0.0 },
+            { "material": "steel_rha", "thickness_mm": 60.0, "angle_deg": 10.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 10.0 }
+          ]
+        },
+        "hull_front": {
+          "total_rhae_mm": 500.0,
+          "notes": "Upper glacis: steel + STEF composite + RHA inner",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 22.0, "angle_deg": 68.0, "gap_to_next_mm": 10.0 },
+            { "material": "stef_composite", "thickness_mm": 130.0, "angle_deg": 68.0, "gap_to_next_mm": 10.0 },
+            { "material": "steel_rha", "thickness_mm": 18.0, "angle_deg": 68.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 68.0 }
+          ]
+        },
+        "hull_side": {
+          "total_rhae_mm": 160.0,
+          "notes": "Steel hull with rubber side skirts",
+          "layers": [
+            { "material": "rubber_solid", "thickness_mm": 6.0, "angle_deg": 0.0, "gap_to_next_mm": 5.0 },
+            { "material": "steel_rha", "thickness_mm": 60.0, "angle_deg": 0.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 0.0 }
+          ]
+        },
+        "hull_rear": {
+          "total_rhae_mm": 50.0,
+          "notes": "RHA rear",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 40.0, "angle_deg": 15.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 15.0 }
+          ]
+        },
+        "turret_top": {
+          "total_rhae_mm": 60.0,
+          "notes": "Cast turret roof",
+          "layers": [
+            { "material": "cast_steel", "thickness_mm": 30.0, "angle_deg": 80.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 80.0 }
+          ]
+        }
+      }
+    },
+    {
+      "vehicle_id": "t_80bvm",
+      "display_name": "T-80BVM",
+      "nation": "Russia",
+      "type": "mbt",
+      "zones": {
+        "turret_front": {
+          "total_rhae_mm": 550.0,
+          "notes": "Cast steel turret with Kvarts composite + Relikt ERA. Upgraded from T-80BV baseline.",
+          "layers": [
+            { "material": "era_relikt", "thickness_mm": 20.0, "angle_deg": 30.0, "gap_to_next_mm": 50.0 },
+            { "material": "cast_steel", "thickness_mm": 50.0, "angle_deg": 30.0, "gap_to_next_mm": 20.0 },
+            { "material": "kvarts_composite", "thickness_mm": 130.0, "angle_deg": 30.0, "gap_to_next_mm": 10.0 },
+            { "material": "stef_composite", "thickness_mm": 40.0, "angle_deg": 30.0, "gap_to_next_mm": 10.0 },
+            { "material": "steel_rha", "thickness_mm": 20.0, "angle_deg": 30.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 8.0, "angle_deg": 30.0 }
+          ]
+        },
+        "turret_side": {
+          "total_rhae_mm": 300.0,
+          "notes": "Cast turret side with Relikt ERA panels",
+          "layers": [
+            { "material": "era_relikt", "thickness_mm": 15.0, "angle_deg": 10.0, "gap_to_next_mm": 30.0 },
+            { "material": "cast_steel", "thickness_mm": 80.0, "angle_deg": 10.0, "gap_to_next_mm": 0.0 },
+            { "material": "steel_rha", "thickness_mm": 50.0, "angle_deg": 10.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 10.0 }
+          ]
+        },
+        "hull_front": {
+          "total_rhae_mm": 500.0,
+          "notes": "Upper glacis: Relikt ERA + steel + STEF composite",
+          "layers": [
+            { "material": "era_relikt", "thickness_mm": 15.0, "angle_deg": 68.0, "gap_to_next_mm": 40.0 },
+            { "material": "steel_rha", "thickness_mm": 25.0, "angle_deg": 68.0, "gap_to_next_mm": 10.0 },
+            { "material": "stef_composite", "thickness_mm": 130.0, "angle_deg": 68.0, "gap_to_next_mm": 10.0 },
+            { "material": "steel_rha", "thickness_mm": 18.0, "angle_deg": 68.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 68.0 }
+          ]
+        },
+        "hull_side": {
+          "total_rhae_mm": 140.0,
+          "notes": "Steel hull with rubber side skirts, Relikt side panels",
+          "layers": [
+            { "material": "era_relikt", "thickness_mm": 10.0, "angle_deg": 0.0, "gap_to_next_mm": 20.0 },
+            { "material": "rubber_solid", "thickness_mm": 6.0, "angle_deg": 0.0, "gap_to_next_mm": 5.0 },
+            { "material": "steel_rha", "thickness_mm": 50.0, "angle_deg": 0.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 0.0 }
+          ]
+        },
+        "hull_rear": {
+          "total_rhae_mm": 50.0,
+          "notes": "RHA rear",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 35.0, "angle_deg": 15.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 15.0 }
+          ]
+        },
+        "turret_top": {
+          "total_rhae_mm": 60.0,
+          "notes": "Cast turret roof",
+          "layers": [
+            { "material": "cast_steel", "thickness_mm": 30.0, "angle_deg": 80.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 80.0 }
+          ]
+        }
+      }
+    },
+    {
+      "vehicle_id": "m2a3_bradley",
+      "display_name": "M2A3 Bradley",
+      "nation": "USA",
+      "type": "ifv",
+      "zones": {
+        "turret_front": {
+          "total_rhae_mm": 200.0,
+          "notes": "Aluminum turret with spaced steel appliqué armor panels",
+          "layers": [
+            { "material": "steel_hha", "thickness_mm": 15.0, "angle_deg": 20.0, "gap_to_next_mm": 30.0 },
+            { "material": "aluminum_5083", "thickness_mm": 50.0, "angle_deg": 20.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 8.0, "angle_deg": 20.0 }
+          ]
+        },
+        "turret_side": {
+          "total_rhae_mm": 80.0,
+          "notes": "Aluminum turret with spall liner",
+          "layers": [
+            { "material": "aluminum_5083", "thickness_mm": 30.0, "angle_deg": 0.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 0.0 }
+          ]
+        },
+        "hull_front": {
+          "total_rhae_mm": 180.0,
+          "notes": "Spaced laminate: aluminum hull with steel appliqué",
+          "layers": [
+            { "material": "steel_hha", "thickness_mm": 12.0, "angle_deg": 45.0, "gap_to_next_mm": 25.0 },
+            { "material": "aluminum_5083", "thickness_mm": 60.0, "angle_deg": 45.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 8.0, "angle_deg": 45.0 }
+          ]
+        },
+        "hull_side": {
+          "total_rhae_mm": 60.0,
+          "notes": "Aluminum side hull",
+          "layers": [
+            { "material": "aluminum_5083", "thickness_mm": 35.0, "angle_deg": 0.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 0.0 }
+          ]
+        },
+        "hull_rear": {
+          "total_rhae_mm": 30.0,
+          "notes": "Aluminum rear hull",
+          "layers": [
+            { "material": "aluminum_5083", "thickness_mm": 15.0, "angle_deg": 15.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 4.0, "angle_deg": 15.0 }
+          ]
+        },
+        "turret_top": {
+          "total_rhae_mm": 30.0,
+          "notes": "Overhead aluminum",
+          "layers": [
+            { "material": "aluminum_5083", "thickness_mm": 20.0, "angle_deg": 80.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 4.0, "angle_deg": 80.0 }
+          ]
+        }
+      }
+    },
+    {
+      "vehicle_id": "bmp_3",
+      "display_name": "BMP-3",
+      "nation": "Russia",
+      "type": "ifv",
+      "zones": {
+        "turret_front": {
+          "total_rhae_mm": 60.0,
+          "notes": "Aluminum turret with add-on steel armor",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 15.0, "angle_deg": 15.0, "gap_to_next_mm": 5.0 },
+            { "material": "aluminum_5083", "thickness_mm": 35.0, "angle_deg": 15.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 15.0 }
+          ]
+        },
+        "turret_side": {
+          "total_rhae_mm": 40.0,
+          "notes": "Aluminum turret side",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 12.0, "angle_deg": 0.0, "gap_to_next_mm": 0.0 },
+            { "material": "aluminum_5083", "thickness_mm": 20.0, "angle_deg": 0.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 4.0, "angle_deg": 0.0 }
+          ]
+        },
+        "hull_front": {
+          "total_rhae_mm": 60.0,
+          "notes": "Aluminum hull with steel glacis plate",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 12.0, "angle_deg": 50.0, "gap_to_next_mm": 10.0 },
+            { "material": "aluminum_5083", "thickness_mm": 40.0, "angle_deg": 50.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 50.0 }
+          ]
+        },
+        "hull_side": {
+          "total_rhae_mm": 35.0,
+          "notes": "Aluminum side hull",
+          "layers": [
+            { "material": "aluminum_5083", "thickness_mm": 20.0, "angle_deg": 0.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 4.0, "angle_deg": 0.0 }
+          ]
+        },
+        "hull_rear": {
+          "total_rhae_mm": 20.0,
+          "notes": "Aluminum rear door",
+          "layers": [
+            { "material": "aluminum_5083", "thickness_mm": 12.0, "angle_deg": 15.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 4.0, "angle_deg": 15.0 }
+          ]
+        },
+        "turret_top": {
+          "total_rhae_mm": 20.0,
+          "notes": "Turret roof",
+          "layers": [
+            { "material": "aluminum_5083", "thickness_mm": 10.0, "angle_deg": 85.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 3.0, "angle_deg": 85.0 }
+          ]
+        }
+      }
+    },
+    {
+      "vehicle_id": "btr_82a",
+      "display_name": "BTR-82A",
+      "nation": "Russia",
+      "type": "apc",
+      "zones": {
+        "turret_front": {
+          "total_rhae_mm": 15.0,
+          "notes": "Welded steel turret, small arms protection only (STANAG 4569 Level 2)",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 10.0, "angle_deg": 20.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 4.0, "angle_deg": 20.0 }
+          ]
+        },
+        "turret_side": {
+          "total_rhae_mm": 12.0,
+          "notes": "Steel turret side",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 7.0, "angle_deg": 0.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 4.0, "angle_deg": 0.0 }
+          ]
+        },
+        "hull_front": {
+          "total_rhae_mm": 14.0,
+          "notes": "Steel hull front, all-welded construction",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 10.0, "angle_deg": 45.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 4.0, "angle_deg": 45.0 }
+          ]
+        },
+        "hull_side": {
+          "total_rhae_mm": 10.0,
+          "notes": "Steel side hull - vulnerable to heavy machine gun fire",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 7.0, "angle_deg": 0.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 4.0, "angle_deg": 0.0 }
+          ]
+        },
+        "hull_rear": {
+          "total_rhae_mm": 10.0,
+          "notes": "Rear door, steel construction",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 5.0, "angle_deg": 15.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 4.0, "angle_deg": 15.0 }
+          ]
+        },
+        "turret_top": {
+          "total_rhae_mm": 8.0,
+          "notes": "Turret roof - thin steel",
+          "layers": [
+            { "material": "steel_rha", "thickness_mm": 5.0, "angle_deg": 85.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 3.0, "angle_deg": 85.0 }
+          ]
+        }
+      }
+    },
+    {
+      "vehicle_id": "stryker_m1126",
+      "display_name": "Stryker M1126 ICV",
+      "nation": "USA",
+      "type": "apc",
+      "zones": {
+        "turret_front": {
+          "total_rhae_mm": 40.0,
+          "notes": "Aluminum hull with ceramic tile add-on armor package (MEXAS / STANAG 4569 Level 4 equivalent)",
+          "layers": [
+            { "material": "ceramic_al2o3", "thickness_mm": 10.0, "angle_deg": 15.0, "gap_to_next_mm": 5.0 },
+            { "material": "aluminum_5083", "thickness_mm": 30.0, "angle_deg": 15.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 8.0, "angle_deg": 15.0 }
+          ]
+        },
+        "turret_side": {
+          "total_rhae_mm": 30.0,
+          "notes": "Aluminum turret with spall liner",
+          "layers": [
+            { "material": "aluminum_5083", "thickness_mm": 20.0, "angle_deg": 0.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 0.0 }
+          ]
+        },
+        "hull_front": {
+          "total_rhae_mm": 40.0,
+          "notes": "Aluminum hull with MEXAS ceramic tile add-on armor",
+          "layers": [
+            { "material": "ceramic_al2o3", "thickness_mm": 10.0, "angle_deg": 45.0, "gap_to_next_mm": 5.0 },
+            { "material": "aluminum_5083", "thickness_mm": 35.0, "angle_deg": 45.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 8.0, "angle_deg": 45.0 }
+          ]
+        },
+        "hull_side": {
+          "total_rhae_mm": 30.0,
+          "notes": "Aluminum hull with spall liner",
+          "layers": [
+            { "material": "aluminum_5083", "thickness_mm": 20.0, "angle_deg": 0.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 0.0 }
+          ]
+        },
+        "hull_rear": {
+          "total_rhae_mm": 20.0,
+          "notes": "Aluminum rear ramp/door",
+          "layers": [
+            { "material": "aluminum_5083", "thickness_mm": 10.0, "angle_deg": 15.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 6.0, "angle_deg": 15.0 }
+          ]
+        },
+        "turret_top": {
+          "total_rhae_mm": 20.0,
+          "notes": "Overhead aluminum armor",
+          "layers": [
+            { "material": "aluminum_5083", "thickness_mm": 10.0, "angle_deg": 85.0, "gap_to_next_mm": 0.0 },
+            { "material": "spall_liner_kevlar", "thickness_mm": 4.0, "angle_deg": 85.0 }
+          ]
+        }
+      }
+    }
+  ]
+}

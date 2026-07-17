@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/lErrorl404l/AceBallisticsExtended/schemas/vehicle_armor",
+  "title": "ABE Vehicle Armor Configuration",
+  "description": "Vehicle armor plate configuration matching ArmorConfig Rust struct",
+  "type": "object",
+  "required": ["vehicle", "plates"],
+  "properties": {
+    "vehicle": {
+      "type": "string",
+      "description": "ARMA 3 CfgVehicles class name",
+      "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+    },
+    "plates": {
+      "type": "array",
+      "description": "List of armor plates covering the vehicle",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "material", "thickness_mm", "angle_deg"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Plate identifier (e.g. hull_front, turret_side)"
+          },
+          "material": {
+            "type": "string",
+            "description": "Material identifier (must match a materialId from data/armor/)"
+          },
+          "thickness_mm": {
+            "type": "number",
+            "description": "Plate thickness in millimeters",
+            "exclusiveMinimum": 0,
+            "maximum": 2000
+          },
+          "angle_deg": {
+            "type": "number",
+            "description": "Plate angle from vertical in degrees (0=vertical, 90=horizontal)",
+            "minimum": 0,
+            "maximum": 90
+          },
+          "backing": {
+            "type": "string",
+            "description": "Optional backing material (e.g. spall_liner_kevlar)",
+            "default": null
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
