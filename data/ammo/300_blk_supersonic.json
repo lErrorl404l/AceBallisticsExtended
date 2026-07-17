@@ -1,0 +1,18 @@
+{
+    "class": "ACE_300BLK_Supersonic_Ball",
+    "projectile": {
+        "model": "M556_110gr_Ball",
+        "mass_g": 7.1,
+        "caliber_mm": 7.82,
+        "bc_g7": 0.139,
+        "cdm_id": "g7",
+        "source": ".300 AAC Blackout (7.62x35mm) supersonic. 110gr (7.1g) FMJ. MV ~610 m/s from 406mm (16in) barrel. G7 BC ~0.139 for 110gr .308-cal FMJ (Litz estimate). Caliber .308in = 7.82mm.",
+        "fragmentation": {
+            "threshold_vel_ms": 580.0,
+            "avg_fragments": 6,
+            "mass_distribution": "log_normal",
+            "params": {"mean": 0.12, "std": 0.06},
+            "notes": "110gr FMJ. Limited fragmentation at ~610 m/s MV; barely above frag threshold."
+        }
+    }
+}

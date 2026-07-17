@@ -1,0 +1,18 @@
+{
+    "class": "ACE_680x51_Ball",
+    "projectile": {
+        "model": "M277_EPR",
+        "mass_g": 8.75,
+        "caliber_mm": 7.04,
+        "bc_g7": 0.206,
+        "cdm_id": "g7",
+        "source": "US Army NGSW 6.8x51mm (.277 Fury) 135gr EPR. MV ~915 m/s from 406mm barrel (SAAMI spec 80 ksi chamber pressure). G7 BC ~0.206 per Litz estimate for 135gr .277 caliber projectile. Caliber .277in = 7.04mm. Hybrid brass/steel case.",
+        "fragmentation": {
+            "threshold_vel_ms": 550.0,
+            "avg_fragments": 25,
+            "mass_distribution": "log_normal",
+            "params": {"mean": 0.10, "std": 0.05},
+            "notes": "EPR construction: copper jacket, steel penetrator, fragmented core. Similar fragmentation behavior to M855A1/M80A1."
+        }
+    }
+}
