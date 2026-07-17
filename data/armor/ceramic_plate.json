@@ -4,8 +4,8 @@
   "densityGcm3": 3.85,
   "hardnessBHN": 1200,
   "tensileStrengthMpa": 260,
-  "rhaEquivalent": 3.5,
+  "rhaEquivalent": 2.5,
   "ductility": 0.05,
   "spallCoeff": 0.9,
-  "notes": "Ballistic ceramic. High hardness, low ductility. High spall. ~3.5x RHA per mm."
+  "notes": "Ballistic ceramic Al2O3 SAPI-style plate. High hardness, low ductility. ~2.5x RHA per mm (ESAPI/ARL consensus). Previous 3.5 was B4C territory."
 }

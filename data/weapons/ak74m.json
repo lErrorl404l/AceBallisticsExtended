@@ -6,7 +6,8 @@
   "riflingTwistMm": 200.0,
   "projectileMassG": 3.43,
   "cdmId": "g7",
+  "muzzleVelocityMs": 880,
   "zeroRangeM": 100,
   "effectiveRangeM": 500,
-  "notes": "AK-74M, 16.3\" barrel, 1:7.87\" twist, 7N6M pressure"
+  "notes": "AK-74M, 16.3\" barrel, 1:7.87\" twist, 7N6M pressure. MV 880 m/s 7N6"
 }

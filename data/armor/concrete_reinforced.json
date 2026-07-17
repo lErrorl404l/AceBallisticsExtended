@@ -4,8 +4,8 @@
   "densityGcm3": 2.4,
   "hardnessBHN": 80,
   "tensileStrengthMpa": 5,
-  "rhaEquivalent": 0.10,
+  "rhaEquivalent": 0.12,
   "ductility": 0.05,
   "spallCoeff": 0.95,
-  "notes": "Reinforced concrete per ASMRB/TM 5-855-1. General KE multiplier: 0.10-0.15 (military bunker spec). Lower against heavy AP (0.04-0.06), higher vs shaped charges (~0.20). 0.10 selected as general-purpose KE value."
+  "notes": "Reinforced concrete per ASMRB/TM 5-855-1. General KE multiplier: 0.08-0.15 (military bunker spec). ASMRB: 0.11 for 1:3:5 mix. 0.12 harmonized midpoint between code (0.15) and old JSON (0.10)."
 }

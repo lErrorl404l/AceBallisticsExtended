@@ -4,8 +4,8 @@
   "densityGcm3": 3.2,
   "hardnessBHN": 2500,
   "tensileStrengthMpa": 350,
-  "rhaEquivalent": 4.5,
+  "rhaEquivalent": 3.5,
   "ductility": 0.02,
   "spallCoeff": 0.9,
-  "notes": "Sintered silicon carbide (SiC). Density 3.15-3.25 g/cm³, Knoop hardness ~2500 HK (25 GPa). Flexural strength ~350 MPa. RHAe ~4-5 per mm vs KE threats — harder than Al2O3 but more expensive. Used in modern lightweight composite arrays (Leopard 2A5+, Challenger 2 TES). Lower density than Al2O3 for weight-critical applications. Fracture toughness K1c ~3.0-4.0 MPa·m^½."
+  "notes": "Sintered silicon carbide (SiC). Density 3.15-3.25 g/cm³, Knoop hardness ~2500 HK (25 GPa). Flexural strength ~350 MPa. Standalone RHAe ~3.0-4.0 per mm vs KE threats — harder than Al2O3 but more expensive. Used in modern lightweight composite arrays (Leopard 2A5+, Challenger 2 TES). Lower density than Al2O3 for weight-critical applications. Fracture toughness K1c ~3.0-4.0 MPa·m^½."
 }

@@ -6,7 +6,8 @@
   "riflingTwistMm": 178.0,
   "projectileMassG": 4.0,
   "cdmId": "g7",
+  "muzzleVelocityMs": 880,
   "zeroRangeM": 100,
   "effectiveRangeM": 600,
-  "notes": "M4A1 standard 14.5\" barrel, 1:7\" twist, M855A1 pressure"
+  "notes": "M4A1 standard 14.5\" barrel, 1:7\" twist, M855A1 pressure. MV 880 m/s M855"
 }

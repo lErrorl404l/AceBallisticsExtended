@@ -6,7 +6,8 @@
   "riflingTwistMm": 178.0,
   "projectileMassG": 4.0,
   "cdmId": "g7",
+  "muzzleVelocityMs": 915,
   "zeroRangeM": 100,
   "effectiveRangeM": 800,
-  "notes": "M249 SAW, 20.5\" barrel, 1:7\" twist"
+  "notes": "M249 SAW, 20.5\" barrel, 1:7\" twist. MV 915 m/s M855"
 }

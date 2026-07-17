@@ -4,8 +4,8 @@
   "densityGcm3": 7.85,
   "hardnessBHN": 600,
   "tensileStrengthMpa": 2000,
-  "rhaEquivalent": 1.35,
+  "rhaEquivalent": 1.25,
   "ductility": 0.3,
   "spallCoeff": 0.7,
-  "notes": "Ultra-high hardness armor steel. ARMOX 600S class, 570-640 HBW (NOT MIL-DTL-46100 which is 477-534 BHN standard HHA). ~1.3-1.4x RHA per mm against AP threats per ARL ADA493654. ARMOX 600T shows 15-25% higher V50 than MIL-DTL-46100 HHA at equivalent thickness."
+  "notes": "High-hardness armor steel, MIL-DTL-46100 class (477-534 BHN). ~1.2-1.3x RHA per mm vs AP per ARL-TR-4632 (Showalter). ARMOX 600S (570-640 HBW UHH) is higher (see armox_600). This JSON corrected from 1.35 to 1.25 for standard HHA."
 }
