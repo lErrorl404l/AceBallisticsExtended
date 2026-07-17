@@ -220,4 +220,71 @@ mod tests {
             "Horizontal offset should be deterministic"
         );
     }
+
+    // ── Additional requested tests ─────────────────────────────────────────
+
+    #[test]
+    fn generate_dispersion_no_zero_spread() {
+        // With non-zero spread parameters, dispersion should produce
+        // non-zero offsets for most shot indices
+        let p = default_params();
+        let mut nonzero_count = 0;
+        for i in 0..20 {
+            let (mv_delta, bc_delta, vert, horiz) = apply_dispersion(&p, i);
+            if mv_delta.abs() > 1e-12
+                || bc_delta.abs() > 1e-12
+                || vert.abs() > 1e-12
+                || horiz.abs() > 1e-12
+            {
+                nonzero_count += 1;
+            }
+        }
+        assert!(
+            nonzero_count >= 18,
+            "At least 18/20 shots should have non-zero dispersion offsets: {}/20",
+            nonzero_count
+        );
+    }
+
+    #[test]
+    fn dispersion_increases_with_range() {
+        // Shot-to-shot vertical stringing should compound with shot index
+        let p = ShotDispersionParams {
+            nominal_mv_ms: 900.0,
+            mv_spread_ms: 0.0,
+            nominal_bc: 0.200,
+            bc_variation: 0.0,
+            barrel_harmonic_mils: 0.0,
+            harmonic_wavelength: 100.0,
+            vertical_stringing_mils_per_shot: 0.1,
+            wind_sensitivity: 0.0,
+        };
+        // With only stringing active, |vertical| should trend upward with index
+        let (_, _, v1, _) = apply_dispersion(&p, 1);
+        let (_, _, v10, _) = apply_dispersion(&p, 10);
+        // The stringing term adds 0.1 mils per shot, so shot 10 has
+        // at least 0.9 mils more vertical offset than shot 1 (before harmonic)
+        let stringing_diff = (v10 - v1).abs() * 1000.0; // convert rad to mils
+        assert!(
+            stringing_diff > 0.5,
+            "Stringing should increase vertical with shot index: diff={:.2} mils",
+            stringing_diff
+        );
+    }
+
+    #[test]
+    fn dispersion_deterministic() {
+        // Same params + same shot_index → identical results (already tested,
+        // this is a cross-check with different params)
+        let p = default_params();
+        let r1 = apply_dispersion(&p, 42);
+        let r2 = apply_dispersion(&p, 42);
+        assert!((r1.0 - r2.0).abs() < 1e-12, "MV delta deterministic");
+        assert!((r1.1 - r2.1).abs() < 1e-12, "BC delta deterministic");
+        assert!((r1.2 - r2.2).abs() < 1e-12, "Vertical offset deterministic");
+        assert!(
+            (r1.3 - r2.3).abs() < 1e-12,
+            "Horizontal offset deterministic"
+        );
+    }
 }

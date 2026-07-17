@@ -9,13 +9,17 @@
 
 #![allow(dead_code)]
 
+pub mod aps;
 pub mod armor_array;
 mod atmosphere;
 pub mod combined_effects;
 pub mod component_damage;
 pub mod component_kill_prob;
-mod config;
+pub mod config;
+pub mod dispersion;
+pub mod dof;
 pub mod drag;
+pub mod dynamic_armor;
 pub mod exterior;
 mod floor_ceiling;
 mod fragmentation;
@@ -27,9 +31,11 @@ pub mod lot_variation;
 pub mod penetration;
 pub mod predictive_era;
 pub mod schematics;
+pub mod security_glass;
 pub mod sequential_hits;
 pub mod shooter_error;
 pub mod sight_height;
+pub mod soft_tissue;
 pub mod tire_penetration;
 mod trace;
 mod tracer_burnout;
@@ -292,6 +298,186 @@ fn handle_impact(args: &[&str]) -> String {
     )
 }
 
+fn handle_wound(args: &[&str]) -> String {
+    if !get_state().initialized {
+        return "-1".into();
+    }
+
+    let vel_x: f64 = args.first().and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let vel_y: f64 = args.get(1).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let vel_z: f64 = args.get(2).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let mass_g: f64 = args.get(3).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let caliber_mm: f64 = args.get(4).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let projectile_type = args.get(5).copied().unwrap_or("ball");
+
+    let speed = (vel_x.powi(2) + vel_y.powi(2) + vel_z.powi(2)).sqrt();
+
+    let result = soft_tissue::evaluate(speed, mass_g, caliber_mm / 1000.0, projectile_type);
+
+    format!(
+        "[{},{},{},{},{}]",
+        fmt_f64(result.penetration_depth_m * 1000.0),
+        fmt_f64(result.perm_cavity_diameter_m * 1000.0),
+        fmt_f64(result.temp_cavity_diameter_m * 1000.0),
+        fmt_f64(result.energy_deposited_j),
+        fmt_f64(if result.yawed { 1.0 } else { 0.0 }),
+    )
+}
+
+fn handle_zeroing(args: &[&str]) -> String {
+    if !get_state().initialized {
+        return "-1".into();
+    }
+
+    let sight_height_mm: f64 = args.first().and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let zero_range_m: f64 = args.get(1).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let mv_ms: f64 = args.get(2).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+
+    match sight_height::zero_moa(sight_height_mm / 1000.0, zero_range_m, mv_ms) {
+        Some(moa) => format!("[{}]", fmt_f64(moa)),
+        None => "-1".into(),
+    }
+}
+
+fn handle_shooter(args: &[&str]) -> String {
+    if !get_state().initialized {
+        return "-1".into();
+    }
+
+    let base_moa: f64 = args.first().and_then(|s| s.parse().ok()).unwrap_or(1.5);
+    let stance_str = args.get(1).copied().unwrap_or("standing");
+    let support_str = args.get(2).copied().unwrap_or("unsupported");
+    let heart_rate: f64 = args.get(3).and_then(|s| s.parse().ok()).unwrap_or(60.0);
+    let breath_str = args.get(4).copied().unwrap_or("normal");
+    let exp_str = args.get(5).copied().unwrap_or("advanced");
+    let range_m: f64 = args.get(6).and_then(|s| s.parse().ok()).unwrap_or(300.0);
+
+    use shooter_error::*;
+
+    let stance = match stance_str {
+        "prone" => ShooterStance::Prone,
+        "kneeling" => ShooterStance::Kneeling,
+        "standing" => ShooterStance::Standing,
+        "crouched" => ShooterStance::Crouched,
+        "sitting" | "sitting_supported" => ShooterStance::SittingSupported,
+        _ => ShooterStance::Standing,
+    };
+    let support = match support_str {
+        "bipod" => SupportType::Bipod,
+        "tripod" => SupportType::Tripod,
+        "sandbag" | "rest" | "rest_sandbag" => SupportType::RestSandbag,
+        "sling" => SupportType::Sling,
+        "vehicle_mount" | "vehicle" => SupportType::VehicleMount,
+        _ => SupportType::Unsupported,
+    };
+    let breath = match breath_str {
+        "hold" | "0" => BreathPhase::Hold,
+        "normal" | "1" => BreathPhase::Normal,
+        "heavy" | "2" => BreathPhase::Heavy,
+        _ => BreathPhase::Normal,
+    };
+    let experience = match exp_str {
+        "novice" => ExperienceLevel::Novice,
+        "intermediate" => ExperienceLevel::Intermediate,
+        "advanced" => ExperienceLevel::Advanced,
+        "expert" => ExperienceLevel::Expert,
+        "precision" => ExperienceLevel::Precision,
+        _ => ExperienceLevel::Advanced,
+    };
+
+    let params = ShooterParams {
+        stance,
+        support,
+        heart_rate_bpm: heart_rate,
+        breathing: breath,
+        fatigue_fraction: 0.0,
+        experience,
+        base_shooter_moa: base_moa,
+    };
+
+    let shooter_moa = shooter_dispersion_moa(&params);
+    let sigma_m = system_standard_deviation_m(shooter_moa, range_m);
+    let hit_p = hit_probability(50.0, sigma_m);
+
+    format!(
+        "[{},{},{}]",
+        fmt_f64(shooter_moa),
+        fmt_f64(sigma_m),
+        fmt_f64(hit_p),
+    )
+}
+
+fn handle_component(args: &[&str]) -> String {
+    if !get_state().initialized {
+        return "-1".into();
+    }
+
+    let vehicle_str = args.first().copied().unwrap_or("mbt");
+    let zone_str = args.get(1).copied().unwrap_or("front");
+    let cal_mm: f64 = args.get(2).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let mass_g: f64 = args.get(3).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let vel_ms: f64 = args.get(4).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let proj_type = args.get(5).copied().unwrap_or("ball");
+    let proj_type_static = match proj_type {
+        "ball" | "fmj" => "ball",
+        "ap" | "armor_piercing" => "ap",
+        "apds" => "apds",
+        "apfsds" => "apfsds",
+        "apcr" => "apcr",
+        "heat" | "he" => "heat",
+        "incendiary" | "api" => "incendiary",
+        "tracer" => "tracer",
+        _ => "ball",
+    };
+    let angle_deg: f64 = args.get(6).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let res_vel: f64 = args.get(7).and_then(|s| s.parse().ok()).unwrap_or(vel_ms);
+    let armor_pen: i32 = args.get(8).and_then(|s| s.parse().ok()).unwrap_or(0);
+
+    use component_kill_prob::*;
+
+    let vehicle_type = match vehicle_str {
+        "mbt" | "tank" => VehicleType::MBT,
+        "ifv" => VehicleType::IFV,
+        "apc" => VehicleType::APC,
+        "truck" => VehicleType::Truck,
+        "helicopter" | "helo" => VehicleType::Helicopter,
+        "light" | "light_vehicle" | "suv" => VehicleType::LightVehicle,
+        _ => VehicleType::MBT,
+    };
+    let hit_zone = match zone_str {
+        "front" => HitZone::Front,
+        "side" => HitZone::Side,
+        "rear" => HitZone::Rear,
+        "top" => HitZone::Top,
+        "bottom" => HitZone::Bottom,
+        _ => HitZone::Front,
+    };
+    let speed = vel_ms;
+    let energy_j = 0.5 * (mass_g / 1000.0) * speed * speed;
+
+    let params = ComponentKillParams {
+        vehicle_type,
+        hit_zone,
+        projectile_caliber_mm: cal_mm,
+        projectile_mass_g: mass_g,
+        impact_velocity_ms: vel_ms,
+        projectile_type: proj_type_static,
+        impact_angle_deg: angle_deg,
+        residual_velocity_ms: res_vel,
+        energy_j,
+        armor_penetrated: armor_pen != 0,
+    };
+
+    let result = evaluate_component_kill_probability(&params);
+
+    format!(
+        "[{},{},{}]",
+        fmt_f64(result.mobility_kill_probability),
+        fmt_f64(result.firepower_kill_probability),
+        fmt_f64(result.catastrophic_kill_probability),
+    )
+}
+
 // ── ARMA 3 entry points ───────────────────────────────────────────────────────
 
 /// String-mode callExtension: "ext" callExtension "command"
@@ -327,6 +513,10 @@ pub unsafe extern "C" fn RVExtensionArgs(
         "fire" => handle_fire(&parsed),
         "step" => handle_step(&parsed),
         "impact" => handle_impact(&parsed),
+        "wound" => handle_wound(&parsed),
+        "zeroing" => handle_zeroing(&parsed),
+        "shooter" => handle_shooter(&parsed),
+        "component" => handle_component(&parsed),
         other => format!("unknown: {}", other),
     };
 
@@ -642,11 +832,55 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
     // K includes π/4 area factor: 0.453592 / 0.0254² * 4/π ≈ 895.3
     const BC_CONV: f64 = 0.453592 / (0.0254 * 0.0254) * (4.0 / std::f64::consts::PI);
     let bc_metric = params.bc * BC_CONV;
-    let drag_decel = if speed > 0.001 && bc_metric > 0.001 {
+    let mut drag_decel = if speed > 0.001 && bc_metric > 0.001 {
         0.5 * density * speed * speed * cd / bc_metric
     } else {
         0.0
     };
+
+    // ── 4-DOF yaw-of-repose induced drag ──────────────────────────────────────
+    // Gate: only apply yaw-induced drag when gyroscopically stable (Sg ≥ 1.0).
+    // Gyroscopic stability factor (empirical, dimensionless).
+    // Reference: M855 (5.56 mm, 4 g, 930 m/s, sea level) → Sg ≈ 1.5.
+    // Sg ∝ d² / (m · v · ρ) for a fixed twist-rate / caliber ratio.
+    const REF_SG: f64 = 1.5;
+    const REF_CAL: f64 = 5.56;
+    const REF_MASS: f64 = 4.0;
+    const REF_SPEED: f64 = 930.0;
+    const REF_DENSITY: f64 = 1.225;
+
+    let sg = if params.mass_g > 0.0 && speed > 0.0 {
+        REF_SG
+            * (params.caliber_mm / REF_CAL).powi(2)
+            * (REF_MASS / params.mass_g)
+            * (REF_SPEED / speed)
+            * (REF_DENSITY / density.max(0.01))
+    } else {
+        0.0
+    };
+
+    let _stable = sg > 1.0;
+
+    // Yaw of repose (radians) — simplified Miller yaw-of-repose model.
+    // δ_repose ∝ sin(θ) / (Sg · v) where θ = trajectory angle from horizontal.
+    let yaw_repose = if sg > 0.1 && speed > 0.0 {
+        let sin_theta = (params.vel_z.abs() / speed).min(1.0);
+        sin_theta * (params.caliber_mm / speed) * 20.0 / sg
+    } else {
+        0.0
+    };
+
+    // Induced drag multiplier: Cd_ind = Cd_base · (1 + k · δ²)
+    // k ≈ 25 for typical spitzer bullets (McCoy / Litz).
+    let ind_drag_mult = 1.0 + 25.0 * yaw_repose * yaw_repose;
+
+    // Pitch damping factor (reserved, not used in this simplified model).
+    let _damp_factor = 1.0;
+
+    // Apply yaw-induced drag only when gyroscopically stable.
+    if sg >= 1.0 {
+        drag_decel *= ind_drag_mult;
+    }
 
     let vx = params.vel_x - drag_decel * (params.vel_x / speed) * params.dt_s;
     let vy = params.vel_y - drag_decel * (params.vel_y / speed) * params.dt_s;

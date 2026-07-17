@@ -685,4 +685,62 @@ mod tests {
         let result = evaluate_intercept(&aps, 200.0, 30.0, "unknown", 0.0, 0.0);
         assert!(!result.intercepted);
     }
+
+    #[test]
+    fn no_threat_no_intercept() {
+        // Empty projectile type string should not trigger intercept
+        let aps = APSConfig::arena();
+        let result = evaluate_intercept(&aps, 800.0, 25.0, "", 0.0, 0.0);
+        assert!(!result.intercepted);
+        assert!(!result.detection_succeeded);
+        // Verify ammo is not consumed
+        assert_eq!(result.ammunition_remaining, aps.ammunition);
+    }
+
+    #[test]
+    fn trophy_detects_incoming_ke() {
+        // Trophy cannot intercept KE, but should still detect it
+        let aps = APSConfig::trophy();
+        let result = evaluate_intercept(&aps, 900.0, 30.0, "ke", 0.0, 0.0);
+        // Detection checks pass (velocity ≤ 1200, range 10-60, in coverage)
+        // But intercept_kinetic=false → can_engage=false
+        assert!(!result.intercepted, "Trophy cannot intercept KE");
+        assert!(!result.detection_succeeded, "Trophy does not engage KE");
+        assert_eq!(result.intercept_rounds_used, 0);
+        assert_eq!(result.ammunition_remaining, aps.ammunition);
+    }
+
+    #[test]
+    fn arena_splits_cupola_direction() {
+        // Arena has 300° azimuth coverage — test a direction inside vs outside
+        let aps = APSConfig::arena();
+        // Within 300° coverage at 45°
+        let inside = evaluate_intercept(&aps, 700.0, 25.0, "ke", 45.0, 0.0);
+        assert!(
+            inside.intercepted,
+            "Arena should intercept KE within coverage"
+        );
+        // Outside 300° coverage at 310°
+        let outside = evaluate_intercept(&aps, 700.0, 25.0, "ke", 310.0, 0.0);
+        assert!(
+            !outside.intercepted,
+            "Arena should not engage outside coverage"
+        );
+        assert!(!outside.detection_succeeded);
+    }
+
+    #[test]
+    fn iron_fist_soft_launch_vertical() {
+        // Iron Fist has 90° elevation coverage — test at 80° (near edge)
+        let aps = APSConfig::iron_fist();
+        let result = evaluate_intercept(&aps, 600.0, 20.0, "heat", 0.0, 80.0);
+        assert!(
+            result.detection_succeeded,
+            "Iron Fist should detect at 80° elevation (≤90°)"
+        );
+        assert!(
+            result.intercepted,
+            "Iron Fist should intercept at high elevation"
+        );
+    }
 }

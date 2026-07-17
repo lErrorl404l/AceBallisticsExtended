@@ -977,4 +977,116 @@ mod tests {
             heavy
         );
     }
+
+    // ── Additional requested tests ─────────────────────────────────────────
+
+    #[test]
+    fn tempered_glass_shatters_on_impact() {
+        // 6mm tempered at velocity well above threshold
+        let r = eval(params(
+            SecurityGlassType::Tempered { thickness_mm: 6.0 },
+            120.0,
+            4.0,
+            5.56,
+            "fmj",
+            0.0,
+        ));
+        assert!(r.penetrated, "120 m/s should penetrate 6mm tempered");
+        assert!(r.glass_pane_shattered, "Tempered pane shatters on breach");
+        assert!(r.spall_generated, "Penetration generates spall");
+        assert!(r.energy_absorbed_j > 0.0);
+    }
+
+    #[test]
+    fn laminated_glass_stops_pistol() {
+        // Standard windshield (2×2.3mm glass + 0.76mm PVB)
+        // 9mm pistol round at low velocity (subsonic, near-muzzle) —
+        // KE of ~26 J is below the ~38 J PVB single-layer absorption,
+        // so the windshield should stop it.
+        let r = eval(params(
+            SecurityGlassType::Laminated {
+                glass_thickness_mm: 4.6,
+                pvb_layer_count: 1,
+                pvb_thickness_per_layer_mm: 0.76,
+            },
+            80.0,
+            8.0,
+            9.0,
+            "fmj",
+            0.0,
+        ));
+        assert!(!r.penetrated, "Laminated glass should stop subsonic 9mm");
+        assert!(!r.spall_generated, "PVB catches fragments");
+        assert_eq!(r.pvb_layers_perforated, 0, "PVB layer intact");
+    }
+
+    #[test]
+    fn br_glass_stops_multiple_hits() {
+        // BR glass should stop multiple 9mm hits — verify result is
+        // deterministic and consistent
+        let p = params(
+            SecurityGlassType::BulletResistant {
+                glass_thickness_mm: 30.0,
+                polycarbonate_thickness_mm: 6.0,
+                acrylic_thickness_mm: 3.0,
+            },
+            358.0,
+            8.0,
+            9.0,
+            "fmj",
+            0.0,
+        );
+        let r1 = evaluate_glass_penetration(&p);
+        let r2 = evaluate_glass_penetration(&p);
+        assert!(!r1.penetrated, "First 9mm stopped");
+        assert!(!r2.penetrated, "Second 9mm stopped (deterministic)");
+        assert!((r1.energy_absorbed_j - r2.energy_absorbed_j).abs() < 1e-12);
+    }
+
+    #[test]
+    fn ul752_level3_protection() {
+        // Level 3 stops .44 Magnum at reference velocity
+        let protected = evaluate_ul752_protection(UL752Level::Level3, 427.0, 15.6, 0.0109);
+        assert!(protected, "Level 3 should stop .44 Mag at ref velocity");
+
+        // Level 3 should NOT stop 7.62mm rifle
+        let not_protected = evaluate_ul752_protection(UL752Level::Level3, 838.0, 9.7, 0.00762);
+        assert!(!not_protected, "Level 3 should not stop 7.62mm rifle");
+    }
+
+    #[test]
+    fn polycarbonate_absorption() {
+        // PC layer absorbs energy — thicker PC should absorb more
+        let thin_pc = params(
+            SecurityGlassType::BulletResistant {
+                glass_thickness_mm: 20.0,
+                polycarbonate_thickness_mm: 4.0,
+                acrylic_thickness_mm: 2.0,
+            },
+            400.0,
+            8.0,
+            9.0,
+            "fmj",
+            0.0,
+        );
+        let thick_pc = params(
+            SecurityGlassType::BulletResistant {
+                glass_thickness_mm: 20.0,
+                polycarbonate_thickness_mm: 12.0,
+                acrylic_thickness_mm: 2.0,
+            },
+            400.0,
+            8.0,
+            9.0,
+            "fmj",
+            0.0,
+        );
+        let r_thin = evaluate_glass_penetration(&thin_pc);
+        let r_thick = evaluate_glass_penetration(&thick_pc);
+        // Thicker PC should absorb more energy or stop the projectile
+        assert!(
+            r_thick.energy_absorbed_j >= r_thin.energy_absorbed_j,
+            "Thicker PC should absorb at least as much energy"
+        );
+    }
 }

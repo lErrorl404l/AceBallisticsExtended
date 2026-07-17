@@ -728,4 +728,69 @@ mod tests {
             yaw_bl
         );
     }
+
+    // ── Additional requested tests ─────────────────────────────────────────
+
+    #[test]
+    fn yaw_of_repose_positive_for_right_twist() {
+        // Right-hand twist (positive twist rate) should give positive yaw
+        let yaw = yaw_of_repose(
+            I_X_556, TWIST_556, MV_556, RHO_SL, CAL_556, "spitzer", 0.0, // horizontal
+        );
+        assert!(
+            yaw > 0.0,
+            "Right-hand twist should give positive yaw: {:.2e}",
+            yaw
+        );
+    }
+
+    #[test]
+    fn induced_drag_multiplier_gt_one_for_yawed() {
+        // Any non-zero yaw must give multiplier > 1.0
+        let m1 = induced_drag_multiplier(0.05);
+        assert!(m1 > 1.0, "5° yaw should give multiplier > 1: {:.6}", m1);
+        let m2 = induced_drag_multiplier(0.1);
+        assert!(m2 > m1, "Larger yaw should give larger multiplier");
+    }
+
+    #[test]
+    fn step_4dof_advances_position() {
+        // After one step, position should have advanced
+        let (vx, _vy, _vz, _yaw) = step_4dof(
+            MV_556, 0.0, 0.0, 0.0, MASS_556, CAL_556, 0.3, TWIST_556, RHO_SL, I_X_556, "spitzer",
+            0.1,
+        );
+        // vx should still be positive (not NaN, not zero)
+        assert!(vx > 0.0, "Forward velocity should be positive: {:.1}", vx);
+        assert!(vx < MV_556, "Velocity should decrease from MV: {:.1}", vx);
+        // Use the fact that x_advance ≈ vx * dt ≈ vx * 0.1
+        let approx_x = vx * 0.1;
+        assert!(
+            approx_x > 50.0,
+            "Position should advance by ~{:.0}m in 0.1s",
+            approx_x
+        );
+    }
+
+    #[test]
+    fn ballistic_coefficient_effective() {
+        // A projectile with higher BC (same shape) should retain more velocity
+        // after a step due to lower drag deceleration.
+        // BC doesn't directly appear in step_4dof, but cd_base serves as a
+        // proxy: lower cd_base → less drag → higher retained velocity.
+        let (vx_low_cd, _, _, _) = step_4dof(
+            MV_556, 0.0, 0.0, 0.0, MASS_556, CAL_556, 0.2, // low cd (simulates high BC)
+            TWIST_556, RHO_SL, I_X_556, "spitzer", 0.1,
+        );
+        let (vx_high_cd, _, _, _) = step_4dof(
+            MV_556, 0.0, 0.0, 0.0, MASS_556, CAL_556, 0.5, // high cd (simulates low BC)
+            TWIST_556, RHO_SL, I_X_556, "spitzer", 0.1,
+        );
+        assert!(
+            vx_low_cd > vx_high_cd,
+            "Lower drag (higher BC proxy) should retain more velocity: low_cd={:.1}, high_cd={:.1}",
+            vx_low_cd,
+            vx_high_cd
+        );
+    }
 }

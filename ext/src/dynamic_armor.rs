@@ -1094,4 +1094,138 @@ mod tests {
             r.effective_thickness_multiplier
         );
     }
+
+    // ── Additional requested tests ─────────────────────────────────────────
+
+    #[test]
+    fn stf_low_velocity_no_effect() {
+        // Well below STF transition midpoint → negligible stiffening
+        let m = stf_multiplier(50.0, 5.0);
+        assert!(
+            (m - 1.0).abs() < 0.05,
+            "STF at 50 m/s should be ~1.0: {:.4}",
+            m
+        );
+    }
+
+    #[test]
+    fn stf_high_velocity_significant() {
+        // High velocity → near-max STF multiplier
+        let m = stf_multiplier(1500.0, 5.0);
+        assert!(
+            m > STF_MAX_MULT * 0.95,
+            "STF at 1500 m/s should saturate near {:.1}: {:.4}",
+            STF_MAX_MULT,
+            m
+        );
+    }
+
+    #[test]
+    fn viscoelastic_absorbs_energy() {
+        // Viscoelastic layer should absorb a significant fraction of KE
+        // at intermediate velocity
+        let params = DynamicArmorParams {
+            armor_type: DynamicArmorType::ViscoelasticLayer {
+                thickness_mm: 10.0,
+                material: "polyurethane",
+            },
+            threat_velocity_ms: 500.0,
+            threat_mass_g: 9.5,
+            threat_caliber_mm: 7.62,
+            threat_type: ThreatType::KE,
+            impact_angle_deg: 0.0,
+        };
+        let r = evaluate_dynamic_armor(&params);
+        assert!(
+            r.energy_absorbed_j > 50.0,
+            "Viscoelastic should absorb measurable energy: {:.1} J",
+            r.energy_absorbed_j
+        );
+        // Thicker layer yields higher computed effective thickness
+        let thick_params = DynamicArmorParams {
+            armor_type: DynamicArmorType::ViscoelasticLayer {
+                thickness_mm: 25.0,
+                material: "polyurethane",
+            },
+            ..params
+        };
+        let r_thick = evaluate_dynamic_armor(&thick_params);
+        assert!(
+            r_thick.computed_effective_thickness_mm > r.computed_effective_thickness_mm,
+            "Thicker viscoelastic should have greater effective thickness: {:.1} vs {:.1}",
+            r_thick.computed_effective_thickness_mm,
+            r.computed_effective_thickness_mm,
+        );
+    }
+
+    #[test]
+    fn spaced_array_induces_yaw() {
+        // Multi-plate array should induce significant yaw on KE projectiles
+        let params = DynamicArmorParams {
+            armor_type: DynamicArmorType::SpacedSlopedArray {
+                plate_count: 5,
+                spacing_mm: 60.0,
+                individual_thickness_mm: 3.0,
+            },
+            threat_velocity_ms: 850.0,
+            threat_mass_g: 9.5,
+            threat_caliber_mm: 7.62,
+            threat_type: ThreatType::KE,
+            impact_angle_deg: 0.0,
+        };
+        let r = evaluate_dynamic_armor(&params);
+        assert!(
+            r.projectile_yawed_deg > 6.0,
+            "5-plate array should induce >6° yaw: {:.1}°",
+            r.projectile_yawed_deg
+        );
+        assert!(r.armor_damaged, "Multi-plate hit should damage array");
+    }
+
+    #[test]
+    fn erosion_buildup_slows_penetration() {
+        // With more plates in a spaced array, residual velocity should drop
+        // due to cumulative energy loss per plate
+        let single = DynamicArmorParams {
+            armor_type: DynamicArmorType::SpacedSlopedArray {
+                plate_count: 1,
+                spacing_mm: 50.0,
+                individual_thickness_mm: 3.0,
+            },
+            threat_velocity_ms: 850.0,
+            threat_mass_g: 9.5,
+            threat_caliber_mm: 7.62,
+            threat_type: ThreatType::KE,
+            impact_angle_deg: 0.0,
+        };
+        let (spacing, thickness) = match single.armor_type {
+            DynamicArmorType::SpacedSlopedArray {
+                spacing_mm,
+                individual_thickness_mm,
+                ..
+            } => (spacing_mm, individual_thickness_mm),
+            _ => (50.0, 3.0),
+        };
+        let multi = DynamicArmorParams {
+            armor_type: DynamicArmorType::SpacedSlopedArray {
+                plate_count: 6,
+                spacing_mm: spacing,
+                individual_thickness_mm: thickness,
+            },
+            ..single
+        };
+        let r_single = evaluate_dynamic_armor(&single);
+        let r_multi = evaluate_dynamic_armor(&multi);
+        // More plates → more energy absorbed → lower residual velocity
+        assert!(
+            r_multi.residual_velocity_ms <= r_single.residual_velocity_ms + 1.0,
+            "More plates should not increase residual velocity: single={:.1}, multi={:.1}",
+            r_single.residual_velocity_ms,
+            r_multi.residual_velocity_ms
+        );
+        assert!(
+            r_multi.energy_absorbed_j >= r_single.energy_absorbed_j,
+            "More plates should absorb at least as much energy"
+        );
+    }
 }
