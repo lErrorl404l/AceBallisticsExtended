@@ -145,6 +145,7 @@ pub fn evaluate_armor_array(
             0.0, // angle already factored into effective thickness
             "steel_rha",
             projectile_type,
+            None,
         );
 
         if r.penetrated {
@@ -240,6 +241,7 @@ pub fn evaluate_perforated_plate(
         config.angle_deg,
         "steel_rha",
         projectile_type,
+        None,
     );
 
     // Yaw/deflection from hole edge interaction

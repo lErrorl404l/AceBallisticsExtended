@@ -541,6 +541,7 @@ fn cabi_impact_identity_penetration() {
         0.0,           // impact angle normal
         "steel_rha",
         "ball",
+        None,
     );
 
     assert!(native.penetrated, "7.62mm ball should pen 5mm RHA");
@@ -606,6 +607,7 @@ fn cabi_impact_identity_ricochet() {
         85.0,
         "steel_rha",
         "ball",
+        None,
     );
 
     assert!(native.ricochet, "native: 85° should ricochet");
@@ -676,6 +678,7 @@ fn cabi_impact_identity_ap_over_ball() {
         0.0,
         "steel_rha",
         "ball",
+        None,
     );
     let n_ap = penetration::evaluate(
         900.0,
@@ -685,6 +688,7 @@ fn cabi_impact_identity_ap_over_ball() {
         0.0,
         "steel_rha",
         "ap",
+        None,
     );
 
     // Ball identity

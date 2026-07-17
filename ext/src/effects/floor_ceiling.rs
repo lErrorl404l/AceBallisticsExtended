@@ -347,6 +347,7 @@ pub fn evaluate_slab_penetration(params: &ConcreteSlabParams) -> ConcretePenetra
         params.impact_angle_deg,
         "steel_rha",
         params.projectile_type,
+        None,
     );
 
     // ── Back out true penetration depth ──────────────────────────────────

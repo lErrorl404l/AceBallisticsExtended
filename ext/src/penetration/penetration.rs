@@ -483,6 +483,8 @@ pub struct PenetrationResult {
 /// * `impact_angle_deg` - Angle from normal (0° = perpendicular)
 /// * `armor_material` - Material identifier string
 /// * `projectile_type` - Projectile type identifier string
+/// * `ricochet_angle_deg` - Optional maximum ricochet angle in degrees.
+///   Pass `None` to use the default formula.
 pub fn evaluate(
     velocity_ms: f64,
     projectile_mass_kg: f64,
@@ -491,6 +493,7 @@ pub fn evaluate(
     impact_angle_deg: f64,
     armor_material: &str,
     projectile_type: &str,
+    ricochet_angle_deg: Option<f64>,
 ) -> PenetrationResult {
     evaluate_yaw(
         velocity_ms,
@@ -501,6 +504,7 @@ pub fn evaluate(
         armor_material,
         projectile_type,
         0.0, // no yaw
+        ricochet_angle_deg,
     )
 }
 
@@ -527,6 +531,9 @@ pub fn evaluate(
 /// * `armor_material` - Material identifier string
 /// * `projectile_type` - Projectile type identifier string
 /// * `yaw_angle_deg` - Yaw angle at impact (0 = perfectly aligned)
+/// * `ricochet_angle_deg` - Optional maximum ricochet angle in degrees.
+///   When `Some(angle)`, the ricochet angle is capped at this value.
+///   When `None`, the default formula `(90 - impact_angle) * 0.9` is used.
 pub fn evaluate_yaw(
     velocity_ms: f64,
     projectile_mass_kg: f64,
@@ -536,6 +543,7 @@ pub fn evaluate_yaw(
     armor_material: &str,
     projectile_type: &str,
     yaw_angle_deg: f64,
+    ricochet_angle_deg: Option<f64>,
 ) -> PenetrationResult {
     let mat_factor = material_factor(armor_material);
 
@@ -586,7 +594,12 @@ pub fn evaluate_yaw(
         };
 
         let residual_v = velocity_ms * energy_retention.sqrt();
-        let ricochet_angle = (90.0 - impact_angle_deg) * 0.9; // Specular-ish
+        // Ricochet angle: use computed specular-ish angle, capped at per-projectile maximum if provided
+        let computed_rico = (90.0 - impact_angle_deg) * 0.9;
+        let ricochet_angle = match ricochet_angle_deg {
+            Some(max_angle) if max_angle > 0.0 => computed_rico.min(max_angle),
+            _ => computed_rico,
+        };
 
         let bad_rico = behind_armor_debris::evaluate_bad(&BehindArmorDebrisParams {
             impact_velocity_ms: velocity_ms,
@@ -1013,21 +1026,57 @@ mod tests {
 
     #[test]
     fn m80_ball_pens_5mm_rha_at_0deg() {
-        let r = evaluate(853.0, 0.0095, 0.00762, 0.005, 0.0, "steel_rha", "ball");
+        let r = evaluate(
+            853.0,
+            0.0095,
+            0.00762,
+            0.005,
+            0.0,
+            "steel_rha",
+            "ball",
+            None,
+        );
         assert!(r.penetrated, "M80 ball should pen 5mm RHA at 0°");
         assert!(r.residual_velocity > 100.0);
     }
 
     #[test]
     fn m80_ball_does_not_pen_20mm_rha() {
-        let r = evaluate(853.0, 0.0095, 0.00762, 0.020, 0.0, "steel_rha", "ball");
+        let r = evaluate(
+            853.0,
+            0.0095,
+            0.00762,
+            0.020,
+            0.0,
+            "steel_rha",
+            "ball",
+            None,
+        );
         assert!(!r.penetrated, "M80 ball should NOT pen 20mm RHA at 0°");
     }
 
     #[test]
     fn angle_reduces_penetration() {
-        let r0 = evaluate(900.0, 0.0095, 0.00762, 0.008, 0.0, "steel_rha", "ball");
-        let r60 = evaluate(900.0, 0.0095, 0.00762, 0.008, 60.0, "steel_rha", "ball");
+        let r0 = evaluate(
+            900.0,
+            0.0095,
+            0.00762,
+            0.008,
+            0.0,
+            "steel_rha",
+            "ball",
+            None,
+        );
+        let r60 = evaluate(
+            900.0,
+            0.0095,
+            0.00762,
+            0.008,
+            60.0,
+            "steel_rha",
+            "ball",
+            None,
+        );
         if r0.penetrated && !r60.penetrated {
             // Expected: 0° pens, 60° doesn't
         }
@@ -1039,8 +1088,17 @@ mod tests {
 
     #[test]
     fn ap_round_pens_better_than_ball() {
-        let ball = evaluate(880.0, 0.0095, 0.00762, 0.010, 0.0, "steel_rha", "ball");
-        let ap = evaluate(880.0, 0.0095, 0.00762, 0.010, 0.0, "steel_rha", "ap");
+        let ball = evaluate(
+            880.0,
+            0.0095,
+            0.00762,
+            0.010,
+            0.0,
+            "steel_rha",
+            "ball",
+            None,
+        );
+        let ap = evaluate(880.0, 0.0095, 0.00762, 0.010, 0.0, "steel_rha", "ap", None);
         assert!(
             ap.penetrated || !ball.penetrated,
             "AP should pen equal or better than ball"
@@ -1049,21 +1107,104 @@ mod tests {
 
     #[test]
     fn ricochet_at_shallow_angle() {
-        let r = evaluate(850.0, 0.0095, 0.00762, 0.010, 80.0, "steel_rha", "ball");
+        let r = evaluate(
+            850.0,
+            0.0095,
+            0.00762,
+            0.010,
+            80.0,
+            "steel_rha",
+            "ball",
+            None,
+        );
         assert!(r.ricochet, "80° impact should ricochet");
         assert!(r.ricochet_energy_fraction > 0.0);
     }
 
     #[test]
+    fn custom_ricochet_angle_caps_default() {
+        // At 80° impact, default ricochet angle = (90-80)*0.9 = 9.0°
+        let default = evaluate_yaw(
+            850.0,
+            0.0095,
+            0.00762,
+            0.010,
+            80.0,
+            "steel_rha",
+            "ball",
+            0.0,
+            None,
+        );
+        assert!(default.ricochet);
+        let default_angle = default.ricochet_angle;
+        assert!(
+            (default_angle - 9.0).abs() < 1e-6,
+            "Default ricochet angle should be 9.0°, got {default_angle}"
+        );
+
+        // With custom max of 5.0°, the angle should be capped
+        let capped = evaluate_yaw(
+            850.0,
+            0.0095,
+            0.00762,
+            0.010,
+            80.0,
+            "steel_rha",
+            "ball",
+            0.0,
+            Some(5.0),
+        );
+        assert!(capped.ricochet);
+        assert!(
+            (capped.ricochet_angle - 5.0).abs() < 1e-6,
+            "Capped ricochet angle should be 5.0°, got {}",
+            capped.ricochet_angle
+        );
+        assert!(
+            capped.ricochet_angle < default_angle,
+            "Capped angle ({}) should be less than default ({})",
+            capped.ricochet_angle,
+            default_angle
+        );
+    }
+
+    #[test]
     fn hha_is_harder_than_rha() {
-        let rha = evaluate(900.0, 0.0095, 0.00762, 0.010, 0.0, "steel_rha", "ball");
-        let hha = evaluate(900.0, 0.0095, 0.00762, 0.010, 0.0, "steel_hha", "ball");
+        let rha = evaluate(
+            900.0,
+            0.0095,
+            0.00762,
+            0.010,
+            0.0,
+            "steel_rha",
+            "ball",
+            None,
+        );
+        let hha = evaluate(
+            900.0,
+            0.0095,
+            0.00762,
+            0.010,
+            0.0,
+            "steel_hha",
+            "ball",
+            None,
+        );
         assert!(hha.effective_thickness > rha.effective_thickness);
     }
 
     #[test]
     fn penetration_produces_fragments() {
-        let r = evaluate(900.0, 0.0095, 0.00762, 0.006, 0.0, "steel_rha", "ball");
+        let r = evaluate(
+            900.0,
+            0.0095,
+            0.00762,
+            0.006,
+            0.0,
+            "steel_rha",
+            "ball",
+            None,
+        );
         if r.penetrated {
             assert!(r.fragments > 0, "Penetrating hit should produce fragments");
             assert!(
@@ -1075,8 +1216,26 @@ mod tests {
 
     #[test]
     fn high_velocity_pens_more() {
-        let slow = evaluate(400.0, 0.0095, 0.00762, 0.005, 0.0, "steel_rha", "ball");
-        let fast = evaluate(900.0, 0.0095, 0.00762, 0.005, 0.0, "steel_rha", "ball");
+        let slow = evaluate(
+            400.0,
+            0.0095,
+            0.00762,
+            0.005,
+            0.0,
+            "steel_rha",
+            "ball",
+            None,
+        );
+        let fast = evaluate(
+            900.0,
+            0.0095,
+            0.00762,
+            0.005,
+            0.0,
+            "steel_rha",
+            "ball",
+            None,
+        );
         assert!(
             fast.penetrated || !slow.penetrated,
             "Higher velocity should pen at least as well"
@@ -1179,8 +1338,27 @@ mod tests {
 
     #[test]
     fn zero_yaw_matches_evaluate() {
-        let base = super::evaluate(853.0, 0.0095, 0.00762, 0.005, 0.0, "steel_rha", "ball");
-        let yaw = super::evaluate_yaw(853.0, 0.0095, 0.00762, 0.005, 0.0, "steel_rha", "ball", 0.0);
+        let base = super::evaluate(
+            853.0,
+            0.0095,
+            0.00762,
+            0.005,
+            0.0,
+            "steel_rha",
+            "ball",
+            None,
+        );
+        let yaw = super::evaluate_yaw(
+            853.0,
+            0.0095,
+            0.00762,
+            0.005,
+            0.0,
+            "steel_rha",
+            "ball",
+            0.0,
+            None,
+        );
         assert_eq!(base.penetrated, yaw.penetrated);
         assert!((base.residual_velocity - yaw.residual_velocity).abs() < 1e-6);
         assert!((base.effective_thickness - yaw.effective_thickness).abs() < 1e-6);
@@ -1188,7 +1366,17 @@ mod tests {
 
     #[test]
     fn yaw_10deg_reduces_penetration() {
-        let r0 = super::evaluate_yaw(853.0, 0.0095, 0.00762, 0.005, 0.0, "steel_rha", "ball", 0.0);
+        let r0 = super::evaluate_yaw(
+            853.0,
+            0.0095,
+            0.00762,
+            0.005,
+            0.0,
+            "steel_rha",
+            "ball",
+            0.0,
+            None,
+        );
         let r10 = super::evaluate_yaw(
             853.0,
             0.0095,
@@ -1198,6 +1386,7 @@ mod tests {
             "steel_rha",
             "ball",
             10.0,
+            None,
         );
         // 10° yaw reduces residual velocity (more energy spent overcoming yaw)
         assert!(
@@ -1226,6 +1415,7 @@ mod tests {
             "steel_rha",
             "ball",
             10.0,
+            None,
         );
         let r20 = super::evaluate_yaw(
             900.0,
@@ -1236,6 +1426,7 @@ mod tests {
             "steel_rha",
             "ball",
             20.0,
+            None,
         );
         assert!(
             r20.effective_thickness > r10.effective_thickness,
@@ -1257,6 +1448,7 @@ mod tests {
             "steel_rha",
             "ball",
             20.0,
+            None,
         );
         assert!(
             !r.ricochet,
@@ -1324,7 +1516,17 @@ mod tests {
     #[test]
     fn evaluate_yaw_returns_shatter_result() {
         // AP vs ceramic at 900 m/s, 0° → should shatter (penetrated=false)
-        let r = super::evaluate_yaw(900.0, 0.0095, 0.00762, 0.010, 0.0, "ceramic_b4c", "ap", 0.0);
+        let r = super::evaluate_yaw(
+            900.0,
+            0.0095,
+            0.00762,
+            0.010,
+            0.0,
+            "ceramic_b4c",
+            "ap",
+            0.0,
+            None,
+        );
         assert!(
             !r.penetrated,
             "AP vs ceramic at 900 m/s should shatter and not penetrate"
@@ -1340,7 +1542,17 @@ mod tests {
     #[test]
     fn evaluate_yaw_ap_does_not_shatter_on_rha() {
         // AP vs RHA at 900 m/s — no shatter, normal penetration logic
-        let r = super::evaluate_yaw(900.0, 0.0095, 0.00762, 0.010, 0.0, "steel_rha", "ap", 0.0);
+        let r = super::evaluate_yaw(
+            900.0,
+            0.0095,
+            0.00762,
+            0.010,
+            0.0,
+            "steel_rha",
+            "ap",
+            0.0,
+            None,
+        );
         // Whether it pens or not is up to De Marre, but shatter should not intervene.
         // Against RHA (non-ceramic) the shatter check returns false, so we
         // should NOT see the shatter signature: residual velocity > 0.
@@ -1531,7 +1743,17 @@ mod tests {
     #[test]
     fn yaw_multiplier_bounds() {
         // Verify the yaw multiplier is in [0.5, 1.0]
-        let r0 = super::evaluate_yaw(853.0, 0.0095, 0.00762, 0.005, 0.0, "steel_rha", "ball", 0.0);
+        let r0 = super::evaluate_yaw(
+            853.0,
+            0.0095,
+            0.00762,
+            0.005,
+            0.0,
+            "steel_rha",
+            "ball",
+            0.0,
+            None,
+        );
         let r50 = super::evaluate_yaw(
             853.0,
             0.0095,
@@ -1541,6 +1763,7 @@ mod tests {
             "steel_rha",
             "ball",
             50.0,
+            None,
         );
         // At 50° yaw, the 50% cap should apply — effective thickness should be at
         // most 2× the 0-yaw value (1/0.5 = 2).

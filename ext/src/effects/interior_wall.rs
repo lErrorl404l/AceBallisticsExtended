@@ -100,6 +100,7 @@ pub fn evaluate_interior_wall(
             impact_angle_deg,
             "steel_rha", // already converted via mat_factor
             projectile_type,
+            None,
         );
 
         if r.penetrated {

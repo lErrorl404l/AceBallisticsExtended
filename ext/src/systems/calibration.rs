@@ -98,8 +98,15 @@ pub struct CalibrationReport {
 pub fn load_calibration(path: &std::path::Path) -> Result<Vec<VehicleCalibration>, String> {
     let content =
         std::fs::read_to_string(path).map_err(|e| format!("Failed to read calibration: {}", e))?;
-    let data: Vec<VehicleCalibration> = serde_json::from_str(&content)
-        .map_err(|e| format!("Failed to parse calibration: {}", e))?;
+    let value: serde_json::Value = serde_json::from_str(&content)
+        .map_err(|e| format!("Failed to parse calibration JSON: {}", e))?;
+    let data: Vec<VehicleCalibration> = if value.is_array() {
+        serde_json::from_value(value)
+            .map_err(|e| format!("Failed to deserialize calibration array: {}", e))?
+    } else {
+        serde_json::from_value(value["vehicles"].clone())
+            .map_err(|e| format!("Failed to deserialize calibration vehicles: {}", e))?
+    };
     Ok(data)
 }
 
@@ -307,7 +314,16 @@ mod tests {
     #[test]
     fn calibration_terminal_shot() {
         // M80 ball at 853 m/s should comfortably pen 5mm RHA flat
-        let pen = evaluate(853.0, 0.0095, 0.00762, 0.005, 0.0, "steel_rha", "ball");
+        let pen = evaluate(
+            853.0,
+            0.0095,
+            0.00762,
+            0.005,
+            0.0,
+            "steel_rha",
+            "ball",
+            None,
+        );
         assert!(
             pen.penetrated,
             "M80 ball should comfortably pen 5mm RHA flat"

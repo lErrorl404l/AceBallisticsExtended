@@ -192,6 +192,7 @@ pub fn evaluate_overpenetration(params: &OverpenetrationParams) -> Overpenetrati
             barrier.material_type,
             params.projectile_type,
             current_yaw_deg,
+            None,
         );
 
         let penetrated = pen_result.penetrated && pen_result.residual_velocity > 0.0;

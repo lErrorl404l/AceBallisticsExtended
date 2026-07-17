@@ -286,6 +286,7 @@ fn handle_impact(args: &[&str]) -> String {
         impact_angle_deg,
         armor_material,
         projectile_type,
+        None,
     );
 
     format!(
@@ -1080,6 +1081,7 @@ pub extern "C" fn abe_impact(params: &ImpactParams, result: &mut ImpactResult) -
         material_str,
         proj_str,
         yaw_angle_deg,
+        None,
     );
 
     *result = ImpactResult {
