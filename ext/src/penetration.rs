@@ -218,6 +218,8 @@ pub struct PenetrationResult {
 
 /// Evaluate penetration of a projectile against an armor plate.
 ///
+/// Backward-compatible wrapper that calls [`evaluate_yaw`] with `yaw_angle_deg = 0.0`.
+///
 /// Uses a three-stage model:
 /// 1. Ricochet check — if impact angle exceeds ricochet threshold, projectile bounces
 /// 2. Effective thickness — plate thickness / cos(angle) × material factor
@@ -240,6 +242,51 @@ pub fn evaluate(
     armor_material: &str,
     projectile_type: &str,
 ) -> PenetrationResult {
+    evaluate_yaw(
+        velocity_ms,
+        projectile_mass_kg,
+        caliber_m,
+        armor_thickness_m,
+        impact_angle_deg,
+        armor_material,
+        projectile_type,
+        0.0, // no yaw
+    )
+}
+
+/// Evaluate penetration of a projectile against an armor plate,
+/// including yaw-angle effects at impact.
+///
+/// Uses a four-stage model:
+/// 1. Ricochet check — if impact angle exceeds ricochet threshold, projectile bounces
+/// 2. Yaw multiplier — yaw reduces effective penetration by increasing presented cross-section
+/// 3. Effective thickness — plate thickness / cos(angle) × material factor / yaw_mult
+/// 4. De Marre penetration formula: V_required = k * D^0.75 * T^0.7 / M^0.5
+///
+/// Yaw effect: `yaw_mult = exp(-k_yaw × yaw_deg)` where `k_yaw ≈ 0.028`,
+/// capped at 50 % reduction (multiplier clamped to [0.5, 1.0]).
+/// Small yaw (< 5°) has minimal effect; large yaw (10–20°) reduces penetration
+/// by 30–50 %.
+///
+/// # Arguments
+/// * `velocity_ms` - Impact velocity (m/s)
+/// * `projectile_mass_kg` - Projectile mass (kg)
+/// * `caliber_m` - Projectile diameter (m)
+/// * `armor_thickness_m` - Armor plate thickness (m)
+/// * `impact_angle_deg` - Angle from normal (0° = perpendicular)
+/// * `armor_material` - Material identifier string
+/// * `projectile_type` - Projectile type identifier string
+/// * `yaw_angle_deg` - Yaw angle at impact (0 = perfectly aligned)
+pub fn evaluate_yaw(
+    velocity_ms: f64,
+    projectile_mass_kg: f64,
+    caliber_m: f64,
+    armor_thickness_m: f64,
+    impact_angle_deg: f64,
+    armor_material: &str,
+    projectile_type: &str,
+    yaw_angle_deg: f64,
+) -> PenetrationResult {
     let mat_factor = material_factor(armor_material);
     let proj_mod = projectile_modifier(projectile_type);
 
@@ -260,13 +307,23 @@ pub fn evaluate(
 
     let ricochet = impact_angle_deg > ricochet_angle_threshold;
 
+    // ── Yaw multiplier ──────────────────────────────────────────────────────
+    // Yaw at impact increases the presented cross-section, reducing penetration
+    // effectiveness. Small yaw (< 5°) has minimal effect; large yaw (10–20°)
+    // can reduce penetration by 30–50 %.
+    // yaw_mult = exp(-k_yaw * yaw_deg), clamped to [0.5, 1.0]
+    const K_YAW: f64 = 0.028;
+    let yaw_mult = (-K_YAW * yaw_angle_deg).exp().clamp(0.5, 1.0);
+
     // ── Effective thickness ────────────────────────────────────────────────
     let base_effective = armor_thickness_m / cos_angle * mat_factor;
     // Caliber-to-thickness ratio effect: smaller calibers pen more efficiently
     // relative to their diameter against thin armor
     let cal_thick_ratio = caliber_m / armor_thickness_m.max(1e-6);
     let cal_factor = (1.0 + 0.3 * (-3.0 * cal_thick_ratio).exp()).min(1.0);
-    let effective_thickness = base_effective * cal_factor;
+    // Yaw increases effective thickness: a yawed projectile presents a wider
+    // cross-section, so the armour appears thicker.
+    let effective_thickness = base_effective * cal_factor / yaw_mult;
 
     // ── Ricochet outcome ───────────────────────────────────────────────────
     if ricochet && !armor_material.contains("spall") {
@@ -820,6 +877,119 @@ mod tests {
         assert!(
             ceramic_v50 > rha_v50,
             "Ceramic V₅₀ should be higher than RHA V₅₀: ceramic={ceramic_v50:.1}, rha={rha_v50:.1}"
+        );
+    }
+
+    // ── Yaw at impact ─────────────────────────────────────────────────────────
+
+    #[test]
+    fn zero_yaw_matches_evaluate() {
+        let base = super::evaluate(853.0, 0.0095, 0.00762, 0.005, 0.0, "steel_rha", "ball");
+        let yaw = super::evaluate_yaw(853.0, 0.0095, 0.00762, 0.005, 0.0, "steel_rha", "ball", 0.0);
+        assert_eq!(base.penetrated, yaw.penetrated);
+        assert!((base.residual_velocity - yaw.residual_velocity).abs() < 1e-6);
+        assert!((base.effective_thickness - yaw.effective_thickness).abs() < 1e-6);
+    }
+
+    #[test]
+    fn yaw_10deg_reduces_penetration() {
+        let r0 = super::evaluate_yaw(853.0, 0.0095, 0.00762, 0.005, 0.0, "steel_rha", "ball", 0.0);
+        let r10 = super::evaluate_yaw(
+            853.0,
+            0.0095,
+            0.00762,
+            0.005,
+            0.0,
+            "steel_rha",
+            "ball",
+            10.0,
+        );
+        // 10° yaw reduces residual velocity (more energy spent overcoming yaw)
+        assert!(
+            r10.residual_velocity <= r0.residual_velocity + 1e-6,
+            "10° yaw should not increase residual velocity: {} vs {}",
+            r10.residual_velocity,
+            r0.residual_velocity
+        );
+        // Effective thickness should be higher with yaw (projectile sees more armour)
+        assert!(
+            r10.effective_thickness > r0.effective_thickness,
+            "10° yaw should increase effective thickness: {} vs {}",
+            r10.effective_thickness,
+            r0.effective_thickness
+        );
+    }
+
+    #[test]
+    fn yaw_20deg_reduces_pen_more_than_10deg() {
+        let r10 = super::evaluate_yaw(
+            900.0,
+            0.0095,
+            0.00762,
+            0.008,
+            0.0,
+            "steel_rha",
+            "ball",
+            10.0,
+        );
+        let r20 = super::evaluate_yaw(
+            900.0,
+            0.0095,
+            0.00762,
+            0.008,
+            0.0,
+            "steel_rha",
+            "ball",
+            20.0,
+        );
+        assert!(
+            r20.effective_thickness > r10.effective_thickness,
+            "20° yaw should give thicker effective thickness than 10°: {} vs {}",
+            r20.effective_thickness,
+            r10.effective_thickness
+        );
+    }
+
+    #[test]
+    fn yaw_alone_does_not_cause_ricochet() {
+        // High yaw but normal impact angle — yaw alone shouldn't cause ricochet
+        let r = super::evaluate_yaw(
+            853.0,
+            0.0095,
+            0.00762,
+            0.010,
+            0.0,
+            "steel_rha",
+            "ball",
+            20.0,
+        );
+        assert!(
+            !r.ricochet,
+            "Yaw alone (20°) at 0° impact angle should not cause ricochet"
+        );
+    }
+
+    #[test]
+    fn yaw_multiplier_bounds() {
+        // Verify the yaw multiplier is in [0.5, 1.0]
+        let r0 = super::evaluate_yaw(853.0, 0.0095, 0.00762, 0.005, 0.0, "steel_rha", "ball", 0.0);
+        let r50 = super::evaluate_yaw(
+            853.0,
+            0.0095,
+            0.00762,
+            0.005,
+            0.0,
+            "steel_rha",
+            "ball",
+            50.0,
+        );
+        // At 50° yaw, the 50% cap should apply — effective thickness should be at
+        // most 2× the 0-yaw value (1/0.5 = 2).
+        let ratio = r50.effective_thickness / r0.effective_thickness;
+        assert!(
+            (ratio - 2.0).abs() < 0.01,
+            "50° yaw should cap at 2× effective thickness, got ratio={}",
+            ratio
         );
     }
 }

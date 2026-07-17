@@ -266,6 +266,213 @@ pub fn evaluate_erosion(params: &ErosionParams) -> ErosionResult {
     }
 }
 
+// ── Barrel heating — MV curve model ──────────────────────────────────────────
+
+/// Thermal state of a barrel during a firing string.
+///
+/// Tracks the barrel temperature through sustained fire and convective
+/// cooling between shots. Used to compute the heating-induced MV
+/// multiplier: as barrel temperature rises, propellant burn rate
+/// increases (MV_mult up to ~1.02), but above 200 °C throat erosion
+/// and fouling begin to dominate, eventually dropping MV_mult below
+/// 1.0 as the barrel approaches critical temperature.
+///
+/// Reference:
+///   - Bryan Litz "Applied Ballistics Precision" Ch. 11 (Barrel Heat)
+///   - US Army ARL-TR-2828 (erosive wear in small arms)
+///   - Hatcher's Notebook (barrel heating / cooling curves)
+#[derive(Debug, Clone, Copy)]
+pub struct BarrelThermalState {
+    /// Current bore surface temperature in °C.
+    pub barrel_temp_c: f64,
+    /// Number of rounds fired since the barrel was cold (ambient).
+    pub rounds_fired_since_cold: i32,
+    /// Sustained firing rate in rounds per minute.
+    pub sustained_fire_rate_rpm: f64,
+    /// Ambient (air) temperature in °C.
+    pub ambient_temp_c: f64,
+    /// Barrel mass in kilograms (affects thermal inertia).
+    pub barrel_mass_kg: f64,
+    /// Convective cooling coefficient (1/s). Typical range: 0.01–0.05.
+    /// Higher values = faster cooling (thin barrel, good airflow).
+    /// Default: 0.02 for a typical steel barrel.
+    pub cooling_coefficient: f64,
+}
+
+impl Default for BarrelThermalState {
+    fn default() -> Self {
+        Self {
+            barrel_temp_c: 21.0,
+            rounds_fired_since_cold: 0,
+            sustained_fire_rate_rpm: 60.0,
+            ambient_temp_c: 21.0,
+            barrel_mass_kg: 1.5,
+            cooling_coefficient: 0.02,
+        }
+    }
+}
+
+/// Compute the muzzle velocity multiplier due to barrel heating.
+///
+/// Returns a multiplier on MV:
+///   - Cold bore (~ambient):           1.000
+///   - Warm (50–200 °C):               1.005–1.020 (hotter = faster burn)
+///   - Hot (200–350 °C):               peaks at ~1.020 then stabilizes
+///   - Very hot (350–400 °C):          starts dropping (erosion + fouling)
+///   - Critical (>400 °C):             drops below 1.000
+///
+/// # Arguments
+/// * `state` — Current barrel thermal state.
+pub fn heating_mv_multiplier(state: &BarrelThermalState) -> f64 {
+    let temp = state.barrel_temp_c;
+
+    if temp <= 20.0 {
+        // Cold bore at or below ambient: slight velocity loss from cold propellant
+        let cold_factor = (20.0 - temp).max(0.0) / 60.0; // 0 at 20 °C, ~0.33 at 0 °C
+        1.000 - cold_factor * 0.010 // up to ~1 % loss at 0 °C
+    } else if temp <= 50.0 {
+        // Ambient to warm: slight increase as propellant warms
+        let t = (temp - 20.0) / 30.0; // 0→1 over 20–50 °C
+        1.000 + t * 0.005 // 1.000 → 1.005
+    } else if temp <= 200.0 {
+        // Warm to hot: linear rise to peak
+        let t = (temp - 50.0) / 150.0; // 0→1 over 50–200 °C
+        1.005 + t * 0.015 // 1.005 → 1.020
+    } else if temp <= 350.0 {
+        // Hot zone: plateau at ~1.020 with slight roll-off
+        let t = (temp - 200.0) / 150.0; // 0→1 over 200–350 °C
+        1.020 - t * 0.010 // 1.020 → 1.010
+    } else if temp <= 400.0 {
+        // Very hot: accelerating decline from erosion/fouling
+        let t = (temp - 350.0) / 50.0; // 0→1 over 350–400 °C
+        1.010 - t * 0.015 // 1.010 → 0.995
+    } else {
+        // Critical: drops below 1.0 and accelerates toward cook-off
+        let t = ((temp - 400.0) / 100.0).min(1.0); // 0→1 over 400–500 °C
+        (0.995 - t * 0.040).max(0.85) // 0.995 → 0.955 (cap at 0.85)
+    }
+}
+
+/// Estimate barrel temperature rise from a single shot.
+///
+/// Models the thermodynamic energy transfer from propellant combustion
+/// to the barrel steel. A fraction of the propellant chemical energy
+/// heats the barrel rather than accelerating the projectile.
+///
+/// Typical values for 7.62×51mm NATO (M80):
+///   - charge mass: ~3.0 g
+///   - bore volume (20" barrel, 7.62 mm): ~12 cc
+///   - temperature rise per shot: ~0.5–1.0 °C
+///
+/// # Arguments
+/// * `temp_before` — Barrel temperature before the shot (°C).
+/// * `charge_mass_g` — Propellant charge mass in grams.
+/// * `bore_volume_cc` — Bore volume in cubic centimetres
+///   (π × (caliber/2)² × barrel_length).
+///
+/// # Returns
+/// Barrel temperature immediately after the shot (°C).
+pub fn barrel_temperature_after_shot(
+    temp_before: f64,
+    charge_mass_g: f64,
+    bore_volume_cc: f64,
+) -> f64 {
+    // Propellant energy density: ~4.5 kJ/g for typical nitrocellulose
+    // A fraction (~15–20 %) of this goes into heating the barrel steel
+    // (the rest goes to projectile KE, gas ejecta, and muzzle blast).
+    const PROP_E_DENSITY_J_G: f64 = 4500.0;
+    const HEAT_FRACTION: f64 = 0.20;
+
+    let energy_j = charge_mass_g * PROP_E_DENSITY_J_G * HEAT_FRACTION;
+
+    // Thermal mass of barrel steel adjacent to the bore.
+    // For a typical barrel, bore volume scales with barrel mass:
+    //   ~12 cc bore → ~1.5 kg barrel → ~125 g steel per cc of bore
+    // This captures the whole-barrel thermal inertia.
+    const THERMAL_MASS_PER_CC: f64 = 125.0; // grams of steel per cc bore volume
+    let thermal_mass_g = bore_volume_cc * THERMAL_MASS_PER_CC;
+
+    if thermal_mass_g <= 0.0 || charge_mass_g <= 0.0 {
+        return temp_before;
+    }
+
+    // Steel specific heat: 0.5 J/(g·K)
+    const STEEL_SPECIFIC_HEAT_J_GK: f64 = 0.5;
+
+    let temp_rise = energy_j / (thermal_mass_g * STEEL_SPECIFIC_HEAT_J_GK);
+    temp_before + temp_rise
+}
+
+/// Apply Newtonian cooling to the barrel between shots or over a time step.
+///
+///   T_new = T_amb + (T_bore − T_amb) × exp(−dt × cooling_coeff)
+///
+/// # Arguments
+/// * `temp_bore` — Bore temperature at start of interval (°C).
+/// * `temp_ambient` — Ambient air temperature (°C).
+/// * `dt_s` — Time elapsed (seconds).
+/// * `cooling_coefficient` — Convective cooling coefficient (1/s).
+pub fn barrel_cooling_step(
+    temp_bore: f64,
+    temp_ambient: f64,
+    dt_s: f64,
+    cooling_coefficient: f64,
+) -> f64 {
+    let dt = dt_s.max(0.0);
+    temp_ambient + (temp_bore - temp_ambient) * (-dt * cooling_coefficient).exp()
+}
+
+/// Convenience: compute the barrel temperature evolution over a firing string
+/// with cooling between shots.
+///
+/// Given the initial (cold) temperature, the firing rate, and the cooling
+/// coefficient, this returns the barrel temperature after `n_rounds` shots
+/// have been fired (with inter-shot cooling applied).
+///
+/// # Arguments
+/// * `initial_temp_c` — Cold barrel temperature (°C).
+/// * `ambient_temp_c` — Ambient air temperature (°C).
+/// * `n_rounds` — Number of rounds fired.
+/// * `firing_rate_rpm` — Sustained firing rate (rounds per minute).
+/// * `charge_mass_g` — Propellant charge mass per round (g).
+/// * `bore_volume_cc` — Bore volume (cc).
+/// * `cooling_coefficient` — Convective cooling coefficient (1/s).
+/// * `barrel_mass_kg` — Barrel mass (kg) — affects inter-shot cooling rate
+///   scaling (heavier barrel = more thermal inertia = slower temp change).
+pub fn barrel_temperature_after_string(
+    initial_temp_c: f64,
+    ambient_temp_c: f64,
+    n_rounds: i32,
+    firing_rate_rpm: f64,
+    charge_mass_g: f64,
+    bore_volume_cc: f64,
+    cooling_coefficient: f64,
+    barrel_mass_kg: f64,
+) -> f64 {
+    if n_rounds <= 0 {
+        return initial_temp_c;
+    }
+
+    // Inter-shot interval in seconds
+    let rpm = firing_rate_rpm.max(1.0);
+    let interval_s = 60.0 / rpm;
+
+    // Mass scaling: a heavier barrel has more thermal inertia,
+    // so effective cooling is reduced proportionally.
+    // Reference: 1.5 kg barrel → mass_factor = 1.0
+    let mass_factor = (barrel_mass_kg / 1.5).max(0.2);
+
+    let mut temp = initial_temp_c;
+    for _ in 0..n_rounds {
+        // Heat from the shot
+        temp = barrel_temperature_after_shot(temp, charge_mass_g, bore_volume_cc);
+        // Cool between shots (mass scaling adjusts effective cooling)
+        let effective_cooling = cooling_coefficient / mass_factor;
+        temp = barrel_cooling_step(temp, ambient_temp_c, interval_s, effective_cooling);
+    }
+    temp
+}
+
 // ── Tests ─────────────────────────────────────────────────────────────────────
 
 #[cfg(test)]
@@ -434,6 +641,243 @@ mod tests {
             very_high - high < 30.0,
             "temperature must show diminishing returns (diff={:.1})",
             very_high - high,
+        );
+    }
+
+    // ── Barrel heating / MV curve tests ─────────────────────────────────
+
+    #[test]
+    fn cold_bore_mv_multiplier_is_one() {
+        let state = BarrelThermalState {
+            barrel_temp_c: 21.0,
+            rounds_fired_since_cold: 0,
+            sustained_fire_rate_rpm: 60.0,
+            ambient_temp_c: 21.0,
+            barrel_mass_kg: 1.5,
+            cooling_coefficient: 0.02,
+        };
+        let mult = heating_mv_multiplier(&state);
+        assert!(
+            (mult - 1.0).abs() < 0.002,
+            "Cold bore (~21 °C) multipler should be ~1.0: got {}",
+            mult
+        );
+    }
+
+    #[test]
+    fn sustained_fire_heats_to_200c() {
+        // Simulate 60 rounds at 600 rpm with 7.62×51mm parameters
+        let temp = barrel_temperature_after_string(
+            21.0,  // initial (cold)
+            21.0,  // ambient
+            60,    // 60 rounds
+            600.0, // 600 rpm
+            3.0,   // 3.0 g charge mass (M80)
+            12.0,  // ~12 cc bore volume (20" barrel)
+            0.02,  // cooling coefficient
+            1.5,   // barrel mass (kg)
+        );
+
+        assert!(
+            temp > 80.0,
+            "60 rounds at 600 rpm should exceed 80 °C: got {:.1} °C",
+            temp
+        );
+        assert!(
+            temp < 450.0,
+            "60 rounds at 600 rpm should be below 450 °C: got {:.1} °C",
+            temp
+        );
+
+        // MV multiplier should be elevated in hot barrel
+        let state = BarrelThermalState {
+            barrel_temp_c: temp,
+            rounds_fired_since_cold: 60,
+            sustained_fire_rate_rpm: 600.0,
+            ambient_temp_c: 21.0,
+            barrel_mass_kg: 1.5,
+            cooling_coefficient: 0.02,
+        };
+        let mult = heating_mv_multiplier(&state);
+        assert!(
+            mult > 1.005,
+            "Hot barrel should increase MV multiplier (>1.005): got {}",
+            mult
+        );
+    }
+
+    #[test]
+    fn cooling_between_shots_reduces_temperature() {
+        // One shot raises temp, then 30 s of cooling should bring it back down
+        let after_shot = barrel_temperature_after_shot(21.0, 3.0, 12.0);
+        assert!(
+            after_shot > 21.0,
+            "Shot should raise barrel temperature: {:.2} °C",
+            after_shot
+        );
+
+        let after_cooling = barrel_cooling_step(after_shot, 21.0, 30.0, 0.02);
+        assert!(
+            after_cooling < after_shot,
+            "Cooling should reduce temperature: {:.2} → {:.2}",
+            after_shot,
+            after_cooling
+        );
+        assert!(
+            after_cooling > 21.0,
+            "After 30 s cooling, barrel should still be above ambient: {:.2}",
+            after_cooling
+        );
+
+        // Extended cooling should approach ambient
+        let fully_cooled = barrel_cooling_step(after_shot, 21.0, 300.0, 0.02);
+        assert!(
+            (fully_cooled - 21.0).abs() < 2.0,
+            "After 5 min, barrel should be near ambient: {:.2}",
+            fully_cooled
+        );
+    }
+
+    #[test]
+    fn extreme_heat_degrades_mv_multiplier() {
+        // At 450 °C (approaching cook-off), MV multiplier should be below 1.0
+        let state = BarrelThermalState {
+            barrel_temp_c: 450.0,
+            rounds_fired_since_cold: 200,
+            sustained_fire_rate_rpm: 600.0,
+            ambient_temp_c: 21.0,
+            barrel_mass_kg: 1.5,
+            cooling_coefficient: 0.02,
+        };
+        let mult = heating_mv_multiplier(&state);
+        assert!(
+            mult < 1.0,
+            "At 450 °C, MV multiplier should be below 1.0: got {}",
+            mult
+        );
+        assert!(
+            mult >= 0.85,
+            "At 450 °C, MV multiplier should not drop below 0.85: got {}",
+            mult
+        );
+    }
+
+    #[test]
+    fn muiltiplier_peaks_in_warm_range() {
+        // MV multiplier should peak in the warm/hot transition (150–250 °C)
+        let cold = heating_mv_multiplier(&BarrelThermalState {
+            barrel_temp_c: 21.0,
+            ..Default::default()
+        });
+        let warm = heating_mv_multiplier(&BarrelThermalState {
+            barrel_temp_c: 180.0,
+            ..Default::default()
+        });
+        let hot = heating_mv_multiplier(&BarrelThermalState {
+            barrel_temp_c: 350.0,
+            ..Default::default()
+        });
+        let critical = heating_mv_multiplier(&BarrelThermalState {
+            barrel_temp_c: 500.0,
+            ..Default::default()
+        });
+
+        assert!(warm > cold, "Warm barrel should have higher mult than cold");
+        assert!(
+            warm >= hot,
+            "Peak mult should be near warm zone (180 °C vs 350 °C)"
+        );
+        assert!(
+            critical < hot,
+            "Critical barrel should have lower mult than hot"
+        );
+    }
+
+    #[test]
+    fn barrel_temp_after_shot_reasonable() {
+        // 7.62mm NATO: ~3 g charge, ~12 cc bore → ~3–5 °C rise
+        let rise = barrel_temperature_after_shot(21.0, 3.0, 12.0) - 21.0;
+        assert!(
+            rise > 0.5,
+            "Temperature rise per shot should be > 0.5 °C: got {:.3}",
+            rise
+        );
+        assert!(
+            rise < 8.0,
+            "Temperature rise per shot should be < 8.0 °C: got {:.3}",
+            rise
+        );
+
+        // Bigger charge = more heating
+        let small_rise = barrel_temperature_after_shot(21.0, 1.5, 12.0) - 21.0;
+        let big_rise = barrel_temperature_after_shot(21.0, 5.0, 12.0) - 21.0;
+        assert!(
+            big_rise > small_rise,
+            "Larger charge should cause more heating"
+        );
+
+        // Larger bore volume = less heating (more thermal mass)
+        let small_bore = barrel_temperature_after_shot(21.0, 3.0, 6.0);
+        let big_bore = barrel_temperature_after_shot(21.0, 3.0, 24.0);
+        assert!(
+            small_bore > big_bore,
+            "Smaller bore volume should heat more per shot"
+        );
+    }
+
+    #[test]
+    fn sustained_fire_cooling_equilibrium() {
+        // Long string: after many rounds the barrel should approach thermal
+        // equilibrium where heating ≈ cooling.
+        let short_run =
+            barrel_temperature_after_string(21.0, 21.0, 30, 600.0, 3.0, 12.0, 0.02, 1.5);
+        let long_run =
+            barrel_temperature_after_string(21.0, 21.0, 200, 600.0, 3.0, 12.0, 0.02, 1.5);
+        let very_long =
+            barrel_temperature_after_string(21.0, 21.0, 500, 600.0, 3.0, 12.0, 0.02, 1.5);
+
+        // Temperature should increase monotonically
+        assert!(
+            long_run > short_run,
+            "More rounds → higher temp: {} > {}",
+            long_run,
+            short_run
+        );
+        // Diminishing returns: the difference between 200 and 500 rounds
+        // should not be dramatically larger than between 30 and 200 rounds
+        let d_early = long_run - short_run;
+        let d_late = very_long - long_run;
+        // With Newtonian cooling the temp approaches equilibrium, so late
+        // increments should be comparable or smaller than early increments.
+        // Allow some margin for the non-linear approach to equilibrium.
+        assert!(
+            d_late < d_early * 2.0,
+            "Temperature should show diminishing returns: early Δ={:.1}, late Δ={:.1}",
+            d_early,
+            d_late
+        );
+    }
+
+    #[test]
+    fn deterministic_barrel_heating() {
+        let t1 = barrel_temperature_after_shot(21.0, 3.0, 12.0);
+        let t2 = barrel_temperature_after_shot(21.0, 3.0, 12.0);
+        assert!(
+            (t1 - t2).abs() < 1e-12,
+            "barrel_temperature_after_shot deterministic"
+        );
+
+        let m1 = heating_mv_multiplier(&BarrelThermalState {
+            barrel_temp_c: 150.0,
+            ..Default::default()
+        });
+        let m2 = heating_mv_multiplier(&BarrelThermalState {
+            barrel_temp_c: 150.0,
+            ..Default::default()
+        });
+        assert!(
+            (m1 - m2).abs() < 1e-12,
+            "heating_mv_multiplier deterministic"
         );
     }
 
