@@ -1,0 +1,74 @@
+name: Test
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: [main]
+
+env:
+  CARGO_TERM_COLOR: always
+  EXT_SRC: ext
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # ── Cache ───────────────────────────────────────────────────────
+      - name: Cache Rust build artifacts
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.EXT_SRC }}/target
+            ~/.cargo/registry
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+
+      # ── Rust toolchain ──────────────────────────────────────────────
+      - name: Setup Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+
+      # ── Tests ───────────────────────────────────────────────────────
+      - name: cargo test
+        working-directory: ${{ env.EXT_SRC }}
+        run: cargo test
+
+      # ── Lint ────────────────────────────────────────────────────────
+      - name: cargo clippy
+        working-directory: ${{ env.EXT_SRC }}
+        run: cargo clippy -- -D warnings
+
+      # ── HEMTT ───────────────────────────────────────────────────────
+      - name: Setup HEMTT
+        run: |
+          curl -sSf https://hemtt.dev/install.sh | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: HEMTT check
+        run: hemtt check
+
+  # Quick compilation check on native Windows — skip full test suite for speed
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache Rust build artifacts
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.EXT_SRC }}/target
+            ~/.cargo/registry
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+
+      - name: Setup Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+
+      - name: cargo check
+        working-directory: ${{ env.EXT_SRC }}
+        run: cargo check
