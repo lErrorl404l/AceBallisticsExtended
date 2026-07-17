@@ -16,6 +16,25 @@ pub const SEA_LEVEL_PRESSURE: f64 = 101325.0; // Pa
 pub const SEA_LEVEL_DENSITY: f64 = 1.225; // kg/m³
 pub const TROPOPAUSE_ALT: f64 = 11000.0; // m
 
+// ── Additional gas constants ──────────────────────────────────────────────────
+
+/// Specific gas constant for dry air (J/(kg·K)). Alias of R_SPECIFIC.
+pub const GAS_CONSTANT_DRY_AIR: f64 = 287.058;
+
+/// Specific gas constant for water vapor (J/(kg·K)).
+pub const GAS_CONSTANT_WET_AIR: f64 = 461.495;
+
+// ── Power-law wind profile exponents ──────────────────────────────────────────
+
+/// Power-law exponent for open terrain (grassland, farmland).
+pub const POWER_LAW_EXPONENT_OPEN: f64 = 0.143;
+
+/// Power-law exponent for urban / built-up terrain.
+pub const POWER_LAW_EXPONENT_URBAN: f64 = 0.333;
+
+/// Power-law exponent for open water / sea.
+pub const POWER_LAW_EXPONENT_SEA: f64 = 0.100;
+
 /// Temperature at altitude (K) in ISA standard atmosphere.
 /// Troposphere (0-11km): T = T₀ + L * h
 /// Minimum: 216.65 K (-56.5°C)
@@ -95,6 +114,154 @@ pub fn density_from_altitude(altitude_m: f64, temp_c: f64) -> f64 {
         let p = pressure_at_altitude(altitude_m);
         p / (R_SPECIFIC * temp_k)
     }
+}
+
+// ── Non-ISA Atmosphere ─────────────────────────────────────────────────────────
+
+/// Non-ISA atmosphere parameters representing deviations from the standard model.
+pub struct NonIsaAtmosphere {
+    /// Temperature offset from ISA at any altitude (°C). Positive = warmer.
+    pub delta_temp_c: f64,
+    /// Pressure offset as a percentage of ISA pressure (%). Positive = higher pressure.
+    pub delta_pressure_pct: f64,
+    /// Relative humidity (0.0–100.0 %). Affects density (moist air is lighter).
+    pub humidity_pct: f64,
+}
+
+/// Turbulence parameters for gust and eddy modeling.
+pub struct TurbulenceParams {
+    /// Turbulence intensity (0.0 = calm, 1.0 = severe).
+    pub intensity: f64,
+    /// Eddy scale length (m). Default ~100 m for open terrain.
+    pub scale_length_m: f64,
+    /// Gust amplitude (m/s) at reference conditions.
+    pub gust_amplitude_ms: f64,
+}
+
+/// Wind profile defined by a power-law model.
+///
+/// U(z) = U_ref * (z / z_ref)^α
+pub struct WindProfile {
+    /// Wind speed at reference height (m/s).
+    pub surface_wind_ms: f64,
+    /// Wind direction in degrees from north (0 = from north, 90 = from east).
+    pub wind_direction_deg: f64,
+    /// Power-law exponent α (dimensionless). Default 0.143 for open terrain.
+    pub profile_exponent: f64,
+    /// Reference height (m) at which surface_wind_ms is measured. Default 10 m.
+    pub reference_height_m: f64,
+}
+
+/// Combined weather state at a given altitude.
+pub struct WeatherState {
+    /// Altitude (m).
+    pub altitude_m: f64,
+    /// Temperature (°C).
+    pub temperature_c: f64,
+    /// Pressure (Pa).
+    pub pressure_pa: f64,
+    /// Density (kg/m³).
+    pub density_kgm3: f64,
+    /// Wind profile at this location.
+    pub wind_profile: WindProfile,
+    /// Turbulence parameters.
+    pub turbulence: TurbulenceParams,
+    /// Non-ISA atmosphere offsets.
+    pub non_isa: NonIsaAtmosphere,
+}
+
+// ── Non-ISA Functions ─────────────────────────────────────────────────────────
+
+const MAGNUS_A: f64 = 17.625;
+const MAGNUS_B: f64 = 243.04;
+
+/// Saturation vapour pressure (Pa) via the improved Magnus formula.
+///
+/// Reference: Alduchov & Eskridge (1996), J. Appl. Meteor.
+fn saturation_vapor_pressure(temp_c: f64) -> f64 {
+    610.94 * ((MAGNUS_A * temp_c) / (temp_c + MAGNUS_B)).exp()
+}
+
+/// Temperature at altitude with non-ISA offset (K).
+///
+/// T(h) = T_ISA(h) + ΔT
+pub fn temperature_non_isa(altitude_m: f64, non_isa: &NonIsaAtmosphere) -> f64 {
+    temperature_at_altitude(altitude_m) + non_isa.delta_temp_c
+}
+
+/// Pressure at altitude with non-ISA percentage offset (Pa).
+///
+/// P(h) = P_ISA(h) × (1 + ΔP%)
+pub fn pressure_non_isa(altitude_m: f64, non_isa: &NonIsaAtmosphere) -> f64 {
+    pressure_at_altitude(altitude_m) * (1.0 + non_isa.delta_pressure_pct / 100.0)
+}
+
+/// Density at altitude adjusted for temperature offset and humidity (kg/m³).
+///
+/// Uses the virtual-temperature correction for water vapour:
+///   ρ = P / (R_dry × T_v)
+/// where T_v = T / (1 - 0.379 × e / P)  and  e = RH × e_sat(T)
+pub fn density_non_isa(altitude_m: f64, non_isa: &NonIsaAtmosphere) -> f64 {
+    let t_k = temperature_non_isa(altitude_m, non_isa);
+    let p = pressure_non_isa(altitude_m, non_isa);
+    let t_c = t_k - 273.15;
+
+    // Saturation vapour pressure → actual vapour pressure from RH
+    let e_sat = saturation_vapor_pressure(t_c);
+    let e = (non_isa.humidity_pct / 100.0) * e_sat;
+
+    // Virtual temperature correction: moist air is lighter
+    let t_v = t_k / (1.0 - 0.379 * e / p.max(1.0));
+
+    p / (GAS_CONSTANT_DRY_AIR * t_v)
+}
+
+// ── Wind & Turbulence ─────────────────────────────────────────────────────────
+
+/// Wind speed at altitude using the power-law profile (m/s).
+///
+/// U(z) = U_ref × (z / z_ref)^α
+///
+/// Returns 0 when altitude or reference_height_m is ≤ 0.
+pub fn wind_velocity(wind_profile: &WindProfile, altitude_m: f64) -> f64 {
+    let z_ref = wind_profile.reference_height_m.max(0.01);
+    let z = altitude_m.max(0.0);
+    if z <= 0.0 || z_ref <= 0.0 {
+        return 0.0;
+    }
+    wind_profile.surface_wind_ms * (z / z_ref).powf(wind_profile.profile_exponent)
+}
+
+/// Deterministic gust velocity (m/s) from turbulence parameters.
+///
+/// Uses a seeded calculation based on intensity and scale length — no randomness.
+///   U_gust = A × I × sqrt(L / L₀)
+/// where A = gust_amplitude_ms, I = intensity, L = scale_length_m, L₀ = 100 m.
+pub fn gust_velocity(turbulence: &TurbulenceParams) -> f64 {
+    let scale_norm = (turbulence.scale_length_m / 100.0).sqrt();
+    turbulence.gust_amplitude_ms * turbulence.intensity * scale_norm
+}
+
+/// Wind ratio between two altitudes using power-law shear.
+///
+/// Returns U(target) / U(source) = (z₂ / z₁)^α.
+/// Both altitudes are clamped to ≥ 0.01 m to avoid division issues.
+pub fn wind_shear_power_law(
+    wind_profile: &WindProfile,
+    altitude_m: f64,
+    target_altitude_m: f64,
+) -> f64 {
+    let z1 = altitude_m.max(0.01);
+    let z2 = target_altitude_m.max(0.01);
+    (z2 / z1).powf(wind_profile.profile_exponent)
+}
+
+/// Convenience: combined density from a full WeatherState (kg/m³).
+///
+/// Uses the non-ISA functions internally, returning a density that accounts for
+/// temperature offset, pressure offset, and humidity.
+pub fn density_from_weather(weather: &WeatherState) -> f64 {
+    density_non_isa(weather.altitude_m, &weather.non_isa)
 }
 
 // ── Tests ─────────────────────────────────────────────────────────────────────
@@ -178,5 +345,206 @@ mod tests {
         let d_standard = density_from_altitude(0.0, 15.0);
         let d_hot = density_from_altitude(0.0, 40.0);
         assert!(d_hot < d_standard);
+    }
+
+    // ── Non-ISA / Dynamic Weather Tests ────────────────────────────────────────
+
+    #[test]
+    fn non_isa_temperature_offset_affects_density() {
+        let isa = NonIsaAtmosphere {
+            delta_temp_c: 0.0,
+            delta_pressure_pct: 0.0,
+            humidity_pct: 0.0,
+        };
+        let warm = NonIsaAtmosphere {
+            delta_temp_c: 15.0,
+            delta_pressure_pct: 0.0,
+            humidity_pct: 0.0,
+        };
+
+        let d_isa = density_non_isa(0.0, &isa);
+        let d_warm = density_non_isa(0.0, &warm);
+        assert!(
+            d_warm < d_isa,
+            "Warmer air should be less dense: ISA={}, warm={}",
+            d_isa,
+            d_warm
+        );
+    }
+
+    #[test]
+    fn humidity_reduces_density() {
+        let dry = NonIsaAtmosphere {
+            delta_temp_c: 0.0,
+            delta_pressure_pct: 0.0,
+            humidity_pct: 0.0,
+        };
+        let humid = NonIsaAtmosphere {
+            delta_temp_c: 0.0,
+            delta_pressure_pct: 0.0,
+            humidity_pct: 80.0,
+        };
+
+        let d_dry = density_non_isa(0.0, &dry);
+        let d_humid = density_non_isa(0.0, &humid);
+        assert!(
+            d_humid < d_dry,
+            "Moist air should be less dense: dry={}, humid={}",
+            d_dry,
+            d_humid
+        );
+    }
+
+    #[test]
+    fn power_law_wind_increases_with_altitude() {
+        let profile = WindProfile {
+            surface_wind_ms: 5.0,
+            wind_direction_deg: 270.0,
+            profile_exponent: POWER_LAW_EXPONENT_OPEN,
+            reference_height_m: 10.0,
+        };
+
+        let w_10 = wind_velocity(&profile, 10.0);
+        let w_50 = wind_velocity(&profile, 50.0);
+        let w_100 = wind_velocity(&profile, 100.0);
+
+        assert!((w_10 - 5.0).abs() < 0.001, "At ref height, wind = U_ref");
+        assert!(
+            w_50 > w_10,
+            "Wind at 50m > wind at 10m: {} > {}",
+            w_50,
+            w_10
+        );
+        assert!(
+            w_100 > w_50,
+            "Wind at 100m > wind at 50m: {} > {}",
+            w_100,
+            w_50
+        );
+    }
+
+    #[test]
+    fn gust_amplitude_scales_with_intensity() {
+        let calm = TurbulenceParams {
+            intensity: 0.0,
+            scale_length_m: 100.0,
+            gust_amplitude_ms: 10.0,
+        };
+        let moderate = TurbulenceParams {
+            intensity: 0.5,
+            scale_length_m: 100.0,
+            gust_amplitude_ms: 10.0,
+        };
+        let severe = TurbulenceParams {
+            intensity: 1.0,
+            scale_length_m: 100.0,
+            gust_amplitude_ms: 10.0,
+        };
+
+        assert!((gust_velocity(&calm) - 0.0).abs() < 1e-12, "Calm = 0 gust");
+        assert!(
+            gust_velocity(&moderate) > 0.0,
+            "Moderate > 0: {}",
+            gust_velocity(&moderate)
+        );
+        assert!(
+            gust_velocity(&severe) > gust_velocity(&moderate),
+            "Severe > moderate: {} > {}",
+            gust_velocity(&severe),
+            gust_velocity(&moderate)
+        );
+    }
+
+    #[test]
+    fn non_isa_pressure_offset_shifts_pressure() {
+        let no_offset = NonIsaAtmosphere {
+            delta_temp_c: 0.0,
+            delta_pressure_pct: 0.0,
+            humidity_pct: 0.0,
+        };
+        let high = NonIsaAtmosphere {
+            delta_temp_c: 0.0,
+            delta_pressure_pct: 5.0,
+            humidity_pct: 0.0,
+        };
+
+        let p_isa = pressure_non_isa(0.0, &no_offset);
+        let p_high = pressure_non_isa(0.0, &high);
+        assert!(
+            (p_isa - SEA_LEVEL_PRESSURE).abs() < 1.0,
+            "Zero offset = ISA: {}",
+            p_isa
+        );
+        assert!(
+            p_high > p_isa,
+            "Positive offset increases pressure: {} > {}",
+            p_high,
+            p_isa
+        );
+        // 5% increase at sea level
+        assert!((p_high - SEA_LEVEL_PRESSURE * 1.05).abs() < 1.0);
+    }
+
+    #[test]
+    fn sea_level_standard_density_with_isa_defaults() {
+        let isa = NonIsaAtmosphere {
+            delta_temp_c: 0.0,
+            delta_pressure_pct: 0.0,
+            humidity_pct: 0.0,
+        };
+        let d = density_non_isa(0.0, &isa);
+        assert!(
+            (d - SEA_LEVEL_DENSITY).abs() < 0.01,
+            "ISA defaults give sea-level density: {}",
+            d
+        );
+    }
+
+    #[test]
+    fn deterministic_output() {
+        let non_isa = NonIsaAtmosphere {
+            delta_temp_c: 10.0,
+            delta_pressure_pct: -2.0,
+            humidity_pct: 50.0,
+        };
+        let profile = WindProfile {
+            surface_wind_ms: 7.5,
+            wind_direction_deg: 180.0,
+            profile_exponent: POWER_LAW_EXPONENT_OPEN,
+            reference_height_m: 10.0,
+        };
+        let turb = TurbulenceParams {
+            intensity: 0.6,
+            scale_length_m: 120.0,
+            gust_amplitude_ms: 8.0,
+        };
+
+        // Call each new function twice — results must match exactly
+        let d1 = density_non_isa(500.0, &non_isa);
+        let d2 = density_non_isa(500.0, &non_isa);
+        assert!((d1 - d2).abs() < 1e-15, "density_non_isa deterministic");
+
+        let p1 = pressure_non_isa(500.0, &non_isa);
+        let p2 = pressure_non_isa(500.0, &non_isa);
+        assert!((p1 - p2).abs() < 1e-15, "pressure_non_isa deterministic");
+
+        let t1 = temperature_non_isa(500.0, &non_isa);
+        let t2 = temperature_non_isa(500.0, &non_isa);
+        assert!((t1 - t2).abs() < 1e-15, "temperature_non_isa deterministic");
+
+        let w1 = wind_velocity(&profile, 100.0);
+        let w2 = wind_velocity(&profile, 100.0);
+        assert!((w1 - w2).abs() < 1e-15, "wind_velocity deterministic");
+
+        let g1 = gust_velocity(&turb);
+        let g2 = gust_velocity(&turb);
+        assert!((g1 - g2).abs() < 1e-15, "gust_velocity deterministic");
+
+        let s1 = wind_shear_power_law(&profile, 10.0, 100.0);
+        let s2 = wind_shear_power_law(&profile, 10.0, 100.0);
+        assert!(
+            (s1 - s2).abs() < 1e-15,
+            "wind_shear_power_law deterministic"
+        );
     }
 }

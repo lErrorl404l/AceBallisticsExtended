@@ -182,6 +182,143 @@ fn g8_drag(mach: f64) -> f64 {
     table_lookup(&G8_TABLE, mach)
 }
 
+// ── BC Scale (Mach-dependent ballistic coefficient) ──────────────────────────
+
+/// Mach-dependent BC scale factor for a specific projectile.
+///
+/// The ballistic coefficient of a real projectile is not constant — it
+/// varies significantly across the transonic regime and may drift at
+/// extreme supersonic speeds. `BCScale` stores a lookup table of
+/// (mach, bc_factor) control points and interpolates between them using
+/// the same piecewise-linear `table_lookup` function as the drag curves.
+///
+/// A factor of 1.0 means the projectile's BC at that Mach matches its
+/// nominal rating. Values below 1.0 indicate BC degradation (more drag
+/// than the standard curve predicts for the same Mach).
+pub struct BCScale {
+    table: &'static [(f64, f64)],
+}
+
+impl BCScale {
+    /// Create a new `BCScale` from a static lookup table.
+    pub const fn new(table: &'static [(f64, f64)]) -> Self {
+        BCScale { table }
+    }
+
+    /// Return the BC scale factor for the given Mach number.
+    ///
+    /// Uses the same piecewise-linear interpolation as the drag model
+    /// tables (see `table_lookup`). Clamps to the table boundaries so
+    /// extrapolation never produces garbage.
+    ///
+    /// Returns 1.0 (no scaling) when the table is empty.
+    pub fn scale_factor(&self, mach: f64) -> f64 {
+        if self.table.is_empty() {
+            return 1.0;
+        }
+        table_lookup(self.table, mach)
+    }
+}
+
+// ── Reference BC scale tables ────────────────────────────────────────────────
+//
+// Each table stores (mach, bc_factor) control points for a common military or
+// commercial projectile. The factor is relative to the projectile's nominal BC.
+//
+// Sources:
+//   - JBM Ballistics — Mach-dependent BC measurements
+//   - Litz, Applied Ballistics for Long Range Shooting
+
+/// M855 (5.56×45mm, 4.0 g / 62 gr, G7 BC 0.157).
+///
+/// BC drops ~15 % through the transonic hump (Mach 0.95–1.05) and
+/// stabilises above Mach 1.5. Typical for lightweight 5.56mm projectiles
+/// with a steel penetrator core.
+pub static BCSCALE_M855: &[(f64, f64)] = &[
+    (0.00, 1.000),
+    (0.50, 1.020),
+    (0.80, 1.010),
+    (0.90, 0.960),
+    (0.95, 0.900),
+    (1.00, 0.860),
+    (1.05, 0.850),
+    (1.10, 0.870),
+    (1.20, 0.930),
+    (1.40, 0.980),
+    (1.60, 1.000),
+    (2.00, 1.000),
+    (3.00, 0.990),
+    (4.00, 0.970),
+    (5.00, 0.950),
+];
+
+/// M80 Ball (7.62×51mm, 9.5 g / 147 gr, G7 BC 0.200).
+///
+/// BC drops ~12 % transonically and recovers by Mach 1.5. Representative
+/// of full-power 7.62mm NATO ball ammunition.
+pub static BCSCALE_M80: &[(f64, f64)] = &[
+    (0.00, 1.000),
+    (0.50, 1.010),
+    (0.80, 1.000),
+    (0.90, 0.960),
+    (0.95, 0.910),
+    (1.00, 0.880),
+    (1.05, 0.880),
+    (1.10, 0.900),
+    (1.20, 0.940),
+    (1.40, 0.980),
+    (1.60, 1.000),
+    (2.00, 1.000),
+    (3.00, 0.990),
+    (4.00, 0.980),
+    (5.00, 0.960),
+];
+
+/// M118LR (7.62×51mm, 11.3 g / 175 gr, G7 BC 0.243).
+///
+/// Long-range match projectile with the mildest transonic dip (~10 %)
+/// and best supersonic efficiency of the set. The Sierra MatchKing
+/// bullet used in the M118LR cartridge.
+pub static BCSCALE_M118LR: &[(f64, f64)] = &[
+    (0.00, 1.000),
+    (0.50, 1.010),
+    (0.80, 1.000),
+    (0.90, 0.970),
+    (0.95, 0.930),
+    (1.00, 0.900),
+    (1.05, 0.900),
+    (1.10, 0.920),
+    (1.20, 0.960),
+    (1.40, 0.990),
+    (1.60, 1.000),
+    (2.00, 1.000),
+    (3.00, 1.000),
+    (4.00, 0.990),
+    (5.00, 0.980),
+];
+
+/// M193 (5.56×45mm, 3.6 g / 55 gr, G1 BC 0.265).
+///
+/// Light, high-velocity 5.56mm projectile with the sharpest transonic
+/// dip (~18 %). BC factor recovers by Mach 1.6.
+pub static BCSCALE_M193: &[(f64, f64)] = &[
+    (0.00, 1.000),
+    (0.50, 1.020),
+    (0.80, 1.000),
+    (0.90, 0.940),
+    (0.95, 0.860),
+    (1.00, 0.820),
+    (1.05, 0.820),
+    (1.10, 0.850),
+    (1.20, 0.910),
+    (1.40, 0.970),
+    (1.60, 1.000),
+    (2.00, 1.000),
+    (3.00, 0.990),
+    (4.00, 0.960),
+    (5.00, 0.940),
+];
+
 // ── Tests ─────────────────────────────────────────────────────────────────────
 
 #[cfg(test)]
@@ -266,5 +403,96 @@ mod tests {
             assert!(diff_up < 0.05, "Gap at M={}: up diff={}", m, diff_up);
             assert!(diff_down < 0.05, "Gap at M={}: down diff={}", m, diff_down);
         }
+    }
+
+    // ── BC Scale tests ────────────────────────────────────────────────────────
+
+    #[test]
+    fn bcscale_factor_at_subsonic() {
+        let bc = BCScale::new(BCSCALE_M855);
+        let f = bc.scale_factor(0.5);
+        assert!(
+            (f - 1.0).abs() < 0.03,
+            "M855 subsonic factor {:.4} not near 1.0",
+            f
+        );
+    }
+
+    #[test]
+    fn bcscale_transonic_dip() {
+        let bc = BCScale::new(BCSCALE_M855);
+        let sub = bc.scale_factor(0.5);
+        let dip = bc.scale_factor(1.0);
+        assert!(
+            dip < sub,
+            "BC factor at M1.0 ({:.4}) should be below subsonic ({:.4})",
+            dip,
+            sub
+        );
+    }
+
+    #[test]
+    fn bcscale_supersonic_recovery() {
+        let bc = BCScale::new(BCSCALE_M855);
+        let dip = bc.scale_factor(1.0);
+        let rec = bc.scale_factor(1.6);
+        assert!(
+            rec > dip,
+            "BC factor recovery at M1.6 ({:.4}) above transonic dip ({:.4})",
+            rec,
+            dip
+        );
+    }
+
+    #[test]
+    fn bcscale_empty_table_returns_one() {
+        let bc = BCScale::new(&[]);
+        for m in [0.0, 0.5, 1.0, 3.0] {
+            assert!(
+                (bc.scale_factor(m) - 1.0).abs() < 1e-12,
+                "Empty table at M{}",
+                m
+            );
+        }
+    }
+
+    #[test]
+    fn bcscale_m80_dip_milder_than_m193() {
+        let bc_m80 = BCScale::new(BCSCALE_M80);
+        let bc_m193 = BCScale::new(BCSCALE_M193);
+        let dip_m80 = bc_m80.scale_factor(1.0);
+        let dip_m193 = bc_m193.scale_factor(1.0);
+        assert!(
+            dip_m80 > dip_m193,
+            "M80 dip ({:.4}) should be shallower than M193 ({:.4})",
+            dip_m80,
+            dip_m193
+        );
+    }
+
+    #[test]
+    fn bcscale_m118lr_dip_mildest() {
+        let bc_m118 = BCScale::new(BCSCALE_M118LR);
+        let bc_m80 = BCScale::new(BCSCALE_M80);
+        let dip_m118 = bc_m118.scale_factor(1.0);
+        let dip_m80 = bc_m80.scale_factor(1.0);
+        assert!(
+            dip_m118 >= dip_m80,
+            "M118LR dip ({:.4}) should be >= M80 dip ({:.4})",
+            dip_m118,
+            dip_m80
+        );
+    }
+
+    #[test]
+    fn bcscale_clamps_low() {
+        let bc = BCScale::new(BCSCALE_M855);
+        assert!((bc.scale_factor(-1.0) - bc.scale_factor(0.0)).abs() < 1e-12);
+    }
+
+    #[test]
+    fn bcscale_clamps_high() {
+        let bc = BCScale::new(BCSCALE_M855);
+        assert!((bc.scale_factor(10.0) - bc.scale_factor(5.0)).abs() < 1e-12);
     }
 }
