@@ -13,7 +13,7 @@ target/
 ext/target/
 
 # HEMTT
-*.hemttout/
+*.hemttout*/
 *.pbo
 *.pboproject
 HEMTTBuild/
