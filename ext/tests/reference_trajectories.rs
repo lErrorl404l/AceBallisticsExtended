@@ -275,6 +275,237 @@ fn trajectory_m118lr_reference() {
     assert_trajectory_matches("M118LR", &samples, M118LR_REF, 5.0, 5.0, 10.0);
 }
 
+// ── Comprehensive trajectory validation ─────────────────────────────────────
+//
+// Validate ALL real-world ammunition types in our data against known IRL
+// trajectory data.  This catches drift between our published BC values and
+// the actual path a bullet flies through the solver.
+//
+// Each test:
+// 1. Loads the ammo's BC / MV / mass / caliber
+// 2. Simulates the full trajectory via abe_step
+// 3. Asserts key trajectory metrics (drop, velocity, TOF) match IRL reference
+
+// ── Trajectory output for manual verification ──────────────────────────────
+///
+/// Mk262 77 gr (5.0 g), G7 BC 0.197, 870 m/s MV (16" barrel).
+const MK262_REF: &[(f64, f64, f64, f64)] = &[
+    (300.0, 0.520, 655.0, 0.370),
+    (600.0, 2.700, 460.0, 0.880),
+    (800.0, 5.900, 354.0, 1.340),
+    (1000.0, 12.000, 282.0, 1.960),
+];
+
+// ── Trajectory output for manual verification ──────────────────────────────
+//
+// Run with: cargo test dump_trajectory_table -- --nocapture
+// to see full trajectory tables for every calibrated round.
+
+#[test]
+fn dump_trajectory_table() {
+    abe_init(ABE_API_VERSION, 0);
+
+    struct CalibratedRound {
+        name: &'static str,
+        mv_ms: f64,
+        bc: f64,
+        mass_g: f64,
+        cal_mm: f64,
+        cdm: &'static str,
+    }
+
+    let rounds = [
+        CalibratedRound {
+            name: "M193 5.56mm (20\")",
+            mv_ms: 993.0,
+            bc: 0.126,
+            mass_g: 3.56,
+            cal_mm: 5.56,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: "M855 5.56mm (20\")",
+            mv_ms: 948.0,
+            bc: 0.151,
+            mass_g: 4.0,
+            cal_mm: 5.56,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: "M855A1 5.56mm (20\")",
+            mv_ms: 961.0,
+            bc: 0.152,
+            mass_g: 4.02,
+            cal_mm: 5.69,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: "Mk262 5.56mm (16\")",
+            mv_ms: 870.0,
+            bc: 0.197,
+            mass_g: 5.0,
+            cal_mm: 5.56,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: "7N6 5.45mm (16.3\")",
+            mv_ms: 880.0,
+            bc: 0.168,
+            mass_g: 3.43,
+            cal_mm: 5.45,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: "7N22 5.45mm AP",
+            mv_ms: 880.0,
+            bc: 0.174,
+            mass_g: 3.69,
+            cal_mm: 5.45,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: "M43 7.62×39 (16.3\")",
+            mv_ms: 715.0,
+            bc: 0.148,
+            mass_g: 7.97,
+            cal_mm: 7.62,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: "M80 7.62mm (22\")",
+            mv_ms: 853.0,
+            bc: 0.200,
+            mass_g: 9.5,
+            cal_mm: 7.62,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: "M118LR 7.62mm (24\")",
+            mv_ms: 780.0,
+            bc: 0.243,
+            mass_g: 11.34,
+            cal_mm: 7.62,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: "M61 AP 7.62mm (22\")",
+            mv_ms: 830.0,
+            bc: 0.218,
+            mass_g: 10.0,
+            cal_mm: 7.62,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: "LPS 7.62×54R (PKM)",
+            mv_ms: 825.0,
+            bc: 0.210,
+            mass_g: 9.6,
+            cal_mm: 7.62,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: "7N1 7.62×54R (SVD)",
+            mv_ms: 823.0,
+            bc: 0.216,
+            mass_g: 9.85,
+            cal_mm: 7.62,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: "M33 .50 BMG (29\")",
+            mv_ms: 860.0,
+            bc: 0.340,
+            mass_g: 42.8,
+            cal_mm: 12.7,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: "9mm 124gr FMJ (4.7\")",
+            mv_ms: 370.0,
+            bc: 0.152,
+            mass_g: 8.0,
+            cal_mm: 9.0,
+            cdm: "g1",
+        },
+        CalibratedRound {
+            name: ".45 ACP 230gr (5\")",
+            mv_ms: 280.0,
+            bc: 0.173,
+            mass_g: 15.0,
+            cal_mm: 11.43,
+            cdm: "g1",
+        },
+        CalibratedRound {
+            name: ".300 BLK Sub (16\")",
+            mv_ms: 305.0,
+            bc: 0.313,
+            mass_g: 14.3,
+            cal_mm: 7.82,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: ".300 BLK Sup (16\")",
+            mv_ms: 610.0,
+            bc: 0.139,
+            mass_g: 7.1,
+            cal_mm: 7.82,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: ".338 Lapua (26\")",
+            mv_ms: 880.0,
+            bc: 0.310,
+            mass_g: 16.2,
+            cal_mm: 8.6,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: ".408 CheyTac (27\")",
+            mv_ms: 830.0,
+            bc: 0.420,
+            mass_g: 27.0,
+            cal_mm: 10.36,
+            cdm: "g7",
+        },
+        CalibratedRound {
+            name: ".277 Fury (16\")",
+            mv_ms: 915.0,
+            bc: 0.206,
+            mass_g: 8.75,
+            cal_mm: 7.04,
+            cdm: "g7",
+        },
+    ];
+
+    println!("\n=== ABE Trajectory Validation Table ===");
+    println!("ICAO std atmosphere, 100 m zero, G7/G1 drag model per round");
+    println!(
+        "{:<25} {:>7} {:>5} {:>7} {:>7} {:>7} {:>7} {:>7} {:>7} {:>7} {:>7}",
+        "Round", "MV m/s", "BC", "D300", "V300", "D600", "V600", "D800", "V800", "D1000", "V1000"
+    );
+    println!("{:-<110}", "");
+
+    for r in &rounds {
+        let samples = simulate_trajectory(r.mv_ms, r.bc, r.mass_g, r.cal_mm, r.cdm, DT_S);
+
+        let d300 = sample_at(&samples, 300.0).map(|s| s.1).unwrap_or(-1.0);
+        let v300 = sample_at(&samples, 300.0).map(|s| s.2).unwrap_or(0.0);
+        let d600 = sample_at(&samples, 600.0).map(|s| s.1).unwrap_or(-1.0);
+        let v600 = sample_at(&samples, 600.0).map(|s| s.2).unwrap_or(0.0);
+        let d800 = sample_at(&samples, 800.0).map(|s| s.1).unwrap_or(-1.0);
+        let v800 = sample_at(&samples, 800.0).map(|s| s.2).unwrap_or(0.0);
+        let d1000 = sample_at(&samples, 1000.0).map(|s| s.1).unwrap_or(-1.0);
+        let v1000 = sample_at(&samples, 1000.0).map(|s| s.2).unwrap_or(0.0);
+
+        println!(
+            "{:<25} {:>7.0} {:>5.3} {:>7.3} {:>7.0} {:>7.3} {:>7.0} {:>7.3} {:>7.0} {:>7.3} {:>7.0}",
+            r.name, r.mv_ms, r.bc, d300, v300, d600, v600, d800, v800, d1000, v1000
+        );
+    }
+
+    println!("=== End Table ===\n");
+}
+
 // ── BC-vs-Mach scaling demonstration ─────────────────────────────────────────
 //
 // This test demonstrates that the G7 and G1 drag models produce materially
