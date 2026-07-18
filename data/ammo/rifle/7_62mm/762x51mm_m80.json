@@ -10,10 +10,14 @@
       "threshold_vel_ms": 790.0,
       "avg_fragments": 1,
       "mass_distribution": "log_normal",
-      "params": { "mean": 0.15, "std": 0.12 }
+      "params": {
+        "mean": 0.15,
+        "std": 0.12
+      }
     },
     "ricochet_angle_deg": 20.0,
     "source": "APG/US Army BRL G7 BC=0.200 (M80 149gr FMJ, AD0815788, Piddington & Maynard 1966)"
   },
-  "notes": "M80 149-gr FMJ. NATO standard. G7 BC=0.200 per APG/US Army BRL (AD0815788). Frag above 600 m/s."
+  "notes": "M80 149-gr FMJ. NATO standard. G7 BC=0.200 per APG/US Army BRL (AD0815788). Frag above 600 m/s. Chamber pressure: 415 MPa.",
+  "chamber_pressure_mpa": 415.0
 }

@@ -9,5 +9,6 @@
     "ricochet_angle_deg": 20.0,
     "source": "Hornady Doppler radar G7 BC=0.216 (7N1 152gr, Firearms News, Fortier 2021)"
   },
-  "notes": "7N1 152-gr FMJ. SVD load. G7 BC=0.216 per Hornady Doppler radar test (Firearms News, Fortier). Mild steel core, no frag."
+  "notes": "7N1 152-gr FMJ. SVD load. G7 BC=0.216 per Hornady Doppler radar test (Firearms News, Fortier). Mild steel core, no frag. Chamber pressure: 390 MPa.",
+  "chamber_pressure_mpa": 390.0
 }

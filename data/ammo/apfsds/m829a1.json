@@ -1,22 +1,24 @@
 {
-    "class": "m829a1",
-    "projectile": {
-        "model": "M829A1",
-        "mass_g": 4650.0,
-        "caliber_mm": 26.0,
-        "bc_g7": 0.82,
-        "cdm_id": "g7",
-        "source": "M829A1 APFSDS depleted-uranium penetrator. Sabot discard ~850 m/s.",
-        "sabot_mass_g": 2850.0,
-        "sabot_discard_velocity_ms": 100.0,
-        "apfsds_tip_length_mm": 45.0,
-        "apfsds_tip_mass_g": 160.0,
-        "apfsds_tip_shedding_velocity_ms": 550.0,
-        "frag_mass_mean": 1.0,
-        "frag_mass_std": 0.4,
-        "ricochet_angle_deg": 10.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "m829a1",
+  "projectile": {
+    "model": "M829A1",
+    "mass_g": 4650.0,
+    "caliber_mm": 26.0,
+    "bc_g7": 0.82,
+    "cdm_id": "g7",
+    "source": "M829A1 APFSDS depleted-uranium penetrator. Sabot discard ~850 m/s.",
+    "sabot_mass_g": 2850.0,
+    "sabot_discard_velocity_ms": 100.0,
+    "apfsds_tip_length_mm": 45.0,
+    "apfsds_tip_mass_g": 160.0,
+    "apfsds_tip_shedding_velocity_ms": 550.0,
+    "frag_mass_mean": 1.0,
+    "frag_mass_std": 0.4,
+    "ricochet_angle_deg": 10.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 580.0,
+  "notes": "Chamber pressure: 580 MPa."
 }

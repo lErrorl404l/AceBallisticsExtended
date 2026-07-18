@@ -22,5 +22,7 @@
     "tracer_burn_time_s": 0.0,
     "incendiary": false,
     "incendiary_ignition_temp_k": 0.0
-  }
+  },
+  "chamber_pressure_mpa": 355.0,
+  "notes": "Chamber pressure: 355 MPa."
 }

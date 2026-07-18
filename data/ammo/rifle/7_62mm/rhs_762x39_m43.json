@@ -1,18 +1,20 @@
 {
-    "class": "rhs_mag_30Rnd_762x39mm",
-    "projectile": {
-        "model": "M43",
-        "mass_g": 7.97,
-        "caliber_mm": 7.62,
-        "bc_g7": 0.148,
-        "cdm_id": "g7",
-        "source": "ACE3 rhs_B_762x39_Ball. Consensus G7 BC=0.148 (APG Doppler 0.156 vs Litz 0.138 midpoint). Type 56/M43 123gr FMJ mild steel core. G7 model for boat-tail profile.",
-        "fragmentation": null,
-        "frag_mass_mean": 1.5,
-        "frag_mass_std": 0.5,
-        "ricochet_angle_deg": 20.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "rhs_mag_30Rnd_762x39mm",
+  "projectile": {
+    "model": "M43",
+    "mass_g": 7.97,
+    "caliber_mm": 7.62,
+    "bc_g7": 0.148,
+    "cdm_id": "g7",
+    "source": "ACE3 rhs_B_762x39_Ball. Consensus G7 BC=0.148 (APG Doppler 0.156 vs Litz 0.138 midpoint). Type 56/M43 123gr FMJ mild steel core. G7 model for boat-tail profile.",
+    "fragmentation": null,
+    "frag_mass_mean": 1.5,
+    "frag_mass_std": 0.5,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 241.0,
+  "notes": "Chamber pressure: 241 MPa."
 }

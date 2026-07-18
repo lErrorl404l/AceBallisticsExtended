@@ -1,22 +1,24 @@
 {
-    "class": "m829",
-    "projectile": {
-        "model": "M829",
-        "mass_g": 4000.0,
-        "caliber_mm": 27.0,
-        "bc_g7": 0.70,
-        "cdm_id": "g7",
-        "source": "M829 APFSDS baseline round. 627mm DU penetrator, 27mm rod diameter, 23.2:1 L/D. JA-2 propellant 8.1kg. MV 1,670 m/s. Penetration ~540mm RHA @2km (Jane's). Replaced by M829A1.",
-        "sabot_mass_g": 2850.0,
-        "sabot_discard_velocity_ms": 100.0,
-        "apfsds_tip_length_mm": 50.0,
-        "apfsds_tip_mass_g": 170.0,
-        "apfsds_tip_shedding_velocity_ms": 500.0,
-        "frag_mass_mean": 1.0,
-        "frag_mass_std": 0.4,
-        "ricochet_angle_deg": 8.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "m829",
+  "projectile": {
+    "model": "M829",
+    "mass_g": 4000.0,
+    "caliber_mm": 27.0,
+    "bc_g7": 0.7,
+    "cdm_id": "g7",
+    "source": "M829 APFSDS baseline round. 627mm DU penetrator, 27mm rod diameter, 23.2:1 L/D. JA-2 propellant 8.1kg. MV 1,670 m/s. Penetration ~540mm RHA @2km (Jane's). Replaced by M829A1.",
+    "sabot_mass_g": 2850.0,
+    "sabot_discard_velocity_ms": 100.0,
+    "apfsds_tip_length_mm": 50.0,
+    "apfsds_tip_mass_g": 170.0,
+    "apfsds_tip_shedding_velocity_ms": 500.0,
+    "frag_mass_mean": 1.0,
+    "frag_mass_std": 0.4,
+    "ricochet_angle_deg": 8.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 580.0,
+  "notes": "Chamber pressure: 580 MPa."
 }

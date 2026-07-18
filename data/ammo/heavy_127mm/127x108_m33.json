@@ -1,26 +1,28 @@
 {
-    "class": "127x108_m33",
-    "projectile": {
-        "model": "M33 Ball",
-        "mass_g": 42.8,
-        "caliber_mm": 12.7,
-        "bc_g7": 0.34,
-        "cdm_id": "g7",
-        "source": "M33 .50 BMG 660gr (42.8g) FMJ. G7 BC=0.340 (APG/ARL ADA219106, identical drag to M33/M8). Heavy fragmentation.",
-        "fragmentation": {
-            "threshold_vel_ms": 1000.0,
-            "avg_fragments": 15,
-            "mass_distribution": "log_normal",
-            "params": {
-                "mean": 0.15,
-                "std": 0.07
-            }
-        },
-        "frag_mass_mean": 3.0,
-        "frag_mass_std": 1.5,
-        "ricochet_angle_deg": 15.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "127x108_m33",
+  "projectile": {
+    "model": "M33 Ball",
+    "mass_g": 42.8,
+    "caliber_mm": 12.7,
+    "bc_g7": 0.34,
+    "cdm_id": "g7",
+    "source": "M33 .50 BMG 660gr (42.8g) FMJ. G7 BC=0.340 (APG/ARL ADA219106, identical drag to M33/M8). Heavy fragmentation.",
+    "fragmentation": {
+      "threshold_vel_ms": 1000.0,
+      "avg_fragments": 15,
+      "mass_distribution": "log_normal",
+      "params": {
+        "mean": 0.15,
+        "std": 0.07
+      }
+    },
+    "frag_mass_mean": 3.0,
+    "frag_mass_std": 1.5,
+    "ricochet_angle_deg": 15.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 360.0,
+  "notes": "Chamber pressure: 360 MPa."
 }

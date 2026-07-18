@@ -1,18 +1,20 @@
 {
-    "class": "B_570x28_Ball",
-    "projectile": {
-        "model": "SS190",
-        "mass_g": 2.0,
-        "caliber_mm": 5.7,
-        "bc_g7": 0.09,
-        "cdm_id": "g7",
-        "source": "FN SS190 31gr. G7 BC=0.090 (FN factory data). Steel-core AP. Harmonized with 57x28.json.",
-        "notes": "PDW round \u2014 high velocity light projectile, steel core for armor piercing",
-        "frag_mass_mean": 0.5,
-        "frag_mass_std": 0.3,
-        "ricochet_angle_deg": 15.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "B_570x28_Ball",
+  "projectile": {
+    "model": "SS190",
+    "mass_g": 2.0,
+    "caliber_mm": 5.7,
+    "bc_g7": 0.09,
+    "cdm_id": "g7",
+    "source": "FN SS190 31gr. G7 BC=0.090 (FN factory data). Steel-core AP. Harmonized with 57x28.json.",
+    "notes": "PDW round \u2014 high velocity light projectile, steel core for armor piercing",
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3,
+    "ricochet_angle_deg": 15.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 345.0,
+  "notes": "Chamber pressure: 345 MPa."
 }

@@ -1,26 +1,28 @@
 {
-    "class": "rhs_mag_30Rnd_556x45_M855_Stanag",
-    "projectile": {
-        "model": "m855",
-        "mass_g": 4.0,
-        "caliber_mm": 5.56,
-        "bc_g7": 0.151,
-        "cdm_id": "m855",
-        "source": "APG G7 BC=0.151 (US Army BRL, M855 62gr SS109/M855, ARL-TR-5182)",
-        "fragmentation": {
-            "threshold_vel_ms": 762.0,
-            "avg_fragments": 12,
-            "mass_distribution": "log_normal",
-            "params": {
-                "mean": 0.08,
-                "std": 0.04
-            }
-        },
-        "frag_mass_mean": 1.5,
-        "frag_mass_std": 0.5,
-        "ricochet_angle_deg": 20.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "rhs_mag_30Rnd_556x45_M855_Stanag",
+  "projectile": {
+    "model": "m855",
+    "mass_g": 4.0,
+    "caliber_mm": 5.56,
+    "bc_g7": 0.151,
+    "cdm_id": "m855",
+    "source": "APG G7 BC=0.151 (US Army BRL, M855 62gr SS109/M855, ARL-TR-5182)",
+    "fragmentation": {
+      "threshold_vel_ms": 762.0,
+      "avg_fragments": 12,
+      "mass_distribution": "log_normal",
+      "params": {
+        "mean": 0.08,
+        "std": 0.04
+      }
+    },
+    "frag_mass_mean": 1.5,
+    "frag_mass_std": 0.5,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 430.0,
+  "notes": "Chamber pressure: 430 MPa."
 }

@@ -1,26 +1,28 @@
 {
-    "class": "B_556x45_Mk262",
-    "projectile": {
-        "model": "Mk262 Mod 1",
-        "mass_g": 5.0,
-        "caliber_mm": 5.56,
-        "bc_g7": 0.197,
-        "cdm_id": "g7",
-        "source": "Mk262 Mod 1 77gr SMK (Sierra #2276). Litz G7=0.192 (Applied Ballistics 4th Ed. \u00a710.5). Berger 77gr OTM Tactical G7=0.192. Consensus G7=0.197 accounting for OTM profile differences. US Army ATAC confirmed.",
-        "fragmentation": {
-            "threshold_vel_ms": 762.0,
-            "avg_fragments": 8,
-            "mass_distribution": "log_normal",
-            "params": {
-                "mean": 0.12,
-                "std": 0.06
-            }
-        },
-        "frag_mass_mean": 1.0,
-        "frag_mass_std": 0.6,
-        "ricochet_angle_deg": 20.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "B_556x45_Mk262",
+  "projectile": {
+    "model": "Mk262 Mod 1",
+    "mass_g": 5.0,
+    "caliber_mm": 5.56,
+    "bc_g7": 0.197,
+    "cdm_id": "g7",
+    "source": "Mk262 Mod 1 77gr SMK (Sierra #2276). Litz G7=0.192 (Applied Ballistics 4th Ed. \u00a710.5). Berger 77gr OTM Tactical G7=0.192. Consensus G7=0.197 accounting for OTM profile differences. US Army ATAC confirmed.",
+    "fragmentation": {
+      "threshold_vel_ms": 762.0,
+      "avg_fragments": 8,
+      "mass_distribution": "log_normal",
+      "params": {
+        "mean": 0.12,
+        "std": 0.06
+      }
+    },
+    "frag_mass_mean": 1.0,
+    "frag_mass_std": 0.6,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 430.0,
+  "notes": "Chamber pressure: 430 MPa."
 }

@@ -23,5 +23,7 @@
     "incendiary": false,
     "incendiary_ignition_temp_k": 0.0,
     "cdm_id": "g7"
-  }
+  },
+  "chamber_pressure_mpa": 430.0,
+  "notes": "Chamber pressure: 430 MPa."
 }

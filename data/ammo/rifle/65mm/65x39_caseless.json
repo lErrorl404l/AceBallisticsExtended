@@ -1,17 +1,19 @@
 {
-    "class": "B_65x39_Caseless",
-    "projectile": {
-        "model": "6.5mm_CT",
-        "mass_g": 7.5,
-        "caliber_mm": 6.5,
-        "bc_g7": 0.26,
-        "cdm_id": "g7",
-        "source": "Conservative est. for 115gr 6.5mm BT-FMJ (~6.5 Grendel analog). Litz 123gr SMK G7=0.230, Berger 130gr G7=0.290",
-        "frag_mass_mean": 1.5,
-        "frag_mass_std": 0.5,
-        "ricochet_angle_deg": 20.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "B_65x39_Caseless",
+  "projectile": {
+    "model": "6.5mm_CT",
+    "mass_g": 7.5,
+    "caliber_mm": 6.5,
+    "bc_g7": 0.26,
+    "cdm_id": "g7",
+    "source": "Conservative est. for 115gr 6.5mm BT-FMJ (~6.5 Grendel analog). Litz 123gr SMK G7=0.230, Berger 130gr G7=0.290",
+    "frag_mass_mean": 1.5,
+    "frag_mass_std": 0.5,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Chamber pressure: 0 MPa."
 }
