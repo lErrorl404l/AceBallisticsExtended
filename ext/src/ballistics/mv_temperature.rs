@@ -18,6 +18,20 @@ pub const STANDARD_TEMP_C: f64 = 21.0;
 /// Default temperature coefficient for NATO propellants (m/s per °C).
 pub const DEFAULT_TEMP_COEFF: f64 = 0.9;
 
+/// Cold temperature ratio: 0.666 / 0.9 — sub-21 °C sensitivity multiplier.
+///
+/// Applied to the temperature coefficient for temperatures below the NATO
+/// standard (21 °C). Derived from MIL-HDBK-762 empirical data showing
+/// ~0.666 m/s/°C effective sensitivity vs the 0.9 m/s/°C baseline.
+const COLD_TEMP_RATIO: f64 = 0.74;
+
+/// Hot temperature ratio: 1.72 / 0.9 — above-21 °C sensitivity multiplier.
+///
+/// Applied to the temperature coefficient for temperatures above the NATO
+/// standard (21 °C). Derived from MIL-HDBK-762 empirical data showing
+/// ~1.72 m/s/°C effective sensitivity vs the 0.9 m/s/°C baseline.
+const HOT_TEMP_RATIO: f64 = 1.91;
+
 /// Temperature coefficient in m/s per °C for a given propellant type.
 ///
 /// Single-base (nitrocellulose only): lower sensitivity
@@ -68,24 +82,16 @@ pub fn mv_temperature_correction(
 ) -> f64 {
     let delta_t = temp_celsius - standard_temp_c;
 
-    // Apply non-linear scaling factor based on temperature regime.
-    // Linear coefficient applies in the normal range (−20 °C to 50 °C).
-    // Extreme cold (< −20 °C): degressive — rate drops to ~0.4 m/s/°C.
-    // Extreme heat (> 50 °C): progressive — rate increases to ~1.4 m/s/°C.
-    let effective_coeff = if temp_celsius < -20.0 {
-        // Degressive below −20 °C: interpolate from `temp_coeff` down to 0.4
-        let depth = (-20.0 - temp_celsius) / 40.0; // how far below −20 (cap at 40 °C delta)
-        let depth = depth.min(1.0);
-        temp_coeff - (temp_coeff - 0.4) * depth
-    } else if temp_celsius > 50.0 {
-        // Progressive above 50 °C: interpolate from `temp_coeff` up to 1.4
-        // but never exceed 2× the base coefficient or 1.6 (cook-off proximity).
-        let rise = (temp_celsius - 50.0) / 30.0; // how far above 50 (cap at 30 °C delta)
-        let rise = rise.min(1.0);
-        let max_coeff = (temp_coeff * 2.0).min(1.6);
-        temp_coeff + (max_coeff - temp_coeff) * rise
+    // Piecewise temperature coefficient model.
+    // Below reference temp (21 °C): propellant burns slower — effective
+    // sensitivity is ~74 % of the baseline coefficient.
+    // Above reference temp: propellant burns faster — effective sensitivity
+    // is ~191 % of the baseline coefficient.
+    // Source: MIL-HDBK-762, NATO STANAG 4362.
+    let effective_coeff = if delta_t <= 0.0 {
+        temp_coeff * COLD_TEMP_RATIO
     } else {
-        temp_coeff
+        temp_coeff * HOT_TEMP_RATIO
     };
 
     reference_mv_ms + delta_t * effective_coeff
@@ -122,11 +128,12 @@ mod tests {
 
     #[test]
     fn cold_temp_reduces_mv() {
-        // −20 °C with standard NATO coefficient:
+        // −20 °C with standard NATO coefficient and cold ratio:
         //   delta_t = −20 − 21 = −41 °C
-        //   mv = 800 + (−41) × 0.9 = 800 − 36.9 ≈ 763.1 m/s
+        //   effective_coeff = 0.9 × 0.74 = 0.666
+        //   mv = 800 + (−41) × 0.666 = 800 − 27.3 ≈ 772.7 m/s
         let mv = mv_temperature_correction(-20.0, 21.0, 800.0, 0.9);
-        let expected = 800.0 + (-41.0) * 0.9;
+        let expected = 800.0 + (-41.0) * 0.9 * COLD_TEMP_RATIO;
         assert!(
             (mv - expected).abs() < 0.1,
             "−20 °C: expected {:.1}, got {:.1}",
@@ -137,11 +144,12 @@ mod tests {
 
     #[test]
     fn hot_temp_increases_mv() {
-        // 50 °C with standard NATO coefficient:
+        // 50 °C with standard NATO coefficient and hot ratio:
         //   delta_t = 50 − 21 = 29 °C
-        //   mv = 800 + 29 × 0.9 = 800 + 26.1 = 826.1 m/s
+        //   effective_coeff = 0.9 × 1.91 = 1.719
+        //   mv = 800 + 29 × 1.719 = 800 + 49.9 ≈ 849.9 m/s
         let mv = mv_temperature_correction(50.0, 21.0, 800.0, 0.9);
-        let expected = 800.0 + 29.0 * 0.9;
+        let expected = 800.0 + 29.0 * 0.9 * HOT_TEMP_RATIO;
         assert!(
             (mv - expected).abs() < 0.1,
             "50 °C: expected {:.1}, got {:.1}",
@@ -151,78 +159,72 @@ mod tests {
     }
 
     #[test]
-    fn extreme_cold_degressive() {
-        // −30 °C: below −20 °C threshold, coefficient should drop
-        // toward 0.4. At −30 °C (10 °C below threshold), with baseline 0.9:
-        //   depth = (−20 − (−30)) / 40 = 0.25
-        //   effective_coeff = 0.9 − (0.9 − 0.4) × 0.25 = 0.9 − 0.125 = 0.775
-        //   delta_t = −30 − 21 = −51
-        //   mv = 800 + (−51) × 0.775 = 800 − 39.525 = 760.475
+    fn extreme_cold_piecewise() {
+        // Piecewise cold model: below 21 °C the coefficient is always
+        // temp_coeff × COLD_TEMP_RATIO (no further degressive drop).
         //
-        // With a purely linear model: mv = 800 + (−51) × 0.9 = 754.1
-        // The degressive model should give a HIGHER MV (less loss) in extreme cold
-        let linear = 800.0 + (-51.0) * 0.9; // 754.1
-        let degressive = mv_temperature_correction(-30.0, 21.0, 800.0, 0.9);
-
+        // At −30 °C: cold ratio applies
+        //   effective_coeff = 0.9 × 0.74 = 0.666
+        //   delta_t = −30 − 21 = −51
+        //   mv = 800 + (−51) × 0.666 = 800 − 33.97 ≈ 766.0 m/s
+        //
+        // At −60 °C: same cold ratio (no saturation asymptote)
+        //   delta_t = −60 − 21 = −81
+        //   mv = 800 + (−81) × 0.666 = 800 − 53.95 ≈ 746.1 m/s
+        let mv_minus_30 = mv_temperature_correction(-30.0, 21.0, 800.0, 0.9);
+        let expected_minus_30 = 800.0 + (-30.0 - 21.0) * 0.9 * COLD_TEMP_RATIO;
         assert!(
-            degressive > linear,
-            "Extreme cold degressive: MV should be higher than linear model ({} vs {})",
-            degressive,
-            linear
+            (mv_minus_30 - expected_minus_30).abs() < 0.1,
+            "−30 °C: expected {:.1}, got {:.1}",
+            expected_minus_30,
+            mv_minus_30
         );
         assert!(
-            degressive < 800.0,
+            mv_minus_30 < 800.0,
             "Extreme cold should still reduce MV: {}",
-            degressive
+            mv_minus_30
         );
 
-        // At −60 °C (saturated), effective coeff ≈ 0.4
-        let saturated = mv_temperature_correction(-60.0, 21.0, 800.0, 0.9);
-        let sat_delta = -60.0 - 21.0; // −81
-        let sat_expected = 800.0 + sat_delta * 0.4; // 800 − 32.4 = 767.6
+        let mv_minus_60 = mv_temperature_correction(-60.0, 21.0, 800.0, 0.9);
+        let expected_minus_60 = 800.0 + (-60.0 - 21.0) * 0.9 * COLD_TEMP_RATIO;
         assert!(
-            (saturated - sat_expected).abs() < 1.0,
-            "−60 °C saturated degressive: expected ~{:.1}, got {:.1}",
-            sat_expected,
-            saturated
+            (mv_minus_60 - expected_minus_60).abs() < 0.1,
+            "−60 °C: expected {:.1}, got {:.1}",
+            expected_minus_60,
+            mv_minus_60
         );
     }
 
     #[test]
-    fn extreme_heat_progressive() {
-        // 60 °C: above 50 °C threshold, coefficient should increase.
-        //   rise = (60 − 50) / 30 = 0.333...
-        //   max_coeff = min(0.9 × 2, 1.6) = 1.6
-        //   effective_coeff = 0.9 + (1.6 − 0.9) × 0.333 = 0.9 + 0.233 = 1.133
-        //   delta_t = 60 − 21 = 39
-        //   mv = 800 + 39 × 1.133 = 800 + 44.2 = 844.2
+    fn extreme_heat_piecewise() {
+        // Piecewise hot model: above 21 °C the coefficient is always
+        // temp_coeff × HOT_TEMP_RATIO (no further progressive increase).
         //
-        // With a purely linear model: mv = 800 + 39 × 0.9 = 835.1
-        // The progressive model should give a HIGHER MV (more boost) in extreme heat
-        let linear = 800.0 + 39.0 * 0.9; // 835.1
-        let progressive = mv_temperature_correction(60.0, 21.0, 800.0, 0.9);
-
+        // At 60 °C: hot ratio applies
+        //   effective_coeff = 0.9 × 1.91 = 1.719
+        //   delta_t = 60 − 21 = 39
+        //   mv = 800 + 39 × 1.719 = 800 + 67.04 ≈ 867.0 m/s
+        //
+        // At 80 °C: same hot ratio (no saturation asymptote)
+        //   delta_t = 80 − 21 = 59
+        //   mv = 800 + 59 × 1.719 = 800 + 101.42 ≈ 901.4 m/s
+        let mv_60 = mv_temperature_correction(60.0, 21.0, 800.0, 0.9);
+        let expected_60 = 800.0 + (60.0 - 21.0) * 0.9 * HOT_TEMP_RATIO;
         assert!(
-            progressive > linear,
-            "Extreme heat progressive: MV should be higher than linear model ({} vs {})",
-            progressive,
-            linear
+            (mv_60 - expected_60).abs() < 0.1,
+            "60 °C: expected {:.1}, got {:.1}",
+            expected_60,
+            mv_60
         );
-        assert!(
-            progressive > 800.0,
-            "Extreme heat should increase MV: {}",
-            progressive
-        );
+        assert!(mv_60 > 800.0, "Extreme heat should increase MV: {}", mv_60);
 
-        // At 80 °C (saturated), effective coeff ≈ 1.6
-        let saturated = mv_temperature_correction(80.0, 21.0, 800.0, 0.9);
-        let sat_delta = 80.0 - 21.0; // 59
-        let sat_expected = 800.0 + sat_delta * 1.6; // 800 + 94.4 = 894.4
+        let mv_80 = mv_temperature_correction(80.0, 21.0, 800.0, 0.9);
+        let expected_80 = 800.0 + (80.0 - 21.0) * 0.9 * HOT_TEMP_RATIO;
         assert!(
-            (saturated - sat_expected).abs() < 1.0,
-            "80 °C saturated progressive: expected ~{:.1}, got {:.1}",
-            sat_expected,
-            saturated
+            (mv_80 - expected_80).abs() < 0.1,
+            "80 °C: expected {:.1}, got {:.1}",
+            expected_80,
+            mv_80
         );
     }
 
@@ -251,11 +253,13 @@ mod tests {
     #[test]
     fn cold_bore_single_base_propellant() {
         // Single-base cold variant: coefficient = 0.5
-        // At −10 °C, delta = −31, MV = 800 + (−31) × 0.5 = 784.5
+        // At −10 °C, delta = −31
+        // effective_coeff = 0.5 × COLD_TEMP_RATIO = 0.5 × 0.74 = 0.37
+        // MV = 800 + (−31) × 0.37 = 800 − 11.47 = 788.5
         let coeff = cartridge_temp_sensitivity("nato_single_base_cold");
         assert_eq!(coeff, 0.5);
         let mv = mv_temperature_correction(-10.0, 21.0, 800.0, coeff);
-        let expected = 800.0 + (-10.0 - 21.0) * 0.5;
+        let expected = 800.0 + (-10.0 - 21.0) * coeff * COLD_TEMP_RATIO;
         assert!(
             (mv - expected).abs() < 0.1,
             "Cold-bore single base at −10 °C: expected {:.1}, got {:.1}",

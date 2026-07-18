@@ -97,6 +97,28 @@ pub struct ProjectileConfig {
     /// Ignition temperature of incendiary filler in Kelvin.
     #[serde(default)]
     pub incendiary_ignition_temp_k: Option<f64>,
+    /// Sabot/pusher mass in grams (for APFSDS discarding sabot rounds).
+    /// The sabot falls away after muzzle, carrying no down-range effect,
+    /// but its mass affects in-bore acceleration.
+    #[serde(default)]
+    pub sabot_mass_g: Option<f64>,
+    /// Velocity at which the sabot petals separate from the sub-projectile (m/s).
+    /// Typically 800–900 m/s for tank APFSDS, lower for small-calibre.
+    #[serde(default)]
+    pub sabot_discard_velocity_ms: Option<f64>,
+    /// APFSDS stepped-tip length in millimetres (e.g. 100 mm on M829A3).
+    /// A sacrificial steel tip breaks off on ERA impact, allowing the
+    /// main DU rod to penetrate undeflected.
+    #[serde(default)]
+    pub apfsds_tip_length_mm: Option<f64>,
+    /// APFSDS stepped-tip mass in grams.
+    #[serde(default)]
+    pub apfsds_tip_mass_g: Option<f64>,
+    /// Minimum impact velocity (m/s) for the tip to shear off.
+    /// Below this velocity, the tip behaves as part of the penetrator.
+    /// Typical: 500–700 m/s for ERA-defeat designs.
+    #[serde(default)]
+    pub apfsds_tip_shedding_velocity_ms: Option<f64>,
 }
 
 /// Fragmentation behaviour parameters for a projectile.

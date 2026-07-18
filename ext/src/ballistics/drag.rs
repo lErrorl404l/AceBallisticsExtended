@@ -462,9 +462,28 @@ pub fn bc_at_mach(bc_reference: f64, mach: f64, cdm_id: &str) -> f64 {
     } else if mach <= 0.8 {
         bc_reference * subsonic_factor
     } else {
-        // Transonic — linear interpolation between subsonic and supersonic
-        let t = (mach - 0.8) / 0.4; // 0 at M 0.8, 1 at M 1.2
-        let factor = subsonic_factor + t * (supersonic_factor - subsonic_factor);
+        // Transonic region (0.8 ≤ M ≤ 1.2): Gaussian BC dip model
+        // Real ballistics: BC drops 10-15% at Mach ~1.0 for boat-tail (G7),
+        // 5-8% for flat-base (G1), due to shock wave formation on the projectile body.
+        // Recovery is complete by ~M1.2. This replaces the simple linear model.
+        //
+        // Published BC scale data (Litz, McCoy) shows the characteristic dip:
+        //   G1 flat-base:  dips to ~0.92× of supersonic BC at M1.0
+        //   G7 boat-tail: dips to ~0.85× of supersonic BC at M1.0
+        let sigma_base = 0.20;
+        let dip_amplitude = match cdm_id {
+            "g1" | "g2" => 0.08,
+            "g5" | "g6" => 0.08,
+            "g7" | "g8" => 0.15,
+            _ => 0.10,
+        };
+        let sigma_dip = 0.10;
+        let mach_center = 1.0;
+
+        let transition = (-0.5 * ((mach - mach_center) / sigma_base).powi(2)).exp();
+        let base = supersonic_factor + (subsonic_factor - supersonic_factor) * transition;
+        let dip = dip_amplitude * (-0.5 * ((mach - mach_center) / sigma_dip).powi(2)).exp();
+        let factor = base - dip;
         bc_reference * factor
     }
 }

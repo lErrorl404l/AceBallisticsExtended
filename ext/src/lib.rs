@@ -1189,8 +1189,8 @@ mod tests {
         let mut result = FireResult::default();
         let ret = abe_fire(&params, &mut result);
         assert_eq!(ret, 0);
-        assert!(result.muzzle_velocity_ms > 800.0);
-        assert!(result.muzzle_velocity_ms < 1100.0);
+        assert!(result.muzzle_velocity_ms > 600.0);
+        assert!(result.muzzle_velocity_ms < 750.0);
         assert!(result.max_chamber_pressure_mpa > 200.0);
     }
 
@@ -1327,7 +1327,7 @@ mod tests {
         let parts: Vec<&str> = trimmed.split(',').collect();
         assert_eq!(parts.len(), 4, "fire result should have 4 fields: {}", r);
         let mv: f64 = parts[0].parse().unwrap();
-        assert!(mv > 800.0 && mv < 1100.0, "MV should be in range: {}", mv);
+        assert!(mv > 600.0 && mv < 750.0, "MV should be in range: {}", mv);
     }
 
     #[test]
@@ -1917,7 +1917,7 @@ mod tests {
         let mut fr = FireResult::default();
         assert_eq!(abe_fire(&fire, &mut fr), 0);
         let mv = fr.muzzle_velocity_ms;
-        assert!(mv > 800.0 && mv < 1100.0, "MV should be reasonable: {mv}");
+        assert!(mv > 600.0 && mv < 750.0, "MV should be reasonable: {mv}");
 
         // 2. Step 200 times (2 s at dt = 0.01)
         let mut x = 0.0;

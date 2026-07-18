@@ -198,39 +198,66 @@ pub fn compute_firing_solution(
     lrf: &LRFParams,
     ammo: &AmmoBallisticData,
     ballistic_table: Option<&Vec<(f64, f64, f64, f64)>>,
+    zero_range_m: f64,
 ) -> FiringSolution {
     let corrected_range =
         inclined_range_correction(lrf.measured_range_m, lrf.inclination_angle_deg).max(0.0);
 
-    // --- Ballistic solution ---
-    let (drop_m, windage_m, tof_s, impact_v_ms) = if let Some(table) = ballistic_table {
-        interpolate_ballistic_table(table, corrected_range)
+    // Helper: compute drop at a given range using the ballistic table or vacuum model.
+    let compute_drop_at_range = |range_m: f64| -> f64 {
+        if range_m <= 0.0 {
+            return 0.0;
+        }
+        if let Some(table) = ballistic_table {
+            interpolate_ballistic_table(table, range_m).0
+        } else {
+            let mv = ammo.mv_ms;
+            if mv > 0.0 {
+                let tof = range_m / mv;
+                0.5 * GRAVITY * tof * tof
+            } else {
+                0.0
+            }
+        }
+    };
+
+    // --- Ballistic solution for the target range ---
+    let target_drop = compute_drop_at_range(corrected_range);
+
+    // --- Zero-range drop: the rifle is zeroed at this distance ---
+    let zero_drop = compute_drop_at_range(zero_range_m);
+
+    // --- Ballistic solution (windage + TOF + impact V) ---
+    let (windage_m, tof_s, impact_v_ms) = if let Some(table) = ballistic_table {
+        let (_, w, t, v) = interpolate_ballistic_table(table, corrected_range);
+        (w, t, v)
     } else {
         // Vacuum (no-drag) approximation
         let mv = ammo.mv_ms;
         if mv > 0.0 && corrected_range > 0.0 {
             let tof = corrected_range / mv;
-            let drop = 0.5 * GRAVITY * tof * tof;
-            // Windage: crosswind displaces the bullet during its flight
-            // Lateral displacement ≈ V_wind × TOF (wind acts on the bullet,
-            // approximately 1:1 for slow crosswind)
             let windage = lrf.wind_x_ms * tof;
-            (drop, windage, tof, mv)
+            (windage, tof, mv)
         } else {
-            (0.0, 0.0, 0.0, ammo.mv_ms)
+            (0.0, 0.0, ammo.mv_ms)
         }
     };
 
-    // --- Elevation ---
-    // Total elevation angle = geometric (sight height) + drop compensation
-    //   θ = atan(h / R) + atan(drop / R)
-    // where the second term approximates asin(g·R/(2·MV²)) for small angles.
+    // --- Elevation (zero-range corrected) ---
+    // The shooter has zeroed the rifle at `zero_range_m`, meaning the sight
+    // elevation already compensates for the drop at that range.  We only
+    // need to adjust for the DIFFERENCE in drop between target and zero
+    // ranges.
+    //
+    //   θ = atan(h / R) + atan((drop_target - drop_zero) / R)
+    //
+    // At the zero range, elevation_adjustment ≈ 0 (the sights are already set).
     let sight_h_m = ammo.sight_height_mm / 1000.0;
     let range = corrected_range.max(1.0);
 
     let geo_angle = (sight_h_m / range).atan();
-    let drop_angle = (drop_m / range).atan();
-    let elevation_rad = geo_angle + drop_angle;
+    let drop_adjustment = (target_drop - zero_drop) / range;
+    let elevation_rad = geo_angle + drop_adjustment.atan();
 
     // --- Windage ---
     let windage_angle = (windage_m / range).atan();
@@ -405,7 +432,7 @@ mod tests {
             ..default_lrf()
         };
         let ammo = m855a1_ammo();
-        let sol = compute_firing_solution(&lrf, &ammo, None);
+        let sol = compute_firing_solution(&lrf, &ammo, None, 100.0);
 
         // Corrected range should be ~260 m
         assert!(
@@ -422,7 +449,7 @@ mod tests {
         );
 
         // The aim correction vs level fire (300m) should be ~1.5 MOA
-        let level_sol = compute_firing_solution(&default_lrf(), &ammo, None);
+        let level_sol = compute_firing_solution(&default_lrf(), &ammo, None, 100.0);
         let aim_correction = (sol.elevation_moa - level_sol.elevation_moa).abs();
         assert!(
             (aim_correction - 1.5).abs() < 1.0,
@@ -444,7 +471,7 @@ mod tests {
     fn firing_solution_level_fire() {
         let lrf = default_lrf();
         let ammo = m855a1_ammo();
-        let sol = compute_firing_solution(&lrf, &ammo, None);
+        let sol = compute_firing_solution(&lrf, &ammo, None, 100.0);
 
         // With no wind, windage should be ~0
         assert!(
@@ -471,7 +498,7 @@ mod tests {
         ];
         let lrf = default_lrf();
         let ammo = m855a1_ammo();
-        let sol = compute_firing_solution(&lrf, &ammo, Some(&table));
+        let sol = compute_firing_solution(&lrf, &ammo, Some(&table), 100.0);
 
         assert!(
             (sol.corrected_range_m - 300.0).abs() < 1e-10,
@@ -569,7 +596,7 @@ mod tests {
             ..default_lrf()
         };
         let ammo = m855a1_ammo();
-        let sol = compute_firing_solution(&lrf, &ammo, None);
+        let sol = compute_firing_solution(&lrf, &ammo, None, 100.0);
 
         // Crosswind should produce non-zero windage
         assert!(

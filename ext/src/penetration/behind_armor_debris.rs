@@ -20,6 +20,8 @@
 //   - STANAG 4569 (Ed. 3) — Protection Levels I–V
 //   - Bless & Rosenberg (1985) — spall thresholds
 
+use std::f64::consts::PI;
+
 use crate::penetration::material_factor;
 
 /// Parameters for a behind-armour debris evaluation.
@@ -163,11 +165,34 @@ pub fn classify_bad_threat(bali: f64) -> ThreatLevel {
     }
 }
 
+/// Mott distribution fragment mass for BAD sampling.
+/// Behind-armor fragment sizes follow a Mott distribution (1943):
+///   p(m) = (1/μ) * exp(-(m/μ)^0.5) / (2*(m/μ)^0.5)
+/// where μ = avg_mass / k, k ≈ 1.0 for steel projectiles.
+/// This enables stochastic fragment mass variation around the config avg.
+///
+/// Reference: Mott, N.F., "A Theory of Fragmentation of Shells and Bombs",
+/// Ministry of Supply AC 3642, 1943. Validated against WW2 fragment data.
+///
+/// Current BAD evaluation uses avg_frag_mass as a deterministic value;
+/// this function provides the distribution for future stochastic sampling.
+pub fn mott_fragment_mass(avg_mass: f64, percentile: f64) -> f64 {
+    // Inverse CDF of the Mott distribution
+    // The ν-th percentile fragment mass = μ * (ln(1/(1-ν)))²
+    // where μ = avg_mass (for k=1 steel assumption)
+    avg_mass * (-(1.0 - percentile.clamp(0.0, 0.999))).ln().powi(2)
+}
+
 /// Evaluate behind-armour debris for a given impact event.
 ///
 /// Computes spall properties from the energy deposited in the armour
 /// (`ΔE = ½·m·(v_impact² – v_residual²)`), scaled by the t/d ratio,
 /// material properties, and impact obliquity.
+///
+/// Fragment mass follows a Mott distribution in reality (see
+/// [`mott_fragment_mass`]); the current model uses a deterministic
+/// average fragment mass tied to material hardness as a pragmatic
+/// simplification for game-context BAD evaluation.
 pub fn evaluate_bad(params: &BehindArmorDebrisParams) -> BehindArmorDebrisResult {
     let t_d_ratio = if params.caliber_m > 0.0 {
         params.armor_thickness_m / params.caliber_m
@@ -255,7 +280,7 @@ pub fn evaluate_bad(params: &BehindArmorDebrisParams) -> BehindArmorDebrisResult
     let temp_cavity_diameter_mm = params.caliber_m * 1000.0 * cav_diam_ratio;
     let cav_r_mm = temp_cavity_diameter_mm / 2.0;
     let temp_cavity_volume_cc =
-        std::f64::consts::PI * cav_r_mm.powi(2) * (params.armor_thickness_m * 1000.0) / 1000.0;
+        PI * cav_r_mm.powi(2) * (params.armor_thickness_m * 1000.0) / 1000.0;
 
     // ── Lethality index ──────────────────────────────────────────────────
     // Scaled combination: 70 % debris kinetic energy, 30 % fragment count.

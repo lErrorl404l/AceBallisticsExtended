@@ -1,0 +1,19 @@
+{
+    "class": "m829a2",
+    "projectile": {
+        "model": "M829A2",
+        "mass_g": 4600.0,
+        "caliber_mm": 22.0,
+        "bc_g7": 0.88,
+        "cdm_id": "g7",
+        "source": "M829A2 APFSDS with improved DU penetrator (780mm, 35:1 L/D), carbon-epoxy composite sabot (world first), improved propellant. MV ~1,675 m/s. Entered service 1994. 'Brute force' ERA defeat for Kontakt-5.",
+        "sabot_mass_g": 1200.0,
+        "sabot_discard_velocity_ms": 850.0,
+        "frag_mass_mean": 1.0,
+        "frag_mass_std": 0.4,
+        "ricochet_angle_deg": 8.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
+    }
+}

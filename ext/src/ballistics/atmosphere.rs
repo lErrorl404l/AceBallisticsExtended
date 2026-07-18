@@ -423,13 +423,13 @@ fn rain_drop_terminal_velocity(rain_params: &PrecipitationParams) -> f64 {
     vt.min(9.5)
 }
 
-/// Effective ballistic coefficient reduced by rain or snowfall.
+/// Precipitation BC adjustment: BC_adj = BC × exp(-k × R/1000).
 ///
 /// Hydrometeor impacts increase drag by disturbing the boundary
 /// layer and transferring momentum.  The empirical exponential
 /// model is:
 ///
-///   BC_eff = BC × exp(-k × R / 1000)
+///   BC_adj = BC × exp(-k × R / 1000)
 ///
 /// where:
 ///   R = rain rate (mm/hour)
@@ -439,6 +439,11 @@ fn rain_drop_terminal_velocity(rain_params: &PrecipitationParams) -> f64 {
 ///
 /// The divisor 1000 normalises rain rate into a dimensionless
 /// intensity scale.
+///
+/// This is an engineering estimate — systematic rain ballistics
+/// data is limited. The exponential model matches the sparse
+/// available data described in Litz, "Applied Ballistics for Long
+/// Range Shooting", 2015.
 ///
 /// # Arguments
 /// * `rain_params` — Current precipitation parameters.
