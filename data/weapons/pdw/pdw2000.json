@@ -1,0 +1,12 @@
+{
+  "class": "pdw2000",
+  "caliber_mm": 9.0,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 400.0,
+  "zero_range_m": 100,
+  "notes": "PDW2000 9x19mm PDW. 200mm barrel. IRL: 9mm Parabellum, 20rd magazine",
+  "barrel_length_mm": 200.0,
+  "rifling_twist_mm": 250.0,
+  "chamber_pressure_mpa": 240.0,
+  "projectile_mass_g": 8.0
+}

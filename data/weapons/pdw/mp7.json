@@ -1,0 +1,12 @@
+{
+  "class": "mp7",
+  "caliber_mm": 4.6,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 735.0,
+  "zero_range_m": 100,
+  "notes": "H&K MP7 PDW. 4.6x30mm, 180mm barrel. IRL: 40rd magazine, ~735 m/s MV with DM11 ball",
+  "barrel_length_mm": 180.0,
+  "rifling_twist_mm": 160.0,
+  "chamber_pressure_mpa": 400.0,
+  "projectile_mass_g": 2.0
+}
