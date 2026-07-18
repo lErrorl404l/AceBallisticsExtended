@@ -1,0 +1,51 @@
+{
+  "id": "m1_abrams",
+  "name": "M1A2 Abrams SEPv3",
+  "mass_kg": 66500,
+  "armor_plates": [
+    {
+      "name": "hull_lower_front",
+      "angle_deg": 60,
+      "thickness_mm": 50,
+      "material": "steel_rha",
+      "modifier": 2.0
+    },
+    {
+      "name": "hull_upper_front",
+      "angle_deg": 82,
+      "thickness_mm": 38,
+      "material": "depleted_uranium",
+      "modifier": 2.5
+    },
+    {
+      "name": "hull_side",
+      "angle_deg": 0,
+      "thickness_mm": 25,
+      "material": "steel_rha",
+      "modifier": 1.0
+    },
+    {
+      "name": "turret_front",
+      "angle_deg": 60,
+      "thickness_mm": 50,
+      "material": "depleted_uranium",
+      "modifier": 3.0
+    },
+    {
+      "name": "turret_side",
+      "angle_deg": 20,
+      "thickness_mm": 30,
+      "material": "steel_rha",
+      "modifier": 1.5
+    },
+    {
+      "name": "turret_top",
+      "angle_deg": 0,
+      "thickness_mm": 25,
+      "material": "steel_rha",
+      "modifier": 1.0
+    }
+  ],
+  "era_type": "none",
+  "notes": "IRL armor plate estimates from public sources."
+}

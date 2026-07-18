@@ -1,0 +1,37 @@
+{
+  "id": "t90a",
+  "name": "T-90A",
+  "mass_kg": 46500,
+  "armor_plates": [
+    {
+      "name": "hull_front",
+      "angle_deg": 68,
+      "thickness_mm": 60,
+      "material": "steel_rha",
+      "modifier": 1.9
+    },
+    {
+      "name": "hull_side",
+      "angle_deg": 0,
+      "thickness_mm": 20,
+      "material": "steel_rha",
+      "modifier": 1.0
+    },
+    {
+      "name": "turret_front",
+      "angle_deg": 55,
+      "thickness_mm": 40,
+      "material": "steel_rha",
+      "modifier": 2.8
+    },
+    {
+      "name": "turret_side",
+      "angle_deg": 10,
+      "thickness_mm": 20,
+      "material": "steel_rha",
+      "modifier": 1.5
+    }
+  ],
+  "era_type": "kontakt5",
+  "notes": "IRL armor plate estimates from public sources."
+}

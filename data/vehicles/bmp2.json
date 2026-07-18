@@ -1,0 +1,37 @@
+{
+  "id": "bmp2",
+  "name": "BMP-2",
+  "mass_kg": 14300,
+  "armor_plates": [
+    {
+      "name": "hull_front",
+      "angle_deg": 55,
+      "thickness_mm": 19,
+      "material": "steel_rha",
+      "modifier": 1.0
+    },
+    {
+      "name": "hull_side",
+      "angle_deg": 0,
+      "thickness_mm": 16,
+      "material": "steel_rha",
+      "modifier": 1.0
+    },
+    {
+      "name": "turret_front",
+      "angle_deg": 30,
+      "thickness_mm": 23,
+      "material": "steel_rha",
+      "modifier": 1.0
+    },
+    {
+      "name": "turret_side",
+      "angle_deg": 0,
+      "thickness_mm": 16,
+      "material": "steel_rha",
+      "modifier": 1.0
+    }
+  ],
+  "era_type": "none",
+  "notes": "IRL armor plate estimates from public sources."
+}
