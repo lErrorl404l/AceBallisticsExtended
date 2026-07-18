@@ -1,0 +1,33 @@
+private _output = [];
+_cfg = configFile >> "CfgAmmo";
+for "_i" from 1 to count _cfg do {
+    _e = _cfg select (_i - 1);
+    if (!isClass _e) then { continue };
+    _n = configName _e;
+    _cal = getNumber (_e >> "ACE_caliber");
+    if (_cal == 0) then { continue };
+    _mass = getNumber (_e >> "ACE_bulletMass");
+    _len = getNumber (_e >> "ACE_bulletLength");
+    _dm = getNumber (_e >> "ACE_dragModel");
+    _sa = getText (_e >> "ACE_standardAtmosphere");
+    _sd = getNumber (_e >> "ACE_muzzleVelocityVariationSD");
+    _bc = getArray (_e >> "ACE_ballisticCoefficients");
+    _mv = getArray (_e >> "ACE_muzzleVelocities");
+    _bl = getArray (_e >> "ACE_barrelLengths");
+    _ts = getArray (_e >> "ACE_ammoTempMuzzleVelocityShifts");
+    _tc = getNumber (_e >> "ACE_transonicStabilityCoef");
+    _bc_s = "";
+    { if (_forEachIndex > 0) then { _bc_s = _bc_s + "," }; _bc_s = _bc_s + str _x } forEach _bc;
+    _mv_s = "";
+    { if (_forEachIndex > 0) then { _mv_s = _mv_s + "," }; _mv_s = _mv_s + str _x } forEach _mv;
+    _bl_s = "";
+    { if (_forEachIndex > 0) then { _bl_s = _bl_s + "," }; _bl_s = _bl_s + str _x } forEach _bl;
+    _ts_s = "";
+    { if (_forEachIndex > 0) then { _ts_s = _ts_s + "," }; _ts_s = _ts_s + str _x } forEach _ts;
+    _p = inheritsFrom _e;
+    _b = "";
+    if (!isNull _p) then { _b = configName _p };
+    _output pushBack format ["ACE|%1|%2|%3|%4|%5|%6|%7|%8|%9|%10|%11|%12|%13", _n, _cal, _mass, _len, _dm, _sa, _sd, _bc_s, _mv_s, _bl_s, _ts_s, _tc, _b]
+};
+copyToClipboard (_output joinString endl);
+systemChat format ["ACE ballistics: %1 entries exported", count _output];
