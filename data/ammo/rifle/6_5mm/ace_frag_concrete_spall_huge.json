@@ -1,0 +1,18 @@
+{
+  "class": "ace_frag_concrete_spall_huge",
+  "projectile": {
+    "model": "huge",
+    "mass_g": 7.9704,
+    "caliber_mm": 6.706,
+    "bc_g7": 0.263,
+    "cdm_id": "g7",
+    "source": "ACE3 ballistics:  ACE3: caliber=6.706mm, mass=7.9704g, drag=7, BC=[0.263]. Velocities: 730.0m/s@254.0mm, 760.0m/s@406.4mm, 788.0m/s@508.0mm, 800.0m/s@609.6mm, 810.0m/s@660.4mm, 830.0m/s@762.0mm",
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
+}

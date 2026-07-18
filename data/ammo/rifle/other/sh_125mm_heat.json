@@ -1,0 +1,18 @@
+{
+  "class": "Sh_125mm_HEAT",
+  "projectile": {
+    "model": "heat",
+    "mass_g": null,
+    "caliber_mm": null,
+    "bc_g7": null,
+    "cdm_id": "g7",
+    "source": "Arma 3 config. hit=150.0, airFriction=-0.000275, cal=10.00(arma)",
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
+}

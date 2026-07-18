@@ -1,0 +1,28 @@
+{
+  "class": "B_19mm_HE",
+  "projectile": {
+    "model": "he",
+    "mass_g": 8.0,
+    "caliber_mm": 19.0,
+    "bc_g7": 0.526,
+    "cdm_id": "g7",
+    "source": "Arma 3 config. hit=20.0, airFriction=-0.0006, cal=19.00",
+    "fragmentation": {
+      "threshold_vel_ms": 610,
+      "avg_fragments": 1,
+      "mass_distribution": "log_normal",
+      "params": {
+        "mean": 0.15,
+        "std": 0.12
+      }
+    },
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 380.0,
+  "notes": "Chamber pressure: 380 MPa. 19mm autocannon."
+}

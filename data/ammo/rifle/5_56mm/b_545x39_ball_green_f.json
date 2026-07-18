@@ -1,0 +1,28 @@
+{
+  "class": "B_545x39_Ball_Green_F",
+  "projectile": {
+    "model": "f",
+    "mass_g": 3.43,
+    "caliber_mm": 5.6,
+    "bc_g7": 0.168,
+    "cdm_id": "g7",
+    "source": "ACE3 ballistics:  ACE3: caliber=5.6mm, mass=3.43g, drag=7, BC=[0.168]. Velocities: 743.0m/s@210.0mm, 848.0m/s@314.0mm, 891.0m/s@415.0mm, 900.0m/s@508.0mm",
+    "fragmentation": {
+      "threshold_vel_ms": 700,
+      "avg_fragments": 40,
+      "mass_distribution": "log_normal",
+      "params": {
+        "mean": 0.15,
+        "std": 0.12
+      }
+    },
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 355.0,
+  "notes": "Chamber pressure: 355 MPa."
+}

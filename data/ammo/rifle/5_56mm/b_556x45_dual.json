@@ -1,0 +1,20 @@
+{
+  "class": "B_556x45_dual",
+  "projectile": {
+    "model": "dual",
+    "mass_g": 4.0176,
+    "caliber_mm": 5.69,
+    "bc_g7": 0.151,
+    "cdm_id": "g7",
+    "source": "ACE3 ballistics:  ACE3: caliber=5.69mm, mass=4.0176g, drag=7, BC=[0.151]. Velocities: 268.0m/s@457.2mm",
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 430.0,
+  "notes": "Chamber pressure: 430 MPa."
+}

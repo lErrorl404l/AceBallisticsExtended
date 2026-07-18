@@ -1,0 +1,20 @@
+{
+  "class": "B_30mm_APFSDS",
+  "projectile": {
+    "model": "apfsds",
+    "mass_g": null,
+    "caliber_mm": 30.0,
+    "bc_g7": 1.0,
+    "cdm_id": "g7",
+    "source": "Arma 3 config. hit=120.0, airFriction=-0.0001, cal=30.00",
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 430.0,
+  "notes": "Chamber pressure: 430 MPa."
+}

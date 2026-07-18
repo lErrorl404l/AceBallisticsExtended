@@ -1,0 +1,20 @@
+{
+  "class": "B_762x54_Tracer_Yellow",
+  "projectile": {
+    "model": "yellow",
+    "mass_g": 9.8496,
+    "caliber_mm": 7.925,
+    "bc_g7": 0.4,
+    "cdm_id": "g1",
+    "source": "ACE3 ballistics:  ACE3: caliber=7.925mm, mass=9.8496g, drag=1, BC=[0.4]. Velocities: 760.0m/s@406.4mm, 795.0m/s@508.0mm, 835.0m/s@604.5mm, 865.0m/s@736.6mm",
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 6.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 390.0,
+  "notes": "Chamber pressure: 390 MPa."
+}

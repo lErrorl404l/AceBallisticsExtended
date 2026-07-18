@@ -1,0 +1,20 @@
+{
+  "class": "ACE_762x54_Ball_7T2",
+  "projectile": {
+    "model": "7t2",
+    "mass_g": 9.6552,
+    "caliber_mm": 7.925,
+    "bc_g7": 0.395,
+    "cdm_id": "g1",
+    "source": "ACE3 ballistics:  ACE3: caliber=7.925mm, mass=9.6552g, drag=1, BC=[0.395]. Velocities: 735.0m/s@406.4mm, 770.0m/s@508.0mm, 809.0m/s@604.5mm, 838.0m/s@736.6mm",
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 390.0,
+  "notes": "Chamber pressure: 390 MPa."
+}

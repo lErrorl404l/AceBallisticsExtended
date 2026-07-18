@@ -1,0 +1,20 @@
+{
+  "class": "ACE_127x99_Ball_AMAX",
+  "projectile": {
+    "model": "amax",
+    "mass_g": 48.6,
+    "caliber_mm": 12.954,
+    "bc_g7": 1.05,
+    "cdm_id": "g1",
+    "source": "ACE3 ballistics:  ACE3: caliber=12.954mm, mass=48.6g, drag=1, BC=[1.05]. Velocities: 860.0m/s@736.6mm",
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 379.0,
+  "notes": "Chamber pressure: 379 MPa."
+}

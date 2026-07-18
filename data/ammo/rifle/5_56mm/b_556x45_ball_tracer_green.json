@@ -1,0 +1,20 @@
+{
+  "class": "B_556x45_Ball_Tracer_Green",
+  "projectile": {
+    "model": "green",
+    "mass_g": 4.0176,
+    "caliber_mm": 5.69,
+    "bc_g7": 0.151,
+    "cdm_id": "g7",
+    "source": "ACE3 ballistics:  ACE3: caliber=5.69mm, mass=4.0176g, drag=7, BC=[0.151]. Velocities: 723.0m/s@210.82mm, 764.0m/s@238.76mm, 796.0m/s@269.24mm, 825.0m/s@299.72mm, 843.0m/s@330.2mm, 866.0m/s@360.68mm, 878.0m/s@391.16mm, 892.0m/s@419.1mm, 906.0m/s@449.58mm, 915.0m/s@480.06mm, 922.0m/s@508.0mm, 900.0m/s@609.6mm",
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 6.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 430.0,
+  "notes": "Chamber pressure: 430 MPa."
+}

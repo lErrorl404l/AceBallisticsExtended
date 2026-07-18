@@ -1,0 +1,18 @@
+{
+  "class": "ACE_65x47_Ball_Scenar",
+  "projectile": {
+    "model": "scenar",
+    "mass_g": 9.0072,
+    "caliber_mm": 6.706,
+    "bc_g7": 0.29,
+    "cdm_id": "g7",
+    "source": "ACE3 ballistics:  ACE3: caliber=6.706mm, mass=9.0072g, drag=7, BC=[0.29]. Velocities: 730.0m/s@254.0mm, 760.0m/s@406.4mm, 790.0m/s@508.0mm, 820.0m/s@609.6mm, 830.0m/s@660.4mm",
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "class": "ACE_65_Creedmor_Ball",
+  "projectile": {
+    "model": "ball",
+    "mass_g": 9.072,
+    "caliber_mm": 6.706,
+    "bc_g7": 0.317,
+    "cdm_id": "g7",
+    "source": "ACE3 ballistics:  ACE3: caliber=6.706mm, mass=9.072g, drag=7, BC=[0.317]. Velocities: 750.0m/s@254.0mm, 820.0m/s@406.4mm, 840.0m/s@508.0mm, 852.0m/s@609.6mm, 860.0m/s@660.4mm",
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
+}

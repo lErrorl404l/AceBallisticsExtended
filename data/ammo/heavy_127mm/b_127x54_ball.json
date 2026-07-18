@@ -1,0 +1,20 @@
+{
+  "class": "B_127x54_Ball",
+  "projectile": {
+    "model": "ball",
+    "mass_g": 48.2,
+    "caliber_mm": 13.01,
+    "bc_g7": 0.519,
+    "cdm_id": "g1",
+    "source": "ACE3 ballistics:  ACE3: caliber=13.01mm, mass=48.2g, drag=1, BC=[0.519]. Velocities: 296.0m/s@450.0mm",
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 300.0,
+  "notes": "Chamber pressure: 300 MPa."
+}

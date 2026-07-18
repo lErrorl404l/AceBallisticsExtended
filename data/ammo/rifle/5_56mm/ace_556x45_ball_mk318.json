@@ -1,0 +1,20 @@
+{
+  "class": "ACE_556x45_Ball_Mk318",
+  "projectile": {
+    "model": "mk318",
+    "mass_g": 4.0176,
+    "caliber_mm": 5.69,
+    "bc_g7": 0.307,
+    "cdm_id": "g1",
+    "source": "ACE3 ballistics:  ACE3: caliber=5.69mm, mass=4.0176g, drag=1, BC=[0.307]. Velocities: 780.0m/s@254.0mm, 886.0m/s@393.7mm, 950.0m/s@508.0mm",
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 430.0,
+  "notes": "Chamber pressure: 430 MPa."
+}

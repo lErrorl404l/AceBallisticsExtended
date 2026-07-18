@@ -1,0 +1,20 @@
+{
+  "class": "B_9x21_Ball_Tracer_Yellow",
+  "projectile": {
+    "model": "yellow",
+    "mass_g": 7.452,
+    "caliber_mm": 9.042,
+    "bc_g7": 0.17,
+    "cdm_id": "g1",
+    "source": "ACE3 ballistics:  ACE3: caliber=9.042mm, mass=7.452g, drag=1, BC=[0.17]. Velocities: 380.0m/s@93.5mm, 390.0m/s@101.6mm, 420.0m/s@127.0mm, 435.0m/s@228.6mm",
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 6.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 241.0,
+  "notes": "Chamber pressure: 241 MPa."
+}

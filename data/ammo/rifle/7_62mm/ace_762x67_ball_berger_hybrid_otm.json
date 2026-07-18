@@ -1,0 +1,18 @@
+{
+  "class": "ACE_762x67_Ball_Berger_Hybrid_OTM",
+  "projectile": {
+    "model": "otm",
+    "mass_g": 14.904,
+    "caliber_mm": 7.823,
+    "bc_g7": 0.368,
+    "cdm_id": "g7",
+    "source": "ACE3 ballistics:  ACE3: caliber=7.823mm, mass=14.904g, drag=7, BC=[0.368]. Velocities: 800.0m/s@508.0mm, 853.0m/s@609.6mm, 884.0m/s@660.4mm",
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
+}
