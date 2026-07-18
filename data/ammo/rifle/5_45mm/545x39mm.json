@@ -1,17 +1,13 @@
 {
-  "ammoClass": "B_545x39_Ball",
-  "projectileMassG": 3.43,
-  "caliberMm": 5.45,
-  "cdmId": "g7",
-  "bcG1": 0.286,
-  "bcG7": 0.168,
-  "muzzleVelocityMs": 910.0,
-  "referenceBarrelLengthMm": 415.0,
-  "fragThresholdMs": -1,
-  "fragCount": 0,
-  "fragMassDist": "none",
-  "projectileType": "fmj",
-  "source": "US Army BRL G7 BC=0.168 (ARL-TR-5182, 7N6 53gr FMJ, 15th Intl Symposium on Ballistics)",
-  "notes": "7N6M 53-gr FMJ. Steel core, no fragmentation. G7 BC=0.168 per US Army BRL (ARL-TR-5182).",
-  "ricochet_angle_deg": 20.0
+  "class": "B_545x39_Ball",
+  "projectile": {
+    "model": "7n6",
+    "mass_g": 3.43,
+    "caliber_mm": 5.45,
+    "bc_g7": 0.168,
+    "cdm_id": "g7",
+    "ricochet_angle_deg": 20.0,
+    "source": "US Army BRL G7 BC=0.168 (ARL-TR-5182, 7N6 53gr FMJ, 15th Intl Symposium on Ballistics)"
+  },
+  "notes": "7N6M 53-gr FMJ. Steel core, no fragmentation. G7 BC=0.168 per US Army BRL (ARL-TR-5182)."
 }

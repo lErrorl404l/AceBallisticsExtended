@@ -1,17 +1,19 @@
 {
-  "ammoClass": "B_556x45_Ball",
-  "projectileMassG": 4.0,
-  "caliberMm": 5.56,
-  "cdmId": "g7",
-  "bcG1": 0.302,
-  "bcG7": 0.151,
-  "muzzleVelocityMs": 948.0,
-  "referenceBarrelLengthMm": 508.0,
-  "fragThresholdMs": 731.0,
-  "fragCount": 12,
-  "fragMassDist": "log_normal",
-  "projectileType": "fmj",
-  "source": "Litz estimate G7 BC~0.155 (M855A1 62gr enhanced FMJ, steel-core construction, Applied Ballistics)",
-  "notes": "M855A1 62-gr enhanced FMJ. Frag threshold ~2400 fps. G7 BC ~0.155 (Litz estimate, enhanced construction).",
-  "ricochet_angle_deg": 20.0
+  "class": "B_556x45_Ball",
+  "projectile": {
+    "model": "m855a1",
+    "mass_g": 4.0,
+    "caliber_mm": 5.56,
+    "bc_g7": 0.151,
+    "cdm_id": "g7",
+    "fragmentation": {
+      "threshold_vel_ms": 731.0,
+      "avg_fragments": 12,
+      "mass_distribution": "log_normal",
+      "params": { "mean": 0.08, "std": 0.06 }
+    },
+    "ricochet_angle_deg": 20.0,
+    "source": "Litz estimate G7 BC~0.155 (M855A1 62gr enhanced FMJ, steel-core construction, Applied Ballistics)"
+  },
+  "notes": "M855A1 62-gr enhanced FMJ. Frag threshold ~2400 fps. G7 BC ~0.155 (Litz estimate, enhanced construction)."
 }
