@@ -2,11 +2,12 @@
   "class": "rhs_weap_aks74u",
   "caliber_mm": 5.45,
   "barrel_length_mm": 210.82,
-  "rifling_twist_mm": 160.02,
+  "rifling_twist_mm": 160.0,
   "chamber_pressure_mpa": 355.0,
   "cdm_id": "g7",
   "projectile_mass_g": 3.43,
-  "muzzle_velocity_ms": 740.0,
+  "muzzle_velocity_ms": 735,
   "zero_range_m": 100.0,
-  "twist_rate_mm": 160.02
+  "twist_rate_mm": 160.02,
+  "notes": "IRL: AKS-74U (RHS)."
 }

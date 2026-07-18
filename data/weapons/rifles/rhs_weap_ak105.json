@@ -2,11 +2,12 @@
   "class": "rhs_weap_ak105",
   "caliber_mm": 5.45,
   "barrel_length_mm": 314.96,
-  "rifling_twist_mm": 199.898,
+  "rifling_twist_mm": 199.9,
   "chamber_pressure_mpa": 355.0,
   "cdm_id": "g7",
   "projectile_mass_g": 3.43,
-  "muzzle_velocity_ms": 818.0,
+  "muzzle_velocity_ms": 720,
   "zero_range_m": 100.0,
-  "twist_rate_mm": 199.898
+  "twist_rate_mm": 199.898,
+  "notes": "IRL: AK-105 (carbine)."
 }

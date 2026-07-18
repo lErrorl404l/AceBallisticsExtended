@@ -6,7 +6,8 @@
   "chamber_pressure_mpa": 431.0,
   "cdm_id": "g7",
   "projectile_mass_g": 19.44,
-  "muzzle_velocity_ms": 807.0,
+  "muzzle_velocity_ms": 900,
   "zero_range_m": 100.0,
-  "twist_rate_mm": 234.95
+  "twist_rate_mm": 234.95,
+  "notes": "IRL: LWMMG 8.6mm."
 }

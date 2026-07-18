@@ -6,7 +6,8 @@
   "chamber_pressure_mpa": 410.0,
   "cdm_id": "g7",
   "projectile_mass_g": 16.2,
-  "muzzle_velocity_ms": 880.0,
+  "muzzle_velocity_ms": 900,
   "zero_range_m": 100.0,
-  "twist_rate_mm": 238.0
+  "twist_rate_mm": 238.0,
+  "notes": "IRL: MAR-10 .338 LM."
 }

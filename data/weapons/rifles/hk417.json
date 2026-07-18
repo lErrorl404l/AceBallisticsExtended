@@ -3,10 +3,11 @@
   "caliber_mm": 7.62,
   "barrel_length_mm": 419.0,
   "rifling_twist_mm": 279.0,
-  "chamber_pressure_mpa": 380.0,
+  "chamber_pressure_mpa": 415.0,
   "cdm_id": "g7",
   "projectile_mass_g": 9.5,
-  "muzzle_velocity_ms": 800.0,
+  "muzzle_velocity_ms": 785,
   "zero_range_m": 100.0,
-  "twist_rate_mm": 279.0
+  "twist_rate_mm": 279.0,
+  "notes": "IRL: HK417."
 }

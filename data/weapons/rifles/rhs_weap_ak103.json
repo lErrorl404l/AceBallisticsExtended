@@ -2,11 +2,12 @@
   "class": "rhs_weap_ak103",
   "caliber_mm": 7.62,
   "barrel_length_mm": 415.0,
-  "rifling_twist_mm": 199.898,
+  "rifling_twist_mm": 199.9,
   "chamber_pressure_mpa": 355.0,
   "cdm_id": "g1",
   "projectile_mass_g": 7.97,
-  "muzzle_velocity_ms": 716.0,
+  "muzzle_velocity_ms": 715,
   "zero_range_m": 100.0,
-  "twist_rate_mm": 199.898
+  "twist_rate_mm": 199.898,
+  "notes": "IRL: AK-103."
 }

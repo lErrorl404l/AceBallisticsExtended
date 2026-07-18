@@ -3,10 +3,11 @@
   "caliber_mm": 9.0,
   "barrel_length_mm": 97.0,
   "rifling_twist_mm": 254.0,
-  "chamber_pressure_mpa": 235.0,
+  "chamber_pressure_mpa": 241.0,
   "cdm_id": "g1",
   "projectile_mass_g": 8.0,
-  "muzzle_velocity_ms": 350.0,
+  "muzzle_velocity_ms": 360,
   "zero_range_m": 25.0,
-  "twist_rate_mm": 254.0
+  "twist_rate_mm": 254.0,
+  "notes": "IRL: P-07 9mm."
 }

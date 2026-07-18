@@ -3,10 +3,11 @@
   "caliber_mm": 5.56,
   "barrel_length_mm": 420.0,
   "rifling_twist_mm": 178.0,
-  "chamber_pressure_mpa": 380.0,
+  "chamber_pressure_mpa": 430.0,
   "cdm_id": "g7",
   "projectile_mass_g": 4.0,
-  "muzzle_velocity_ms": 920.0,
+  "muzzle_velocity_ms": 920,
   "zero_range_m": 100.0,
-  "twist_rate_mm": 178.0
+  "twist_rate_mm": 178.0,
+  "notes": "IRL: TRG-21."
 }

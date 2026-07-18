@@ -2,11 +2,12 @@
   "class": "rhs_weap_sr25",
   "caliber_mm": 7.62,
   "barrel_length_mm": 609.6,
-  "rifling_twist_mm": 285.75,
-  "chamber_pressure_mpa": 360.0,
+  "rifling_twist_mm": 285.8,
+  "chamber_pressure_mpa": 415.0,
   "cdm_id": "g7",
   "projectile_mass_g": 9.5,
-  "muzzle_velocity_ms": 833.0,
+  "muzzle_velocity_ms": 780,
   "zero_range_m": 100.0,
-  "twist_rate_mm": 285.75
+  "twist_rate_mm": 285.75,
+  "notes": "IRL: SR-25."
 }

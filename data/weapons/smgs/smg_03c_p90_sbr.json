@@ -6,7 +6,8 @@
   "chamber_pressure_mpa": 345.0,
   "cdm_id": "g7",
   "projectile_mass_g": 2.0,
-  "muzzle_velocity_ms": 716.0,
+  "muzzle_velocity_ms": 690,
   "zero_range_m": 100.0,
-  "twist_rate_mm": 228.6
+  "twist_rate_mm": 228.6,
+  "notes": "IRL: P90 SBR 5.7\u00d728mm."
 }
