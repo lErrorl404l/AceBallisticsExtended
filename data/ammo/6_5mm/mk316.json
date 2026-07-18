@@ -1,0 +1,24 @@
+{
+  "class": "B_mk316_Ball",
+  "projectile": {
+    "model": "mk316",
+    "caliber_mm": 6.5,
+    "mass_g": 9.0,
+    "bc_g7": 0.235,
+    "cdm_id": "g7",
+    "source": "6.5mm 140gr. IRL data from manufacturer/SAAMI specs.",
+    "fragmentation": {
+      "threshold_vel_ms": 610.0,
+      "avg_fragments": 1,
+      "mass_distribution": "log_normal",
+      "params": {
+        "mean": 0.3,
+        "std": 0.15
+      }
+    },
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "6.5mm 140gr \u2014 populated with IRL data."
+}

@@ -1,0 +1,20 @@
+{
+  "class": "B_30Carbine_Ball",
+  "projectile": {
+    "model": "M1 Ball 110gr",
+    "mass_g": 7.1,
+    "caliber_mm": 7.62,
+    "bc_g7": 0.146,
+    "cdm_id": "g1",
+    "source": ".30 Carbine M1 Ball 110gr FMJ. G7 BC~0.146. US carbine round WWII. Velocity ~607 m/s (18\" barrel). Intermediate pistol-class pressure.",
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 345.0,
+  "notes": "Chamber pressure: 345 MPa (~50,000 PSI). .30 Carbine (7.62x33mm) rimless straight-walled intermediate cartridge."
+}

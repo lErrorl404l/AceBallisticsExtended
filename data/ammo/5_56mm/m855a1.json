@@ -1,0 +1,24 @@
+{
+  "class": "B_m855a1_Ball",
+  "projectile": {
+    "model": "m855a1",
+    "caliber_mm": 5.56,
+    "mass_g": 4.0,
+    "bc_g7": 0.153,
+    "cdm_id": "g7",
+    "source": "M855A1 62gr EPR. IRL data from manufacturer/SAAMI specs.",
+    "fragmentation": {
+      "threshold_vel_ms": 610.0,
+      "avg_fragments": 1,
+      "mass_distribution": "log_normal",
+      "params": {
+        "mean": 0.3,
+        "std": 0.15
+      }
+    },
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "M855A1 62gr EPR \u2014 populated with IRL data."
+}

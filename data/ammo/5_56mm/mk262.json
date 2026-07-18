@@ -1,0 +1,24 @@
+{
+  "class": "B_mk262_Ball",
+  "projectile": {
+    "model": "mk262",
+    "caliber_mm": 5.56,
+    "mass_g": 4.5,
+    "bc_g7": 0.169,
+    "cdm_id": "g7",
+    "source": "Mk262 77gr OTM. IRL data from manufacturer/SAAMI specs.",
+    "fragmentation": {
+      "threshold_vel_ms": 610.0,
+      "avg_fragments": 1,
+      "mass_distribution": "log_normal",
+      "params": {
+        "mean": 0.3,
+        "std": 0.15
+      }
+    },
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Mk262 77gr OTM \u2014 populated with IRL data."
+}

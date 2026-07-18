@@ -1,0 +1,24 @@
+{
+  "class": "B_lapua_250gr_Ball",
+  "projectile": {
+    "model": "lapua_250gr",
+    "caliber_mm": 8.6,
+    "mass_g": 16.2,
+    "bc_g7": 0.296,
+    "cdm_id": "g7",
+    "source": ".338 Lapua 250gr. IRL data from manufacturer/SAAMI specs.",
+    "fragmentation": {
+      "threshold_vel_ms": 610.0,
+      "avg_fragments": 1,
+      "mass_distribution": "log_normal",
+      "params": {
+        "mean": 0.3,
+        "std": 0.15
+      }
+    },
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": ".338 Lapua 250gr \u2014 populated with IRL data."
+}

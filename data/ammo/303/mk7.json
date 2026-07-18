@@ -1,0 +1,24 @@
+{
+  "class": "B_mk7_Ball",
+  "projectile": {
+    "model": "mk7",
+    "caliber_mm": 7.7,
+    "mass_g": 11.3,
+    "bc_g7": 0.21,
+    "cdm_id": "g7",
+    "source": ".303 Mk7 174gr. IRL data from manufacturer/SAAMI specs.",
+    "fragmentation": {
+      "threshold_vel_ms": 610.0,
+      "avg_fragments": 1,
+      "mass_distribution": "log_normal",
+      "params": {
+        "mean": 0.3,
+        "std": 0.15
+      }
+    },
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": ".303 Mk7 174gr \u2014 populated with IRL data."
+}

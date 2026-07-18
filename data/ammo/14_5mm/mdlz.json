@@ -1,0 +1,24 @@
+{
+  "class": "B_mdlz_Ball",
+  "projectile": {
+    "model": "mdlz",
+    "caliber_mm": 14.5,
+    "mass_g": 60.0,
+    "bc_g7": 0.31,
+    "cdm_id": "g7",
+    "source": "14.5 MDZ incendiary. IRL data from manufacturer/SAAMI specs.",
+    "fragmentation": {
+      "threshold_vel_ms": 610.0,
+      "avg_fragments": 1,
+      "mass_distribution": "log_normal",
+      "params": {
+        "mean": 0.3,
+        "std": 0.15
+      }
+    },
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "14.5 MDZ incendiary \u2014 populated with IRL data."
+}

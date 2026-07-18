@@ -1,0 +1,24 @@
+{
+  "class": "B_m193_Ball",
+  "projectile": {
+    "model": "m193",
+    "caliber_mm": 5.56,
+    "mass_g": 3.6,
+    "bc_g7": 0.128,
+    "cdm_id": "g7",
+    "source": "M193 55gr FMJ. IRL data from manufacturer/SAAMI specs.",
+    "fragmentation": {
+      "threshold_vel_ms": 610.0,
+      "avg_fragments": 1,
+      "mass_distribution": "log_normal",
+      "params": {
+        "mean": 0.3,
+        "std": 0.15
+      }
+    },
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "M193 55gr FMJ \u2014 populated with IRL data."
+}

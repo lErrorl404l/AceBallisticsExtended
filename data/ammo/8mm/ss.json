@@ -1,0 +1,24 @@
+{
+  "class": "B_ss_Ball",
+  "projectile": {
+    "model": "ss",
+    "caliber_mm": 7.92,
+    "mass_g": 12.8,
+    "bc_g7": 0.222,
+    "cdm_id": "g7",
+    "source": "8mm sS 198gr. IRL data from manufacturer/SAAMI specs.",
+    "fragmentation": {
+      "threshold_vel_ms": 610.0,
+      "avg_fragments": 1,
+      "mass_distribution": "log_normal",
+      "params": {
+        "mean": 0.3,
+        "std": 0.15
+      }
+    },
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "8mm sS 198gr \u2014 populated with IRL data."
+}
