@@ -1,0 +1,12 @@
+{
+  "class": "sgun_HunterShotgun_01_sawedoff_F",
+  "caliber_mm": 18.5,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 470,
+  "zero_range_m": 100,
+  "notes": "Arma 3 class: sgun_HunterShotgun_01_sawedoff_F. Cal: ~18.50mm. Muzzle vel: 380.0 m/s. Barrel: 349.7mm. IRL: Hunter 12ga",
+  "barrel_length_mm": 349.7,
+  "rifling_twist_mm": 600.0,
+  "chamber_pressure_mpa": 79.0,
+  "projectile_mass_g": 28.0
+}

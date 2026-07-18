@@ -1,0 +1,12 @@
+{
+  "class": "arifle_MX_F",
+  "caliber_mm": 6.5,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 774.0,
+  "zero_range_m": 100,
+  "notes": "Arma 3 class: arifle_MX_F. Cal: ~6.50mm. Muzzle vel: 774.0 m/s. Barrel: 368.3mm. IRL default",
+  "barrel_length_mm": 368.3,
+  "rifling_twist_mm": 254.0,
+  "chamber_pressure_mpa": 380.0,
+  "projectile_mass_g": 7.9
+}

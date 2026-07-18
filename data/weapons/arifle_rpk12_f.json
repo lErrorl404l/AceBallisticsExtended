@@ -1,0 +1,12 @@
+{
+  "class": "arifle_RPK12_F",
+  "caliber_mm": 7.62,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 730,
+  "zero_range_m": 100,
+  "notes": "Arma 3 class: arifle_RPK12_F. Cal: ~7.62mm. Muzzle vel: 715.0 m/s. Barrel: 590mm. IRL: RPK-12 (LMG)",
+  "barrel_length_mm": 590.0,
+  "rifling_twist_mm": 240.0,
+  "chamber_pressure_mpa": 355.0,
+  "projectile_mass_g": 8.0
+}

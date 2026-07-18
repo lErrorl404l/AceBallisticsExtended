@@ -1,0 +1,12 @@
+{
+  "class": "srifle_DMR_03_F",
+  "caliber_mm": 7.62,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 790,
+  "zero_range_m": 100,
+  "notes": "Arma 3 class: srifle_DMR_03_F. Cal: ~7.62mm. Muzzle vel: 827.0 m/s. Barrel: 508mm. IRL: DMR-03 (HK417-type)",
+  "barrel_length_mm": 508.0,
+  "rifling_twist_mm": 285.0,
+  "chamber_pressure_mpa": 415.0,
+  "projectile_mass_g": 9.5
+}

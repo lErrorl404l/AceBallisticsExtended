@@ -1,0 +1,8 @@
+{
+  "class": "GMG_40mm",
+  "caliber_mm": 40.0,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 241.0,
+  "zero_range_m": 100,
+  "notes": "Arma 3 class: GMG_40mm. Cal: ~40.00mm. Muzzle vel: 241.0 m/s. Barrel: ?mm."
+}

@@ -1,0 +1,12 @@
+{
+  "class": "arifle_SPAR_01_blk_F",
+  "caliber_mm": 5.56,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 850,
+  "zero_range_m": 100,
+  "notes": "Arma 3 class: arifle_SPAR_01_blk_F. Cal: ~5.56mm. Muzzle vel: 909.0 m/s. Barrel: 264mm. IRL: SPAR-16 carbine",
+  "barrel_length_mm": 264.0,
+  "rifling_twist_mm": 178.0,
+  "chamber_pressure_mpa": 430.0,
+  "projectile_mass_g": 4.0
+}

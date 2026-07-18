@@ -1,0 +1,12 @@
+{
+  "class": "SMG_02_F",
+  "caliber_mm": 9.0,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 400,
+  "zero_range_m": 100,
+  "notes": "Arma 3 class: SMG_02_F. Cal: ~9.00mm. Muzzle vel: 430.0 m/s. Barrel: 195.6mm. IRL: SMG-02",
+  "barrel_length_mm": 195.58,
+  "rifling_twist_mm": 254.0,
+  "chamber_pressure_mpa": 241.0,
+  "projectile_mass_g": 8.0
+}

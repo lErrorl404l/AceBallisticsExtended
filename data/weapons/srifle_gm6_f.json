@@ -1,0 +1,12 @@
+{
+  "class": "srifle_GM6_F",
+  "caliber_mm": 12.7,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 890,
+  "zero_range_m": 100,
+  "notes": "Arma 3 class: srifle_GM6_F. Cal: ~12.70mm. Muzzle vel: 820.0 m/s. Barrel: 730mm. IRL: GM6 Lynx .50 BMG",
+  "barrel_length_mm": 730.0,
+  "rifling_twist_mm": 381.0,
+  "chamber_pressure_mpa": 379.0,
+  "projectile_mass_g": 42.0
+}

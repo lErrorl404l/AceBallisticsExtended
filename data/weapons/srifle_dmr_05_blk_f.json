@@ -1,0 +1,12 @@
+{
+  "class": "srifle_DMR_05_blk_F",
+  "caliber_mm": 9.3,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 860,
+  "zero_range_m": 100,
+  "notes": "Arma 3 class: srifle_DMR_05_blk_F. Cal: ~9.30mm. Muzzle vel: 780.0 m/s. Barrel: 620mm. IRL: DMR-05 9.3mm (Cyrus)",
+  "barrel_length_mm": 620.0,
+  "rifling_twist_mm": 356.0,
+  "chamber_pressure_mpa": 380.0,
+  "projectile_mass_g": 18.5
+}

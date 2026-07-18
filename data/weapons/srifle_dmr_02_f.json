@@ -1,0 +1,12 @@
+{
+  "class": "srifle_DMR_02_F",
+  "caliber_mm": 8.6,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 900,
+  "zero_range_m": 100,
+  "notes": "Arma 3 class: srifle_DMR_02_F. Cal: ~8.60mm. Muzzle vel: 880.0 m/s. Barrel: 508mm. IRL: DMR-02 .338 LM",
+  "barrel_length_mm": 508.0,
+  "rifling_twist_mm": 238.0,
+  "chamber_pressure_mpa": 410.0,
+  "projectile_mass_g": 16.2
+}

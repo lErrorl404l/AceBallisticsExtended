@@ -1,0 +1,12 @@
+{
+  "class": "weapon_Fighter_Gun20mm_AA",
+  "caliber_mm": 20.0,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 1030,
+  "zero_range_m": 100,
+  "notes": "Arma 3 class: weapon_Fighter_Gun20mm_AA. Cal: ~20.00mm. Muzzle vel: 1036.0 m/s. Barrel: 1500mm. IRL: 20mm fighter gun",
+  "barrel_length_mm": 1500.0,
+  "rifling_twist_mm": 240.0,
+  "chamber_pressure_mpa": 380.0,
+  "projectile_mass_g": 100.0
+}

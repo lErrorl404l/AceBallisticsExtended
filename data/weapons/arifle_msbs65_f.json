@@ -1,0 +1,12 @@
+{
+  "class": "arifle_MSBS65_F",
+  "caliber_mm": 6.5,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 820,
+  "zero_range_m": 100,
+  "notes": "Arma 3 class: arifle_MSBS65_F. Cal: ~6.50mm. Muzzle vel: 774.0 m/s. Barrel: 406.4mm. IRL: MSBS-65",
+  "barrel_length_mm": 406.4,
+  "rifling_twist_mm": 228.6,
+  "chamber_pressure_mpa": 380.0,
+  "projectile_mass_g": 7.9
+}

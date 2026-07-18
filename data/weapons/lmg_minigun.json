@@ -1,0 +1,12 @@
+{
+  "class": "LMG_Minigun",
+  "caliber_mm": 6.5,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 806.0,
+  "zero_range_m": 100,
+  "notes": "Arma 3 class: LMG_Minigun. Cal: ~6.50mm. Muzzle vel: 806.0 m/s. Barrel: 560mm. IRL default",
+  "barrel_length_mm": 560.0,
+  "rifling_twist_mm": 254.0,
+  "chamber_pressure_mpa": 380.0,
+  "projectile_mass_g": 7.9
+}

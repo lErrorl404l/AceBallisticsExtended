@@ -1,0 +1,12 @@
+{
+  "class": "srifle_LRR_F",
+  "caliber_mm": 10.36,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 900,
+  "zero_range_m": 100,
+  "notes": "Arma 3 class: srifle_LRR_F. Cal: ~10.36mm. Muzzle vel: 867.0 m/s. Barrel: 736.6mm. IRL: LRR .408 CheyTac",
+  "barrel_length_mm": 736.6,
+  "rifling_twist_mm": 330.0,
+  "chamber_pressure_mpa": 420.0,
+  "projectile_mass_g": 27.0
+}

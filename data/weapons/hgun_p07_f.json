@@ -1,0 +1,12 @@
+{
+  "class": "hgun_P07_F",
+  "caliber_mm": 9.0,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 360,
+  "zero_range_m": 100,
+  "notes": "Arma 3 class: hgun_P07_F. Cal: ~9.00mm. Muzzle vel: 430.0 m/s. Barrel: 101.6mm. IRL: P-07 9mm",
+  "barrel_length_mm": 101.6,
+  "rifling_twist_mm": 254.0,
+  "chamber_pressure_mpa": 241.0,
+  "projectile_mass_g": 8.0
+}

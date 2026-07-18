@@ -1,0 +1,8 @@
+{
+  "class": "DeminingDisruptor_01_base_f",
+  "caliber_mm": 18.5,
+  "cdm_id": "g7",
+  "muzzle_velocity_ms": 380.0,
+  "zero_range_m": 100,
+  "notes": "Arma 3 class: DeminingDisruptor_01_base_f. Cal: ~18.50mm. Muzzle vel: 380.0 m/s. Barrel: ?mm."
+}
