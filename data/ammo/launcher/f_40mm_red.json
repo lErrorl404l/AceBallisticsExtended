@@ -2,7 +2,7 @@
   "class": "F_40mm_Red",
   "projectile": {
     "model": "red",
-    "mass_g": null,
+    "mass_g": 100.0,
     "caliber_mm": 40.0,
     "bc_g7": null,
     "cdm_id": "g7",

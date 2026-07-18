@@ -2,7 +2,7 @@
   "class": "ACE_B_35mm_ABM_Tracer_Red",
   "projectile": {
     "model": "red",
-    "mass_g": null,
+    "mass_g": 340.0,
     "caliber_mm": 35.0,
     "bc_g7": 0.857,
     "cdm_id": "g7",

@@ -2,7 +2,7 @@
   "class": "B_25mm",
   "projectile": {
     "model": "25mm",
-    "mass_g": null,
+    "mass_g": 185.0,
     "caliber_mm": 25.0,
     "bc_g7": 0.477,
     "cdm_id": "g7",

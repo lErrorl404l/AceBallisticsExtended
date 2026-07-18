@@ -2,7 +2,7 @@
   "class": "B_40mm_APFSDS",
   "projectile": {
     "model": "apfsds",
-    "mass_g": null,
+    "mass_g": 475.0,
     "caliber_mm": 40.0,
     "bc_g7": 1.0,
     "cdm_id": "g7",

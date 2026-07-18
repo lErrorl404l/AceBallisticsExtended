@@ -2,7 +2,7 @@
   "class": "B_40mm_GPR_Tracer_Yellow",
   "projectile": {
     "model": "yellow",
-    "mass_g": null,
+    "mass_g": 210.0,
     "caliber_mm": 40.0,
     "bc_g7": 0.764,
     "cdm_id": "g7",

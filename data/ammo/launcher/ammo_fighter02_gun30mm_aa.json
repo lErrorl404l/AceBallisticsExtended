@@ -2,7 +2,7 @@
   "class": "ammo_Fighter02_Gun30mm_AA",
   "projectile": {
     "model": "aa",
-    "mass_g": null,
+    "mass_g": 350.0,
     "caliber_mm": 30.0,
     "bc_g7": 0.794,
     "cdm_id": "g7",

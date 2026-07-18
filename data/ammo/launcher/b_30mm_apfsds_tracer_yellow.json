@@ -2,7 +2,7 @@
   "class": "B_30mm_APFSDS_Tracer_Yellow",
   "projectile": {
     "model": "yellow",
-    "mass_g": null,
+    "mass_g": 235.0,
     "caliber_mm": 30.0,
     "bc_g7": 1.0,
     "cdm_id": "g7",

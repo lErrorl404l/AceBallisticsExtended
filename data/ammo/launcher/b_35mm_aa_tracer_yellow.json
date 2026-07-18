@@ -2,7 +2,7 @@
   "class": "B_35mm_AA_Tracer_Yellow",
   "projectile": {
     "model": "yellow",
-    "mass_g": null,
+    "mass_g": 380.0,
     "caliber_mm": 35.0,
     "bc_g7": 0.857,
     "cdm_id": "g7",

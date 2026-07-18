@@ -2,7 +2,7 @@
   "class": "ammo_Penetrator_grenade_40mm",
   "projectile": {
     "model": "40mm",
-    "mass_g": null,
+    "mass_g": 230.0,
     "caliber_mm": 40.0,
     "bc_g7": 0.002,
     "cdm_id": "g7",
