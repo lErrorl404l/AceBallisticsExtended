@@ -1,0 +1,17 @@
+{
+    "class": "B_454Casull_Ball",
+    "projectile": {
+        "model": "JHP_240gr",
+        "mass_g": 15.6,
+        "caliber_mm": 11.43,
+        "bc_g7": 0.185,
+        "cdm_id": "g1",
+        "source": ".454 Casull 240gr JHP. G1 BC~0.185. ~490 m/s (7.5\"). High-pressure magnum revolver round.",
+        "frag_mass_mean": 0.5,
+        "frag_mass_std": 0.3,
+        "ricochet_angle_deg": 20.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
+    }
+}

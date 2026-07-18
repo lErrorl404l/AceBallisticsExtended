@@ -1,0 +1,17 @@
+{
+    "class": "B_9x18_Ball",
+    "projectile": {
+        "model": "FMJ_95gr",
+        "mass_g": 6.1,
+        "caliber_mm": 9.25,
+        "bc_g7": 0.14,
+        "cdm_id": "g1",
+        "source": "9x18mm Makarov 95gr FMJ. G1 BC~0.140. ~315 m/s (4\"). Standard Warsaw Pact pistol round.",
+        "frag_mass_mean": 0.5,
+        "frag_mass_std": 0.3,
+        "ricochet_angle_deg": 20.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
+    }
+}

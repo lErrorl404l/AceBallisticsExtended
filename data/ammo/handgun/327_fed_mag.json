@@ -1,0 +1,17 @@
+{
+    "class": "B_327Fed_Ball",
+    "projectile": {
+        "model": "JHP_69gr",
+        "mass_g": 4.5,
+        "caliber_mm": 7.87,
+        "bc_g7": 0.13,
+        "cdm_id": "g1",
+        "source": ".327 Federal Magnum 69gr JHP. G1 BC~0.130. ~430 m/s (4\"). High-velocity revolver round, modern .32 caliber.",
+        "frag_mass_mean": 0.5,
+        "frag_mass_std": 0.3,
+        "ricochet_angle_deg": 20.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
+    }
+}

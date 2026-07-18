@@ -1,0 +1,17 @@
+{
+    "class": "B_41REM_Ball",
+    "projectile": {
+        "model": "JHP_210gr",
+        "mass_g": 13.6,
+        "caliber_mm": 10.4,
+        "bc_g7": 0.17,
+        "cdm_id": "g1",
+        "source": ".41 Remington Magnum 210gr JHP. G1 BC~0.170. ~390 m/s (6\"). Law enforcement magnum revolver round.",
+        "frag_mass_mean": 0.5,
+        "frag_mass_std": 0.3,
+        "ricochet_angle_deg": 20.0,
+        "tracer_burn_time_s": 0.0,
+        "incendiary": false,
+        "incendiary_ignition_temp_k": 0.0
+    }
+}
