@@ -88,6 +88,8 @@ fn build_material_cache() -> HashMap<&'static str, f64> {
     m.insert("perf_steel", 0.60);
     m.insert("slotted_armor", 0.55);
     m.insert("slotted_steel", 0.55);
+    m.insert("slat_armor", 0.20);
+    m.insert("cage_armor", 0.15);
     m.insert("acrylic", 0.04);
     m.insert("acrylic_standalone", 0.04);
     m.insert("polycarbonate", 0.06);
@@ -175,6 +177,8 @@ pub fn material_factor(material: &str) -> f64 {
         "mar_ceramic" => 2.8,
         "perforated_armor" | "perf_steel" => 0.60,
         "slotted_armor" | "slotted_steel" => 0.55,
+        "slat_armor" => 0.20,
+        "cage_armor" => 0.15,
         "acrylic" | "acrylic_standalone" => 0.04,
         "polycarbonate" | "polycarbonate_standalone" => 0.06,
         "concrete_reinforced" => 0.12, // ASMRB 0.11 for 1:3:5; harmonized with concrete key

@@ -1,0 +1,11 @@
+{
+  "materialId": "cage_armor",
+  "displayName": "Cage Armor (stand-off wire/cage)",
+  "densityGcm3": 7.85,
+  "hardnessBHN": 150,
+  "tensileStrengthMpa": 300,
+  "rhaEquivalent": 0.15,
+  "ductility": 0.10,
+  "spallCoeff": 0.4,
+  "notes": "Cage armor (stand-off wire/cage armor) uses lightweight wire mesh or thin bars to defeat RPGs and HEAT projectiles by crushing the shaped charge cone or shorting the piezoelectric fuse before the warhead reaches the main armor. Even lighter than slat armor; RHAe ~0.15 vs KE threats. Primary mechanism is HEAT warhead disruption via fuze shorting or cone deformation. Common on light tactical vehicles and convoy protection."
+}

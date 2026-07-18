@@ -1,0 +1,11 @@
+{
+  "materialId": "slat_armor",
+  "displayName": "Slat Armor (stand-off bar armor)",
+  "densityGcm3": 7.85,
+  "hardnessBHN": 200,
+  "tensileStrengthMpa": 400,
+  "rhaEquivalent": 0.20,
+  "ductility": 0.15,
+  "spallCoeff": 0.5,
+  "notes": "Slat armor (stand-off bar armor) uses spaced steel bars to disrupt HEAT warheads by damaging the shaped charge liner or breaking the piezoelectric fuze circuit before the jet forms. Thin bars offer ~20% the resistance of solid RHA of same total mass; primary mechanism is HEAT disruption rather than direct KE resistance. Common on Stryker, M113, and MRAP vehicles as add-on RPG protection."
+}

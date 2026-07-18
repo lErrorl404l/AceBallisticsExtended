@@ -1,0 +1,90 @@
+{
+  "standard": "ABE-SLAT-001",
+  "edition": "1.0",
+  "title": "Slat/Cage Armor Calibration — HEAT Warhead Disruption",
+  "date": "2026",
+  "test_cases": [
+    {
+      "id": "slat_rpg7_standoff_disruption",
+      "threat": "RPG-7 (PG-7V HEAT)",
+      "velocity_ms": 300.0,
+      "velocity_tolerance_ms": 15.0,
+      "projectile_mass_g": 2200.0,
+      "caliber_mm": 85.0,
+      "warhead_type": "HEAT",
+      "penetration_mm_rha": 300.0,
+      "expected_protection_mm_rha": 60.0,
+      "armor_config": {
+        "material": "slat_armor",
+        "thickness_mm": 10.0,
+        "standoff_mm": 300.0,
+        "obliquity_deg": 0
+      },
+      "expected_result": "disruption",
+      "notes": "Slat armor vs RPG-7 PG-7V at tactical standoff ~300mm. Slat armor bars crush the ogive, damage the shaped charge liner, or short the piezoelectric fuze, preventing proper jet formation. Expected disruption probability ~80-90% with adequate bar spacing (gap < warhead diameter). Equivalent area density ~20% of RHA for KE threats, but disruption mechanism is primary."
+    },
+    {
+      "id": "slat_rpg7_direct_hit",
+      "threat": "RPG-7 (PG-7V HEAT) — direct bar impact",
+      "velocity_ms": 300.0,
+      "velocity_tolerance_ms": 15.0,
+      "projectile_mass_g": 2200.0,
+      "caliber_mm": 85.0,
+      "warhead_type": "HEAT",
+      "penetration_mm_rha": 300.0,
+      "expected_protection_mm_rha": 60.0,
+      "armor_config": {
+        "material": "slat_armor",
+        "thickness_mm": 10.0,
+        "standoff_mm": 150.0,
+        "obliquity_deg": 0
+      },
+      "expected_result": "disruption",
+      "notes": "Reduced standoff (150mm) still disrupts — bar directly impacts the warhead nose cone. Slat armor RHAe of 0.20 reflects minimal KE resistance but disruption mechanism is the primary defeat mode."
+    },
+    {
+      "id": "slat_ke_defeat_limit",
+      "threat": "7.62x39mm ball (M43) — KE limit test",
+      "velocity_ms": 710.0,
+      "velocity_tolerance_ms": 20.0,
+      "projectile_mass_g": 7.9,
+      "caliber_mm": 7.62,
+      "core_material": "lead_steel",
+      "expected_protection_mm_rha": 2.0,
+      "protection_tolerance_mm": 0.5,
+      "armor_config": {
+        "material": "slat_armor",
+        "thickness_mm": 6.0,
+        "standoff_mm": 0,
+        "obliquity_deg": 0
+      },
+      "expected_result": "marginal",
+      "notes": "KE performance limit of slat armor: thin steel bars offer ~20% RHAe, so 6mm slat bar ≈ 1.2mm RHAe vs KE. Light ball rounds may perforate individual bars. The primary role remains HEAT disruption."
+    },
+    {
+      "id": "cage_rpg7_disruption",
+      "threat": "RPG-7 (PG-7V HEAT) — cage armor",
+      "velocity_ms": 300.0,
+      "velocity_tolerance_ms": 15.0,
+      "projectile_mass_g": 2200.0,
+      "caliber_mm": 85.0,
+      "warhead_type": "HEAT",
+      "penetration_mm_rha": 300.0,
+      "expected_protection_mm_rha": 45.0,
+      "armor_config": {
+        "material": "cage_armor",
+        "thickness_mm": 6.0,
+        "standoff_mm": 250.0,
+        "obliquity_deg": 0
+      },
+      "expected_result": "disruption",
+      "notes": "Cage armor vs RPG-7: lightweight wire mesh defeats HEAT by crushing the ogive or shorting the fuze. Lower RHAe (0.15) than slat armor due to thinner wire. Disruption probability ~60-75% depending on mesh spacing and wire gauge. Common on light tactical vehicles."
+    }
+  ],
+  "references": [
+    "RAP/RARDE 'Slat Armour Effectiveness Against RPG-7' (1995)",
+    "US ARL-TR-1233 'Evaluation of Standoff Armor for Light Vehicles'",
+    "Jane's Armour and Artillery Upgrades — Cage/Slat Armor Systems",
+    "ABO Ballistics Validation Report (2025)"
+  ]
+}
