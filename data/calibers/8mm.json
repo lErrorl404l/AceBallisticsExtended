@@ -1,0 +1,7 @@
+{
+  "id": "8mm",
+  "caliber_mm": 7.92,
+  "name": "8mm Mauser",
+  "type": "rifle",
+  "case_length_mm": 57.0
+}

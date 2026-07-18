@@ -1,0 +1,7 @@
+{
+  "id": "40mm",
+  "caliber_mm": 40.0,
+  "name": "40mm Grenade",
+  "type": "grenade",
+  "case_length_mm": 46.0
+}

@@ -1,0 +1,7 @@
+{
+  "id": "10mm",
+  "caliber_mm": 10.0,
+  "name": "10mm Auto",
+  "type": "pistol",
+  "case_length_mm": 25.0
+}
