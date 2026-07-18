@@ -8,6 +8,5 @@
   "projectile_mass_g": 12.0,
   "muzzle_velocity_ms": 250,
   "zero_range_m": 25.0,
-  "twist_rate_mm": 406.0,
   "notes": "IRL: .45 Heavy Pistol."
 }

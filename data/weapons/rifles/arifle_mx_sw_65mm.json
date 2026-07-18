@@ -8,6 +8,5 @@
   "projectile_mass_g": 7.9,
   "muzzle_velocity_ms": 810,
   "zero_range_m": 100.0,
-  "twist_rate_mm": 254.0,
   "notes": "IRL: MX SW 6.5mm."
 }

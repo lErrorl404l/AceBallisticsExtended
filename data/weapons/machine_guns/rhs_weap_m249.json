@@ -8,6 +8,5 @@
   "projectile_mass_g": 4.0,
   "muzzle_velocity_ms": 915,
   "zero_range_m": 100.0,
-  "twist_rate_mm": 177.8,
   "notes": "IRL: M249 SAW (RHS)."
 }

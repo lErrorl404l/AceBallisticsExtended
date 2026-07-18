@@ -1,6 +1,7 @@
 {
   "class": "launch_Titan_short_base_F",
   "caliber_mm": 127.0,
+  "rifling_twist_mm": 0.0,
   "barrel_length_mm": 1.0,
   "chamber_pressure_mpa": 1.0,
   "cdm_id": "g7",

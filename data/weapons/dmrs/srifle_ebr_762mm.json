@@ -8,6 +8,5 @@
   "projectile_mass_g": 9.5,
   "muzzle_velocity_ms": 785,
   "zero_range_m": 200.0,
-  "twist_rate_mm": 305.0,
   "notes": "IRL: EBR (M14-type)."
 }

@@ -8,6 +8,5 @@
   "projectile_mass_g": 11.3,
   "muzzle_velocity_ms": 790,
   "zero_range_m": 100.0,
-  "twist_rate_mm": 285.0,
   "notes": "IRL: M24 SWS."
 }

@@ -8,6 +8,5 @@
   "projectile_mass_g": 27.0,
   "muzzle_velocity_ms": 900,
   "zero_range_m": 100.0,
-  "twist_rate_mm": 330.0,
   "notes": "IRL: LRR .408 CheyTac."
 }

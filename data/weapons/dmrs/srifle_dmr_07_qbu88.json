@@ -8,6 +8,5 @@
   "projectile_mass_g": 5.0,
   "muzzle_velocity_ms": 820,
   "zero_range_m": 100.0,
-  "twist_rate_mm": 206.0,
   "notes": "IRL: QBU-88."
 }

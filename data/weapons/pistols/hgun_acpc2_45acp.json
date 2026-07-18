@@ -8,6 +8,5 @@
   "projectile_mass_g": 15.0,
   "muzzle_velocity_ms": 260,
   "zero_range_m": 25.0,
-  "twist_rate_mm": 406.0,
   "notes": "IRL: ACPC2 .45 ACP."
 }
