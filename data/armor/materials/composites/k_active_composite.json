@@ -1,0 +1,11 @@
+{
+  "materialId": "k_active_composite",
+  "displayName": "K-Active Composite (T-90M modern ceramic array)",
+  "densityGcm3": 2.7,
+  "hardnessBHN": 1100,
+  "tensileStrengthMpa": 350,
+  "rhaEquivalent": 2.3,
+  "ductility": 0.05,
+  "spallCoeff": 0.6,
+  "notes": "K-Active (\u041a-\u0410\u043a\u0442\u0438\u0432) \u2014 modern Russian ceramic composite armor developed for T-90M/T-14. Enhanced multi-hit ceramic blocks in resin matrix. RHAe ~2.1-2.5 per mm vs KE. Improved over Kvarts/K-5 era composites. Likely uses SiC or Al2O3 tiles with optimized backing."
+}

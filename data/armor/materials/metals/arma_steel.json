@@ -1,0 +1,11 @@
+{
+  "materialId": "arma_steel",
+  "displayName": "Arma 3 Steel (Armor class)",
+  "densityGcm3": 7.85,
+  "hardnessBHN": 280,
+  "tensileStrengthMpa": 900,
+  "rhaEquivalent": 2.0,
+  "ductility": 0.5,
+  "spallCoeff": 0.6,
+  "notes": "Arma 3 stock steel armor material. Engine coeff ~2.0x vs Default. Used in CfgVehicleHitPoints for most armored vehicle hulls. Maps to ~2x RHA in game armor calcs."
+}

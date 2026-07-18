@@ -1,0 +1,11 @@
+{
+  "materialId": "plywood",
+  "displayName": "Plywood (MIL-P-6070, structural grade)",
+  "densityGcm3": 0.65,
+  "hardnessBHN": 3,
+  "tensileStrengthMpa": 45,
+  "rhaEquivalent": 0.035,
+  "ductility": 0.3,
+  "spallCoeff": 0.6,
+  "notes": "Structural plywood per MIL-P-6070 (US DoD). Density ~0.6-0.7 g/cm\u00b3 typical for fir/pine 5-ply. RHAe ~0.03-0.04 per mm. Laminated construction provides slightly better resistance than solid timber of equivalent thickness. Used in construction and temporary fortifications."
+}

@@ -1,0 +1,14 @@
+{
+  "class": "arifle_M16A4_F",
+  "caliber_mm": 5.56,
+  "barrel_length_mm": 508.0,
+  "rifling_twist_mm": 178.0,
+  "chamber_pressure_mpa": 380.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 4.0,
+  "muzzle_velocity_ms": 948,
+  "zero_range_m": 100,
+  "effective_range_m": 600,
+  "notes": "M16A4, 20\" barrel, 1:7\" twist, M855A1 pressure. MV 948 m/s SS109",
+  "twist_rate_mm": 178.0
+}

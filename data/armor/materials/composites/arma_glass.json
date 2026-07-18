@@ -1,0 +1,11 @@
+{
+  "materialId": "arma_glass",
+  "displayName": "Arma 3 Glass (Armor class)",
+  "densityGcm3": 2.5,
+  "hardnessBHN": 50,
+  "tensileStrengthMpa": 50,
+  "rhaEquivalent": 0.1,
+  "ductility": 0.05,
+  "spallCoeff": 0.9,
+  "notes": "Arma 3 stock glass armor material. Engine coeff ~0.1x vs Default. Used for vehicle windshields and viewports in CfgVehicleHitPoints. Includes armored glass variants."
+}

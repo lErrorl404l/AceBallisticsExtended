@@ -1,0 +1,11 @@
+{
+  "materialId": "fiberglass",
+  "displayName": "Fiberglass/GRP (E-glass polyester laminate)",
+  "densityGcm3": 1.9,
+  "hardnessBHN": 100,
+  "tensileStrengthMpa": 350,
+  "rhaEquivalent": 0.12,
+  "ductility": 0.3,
+  "spallCoeff": 0.6,
+  "notes": "E-glass fiber in polyester/vinyl-ester resin (GRP). Density ~1.9 g/cm\u00b3. RHAe ~0.10-0.14 per mm vs small arms. Used for vehicle body panels, landing craft, and non-critical structural-baliistic applications. Lower cost than aramid or S2-glass."
+}

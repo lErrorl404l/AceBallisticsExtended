@@ -1,0 +1,11 @@
+{
+  "materialId": "rubber_solid",
+  "displayName": "Solid Rubber (vehicle track pads/rubber skirts)",
+  "densityGcm3": 1.2,
+  "hardnessBHN": 70,
+  "tensileStrengthMpa": 15,
+  "rhaEquivalent": 0.08,
+  "ductility": 0.9,
+  "spallCoeff": 0.02,
+  "notes": "Solid rubber per MIL-DTL-11462 (natural/SBR compound). Density ~1.2 g/cm\u00b3, Shore A ~60-70. RHAe ~0.06-0.10 per mm vs KE. Used in vehicle track pads, side skirts, and spacing/filter layers. Negligible structural ballistic protection but useful for HEAT standoff and spaced armor disruption."
+}

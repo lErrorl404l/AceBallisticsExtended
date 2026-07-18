@@ -42,7 +42,6 @@ pub use systems::{
     aps, calibration, config, dynamic_armor, lot_variation, predictive_era, schematics,
     wind_uncertainty,
 };
-pub(crate) use systems::{trace, tracer_burnout};
 
 use std::ffi::{CStr, CString};
 use std::fmt::Write;

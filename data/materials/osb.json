@@ -1,0 +1,11 @@
+{
+  "materialId": "osb",
+  "displayName": "OSB (Oriented Strand Board, construction grade)",
+  "densityGcm3": 0.65,
+  "hardnessBHN": 3,
+  "tensileStrengthMpa": 20,
+  "rhaEquivalent": 0.035,
+  "ductility": 0.3,
+  "spallCoeff": 0.6,
+  "notes": "Oriented strand board (OSB) per PS 2-18 / EN 300. Density ~0.6-0.7 g/cm\u00b3. RHAe ~0.03-0.04 per mm \u2014 similar to plywood. Stranded wood composite used in construction sheathing. Slightly lower structural integrity than plywood."
+}

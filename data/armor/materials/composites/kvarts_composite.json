@@ -1,0 +1,11 @@
+{
+  "materialId": "kvarts_composite",
+  "displayName": "Kvarts Composite (Russian quartz-reinforced, T-72/T-90)",
+  "densityGcm3": 2.65,
+  "hardnessBHN": 1100,
+  "tensileStrengthMpa": 350,
+  "rhaEquivalent": 2.1,
+  "ductility": 0.05,
+  "spallCoeff": 0.65,
+  "notes": "Kvarts (\u041a\u0432\u0430\u0440\u0446) \u2014 Russian quartz-reinforced ceramic composite armor. Uses fused silica/quartz in resin matrix within cast steel turret cavity. RHAe ~1.9-2.3 per mm vs KE. Applied in T-72B, T-80U, T-90 turret arrays. Better than textolite but more expensive. Combines ceramic hardness with composite toughness."
+}

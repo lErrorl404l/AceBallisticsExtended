@@ -1,0 +1,11 @@
+{
+  "materialId": "chobham_composite",
+  "displayName": "Chobham Composite (UK 1st-gen special armor)",
+  "densityGcm3": 2.7,
+  "hardnessBHN": 1100,
+  "tensileStrengthMpa": 350,
+  "rhaEquivalent": 2.2,
+  "ductility": 0.05,
+  "spallCoeff": 0.65,
+  "notes": "Chobham composite \u2014 original UK special armor developed at Chobham Common (FERMAN/MACLEAN projects, 1960s). Ceramic tiles in resin matrix between steel plates. RHAe ~2.0-2.4 per mm vs KE. Used in Challenger 1, early M1 Abrams prototypes. Superior to Burlington in later variants."
+}

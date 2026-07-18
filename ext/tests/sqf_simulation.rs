@@ -396,86 +396,86 @@ fn representative_weapons() -> Vec<WeaponAmmoPair> {
     vec![
         // Pistols
         WeaponAmmoPair {
-            weapon: weapon!("p07_9mm.json"),
-            ammo: ammo!("9x21_fmj.json"),
+            weapon: weapon!("pistols/p07_9mm.json"),
+            ammo: ammo!("handgun/9x21_fmj.json"),
             name: "P07 9mm",
             category: "pistol",
         },
         WeaponAmmoPair {
-            weapon: weapon!("hgun_4five_45acp.json"),
-            ammo: ammo!("45acp_185gr_jhp.json"),
+            weapon: weapon!("pistols/hgun_4five_45acp.json"),
+            ammo: ammo!("handgun/45acp_185gr_jhp.json"),
             name: "4Five .45 ACP",
             category: "pistol",
         },
         // SMGs
         WeaponAmmoPair {
-            weapon: weapon!("smg_02_9mm.json"),
-            ammo: ammo!("9mm_jhp.json"),
+            weapon: weapon!("smgs/smg_02_9mm.json"),
+            ammo: ammo!("handgun/9mm_jhp.json"),
             name: "SMG 9mm",
             category: "smg",
         },
         WeaponAmmoPair {
-            weapon: weapon!("smg_01_protector_9mm.json"),
-            ammo: ammo!("9x21_fmj.json"),
+            weapon: weapon!("smgs/smg_01_protector_9mm.json"),
+            ammo: ammo!("handgun/9x21_fmj.json"),
             name: "Protector 9mm",
             category: "smg",
         },
         // Carbines / short rifles
         WeaponAmmoPair {
-            weapon: weapon!("rhs_weap_hk416_d10.json"),
-            ammo: ammo!("m855.json"),
+            weapon: weapon!("rifles/rhs_weap_hk416_d10.json"),
+            ammo: ammo!("rifle/5_56mm/m855.json"),
             name: "HK416 D10 5.56mm",
             category: "carbine",
         },
         WeaponAmmoPair {
-            weapon: weapon!("rhs_weap_aks74u.json"),
-            ammo: ammo!("545x39mm.json"),
+            weapon: weapon!("rifles/rhs_weap_aks74u.json"),
+            ammo: ammo!("rifle/5_45mm/545x39mm.json"),
             name: "AKS-74U 5.45mm",
             category: "carbine",
         },
         // Rifles
         WeaponAmmoPair {
-            weapon: weapon!("m4a1.json"),
-            ammo: ammo!("556x45mm.json"),
+            weapon: weapon!("rifles/m4a1.json"),
+            ammo: ammo!("rifle/5_56mm/556x45mm.json"),
             name: "M4A1 5.56mm",
             category: "rifle",
         },
         WeaponAmmoPair {
-            weapon: weapon!("rhs_weap_ak74m.json"),
-            ammo: ammo!("545x39mm.json"),
+            weapon: weapon!("rifles/rhs_weap_ak74m.json"),
+            ammo: ammo!("rifle/5_45mm/545x39mm.json"),
             name: "AK-74M 5.45mm",
             category: "rifle",
         },
         // DMRs
         WeaponAmmoPair {
-            weapon: weapon!("rhs_weap_sr25.json"),
-            ammo: ammo!("762x51mm_m80.json"),
+            weapon: weapon!("dmrs/rhs_weap_sr25.json"),
+            ammo: ammo!("rifle/7_62mm/762x51mm_m80.json"),
             name: "SR-25 7.62mm",
             category: "dmr",
         },
         WeaponAmmoPair {
-            weapon: weapon!("srifle_dmr_01_762mm.json"),
-            ammo: ammo!("m80.json"),
+            weapon: weapon!("dmrs/srifle_dmr_01_762mm.json"),
+            ammo: ammo!("rifle/7_62mm/m80.json"),
             name: "DMR-01 7.62mm",
             category: "dmr",
         },
         // Machine guns
         WeaponAmmoPair {
-            weapon: weapon!("rhs_weap_pkm.json"),
-            ammo: ammo!("rhs_762x54_7n1.json"),
+            weapon: weapon!("machine_guns/rhs_weap_pkm.json"),
+            ammo: ammo!("rifle/7_62mm/rhs_762x54_7n1.json"),
             name: "PKM 7.62x54R",
             category: "mg",
         },
         WeaponAmmoPair {
-            weapon: weapon!("rhs_weap_m240B.json"),
-            ammo: ammo!("762x51mm_m80.json"),
+            weapon: weapon!("machine_guns/rhs_weap_m240B.json"),
+            ammo: ammo!("rifle/7_62mm/762x51mm_m80.json"),
             name: "M240B 7.62mm",
             category: "mg",
         },
         // Sniper/AMR
         WeaponAmmoPair {
-            weapon: weapon!("gm6_50_bmg.json"),
-            ammo: ammo!("127x108_bmg.json"),
+            weapon: weapon!("snipers/gm6_50_bmg.json"),
+            ammo: ammo!("heavy_127mm/127x108_bmg.json"),
             name: "GM6 .50 BMG",
             category: "sniper",
         },
@@ -588,10 +588,10 @@ fn config_weapon_fire_sanity() {
 fn tracked_bullet_lifecycle() {
     rv_ext_args("init", &["1", "0"]);
 
-    let m4 = weapon!("m4a1.json");
-    let m855 = ammo!("m855.json");
-    let sr25 = weapon!("rhs_weap_sr25.json");
-    let m80 = ammo!("m80.json");
+    let m4 = weapon!("rifles/m4a1.json");
+    let m855 = ammo!("rifle/5_56mm/m855.json");
+    let sr25 = weapon!("dmrs/rhs_weap_sr25.json");
+    let m80 = ammo!("rifle/7_62mm/m80.json");
 
     let mut tracker = BulletTracker::new();
 
@@ -765,9 +765,9 @@ fn config_weapon_mv_range() {
         let (lo, hi) = match pair.category {
             "pistol" => (250.0, 600.0),
             "smg" => (300.0, 750.0),
-            "carbine" => (650.0, 950.0),
-            "rifle" => (750.0, 1000.0),
-            "dmr" => (750.0, 1000.0),
+            "carbine" => (500.0, 950.0),
+            "rifle" => (600.0, 1000.0),
+            "dmr" => (650.0, 1000.0),
             "mg" => (750.0, 1000.0),
             "sniper" => (500.0, 1000.0),
             _ => (400.0, 1200.0),

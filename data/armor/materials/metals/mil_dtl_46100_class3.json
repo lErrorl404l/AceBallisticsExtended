@@ -1,0 +1,11 @@
+{
+  "materialId": "mil_dtl_46100_class3",
+  "displayName": "MIL-DTL-46100 Class 3 HHA (534-578 BHN)",
+  "densityGcm3": 7.85,
+  "hardnessBHN": 555,
+  "tensileStrengthMpa": 1750,
+  "rhaEquivalent": 1.4,
+  "ductility": 0.3,
+  "spallCoeff": 0.7,
+  "notes": "MIL-DTL-46100 Class 3 high-hardness armor steel. 534-578 BHN. RHAe ~1.35-1.45 per mm vs AP. Higher hardness gives better ballistic protection but reduced ductility and increased HAZ embrittlement risk. Limited formability."
+}

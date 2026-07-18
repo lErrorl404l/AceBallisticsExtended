@@ -1,0 +1,11 @@
+{
+  "materialId": "burlington_composite",
+  "displayName": "Burlington Composite (M1 Abrams special armor)",
+  "densityGcm3": 2.6,
+  "hardnessBHN": 1000,
+  "tensileStrengthMpa": 350,
+  "rhaEquivalent": 2.0,
+  "ductility": 0.05,
+  "spallCoeff": 0.65,
+  "notes": "Burlington composite \u2014 the original layered armor array developed for M1 Abrams. Ceramic tile (Al2O3/SiC) + glass-reinforced plastic + rubber interlayers in steel structure. RHAe ~1.8-2.2 per mm vs KE. Named after Chobham Common, UK (Chobham/Burlington). Developer: DERA/UK MoD with US collaboration. Precise construction remains classified."
+}

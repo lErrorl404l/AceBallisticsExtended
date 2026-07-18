@@ -1,0 +1,11 @@
+{
+  "materialId": "polycarbonate_standalone",
+  "displayName": "Polycarbonate Standalone (transparent armor spall layer)",
+  "densityGcm3": 1.2,
+  "hardnessBHN": 10,
+  "tensileStrengthMpa": 70,
+  "rhaEquivalent": 0.06,
+  "ductility": 0.8,
+  "spallCoeff": 0.1,
+  "notes": "Polycarbonate standalone layer (MIL-DTL-46116). Same properties as polycarbonate. RHAe ~0.05-0.07 per mm. The ductile backing layer in laminated transparent armor assemblies. Catches glass fragments after strike-face penetration."
+}

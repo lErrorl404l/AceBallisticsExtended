@@ -1,0 +1,11 @@
+{
+  "materialId": "hard_rubber",
+  "displayName": "Hard Rubber (ebonite, MIL-DTL-11462 Type II)",
+  "densityGcm3": 1.2,
+  "hardnessBHN": 100,
+  "tensileStrengthMpa": 20,
+  "rhaEquivalent": 0.08,
+  "ductility": 0.7,
+  "spallCoeff": 0.05,
+  "notes": "Hard rubber/ebonite per MIL-DTL-11462 Type II. Density ~1.2 g/cm\u00b3, Shore D hardness ~70-80. RHAe ~0.06-0.10 per mm. Used in shuttle bombs, vehicle spacers, and limited ballistic applications. More rigid than soft rubber. Low spall."
+}

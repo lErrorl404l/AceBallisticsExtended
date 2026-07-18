@@ -1,0 +1,11 @@
+{
+  "materialId": "adobe",
+  "displayName": "Adobe/Rammed Earth Block (traditional construction)",
+  "densityGcm3": 1.8,
+  "hardnessBHN": 2,
+  "tensileStrengthMpa": 1,
+  "rhaEquivalent": 0.08,
+  "ductility": 0.05,
+  "spallCoeff": 0.95,
+  "notes": "Adobe/rammed earth block construction. Density ~1.6-2.0 g/cm\u00b3. RHAe ~0.06-0.10 per mm. Mud-based building material with straw binder. Considerable thickness required for ballistic protection. Common in arid regions and historical fortifications."
+}

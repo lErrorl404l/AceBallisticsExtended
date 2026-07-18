@@ -1,0 +1,11 @@
+{
+  "materialId": "arma_wood",
+  "displayName": "Arma 3 Wood (Barrier class)",
+  "densityGcm3": 0.7,
+  "hardnessBHN": 4,
+  "tensileStrengthMpa": 85,
+  "rhaEquivalent": 0.03,
+  "ductility": 0.25,
+  "spallCoeff": 0.4,
+  "notes": "Arma 3 stock wood material. Engine coeff ~0.4x vs Default. Used for fences, crates, and light structures. RHA equivalent aligned with hardwood ballistic data."
+}

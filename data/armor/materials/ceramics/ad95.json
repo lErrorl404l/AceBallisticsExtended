@@ -1,0 +1,11 @@
+{
+  "materialId": "ad95",
+  "displayName": "AD95 Alumina (95% Al2O3, short form)",
+  "densityGcm3": 3.75,
+  "hardnessBHN": 1300,
+  "tensileStrengthMpa": 270,
+  "rhaEquivalent": 2.4,
+  "ductility": 0.02,
+  "spallCoeff": 0.85,
+  "notes": "AD95 alumina ceramic \u2014 alternative materialId key. Same properties as ceramic_ad95. 95% Al2O3 by CoorsTek. RHAe ~2.3-2.5 per mm vs KE."
+}

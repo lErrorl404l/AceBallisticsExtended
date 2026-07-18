@@ -1,0 +1,11 @@
+{
+  "materialId": "acrylic",
+  "displayName": "Acrylic (PMMA, MIL-PRF-5425/ MIL-DTL-25690)",
+  "densityGcm3": 1.18,
+  "hardnessBHN": 10,
+  "tensileStrengthMpa": 70,
+  "rhaEquivalent": 0.04,
+  "ductility": 0.7,
+  "spallCoeff": 0.3,
+  "notes": "Polymethyl methacrylate (PMMA) acrylic per MIL-PRF-5425 (aircraft) / MIL-DTL-25690 (stretched). Density 1.18 g/cm\u00b3. RHAe ~0.03-0.05 per mm vs small arms. Used in aircraft canopies and armored windows (with polycarbonate inner layer). Moderate spall: cracks and crazes on impact."
+}

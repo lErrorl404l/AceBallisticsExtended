@@ -11,7 +11,7 @@ use std::path::Path;
 use abe_ballistics_ext::config::ArmorConfig;
 
 /// Path to the armour data directory, relative to the crate's manifest.
-const ARMOR_DIR: &str = concat!(env!("CARGO_MANIFEST_DIR"), "/../data/armor/");
+const ARMOR_DIR: &str = concat!(env!("CARGO_MANIFEST_DIR"), "/../data/armor/plates/");
 
 #[test]
 fn all_armor_jsons_load() {
@@ -92,16 +92,11 @@ fn all_armor_jsons_load() {
         vehicle_count += 1;
     }
 
-    // Sanity: we should have found several vehicle configs and several skipped material files
+    // Sanity: we should have found several vehicle configs
     assert!(
         vehicle_count >= 20,
         "Expected at least 20 vehicle configs, found {}",
         vehicle_count,
-    );
-    assert!(
-        skipped_count >= 10,
-        "Expected at least 10 skipped material files, found {}",
-        skipped_count,
     );
 
     eprintln!(

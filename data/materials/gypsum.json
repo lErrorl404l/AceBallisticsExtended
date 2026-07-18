@@ -1,0 +1,11 @@
+{
+  "materialId": "gypsum",
+  "displayName": "Gypsum Wallboard (drywall, MIL-PRF-32348 interior)",
+  "densityGcm3": 0.8,
+  "hardnessBHN": 2,
+  "tensileStrengthMpa": 2,
+  "rhaEquivalent": 0.02,
+  "ductility": 0.1,
+  "spallCoeff": 0.95,
+  "notes": "Standard gypsum wallboard (12.7mm typical). Density ~0.8 g/cm\u00b3 (varies with paper facing). Negligible ballistic resistance: RHAe ~0.015-0.025 per mm. Spalls heavily. Common interior building material. ASTM C1396 / BS EN 520."
+}

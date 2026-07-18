@@ -1,0 +1,11 @@
+{
+  "materialId": "arma_concrete",
+  "displayName": "Arma 3 Concrete (Barrier class)",
+  "densityGcm3": 2.4,
+  "hardnessBHN": 80,
+  "tensileStrengthMpa": 5,
+  "rhaEquivalent": 0.15,
+  "ductility": 0.05,
+  "spallCoeff": 0.95,
+  "notes": "Arma 3 stock concrete material. Engine coeff ~3.0x vs Default in CfgVehicleHitPoints. Used for bunkers, barriers, and structural obstacles. RHA equivalent aligned with reinforced concrete ballistic data."
+}

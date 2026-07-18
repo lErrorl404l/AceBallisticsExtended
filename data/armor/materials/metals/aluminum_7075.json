@@ -1,0 +1,11 @@
+{
+  "materialId": "aluminum_7075",
+  "displayName": "Aluminum Alloy 7075-T6 (MIL-DTL-46027E alt.)",
+  "densityGcm3": 2.81,
+  "hardnessBHN": 150,
+  "tensileStrengthMpa": 570,
+  "rhaEquivalent": 0.48,
+  "ductility": 0.5,
+  "spallCoeff": 0.15,
+  "notes": "Aluminum 7075-T6 per MIL-A-12576. Higher strength than 7039 (ultimate ~570 MPa) but over-aging beyond ~75mm reduces ballistic performance. RHAe ~0.45-0.50 per mm vs small arms. Used in limited armor applications where higher strength-to-weight ratio than 5083 is needed. Susceptible to stress corrosion cracking (SCC)."
+}

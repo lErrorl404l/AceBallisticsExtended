@@ -1,0 +1,11 @@
+{
+  "materialId": "twaron_liner",
+  "displayName": "Twaron Spall Liner (Teijin Aramid, para-aramid)",
+  "densityGcm3": 1.44,
+  "hardnessBHN": 15,
+  "tensileStrengthMpa": 3200,
+  "rhaEquivalent": 0.22,
+  "ductility": 0.8,
+  "spallCoeff": 0.05,
+  "notes": "Twaron \u2014 Teijin Aramid para-aramid spall liner. Similar to Kevlar but with slightly lower tensile (3.2 GPa). Density 1.44 g/cm\u00b3. RHAe ~0.18-0.25 per mm vs fragments. Used as lighter/cheaper alternative to Kevlar in vehicle spall liners. Better UV resistance than Kevlar."
+}

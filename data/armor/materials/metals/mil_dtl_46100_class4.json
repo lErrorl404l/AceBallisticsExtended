@@ -1,0 +1,11 @@
+{
+  "materialId": "mil_dtl_46100_class4",
+  "displayName": "MIL-DTL-46100 Class 4 HHA (578-640 BHN)",
+  "densityGcm3": 7.85,
+  "hardnessBHN": 605,
+  "tensileStrengthMpa": 1950,
+  "rhaEquivalent": 1.5,
+  "ductility": 0.25,
+  "spallCoeff": 0.75,
+  "notes": "MIL-DTL-46100 Class 4 extra-high-hardness armor steel. 578-640 BHN. RHAe ~1.45-1.55 per mm vs AP. Approaching UHH (ultra-high-hardness) class. Requires specialized welding procedures. Used in premium applique armor packages."
+}

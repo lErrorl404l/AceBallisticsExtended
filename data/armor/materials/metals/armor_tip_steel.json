@@ -1,0 +1,11 @@
+{
+  "materialId": "armor_tip_steel",
+  "displayName": "Armor-Piercing Core Tip Steel (hardened tool steel)",
+  "densityGcm3": 7.85,
+  "hardnessBHN": 600,
+  "tensileStrengthMpa": 2000,
+  "rhaEquivalent": 1.15,
+  "ductility": 0.2,
+  "spallCoeff": 0.6,
+  "notes": "Hardened steel used for AP projectile cores and penetrator tips. High-carbon/high-hardness tool steel grade. RHAe ~1.15 relative to standard RHA for hardness-matched comparison. Not used as armor but as reference material."
+}

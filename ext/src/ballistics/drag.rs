@@ -462,27 +462,34 @@ pub fn bc_at_mach(bc_reference: f64, mach: f64, cdm_id: &str) -> f64 {
     } else if mach <= 0.8 {
         bc_reference * subsonic_factor
     } else {
-        // Transonic region (0.8 ≤ M ≤ 1.2): Gaussian BC dip model
-        // Real ballistics: BC drops 10-15% at Mach ~1.0 for boat-tail (G7),
-        // 5-8% for flat-base (G1), due to shock wave formation on the projectile body.
-        // Recovery is complete by ~M1.2. This replaces the simple linear model.
+        // Transonic region (0.8 ≤ M ≤ 1.2): smooth-transition BC dip model
         //
-        // Published BC scale data (Litz, McCoy) shows the characteristic dip:
+        // Real ballistics: BC drops 10-15% at Mach ~1.0 for boat-tail (G7),
+        // 5-8% for flat-base (G1), due to shock wave formation on the projectile
+        // body. Recovery is complete by ~M1.2.
+        //
+        // Uses a smoothstep blend that equals the subsonic factor at M=0.8
+        // and the supersonic factor at M=1.2, with a centered dip:
         //   G1 flat-base:  dips to ~0.92× of supersonic BC at M1.0
         //   G7 boat-tail: dips to ~0.85× of supersonic BC at M1.0
-        let sigma_base = 0.20;
+        //
+        // References:
+        //   Litz, B.: "Applied Ballistics for Long Range Shooting" (3rd ed., 2015)
+        //   McCoy, R.L.: "Modern Exterior Ballistics" (1999, Ch. 7)
         let dip_amplitude = match cdm_id {
             "g1" | "g2" => 0.08,
             "g5" | "g6" => 0.08,
             "g7" | "g8" => 0.15,
             _ => 0.10,
         };
-        let sigma_dip = 0.10;
-        let mach_center = 1.0;
-
-        let transition = (-0.5 * ((mach - mach_center) / sigma_base).powi(2)).exp();
-        let base = supersonic_factor + (subsonic_factor - supersonic_factor) * transition;
-        let dip = dip_amplitude * (-0.5 * ((mach - mach_center) / sigma_dip).powi(2)).exp();
+        // Normalized position in the transonic band [0, 1]
+        let t = ((mach - 0.8) / 0.4).clamp(0.0, 1.0);
+        // Smoothstep: 1 at M=0.8 (pure subsonic), 0 at M=1.2 (pure supersonic)
+        // blend(t) = 1 - 3t² + 2t³
+        let blend = 1.0 + t * t * (2.0 * t - 3.0);
+        let base = supersonic_factor + (subsonic_factor - supersonic_factor) * blend;
+        // Parabolic dip: 0 at both boundaries, peak at M=1.0 (t=0.5)
+        let dip = dip_amplitude * 4.0 * t * (1.0 - t);
         let factor = base - dip;
         bc_reference * factor
     }
@@ -695,10 +702,12 @@ mod tests {
         let bc_high = bc_at_mach(0.200, 1.2, "g7");
         let bc_mid = bc_at_mach(0.200, 1.0, "g7");
 
-        // At Mach 1.0 (midpoint of transonic), should be between subsonic and supersonic
+        // At Mach 1.0 (center of transonic), the G7 boat-tail BC dips ~15%
+        // below the supersonic plateau due to shock-induced drag rise.
+        // Published data (Litz, McCoy) confirms this characteristic dip.
         assert!(
-            bc_mid > bc_high,
-            "transonic midpoint ({}) should be above supersonic value ({})",
+            bc_mid < bc_high,
+            "transonic midpoint ({}) should dip below supersonic value ({}) for G7 boat-tail",
             bc_mid,
             bc_high
         );
@@ -707,6 +716,12 @@ mod tests {
             "transonic midpoint ({}) should be below subsonic value ({})",
             bc_mid,
             bc_low
+        );
+        // For G7 at M=1.0, the dip should reach ~0.85× of the supersonic BC
+        assert!(
+            (bc_mid - 0.185).abs() < 0.005,
+            "G7 BC dip at M=1.0 should be ~0.185, got {}",
+            bc_mid
         );
     }
 

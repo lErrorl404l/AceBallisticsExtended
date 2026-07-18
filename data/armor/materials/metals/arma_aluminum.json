@@ -1,0 +1,11 @@
+{
+  "materialId": "arma_aluminum",
+  "displayName": "Arma 3 Aluminum (Armor class)",
+  "densityGcm3": 2.7,
+  "hardnessBHN": 90,
+  "tensileStrengthMpa": 290,
+  "rhaEquivalent": 0.5,
+  "ductility": 0.7,
+  "spallCoeff": 0.1,
+  "notes": "Arma 3 stock aluminum armor material. Engine coeff ~0.5x vs Default. Used for light vehicle hulls (HMMWV, truck cabs) in CfgVehicleHitPoints."
+}

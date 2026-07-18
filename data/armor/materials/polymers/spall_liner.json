@@ -1,0 +1,11 @@
+{
+  "materialId": "spall_liner",
+  "displayName": "Generic Spall Liner (non-structural, fragment catch)",
+  "densityGcm3": 1.2,
+  "hardnessBHN": 10,
+  "tensileStrengthMpa": 100,
+  "rhaEquivalent": 0.1,
+  "ductility": 0.9,
+  "spallCoeff": 0.02,
+  "notes": "Generic spall liner \u2014 minimum structural resistance. RHAe ~0.08-0.12 per mm. Represents basic fabric or rubber spall containment layer in vehicles. Primarily catches armor fragments after penetration, not designed for direct ballistic impact."
+}

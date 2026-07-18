@@ -1,0 +1,11 @@
+{
+  "materialId": "kevlar_liner",
+  "displayName": "Kevlar Spall Liner (Aramid, MIL-DTL-62474)",
+  "densityGcm3": 1.44,
+  "hardnessBHN": 15,
+  "tensileStrengthMpa": 3620,
+  "rhaEquivalent": 0.25,
+  "ductility": 0.8,
+  "spallCoeff": 0.05,
+  "notes": "Aramid (Kevlar 29/49) fabric spall liner. RHAe ~0.2-0.25 per mm vs KE \u2014 designed to catch fragments, not stop direct impacts. Kevlar 29 tensile 3.6 GPa, density 1.44 g/cm\u00b3. Proven in M113A3 LFTE (ADA267255). ~35% reduction in spall injuries per US DoD studies."
+}

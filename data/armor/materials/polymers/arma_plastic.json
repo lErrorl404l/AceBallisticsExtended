@@ -1,0 +1,11 @@
+{
+  "materialId": "arma_plastic",
+  "displayName": "Arma 3 Plastic (Armor class)",
+  "densityGcm3": 1.2,
+  "hardnessBHN": 20,
+  "tensileStrengthMpa": 60,
+  "rhaEquivalent": 0.3,
+  "ductility": 0.6,
+  "spallCoeff": 0.3,
+  "notes": "Arma 3 stock plastic armor material. Engine coeff ~0.3x vs Default. Used for non-structural body panels and light vehicle components."
+}

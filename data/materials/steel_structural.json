@@ -1,0 +1,11 @@
+{
+  "materialId": "steel_structural",
+  "displayName": "Structural Steel (A36 / MIL-S-16216 / S275JR)",
+  "densityGcm3": 7.85,
+  "hardnessBHN": 150,
+  "tensileStrengthMpa": 400,
+  "rhaEquivalent": 0.7,
+  "ductility": 0.7,
+  "spallCoeff": 0.5,
+  "notes": "Mild structural steel per ASTM A36 / EN 10025 S275JR. Density 7.85 g/cm\u00b3. RHAe ~0.65-0.75 vs AP rounds, ~0.80-0.90 vs ball (due to lower hardness 120-180 BHN). Used in vehicles (unstressed hull panels, mounts, brackets) and building construction. High ductility: yields rather than shatters."
+}

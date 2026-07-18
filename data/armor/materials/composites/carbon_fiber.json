@@ -1,0 +1,11 @@
+{
+  "materialId": "carbon_fiber",
+  "displayName": "Carbon Fiber Composite (MIL-DTL-81061, structural/ballistic)",
+  "densityGcm3": 1.6,
+  "hardnessBHN": 10,
+  "tensileStrengthMpa": 3500,
+  "rhaEquivalent": 0.2,
+  "ductility": 0.6,
+  "spallCoeff": 0.08,
+  "notes": "Carbon fiber reinforced polymer (CFRP) laminate. Density ~1.6 g/cm\u00b3, fiber tensile ~3.5 GPa. RHAe ~0.15-0.25 per mm vs small arms \u2014 primarily structural with secondary ballistic benefit. Used in vehicle hulls, structural armor supports, and lightweight spall containment. Excellent stiffness-to-weight ratio. Fails by delamination and fiber fracture."
+}

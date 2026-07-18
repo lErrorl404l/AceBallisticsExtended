@@ -1,0 +1,11 @@
+{
+  "materialId": "ceramic_al2o3",
+  "displayName": "Aluminum Oxide (Al2O3, 99.5% sintered alumina)",
+  "densityGcm3": 3.85,
+  "hardnessBHN": 1200,
+  "tensileStrengthMpa": 260,
+  "rhaEquivalent": 2.5,
+  "ductility": 0.02,
+  "spallCoeff": 0.9,
+  "notes": "High-purity sintered alumina (Al2O3) armor ceramic. Density 3.85-3.95 g/cm\u00b3, Knoop hardness ~1200-1500 HK (15 GPa). Standalone RHAe ~2.0-3.0 per mm vs KE threats. Widely used in body armor (SAPI/ESAPI, AD95 variants), helicopter seat armor, and vehicle composite arrays (Leopard 2, Challenger 2). Cost-effective balance of performance and cost. Fracture toughness K1c ~3.5-4.0 MPa\u00b7m^\u00bd."
+}

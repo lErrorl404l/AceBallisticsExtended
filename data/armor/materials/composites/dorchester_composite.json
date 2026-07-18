@@ -1,0 +1,11 @@
+{
+  "materialId": "dorchester_composite",
+  "displayName": "Dorchester Composite (2nd-gen Chobham, Challenger 2)",
+  "densityGcm3": 2.8,
+  "hardnessBHN": 1200,
+  "tensileStrengthMpa": 400,
+  "rhaEquivalent": 2.5,
+  "ductility": 0.05,
+  "spallCoeff": 0.6,
+  "notes": "Dorchester composite \u2014 2nd generation UK special armor, successor to Chobham. Ceramic/composite layered modules in steel cavity. RHAe ~2.3-2.7 per mm vs KE. Used in Challenger 2 turret and hull. Enhanced protection vs shaped charges and APFSDS. Developed by DERA; snip precise composition classified."
+}

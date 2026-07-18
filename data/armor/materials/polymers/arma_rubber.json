@@ -1,0 +1,11 @@
+{
+  "materialId": "arma_rubber",
+  "displayName": "Arma 3 Rubber (Armor class)",
+  "densityGcm3": 1.1,
+  "hardnessBHN": 5,
+  "tensileStrengthMpa": 15,
+  "rhaEquivalent": 0.2,
+  "ductility": 0.9,
+  "spallCoeff": 0.1,
+  "notes": "Arma 3 stock rubber armor material. Engine coeff ~0.2x vs Default. Used for tires, seals, and flexible components. High ductility absorbs some KE."
+}

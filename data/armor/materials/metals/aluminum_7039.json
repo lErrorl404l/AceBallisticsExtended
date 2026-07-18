@@ -1,0 +1,11 @@
+{
+  "materialId": "aluminum_7039",
+  "displayName": "Aluminum Alloy 7039-T64 (MIL-DTL-46027E)",
+  "densityGcm3": 2.74,
+  "hardnessBHN": 100,
+  "tensileStrengthMpa": 420,
+  "rhaEquivalent": 0.45,
+  "ductility": 0.6,
+  "spallCoeff": 0.1,
+  "notes": "Aluminum 7039-T64 per MIL-DTL-46027E. Higher strength than 5083 (yield ~380 MPa) with similar density. RHAe ~0.40-0.50 per mm vs small arms. Used in BMP turret applique armor, M113 upgrades. Superior ballistic performance to 5083 at similar weight. Higher susceptibility to stress corrosion than 5083. Joined by gas tungsten arc welding (GTAW)."
+}

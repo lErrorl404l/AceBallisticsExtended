@@ -1,0 +1,11 @@
+{
+  "materialId": "drywall",
+  "displayName": "Drywall (common name for gypsum board)",
+  "densityGcm3": 0.8,
+  "hardnessBHN": 2,
+  "tensileStrengthMpa": 2,
+  "rhaEquivalent": 0.02,
+  "ductility": 0.1,
+  "spallCoeff": 0.95,
+  "notes": "Drywall \u2014 common name for gypsum wallboard. Same properties as gypsum. RHAe ~0.015-0.025 per mm. See gypsum entry for full notes."
+}

@@ -1,0 +1,11 @@
+{
+  "materialId": "esapi_sic",
+  "displayName": "ESAPI SiC Array (Enhanced Small Arms Protective Insert)",
+  "densityGcm3": 3.2,
+  "hardnessBHN": 2500,
+  "tensileStrengthMpa": 350,
+  "rhaEquivalent": 4.0,
+  "ductility": 0.02,
+  "spallCoeff": 0.85,
+  "notes": "SiC ceramic in an ESAPI backing array. Higher effective RHAe than standalone (~4.0 vs 3.5) from UHMWPE/Dyneema backer support. Used in premium ESAPI/XSAPI inserts. Better multi-hit than B4C. ESAPI with SiC defeats multiple hits of .30-06 M2 AP at Level IV+."
+}

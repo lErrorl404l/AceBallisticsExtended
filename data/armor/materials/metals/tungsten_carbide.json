@@ -1,0 +1,11 @@
+{
+  "materialId": "tungsten_carbide",
+  "displayName": "Tungsten Carbide (WC-Co, AP core material)",
+  "densityGcm3": 15.0,
+  "hardnessBHN": 1550,
+  "tensileStrengthMpa": 600,
+  "rhaEquivalent": 2.75,
+  "ductility": 0.01,
+  "spallCoeff": 0.7,
+  "notes": "Tungsten carbide (WC-6%Co) \u2014 common AP projectile core material. Density ~15.0 g/cm\u00b3 (varies with Co binder content). Hardness 1500-1600 HV (~1550 BHN equivalent). Used in APCR and APDS cores. Fracture toughness K1c ~10-12 MPa\u00b7m^\u00bd. Brittle under tension \u2014 projectiles may shatter against hard armor above ~700 m/s. RHAe as armor material: ~2.5-3.0 per mm vs small arms KE."
+}

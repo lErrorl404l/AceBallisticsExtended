@@ -1,0 +1,11 @@
+{
+  "materialId": "esapi_al2o3",
+  "displayName": "ESAPI Al2O3 Array (Enhanced Small Arms Protective Insert)",
+  "densityGcm3": 3.85,
+  "hardnessBHN": 1200,
+  "tensileStrengthMpa": 260,
+  "rhaEquivalent": 3.0,
+  "ductility": 0.02,
+  "spallCoeff": 0.85,
+  "notes": "Al2O3 ceramic in an ESAPI backing array configuration. Higher effective RHAe than standalone tile (~3.0 vs 2.5) due to ductile backing (UHMWPE/Dyneema) trapping ceramic fragments and extending dwell. ESAPI (US DoD) standard: polyethylene-backed Al2O3 or SiC defeating .30-06 AP M2 AP (Level IV). Backing adds ~0.3-0.5 RHAe multiplier."
+}

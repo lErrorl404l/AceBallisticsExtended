@@ -164,69 +164,130 @@ pub struct ArmorPlate {
 // ── Loading ───────────────────────────────────────────────────────────────────
 
 /// Load a directory of JSON weapon configs.
-pub fn load_weapon_configs(path: &Path) -> Result<Vec<WeaponConfig>, String> {
-    let mut configs = Vec::new();
-    let dir =
-        std::fs::read_dir(path).map_err(|e| format!("Failed to read weapon config dir: {}", e))?;
+/// Collect all `.json` file paths under `path`, recursing into subdirectories.
+fn collect_json_files(root: &Path) -> Result<Vec<std::path::PathBuf>, String> {
+    let mut files = Vec::new();
+    let mut stack = vec![root.to_path_buf()];
 
-    for entry in dir {
+    while let Some(dir) = stack.pop() {
+        let read_dir = std::fs::read_dir(&dir)
+            .map_err(|e| format!("Failed to read dir {}: {}", dir.display(), e))?;
+        for entry in read_dir {
+            let entry = entry.map_err(|e| format!("Failed to read entry: {}", e))?;
+            let path = entry.path();
+            if path.is_dir() {
+                stack.push(path);
+            } else if path.extension().and_then(|s| s.to_str()) == Some("json") {
+                files.push(path);
+            }
+        }
+    }
+
+    Ok(files)
+}
+
+/// Collect only `.json` files directly in `root` (no subdirectory recursion).
+fn collect_json_files_top_level(root: &Path) -> Result<Vec<std::path::PathBuf>, String> {
+    let mut files = Vec::new();
+    let read_dir = std::fs::read_dir(root)
+        .map_err(|e| format!("Failed to read dir {}: {}", root.display(), e))?;
+    for entry in read_dir {
         let entry = entry.map_err(|e| format!("Failed to read entry: {}", e))?;
         let path = entry.path();
-        if path.extension().and_then(|s| s.to_str()) != Some("json") {
-            continue;
+        if path.is_file() && path.extension().and_then(|s| s.to_str()) == Some("json") {
+            files.push(path);
         }
+    }
+    Ok(files)
+}
+
+/// Load a directory tree of JSON weapon configs (searched recursively).
+pub fn load_weapon_configs(path: &Path) -> Result<Vec<WeaponConfig>, String> {
+    let mut configs = Vec::new();
+    for path in collect_json_files(path)? {
         let content = std::fs::read_to_string(&path)
             .map_err(|e| format!("Failed to read {}: {}", path.display(), e))?;
         let config: WeaponConfig = serde_json::from_str(&content)
             .map_err(|e| format!("Failed to parse {}: {}", path.display(), e))?;
         configs.push(config);
     }
-
     Ok(configs)
 }
 
-/// Load a directory of JSON ammo configs.
+/// Load a directory tree of JSON ammo configs (searched recursively).
 pub fn load_ammo_configs(path: &Path) -> Result<Vec<AmmoConfig>, String> {
     let mut configs = Vec::new();
-    let dir =
-        std::fs::read_dir(path).map_err(|e| format!("Failed to read ammo config dir: {}", e))?;
-
-    for entry in dir {
-        let entry = entry.map_err(|e| format!("Failed to read entry: {}", e))?;
-        let path = entry.path();
-        if path.extension().and_then(|s| s.to_str()) != Some("json") {
-            continue;
-        }
+    for path in collect_json_files(path)? {
         let content = std::fs::read_to_string(&path)
             .map_err(|e| format!("Failed to read {}: {}", path.display(), e))?;
         let config: AmmoConfig = serde_json::from_str(&content)
             .map_err(|e| format!("Failed to parse {}: {}", path.display(), e))?;
         configs.push(config);
     }
-
     Ok(configs)
 }
 
-/// Load a directory of JSON armor configs.
+/// Load JSON armor configs from `root` only (no subdirectory recursion).
 pub fn load_armor_configs(path: &Path) -> Result<Vec<ArmorConfig>, String> {
     let mut configs = Vec::new();
-    let dir =
-        std::fs::read_dir(path).map_err(|e| format!("Failed to read armor config dir: {}", e))?;
-
-    for entry in dir {
-        let entry = entry.map_err(|e| format!("Failed to read entry: {}", e))?;
-        let path = entry.path();
-        if path.extension().and_then(|s| s.to_str()) != Some("json") {
-            continue;
-        }
+    for path in collect_json_files_top_level(path)? {
         let content = std::fs::read_to_string(&path)
             .map_err(|e| format!("Failed to read {}: {}", path.display(), e))?;
         let config: ArmorConfig = serde_json::from_str(&content)
             .map_err(|e| format!("Failed to parse {}: {}", path.display(), e))?;
         configs.push(config);
     }
-
     Ok(configs)
+}
+
+// ── Material configs ──────────────────────────────────────────────────────────
+
+/// Configuration for a material type.
+///
+/// Deserialised from the JSON material config files in `data/armor/materials/`
+/// and `data/materials/`. Provides physics properties for armour materials
+/// used in penetration calculations.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct MaterialConfig {
+    pub material_id: String,
+    pub display_name: String,
+    pub density_gcm3: f64,
+    pub hardness_bhn: f64,
+    pub tensile_strength_mpa: f64,
+    pub rha_equivalent: f64,
+    pub ductility: f64,
+    pub spall_coeff: f64,
+    pub notes: Option<String>,
+}
+
+/// Load material configs from `data/armor/materials/` and `data/materials/`.
+pub fn load_material_configs(data_dir: &Path) -> Result<HashMap<String, MaterialConfig>, String> {
+    let mut map = HashMap::new();
+
+    let armor_mat_path = data_dir.join("armor").join("materials");
+    if armor_mat_path.exists() {
+        for path in collect_json_files(&armor_mat_path)? {
+            let content = std::fs::read_to_string(&path)
+                .map_err(|e| format!("Failed to read {}: {}", path.display(), e))?;
+            let config: MaterialConfig = serde_json::from_str(&content)
+                .map_err(|e| format!("Failed to parse {}: {}", path.display(), e))?;
+            map.insert(config.material_id.clone(), config);
+        }
+    }
+
+    let struct_mat_path = data_dir.join("materials");
+    if struct_mat_path.exists() {
+        for path in collect_json_files(&struct_mat_path)? {
+            let content = std::fs::read_to_string(&path)
+                .map_err(|e| format!("Failed to read {}: {}", path.display(), e))?;
+            let config: MaterialConfig = serde_json::from_str(&content)
+                .map_err(|e| format!("Failed to parse {}: {}", path.display(), e))?;
+            map.insert(config.material_id.clone(), config);
+        }
+    }
+
+    Ok(map)
 }
 
 // ── Global data registry ───────────────────────────────────────────────────────
@@ -236,6 +297,7 @@ pub struct DataRegistry {
     pub weapons: Vec<WeaponConfig>,
     pub ammo: Vec<AmmoConfig>,
     pub armor: Vec<ArmorConfig>,
+    pub materials: HashMap<String, MaterialConfig>,
 }
 
 static DATA_REGISTRY: OnceLock<DataRegistry> = OnceLock::new();
@@ -252,12 +314,14 @@ pub fn initialize_data(data_dir: &Path) -> Result<(), String> {
     }
     let weapons = load_weapon_configs(&data_dir.join("weapons"))?;
     let ammo = load_ammo_configs(&data_dir.join("ammo"))?;
-    let armor = load_armor_configs(&data_dir.join("armor"))?;
+    let armor = load_armor_configs(&data_dir.join("armor/plates"))?;
+    let materials = load_material_configs(data_dir)?;
     DATA_REGISTRY
         .set(DataRegistry {
             weapons,
             ammo,
             armor,
+            materials,
         })
         .map_err(|_| "Data already initialized".to_string())
 }

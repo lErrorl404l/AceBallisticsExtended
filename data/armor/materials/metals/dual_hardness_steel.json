@@ -1,0 +1,11 @@
+{
+  "materialId": "dual_hardness_steel",
+  "displayName": "Dual-Hardness Armor Steel (MIL-A-46099C)",
+  "densityGcm3": 7.85,
+  "hardnessBHN": 600,
+  "tensileStrengthMpa": 1800,
+  "rhaEquivalent": 1.1,
+  "ductility": 0.25,
+  "spallCoeff": 0.75,
+  "notes": "Dual-hardness armor steel per MIL-A-46099C (US) or similar. Hard 600+BHN face on ductile softer backer (~350-400 BHN). Face hardness defeats projectile while backer absorbs energy. ARL shows V50 15-25% above RHA. Used in M2 Bradley, Stryker applique. Reduced risk of through-thickness cracking vs monolithic HHA."
+}

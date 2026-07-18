@@ -1,0 +1,11 @@
+{
+  "materialId": "grp",
+  "displayName": "GRP (Glass Reinforced Plastic, E-glass, general purpose)",
+  "densityGcm3": 1.9,
+  "hardnessBHN": 100,
+  "tensileStrengthMpa": 350,
+  "rhaEquivalent": 0.12,
+  "ductility": 0.3,
+  "spallCoeff": 0.6,
+  "notes": "Glass reinforced plastic (E-glass/polyester) \u2014 alternative materialId. Same properties as fiberglass. Density ~1.9 g/cm\u00b3. RHAe ~0.10-0.14 per mm. General-purpose structural composite."
+}

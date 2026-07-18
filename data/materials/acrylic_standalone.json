@@ -1,0 +1,11 @@
+{
+  "materialId": "acrylic_standalone",
+  "displayName": "Acrylic Standalone (PMMA, transparent armor inner ply)",
+  "densityGcm3": 1.18,
+  "hardnessBHN": 10,
+  "tensileStrengthMpa": 70,
+  "rhaEquivalent": 0.04,
+  "ductility": 0.7,
+  "spallCoeff": 0.3,
+  "notes": "Acrylic (PMMA) as standalone transparent armor layer. Same properties as acrylic. RHAe ~0.03-0.05 per mm. Used as inner structural layer in laminated transparent armor (behind glass strike face)."
+}

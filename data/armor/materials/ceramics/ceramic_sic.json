@@ -1,0 +1,11 @@
+{
+  "materialId": "ceramic_sic",
+  "displayName": "Silicon Carbide (SiC, sintered armor ceramic)",
+  "densityGcm3": 3.2,
+  "hardnessBHN": 2500,
+  "tensileStrengthMpa": 350,
+  "rhaEquivalent": 3.5,
+  "ductility": 0.02,
+  "spallCoeff": 0.9,
+  "notes": "Sintered silicon carbide (SiC) armor ceramic. Density 3.15-3.25 g/cm\u00b3, Knoop hardness ~2500 HK (25 GPa). Standalone RHAe ~3.0-4.0 per mm vs KE \u2014 harder than Al2O3 but more expensive. Used in modern lightweight composite arrays (Leopard 2A5+, Challenger 2 TES). Superior multi-hit capability vs B4C due to higher fracture toughness K1c ~3.5-4.5 MPa\u00b7m^\u00bd. Lower density than Al2O3 for weight-critical applications."
+}

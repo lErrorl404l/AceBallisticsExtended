@@ -1,0 +1,11 @@
+{
+  "materialId": "mil_dtl_46100_class1",
+  "displayName": "MIL-DTL-46100 Class 1 HHA (477-534 BHN)",
+  "densityGcm3": 7.85,
+  "hardnessBHN": 500,
+  "tensileStrengthMpa": 1520,
+  "rhaEquivalent": 1.3,
+  "ductility": 0.35,
+  "spallCoeff": 0.65,
+  "notes": "MIL-DTL-46100 Class 1 high-hardness armor steel. 477-534 BHN range. RHAe ~1.25-1.35 per mm vs AP per ARL-TR-4632 (Showalter). Used in applique armor kits and vehicle hulls. Weldability requires preheat and controlled HAZ."
+}

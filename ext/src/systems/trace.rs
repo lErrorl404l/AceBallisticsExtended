@@ -76,8 +76,8 @@ pub fn trace_write(msg: &str) {
 #[macro_export]
 macro_rules! trace_println {
     ($($arg:tt)*) => {
-        if $crate::trace::trace_enabled() {
-            $crate::trace::trace_write(&format!($($arg)*));
+        if $crate::systems::trace::trace_enabled() {
+            $crate::systems::trace::trace_write(&format!($($arg)*));
         }
     };
 }

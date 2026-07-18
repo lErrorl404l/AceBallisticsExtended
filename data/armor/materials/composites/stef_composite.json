@@ -1,0 +1,11 @@
+{
+  "materialId": "stef_composite",
+  "displayName": "STEF Composite (Soviet multilayer armor, T-80 family)",
+  "densityGcm3": 2.5,
+  "hardnessBHN": 800,
+  "tensileStrengthMpa": 300,
+  "rhaEquivalent": 1.9,
+  "ductility": 0.08,
+  "spallCoeff": 0.65,
+  "notes": "STEF (\u0421\u0442\u0435\u043a\u043b\u043e\u0442\u0435\u043a\u0441\u0442\u043e\u043b\u0438\u0442 \u042d\u0424-32-301/\u0424-1) \u2014 Soviet fiberglass-reinforced phenolic composite. Density ~2.5 g/cm\u00b3. RHAe ~1.7-2.0 per mm vs KE. Used in T-80 hull behind cast steel outer layer. Layered glass-fabric with epoxy-phenolic binder. Provides structural rigidity and spall resistance. Temperature range -50 to +60\u00b0C."
+}
