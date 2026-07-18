@@ -1,0 +1,627 @@
+M|30Rnd_556x45_Stanag|5.56 mm 30rnd Reload Tracer (Yellow) Mag|920|B_556x45_Ball|30|CA_Magazine
+M|30Rnd_556x45_Stanag_green|5.56 mm 30rnd Reload Tracer (Green) Mag|920|B_556x45_Ball_Tracer_Green|30|30Rnd_556x45_Stanag
+M|30Rnd_556x45_Stanag_red|5.56 mm 30rnd Reload Tracer (Red) Mag|920|B_556x45_Ball_Tracer_Red|30|30Rnd_556x45_Stanag
+M|30Rnd_556x45_Stanag_Tracer_Red|5.56 mm 30rnd Tracer (Red) Mag|920|B_556x45_Ball_Tracer_Red|30|30Rnd_556x45_Stanag
+M|30Rnd_556x45_Stanag_Tracer_Green|5.56 mm 30rnd Tracer (Green) Mag|920|B_556x45_Ball_Tracer_Green|30|30Rnd_556x45_Stanag
+M|30Rnd_556x45_Stanag_Tracer_Yellow|5.56 mm 30rnd Tracer (Yellow) Mag|920|B_556x45_Ball_Tracer_Yellow|30|30Rnd_556x45_Stanag
+M|30Rnd_556x45_Stanag_Sand|5.56 mm 30rnd Reload Tracer (Yellow) Sand Mag|920|B_556x45_Ball|30|30Rnd_556x45_Stanag
+M|30Rnd_556x45_Stanag_Sand_green|5.56 mm 30rnd Reload Tracer (Green) Sand Mag|920|B_556x45_Ball_Tracer_Green|30|30Rnd_556x45_Stanag_Sand
+M|30Rnd_556x45_Stanag_Sand_red|5.56 mm 30rnd Reload Tracer (Red) Sand Mag|920|B_556x45_Ball_Tracer_Red|30|30Rnd_556x45_Stanag_Sand
+M|30Rnd_556x45_Stanag_Sand_Tracer_Red|5.56 mm 30rnd Tracer (Red) Sand Mag|920|B_556x45_Ball_Tracer_Red|30|30Rnd_556x45_Stanag_Sand
+M|30Rnd_556x45_Stanag_Sand_Tracer_Green|5.56 mm 30rnd Tracer (Green) Sand Mag|920|B_556x45_Ball_Tracer_Green|30|30Rnd_556x45_Stanag_Sand_Tracer_Red
+M|30Rnd_556x45_Stanag_Sand_Tracer_Yellow|5.56 mm 30rnd Tracer (Yellow) Sand Mag|920|B_556x45_Ball_Tracer_Yellow|30|30Rnd_556x45_Stanag_Sand_Tracer_Red
+M|20Rnd_556x45_UW_mag|5.56 mm 20Rnd Dual Purpose Mag|270|B_556x45_dual|20|30Rnd_556x45_Stanag
+M|30Rnd_65x39_caseless_mag|6.5 mm 30Rnd Sand Mag|800|B_65x39_Caseless|30|CA_Magazine
+M|30Rnd_65x39_caseless_khaki_mag|6.5 mm 30Rnd Khaki Mag|800|B_65x39_Caseless|30|30Rnd_65x39_caseless_mag
+M|30Rnd_65x39_caseless_black_mag|6.5 mm 30Rnd Black Mag|800|B_65x39_Caseless|30|30Rnd_65x39_caseless_mag
+M|30Rnd_65x39_caseless_green|6.5 mm 30Rnd Caseless Mag|800|B_65x39_Caseless_green|30|30Rnd_65x39_caseless_mag
+M|30Rnd_65x39_caseless_mag_Tracer|6.5 mm 30Rnd Tracer Sand Mag|800|B_65x39_Caseless|30|30Rnd_65x39_caseless_mag
+M|30Rnd_65x39_caseless_khaki_mag_Tracer|6.5 mm 30Rnd Tracer Khaki Mag|800|B_65x39_Caseless|30|30Rnd_65x39_caseless_mag_Tracer
+M|30Rnd_65x39_caseless_black_mag_Tracer|6.5 mm 30Rnd Tracer Black Mag|800|B_65x39_Caseless|30|30Rnd_65x39_caseless_mag_Tracer
+M|30Rnd_65x39_caseless_green_mag_Tracer|6.5 mm 30Rnd Tracer (Green) Caseless Mag|800|B_65x39_Caseless_green|30|30Rnd_65x39_caseless_green
+M|20Rnd_762x51_Mag|7.62 mm 20Rnd Mag|850|B_762x51_Ball|20|CA_Magazine
+M|7Rnd_408_Mag|.408 7Rnd LRR Mag|910|B_408_Ball|7|CA_Magazine
+M|5Rnd_127x108_Mag|12.7 mm 5Rnd Mag|820|B_127x108_Ball|5|CA_Magazine
+M|100Rnd_65x39_caseless_mag|6.5 mm 100Rnd Sand Mag|880|B_65x39_Caseless|100|CA_Magazine
+M|100Rnd_65x39_caseless_khaki_mag|6.5 mm 100Rnd Khaki Mag|880|B_65x39_Caseless|100|100Rnd_65x39_caseless_mag
+M|100Rnd_65x39_caseless_black_mag|6.5 mm 100Rnd Black Mag|880|B_65x39_Caseless|100|100Rnd_65x39_caseless_mag
+M|100Rnd_65x39_caseless_mag_Tracer|6.5 mm 100Rnd Tracer Sand Mag|880|B_65x39_Caseless|100|100Rnd_65x39_caseless_mag
+M|100Rnd_65x39_caseless_khaki_mag_tracer|6.5 mm 100Rnd Tracer Khaki Mag|880|B_65x39_Caseless|100|100Rnd_65x39_caseless_mag_Tracer
+M|100Rnd_65x39_caseless_black_mag_tracer|6.5 mm 100Rnd Tracer Black Mag|880|B_65x39_Caseless|100|100Rnd_65x39_caseless_mag_Tracer
+M|200Rnd_65x39_cased_Box|6.5 mm 200Rnd Belt|920|B_65x39_Caseless_yellow|200|100Rnd_65x39_caseless_mag
+M|200Rnd_65x39_cased_Box_Tracer|6.5 mm 200Rnd Belt Tracer (Yellow)|920|B_65x39_Caseless_yellow|200|200Rnd_65x39_cased_Box
+M|200Rnd_65x39_cased_Box_Red|6.5 mm 200Rnd Reload Tracer (Red) Belt|920|B_65x39_Caseless|200|100Rnd_65x39_caseless_mag
+M|200Rnd_65x39_cased_Box_Tracer_Red|6.5mm 200Rnd Belt Tracer (Red)|920|B_65x39_Caseless|200|200Rnd_65x39_cased_Box
+M|30Rnd_9x21_Mag|9 mm 30Rnd Mag|370|B_9x21_Ball|30|CA_Magazine
+M|30Rnd_9x21_Red_Mag|9 mm 30Rnd Reload Tracer (Red) Mag|370|B_9x21_Ball_Tracer_Red|30|30Rnd_9x21_Mag
+M|30Rnd_9x21_Yellow_Mag|9 mm 30Rnd Reload Tracer (Yellow) Mag|370|B_9x21_Ball_Tracer_Yellow|30|30Rnd_9x21_Mag
+M|30Rnd_9x21_Green_Mag|9 mm 30Rnd Reload Tracer (Green) Mag|370|B_9x21_Ball_Tracer_Green|30|30Rnd_9x21_Mag
+M|16Rnd_9x21_Mag|9 mm 16Rnd Mag|410|B_9x21_Ball|16|30Rnd_9x21_Mag
+M|30Rnd_9x21_Mag_SMG_02|9 mm 30Rnd Mag|370|B_9x21_Ball|30|30Rnd_9x21_Mag
+M|30Rnd_9x21_Mag_SMG_02_Tracer_Red|9 mm 30Rnd Reload Tracer (Red) Mag|370|B_9x21_Ball_Tracer_Red|30|30Rnd_9x21_Mag_SMG_02
+M|30Rnd_9x21_Mag_SMG_02_Tracer_Yellow|9 mm 30Rnd Reload Tracer (Yellow) Mag|370|B_9x21_Ball_Tracer_Yellow|30|30Rnd_9x21_Mag_SMG_02
+M|30Rnd_9x21_Mag_SMG_02_Tracer_Green|9 mm 30Rnd Reload Tracer (Green) Mag|370|B_9x21_Ball_Tracer_Green|30|30Rnd_9x21_Mag_SMG_02
+M|16Rnd_9x21_red_Mag|9 mm 16Rnd Reload Tracer (Red) Mag|410|B_9x21_Ball_Tracer_Red|16|16Rnd_9x21_Mag
+M|16Rnd_9x21_green_Mag|9 mm 16Rnd Reload Tracer (Green) Mag|410|B_9x21_Ball_Tracer_Green|16|16Rnd_9x21_Mag
+M|16Rnd_9x21_yellow_Mag|9 mm 16Rnd Reload Tracer (Yellow) Mag|410|B_9x21_Ball_Tracer_Yellow|16|16Rnd_9x21_Mag
+M|RPG32_F|RPG-42 Rocket|140|R_PG32V_F|1|CA_LauncherMagazine
+M|RPG32_HE_F|RPG-42 HE Rocket|140|R_TBG32V_F|1|RPG32_F
+M|NLAW_F|PCML Missile|40|M_NLAW_AT_F|1|CA_LauncherMagazine
+M|1Rnd_HE_Grenade_shell|40 mm HE Grenade Round|80|G_40mm_HE|1|CA_Magazine
+M|3Rnd_HE_Grenade_shell|40 mm 3Rnd HE Grenade|80|G_40mm_HE|3|1Rnd_HE_Grenade_shell
+M|1Rnd_Smoke_Grenade_shell|Smoke Round (White)|80|G_40mm_Smoke|1|1Rnd_HE_Grenade_shell
+M|3Rnd_Smoke_Grenade_shell|3Rnd 3GL Smoke Rounds (White)|80|G_40mm_Smoke|3|1Rnd_Smoke_Grenade_shell
+M|1Rnd_SmokeRed_Grenade_shell|Smoke Round (Red)|80|G_40mm_SmokeRed|1|1Rnd_Smoke_Grenade_shell
+M|3Rnd_SmokeRed_Grenade_shell|3Rnd 3GL Smoke Rounds (Red)|80|G_40mm_SmokeRed|3|1Rnd_SmokeRed_Grenade_shell
+M|1Rnd_SmokeGreen_Grenade_shell|Smoke Round (Green)|80|G_40mm_SmokeGreen|1|1Rnd_Smoke_Grenade_shell
+M|3Rnd_SmokeGreen_Grenade_shell|3Rnd 3GL Smoke Rounds (Green)|80|G_40mm_SmokeGreen|3|1Rnd_SmokeGreen_Grenade_shell
+M|1Rnd_SmokeYellow_Grenade_shell|Smoke Round (Yellow)|80|G_40mm_SmokeYellow|1|1Rnd_Smoke_Grenade_shell
+M|3Rnd_SmokeYellow_Grenade_shell|3Rnd 3GL Smoke Rounds (Yellow)|80|G_40mm_SmokeYellow|3|1Rnd_SmokeYellow_Grenade_shell
+M|1Rnd_SmokePurple_Grenade_shell|Smoke Round (Purple)|80|G_40mm_SmokePurple|1|1Rnd_Smoke_Grenade_shell
+M|3Rnd_SmokePurple_Grenade_shell|3Rnd 3GL Smoke Rounds (Purple)|80|G_40mm_SmokePurple|3|1Rnd_SmokePurple_Grenade_shell
+M|1Rnd_SmokeBlue_Grenade_shell|Smoke Round (Blue)|80|G_40mm_SmokeBlue|1|1Rnd_Smoke_Grenade_shell
+M|3Rnd_SmokeBlue_Grenade_shell|3Rnd 3GL Smoke Rounds (Blue)|80|G_40mm_SmokeBlue|3|1Rnd_SmokeBlue_Grenade_shell
+M|1Rnd_SmokeOrange_Grenade_shell|Smoke Round (Orange)|80|G_40mm_SmokeOrange|1|1Rnd_Smoke_Grenade_shell
+M|3Rnd_SmokeOrange_Grenade_shell|3Rnd 3GL Smoke Rounds (Orange)|80|G_40mm_SmokeOrange|3|1Rnd_SmokeOrange_Grenade_shell
+M|HandGrenade|RGO Grenade|18|GrenadeHand|1|CA_Magazine
+M|MiniGrenade|RGN Grenade|26|mini_Grenade|1|CA_Magazine
+M|HandGrenade_Stone|Stone|18|GrenadeHand_stone|1|HandGrenade
+M|SmokeShell|Smoke Grenade (White)|22|SmokeShell|1|HandGrenade
+M|SmokeShellRed|Smoke Grenade (Red)|22|SmokeShellRed|1|SmokeShell
+M|SmokeShellGreen|Smoke Grenade (Green)|22|SmokeShellGreen|1|SmokeShell
+M|SmokeShellYellow|Smoke Grenade (Yellow)|22|SmokeShellYellow|1|SmokeShell
+M|SmokeShellPurple|Smoke Grenade (Purple)|22|SmokeShellPurple|1|SmokeShell
+M|SmokeShellBlue|Smoke Grenade (Blue)|22|SmokeShellBlue|1|SmokeShell
+M|SmokeShellOrange|Smoke Grenade (Orange)|22|SmokeShellOrange|1|SmokeShell
+M|Chemlight_green|Chemlight (Green)|14|Chemlight_green|1|SmokeShell
+M|Chemlight_red|Chemlight (Red)|14|Chemlight_red|1|Chemlight_green
+M|Chemlight_yellow|Chemlight (Yellow)|14|Chemlight_yellow|1|Chemlight_green
+M|Chemlight_blue|Chemlight (Blue)|14|Chemlight_blue|1|Chemlight_green
+M|200Rnd_65x39_Belt|6.5 mm 200Rnd Belt Case|825|B_65x39_Caseless|200|VehicleMagazine
+M|200Rnd_65x39_Belt_Tracer_Red|6.5 mm 200Rnd Belt Case Tracer (Red)|825|B_65x39_Caseless|200|200Rnd_65x39_Belt
+M|200Rnd_65x39_Belt_Tracer_Green|6.5 mm 200Rnd Belt Case Tracer (Green)|825|B_65x39_Case_green|200|200Rnd_65x39_Belt
+M|200Rnd_65x39_Belt_Tracer_Yellow|6.5 mm 200Rnd Belt Tracer (Yellow)|825|B_65x39_Case_yellow|200|200Rnd_65x39_Belt
+M|1000Rnd_65x39_Belt|6.5 mm 1000Rnd LMG Belt|825|B_65x39_Caseless|1000|200Rnd_65x39_Belt
+M|1000Rnd_65x39_Belt_Tracer_Red|6.5 mm 1000Rnd LMG Tracer (Red) Belt|825|B_65x39_Caseless|1000|1000Rnd_65x39_Belt
+M|1000Rnd_65x39_Belt_Green|6.5 mm 1000Rnd LMG Belt|825|B_65x39_Case_green|1000|1000Rnd_65x39_Belt
+M|1000Rnd_65x39_Belt_Tracer_Green|6.5 mm 1000Rnd LMG Tracer (Green) Belt|825|B_65x39_Case_green|1000|1000Rnd_65x39_Belt_Green
+M|1000Rnd_65x39_Belt_Yellow|6.5 mm 1000Rnd LMG Belt|825|B_65x39_Case_Yellow|1000|1000Rnd_65x39_Belt
+M|1000Rnd_65x39_Belt_Tracer_Yellow|6.5 mm 1000Rnd LMG Tracer (Yellow) Belt|825|B_65x39_Case_Yellow|1000|1000Rnd_65x39_Belt_Yellow
+M|2000Rnd_65x39_Belt|6.5 mm 2000Rnd LMG Belt|825|B_65x39_Caseless|2000|200Rnd_65x39_Belt
+M|2000Rnd_65x39_Belt_Tracer_Red|6.5 mm 2000Rnd LMG Tracer (Red) Belt|825|B_65x39_Minigun_Caseless_Red_splash|2000|2000Rnd_65x39_Belt
+M|2000Rnd_65x39_Belt_Green|6.5 mm 2000Rnd LMG Belt|825|B_65x39_Case_Green|2000|2000Rnd_65x39_Belt
+M|2000Rnd_65x39_Belt_Tracer_Green|6.5 mm 2000Rnd LMG Tracer (Green) Belt|825|B_65x39_Case_Green|2000|2000Rnd_65x39_Belt_Green
+M|2000Rnd_65x39_Belt_Tracer_Green_Splash|6.5 mm 2000Rnd LMG Tracer (Green) Belt|825|B_65x39_Minigun_Caseless_Green_splash|2000|2000Rnd_65x39_Belt_Tracer_Green
+M|2000Rnd_65x39_Belt_Yellow|6.5 mm 2000Rnd LMG Belt|825|B_65x39_Case_Yellow|2000|2000Rnd_65x39_Belt
+M|2000Rnd_65x39_Belt_Tracer_Yellow|6.5 mm 2000Rnd LMG Tracer (Yellow) Belt|825|B_65x39_Case_Yellow|2000|2000Rnd_65x39_Belt_Yellow
+M|2000Rnd_65x39_Belt_Tracer_Yellow_Splash|6.5 mm 2000Rnd LMG Tracer (Yellow) Belt|825|B_65x39_Minigun_Caseless_Yellow_splash|2000|2000Rnd_65x39_Belt_Tracer_Yellow
+M|5000Rnd_762x51_Belt|7.62 mm Minigun Belt|860|B_762x51_Minigun_Tracer_Red_splash|5000|2000Rnd_65x39_Belt
+M|5000Rnd_762x51_Yellow_Belt|7.62 mm Minigun Belt|860|B_762x51_Minigun_Tracer_Yellow_splash|5000|5000Rnd_762x51_Belt
+M|500Rnd_127x99_mag|12.7 mm AA MG Mag|910|B_127x99_Ball|500|VehicleMagazine
+M|500Rnd_127x99_mag_Tracer_Red|12.7 mm AA MG Tracer (Red) Mag|910|B_127x99_Ball_Tracer_Red|500|500Rnd_127x99_mag
+M|500Rnd_127x99_mag_Tracer_Green|12.7 mm AA MG Tracer (Green) Mag|910|B_127x99_Ball_Tracer_Green|500|500Rnd_127x99_mag
+M|500Rnd_127x99_mag_Tracer_Yellow|12.7 mm AA MG Tracer (Yellow) Mag|910|B_127x99_Ball_Tracer_Yellow|500|500Rnd_127x99_mag
+M|200Rnd_127x99_mag|12.7 mm RCWS HMG|910|B_127x99_Ball|200|500Rnd_127x99_mag
+M|200Rnd_127x99_mag_Tracer_Red|12.7 mm RCWS HMG Tracer (Red)|910|B_127x99_Ball_Tracer_Red|200|200Rnd_127x99_mag
+M|200Rnd_127x99_mag_Tracer_Green|12.7 mm RCWS HMG Tracer (Green)|910|B_127x99_Ball_Tracer_Green|200|200Rnd_127x99_mag
+M|200Rnd_127x99_mag_Tracer_Yellow|12.7 mm RCWS HMG Tracer (Yellow)|910|B_127x99_Ball_Tracer_Yellow|200|200Rnd_127x99_mag
+M|100Rnd_127x99_mag|12.7 mm M2 HMG Belt|910|B_127x99_Ball|100|500Rnd_127x99_mag
+M|100Rnd_127x99_mag_Tracer_Red|12.7 mm M2 HMG Tracer (Red) Belt|910|B_127x99_Ball_Tracer_Red|100|100Rnd_127x99_mag
+M|100Rnd_127x99_mag_Tracer_Green|12.7 mm M2 HMG Tracer (Green) Belt|910|B_127x99_Ball_Tracer_Green|100|100Rnd_127x99_mag
+M|100Rnd_127x99_mag_Tracer_Yellow|12.7 mm M2 HMG Tracer (Yellow) Belt|910|B_127x99_Ball_Tracer_Yellow|100|100Rnd_127x99_mag
+M|450Rnd_127x108_Ball|NSVT-M|845|B_127x108_Ball|450|VehicleMagazine
+M|150Rnd_127x108_Ball|NSVT-M|845|B_127x108_Ball|150|450Rnd_127x108_Ball
+M|50Rnd_127x108_Ball|NSVT-M|845|B_127x108_Ball|50|450Rnd_127x108_Ball
+M|200Rnd_40mm_G_belt|40 mm HE Grenade Mag|241|G_40mm_HEDP|200|VehicleMagazine
+M|96Rnd_40mm_G_belt|40 mm HE Grenade Mag|241|G_40mm_HEDP|96|200Rnd_40mm_G_belt
+M|64Rnd_40mm_G_belt|40 mm HE Grenade Mag|241|G_40mm_HEDP|64|200Rnd_40mm_G_belt
+M|32Rnd_40mm_G_belt|40 mm HE Grenade Mag|241|G_40mm_HEDP|32|200Rnd_40mm_G_belt
+M|200Rnd_20mm_G_belt|20 mm Grenade Mag|400|G_20mm_HE|200|VehicleMagazine
+M|40Rnd_20mm_G_belt|20 mm HE Grenade Mag|400|G_20mm_HE|40|200Rnd_20mm_G_belt
+M|24Rnd_PG_missiles|DAGR|0|M_PG_AT|24|VehicleMagazine
+M|12Rnd_PG_missiles|DAGR|0|M_PG_AT|12|24Rnd_PG_missiles
+M|24Rnd_missiles|DAR|0|M_AT|24|VehicleMagazine
+M|12Rnd_missiles|DAR|0|M_AT|12|24Rnd_missiles
+M|32Rnd_155mm_Mo_shells|155 mm HE Shells|810|Sh_155mm_AMOS|32|VehicleMagazine
+M|32Rnd_155mm_Mo_shells_O|155 mm HE Shells|810|Sh_155mm_AMOS|32|32Rnd_155mm_Mo_shells
+M|8Rnd_82mm_Mo_shells|HE Mortar Shells|200|Sh_82mm_AMOS|8|32Rnd_155mm_Mo_shells
+M|8Rnd_82mm_Mo_Flare_white|Flare (White)|200|Flare_82mm_AMOS_White|8|8Rnd_82mm_Mo_shells
+M|8Rnd_82mm_Mo_Flare_white_illumination|Illumination Flare (White)|200|Flare_82mm_AMOS_White_Illumination|8|8Rnd_82mm_Mo_shells
+M|8Rnd_82mm_Mo_Smoke_white|Smoke Shell (White)|200|Smoke_82mm_AMOS_White|8|8Rnd_82mm_Mo_shells
+M|8Rnd_82mm_Mo_guided|Guided|200|Sh_82mm_AMOS_guided|8|8Rnd_82mm_Mo_shells
+M|8Rnd_82mm_Mo_LG|Laser Guided|200|Sh_82mm_AMOS_LG|8|8Rnd_82mm_Mo_shells
+M|6Rnd_155mm_Mo_smoke|Smoke (White)|810|Smoke_120mm_AMOS_White|6|32Rnd_155mm_Mo_shells
+M|6Rnd_155mm_Mo_smoke_O|Smoke (White)|810|Smoke_120mm_AMOS_White|6|6Rnd_155mm_Mo_smoke
+M|2Rnd_155mm_Mo_guided|Guided|810|Sh_155mm_AMOS_guided|2|6Rnd_155mm_Mo_smoke
+M|2Rnd_155mm_Mo_guided_O|Guided|810|Sh_155mm_AMOS_guided|2|2Rnd_155mm_Mo_guided
+M|4Rnd_155mm_Mo_guided|Guided|810|Sh_155mm_AMOS_guided|4|2Rnd_155mm_Mo_guided
+M|4Rnd_155mm_Mo_guided_O|Guided|810|Sh_155mm_AMOS_guided|4|2Rnd_155mm_Mo_guided
+M|2Rnd_155mm_Mo_LG|Laser Guided|810|Sh_155mm_AMOS_LG|2|6Rnd_155mm_Mo_smoke
+M|4Rnd_155mm_Mo_LG|Laser Guided|810|Sh_155mm_AMOS_LG|4|2Rnd_155mm_Mo_LG
+M|4Rnd_155mm_Mo_LG_O|Laser Guided|810|Sh_155mm_AMOS_LG|4|2Rnd_155mm_Mo_LG
+M|6Rnd_155mm_Mo_mine|Mine Cluster|810|Mine_155mm_AMOS_range|6|6Rnd_155mm_Mo_smoke
+M|6Rnd_155mm_Mo_mine_O|Mine Cluster|810|Mine_155mm_AMOS_range|6|6Rnd_155mm_Mo_mine
+M|6Rnd_155mm_Mo_AT_mine|AT Mine Cluster|810|AT_Mine_155mm_AMOS_range|6|6Rnd_155mm_Mo_smoke
+M|6Rnd_155mm_Mo_AT_mine_O|AT Mine Cluster|810|AT_Mine_155mm_AMOS_range|6|6Rnd_155mm_Mo_AT_mine
+M|2Rnd_155mm_Mo_Cluster|Cluster Shells|810|Cluster_155mm_AMOS|2|6Rnd_155mm_Mo_smoke
+M|2Rnd_155mm_Mo_Cluster_O|Cluster Shells|810|Cluster_155mm_AMOS|2|2Rnd_155mm_Mo_Cluster
+M|UGL_FlareWhite_F|Flare Round (White)|80|F_40mm_White|1|CA_Magazine
+M|UGL_FlareWhite_Illumination_F|Illumination Round (White)|80|F_40mm_White_Illumination|1|UGL_FlareWhite_F
+M|3Rnd_UGL_FlareWhite_F|3Rnd 3GL Flares (White)|80|F_40mm_White|3|UGL_FlareWhite_F
+M|3rnd_UGL_FlareWhite_Illumination_F|3Rnd 3GL Illumination Rounds (White)|80|F_40mm_White_Illumination|3|3Rnd_UGL_FlareWhite_F
+M|UGL_FlareGreen_F|Flare Round (Green)|80|F_40mm_Green|1|UGL_FlareWhite_F
+M|UGL_FlareGreen_Illumination_F|Illumination Round (Green)|80|F_40mm_Green_Illumination|1|UGL_FlareGreen_F
+M|3Rnd_UGL_FlareGreen_F|3Rnd 3GL Flares (Green)|80|F_40mm_Green|3|UGL_FlareGreen_F
+M|3rnd_UGL_FlareGreen_Illumination_F|3Rnd 3GL Illumination Rounds (Green)|80|F_40mm_Green_Illumination|3|3Rnd_UGL_FlareGreen_F
+M|UGL_FlareRed_F|Flare Round (Red)|80|F_40mm_Red|1|UGL_FlareWhite_F
+M|UGL_FlareRed_Illumination_F|Illumination Round (Red)|80|F_40mm_Red_Illumination|1|UGL_FlareRed_F
+M|3Rnd_UGL_FlareRed_F|3Rnd 3GL Flares (Red)|80|F_40mm_Red|3|UGL_FlareRed_F
+M|3rnd_UGL_FlareRed_Illumination_F|3Rnd 3GL Illumination Rounds (Red)|80|F_40mm_Red_Illumination|3|3Rnd_UGL_FlareRed_F
+M|UGL_FlareYellow_F|Flare Round (Yellow)|80|F_40mm_Yellow|1|UGL_FlareWhite_F
+M|UGL_FlareYellow_Illumination_F|Illumination Round (Yellow)|80|F_40mm_Yellow_Illumination|1|UGL_FlareYellow_F
+M|3Rnd_UGL_FlareYellow_F|3Rnd 3GL Flares (Yellow)|80|F_40mm_Yellow|3|UGL_FlareYellow_F
+M|3rnd_UGL_FlareYellow_Illumination_F|3Rnd 3GL Illumination Rounds (Yellow)|80|F_40mm_Yellow_Illumination|3|3Rnd_UGL_FlareYellow_F
+M|UGL_FlareCIR_F|Flare Round (IR)|80|F_40mm_CIR|1|UGL_FlareWhite_F
+M|3Rnd_UGL_FlareCIR_F|3Rnd 3GL Flares (IR)|80|F_40mm_CIR|3|UGL_FlareCIR_F
+M|FlareWhite_F|Flare (White)|80|F_20mm_White|1|CA_Magazine
+M|FlareGreen_F|Flare (Green)|80|F_20mm_Green|1|FlareWhite_F
+M|FlareRed_F|Flare (Red)|80|F_20mm_Red|1|FlareWhite_F
+M|FlareYellow_F|Flare (Yellow)|80|F_20mm_Yellow|1|FlareWhite_F
+M|FlareWhite_Illumination_F|Illumination Flare (White)|80|F_20mm_White_Illumination|1|FlareWhite_F
+M|FlareGreen_Illumination_F|Illumination Flare (Green)|80|F_20mm_Green_Illumination|1|FlareGreen_F
+M|FlareRed_Illumination_F|Illumination Flare (Red)|80|F_20mm_Red_Illumination|1|FlareRed_F
+M|FlareYellow_Illumination_F|Illumination Flare (Yellow)|80|F_20mm_Yellow_Illumination|1|FlareYellow_F
+M|Laserbatteries|Designator Batteries|30|Laserbeam|1|CA_Magazine
+M|30Rnd_45ACP_Mag_SMG_01|.45 ACP 30Rnd Vermin Mag|280|B_45ACP_Ball|30|30Rnd_9x21_Mag
+M|30Rnd_45ACP_Mag_SMG_01_Tracer_Green|.45 ACP 30Rnd Vermin Tracers (Green) Mag|280|B_45ACP_Ball_Green|30|30Rnd_45ACP_Mag_SMG_01
+M|30Rnd_45ACP_Mag_SMG_01_Tracer_Red|.45 ACP 30Rnd Vermin Tracers (Red) Mag|280|B_45ACP_Ball|30|30Rnd_45ACP_Mag_SMG_01
+M|30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow|.45 ACP 30Rnd Vermin Tracers (Yellow) Mag|280|B_45ACP_Ball_Yellow|30|30Rnd_45ACP_Mag_SMG_01
+M|9Rnd_45ACP_Mag|.45 ACP 9Rnd Mag|280|B_45ACP_Ball_Green|9|30Rnd_45ACP_Mag_SMG_01
+M|150Rnd_762x51_Box|7.62 mm 150Rnd Box|860|B_762x51_Tracer_Green|150|CA_Magazine
+M|150Rnd_762x51_Box_Tracer|7.62 mm 150Rnd Tracer (Green) Box|860|B_762x51_Tracer_Green|150|150Rnd_762x51_Box
+M|150Rnd_762x54_Box|7.62 mm 150Rnd Box|860|B_762x54_Tracer_Green|150|150Rnd_762x51_Box
+M|150Rnd_762x54_Box_Tracer|7.62 mm 150Rnd Tracer (Green) Box|860|B_762x54_Tracer_Green|150|150Rnd_762x54_Box
+M|Titan_AA|Titan AA Missile|18|M_Titan_AA|1|CA_LauncherMagazine
+M|Titan_AP|Titan AP Missile|18|M_Titan_AP|1|Titan_AA
+M|Titan_AT|Titan AT Missile|18|M_Titan_AT|1|Titan_AA
+M|300Rnd_20mm_shells|20 mm Shells|1030|B_20mm|300|VehicleMagazine
+M|1000Rnd_20mm_shells|20 mm Shells|1030|B_20mm_Tracer_Red|1000|300Rnd_20mm_shells
+M|2000Rnd_20mm_shells|20 mm Shells|1030|B_20mm|2000|300Rnd_20mm_shells
+M|300Rnd_25mm_shells|25 mm Shells|1030|B_25mm|300|VehicleMagazine
+M|1000Rnd_25mm_shells|25 mm Shells|1030|B_25mm|1000|300Rnd_25mm_shells
+M|250Rnd_30mm_HE_shells|30 mm HE Shells|960|B_30mm_HE|250|VehicleMagazine
+M|250Rnd_30mm_HE_shells_Tracer_Red|30 mm HE Tracer (Red) Shells|960|B_30mm_HE_Tracer_Red|250|250Rnd_30mm_HE_shells
+M|250Rnd_30mm_HE_shells_Tracer_Green|30 mm HE Tracer (Green) Shells|960|B_30mm_HE_Tracer_Green|250|250Rnd_30mm_HE_shells
+M|250Rnd_30mm_APDS_shells|30 mm APDS shells|1120|B_30mm_AP|250|250Rnd_30mm_HE_shells
+M|250Rnd_30mm_APDS_shells_Tracer_Red|30 mm APDS Tracer (Red) Shells|1120|B_30mm_AP_Tracer_Red|250|250Rnd_30mm_APDS_shells
+M|250Rnd_30mm_APDS_shells_Tracer_Green|30 mm APDS Tracer (Green) Shells|1120|B_30mm_AP_Tracer_Green|250|250Rnd_30mm_APDS_shells
+M|250Rnd_30mm_APDS_shells_Tracer_Yellow|30 mm APDS Tracer (Yellow) Shells|1120|B_30mm_AP_Tracer_Yellow|250|250Rnd_30mm_APDS_shells
+M|140Rnd_30mm_MP_shells|30 mm Multi-purpose|1070|B_30mm_MP|140|250Rnd_30mm_HE_shells
+M|140Rnd_30mm_MP_shells_Tracer_Red|30 mm MP-T|1070|B_30mm_MP_Tracer_Red|140|140Rnd_30mm_MP_shells
+M|140Rnd_30mm_MP_shells_Tracer_Green|30 mm MP-T|1070|B_30mm_MP_Tracer_Green|140|140Rnd_30mm_MP_shells_Tracer_Red
+M|140Rnd_30mm_MP_shells_Tracer_Yellow|30 mm MP-T|1070|B_30mm_MP_Tracer_Yellow|140|140Rnd_30mm_MP_shells_Tracer_Red
+M|60Rnd_30mm_APFSDS_shells|30 mm APFSDS|1430|B_30mm_APFSDS|60|250Rnd_30mm_HE_shells
+M|60Rnd_30mm_APFSDS_shells_Tracer_Red|30 mm APFSDS-T|1430|B_30mm_APFSDS_Tracer_Red|60|60Rnd_30mm_APFSDS_shells
+M|60Rnd_30mm_APFSDS_shells_Tracer_Green|30 mm APFSDS|1430|B_30mm_APFSDS_Tracer_Green|60|60Rnd_30mm_APFSDS_shells
+M|60Rnd_30mm_APFSDS_shells_Tracer_Yellow|30 mm APFSDS-T|1430|B_30mm_APFSDS_Tracer_Yellow|60|60Rnd_30mm_APFSDS_shells
+M|60Rnd_40mm_GPR_shells|40 mm GPR|1035|B_40mm_GPR|60|VehicleMagazine
+M|60Rnd_40mm_GPR_Tracer_Red_shells|40 mm GPR-T|1035|B_40mm_GPR_Tracer_Red|60|60Rnd_40mm_GPR_shells
+M|60Rnd_40mm_GPR_Tracer_Green_shells|40 mm GPR-T|1035|B_40mm_GPR_Tracer_Green|60|60Rnd_40mm_GPR_shells
+M|60Rnd_40mm_GPR_Tracer_Yellow_shells|40 mm GPR-T|1035|B_40mm_GPR_Tracer_Yellow|60|60Rnd_40mm_GPR_shells
+M|40Rnd_40mm_APFSDS_shells|40 mm APFSDS|1600|B_40mm_APFSDS|40|60Rnd_40mm_GPR_shells
+M|40Rnd_40mm_APFSDS_Tracer_Red_shells|40 mm APFSDS-T|1600|B_40mm_APFSDS_Tracer_Red|40|40Rnd_40mm_APFSDS_shells
+M|40Rnd_40mm_APFSDS_Tracer_Green_shells|40 mm APFSDS-T|1600|B_40mm_APFSDS_Tracer_Green|40|40Rnd_40mm_APFSDS_Tracer_Red_shells
+M|40Rnd_40mm_APFSDS_Tracer_Yellow_shells|40 mm APFSDS-T|1600|B_40mm_APFSDS_Tracer_Yellow|40|40Rnd_40mm_APFSDS_Tracer_Red_shells
+M|8Rnd_LG_scalpel|Scalpel E2|0|M_Scalpel_AT|8|VehicleMagazine
+M|6Rnd_LG_scalpel|Scalpel E2|0|M_Scalpel_AT|6|8Rnd_LG_scalpel
+M|2Rnd_LG_scalpel|Scalpel E2|0|M_Scalpel_AT|2|8Rnd_LG_scalpel
+M|2Rnd_LG_scalpel_hidden|Scalpel E2|0|M_Scalpel_AT_hidden|2|2Rnd_LG_scalpel
+M|14Rnd_80mm_rockets|Skyfire|44|R_80mm_HE|14|VehicleMagazine
+M|38Rnd_80mm_rockets|Skyfire|44|R_80mm_HE|38|14Rnd_80mm_rockets
+M|12Rnd_230mm_rockets|230 mm Rocket|850|R_230mm_HE|12|14Rnd_80mm_rockets
+M|12Rnd_230mm_rockets_cluster|230 mm Cluster Rocket|850|R_230mm_Cluster|12|12Rnd_230mm_rockets
+M|2Rnd_AAA_missiles|ASRAAM|0|M_Air_AA|2|VehicleMagazine
+M|2Rnd_AAA_missiles_MI02|ASRAAM|0|M_Air_AA_MI02|2|2Rnd_AAA_missiles
+M|2Rnd_AAA_missiles_MI06|ASRAAM|0|M_Air_AA_MI06|2|2Rnd_AAA_missiles
+M|4Rnd_AAA_missiles|ASRAAM|0|M_Air_AA|4|2Rnd_AAA_missiles
+M|4Rnd_AAA_missiles_MI02|ASRAAM|0|M_Air_AA_MI02|4|4Rnd_AAA_missiles
+M|4Rnd_GAA_missiles|Zephyr|25|M_Zephyr|4|VehicleMagazine
+M|4Rnd_Titan_long_missiles|Titan Missile|25|M_Titan_AA_long|4|4Rnd_GAA_missiles
+M|4Rnd_Titan_long_missiles_O|Titan Missile|25|M_Titan_AA_long|4|4Rnd_Titan_long_missiles
+M|5Rnd_GAT_missiles|Titan Missile|36|M_Titan_AT_long|5|VehicleMagazine
+M|2Rnd_GAT_missiles|Titan Missile|36|M_Titan_AT_long|2|5Rnd_GAT_missiles
+M|2Rnd_GAT_missiles_O|Titan Missile|36|M_Titan_AT_long|2|2Rnd_GAT_missiles
+M|30Rnd_120mm_HE_shells|HE Shells|1410|Sh_120mm_HE|30|VehicleMagazine
+M|30Rnd_120mm_HE_shells_Tracer_Red|120mm HE-T|1410|Sh_120mm_HE_Tracer_Red|30|30Rnd_120mm_HE_shells
+M|30Rnd_120mm_HE_shells_Tracer_Green|120mm HE-T|1410|Sh_120mm_HE_Tracer_Green|30|30Rnd_120mm_HE_shells
+M|30Rnd_120mm_HE_shells_Tracer_Yellow|120mm HE-T|1410|Sh_120mm_HE_Tracer_Yellow|30|30Rnd_120mm_HE_shells
+M|16Rnd_120mm_HE_shells|HE Shells|1410|Sh_120mm_HE|16|30Rnd_120mm_HE_shells
+M|16Rnd_120mm_HE_shells_Tracer_Red|120mm HE-T|1410|Sh_120mm_HE_Tracer_Red|16|30Rnd_120mm_HE_shells_Tracer_Red
+M|16Rnd_120mm_HE_shells_Tracer_Green|120mm HE-T|1410|Sh_120mm_HE_Tracer_Green|16|30Rnd_120mm_HE_shells_Tracer_Green
+M|16Rnd_120mm_HE_shells_Tracer_Yellow|120mm HE-T|1410|Sh_120mm_HE_Tracer_Yellow|16|30Rnd_120mm_HE_shells_Tracer_Yellow
+M|14Rnd_120mm_HE_shells|HE Shells|1460|Sh_120mm_HE|14|30Rnd_120mm_HE_shells
+M|14Rnd_120mm_HE_shells_Tracer_Red|120mm HE-T|1460|Sh_120mm_HE_Tracer_Red|14|30Rnd_120mm_HE_shells_Tracer_Red
+M|14Rnd_120mm_HE_shells_Tracer_Green|120mm HE-T|1460|Sh_120mm_HE_Tracer_Green|14|30Rnd_120mm_HE_shells_Tracer_Green
+M|14Rnd_120mm_HE_shells_Tracer_Yellow|120mm HE-T|1460|Sh_120mm_HE_Tracer_Yellow|14|30Rnd_120mm_HE_shells_Tracer_Yellow
+M|12Rnd_120mm_HE_shells|HE Shells|1410|Sh_120mm_HE|12|30Rnd_120mm_HE_shells
+M|12Rnd_120mm_HE_shells_Tracer_Red|120mm HE-T|1410|Sh_120mm_HE_Tracer_Red|12|30Rnd_120mm_HE_shells_Tracer_Red
+M|12Rnd_120mm_HE_shells_Tracer_Green|120mm HE-T|1410|Sh_120mm_HE_Tracer_Green|12|30Rnd_120mm_HE_shells_Tracer_Green
+M|12Rnd_120mm_HE_shells_Tracer_Yellow|120mm HE-T|1410|Sh_120mm_HE_Tracer_Yellow|12|30Rnd_120mm_HE_shells_Tracer_Yellow
+M|8Rnd_120mm_HE_shells|HE Shells|1410|Sh_120mm_HE|8|30Rnd_120mm_HE_shells
+M|8Rnd_120mm_HE_shells_Tracer_Red|120mm HE-T|1410|Sh_120mm_HE_Tracer_Red|8|30Rnd_120mm_HE_shells_Tracer_Red
+M|8Rnd_120mm_HE_shells_Tracer_Green|120mm HE-T|1410|Sh_120mm_HE_Tracer_Green|8|30Rnd_120mm_HE_shells_Tracer_Green
+M|8Rnd_120mm_HE_shells_Tracer_Yellow|120mm HE-T|1410|Sh_120mm_HE_Tracer_Yellow|8|30Rnd_120mm_HE_shells_Tracer_Yellow
+M|30Rnd_120mm_APFSDS_shells|120mm APFSDS|1680|Sh_120mm_APFSDS|30|30Rnd_120mm_HE_shells
+M|30Rnd_120mm_APFSDS_shells_Tracer_Red|120mm APFSDS-T|1680|Sh_120mm_APFSDS_Tracer_Red|30|30Rnd_120mm_APFSDS_shells
+M|30Rnd_120mm_APFSDS_shells_Tracer_Green|120mm APFSDS-T|1680|Sh_120mm_APFSDS_Tracer_Green|30|30Rnd_120mm_APFSDS_shells
+M|30Rnd_120mm_APFSDS_shells_Tracer_Yellow|120mm APFSDS-T|1680|Sh_120mm_APFSDS_Tracer_Yellow|30|30Rnd_120mm_APFSDS_shells
+M|32Rnd_120mm_APFSDS_shells|120mm APFSDS|1670|Sh_120mm_APFSDS|32|30Rnd_120mm_APFSDS_shells
+M|32Rnd_120mm_APFSDS_shells_Tracer_Red|120mm APFSDS-T|1670|Sh_120mm_APFSDS_Tracer_Red|32|30Rnd_120mm_APFSDS_shells_Tracer_Red
+M|32Rnd_120mm_APFSDS_shells_Tracer_Green|120mm APFSDS-T|1670|Sh_120mm_APFSDS_Tracer_Green|32|30Rnd_120mm_APFSDS_shells_Tracer_Green
+M|32Rnd_120mm_APFSDS_shells_Tracer_Yellow|120mm APFSDS-T|1670|Sh_120mm_APFSDS_Tracer_Yellow|32|30Rnd_120mm_APFSDS_shells_Tracer_Yellow
+M|28Rnd_120mm_APFSDS_shells|120mm APFSDS|1750|Sh_120mm_APFSDS|28|30Rnd_120mm_APFSDS_shells
+M|28Rnd_120mm_APFSDS_shells_Tracer_Red|120mm APFSDS-T|1750|Sh_120mm_APFSDS_Tracer_Red|28|30Rnd_120mm_APFSDS_shells_Tracer_Red
+M|28Rnd_120mm_APFSDS_shells_Tracer_Green|120mm APFSDS-T|1750|Sh_120mm_APFSDS_Tracer_Green|28|30Rnd_120mm_APFSDS_shells_Tracer_Green
+M|28Rnd_120mm_APFSDS_shells_Tracer_Yellow|120mm APFSDS-T|1750|Sh_120mm_APFSDS_Tracer_Yellow|28|30Rnd_120mm_APFSDS_shells_Tracer_Yellow
+M|24Rnd_120mm_APFSDS_shells|120mm APFSDS|1670|Sh_120mm_APFSDS|24|30Rnd_120mm_APFSDS_shells
+M|24Rnd_120mm_APFSDS_shells_Tracer_Red|120mm APFSDS-T|1670|Sh_120mm_APFSDS_Tracer_Red|24|30Rnd_120mm_APFSDS_shells_Tracer_Red
+M|24Rnd_120mm_APFSDS_shells_Tracer_Green|120mm APFSDS-T|1670|Sh_120mm_APFSDS_Tracer_Green|24|30Rnd_120mm_APFSDS_shells_Tracer_Green
+M|24Rnd_120mm_APFSDS_shells_Tracer_Yellow|120mm APFSDS-T|1670|Sh_120mm_APFSDS_Tracer_Yellow|24|30Rnd_120mm_APFSDS_shells_Tracer_Yellow
+M|20Rnd_120mm_APFSDS_shells|120mm APFSDS|1750|Sh_120mm_APFSDS|20|30Rnd_120mm_APFSDS_shells
+M|20Rnd_120mm_APFSDS_shells_Tracer_Red|120mm APFSDS-T|1750|Sh_120mm_APFSDS_Tracer_Red|20|30Rnd_120mm_APFSDS_shells_Tracer_Red
+M|20Rnd_120mm_APFSDS_shells_Tracer_Green|120mm APFSDS-T|1750|Sh_120mm_APFSDS_Tracer_Green|20|30Rnd_120mm_APFSDS_shells_Tracer_Green
+M|20Rnd_120mm_APFSDS_shells_Tracer_Yellow|120mm APFSDS-T|1750|Sh_120mm_APFSDS_Tracer_Yellow|20|30Rnd_120mm_APFSDS_shells_Tracer_Yellow
+M|12Rnd_120mm_APFSDS_shells|120mm APFSDS|1670|Sh_120mm_APFSDS|12|30Rnd_120mm_APFSDS_shells
+M|12Rnd_120mm_APFSDS_shells_Tracer_Red|120mm APFSDS-T|1670|Sh_120mm_APFSDS_Tracer_Red|12|30Rnd_120mm_APFSDS_shells_Tracer_Red
+M|12Rnd_120mm_APFSDS_shells_Tracer_Green|120mm APFSDS-T|1670|Sh_120mm_APFSDS_Tracer_Green|12|30Rnd_120mm_APFSDS_shells_Tracer_Green
+M|12Rnd_120mm_APFSDS_shells_Tracer_Yellow|120mm APFSDS-T|1670|Sh_120mm_APFSDS_Tracer_Yellow|12|30Rnd_120mm_APFSDS_shells_Tracer_Yellow
+M|20Rnd_120mm_HEAT_MP|120mm HEAT-MP-T|1330|Sh_120mm_HEAT_MP|20|VehicleMagazine
+M|20Rnd_120mm_HEAT_MP_T_Red|120mm HEAT-MP-T|1330|Sh_120mm_HEAT_MP_T_Red|20|20Rnd_120mm_HEAT_MP
+M|20Rnd_120mm_HEAT_MP_T_Green|120mm HEAT-MP-T|1330|Sh_120mm_HEAT_MP_T_Green|20|20Rnd_120mm_HEAT_MP
+M|20Rnd_120mm_HEAT_MP_T_Yellow|120mm HEAT-MP-T|1330|Sh_120mm_HEAT_MP_T_Yellow|20|20Rnd_120mm_HEAT_MP
+M|12Rnd_120mm_HEAT_MP|120mm HEAT-MP-T|1330|Sh_120mm_HEAT_MP|12|20Rnd_120mm_HEAT_MP
+M|12Rnd_120mm_HEAT_MP_T_Red|120mm HEAT-MP-T|1330|Sh_120mm_HEAT_MP_T_Red|12|20Rnd_120mm_HEAT_MP_T_Red
+M|12Rnd_120mm_HEAT_MP_T_Green|120mm HEAT-MP-T|1330|Sh_120mm_HEAT_MP_T_Green|12|20Rnd_120mm_HEAT_MP_T_Green
+M|12Rnd_120mm_HEAT_MP_T_Yellow|120mm HEAT-MP-T|1330|Sh_120mm_HEAT_MP_T_Yellow|12|20Rnd_120mm_HEAT_MP_T_Yellow
+M|8Rnd_120mm_HEAT_MP|120mm HEAT-MP-T|1330|Sh_120mm_HEAT_MP|8|20Rnd_120mm_HEAT_MP
+M|8Rnd_120mm_HEAT_MP_T_Red|120mm HEAT-MP-T|1330|Sh_120mm_HEAT_MP_T_Red|8|20Rnd_120mm_HEAT_MP_T_Red
+M|8Rnd_120mm_HEAT_MP_T_Green|120mm HEAT-MP-T|1330|Sh_120mm_HEAT_MP_T_Green|8|20Rnd_120mm_HEAT_MP_T_Green
+M|8Rnd_120mm_HEAT_MP_T_Yellow|120mm HEAT-MP-T|1330|Sh_120mm_HEAT_MP_T_Yellow|8|20Rnd_120mm_HEAT_MP_T_Yellow
+M|12Rnd_125mm_HE|125mm HE|850|Sh_125mm_HE|12|16Rnd_120mm_HE_shells
+M|12Rnd_125mm_HE_T_Red|125mm HE-T|850|Sh_125mm_HE_T_Red|12|16Rnd_120mm_HE_shells_Tracer_Red
+M|12Rnd_125mm_HE_T_Green|125mm HE-T|850|Sh_125mm_HE_T_Green|12|16Rnd_120mm_HE_shells_Tracer_Green
+M|12Rnd_125mm_HE_T_Yellow|125mm HE-T|850|Sh_125mm_HE_T_Yellow|12|16Rnd_120mm_HE_shells_Tracer_Yellow
+M|8Rnd_125mm_HE|125mm HE|1330|Sh_125mm_HE|8|12Rnd_125mm_HE
+M|8Rnd_125mm_HE_T_Red|125mm HE-T|1330|Sh_125mm_HE_T_Red|8|12Rnd_125mm_HE_T_Red
+M|8Rnd_125mm_HE_T_Green|125mm HE-T|1330|Sh_125mm_HE_T_Green|8|12Rnd_125mm_HE_T_Green
+M|8Rnd_125mm_HE_T_Yellow|125mm HE-T|1330|Sh_125mm_HE_T_Yellow|8|12Rnd_125mm_HE_T_Yellow
+M|20Rnd_125mm_APFSDS|125mm APFSDS-T|1700|Sh_125mm_APFSDS|20|VehicleMagazine
+M|20Rnd_125mm_APFSDS_T_Red|125mm APFSDS-T|1700|Sh_125mm_APFSDS_T_Red|20|20Rnd_125mm_APFSDS
+M|20Rnd_125mm_APFSDS_T_Green|125mm APFSDS-T|1700|Sh_125mm_APFSDS_T_Green|20|20Rnd_125mm_APFSDS
+M|20Rnd_125mm_APFSDS_T_Yellow|125mm APFSDS-T|1700|Sh_125mm_APFSDS_T_Yellow|20|20Rnd_125mm_APFSDS
+M|24Rnd_125mm_APFSDS|125mm APFSDS-T|1700|Sh_125mm_APFSDS|24|20Rnd_125mm_APFSDS
+M|24Rnd_125mm_APFSDS_T_Red|125mm APFSDS-T|1700|Sh_125mm_APFSDS_T_Red|24|20Rnd_125mm_APFSDS_T_Red
+M|24Rnd_125mm_APFSDS_T_Green|125mm APFSDS-T|1700|Sh_125mm_APFSDS_T_Green|24|20Rnd_125mm_APFSDS_T_Green
+M|24Rnd_125mm_APFSDS_T_Yellow|125mm APFSDS-T|1700|Sh_125mm_APFSDS_T_Yellow|24|20Rnd_125mm_APFSDS_T_Yellow
+M|16Rnd_125mm_APFSDS|125mm APFSDS-T|1700|Sh_125mm_APFSDS|16|20Rnd_125mm_APFSDS
+M|16Rnd_125mm_APFSDS_T_Red|125mm APFSDS-T|1700|Sh_125mm_APFSDS_T_Red|16|20Rnd_125mm_APFSDS_T_Red
+M|16Rnd_125mm_APFSDS_T_Green|125mm APFSDS-T|1700|Sh_125mm_APFSDS_T_Green|16|20Rnd_125mm_APFSDS_T_Green
+M|16Rnd_125mm_APFSDS_T_Yellow|125mm APFSDS-T|1700|Sh_125mm_APFSDS_T_Yellow|16|20Rnd_125mm_APFSDS_T_Yellow
+M|12Rnd_125mm_HEAT|125mm HEAT|915|Sh_125mm_HEAT|12|12Rnd_125mm_HE
+M|12Rnd_125mm_HEAT_T_Red|125mm HEAT-T|915|Sh_125mm_HEAT_T_Red|12|12Rnd_125mm_HEAT
+M|12Rnd_125mm_HEAT_T_Green|125mm HEAT-T|915|Sh_125mm_HEAT_T_Green|12|12Rnd_125mm_HEAT
+M|12Rnd_125mm_HEAT_T_Yellow|125mm HEAT-T|915|Sh_125mm_HEAT_T_Yellow|12|12Rnd_125mm_HEAT
+M|40Rnd_105mm_APFSDS|105mm APFSDS|1505|Sh_105mm_APFSDS|40|24Rnd_125mm_APFSDS
+M|40Rnd_105mm_APFSDS_T_Red|105mm APFSDS-T|1505|Sh_105mm_APFSDS_T_Red|40|40Rnd_105mm_APFSDS
+M|40Rnd_105mm_APFSDS_T_Green|105mm APFSDS-T|1505|Sh_105mm_APFSDS_T_Green|40|40Rnd_105mm_APFSDS
+M|40Rnd_105mm_APFSDS_T_Yellow|105mm APFSDS-T|1505|Sh_105mm_APFSDS_T_Yellow|40|40Rnd_105mm_APFSDS
+M|20Rnd_105mm_HEAT_MP|105mm HEAT-MP|1330|Sh_105mm_HEAT_MP|20|12Rnd_125mm_HEAT
+M|20Rnd_105mm_HEAT_MP_T_Red|105mm HEAT-MP-T|1330|Sh_105mm_HEAT_MP_T_Red|20|20Rnd_105mm_HEAT_MP
+M|20Rnd_105mm_HEAT_MP_T_Green|105mm HEAT-MP-T|1330|Sh_105mm_HEAT_MP_T_Green|20|20Rnd_105mm_HEAT_MP
+M|20Rnd_105mm_HEAT_MP_T_Yellow|105mm HEAT-MP-T|1330|Sh_105mm_HEAT_MP_T_Yellow|20|20Rnd_105mm_HEAT_MP
+M|680Rnd_35mm_AA_shells|35 mm AA Shells|1440|B_35mm_AA|680|VehicleMagazine
+M|680Rnd_35mm_AA_shells_Tracer_Red|35 mm AA Shells|1440|B_35mm_AA_Tracer_Red|680|680Rnd_35mm_AA_shells
+M|680Rnd_35mm_AA_shells_Tracer_Green|35 mm AA Shells|1440|B_35mm_AA_Tracer_Green|680|680Rnd_35mm_AA_shells
+M|680Rnd_35mm_AA_shells_Tracer_Yellow|35 mm AA Shells|1440|B_35mm_AA_Tracer_Yellow|680|680Rnd_35mm_AA_shells
+M|6Rnd_AAT_missiles|AG Missiles|0|M_Air_AT|6|VehicleMagazine
+M|4Rnd_AAT_missiles|AG Missiles|0|M_Air_AT|4|6Rnd_AAT_missiles
+M|1Rnd_GAA_missiles|Zephyr|25|M_Titan_AA_static|1|4Rnd_GAA_missiles
+M|1Rnd_GAT_missiles|Titan Missile|36|M_Titan_AT_static|1|5Rnd_GAT_missiles
+M|2Rnd_GBU12_LGB|GBU-12|0|Bo_GBU12_LGB|2|VehicleMagazine
+M|2Rnd_GBU12_LGB_MI10|GBU-12|0|Bo_GBU12_LGB_MI10|2|2Rnd_GBU12_LGB
+M|2Rnd_Mk82|Mk82|0|Bo_Mk82|2|VehicleMagazine
+M|2Rnd_Mk82_MI08|Mk82|0|Bo_Mk82_MI08|2|2Rnd_Mk82
+M|11Rnd_45ACP_Mag|.45 ACP 11Rnd Mag|380|B_45ACP_Ball|11|CA_Magazine
+M|6Rnd_45ACP_Cylinder|.45 ACP 6Rnd Cylinder|480|B_45ACP_Ball|6|11Rnd_45ACP_Mag
+M|10Rnd_762x51_Mag|7.62 mm 10Rnd Mag|830|B_762x51_Ball|10|20Rnd_762x51_Mag
+M|10Rnd_762x54_Mag|7.62 mm 10Rnd Mag|830|B_762x54_Ball|10|10Rnd_762x51_Mag
+M|5Rnd_127x108_APDS_Mag|12.7 mm 5Rnd APDS Mag|1060|B_127x108_APDS|5|5Rnd_127x108_Mag
+M|B_IR_Grenade|IR Grenade [NATO]|18|B_IRStrobe|1|CA_Magazine
+M|O_IR_Grenade|IR Grenade [CSAT]|18|O_IRStrobe|1|B_IR_Grenade
+M|I_IR_Grenade|IR Grenade [AAF]|18|I_IRStrobe|1|B_IR_Grenade
+M|200Rnd_762x51_Belt|7.62 mm Minigun Belt|860|B_762x51_Ball|200|VehicleMagazine
+M|200Rnd_762x51_Belt_Red|7.62 mm Minigun Belt|860|B_762x51_Tracer_Red|200|200Rnd_762x51_Belt
+M|200Rnd_762x51_Belt_T_Red|7.62 mm Minigun Belt|860|B_762x51_Tracer_Red|200|200Rnd_762x51_Belt_Red
+M|200Rnd_762x51_Belt_Green|7.62 mm Minigun Belt|860|B_762x51_Tracer_Green|200|200Rnd_762x51_Belt
+M|200Rnd_762x51_Belt_T_Green|7.62 mm Minigun Belt|860|B_762x51_Tracer_Green|200|200Rnd_762x51_Belt_Green
+M|200Rnd_762x51_Belt_Yellow|7.62 mm Minigun Belt|860|B_762x51_Tracer_Yellow|200|200Rnd_762x51_Belt
+M|200Rnd_762x51_Belt_T_Yellow|7.62 mm Minigun Belt|860|B_762x51_Tracer_Yellow|200|200Rnd_762x51_Belt_Yellow
+M|1000Rnd_762x51_Belt|7.62 mm Minigun Belt|860|B_762x51_Ball|1000|200Rnd_762x51_Belt
+M|1000Rnd_762x51_Belt_Red|7.62 mm Minigun Belt|860|B_762x51_Tracer_Red|1000|1000Rnd_762x51_Belt
+M|1000Rnd_762x51_Belt_T_Red|7.62 mm Minigun Belt|860|B_762x51_Tracer_Red|1000|1000Rnd_762x51_Belt_Red
+M|1000Rnd_762x51_Belt_Green|7.62 mm Minigun Belt|860|B_762x51_Tracer_Green|1000|1000Rnd_762x51_Belt
+M|1000Rnd_762x51_Belt_T_Green|7.62 mm Minigun Belt|860|B_762x51_Tracer_Green|1000|1000Rnd_762x51_Belt_Green
+M|1000Rnd_762x51_Belt_Yellow|7.62 mm Minigun Belt|860|B_762x51_Tracer_Yellow|1000|1000Rnd_762x51_Belt
+M|1000Rnd_762x51_Belt_T_Yellow|7.62 mm Minigun Belt|860|B_762x51_Tracer_Yellow|1000|1000Rnd_762x51_Belt_Yellow
+M|2000Rnd_762x51_Belt|7.62 mm Minigun Belt|860|B_762x51_Ball|2000|200Rnd_762x51_Belt
+M|2000Rnd_762x51_Belt_Red|7.62 mm Minigun Belt|860|B_762x51_Tracer_Red|2000|2000Rnd_762x51_Belt
+M|2000Rnd_762x51_Belt_T_Red|7.62 mm Minigun Belt|860|B_762x51_Tracer_Red|2000|2000Rnd_762x51_Belt_Red
+M|2000Rnd_762x51_Belt_Green|7.62 mm Minigun Belt|860|B_762x51_Tracer_Green|2000|2000Rnd_762x51_Belt
+M|2000Rnd_762x51_Belt_T_Green|7.62 mm Minigun Belt|860|B_762x51_Tracer_Green|2000|2000Rnd_762x51_Belt_Green
+M|2000Rnd_762x51_Belt_Yellow|7.62 mm Minigun Belt|860|B_762x51_Tracer_Yellow|2000|2000Rnd_762x51_Belt
+M|2000Rnd_762x51_Belt_T_Yellow|7.62 mm Minigun Belt|860|B_762x51_Tracer_Yellow|2000|2000Rnd_762x51_Belt_Yellow
+M|PylonRack_1Rnd_Missile_AA_04_F|Falchion-22|0|Missile_AA_04_F|1|2Rnd_Missile_AA_04_F
+M|PylonMissile_1Rnd_Missile_AA_04_F|Falchion-22|0|Missile_AA_04_F|1|PylonRack_1Rnd_Missile_AA_04_F
+M|PylonRack_1Rnd_AAA_missiles|ASRAAM|0|M_Air_AA|1|4Rnd_AAA_missiles
+M|PylonMissile_1Rnd_AAA_missiles|ASRAAM|0|M_Air_AA|1|PylonRack_1Rnd_AAA_missiles
+M|PylonRack_1Rnd_GAA_missiles|Zephyr|25|M_Zephyr|1|4Rnd_GAA_missiles
+M|PylonMissile_1Rnd_GAA_missiles|Zephyr|25|M_Zephyr|1|PylonRack_1Rnd_GAA_missiles
+M|PylonRack_1Rnd_Missile_AGM_02_F|Macer|0|Missile_AGM_02_F|1|6Rnd_Missile_AGM_02_F
+M|PylonRack_3Rnd_Missile_AGM_02_F|Macer 3x|0|Missile_AGM_02_F|3|PylonRack_1Rnd_Missile_AGM_02_F
+M|PylonRack_1Rnd_LG_scalpel|Scalpel|0|M_Scalpel_AT|1|2Rnd_LG_scalpel
+M|PylonMissile_1Rnd_LG_scalpel|Scalpel|0|M_Scalpel_AT|1|PylonRack_1Rnd_LG_scalpel
+M|PylonRack_3Rnd_LG_scalpel|Scalpel 3x|0|M_Scalpel_AT|3|PylonRack_1Rnd_LG_scalpel
+M|PylonRack_4Rnd_LG_scalpel|Scalpel 4x|0|M_Scalpel_AT|4|PylonRack_1Rnd_LG_scalpel
+M|PylonRack_7Rnd_Rocket_04_HE_F|Shrieker 7x HE|44|Rocket_04_HE_F|7|7Rnd_Rocket_04_HE_F
+M|PylonRack_7Rnd_Rocket_04_AP_F|Shrieker 7x AP|44|Rocket_04_AP_F|7|7Rnd_Rocket_04_AP_F
+M|PylonRack_12Rnd_PG_missiles|DAGR|0|M_PG_AT|12|24Rnd_PG_missiles
+M|PylonRack_12Rnd_PGM_missiles|DAGR|0|M_PGM_AT|12|PylonRack_12Rnd_PG_missiles
+M|PylonRack_12Rnd_missiles|DAR|0|M_AT|12|12Rnd_missiles
+M|PylonMissile_1Rnd_Bomb_04_F|GBU-12|0|Bomb_04_F|1|4Rnd_Bomb_04_F
+M|PylonMissile_1Rnd_Mk82_F|Mk82|0|Bo_Mk82|1|2Rnd_Mk82
+M|PylonWeapon_300Rnd_20mm_shells|Twin Cannon 20mm|1030|B_20mm|300|300Rnd_20mm_shells
+M|PylonWeapon_2000Rnd_65x39_belt|Minigun 6.5Â mm|825|B_65x39_Minigun_Caseless_Green_splash|2000|2000Rnd_65x39_Belt_Tracer_Green_Splash
+M|PylonRack_20Rnd_Rocket_03_HE_F|Tratnyr 20x HE|44|Rocket_03_HE_F|20|20Rnd_Rocket_03_HE_F
+M|PylonRack_20Rnd_Rocket_03_AP_F|Tratnyr 20x AP|44|Rocket_03_AP_F|20|20Rnd_Rocket_03_AP_F
+M|PylonRack_19Rnd_Rocket_Skyfire|Skyfire 19x|44|R_80mm_HE|19|38Rnd_80mm_rockets
+M|PylonRack_1Rnd_Missile_AA_03_F|Sahr-3|0|Missile_AA_03_F|1|2Rnd_Missile_AA_03_F
+M|PylonMissile_1Rnd_Missile_AA_03_F|Sahr-3|0|Missile_AA_03_F|1|PylonRack_1Rnd_Missile_AA_03_F
+M|PylonRack_1Rnd_Missile_AGM_01_F|Sharur|0|Missile_AGM_01_F|1|4Rnd_Missile_AGM_01_F
+M|PylonMissile_1Rnd_Bomb_03_F|LOM-250G|0|Bomb_03_F|1|2Rnd_Bomb_03_F
+M|PylonFuelTank_UH80|External Fuel Tank|0|DummyPylonAmmo|1|VehicleMagazine
+M|ATMine_Range_Mag|AT Mine|0|ATMine_Range_Ammo|1|CA_Magazine
+M|APERSMine_Range_Mag|APERS Mine|0|APERSMine_Range_Ammo|1|ATMine_Range_Mag
+M|APERSBoundingMine_Range_Mag|APERS Bounding Mine|0|APERSBoundingMine_Range_Ammo|1|ATMine_Range_Mag
+M|SLAMDirectionalMine_Wire_Mag|M6 SLAM Mine|0|SLAMDirectionalMine_Wire_Ammo|1|ATMine_Range_Mag
+M|APERSTripMine_Wire_Mag|APERS Tripwire Mine|0|APERSTripMine_Wire_Ammo|1|ATMine_Range_Mag
+M|ClaymoreDirectionalMine_Remote_Mag|Claymore Charge|0|ClaymoreDirectionalMine_Remote_Ammo|1|CA_Magazine
+M|SatchelCharge_Remote_Mag|Explosive Satchel|0|SatchelCharge_Remote_Ammo|1|CA_Magazine
+M|DemoCharge_Remote_Mag|Explosive Charge|0|DemoCharge_Remote_Ammo|1|SatchelCharge_Remote_Mag
+M|IEDUrbanBig_Remote_Mag|Large IED (Urban)|0|IEDUrbanBig_Remote_Ammo|1|DemoCharge_Remote_Mag
+M|IEDLandBig_Remote_Mag|Large IED (Dug-in)|0|IEDLandBig_Remote_Ammo|1|IEDUrbanBig_Remote_Mag
+M|IEDUrbanSmall_Remote_Mag|Small IED (Urban)|0|IEDUrbanSmall_Remote_Ammo|1|DemoCharge_Remote_Mag
+M|IEDLandSmall_Remote_Mag|Small IED (Dug-in)|0|IEDLandSmall_Remote_Ammo|1|IEDUrbanSmall_Remote_Mag
+M|6Rnd_GreenSignal_F|6Rnd Signal Cylinder (Green)|240|Sub_F_Signal_Green|6|3Rnd_UGL_FlareGreen_F
+M|6Rnd_RedSignal_F|6Rnd Signal Cylinder (Red)|240|Sub_F_Signal_Red|6|6Rnd_GreenSignal_F
+M|10Rnd_338_Mag|.338 LM 10Rnd Mag|915|B_338_Ball|10|CA_Magazine
+M|130Rnd_338_Mag|.338 NM 130Rnd Belt|807|B_338_NM_Ball|130|CA_Magazine
+M|10Rnd_127x54_Mag|12.7 mm 10Rnd Mag|290|B_127x54_Ball|10|CA_Magazine
+M|150Rnd_93x64_Mag|9.3mm 150Rnd Belt|785|B_93x64_Ball|150|CA_Magazine
+M|10Rnd_93x64_DMR_05_Mag|9.3 mm 10Rnd Mag|870|B_93x64_Ball|10|150Rnd_93x64_Mag
+M|50Rnd_570x28_SMG_03|5.7 mm 50Rnd ADR-97 Mag|715|B_570x28_Ball|50|CA_Magazine
+M|10Rnd_9x21_Mag|9 mm 10Rnd Mag|410|B_9x21_Ball|10|16Rnd_9x21_Mag
+M|30Rnd_580x42_Mag_F|5.8 mm 30Rnd Mag|930|B_580x42_Ball_F|30|CA_Magazine
+M|30Rnd_580x42_Mag_Tracer_F|5.8 mm 30Rnd Tracer (Green) Mag|930|B_580x42_Ball_F|30|30Rnd_580x42_Mag_F
+M|100Rnd_580x42_Mag_F|5.8 mm 100Rnd Mag|930|B_580x42_Ball_F|100|30Rnd_580x42_Mag_F
+M|100Rnd_580x42_Mag_Tracer_F|5.8 mm 100Rnd Tracer (Green) Mag|930|B_580x42_Ball_F|100|100Rnd_580x42_Mag_F
+M|100Rnd_580x42_hex_Mag_F|5.8 mm 100Rnd Hex Mag|930|B_580x42_Ball_F|100|100Rnd_580x42_Mag_F
+M|100Rnd_580x42_hex_Mag_Tracer_F|5.8 mm 100Rnd Tracer (Green) Hex Mag|930|B_580x42_Ball_F|100|100Rnd_580x42_Mag_Tracer_F
+M|100Rnd_580x42_ghex_Mag_F|5.8 mm 100Rnd Green Hex Mag|930|B_580x42_Ball_F|100|100Rnd_580x42_Mag_F
+M|100Rnd_580x42_ghex_Mag_Tracer_F|5.8 mm 100Rnd Tracer (Green) Green Hex Mag|930|B_580x42_Ball_F|100|100Rnd_580x42_Mag_Tracer_F
+M|20Rnd_650x39_Cased_Mag_F|6.5 mm 20Rnd Mag|820|B_65x39_Case_green|20|CA_Magazine
+M|10Rnd_50BW_Mag_F|.50 BW 10Rnd Caseless Mag|580|B_50BW_Ball_F|10|CA_Magazine
+M|150Rnd_556x45_Drum_Mag_F|5.56 mm 150Rnd Mag|930|B_556x45_Ball_Tracer_Red|150|CA_Magazine
+M|150Rnd_556x45_Drum_Sand_Mag_F|5.56 mm 150Rnd Sand Mag|930|B_556x45_Ball_Tracer_Red|150|150Rnd_556x45_Drum_Mag_F
+M|150Rnd_556x45_Drum_Sand_Mag_Tracer_F|5.56 mm 150Rnd Tracer (Red) Sand Mag|930|B_556x45_Ball_Tracer_Red|150|150Rnd_556x45_Drum_Sand_Mag_F
+M|150Rnd_556x45_Drum_Green_Mag_F|5.56 mm 150Rnd Green Mag|930|B_556x45_Ball_Tracer_Red|150|150Rnd_556x45_Drum_Mag_F
+M|150Rnd_556x45_Drum_Green_Mag_Tracer_F|5.56 mm 150Rnd Tracer (Red) Green Mag|930|B_556x45_Ball_Tracer_Red|150|150Rnd_556x45_Drum_Green_Mag_F
+M|150Rnd_556x45_Drum_Mag_Tracer_F|5.56 mm 150Rnd Tracer (Red) Mag|930|B_556x45_Ball_Tracer_Red|150|150Rnd_556x45_Drum_Mag_F
+M|30Rnd_762x39_Mag_F|7.62 mm 30Rnd AKM Reload Tracer (Yellow) Mag|715|B_762x39_Ball_F|30|CA_Magazine
+M|30Rnd_762x39_Mag_Green_F|7.62 mm 30Rnd AKM Reload Tracer (Green) Mag|715|B_762x39_Ball_Green_F|30|30Rnd_762x39_Mag_F
+M|30Rnd_762x39_Mag_Tracer_F|7.62 mm 30Rnd AKM Tracer (Yellow) Mag|715|B_762x39_Ball_F|30|30Rnd_762x39_Mag_F
+M|30Rnd_762x39_Mag_Tracer_Green_F|7.62 mm 30Rnd AKM Tracer (Green) Mag|715|B_762x39_Ball_Green_F|30|30Rnd_762x39_Mag_Tracer_F
+M|30Rnd_762x39_AK12_Mag_F|7.62 mm 30rnd AK12 Mag|715|B_762x39_Ball_Green_F|30|30Rnd_762x39_Mag_F
+M|30Rnd_762x39_AK12_Mag_Tracer_F|7.62 mm 30rnd AK12 Tracer Mag|715|B_762x39_Ball_Green_F|30|30Rnd_762x39_AK12_Mag_F
+M|30Rnd_545x39_Mag_F|5.45 mm 30Rnd Reload Tracer (Yellow) Mag|735|B_545x39_Ball_F|30|CA_Magazine
+M|30Rnd_545x39_Mag_Green_F|5.45 mm 30Rnd Reload Tracer (Green) Mag|735|B_545x39_Ball_Green_F|30|30Rnd_545x39_Mag_F
+M|30Rnd_545x39_Mag_Tracer_F|5.45 mm 30Rnd Tracer (Yellow) Mag|735|B_545x39_Ball_F|30|30Rnd_545x39_Mag_F
+M|30Rnd_545x39_Mag_Tracer_Green_F|5.45 mm 30Rnd Tracer (Green) Mag|735|B_545x39_Ball_Green_F|30|30Rnd_545x39_Mag_Tracer_F
+M|200Rnd_556x45_Box_F|5.56 mm 200Rnd Reload Tracer (Yellow) Box|915|B_556x45_Ball_Tracer_Yellow|200|CA_Magazine
+M|200Rnd_556x45_Box_Red_F|5.56 mm 200Rnd Reload Tracer (Red) Box|915|B_556x45_Ball_Tracer_Red|200|200Rnd_556x45_Box_F
+M|200Rnd_556x45_Box_Tracer_F|5.56 mm 200Rnd Tracer (Yellow) Box|915|B_556x45_Ball_Tracer_Yellow|200|200Rnd_556x45_Box_F
+M|200Rnd_556x45_Box_Tracer_Red_F|5.56 mm 200Rnd Tracer (Red) Box|915|B_556x45_Ball_Tracer_Red|200|200Rnd_556x45_Box_Tracer_F
+M|500Rnd_65x39_Belt|6.5 mm 500Rnd Belt Case|825|B_65x39_Caseless|500|200Rnd_65x39_Belt
+M|500Rnd_65x39_Belt_Tracer_Red_Splash|6.5 mm 500Rnd Belt Case Tracer (Red)|825|B_65x39_Minigun_Caseless_Red_splash|500|500Rnd_65x39_Belt
+M|500Rnd_65x39_Belt_Tracer_Green_Splash|6.5 mm 500Rnd Belt Case Tracer (Green)|825|B_65x39_Minigun_Caseless_Green_splash|500|500Rnd_65x39_Belt
+M|500Rnd_65x39_Belt_Tracer_Yellow_Splash|6.5 mm 500Rnd Belt Case Tracer (Yellow)|825|B_65x39_Minigun_Caseless_Yellow_splash|500|500Rnd_65x39_Belt
+M|RPG7_F|PG-7VM HEAT Grenade|134|R_PG7_F|1|RPG32_F
+M|4Rnd_LG_Jian|Jian|0|M_Jian_AT|4|4Rnd_Missile_AGM_01_F
+M|4000Rnd_20mm_Tracer_Red_shells|20 mm Shells|1030|B_20mm_Tracer_Red|4000|1000Rnd_20mm_shells
+M|160Rnd_40mm_APFSDS_Tracer_Red_shells|40 mm APFSDS-T|1600|B_40mm_APFSDS_Tracer_Red|160|40Rnd_40mm_APFSDS_Tracer_Red_shells
+M|240Rnd_40mm_GPR_Tracer_Red_shells|40 mm GPR-T|1035|B_40mm_GPR_Tracer_Red|240|60Rnd_40mm_GPR_Tracer_Red_shells
+M|100Rnd_105mm_HEAT_MP|105mm HEAT-MP|1330|Sh_105mm_HEAT_MP|100|20Rnd_105mm_HEAT_MP
+M|magazine_Missile_rim116_x21|Spartan AA|40|ammo_Missile_rim116|21|VehicleMagazine
+M|magazine_Missile_rim162_x8|Centurion AA|60|ammo_Missile_rim162|8|VehicleMagazine
+M|magazine_Cannon_Phalanx_x1550|Praetorian 20mm|1440|ammo_AAA_Gun35mm_AA|1550|VehicleMagazine
+M|magazine_Fighter01_Gun20mm_AA_x450|M61 20mm 450 rnd|1036|ammo_Fighter01_Gun20mm_AA|450|VehicleMagazine
+M|magazine_Fighter04_Gun20mm_AA_x150|M61 20mm 150 rbd|1036|ammo_Fighter04_Gun20mm_AA|150|VehicleMagazine
+M|magazine_Fighter04_Gun20mm_AA_x250|M61 20mm 150 rbd|1036|ammo_Fighter04_Gun20mm_AA|250|VehicleMagazine
+M|magazine_Missile_AMRAAM_C_x1|AMRAAM C AA x1|0|ammo_Missile_AMRAAM_C|1|VehicleMagazine
+M|magazine_Missile_AMRAAM_D_x1|AMRAAM D AA x1|0|ammo_Missile_AMRAAM_D|1|VehicleMagazine
+M|magazine_Missile_BIM9X_x1|BIM 9X AA x1|0|ammo_Missile_BIM9X|1|VehicleMagazine
+M|magazine_Missile_AGM_02_x1|Macer II AGM x1|0|Missile_AGM_02_F|1|VehicleMagazine
+M|magazine_Bomb_GBU12_x1|GBU 12 LGB x1|0|Bomb_04_F|1|VehicleMagazine
+M|PylonMissile_Missile_AMRAAM_C_x1|AMRAAM C AA x1|0|ammo_Missile_AMRAAM_C|1|magazine_Missile_AMRAAM_C_x1
+M|PylonRack_Missile_AMRAAM_C_x1|AMRAAM C AA x1|0|ammo_Missile_AMRAAM_C|1|magazine_Missile_AMRAAM_C_x1
+M|PylonRack_Missile_AMRAAM_C_x2|AMRAAM C AA x2|0|ammo_Missile_AMRAAM_C|2|magazine_Missile_AMRAAM_C_x1
+M|PylonMissile_Missile_AMRAAM_D_x1|AMRAAM D AA x1|0|ammo_Missile_AMRAAM_D|1|magazine_Missile_AMRAAM_D_x1
+M|PylonMissile_Missile_AMRAAM_D_INT_x1|AMRAAM D AA x1|0|ammo_Missile_AMRAAM_D|1|magazine_Missile_AMRAAM_D_x1
+M|PylonRack_Missile_AMRAAM_D_x1|AMRAAM D AA x1|0|ammo_Missile_AMRAAM_D|1|magazine_Missile_AMRAAM_D_x1
+M|PylonRack_Missile_AMRAAM_D_x2|AMRAAM D AA x2|0|ammo_Missile_AMRAAM_D|2|magazine_Missile_AMRAAM_D_x1
+M|PylonMissile_Missile_BIM9X_x1|BIM 9X AA x1|0|ammo_Missile_BIM9X|1|magazine_Missile_BIM9X_x1
+M|PylonRack_Missile_BIM9X_x1|BIM 9X AA x1|0|ammo_Missile_BIM9X|1|magazine_Missile_BIM9X_x1
+M|PylonRack_Missile_BIM9X_x2|BIM 9X AA x2|0|ammo_Missile_BIM9X|2|magazine_Missile_BIM9X_x1
+M|PylonMissile_Missile_AGM_02_x1|Macer II AGM x1|0|Missile_AGM_02_F|1|magazine_Missile_AGM_02_x1
+M|PylonMissile_Missile_AGM_02_x2|Macer II AGM x2|0|Missile_AGM_02_F|2|magazine_Missile_AGM_02_x1
+M|PylonRack_Missile_AGM_02_x1|Macer II AGM x1|0|Missile_AGM_02_F|1|magazine_Missile_AGM_02_x1
+M|PylonRack_Missile_AGM_02_x2|Macer II AGM x2|0|Missile_AGM_02_F|2|magazine_Missile_AGM_02_x1
+M|PylonMissile_Bomb_GBU12_x1|GBU 12 LGB x1|0|Bomb_04_F|1|magazine_Bomb_GBU12_x1
+M|PylonRack_Bomb_GBU12_x2|GBU 12 LGB x2|0|Bomb_04_F|2|magazine_Bomb_GBU12_x1
+M|magazine_Fighter02_Gun30mm_AA_x180|Gsh 30mm 180 rnd|1036|ammo_Fighter02_Gun30mm_AA|180|VehicleMagazine
+M|magazine_Missile_AA_R73_x1|R73 SR AA x1|0|ammo_Missile_AA_R73|1|VehicleMagazine
+M|magazine_Missile_AA_R77_x1|R77 MR AA x1|0|ammo_Missile_AA_R77|1|VehicleMagazine
+M|magazine_Missile_AGM_KH25_x1|KH25 AGM x1|0|Missile_AGM_01_F|1|VehicleMagazine
+M|magazine_Bomb_KAB250_x1|KAB 250 LGB x1|0|Bomb_03_F|1|VehicleMagazine
+M|PylonMissile_Missile_AA_R73_x1|R73 SR AA x1|0|ammo_Missile_AA_R73|1|magazine_Missile_AA_R73_x1
+M|PylonMissile_Missile_AA_R77_x1|R77 MR AA x1|0|ammo_Missile_AA_R77|1|magazine_Missile_AA_R77_x1
+M|PylonMissile_Missile_AA_R77_INT_x1|R77 MR AA x1|0|ammo_Missile_AA_R77|1|magazine_Missile_AA_R77_x1
+M|PylonMissile_Missile_AGM_KH25_x1|KH25 AGM x1|0|Missile_AGM_01_F|1|magazine_Missile_AGM_KH25_x1
+M|PylonMissile_Missile_AGM_KH25_INT_x1|KH25 AGM x1|0|Missile_AGM_01_F|1|PylonMissile_Missile_AGM_KH25_x1
+M|PylonMissile_Bomb_KAB250_x1|KAB 250 LGB x1|0|Bomb_03_F|1|magazine_Bomb_KAB250_x1
+M|1Rnd_Leaflets_West_F|Leaflets|0|Bo_Leaflets|1|4Rnd_Bomb_04_F
+M|1Rnd_Leaflets_East_F|Leaflets|0|Bo_Leaflets|1|1Rnd_Leaflets_West_F
+M|1Rnd_Leaflets_Guer_F|Leaflets|0|Bo_Leaflets|1|1Rnd_Leaflets_West_F
+M|1Rnd_Leaflets_Civ_F|Leaflets|0|Bo_Leaflets|1|1Rnd_Leaflets_West_F
+M|1Rnd_Leaflets_Custom_01_F|Leaflets|0|Bo_Leaflets|1|1Rnd_Leaflets_West_F
+M|1Rnd_Leaflets_Custom_02_F|Leaflets|0|Bo_Leaflets|1|1Rnd_Leaflets_West_F
+M|1Rnd_Leaflets_Custom_03_F|Leaflets|0|Bo_Leaflets|1|1Rnd_Leaflets_West_F
+M|1Rnd_Leaflets_Custom_04_F|Leaflets|0|Bo_Leaflets|1|1Rnd_Leaflets_West_F
+M|1Rnd_Leaflets_Custom_05_F|Leaflets|0|Bo_Leaflets|1|1Rnd_Leaflets_West_F
+M|1Rnd_Leaflets_Custom_06_F|Leaflets|0|Bo_Leaflets|1|1Rnd_Leaflets_West_F
+M|1Rnd_Leaflets_Custom_07_F|Leaflets|0|Bo_Leaflets|1|1Rnd_Leaflets_West_F
+M|1Rnd_Leaflets_Custom_08_F|Leaflets|0|Bo_Leaflets|1|1Rnd_Leaflets_West_F
+M|1Rnd_Leaflets_Custom_09_F|Leaflets|0|Bo_Leaflets|1|1Rnd_Leaflets_West_F
+M|1Rnd_Leaflets_Custom_10_F|Leaflets|0|Bo_Leaflets|1|1Rnd_Leaflets_West_F
+M|4Rnd_BombCluster_01_F|CBU-85|0|BombCluster_01_Ammo_F|4|4Rnd_Bomb_04_F
+M|4Rnd_BombCluster_02_F|RBK-500F|0|BombCluster_02_Ammo_F|4|4Rnd_BombCluster_01_F
+M|4Rnd_BombCluster_03_F|BL778|0|BombCluster_03_Ammo_F|4|4Rnd_BombCluster_01_F
+M|PylonRack_4Rnd_BombDemine_01_F|Demining Charge|0.1|BombDemine_01_Ammo_F|4|4Rnd_Bomb_04_F
+M|PylonRack_4Rnd_BombDemine_01_Dummy_F|Demining Charge (Dummy)|0.1|BombDemine_01_DummyAmmo_F|4|PylonRack_4Rnd_BombDemine_01_F
+M|PylonMissile_1Rnd_BombCluster_01_F|CBU-85 Cluster x1|0|BombCluster_01_Ammo_F|1|PylonMissile_1Rnd_Bomb_04_F
+M|PylonRack_2Rnd_BombCluster_01_F|CBU-85 Cluster x2|0|BombCluster_01_Ammo_F|2|PylonMissile_1Rnd_BombCluster_01_F
+M|PylonMissile_1Rnd_BombCluster_02_F|RBK-500F Cluster x1|0|BombCluster_02_Ammo_F|1|PylonMissile_1Rnd_BombCluster_01_F
+M|PylonMissile_1Rnd_BombCluster_02_cap_F|RBK-500F Cluster x1|0|BombCluster_02_cap_Ammo_F|1|PylonMissile_1Rnd_BombCluster_02_F
+M|PylonMissile_1Rnd_BombCluster_03_F|BL778 Cluster x1|0|BombCluster_03_Ammo_F|1|PylonMissile_1Rnd_BombCluster_01_F
+M|PylonRack_2Rnd_BombCluster_03_F|BL778 Cluster x2|0|BombCluster_03_Ammo_F|2|PylonMissile_1Rnd_BombCluster_03_F
+M|Pylon_1Rnd_Leaflets_West_F|Leaflets (NATO)|0|Bo_Leaflets|1|1Rnd_Leaflets_West_F
+M|Pylon_1Rnd_Leaflets_East_F|Leaflets (CSAT)|0|Bo_Leaflets|1|Pylon_1Rnd_Leaflets_West_F
+M|Pylon_1Rnd_Leaflets_Guer_F|Leaflets (AAF)|0|Bo_Leaflets|1|Pylon_1Rnd_Leaflets_West_F
+M|Pylon_1Rnd_Leaflets_Civ_F|Leaflets (IDAP)|0|Bo_Leaflets|1|Pylon_1Rnd_Leaflets_West_F
+M|Pylon_1Rnd_Leaflets_Custom_01_F|Leaflets (Custom 01)|0|Bo_Leaflets|1|Pylon_1Rnd_Leaflets_West_F
+M|Pylon_1Rnd_Leaflets_Custom_02_F|Leaflets (Custom 02)|0|Bo_Leaflets|1|Pylon_1Rnd_Leaflets_West_F
+M|Pylon_1Rnd_Leaflets_Custom_03_F|Leaflets (Custom 03)|0|Bo_Leaflets|1|Pylon_1Rnd_Leaflets_West_F
+M|Pylon_1Rnd_Leaflets_Custom_04_F|Leaflets (Custom 04)|0|Bo_Leaflets|1|Pylon_1Rnd_Leaflets_West_F
+M|Pylon_1Rnd_Leaflets_Custom_05_F|Leaflets (Custom 05)|0|Bo_Leaflets|1|Pylon_1Rnd_Leaflets_West_F
+M|Pylon_1Rnd_Leaflets_Custom_06_F|Leaflets (Custom 06)|0|Bo_Leaflets|1|Pylon_1Rnd_Leaflets_West_F
+M|Pylon_1Rnd_Leaflets_Custom_07_F|Leaflets (Custom 07)|0|Bo_Leaflets|1|Pylon_1Rnd_Leaflets_West_F
+M|Pylon_1Rnd_Leaflets_Custom_08_F|Leaflets (Custom 08)|0|Bo_Leaflets|1|Pylon_1Rnd_Leaflets_West_F
+M|Pylon_1Rnd_Leaflets_Custom_09_F|Leaflets (Custom 09)|0|Bo_Leaflets|1|Pylon_1Rnd_Leaflets_West_F
+M|Pylon_1Rnd_Leaflets_Custom_10_F|Leaflets (Custom 10)|0|Bo_Leaflets|1|Pylon_1Rnd_Leaflets_West_F
+M|APERSMineDispenser_Mag|APERS Mine Dispenser|0|APERSMineDispenser_Ammo|1|SatchelCharge_Remote_Mag
+M|TrainingMine_Mag|Training Mine|0|TrainingMine_Ammo|1|APERSMine_Range_Mag
+M|200Rnd_338_Mag|.338 NM 130Rnd Belt|807|B_338_NM_Ball|200|130Rnd_338_Mag
+M|4Rnd_120mm_cannon_missiles|120mm ATGM|120|M_120mm_cannon_ATGM|4|VehicleMagazine
+M|4Rnd_120mm_LG_cannon_missiles|120mm ATGM LG|120|M_120mm_cannon_ATGM_LG|4|4Rnd_120mm_cannon_missiles
+M|4Rnd_125mm_cannon_missiles|125mm ATGM|120|M_125mm_cannon_ATGM|4|4Rnd_120mm_cannon_missiles
+M|60Rnd_30mm_MP_shells_Tracer_Green|30 mm MP-T|1070|B_30mm_MP_Tracer_Green|60|140Rnd_30mm_MP_shells_Tracer_Green
+M|Vorona_HEAT|9M135 HEAT Missile|150|M_Vorona_HEAT|1|CA_LauncherMagazine
+M|Vorona_HE|9M135 HE Missile|150|M_Vorona_HE|1|Vorona_HEAT
+M|SPG9_HEAT|PG-9N Round|435|M_SPG9_HEAT|1|VehicleMagazine
+M|12rnd_SPG9_HEAT|PG-9N Round|435|M_SPG9_HEAT|12|SPG9_HEAT
+M|SPG9_HE|OG-9VM Round|435|M_SPG9_HE|1|SPG9_HEAT
+M|8rnd_SPG9_HE|OG-9VM Round|435|M_SPG9_HE|8|SPG9_HE
+M|4Rnd_70mm_SAAMI_missiles|SAAMI Missile|120|M_70mm_SAAMI|4|VehicleMagazine
+M|2Rnd_127mm_Firefist_missiles|FireFIST ATGM Missile|19|M_127mm_Firefist_AT|2|VehicleMagazine
+M|MRAWS_HEAT_F|MAAWS HEAT 75 Round|350|R_MRAAWS_HEAT_F|1|CA_LauncherMagazine
+M|MRAWS_HE_F|MAAWS HE 44 Round|350|R_MRAAWS_HE_F|1|MRAWS_HEAT_F
+M|MRAWS_HEAT55_F|MAAWS HEAT 55 Round|350|R_MRAAWS_HEAT55_F|1|MRAWS_HEAT_F
+M|60Rnd_20mm_HE_shells|20 mm Shells|1044|B_20mm|60|VehicleMagazine
+M|60Rnd_20mm_AP_shells|20 mm Shells|1100|B_20mm_AP|60|VehicleMagazine
+M|magazine_Missiles_Cruise_01_x18|Cruise Missile HE|12|ammo_Missile_Cruise_01|18|VehicleMagazine
+M|magazine_Missiles_Cruise_01_Cluster_x18|Cruise Missile Cluster|12|ammo_Missile_Cruise_01_Cluster|18|magazine_Missiles_Cruise_01_x18
+M|magazine_ShipCannon_120mm_HE_shells_x32|HE Shells|810|ammo_ShipCannon_120mm_HE|32|32Rnd_155mm_Mo_shells
+M|magazine_ShipCannon_120mm_smoke_shells_x6|Smoke (White)|810|ammo_ShipCannon_120mm_smoke|6|6Rnd_155mm_Mo_smoke
+M|magazine_ShipCannon_120mm_HE_guided_shells_x2|Guided|810|ammo_ShipCannon_120mm_HE_guided|2|2Rnd_155mm_Mo_guided
+M|magazine_ShipCannon_120mm_HE_LG_shells_x2|Laser Guided|810|ammo_ShipCannon_120mm_HE_LG|2|2Rnd_155mm_Mo_LG
+M|magazine_ShipCannon_120mm_mine_shells_x6|Mine Cluster|810|ammo_ShipCannon_120mm_mine|6|6Rnd_155mm_Mo_mine
+M|magazine_ShipCannon_120mm_HE_cluster_shells_x2|Cluster Shells|810|ammo_ShipCannon_120mm_HE_cluster|2|2Rnd_155mm_Mo_Cluster
+M|magazine_ShipCannon_120mm_AT_mine_shells_x6|AT Mine Cluster|810|ammo_ShipCannon_120mm_AT_mine|6|6Rnd_155mm_Mo_AT_mine
+M|magazine_Missile_mim145_x4|Defender AA|45|ammo_Missile_mim145|4|VehicleMagazine
+M|magazine_Missile_s750_x4|Rhea AA|45|ammo_Missile_s750|4|magazine_Missile_mim145_x4
+M|magazine_Missile_HARM_x1|AGM-88C HARM x1|0|ammo_Missile_HARM|1|VehicleMagazine
+M|magazine_Bomb_SDB_x1|GBU SDB x1|0|ammo_Bomb_SDB|1|VehicleMagazine
+M|PylonMissile_Missile_HARM_x1|AGM-88C HARM x1|0|ammo_Missile_HARM|1|magazine_Missile_HARM_x1
+M|PylonRack_Missile_HARM_x1|AGM-88C HARM x1|0|ammo_Missile_HARM|1|magazine_Missile_HARM_x1
+M|PylonMissile_Missile_HARM_INT_x1|AGM-88C HARM x1|0|ammo_Missile_HARM|1|magazine_Missile_HARM_x1
+M|PylonRack_Bomb_SDB_x4|GBU SDB x4|0|ammo_Bomb_SDB|4|magazine_Bomb_SDB_x1
+M|magazine_Missile_KH58_x1|KH58 ARM x1|0|ammo_Missile_KH58|1|VehicleMagazine
+M|PylonMissile_Missile_KH58_x1|KH58 ARM x1|0|ammo_Missile_KH58|1|magazine_Missile_KH58_x1
+M|PylonMissile_Missile_KH58_INT_x1|KH58 ARM x1|0|ammo_Missile_KH58|1|magazine_Missile_KH58_x1
+M|75Rnd_762x39_Mag_F|7.62 mm 75Rnd AKM Mag|715|B_762x39_Ball_F|75|30Rnd_762x39_Mag_F
+M|75Rnd_762x39_Mag_Tracer_F|7.62 mm 75Rnd AKM Tracer Mag|715|B_762x39_Ball_F|75|75Rnd_762x39_Mag_F
+M|30rnd_762x39_AK12_Lush_Mag_F|7.62 mm 30rnd AK12 Khaki Mag|715|B_762x39_Ball_Green_F|30|30Rnd_762x39_AK12_Mag_F
+M|30rnd_762x39_AK12_Lush_Mag_Tracer_F|7.62 mm 30rnd AK12 Tracer Khaki Mag|715|B_762x39_Ball_Green_F|30|30Rnd_762x39_AK12_Mag_Tracer_F
+M|30rnd_762x39_AK12_Arid_Mag_F|7.62 mm 30rnd AK12 Sand Mag|715|B_762x39_Ball_Green_F|30|30Rnd_762x39_AK12_Mag_F
+M|30rnd_762x39_AK12_Arid_Mag_Tracer_F|7.62 mm 30rnd AK12 Tracer Sand Mag|715|B_762x39_Ball_Green_F|30|30Rnd_762x39_AK12_Mag_Tracer_F
+M|75rnd_762x39_AK12_Mag_F|7.62 mm 75rnd AK12 Mag|715|B_762x39_Ball_Green_F|75|30Rnd_762x39_AK12_Mag_F
+M|75rnd_762x39_AK12_Mag_Tracer_F|7.62 mm 75rnd AK12 Tracer Mag|715|B_762x39_Ball_Green_F|75|75rnd_762x39_AK12_Mag_F
+M|75rnd_762x39_AK12_Lush_Mag_F|7.62 mm 75rnd AK12 Lush Mag|715|B_762x39_Ball_Green_F|75|75rnd_762x39_AK12_Mag_F
+M|75rnd_762x39_AK12_Lush_Mag_Tracer_F|7.62 mm 75rnd AK12 Tracer Lush Mag|715|B_762x39_Ball_Green_F|75|75rnd_762x39_AK12_Mag_Tracer_F
+M|75rnd_762x39_AK12_Arid_Mag_F|7.62 mm 75rnd AK12 Arid Mag|715|B_762x39_Ball_Green_F|75|75rnd_762x39_AK12_Mag_F
+M|75rnd_762x39_AK12_Arid_Mag_Tracer_F|7.62 mm 75rnd AK12 Tracer Arid Mag|715|B_762x39_Ball_Green_F|75|75rnd_762x39_AK12_Mag_Tracer_F
+M|10Rnd_Mk14_762x51_Mag|7.62 mm 10rnd Mk14 Mag|850|B_762x51_Ball|10|20Rnd_762x51_Mag
+M|30Rnd_65x39_caseless_msbs_mag|6.5 mm 30Rnd Promet Mag|800|B_65x39_Caseless|30|30Rnd_65x39_caseless_mag
+M|30Rnd_65x39_caseless_msbs_mag_Tracer|6.5 mm 30Rnd Promet Tracer Mag|800|B_65x39_Caseless|30|30Rnd_65x39_caseless_msbs_mag
+M|2Rnd_12Gauge_Pellets|12 Gauge 2Rnd Pellets|380|B_12Gauge_Pellets_Submunition|2|CA_Magazine
+M|2Rnd_12Gauge_Slug|12 Gauge 2Rnd Slug|450|B_12Gauge_Slug_NoCartridge|2|2Rnd_12Gauge_Pellets
+M|6Rnd_12Gauge_Pellets|12 Gauge 6Rnd Pellets|380|B_12Gauge_Pellets_Submunition|6|2Rnd_12Gauge_Pellets
+M|6Rnd_12Gauge_Slug|12 Gauge 6Rnd Slug|450|B_12Gauge_Slug_NoCartridge|6|2Rnd_12Gauge_Pellets
+M|15Rnd_12Gauge_Pellets|12 Gauge 15Rnd Pellets|380|B_12Gauge_HD_Pellets_Submunition|15|6Rnd_12Gauge_Pellets
+M|15Rnd_12Gauge_Slug|12 Gauge 15Rnd Slug|450|B_12Gauge_Slug_NoCartridge|15|15Rnd_12Gauge_Pellets
+M|O_R_IR_Grenade|IR Grenade [Spetsnaz]|18|O_IRStrobe|1|O_IR_Grenade
+M|I_E_IR_Grenade|IR Grenade [LDF]|18|I_IRStrobe|1|I_IR_Grenade
+M|Antibiotic|Antibiotics|900||30|OM_Magazine
+M|Antimalaricum|Antimalarial Pills|900||30|OM_Magazine
+M|AntimalaricumVaccine|Atrox Counteragent|900||30|OM_Magazine
+M|Bandage|Bandages|900||30|OM_Magazine
+M|Files|Files|900||30|OM_Magazine
+M|Files_diary|Journal|900||30|Files
+M|Files_researchNotes|Research Notes|900||30|Files
+M|FileTopSecret|File (Top Secret)|900||30|OM_Magazine
+M|FileNetworkStructure|Network Structure Plans|900||30|OM_Magazine
+M|FilesSecret|File (Top Secret)|900||30|Files
+M|DocumentsSecret|File|900||30|Files
+M|Wallet_ID|Wallet (ID)|900||30|Files
+M|Keys|Keys|900||30|Files
+M|Csat_Id_01|Access Card (v1) [CSAT]|900||30|Files
+M|Csat_Id_02|Access Card (v2) [CSAT]|900||30|Files
+M|Csat_Id_03|Access Card (v3) [CSAT]|900||30|Files
+M|Csat_Id_04|Access Card (v4) [CSAT]|900||30|Files
+M|Csat_Id_05|Access Card (v5) [CSAT]|900||30|Files
+M|Laptop_Unfolded|Laptop (Open)|900||30|OM_Magazine
+M|Laptop_Closed|Laptop (Closed)|900||30|OM_Magazine
+M|SatPhone|Satellite Phone|900||30|OM_Magazine
+M|MobilePhone|Mobile Phone (Old)|900||30|OM_Magazine
+M|SmartPhone|Mobile Phone (New)|900||30|MobilePhone
+M|FlashDisk|Flash Drive|900||30|MobilePhone
+M|ButaneCanister|Butane Canister (Full)|900||30|OM_Magazine
+M|Money|Money|900||30|OM_Magazine
+M|Money_bunch|Money (Notes)|900||30|Money
+M|Money_roll|Money (Roll)|900||30|Money
+M|Money_stack|Money (Stack)|900||30|Money
+M|Money_stack_quest|Money (Large Stack)|900||30|Money_stack
+M|Sleeping_bag_folded_01|Sleeping Bag (Folded)|900||30|OM_Magazine
+M|Drone_Range_Mag|AT Mine|0|Drone_explosive_ammo|1|CA_Magazine
+M|Drone_Range_Mag_dummy|AT Mine|0|Drone_explosive_ammo_dummy|1|Drone_Range_Mag
+M|60Rnd_75mm_RailGun_APFSDS_mag|APFSDS-KE|3000|Sh_75mm_Railgun_APFSDS|60|VehicleMagazine
+M|RailGun_01_DummyMagazine|APFSDS-KE|3000|Sh_75mm_Railgun_APFSDS_fake|60|60Rnd_75mm_RailGun_APFSDS_mag
