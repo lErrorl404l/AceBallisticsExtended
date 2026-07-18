@@ -212,7 +212,7 @@ fn sqf_all_lifecycle_tests() {
     assert_eq!(parts.len(), 4, "fire result should have 4 fields");
     assert!(r.starts_with('['), "result should start with '['");
     let mv: f64 = parts[0].parse().expect("mv should be numeric");
-    assert!(mv > 800.0 && mv < 1100.0, "mv in [800,1100]: {mv}");
+    assert!(mv > 600.0 && mv < 750.0, "mv in [600,750]: {mv}");
     assert!(
         !parts[0].contains("000000"),
         "no excess precision: {}",
@@ -248,8 +248,8 @@ fn sqf_all_lifecycle_tests() {
     let nato = rv_ext_args("fire", &["508", "380", "7.62", "9.5", "g7"]);
     let mv_nato: f64 = parse_array(&nato)[0].parse().unwrap();
     assert!(
-        mv_nato > 750.0 && mv_nato < 1000.0,
-        "M80 MV in [750,1000]: {mv_nato}"
+        mv_nato > 500.0 && mv_nato < 750.0,
+        "M80 MV in [500,750]: {mv_nato}"
     );
 
     // ── Step commands (fnc_step.sqf) ────────────────────────────────────
@@ -417,7 +417,7 @@ fn sqf_all_lifecycle_tests() {
     let fire = rv_ext_args("fire", &["508", "380", "5.56", "4.0", "g7"]);
     assert_ne!(fire, "-1");
     let mv: f64 = parse_array(&fire)[0].parse().unwrap();
-    assert!(mv > 800.0, "MV should be reasonable: {mv}");
+    assert!(mv > 600.0, "MV should be reasonable: {mv}");
 
     // Step × 100 (1s flight at dt=0.01)
     let (mut x, mut z) = (0.0_f64, 0.0_f64);
@@ -435,7 +435,7 @@ fn sqf_all_lifecycle_tests() {
         vz = p[5].parse().unwrap();
     }
 
-    assert!(x > 500.0, "bullet should travel: x={x:.1}");
+    assert!(x > 400.0, "bullet should travel: x={x:.1}");
     assert!(z > 0.0, "bullet should drop: z={z:.1}");
     assert!(vx < mv, "bullet should slow: {vx:.1} < {mv:.1}");
 
@@ -791,7 +791,7 @@ fn sqf_subsonic_transition() {
     let r = rv_ext_args("fire", &["368", "380", "5.56", "4.0", "g7"]);
     assert_ne!(r, "-1");
     let mv: f64 = parse_array(&r)[0].parse().unwrap();
-    assert!(mv > 800.0, "MV reasonable: {mv}");
+    assert!(mv > 600.0, "MV reasonable: {mv}");
 
     let (mut x, mut y, mut z) = (0.0_f64, 0.0_f64, 0.0_f64);
     let (mut vx, mut vy, mut vz) = (mv, 0.0_f64, 0.0_f64);

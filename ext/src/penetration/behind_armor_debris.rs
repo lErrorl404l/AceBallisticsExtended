@@ -150,7 +150,8 @@ pub enum ThreatLevel {
 /// # Example
 ///
 /// ```
-/// use abe::penetration::behind_armor_debris::classify_bad_threat;
+/// use abe_ballistics_ext::penetration::behind_armor_debris::classify_bad_threat;
+/// use abe_ballistics_ext::penetration::behind_armor_debris::ThreatLevel;
 ///
 /// let level = classify_bad_threat(3.2);
 /// assert_eq!(level, ThreatLevel::Moderate);

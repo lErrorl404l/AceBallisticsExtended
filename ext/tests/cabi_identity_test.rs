@@ -84,7 +84,10 @@ fn native_muzzle_velocity(
     let efficiency = base_efficiency * length_efficiency;
 
     // ── Muzzle velocity ────────────────────────────────────────────────────
-    let ke = pressure_pa * bore_area * work_integral * efficiency;
+    // AVG_PRESSURE_FACTOR (0.58) converts peak chamber pressure to effective
+    // average pressure over the projectile travel. Must match interior.rs.
+    const AVG_PRESSURE_FACTOR: f64 = 0.58;
+    let ke = pressure_pa * bore_area * work_integral * efficiency * AVG_PRESSURE_FACTOR;
     let muzzle_velocity = (2.0 * ke / mass_kg).sqrt();
 
     // ── Derived quantities ─────────────────────────────────────────────────
