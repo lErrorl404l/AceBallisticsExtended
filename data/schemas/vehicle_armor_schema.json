@@ -43,6 +43,20 @@
             "type": "string",
             "description": "Optional backing material (e.g. spall_liner_kevlar)",
             "default": null
+          },
+          "backing_thickness_mm": {
+            "type": "number",
+            "description": "Backing material thickness in millimeters",
+            "default": null,
+            "exclusiveMinimum": 0,
+            "maximum": 2000
+          },
+          "backing_angle_deg": {
+            "type": "number",
+            "description": "Backing plate angle from vertical in degrees",
+            "default": null,
+            "minimum": 0,
+            "maximum": 90
           }
         },
         "additionalProperties": false

@@ -2,72 +2,59 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/lErrorl404l/AceBallisticsExtended/schemas/weapon",
   "title": "ABE Weapon Configuration",
-  "description": "Weapon barrel and chamber configuration for the Advanced Ballistics Extension",
+  "description": "Weapon barrel and chamber configuration matching the WeaponConfig Rust struct",
   "type": "object",
-  "required": ["weaponClass", "barrelLengthMm", "caliberMm"],
+  "required": ["class", "caliber_mm", "barrel_length_mm", "chamber_pressure_mpa"],
+  "additionalProperties": false,
   "properties": {
-    "weaponClass": {
+    "class": {
       "type": "string",
-      "description": "ARMA 3 CfgWeapons class name this config applies to",
+      "description": "CfgWeapons class name (e.g. rhs_weap_m4a1)",
       "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
     },
-    "barrelLengthMm": {
+    "caliber_mm": {
+      "type": "number",
+      "description": "Barrel caliber in millimeters",
+      "exclusiveMinimum": 0,
+      "maximum": 200
+    },
+    "barrel_length_mm": {
       "type": "number",
       "description": "Barrel length in millimeters",
       "exclusiveMinimum": 0,
       "maximum": 2000
     },
-    "caliberMm": {
+    "rifling_twist_mm": {
       "type": "number",
-      "description": "Bullet caliber in millimeters",
+      "description": "Rifling twist rate in mm per revolution (e.g. 178 for 1:7\"). Alias: twist_rate_mm",
+      "default": 0,
       "exclusiveMinimum": 0,
-      "maximum": 50
+      "maximum": 2000
     },
-    "chamberPressureMpa": {
+    "chamber_pressure_mpa": {
       "type": "number",
-      "description": "Maximum chamber pressure in MPa (SAAMI/CIP standard)",
+      "description": "Peak chamber pressure in MPa (SAAMI/CIP)",
       "exclusiveMinimum": 0,
       "maximum": 700
     },
-    "riflingTwistMm": {
-      "type": "number",
-      "description": "Rifling twist rate in mm per revolution (e.g., 178 for 1:7\")",
-      "exclusiveMinimum": 0,
-      "maximum": 2000
-    },
-    "twist_rate_mm": {
-      "type": "number",
-      "description": "Twist rate in mm per revolution (alias for riflingTwistMm / rifling_twist_mm)",
-      "exclusiveMinimum": 0,
-      "maximum": 2000
-    },
-    "projectileMassG": {
-      "type": "number",
-      "description": "Projectile mass in grams (overrides ammo config)",
-      "exclusiveMinimum": 0,
-      "maximum": 1000
-    },
-    "cdmId": {
+    "cdm_id": {
       "type": "string",
-      "description": "Drag model curve ID (overrides ammo config)",
-      "examples": ["g1", "g7", "g8", "custom_m4_55gr"]
+      "description": "Drag model curve identifier (default: g7)",
+      "default": "g7"
     },
-    "zeroRangeM": {
+    "muzzle_velocity_ms": {
       "type": "number",
-      "description": "Zero range in meters",
+      "description": "Published muzzle velocity in m/s (optional, for reference)",
+      "default": 0,
+      "exclusiveMinimum": 0,
+      "maximum": 2500
+    },
+    "zero_range_m": {
+      "type": "number",
+      "description": "Zero range in meters (default: 100)",
       "default": 100,
       "minimum": 0,
       "maximum": 1000
-    },
-    "effectiveRangeM": {
-      "type": "number",
-      "description": "Maximum effective range in meters",
-      "exclusiveMinimum": 0,
-      "maximum": 5000
-    },
-    "notes": {
-      "type": "string",
-      "description": "Free-text notes about data source or assumptions"
     }
   }
 }
