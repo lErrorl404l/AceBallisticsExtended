@@ -1,0 +1,13 @@
+{
+  "class": "rhs_weap_m249",
+  "caliber_mm": 5.56,
+  "barrel_length_mm": 465,
+  "rifling_twist_mm": 178,
+  "chamber_pressure_mpa": 430,
+  "cdm_id": "g7",
+  "projectile_mass_g": 4.0,
+  "muzzle_velocity_ms": 915,
+  "zero_range_m": 100,
+  "effective_range_m": 500,
+  "notes": "IRL: M249 SAW 18.3\" 1:7. Data from SAAMI/CIP/manufacturer specs."
+}

@@ -1,0 +1,13 @@
+{
+  "class": "arifle_AK74M_F",
+  "caliber_mm": 5.45,
+  "barrel_length_mm": 415,
+  "rifling_twist_mm": 200,
+  "chamber_pressure_mpa": 355,
+  "cdm_id": "g7",
+  "projectile_mass_g": 3.4,
+  "muzzle_velocity_ms": 880,
+  "zero_range_m": 100,
+  "effective_range_m": 500,
+  "notes": "IRL: AK-74M 16.3\" 1:7.87. Data from SAAMI/CIP/manufacturer specs."
+}

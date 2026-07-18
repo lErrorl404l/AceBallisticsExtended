@@ -3,10 +3,11 @@
   "caliber_mm": 5.45,
   "barrel_length_mm": 414.02,
   "rifling_twist_mm": 199.9,
-  "chamber_pressure_mpa": 355.0,
+  "chamber_pressure_mpa": 355,
   "cdm_id": "g7",
   "projectile_mass_g": 3.43,
   "muzzle_velocity_ms": 880,
   "zero_range_m": 100.0,
+  "effective_range_m": 500,
   "notes": "IRL: AK-74M (RHS)."
 }

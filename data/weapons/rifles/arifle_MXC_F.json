@@ -1,0 +1,13 @@
+{
+  "class": "arifle_MXC_F",
+  "caliber_mm": 6.5,
+  "barrel_length_mm": 267,
+  "rifling_twist_mm": 203,
+  "chamber_pressure_mpa": 360,
+  "cdm_id": "g7",
+  "projectile_mass_g": 7.9,
+  "muzzle_velocity_ms": 710,
+  "zero_range_m": 100,
+  "effective_range_m": 500,
+  "notes": "IRL: MXC 10.5\" 1:8. Data from SAAMI/CIP/manufacturer specs."
+}

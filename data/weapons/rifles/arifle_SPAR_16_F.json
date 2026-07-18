@@ -1,0 +1,13 @@
+{
+  "class": "arifle_SPAR_16_F",
+  "caliber_mm": 5.56,
+  "barrel_length_mm": 368,
+  "rifling_twist_mm": 178,
+  "chamber_pressure_mpa": 430,
+  "cdm_id": "g7",
+  "projectile_mass_g": 4.0,
+  "muzzle_velocity_ms": 880,
+  "zero_range_m": 100,
+  "effective_range_m": 500,
+  "notes": "IRL: SPAR16 14.5\" 1:7. Data from SAAMI/CIP/manufacturer specs."
+}

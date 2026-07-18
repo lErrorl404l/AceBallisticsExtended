@@ -1,0 +1,13 @@
+{
+  "class": "arifle_QBU_03_F",
+  "caliber_mm": 6.5,
+  "barrel_length_mm": 406,
+  "rifling_twist_mm": 203,
+  "chamber_pressure_mpa": 380,
+  "cdm_id": "g7",
+  "projectile_mass_g": 7.9,
+  "muzzle_velocity_ms": 770,
+  "zero_range_m": 100,
+  "effective_range_m": 500,
+  "notes": "IRL: QBU 16\" 1:8. Data from SAAMI/CIP/manufacturer specs."
+}

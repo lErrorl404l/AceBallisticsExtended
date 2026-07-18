@@ -1,0 +1,13 @@
+{
+  "class": "arifle_XM7_F",
+  "caliber_mm": 6.8,
+  "barrel_length_mm": 330,
+  "rifling_twist_mm": 203,
+  "chamber_pressure_mpa": 520,
+  "cdm_id": "g7",
+  "projectile_mass_g": 5.5,
+  "muzzle_velocity_ms": 915,
+  "zero_range_m": 100,
+  "effective_range_m": 500,
+  "notes": "IRL: XM7 13\" 1:8. Data from SAAMI/CIP/manufacturer specs."
+}
