@@ -1,0 +1,13 @@
+{
+  "class": "hgun_ACPC2_F",
+  "caliber_mm": 9.0,
+  "barrel_length_mm": 108,
+  "rifling_twist_mm": 254,
+  "chamber_pressure_mpa": 241,
+  "cdm_id": "g1",
+  "projectile_mass_g": 8.0,
+  "muzzle_velocity_ms": 350,
+  "zero_range_m": 100,
+  "effective_range_m": 500,
+  "notes": "IRL: ACPC2 4.25\" 1:10 9mm. Data from SAAMI/CIP/manufacturer specs."
+}

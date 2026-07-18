@@ -1,0 +1,13 @@
+{
+  "class": "launch_Vorona_F",
+  "caliber_mm": 130.0,
+  "barrel_length_mm": 1100,
+  "rifling_twist_mm": 0,
+  "chamber_pressure_mpa": 0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 0,
+  "muzzle_velocity_ms": 0,
+  "zero_range_m": 100,
+  "effective_range_m": 500,
+  "notes": "IRL: Vorona (smoothbore). Data from SAAMI/CIP/manufacturer specs."
+}

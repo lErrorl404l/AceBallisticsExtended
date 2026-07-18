@@ -1,0 +1,13 @@
+{
+  "class": "LMG_Mk30_F",
+  "caliber_mm": 7.62,
+  "barrel_length_mm": 500,
+  "rifling_twist_mm": 254,
+  "chamber_pressure_mpa": 380,
+  "cdm_id": "g7",
+  "projectile_mass_g": 9.5,
+  "muzzle_velocity_ms": 840,
+  "zero_range_m": 100,
+  "effective_range_m": 500,
+  "notes": "IRL: Mk30 19.7\" 1:10. Data from SAAMI/CIP/manufacturer specs."
+}
