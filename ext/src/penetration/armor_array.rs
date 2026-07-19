@@ -319,7 +319,7 @@ pub fn spaced_hard_face_array(
 /// * `projectile_type` — Projectile type string ("ball", "ap", "apfsds", etc.).
 ///
 /// # Returns
-/// A [`PenetrationResult`] describing whether the total armor was perforated.
+/// A [`PenetrationResult`](crate::penetration::PenetrationResult) describing whether the total armor was perforated.
 pub fn evaluate_armor_with_backing(
     thickness_mm: f64,
     material: &str,
