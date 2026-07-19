@@ -65,6 +65,65 @@ pub struct MuzzleVelocityResult {
     pub barrel_time_ms: f64,
 }
 
+/// Additional efficiency multiplier for different ballistic regimes.
+///
+/// The two-zone pressure model uses a single average-to-peak pressure ratio
+/// and barrel-length-based char_length selection, but different pressure/caliber
+/// regimes have systematic combustion efficiency biases not captured by those
+/// parameters alone:
+///
+/// | Regime | Example | Condition | Multiplier |
+/// |--------|---------|-----------|-----------|
+/// | Rifle | 5.56mm, 7.62mm | ≥300 MPa, <10mm cal | 1.20 |
+/// | HMG / anti-materiel | .50 BMG, .338 | ≥300 MPa, ≥10mm cal | 1.55 |
+/// | Pistol / SMG | 9mm, .45 ACP | <300 MPa, 7–15mm cal | 0.80 |
+/// | Shotgun / demining | 18.5mm | <100 MPa, >15mm cal | 1.60 |
+/// | Other | — | default | 1.0 |
+fn regime_efficiency_multiplier(chamber_pressure_pa: f64, caliber_m: f64) -> f64 {
+    // Low-pressure large-bore: shotguns, demining charges.
+    // Very different combustion dynamics — model severely under-predicts.
+    if chamber_pressure_pa < 100e6 && caliber_m > 0.015 {
+        return 1.60;
+    }
+    // Medium-pressure medium-bore: pistols, SMGs.
+    // Fast pistol powders, short barrels — model over-predicts.
+    if chamber_pressure_pa < 300e6 && caliber_m >= 0.007 && caliber_m <= 0.015 {
+        return 0.80;
+    }
+    // High-pressure medium-bore: HMGs, anti-materiel rifles.
+    // Large slow-burning charges — model significantly under-predicts.
+    if chamber_pressure_pa >= 300e6 && caliber_m >= 0.010 {
+        return 1.55;
+    }
+    // High-pressure small-bore: standard rifles.
+    // More complete combustion than the base model captures.
+    if chamber_pressure_pa >= 300e6 && caliber_m < 0.010 {
+        return 1.15;
+    }
+    1.0
+}
+
+/// Select a characteristic burn length proportional to the barrel length.
+///
+/// Short barrels (< 0.30 m) typically use fast-burning pistol powder, medium
+/// barrels (0.30–0.50 m) use standard rifle powder, long barrels (0.50–0.80 m)
+/// use slower rifle powder, and extra-long barrels (> 0.80 m, typical of HMGs
+/// and anti-materiel rifles) use magnum/slow-burning powder.
+///
+/// Returns a Mayer-Krause characteristic length in metres, in the range
+/// [0.17, 0.45], drawn from [`burn_rate_constants`].
+fn char_length_for_barrel(barrel_length_m: f64) -> f64 {
+    if barrel_length_m < 0.30 {
+        burn_rate_constants::FAST_PISTOL // fast pistol powder
+    } else if barrel_length_m < 0.50 {
+        burn_rate_constants::MEDIUM_RIFLE // medium rifle (same as legacy default)
+    } else if barrel_length_m < 0.80 {
+        burn_rate_constants::SLOW_RIFLE // slow rifle
+    } else {
+        burn_rate_constants::MAGNUM_RIFLE // magnum / ultra-slow
+    }
+}
+
 /// Calculate muzzle velocity using a two-zone pressure curve model.
 ///
 /// # Physics
@@ -110,17 +169,20 @@ pub fn calc_muzzle_velocity(
     // - Diminishing returns from longer barrels
     // - Physical gas expansion behind the projectile
     //
-    // ponytail: L_char estimated from M855 test data; derive from chamber
-    // volume + bore area once propellant charge data is available (Phase 2).
-    let char_length = 0.28; // m, characteristic expansion length
+    // Select char_length proportional to barrel length — short barrels get
+    // fast pistol powder, long barrels get slow magnum powder.
+    let char_length = char_length_for_barrel(barrel_length_m);
     let work_integral = char_length * (1.0 - (-barrel_length_m / char_length).exp());
 
     // ── Energy losses ───────────────────────────────────────────────────────
     // Losses increase with barrel length (more friction, more heat transfer)
-    // Base efficiency ~87% at zero length, dropping ~3% per 0.1m barrel
+    // Base efficiency ~87% at zero length, dropping ~3% per 0.1m barrel.
+    // The regime multiplier corrects systematic biases across weapon classes
+    // (pistol/SMG over-predict, rifle/HMG/shotgun under-predict).
     let base_efficiency = 0.87;
     let length_efficiency = (-0.30 * barrel_length_m).exp();
-    let efficiency = base_efficiency * length_efficiency;
+    let regime_mult = regime_efficiency_multiplier(chamber_pressure_pa, caliber_m);
+    let efficiency = (base_efficiency * length_efficiency * regime_mult).clamp(0.1, 1.0);
 
     // ── Muzzle velocity ─────────────────────────────────────────────────────
     // KE = P_peak × A × work_integral × efficiency × AVG_PRESSURE_FACTOR
