@@ -2,7 +2,7 @@
 //!
 //! Run: cargo run --example trajectory_table
 
-use abe_ballistics_ext::{abe_init, abe_step, BulletState, StepParams};
+use abe_ballistics_ext::{abe_init, abe_step, BulletState, StepParams, MAGIC_ABE};
 
 const ABE_API_VERSION: u32 = 1;
 const DT_S: f64 = 0.01;
@@ -31,6 +31,7 @@ fn simulate_trajectory(
 
     while x < 1050.0 && vx > 50.0 && next_idx < SAMPLE_RANGES.len() {
         let step = StepParams {
+            magic: MAGIC_ABE,
             pos_x: x,
             pos_y: y,
             pos_z: z,

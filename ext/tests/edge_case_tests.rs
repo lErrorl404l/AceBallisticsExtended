@@ -12,7 +12,7 @@
 
 #![allow(dead_code)]
 
-use abe_ballistics_ext::{abe_init, abe_step, BulletState, StepParams};
+use abe_ballistics_ext::{abe_init, abe_step, BulletState, StepParams, MAGIC_ABE};
 
 const ABE_API_VERSION: u32 = 1;
 
@@ -70,6 +70,7 @@ fn simulate(
 
     for _step in 0..MAX_STEPS {
         let step = StepParams {
+            magic: MAGIC_ABE,
             pos_x: x,
             pos_y: y,
             pos_z: z,
@@ -491,6 +492,7 @@ fn negative_range_graceful() {
     let cdm_id = make_cdm("g7");
 
     let params = StepParams {
+        magic: MAGIC_ABE,
         pos_x: 0.0,
         pos_y: 0.0,
         pos_z: 0.0,
@@ -680,6 +682,7 @@ fn extreme_crosswind() {
 
         for _ in 0..MAX_STEPS {
             let step = StepParams {
+                magic: MAGIC_ABE,
                 pos_x: x,
                 pos_y: y,
                 pos_z: z,

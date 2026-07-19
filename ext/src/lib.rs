@@ -51,6 +51,15 @@ use std::sync::OnceLock;
 const ABE_API_VERSION: u32 = 1;
 const ABE_VERSION: &str = "0.1.0";
 
+/// Magic number for struct-mode FFI validation.
+///
+/// Every `FireParams`, `StepParams`, and `ImpactParams` must have
+/// `magic: MAGIC_ABE` as its first field.  The struct ABI functions
+/// check this before any computation and return -2 on mismatch,
+/// catching misaligned pointers / malformed structs from buggy SQF
+/// or ACE3 conflicts.
+pub const MAGIC_ABE: u64 = 0x4142455f5255434b;
+
 // ── Global state ──────────────────────────────────────────────────────────────
 
 #[allow(dead_code)] // ponytail: fields store runtime state queried via FFI
@@ -605,9 +614,16 @@ pub extern "C" fn abe_version() -> *const c_char {
 /// Describes the weapon and projectile combination for interior
 /// ballistics computation. All dimensional values are in SI-related
 /// units (mm, g, MPa) for convenient SQF interop.
+///
+/// # Validation
+/// `magic` MUST equal [`MAGIC_ABE`].  `abe_fire` returns -2 on mismatch.
 #[repr(C)]
 #[derive(Debug, Clone, Copy)]
 pub struct FireParams {
+    /// Magic number — must be `MAGIC_ABE` (0x4142455f5255434b).
+    /// Placed at offset 0 to detect misaligned / shifted pointers.
+    pub magic: u64,
+
     /// Barrel length in millimetres (e.g. 368.0 for an M4).
     pub barrel_length_mm: f64,
 
@@ -685,6 +701,9 @@ pub extern "C" fn abe_fire(params: &FireParams, result: &mut FireResult) -> i32 
     if !get_state().initialized {
         return -1;
     }
+    if params.magic != MAGIC_ABE {
+        return -2;
+    }
 
     let cdm_str = match CStr::from_bytes_until_nul(&params.cdm_id) {
         Ok(s) => s.to_str().unwrap_or("g7"),
@@ -744,9 +763,16 @@ pub struct BulletState {
 /// Describes the current projectile state, environment, and
 /// projectile properties for one semi-implicit Euler integration
 /// step.
+///
+/// # Validation
+/// `magic` MUST equal [`MAGIC_ABE`].  `abe_step` returns -2 on mismatch.
 #[repr(C)]
 #[derive(Debug, Clone, Copy)]
 pub struct StepParams {
+    /// Magic number — must be `MAGIC_ABE` (0x4142455f5255434b).
+    /// Placed at offset 0 to detect misaligned / shifted pointers.
+    pub magic: u64,
+
     /// Current x-position (metres).
     pub pos_x: f64,
     /// Current y-position (metres).
@@ -838,6 +864,9 @@ pub struct StepParams {
 pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32 {
     if !get_state().initialized {
         return -1;
+    }
+    if params.magic != MAGIC_ABE {
+        return -2;
     }
 
     let cdm_str = match CStr::from_bytes_until_nul(&params.cdm_id) {
@@ -977,9 +1006,16 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
 ///
 /// Describes a projectile impact against an armour plate for
 /// terminal ballistics evaluation.
+///
+/// # Validation
+/// `magic` MUST equal [`MAGIC_ABE`].  `abe_impact` returns -2 on mismatch.
 #[repr(C)]
 #[derive(Debug, Clone, Copy)]
 pub struct ImpactParams {
+    /// Magic number — must be `MAGIC_ABE` (0x4142455f5255434b).
+    /// Placed at offset 0 to detect misaligned / shifted pointers.
+    pub magic: u64,
+
     /// Impact velocity x-component (m/s).
     pub vel_x: f64,
     /// Impact velocity y-component (m/s).
@@ -1085,6 +1121,9 @@ pub struct ImpactResult {
 pub extern "C" fn abe_impact(params: &ImpactParams, result: &mut ImpactResult) -> i32 {
     if !get_state().initialized {
         return -1;
+    }
+    if params.magic != MAGIC_ABE {
+        return -2;
     }
 
     let speed = (params.vel_x.powi(2) + params.vel_y.powi(2) + params.vel_z.powi(2)).sqrt();
@@ -1209,6 +1248,7 @@ mod tests {
         cdm[..3].copy_from_slice(b"g7\0");
 
         let params = FireParams {
+            magic: MAGIC_ABE,
             barrel_length_mm: 368.0,
             chamber_pressure_mpa: 380.0,
             caliber_mm: 5.56,
@@ -1232,6 +1272,7 @@ mod tests {
         cdm[..3].copy_from_slice(b"g7\0");
 
         let short = FireParams {
+            magic: MAGIC_ABE,
             barrel_length_mm: 254.0,
             chamber_pressure_mpa: 380.0,
             caliber_mm: 5.56,
@@ -1239,6 +1280,7 @@ mod tests {
             cdm_id: cdm.clone(),
         };
         let long = FireParams {
+            magic: MAGIC_ABE,
             barrel_length_mm: 508.0,
             chamber_pressure_mpa: 380.0,
             caliber_mm: 5.56,
@@ -1261,6 +1303,7 @@ mod tests {
         cdm[..3].copy_from_slice(b"g7\0");
 
         let params = StepParams {
+            magic: MAGIC_ABE,
             pos_x: 0.0,
             pos_y: 0.0,
             pos_z: 0.0,
@@ -1298,6 +1341,7 @@ mod tests {
         proj[..5].copy_from_slice(b"ball\0");
 
         let params = ImpactParams {
+            magic: MAGIC_ABE,
             vel_x: 900.0,
             vel_y: 0.0,
             vel_z: 0.0,
@@ -1494,6 +1538,7 @@ mod tests {
 
         while x < 1050.0 && vx > 50.0 && next_range_idx < SAMPLE_RANGES.len() {
             let step = StepParams {
+                magic: MAGIC_ABE,
                 pos_x: x,
                 pos_y: y,
                 pos_z: z,
@@ -1938,6 +1983,7 @@ mod tests {
 
         // 1. Fire with 368mm barrel, 380 MPa, 5.56mm, 4.0g
         let fire = FireParams {
+            magic: MAGIC_ABE,
             barrel_length_mm: 368.0,
             chamber_pressure_mpa: 380.0,
             caliber_mm: 5.56,
@@ -1959,6 +2005,7 @@ mod tests {
 
         for _ in 0..200 {
             let step = StepParams {
+                magic: MAGIC_ABE,
                 pos_x: x,
                 pos_y: y,
                 pos_z: z,
@@ -1995,6 +2042,7 @@ mod tests {
         proj[..5].copy_from_slice(b"ball\0");
 
         let impact = ImpactParams {
+            magic: MAGIC_ABE,
             vel_x: vx,
             vel_y: vy,
             vel_z: vz,
@@ -2092,6 +2140,7 @@ mod tests {
         let (mut bx, mut by, mut bz, mut bvx, mut bvy, mut bvz) = (0.0, 0.0, 0.0, 320.0, 0.0, 0.0);
 
         let base = StepParams {
+            magic: MAGIC_ABE,
             pos_x: 0.0,
             pos_y: 0.0,
             pos_z: 0.0,
@@ -2127,6 +2176,7 @@ mod tests {
 
             for _ in 0..5 {
                 let step = StepParams {
+                    magic: MAGIC_ABE,
                     pos_x: *x,
                     pos_y: *y,
                     pos_z: *z,
@@ -2185,6 +2235,7 @@ mod tests {
 
             for _ in 0..50 {
                 let step = StepParams {
+                    magic: MAGIC_ABE,
                     pos_x: x,
                     pos_y: y,
                     pos_z: z,
@@ -2251,6 +2302,7 @@ mod tests {
 
         for _ in 0..200 {
             let params = StepParams {
+                magic: MAGIC_ABE,
                 pos_x: x,
                 pos_y: y,
                 pos_z: z,
@@ -2313,6 +2365,7 @@ mod tests {
 
         for _ in 0..200 {
             let params = StepParams {
+                magic: MAGIC_ABE,
                 pos_x: x,
                 pos_y: y,
                 pos_z: z,
@@ -2377,6 +2430,7 @@ mod tests {
 
         for step_num in 0..20 {
             let params = StepParams {
+                magic: MAGIC_ABE,
                 pos_x: x,
                 pos_y: y,
                 pos_z: z,
@@ -2453,6 +2507,7 @@ mod tests {
 
             for _ in 0..50 {
                 let params = StepParams {
+                    magic: MAGIC_ABE,
                     pos_x: x,
                     pos_y: y,
                     pos_z: z,

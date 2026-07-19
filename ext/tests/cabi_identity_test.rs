@@ -23,7 +23,7 @@
 
 use abe_ballistics_ext::{
     abe_fire, abe_health, abe_impact, abe_init, abe_step, drag, exterior, penetration, BulletState,
-    FireParams, FireResult, ImpactParams, ImpactResult, StepParams,
+    FireParams, FireResult, ImpactParams, ImpactResult, StepParams, MAGIC_ABE,
 };
 use std::ffi::CStr;
 
@@ -219,12 +219,21 @@ fn native_step(params: &StepParams) -> BulletState {
 // Tests
 // ═════════════════════════════════════════════════════════════════════════════
 
+// ── Helpers ─────────────────────────────────────────────────────────────────
+
+/// Initialize the extension state.  Safe to call from every test because
+/// OnceLock::set is idempotent — tests run in parallel within the binary
+/// and the first one to arrive initialises STATE, the rest are no-ops.
+fn ensure_initialized() {
+    assert_eq!(abe_init(ABE_API_VERSION, 0), 0);
+    assert_eq!(abe_health(), 1);
+}
+
 // ── Fire (interior ballistics) ─────────────────────────────────────────────
 
 #[test]
 fn cabi_fire_identity_m855_m4() {
-    assert_eq!(abe_init(ABE_API_VERSION, 0), 0);
-    assert_eq!(abe_health(), 1);
+    ensure_initialized();
 
     let barrel_length_mm = 368.0;
     let chamber_pressure_mpa = 380.0;
@@ -234,6 +243,7 @@ fn cabi_fire_identity_m855_m4() {
 
     // C FFI path
     let params = FireParams {
+        magic: MAGIC_ABE,
         barrel_length_mm,
         chamber_pressure_mpa,
         caliber_mm,
@@ -278,6 +288,7 @@ fn cabi_fire_identity_m855_m4() {
 
 #[test]
 fn cabi_fire_identity_nato_762() {
+    ensure_initialized();
     // 7.62mm NATO (M80 ball) through a 508 mm barrel
     let barrel_length_mm = 508.0;
     let chamber_pressure_mpa = 360.0;
@@ -286,6 +297,7 @@ fn cabi_fire_identity_nato_762() {
     let cdm = make_cdm("g7");
 
     let params = FireParams {
+        magic: MAGIC_ABE,
         barrel_length_mm,
         chamber_pressure_mpa,
         caliber_mm,
@@ -317,6 +329,7 @@ fn cabi_fire_identity_nato_762() {
 
 #[test]
 fn cabi_fire_identity_multiple_barrels() {
+    ensure_initialized();
     // Sweep barrel lengths to ensure identity holds across the input domain
     let chamber_pressure_mpa = 380.0;
     let caliber_mm = 5.56;
@@ -325,6 +338,7 @@ fn cabi_fire_identity_multiple_barrels() {
 
     for barrel_length_mm in [200.0, 254.0, 368.0, 508.0, 610.0] {
         let params = FireParams {
+            magic: MAGIC_ABE,
             barrel_length_mm,
             chamber_pressure_mpa,
             caliber_mm,
@@ -354,12 +368,14 @@ fn cabi_fire_identity_multiple_barrels() {
 
 #[test]
 fn cabi_step_identity_single() {
+    ensure_initialized();
     // Single step at Mach ~2.7 (930 m/s, sea level, 15 °C).
     // caliber_mm=0 → sg=0 → yaw-of-repose disabled.
     // altitude_m=0 → no atmosphere library calls, wind shear = 1.0.
     let cdm = make_cdm("g7");
 
     let params = StepParams {
+        magic: MAGIC_ABE,
         pos_x: 0.0,
         pos_y: 0.0,
         pos_z: 0.0,
@@ -399,6 +415,7 @@ fn cabi_step_identity_single() {
 
 #[test]
 fn cabi_step_identity_multi_step_with_wind() {
+    ensure_initialized();
     // 20 steps with 3 m/s crosswind, checking identity at every step.
     let cdm = make_cdm("g7");
 
@@ -411,6 +428,7 @@ fn cabi_step_identity_multi_step_with_wind() {
     let (mut nvx, mut nvy, mut nvz) = (930.0, 0.0, 0.0);
 
     let base_params = StepParams {
+        magic: MAGIC_ABE,
         pos_x: 0.0,
         pos_y: 0.0,
         pos_z: 0.0,
@@ -484,6 +502,7 @@ fn cabi_step_identity_multi_step_with_wind() {
 
 #[test]
 fn cabi_step_identity_zero_wind_gravity_only() {
+    ensure_initialized();
     // Gravity-only regime: bc = 0 → no drag, vx = 0 → no speed guard edge case,
     // wind = 0 → no wind, altitude = 0 → uses given density.
     //
@@ -498,6 +517,7 @@ fn cabi_step_identity_zero_wind_gravity_only() {
     let cdm = make_cdm("g7");
 
     let params = StepParams {
+        magic: MAGIC_ABE,
         pos_x: 0.0,
         pos_y: 0.0,
         pos_z: 0.0,
@@ -542,6 +562,7 @@ fn cabi_step_identity_zero_wind_gravity_only() {
 
 #[test]
 fn cabi_impact_identity_penetration() {
+    ensure_initialized();
     // 7.62mm ball at 900 m/s vs 5 mm RHA at 0° → should penetrate
     let mut mat = [0u8; 32];
     mat[..10].copy_from_slice(b"steel_rha\0");
@@ -549,6 +570,7 @@ fn cabi_impact_identity_penetration() {
     proj[..5].copy_from_slice(b"ball\0");
 
     let params = ImpactParams {
+        magic: MAGIC_ABE,
         vel_x: 900.0,
         vel_y: 0.0,
         vel_z: 0.0,
@@ -609,6 +631,7 @@ fn cabi_impact_identity_penetration() {
 
 #[test]
 fn cabi_impact_identity_ricochet() {
+    ensure_initialized();
     // 7.62mm ball at 900 m/s vs 10 mm RHA at 85° → SHOULD ricochet
     let mut mat = [0u8; 32];
     mat[..10].copy_from_slice(b"steel_rha\0");
@@ -616,6 +639,7 @@ fn cabi_impact_identity_ricochet() {
     proj[..5].copy_from_slice(b"ball\0");
 
     let params = ImpactParams {
+        magic: MAGIC_ABE,
         vel_x: 900.0,
         vel_y: 0.0,
         vel_z: 0.0,
@@ -670,6 +694,7 @@ fn cabi_impact_identity_ricochet() {
 
 #[test]
 fn cabi_impact_identity_ap_over_ball() {
+    ensure_initialized();
     // AP projectile at 10 mm RHA: verify identity even when pen threshold
     // is borderline.
     let mut mat = [0u8; 32];
@@ -681,6 +706,7 @@ fn cabi_impact_identity_ap_over_ball() {
 
     let build_impact = |proj: &[u8; 32]| -> (i32, f64, f64) {
         let params = ImpactParams {
+            magic: MAGIC_ABE,
             vel_x: 900.0,
             vel_y: 0.0,
             vel_z: 0.0,

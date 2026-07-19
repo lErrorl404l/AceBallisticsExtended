@@ -12,7 +12,7 @@
 
 #![allow(dead_code)]
 
-use abe_ballistics_ext::{abe_init, abe_step, BulletState, StepParams};
+use abe_ballistics_ext::{abe_init, abe_step, BulletState, StepParams, MAGIC_ABE};
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -111,6 +111,7 @@ fn simulate_trajectory(
 
     while x < 1050.0 && vx > 50.0 && next_range_idx < SAMPLE_RANGES.len() {
         let step = StepParams {
+            magic: MAGIC_ABE,
             pos_x: x,
             pos_y: y,
             pos_z: z,

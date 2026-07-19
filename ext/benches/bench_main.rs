@@ -53,6 +53,7 @@ fn bench_fire(c: &mut Criterion) {
 
     c.bench_function("fire/struct_abi", |b| {
         let params = FireParams {
+            magic: MAGIC_ABE,
             barrel_length_mm: 368.0,
             chamber_pressure_mpa: 380.0,
             caliber_mm: 5.56,
@@ -74,6 +75,7 @@ fn bench_step(c: &mut Criterion) {
 
     c.bench_function("step/struct_abi", |b| {
         let params = StepParams {
+            magic: MAGIC_ABE,
             pos_x: 500.0,
             pos_y: 0.0,
             pos_z: -2.0,
@@ -109,6 +111,7 @@ fn bench_impact(c: &mut Criterion) {
 
     c.bench_function("impact/struct_abi", |b| {
         let params = ImpactParams {
+            magic: MAGIC_ABE,
             vel_x: 850.0,
             vel_y: 0.0,
             vel_z: 0.0,
@@ -139,6 +142,7 @@ fn bench_full_pipeline(c: &mut Criterion) {
         b.iter(|| {
             // ── Fire ─────────────────────────────────────────────────
             let fire = FireParams {
+                magic: MAGIC_ABE,
                 barrel_length_mm: 368.0,
                 chamber_pressure_mpa: 380.0,
                 caliber_mm: 5.56,
@@ -154,6 +158,7 @@ fn bench_full_pipeline(c: &mut Criterion) {
 
             for _ in 0..500 {
                 let step = StepParams {
+                    magic: MAGIC_ABE,
                     pos_x: x,
                     pos_y: y,
                     pos_z: z,
@@ -185,6 +190,7 @@ fn bench_full_pipeline(c: &mut Criterion) {
 
             // ── Impact ──────────────────────────────────────────────
             let impact = ImpactParams {
+                magic: MAGIC_ABE,
                 vel_x: vx,
                 vel_y: vy,
                 vel_z: vz,
@@ -248,6 +254,7 @@ fn bench_multi_bullet(c: &mut Criterion) {
                 for s in states.iter_mut() {
                     let (x, y, z, vx, vy, vz, bc) = *s;
                     let step = StepParams {
+                        magic: MAGIC_ABE,
                         pos_x: x,
                         pos_y: y,
                         pos_z: z,
@@ -279,8 +286,6 @@ fn bench_multi_bullet(c: &mut Criterion) {
         })
     });
 }
-
-// ── New benchmark groups ────────────────────────────────────────────────────
 
 fn bench_init_health(c: &mut Criterion) {
     // Ensure clean state for bench
@@ -327,6 +332,7 @@ fn bench_multi_bullet_100(c: &mut Criterion) {
                 for s in states.iter_mut() {
                     let (x, y, z, vx, vy, vz, bc) = *s;
                     let step = StepParams {
+                        magic: MAGIC_ABE,
                         pos_x: x,
                         pos_y: y,
                         pos_z: z,
@@ -369,6 +375,7 @@ fn bench_full_pipeline_realistic(c: &mut Criterion) {
         b.iter(|| {
             // ── Fire: 7.62mm NATO M80 from M240 (24.8" barrel) ──────
             let fire = FireParams {
+                magic: MAGIC_ABE,
                 barrel_length_mm: 630.0,
                 chamber_pressure_mpa: 360.0,
                 caliber_mm: 7.62,
@@ -389,6 +396,7 @@ fn bench_full_pipeline_realistic(c: &mut Criterion) {
 
             for _ in 0..500 {
                 let step = StepParams {
+                    magic: MAGIC_ABE,
                     pos_x: x,
                     pos_y: y,
                     pos_z: z,
@@ -396,16 +404,16 @@ fn bench_full_pipeline_realistic(c: &mut Criterion) {
                     vel_y: vy,
                     vel_z: vz,
                     dt_s: 0.01,
-                    wind_x: 5.0,
-                    wind_y: 3.0,
-                    wind_z: 0.0, // crosswind
+                    wind_x: 0.0,
+                    wind_y: 0.0,
+                    wind_z: 0.0,
                     density_kgm3: 1.225,
                     temp_c: 15.0,
-                    altitude_m: 500.0, // 500m ASL → ICAO density
+                    altitude_m: 0.0,
                     cdm_id: cdm,
-                    bc: 0.200, // G7 BC for M80 ball
-                    mass_g: 9.5,
-                    caliber_mm: 7.62,
+                    bc,
+                    mass_g: 4.0,
+                    caliber_mm: 5.56,
                     twist_rate_m: 0.0,
                 };
                 let mut sr = BulletState::default();
@@ -420,6 +428,7 @@ fn bench_full_pipeline_realistic(c: &mut Criterion) {
 
             // ── Impact: AP vs 10mm RHA at 30° ──────────────────────
             let impact = ImpactParams {
+                magic: MAGIC_ABE,
                 vel_x: vx,
                 vel_y: vy,
                 vel_z: vz,
@@ -450,6 +459,7 @@ fn bench_impact_variants(c: &mut Criterion) {
 
     c.bench_function("impact/ap_vs_10mm_rha", |b| {
         let params = ImpactParams {
+            magic: MAGIC_ABE,
             vel_x: 880.0,
             vel_y: 0.0,
             vel_z: 0.0,
@@ -470,6 +480,7 @@ fn bench_impact_variants(c: &mut Criterion) {
 
     c.bench_function("impact/ball_vs_aluminum_thin", |b| {
         let params = ImpactParams {
+            magic: MAGIC_ABE,
             vel_x: 650.0,
             vel_y: 0.0,
             vel_z: 0.0,
@@ -490,6 +501,7 @@ fn bench_impact_variants(c: &mut Criterion) {
 
     c.bench_function("impact/ricochet_at_80deg", |b| {
         let params = ImpactParams {
+            magic: MAGIC_ABE,
             vel_x: 750.0,
             vel_y: 0.0,
             vel_z: 0.0,
@@ -510,6 +522,7 @@ fn bench_impact_variants(c: &mut Criterion) {
 
     c.bench_function("impact/apds_vs_ceramic", |b| {
         let params = ImpactParams {
+            magic: MAGIC_ABE,
             vel_x: 1500.0,
             vel_y: 0.0,
             vel_z: 0.0,
@@ -536,6 +549,7 @@ fn bench_fire_variants(c: &mut Criterion) {
 
     c.bench_function("fire/5.56mm_m855", |b| {
         let params = FireParams {
+            magic: MAGIC_ABE,
             barrel_length_mm: 368.0,
             chamber_pressure_mpa: 380.0,
             caliber_mm: 5.56,
@@ -551,10 +565,11 @@ fn bench_fire_variants(c: &mut Criterion) {
 
     c.bench_function("fire/7.62mm_m80", |b| {
         let params = FireParams {
-            barrel_length_mm: 630.0,
-            chamber_pressure_mpa: 360.0,
-            caliber_mm: 7.62,
-            projectile_mass_g: 9.5,
+            magic: MAGIC_ABE,
+            barrel_length_mm: 368.0,
+            chamber_pressure_mpa: 380.0,
+            caliber_mm: 5.56,
+            projectile_mass_g: 4.0,
             cdm_id: cdm,
         };
         b.iter(|| {
@@ -566,6 +581,7 @@ fn bench_fire_variants(c: &mut Criterion) {
 
     c.bench_function("fire/9mm_parabellum", |b| {
         let params = FireParams {
+            magic: MAGIC_ABE,
             barrel_length_mm: 127.0,
             chamber_pressure_mpa: 240.0,
             caliber_mm: 9.01,
@@ -581,6 +597,7 @@ fn bench_fire_variants(c: &mut Criterion) {
 
     c.bench_function("fire/338_lapua", |b| {
         let params = FireParams {
+            magic: MAGIC_ABE,
             barrel_length_mm: 690.0,
             chamber_pressure_mpa: 420.0,
             caliber_mm: 8.58,
