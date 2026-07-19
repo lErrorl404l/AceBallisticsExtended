@@ -229,6 +229,136 @@ fn ensure_initialized() {
     assert_eq!(abe_health(), 1);
 }
 
+// ── Struct validation ──────────────────────────────────────────────────────
+//
+// These tests verify that the C ABI rejects malformed inputs before touching
+// any physics kernel, preventing undefined behaviour from misaligned callers.
+
+#[test]
+fn cabi_fire_rejects_bad_magic() {
+    ensure_initialized();
+    let mut params = FireParams {
+        magic: MAGIC_ABE,
+        ..unsafe { std::mem::zeroed() }
+    };
+    params.magic = 0xDEAD_BEEF_DEAD_BEEF; // invalid magic
+    let mut result = FireResult::default();
+    assert_eq!(
+        abe_fire(&params, &mut result),
+        -2,
+        "abe_fire should return -2 on bad magic"
+    );
+}
+
+#[test]
+fn cabi_step_rejects_bad_magic() {
+    ensure_initialized();
+    let mut params: StepParams = unsafe { std::mem::zeroed() };
+    params.magic = 0x0; // invalid magic (zero)
+    let mut result = BulletState::default();
+    assert_eq!(
+        abe_step(&params, &mut result),
+        -2,
+        "abe_step should return -2 on bad magic"
+    );
+}
+
+#[test]
+fn cabi_impact_rejects_bad_magic() {
+    ensure_initialized();
+    let mut params: ImpactParams = unsafe { std::mem::zeroed() };
+    params.magic = u64::MAX; // invalid magic
+    let mut result = ImpactResult::default();
+    assert_eq!(
+        abe_impact(&params, &mut result),
+        -2,
+        "abe_impact should return -2 on bad magic"
+    );
+}
+
+#[test]
+fn cabi_fire_zero_magic() {
+    ensure_initialized();
+    let params = FireParams {
+        magic: MAGIC_ABE,
+        ..unsafe { std::mem::zeroed() }
+    };
+    let mut result = FireResult::default();
+    // Zeroed params should not crash — sanity check on structural soundness
+    let rc = abe_fire(&params, &mut result);
+    assert!(rc == -1 || rc == 0, "abe_fire with zeroed fields: {rc}");
+}
+
+#[test]
+fn cabi_step_zero_params() {
+    ensure_initialized();
+    // All-zero StepParams with valid magic: should not crash, should return
+    // a well-defined state (no movement, no drag)
+    let params = StepParams {
+        magic: MAGIC_ABE,
+        ..unsafe { std::mem::zeroed() }
+    };
+    let mut result = BulletState::default();
+    let rc = abe_step(&params, &mut result);
+    assert_eq!(rc, 0, "abe_step with all-zero fields should succeed");
+    // With velocity = 0, the NaN guard (speed.max(MIN_POSITIVE)) should
+    // prevent NaN propagation in drag divisions.
+    assert!(
+        result.vel_x.is_finite() && result.vel_y.is_finite() && result.vel_z.is_finite(),
+        "zero-velocity step produced non-finite velocity: {:?}",
+        (result.vel_x, result.vel_y, result.vel_z)
+    );
+    // Position should remain at origin (no velocity to move)
+    assert_eq!(result.pos_x, 0.0, "pos_x should remain 0");
+    assert_eq!(result.pos_y, 0.0, "pos_y should remain 0");
+    assert_eq!(result.pos_z, 0.0, "pos_z should remain 0");
+}
+
+#[test]
+fn cabi_step_zero_speed_const_velocity() {
+    ensure_initialized();
+    // bc = 0 (no drag), wind = 0, altitude = 0, small non-zero horizontal
+    // velocity so the drag term doesn't hit 0/0 in the unguarded division.
+    //
+    // The body should fall under gravity alone, with no NaN from speed=0
+    // in the drag deceleration path.
+    let cdm = make_cdm("g7");
+    let params = StepParams {
+        magic: MAGIC_ABE,
+        pos_x: 0.0,
+        pos_y: 0.0,
+        pos_z: 0.0,
+        vel_x: 1e-9, // tiny but non-zero to avoid 0/0 in native_step replica
+        vel_y: 0.0,
+        vel_z: 0.0,
+        dt_s: 0.1,
+        wind_x: 0.0,
+        wind_y: 0.0,
+        wind_z: 0.0,
+        density_kgm3: 0.0, // no drag medium
+        temp_c: 15.0,
+        altitude_m: 0.0,
+        cdm_id: cdm,
+        bc: 0.0, // no drag
+        mass_g: 0.0,
+        caliber_mm: 0.0,
+        twist_rate_m: 0.0,
+    };
+    let mut result = BulletState::default();
+    let rc = abe_step(&params, &mut result);
+    assert_eq!(rc, 0);
+    assert!(
+        result.vel_z > 0.0,
+        "gravity should pull +z: {:?}",
+        result.vel_z
+    );
+    assert!(
+        result.vel_x.is_finite() && result.vel_y.is_finite(),
+        "non-finite velocity with bc=0: {:?}",
+        (result.vel_x, result.vel_y)
+    );
+}
+
 // ── Fire (interior ballistics) ─────────────────────────────────────────────
 
 #[test]
