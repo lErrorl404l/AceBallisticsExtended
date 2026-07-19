@@ -234,7 +234,8 @@ fn handle_step(args: &[&str]) -> String {
     let _ = caliber_mm;
 
     let speed = (vel_x.powi(2) + vel_y.powi(2) + vel_z.powi(2)).sqrt();
-    let mach = exterior::calc_mach(speed, temp_c);
+    let sos = exterior::speed_of_sound(temp_c);
+    let mach = if speed > 0.0 { speed / sos } else { 0.0 };
     let cd = drag::get_cd(cdm_id, mach)
         * drag::boat_tail_drag_factor(boat_tail_angle, boat_tail_length, mach);
 
@@ -263,7 +264,11 @@ fn handle_step(args: &[&str]) -> String {
         - wind_z * wind_factor;
 
     let new_speed = (vx.powi(2) + vy.powi(2) + vz.powi(2)).sqrt();
-    let new_mach = exterior::calc_mach(new_speed, temp_c);
+    let new_mach = if new_speed > 0.0 {
+        new_speed / sos
+    } else {
+        0.0
+    };
 
     format!(
         "[{},{},{},{},{},{},{},{}]",
@@ -843,8 +848,11 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
     // ponytail: compute speed once — was duplicated for Mach and drag
     let speed = (params.vel_x.powi(2) + params.vel_y.powi(2) + params.vel_z.powi(2)).sqrt();
 
+    // Cache speed of sound: temp_c is constant per step, used for both current and new Mach
+    let sos = exterior::speed_of_sound(params.temp_c);
+
     // Get drag coefficient at current Mach
-    let mach = exterior::calc_mach(speed, params.temp_c);
+    let mach = if speed > 0.0 { speed / sos } else { 0.0 };
 
     let cd = drag::get_cd(cdm_str, mach);
 
@@ -945,7 +953,11 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
 
     // Position update
     let new_speed = (vx.powi(2) + vy.powi(2) + vz.powi(2)).sqrt();
-    let new_mach = exterior::calc_mach(new_speed, params.temp_c);
+    let new_mach = if new_speed > 0.0 {
+        new_speed / sos
+    } else {
+        0.0
+    };
 
     *result = BulletState {
         pos_x: params.pos_x + vx * params.dt_s,
