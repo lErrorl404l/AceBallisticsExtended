@@ -6,11 +6,11 @@
 
 Follow the schemas in `data/schemas/`:
 
-- **Weapons**: `data/weapons/<class_name>.json` — requires `weaponClass`, `barrelLengthMm`, `caliberMm`
-- **Ammo**: `data/ammo/<caliber_or_model>.json` — requires `ammoClass`, `projectileMassG`, `caliberMm`
-- **Armor**: `data/armor/<material_id>.json` — requires `materialId`, `densityGcm3`, `hardnessBHN`
+- **Weapons**: `data/weapons/<class_name>.json` — requires `class`, `caliber_mm`, `barrel_length_mm`
+- **Ammo**: `data/ammo/<caliber_or_model>.json` — requires `class`, `projectile.mass_g`, `projectile.caliber_mm`
+- **Armor**: `data/armor/plates/<vehicle_id>.json` — requires `vehicle`, `plates[].material`, `plates[].thickness_mm`
 
-Use `camelCase` for all JSON keys.
+Use `snake_case` for all JSON keys.
 
 ### 2. Validate
 
@@ -112,7 +112,7 @@ The Python validation harness (`tests/validate_data.py`) checks JSON schema comp
 
 | Context        | Convention      | Example                          |
 |----------------|-----------------|----------------------------------|
-| JSON keys      | camelCase       | `barrelLengthMm`, `chamberPressureMpa` |
+| JSON keys      | snake_case      | `barrel_length_mm`, `chamber_pressure_mpa` |
 | Rust code      | snake_case      | `calc_muzzle_velocity()`, `wind_shear_factor()` |
 | SQF functions  | camelCase       | `ABE_fnc_init`, `ABE_fnc_fire`   |
 | Rust types     | PascalCase      | `FireParams`, `BulletState`, `ImpactResult` |
@@ -121,7 +121,7 @@ The Python validation harness (`tests/validate_data.py`) checks JSON schema comp
 
 Before opening a PR:
 
-- [ ] `cargo test` — 121 tests pass
+- [ ] `cargo test` — 1134+ tests pass
 - [ ] `python tests/validate_data.py` — 230+ checks pass
 - [ ] `cargo clippy` — no new warnings
 - [ ] `cargo doc --no-deps` — clean
@@ -166,3 +166,8 @@ cargo doc --no-deps --open
 ```
 
 For SQF changes, use `hemtt dev` which enables file patching for instant iteration without rebuilding PBOs.
+
+## License
+
+By contributing, you agree that your contributions will be licensed under the
+**GNU General Public License v3.0** — see [`LICENSE`](LICENSE).

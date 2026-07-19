@@ -1,17 +1,57 @@
-# Ace Ballistics Extension (ABE)
+<p align="center">
+  <h1 align="center">Advanced Ballistics Extension (ABE)</h1>
+  <p align="center">
+    Realistic interior, exterior, terminal, and penetration ballistics for ARMA 3
+    <br />
+    Native Rust extension · ACE3 enhancer or standalone
+  </p>
+  <p align="center">
+    <a href="https://github.com/lErrorl404l/AceBallisticsExtended/actions/workflows/build.yml"><img src="https://img.shields.io/github/actions/workflow/status/lErrorl404l/AceBallisticsExtended/build.yml?logo=github&label=Build" alt="Build"></a>
+    <a href="https://github.com/lErrorl404l/AceBallisticsExtended/actions/workflows/test.yml"><img src="https://img.shields.io/github/actions/workflow/status/lErrorl404l/AceBallisticsExtended/test.yml?logo=github&label=Tests" alt="Tests"></a>
+    <img src="https://img.shields.io/badge/tests-1134%20passing-brightgreen?logo=rust" alt="Tests">
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0-blue" alt="License"></a>
+    <img src="https://img.shields.io/badge/rust-2024%20edition-purple?logo=rust" alt="Rust">
+    <img src="https://img.shields.io/badge/HEMTT-ready-orange" alt="HEMTT">
+    <img src="https://img.shields.io/badge/status-alpha-yellow" alt="Status">
+  </p>
+</p>
 
-Realistic interior/exterior/terminal ballistics for ARMA 3 as an ACE3 enhancer or standalone mod. Uses a native Rust extension for all physics kernels with SQF glue and JSON configuration.
+---
 
-## Build Status
+## Overview
 
-HEMTT ✅ • cargo test 121/121 ✅ • Python validation 230/230 ✅ • SQF 20/20 ✅ • clippy clean ✅ • cargo doc clean ✅
+ABE replaces ARMA 3's arcade ballistics with data-driven physics. All simulation
+runs in a native Rust extension — SQF is thin orchestration, JSON is the
+configuration language. Community contributions are **data PRs**, not code.
+
+ABE runs in two modes:
+- **ACE3 Enhanced** — hooks into ACE3's bullet tracking, replaces its physics
+- **Standalone** — full self-contained ballistics when ACE3 is absent
+
+## Table of Contents
+
+- [Quick Start](#quick-start)
+- [Physics Models](#physics-models)
+- [Architecture](#architecture)
+- [Configuration Data](#configuration-data)
+- [ACE3 Integration](#ace3-integration)
+- [Public API](#public-api)
+- [Testing](#testing)
+- [Benchmarks](#benchmarks)
+- [IRL Source Data](#irl-source-data)
+- [Project Status](#project-status)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
 
 ## Quick Start
 
-### Build Requirements
-- **Rust** 1.85+ (edition 2024) with `x86_64-pc-windows-gnu` target for cross-compilation
-- **HEMTT** (Arma 3 build toolchain)
-- **MinGW-w64** (Windows cross-compilation)
+### Requirements
+
+- **Rust** 1.85+ (edition 2024) — MSRV policy: latest stable
+- **HEMTT** ([install](https://hemtt.dev/)) — Arma 3 mod toolchain
+- **MinGW-w64** — Windows cross-compilation
 
 ### Build
 
@@ -19,162 +59,188 @@ HEMTT ✅ • cargo test 121/121 ✅ • Python validation 230/230 ✅ • SQF 2
 git clone https://github.com/lErrorl404l/AceBallisticsExtended
 cd AceBallisticsExtended
 
-# Build the Rust physics extension (Linux .so)
+# Build the Rust extension (Linux .so)
 cd ext && cargo build --release && cd ..
 
 # Cross-compile Windows DLL
 cd ext && cargo build --release --target x86_64-pc-windows-gnu && cd ..
 
-# Build PBO mod package
+# Package the mod
 hemtt build
 ```
 
-Drop the resulting `@AceBallisticsExtended` directory into your ARMA 3 installation and launch with:
+Drop `@AceBallisticsExtended` into your ARMA 3 installation and launch with
+`-mod=@AceBallisticsExtended`.
 
+### Quick Iteration
+
+```bash
+./build.sh                          # Full build: Rust → copy binary → HEMTT check
+cd ext && cargo test                # Run all 1134+ physics tests
+cargo doc --no-deps --open          # Build and open API docs
 ```
--mod=@AceBallisticsExtended
-```
 
-## Architecture
-
-ABE has three layers:
-
-```
-Rust Extension (ext/)          — All physics kernels
-  ├── lib.rs                   — C ABI dispatcher (abe_init, abe_fire, abe_step, abe_impact, abe_health, abe_version, abe_free)
-  ├── interior.rs              — Two-zone gas-expansion interior ballistics model
-  ├── exterior.rs              — Speed of sound, Mach, wind drift, spin drift, Coriolis
-  ├── drag.rs                  — G1/G2/G5/G6/G7/G8/GL drag coefficient lookup tables with linear interpolation
-  ├── atmosphere.rs            — ICAO standard atmosphere: temperature/pressure/density vs altitude, wind shear
-  ├── penetration.rs           — De Marre + Lanz-Odermatt penetration, ricochet, spall
-  ├── fragmentation.rs         — Projectile fragmentation: log-normal mass distribution, spray cone
-  └── config.rs                — JSON data loading and deserialization
-
-SQF Glue (addons/abo_core/)   — Thin event dispatch
-  ├── fnc_init.sqf             — Extension init, CBA/ACE3 event hook registration
-  ├── fnc_fire.sqf             — Fire event handler, bullet state initialization
-  ├── fnc_step.sqf             — Per-frame trajectory update, ACE3 hashmap purge
-  ├── fnc_impact.sqf           — HitPart handler, armor lookup, damage application
-  ├── fnc_health.sqf           — Health check diagnostic
-  └── fnc_ace3_compat.sqf      — ACE3 advanced ballistics override (layers A–C)
-
-JSON Config (data/)            — Community-contributable without a compiler
-  ├── weapons/                 — 25+ weapon configurations (barrel length, chamber pressure, caliber)
-  ├── ammo/                    — 12+ ammunition configurations (mass, BC, drag model, fragmentation params)
-  ├── armor/                   — 3 armor material definitions (RHA, aluminum, ceramic)
-  └── schemas/                 — JSON Schema validation files
-```
+---
 
 ## Physics Models
 
-### Interior Ballistics (`interior.rs`)
+All models are implemented as pure functions in `ext/src/` — no global state,
+no I/O, trivially testable.
 
-Two-zone gas-expansion pressure curve model (Heiney, UK DefStan 13-100, Nennstiel). Pressure peaks at ~12 % of projectile travel, then decays exponentially. Work integral along the bore gives kinetic energy, reduced by friction, heat transfer, and rifling losses. Burn fraction exponential with barrel length; barrel time from `t = 2L / MV`.
+| Module | File | Model |
+|--------|------|-------|
+| Interior | `interior.rs` | Pressure-integral exponential decay (Heiney, UK DefStan 13-100). `AVG_PRESSURE_FACTOR = 0.58`, efficiency `0.87 × e^(-0.30 × L)`, burn fraction, barrel time. |
+| Exterior | `exterior.rs` | Semi-implicit Euler integration. Mach, wind drift, spin drift, Coriolis (McCoy, NATO STANAG 4355). |
+| Drag | `drag.rs` | G1/G7/G8 lookup tables (JBM/ABRA) with linear interpolation. |
+| Atmosphere | `atmosphere.rs` | ICAO/ISA standard atmosphere (ICAO Doc 7488, ISO 2533). Tropospheric lapse −6.5 K/km, barometric formula, log-wind-profile shear. |
+| Penetration | `penetration.rs` | Three-stage: ricochet → effective thickness → De Marre threshold velocity. Material factors (RHA=1.0, HHA=1.25, ceramic=2.5–3.5, kevlar=0.6). Lanz-Odermatt for APDS/APFSDS. |
+| Fragmentation | `fragmentation.rs` | Velocity-threshold gated (762 m/s M855). Log-normal mass distribution. Cone angles: FMJ=15°, AP=8°, HP=25°. Golden-angle azimuth (Nennstiel, UK DefStan 13-100). |
+| HEAT | `heat_penetration.rs` | Shaped-charge jet penetration (Birkhoff, Eichelberger). Standoff efficiency, jet stretch. |
+| Behind-armour debris | `behind_armor_debris.rs` | Spall generation, temporary cavity, secondary fragment spray. |
 
-### Exterior Ballistics (`exterior.rs`, `drag.rs`)
+Full technical descriptions: [`PLANNING.md`](PLANNING.md), or the [online docs](https://lerrorl404l.github.io/AceBallisticsExtended).
 
-Semi-implicit Euler integration. Drag: `0.5 * ρ * v² * Cd / (BC * K)` where `K ≈ 895.3` (lb/in²→kg/m² conversion). G1/G7/G8 drag tables from JBM/ABRA with linear interpolation. Coriolis and spin drift per McCoy and NATO STANAG 4355.
+---
 
-### Atmosphere Model (`atmosphere.rs`)
+## Architecture
 
-ICAO/ISA standard atmosphere (ICAO Doc 7488, ISO 2533, MIL-STD-210C). Tropospheric lapse -6.5 K/km, isothermal above 11 km. Barometric formula + ideal gas law. Log-wind-profile wind shear (von Kármán-Prandtl, surface layer 0–200 m).
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    Rust Extension (ext/)                         │
+│                                                                  │
+│  C ABI (extern "C")                                             │
+│  ┌──────────────────────────────────────────────────────────┐    │
+│  │ abe_init  abe_fire  abe_step  abe_impact                │    │
+│  │ abe_health  abe_version  abe_free                       │    │
+│  └──────────────────────────────────────────────────────────┘    │
+│                                                                  │
+│  ┌──────────┬───────────┬───────────┬───────────┬──────────┐    │
+│  │ interior │ exterior  │ drag      │ atmosphere│ config   │    │
+│  ├──────────┼───────────┼───────────┼───────────┼──────────┤    │
+│  │ penetration │ frag   │ heat_pen  │ behind_armor_debris  │    │
+│  └──────────┴───────────┴───────────┴───────────┴──────────┘    │
+│                                                                  │
+│  Targets: cdylib (.so/.dll) + rlib                         │
+└─────────────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    SQF Layer (addons/)                            │
+│                                                                  │
+│  ┌──────────────────────────────────────────────────────────┐    │
+│  │ abe_core:  Init, ACE3 detection, mode switching          │    │
+│  │ abe_tracking:  Per-frame bullet iteration                │    │
+│  │ abe_events:  Fired + HitPart event handlers              │    │
+│  └──────────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    JSON Data (data/)                              │
+│                                                                  │
+│  weapons/  ammo/  calibers/  armor/  vehicles/  schemas/         │
+│  materials/  calibration/  scripts/  sources/                    │
+│                                                                  │
+│  Community-contributable — no compiler required                  │
+└─────────────────────────────────────────────────────────────────┘
+```
 
-### Penetration Model (`penetration.rs`)
+Two calling conventions:
+- **String ABI** — `callExtension` from SQF, ~5 M calls/s
+- **Struct C ABI** — `#[repr(C)]` parameter structs, ~6× faster (~30–50 M calls/s)
 
-Three-stage terminal model (De Marre, Lanz-Odermatt, NIJ 0108.01): ricochet check → effective thickness (angle + material scaling) → threshold velocity `V_req = k·D^0.75·T^0.7 / M^0.5`. Material factors: RHA=1.0, HHA=1.25, Al=0.35–0.45, ceramic=2.5–3.5, kevlar=0.6.
-
-### Fragmentation (`fragmentation.rs`)
-
-Velocity-threshold gated (762 m/s M855). Log-normal mass distribution; fragment count scales with velocity ratio. Velocity partition `V_frag = V_impact·(M_frag/M_total)^0.33`. Cone angles: FMJ=15°, AP=8°, HP=25°. Golden-angle azimuth (Nennstiel, UK DefStan 13-100, FBI HPR).
+---
 
 ## Configuration Data
 
-### Weapon Schema (`data/weapons/`)
+All data lives in `data/` as JSON files. Adding a new weapon, round, or vehicle
+is a **data PR** — no Rust recompilation needed.
 
-| Field                | Type     | Description                                        |
-|----------------------|----------|----------------------------------------------------|
-| `weaponClass`        | string   | CfgWeapons class name                              |
-| `barrelLengthMm`     | number   | Barrel length in millimeters                       |
-| `caliberMm`          | number   | Bullet caliber in millimeters                      |
-| `chamberPressureMpa` | number   | SAAMI/CIP peak chamber pressure in MPa             |
-| `riflingTwistMm`     | number   | Rifling twist rate in mm per revolution (optional) |
-| `projectileMassG`    | number   | Projectile mass in grams (overrides ammo)          |
-| `cdmId`              | string   | Drag model curve ID (default: g7)                  |
-| `zeroRangeM`         | number   | Zero range in meters (default: 100)                |
-| `effectiveRangeM`    | number   | Maximum effective range (optional)                 |
-| `notes`              | string   | Data source or assumptions (optional)              |
+| Directory | Contents |
+|-----------|----------|
+| `data/weapons/` | 89+ weapon configs (barrel length, chamber pressure, rifling twist) |
+| `data/ammo/` | 477+ ammunition configs (mass, BC, drag model, fragmentation params) |
+| `data/calibers/` | 19 caliber definitions (case capacity, max pressure) |
+| `data/armor/` | Material properties (density, hardness, RHA equivalence, spall coeff) |
+| `data/armor/plates/` | Vehicle armour arrays (M1A2, T-72, T-80, T-90, BMP-2, Bradley) |
+| `data/vehicles/` | Full vehicle armour layouts |
+| `data/materials/` | 70+ ballistic material entries |
+| `data/schemas/` | JSON Schema validation files |
+| `data/sources/` | Manufacturer and defence-source reference documents |
 
-### Ammo Schema (`data/ammo/`)
+### IRL Source Data
 
-| Field                   | Type    | Description                                      |
-|-------------------------|---------|--------------------------------------------------|
-| `ammoClass`             | string  | CfgAmmo class name                               |
-| `projectile.mass_g`     | number  | Projectile mass in grams                         |
-| `projectile.caliber_mm` | number  | Projectile caliber in millimeters                |
-| `projectile.bc_g7`      | number  | Ballistic coefficient (G7 model)                 |
-| `projectile.cdm_id`     | string  | Drag model curve ID                              |
-| `projectile.fragmentation.*` | object | Fragmentation parameters (threshold, count, distribution) |
+ABE is data-driven, not speculative. `data/sources/` contains curated source
+documents from:
 
-### Armor Schema (`data/armor/`)
+- **Hornady** — ballistic coefficient tables and reloading data
+- **Lapua** — cartridge specification PDFs and velocity tables
+- **SAAMI / CIP / NATO** — chamber pressure standards (SAAMI Z299.3/4, CIP TDCC, EPVAT)
+- **ARL / BRL** — US Army ballistic research penetration test reports (DTIC.mil)
+- **SSAB** — ARMOX armor plate datasheets and MIL-DTL specifications
 
-| Field                | Type   | Description                                   |
-|----------------------|--------|-----------------------------------------------|
-| `materialId`         | string | Unique material identifier                    |
-| `densityGcm3`        | number | Material density in g/cm^3                    |
-| `hardnessBHN`        | number | Brinell hardness number                       |
-| `tensileStrengthMpa` | number | Ultimate tensile strength in MPa (optional)   |
-| `rhaEquivalent`      | number | RHA equivalency multiplier (default: 1.0)     |
-| `ductility`          | number | Ductility factor 0–1 (default: 0.5)           |
-| `spallCoeff`         | number | Spall generation coefficient 0–1 (default: 0.5) |
+Every config value should trace to one of these sources.
+
+---
 
 ## ACE3 Integration
 
-ABE detects whether ACE3 is loaded at init and switches between two modes:
+ABE detects ACE3 at init and switches behaviour:
 
-### Standalone Mode (no ACE3)
-Hooks into CBA_fired event for weapon firing, uses the HitPart event system for impact detection. ABE handles all ballistics independently.
+- **No ACE3** → hooks `CBA_fired`, `HitPart` for standalone ballistics
+- **ACE3 loaded** → three-layer ACE3 override:
+  1. Disables ACE3's advanced ballistics setting
+  2. Replaces its bullet tracking hashmap
+  3. Per-frame purge for edge cases
 
-### ACE3 Enhanced Mode
-Overrides ACE3's advanced_ballistics module via a three-layer strategy:
+The override is fully reversible — ACE3's setting is restored on mission end.
 
-- **Layer A** — Sets `ace_advanced_ballistics_enabled = false` in missionNamespace, preventing ACE3's setting handler from registering its ballistic event handlers
-- **Layer B** — Replaces ACE3's `ace_advanced_ballistics_allBullets` hashmap with an empty map, making the per-frame handler a no-op
-- **Layer C** — Per-frame purge removes any ACE3-tracked bullets that were added after Layers A and B were applied (edge case handling)
+---
 
-The override is reversible on mission end, restoring ACE3's setting for subsequent missions without ABE.
+## Public API
 
-### Public API (C ABI)
+All functions `extern "C"`, thread-safe via `OnceLock`.
 
-All functions are `extern "C"` and thread-safe via `OnceLock` global state.
-Two calling conventions — **string ABI** (SQF `callExtension`) and **struct C ABI** (fast path for native code):
+| String Call | Signature | Description |
+|-------------|-----------|-------------|
+| `"init"` | `[api_version, ace_present]` → `"0"` / `"-1"` | Initialise extension |
+| `"version"` | — → `"MAJOR.MINOR.PATCH"` | Extension version |
+| `"health"` | — → `"1"` / `"0"` | Health check |
+| `"fire"` | `[barrelMm, pressureMpa, calMm, massG, cdmId]` → `[mv, pressure, burn, t_ms]` | Interior ballistics |
+| `"step"` | `[posX/Y/Z, velX/Y/Z, dt, windX/Y/Z, density, tempC, alt, cdmId, bc, mass, cal]` → `[pos, vel, mach, dt]` | External step |
+| `"impact"` | `[velX/Y/Z, mass, cal, armourThick, material, angle, projType]` → `[pen, resVel, energy, effThick, ric, ...]` | Terminal ballistics |
 
-| Call | Signature |
-|------|-----------|
-| `"init"` | `[api_version, ace_present]` → `"0"` \| `"-1"` |
-| `"version"` | (none) → `"MAJOR.MINOR.PATCH"` |
-| `"health"` | (none) → `"1"` \| `"0"` |
-| `"fire"` | `[barrelLengthMm, chamberPressureMpa, caliberMm, massG, cdmId]` → `[mv, pressure, burn, t_ms]` |
-| `"step"` | `[posX/Y/Z, velX/Y/Z, dt, windX/Y/Z, density, tempC, alt, cdmId, bc, mass, cal]` → `[posX/Y/Z, velX/Y/Z, mach, dt]` |
-| `"impact"` | `[velX/Y/Z, mass, cal, armorThick, material, angle, projType]` → `[pen, resVel, energy, effThick, ric, ricAngle, ricEner, frags, spall]` |
+Struct equivalents (`abe_fire`, `abe_step`, `abe_impact`) accept `#[repr(C)]`
+parameter structs — ~6× faster, recommended for per-frame use. See
+[`ext/src/lib.rs`](ext/src/lib.rs) for struct layouts.
 
-Struct equivalents (`abe_init`, `abe_version`, `abe_health`, `abe_fire`, `abe_step`, `abe_impact`) accept `&FireParams` / `&StepParams` / `&ImpactParams` and are ~6× faster. All struct types are `#[repr(C)]` with `[u8; 32]` arrays for string fields. See [`ext/src/lib.rs`](ext/src/lib.rs).
+---
 
 ## Testing
 
 ```bash
-cargo test                  # 121 unit + integration tests
-cargo test --lib            # 95 unit tests
-cargo test --test sqf_compat_test  # 26 integration tests
-python tests/validate_data.py  # 230 data validation checks
-hemtt test                     # SQF headless runtime (20/20)
+cargo test                          # 1134+ unit + integration tests
+cargo test --lib                    # Library unit tests
+cargo test --test sqf_compat_test   # SQF compatibility
+python tests/validate_data.py       # 230+ JSON validation checks
 ```
 
-Energy non-increasing, monotonic position, free-fall, and transonic
-consistency are enforced across all physics modules.
+Physics invariants enforced across all modules:
+- Energy non-increasing
+- Monotonic position
+- Free-fall convergence
+- Transonic drag consistency (G7 < G1 at all Mach, peak near M=1)
+- Mass conservation in fragmentation (±10%)
+
+---
 
 ## Benchmarks
 
-`cargo bench` (criterion):
+```bash
+cargo bench
+```
+
+Tested on reference hardware (criterion, HTML reports):
 
 | Benchmark | Throughput |
 |-----------|-----------|
@@ -184,13 +250,48 @@ consistency are enforced across all physics modules.
 | `step/string_abi` | ~5 M calls/s |
 | `pipeline/fire_500step_impact` | ~100k pipelines/s |
 
-Struct ABI ≈ 6× faster than string dispatch. Prefer `abe_*` for per-frame loops.
+Struct ABI ≈ 6× faster than string dispatch. Use `abe_*` calls in per-frame loops.
+
+---
+
+## Project Status
+
+**Alpha** — physics kernels are feature-complete and tested. SQF layer and
+in-game integration are in development. Current focus:
+
+- [x] Interior ballistics (pressure-integral model)
+- [x] Exterior ballistics (drag, Coriolis, wind, spin drift)
+- [x] Penetration (De Marre, Lanz-Odermatt, ricochet)
+- [x] Fragmentation and behind-armour debris
+- [x] HEAT shaped-charge jet penetration
+- [x] Atmosphere model (ICAO/ISA)
+- [x] 250+ data files across weapons, ammo, armour
+- [x] IRL source data from manufacturers and defence labs
+- [ ] SQF event system and ACE3 integration complete
+- [ ] In-game validation and tuning
+- [ ] Reforger compatibility evaluation
+
+---
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) — adding data, inferring BCs, physics
-improvements, PR workflow, and commit conventions.
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for:
+
+- Adding weapons, ammo, or armour (JSON data PRs)
+- Ballistic coefficient sourcing guidelines
+- Physics model improvements
+- PR workflow and commit conventions
+- Development environment setup
+
+All contributions are welcome — data additions, physics refinements,
+documentation, and testing. This project uses **conventional commits** and
+requires all 1134+ tests to pass before merging.
+
+---
 
 ## License
 
-MIT. See LICENSE file.
+**GNU General Public License v3.0** — see [`LICENSE`](LICENSE).
+
+ABE is free software: you can redistribute and modify it under the terms of
+the GPL-3.0. This ensures the mod remains open for the ARMA community.
