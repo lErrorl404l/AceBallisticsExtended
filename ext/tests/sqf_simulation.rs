@@ -371,15 +371,19 @@ impl BulletTracker {
 
 macro_rules! weapon {
     ($file:literal) => {{
-        const _: &[u8] = include_bytes!(concat!("../../data/weapons/", $file));
-        load_weapon_from_json(include_str!(concat!("../../data/weapons/", $file)))
+        let path = concat!(env!("CARGO_MANIFEST_DIR"), "/../data/weapons/", $file);
+        load_weapon_from_json(
+            &std::fs::read_to_string(path).expect(concat!("weapon file not found: ", $file)),
+        )
     }};
 }
 
 macro_rules! ammo {
     ($file:literal) => {{
-        const _: &[u8] = include_bytes!(concat!("../../data/ammo/", $file));
-        load_ammo_from_json(include_str!(concat!("../../data/ammo/", $file)))
+        let path = concat!(env!("CARGO_MANIFEST_DIR"), "/../data/ammo/", $file);
+        load_ammo_from_json(
+            &std::fs::read_to_string(path).expect(concat!("ammo file not found: ", $file)),
+        )
     }};
 }
 
@@ -1209,7 +1213,7 @@ fn launcher_heat_warhead_simulation() {
 fn hedp_grenade_simulation() {
     rv_ext_args("init", &["1", "0"]);
 
-    let gmg = weapon!("gmg_40mm.json");
+    let gmg = weapon!("launchers/gmg_40mm.json");
     let hedp = ammo!("launcher/ace_g_40mm_hedp.json");
     let mut tracker = BulletTracker::new();
 

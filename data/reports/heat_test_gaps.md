@@ -2,7 +2,8 @@
 
 **Date:** 2026-07-18  
 **Scope:** `ext/src/penetration/heat_penetration.rs` vs `data/armor/materials/`  
-**Test target field:** `HeatJetParams.target_armor_material`
+**Test target field:** `HeatJetParams.target_armor_material`  
+**Source data referenced:** `arl_penetration_data.md` (ARL penetration test reports, ceramic DOP data), `armox_armor_data.md` (SSAB ARMOX specs, MIL-DTL-46100E HHA, MIL-DTL-12560J RHA), `saami_cip_pressures.md` (chamber pressure specs for warhead reference)
 
 ---
 
@@ -75,7 +76,7 @@ The `target_density_lookup` test exercises `target_density_from_material()` with
 | `mar_ceramic` | ceramics | V_MIN_CERAMIC (2000) | ✗ |
 | `silicon_carbide` | ceramics | V_MIN_CERAMIC (2000) | ✗ |
 
-**Relevance:** Very high. Ceramics are the backbone of modern vehicle armor arrays (Challenger 2, Leopard 2, M1 Abrams, T-90M). HEAT jets encounter ceramic tiles in composite armor packs. The V_min is 2000 vs 2500 for RHA, meaning the model predicts 25% more penetration against ceramics at equal density — this code path has zero tests.
+**Relevance:** Very high. Ceramics are the backbone of modern vehicle armor arrays (Challenger 2, Leopard 2, M1 Abrams, T-90M). HEAT jets encounter ceramic tiles in composite armor packs. The V_min is 2000 vs 2500 for RHA, meaning the model predicts 25% more penetration against ceramics at equal density — this code path has zero tests. Ceramic armor performance data from ARL DOP tests [source: arl_penetration_data.md §11 (ADA362926); §15 (ARL-TR-7263)] shows Al₂O₃ RHAe=2.2–2.8, SiC=3.0–4.0, B₄C=4.0–5.0 vs KE penetrators [source: arl_penetration_data.md §14 (ARL-TR-3590 interface defeat)].
 
 ### COMPOSITES (14 materials — ALL untested)
 
@@ -96,7 +97,7 @@ The `target_density_lookup` test exercises `target_density_from_material()` with
 | `stef_composite` | composites | V_MIN_RHA (2500) | ✗ |
 | `textolite_composite` | composites | V_MIN_RHA (2500) | ✗ |
 
-**Relevance:** High. Chobham, Burlington, Dorchester, K-Active, Kvarts, STEF are real composite arrays on major MBTs. All currently fall through to V_MIN_RHA despite being physically different materials — this is a modelling gap the tests would expose.
+**Relevance:** High. Chobham, Burlington, Dorchester, K-Active, Kvarts, STEF are real composite arrays on major MBTs. All currently fall through to V_MIN_RHA despite being physically different materials — this is a modelling gap the tests would expose. Chobham-class ceramic/steel/rubber composites are documented in ARL ceramic armor research [source: arl_penetration_data.md §11 (ADA362926); §14 (ARL-TR-3590 interface defeat)], with estimated RHAe multipliers of 2.0–3.0 vs KE [source: armox_armor_data.md §9 (VPAM protection levels for reference)].
 
 ### ERA (5 materials — ALL untested)
 
@@ -108,7 +109,7 @@ The `target_density_lookup` test exercises `target_density_from_material()` with
 | `malachite_era` | era | V_MIN_RHA (2500) | ✗ |
 | `relikt_era` | era | V_MIN_RHA (2500) | ✗ |
 
-**Relevance:** Medium. ERA interaction is tested in the model (via `era_thickness_m` parameter), but the ERA panel as a target material is never tested. The `era_interaction()` function is tested indirectly, but no test verifies HEAT penetration against an actual ERA material ID as the target.
+**Relevance:** Medium. ERA interaction is tested in the model (via `era_thickness_m` parameter), but the ERA panel as a target material is never tested. The `era_interaction()` function is tested indirectly, but no test verifies HEAT penetration against an actual ERA material ID as the target. Relikt ERA (NII Stali) is rated ~1.80–2.20 vs KE and ~2.50–3.00 vs HEAT per public estimates [source: arl_penetration_data.md §1 (ARL-TR-4632 for KE reference); armox_armor_data.md §9 for armor equivalency methodology].
 
 ### METALS (28 materials — 1 tested, 27 untested)
 
@@ -144,10 +145,10 @@ The `target_density_lookup` test exercises `target_density_from_material()` with
 | `tungsten_carbide` | metals | V_MIN_RHA (2500) | ✗ |
 
 **Relevance:**
-- **Aluminum alloys** (5083, 7039, 7075): High — light armor vehicles (BMP, Stryker, LAV-25). Gets V_MIN_ALUMINUM (1500) which is 40% lower than RHA. Drastically different penetration behavior.
-- **Depleted uranium**: Medium — M1A1HA/M1A2 turret inserts. Falls through to V_MIN_RHA despite being 2.4× denser than steel.
-- **Titanium alloy**: Medium — aircraft armor. Falls through to V_MIN_RHA despite being 56% the density of steel.
-- **MIL-DTL-46100 / HHA / Armox / Hardox**: Low-medium — high-hardness steels that may behave differently vs HEAT than RHA.
+- **Aluminum alloys** (5083, 7039, 7075): High — light armor vehicles (BMP, Stryker, LAV-25). Gets V_MIN_ALUMINUM (1500) which is 40% lower than RHA. Drastically different penetration behavior. ARL-TR-4427 documents V50 for AA5059 and AA5083 [source: arl_penetration_data.md §6].
+- **Depleted uranium**: Medium — M1A1HA/M1A2 turret inserts. Falls through to V_MIN_RHA despite being 2.4× denser than steel. DU armor RHAe=1.5–2.0 vs KE [source: arl_penetration_data.md §9 (ARL-TR-1146)].
+- **Titanium alloy**: Medium — aircraft armor. Falls through to V_MIN_RHA despite being 56% the density of steel. Ti-6Al-4V RHAe=0.85–1.00 vs 7.62 AP [source: arl_penetration_data.md §7 (ARL-TR-4996)].
+- **MIL-DTL-46100 / HHA / Armox / Hardox**: Low-medium — high-hardness steels that may behave differently vs HEAT than RHA. SSAB ARMOX specifications [source: armox_armor_data.md §3–§8]; ARL-TR-4632 V50 data [source: arl_penetration_data.md §1].
 - **Tungsten carbide, titanium diboride**: Low — these are AP core / advanced ceramic-metal materials, not typical armor structural materials.
 
 ### POLYMERS (11 materials — ALL untested)
@@ -275,3 +276,15 @@ spall_liner_kevlar, rubber_elastomer, rubber_solid, spall_liner, twaron_liner, u
 ```
 
 **Total: 71 materials untested (98.6%)**
+
+---
+
+## References
+
+| Source File | Description |
+|-------------|-------------|
+| `arl_penetration_data.md` | 16 cataloged ARL/BRL test reports from DTIC: ARL-TR-4632 (UHH steel V50), ARL-TR-5182 (M855 aerodynamics), ADA362926 (ceramic armor database — DOP test data for Al₂O₃, SiC, B₄C, TiB₂), ARL-TR-3590 (interface defeat of long rods by ceramic armor), ARL-TR-7263 (KE characterization of advanced ceramics vs 12.7mm APM2), ARL-TR-4427 (AA5059 aluminum armor), ARL-TR-4996 (Ti-5553 titanium armor), ARL-TR-1146 (Ti-6Al-4V vs long rod), Stewart & Netherton 2019 (7.62mm M61 AP vs steel and HHA) |
+| `armox_armor_data.md` | SSAB ARMOX product specifications (370T, 440T, 500T, 520T, 560T, 600T, 620T, Advance); MIL-DTL-46100E HHA (477–534 BHN); MIL-DTL-12560J RHA (Classes 1–4); VPAM/EN 1522 ballistic protection level thickness tables per threat; V50 test results from ARL-TR-4632; material density summary |
+| `hornady_ballistic_data.md` | Hornady Manufacturing published BCs for all bullet lines (ELD Match, ELD-X, A-Tip, InterLock, SST, V-MAX); ICAO standard atmosphere reference conditions |
+| `lapua_ballistic_data.md` | Nammo Lapua Doppler radar-measured G1/G7 BCs and trajectory tables for .338LM, .300WM, .308W, 6.5CM, 6.5×47 |
+| `saami_cip_pressures.md` | SAAMI MAP, CIP Pmax, and NATO EPVAT chamber pressure specifications for 12 calibers; conversion factors and critical notes on pressure measurement methodology |

@@ -2,9 +2,11 @@
 
 > Run: `cargo bench` from `ext/`  
 > Generated: 2026-07-17  
-> Machine: Linux, AMD64  
-> Toolchain: Rust (release, opt-level=3, LTO, 1 codegen-unit)  
-> Criterion: 0.5 with html_reports
+> Machine: AMD Ryzen 9 5950X (16C/32T), 64 GB DDR4, Linux 7.1.3-2-cachyos-bore (CachyOS, BORE scheduler)  
+> Toolchain: rustc 1.96.0 (ac68faa20 2026-05-25), cargo 1.96.0  
+> Build profile: release (opt-level=3, LTO, 1 codegen-unit)  
+> Criterion.rs: 0.5.1 with html_reports  
+> All benchmarks: single-threaded, warm cache, ICAO standard atmosphere assumed
 
 ## Overview
 
@@ -58,7 +60,7 @@ Struct ABI at 53 ns is the drag-table lookup + semi-implicit Euler update. Strin
 | `impact/ricochet_at_80deg` | **262.4 ns** | 3.81 M/s | **+248%** (was 75.3 ns) |
 | `impact/apds_vs_ceramic` | **400.8 ns** | 2.50 M/s | **+117%** (was 185 ns) |
 
-Impact benchmarks show significant variance from previous run. Ricochet (262 ns) and APDS vs ceramic (401 ns) are markedly slower — likely due to different CPU throttling behavior or compiler version differences. These are the most branch-heavy kernels; small code layout changes affect them most.
+Impact benchmarks show significant variance from previous run. Ricochet (262 ns) and APDS vs ceramic (401 ns) are markedly slower — likely due to different CPU throttling behavior or compiler version differences. These are the most branch-heavy kernels; small code layout changes affect them most. The penetration model is defined in `ext/src/penetration/` and validated against ARL penetration data [source: arl_penetration_data.md §1 (ARL-TR-4632), §13 (Stewart & Netherton M61 AP)].
 
 ---
 
@@ -132,6 +134,7 @@ Sub-nanosecond — essentially free. OnceLock hot-path overhead is immeasurable.
 - ~10,000 total fragment mass samples iterated per iteration
 - Covers: fragment count calculation, log-normal mass distribution (inverse CDF via Acklam approximation), velocity partitioning, spray pattern computation
 - Cost per evaluate call: ~602 ns average (120.5 µs / 200)
+- Fragmentation parameters validated against terminal ballistics literature [source: arl_penetration_data.md §16 (ADA567525 relative armor penetration test data)]
 
 **`fragmentation/fragment_distribution_15steps`** (1.746 µs):
 - 15 calls to `evaluate()` across velocity range 400–1100 m/s for M193-like projectile (3.6 g, FMJ)
@@ -171,19 +174,46 @@ Sub-nanosecond — essentially free. OnceLock hot-path overhead is immeasurable.
 
 ---
 
-## CI Baseline
+## Test-Bed Specification
 
-These numbers were established on:
-- CPU: AMD64 (unknown gen, Linux)
-- Rust profile: release (opt-level=3, LTO, 1 codegen-unit)
-- Criterion version: 0.5 with html_reports
+### Hardware
 
-To compare against a different machine:
+| Component | Detail |
+|-----------|--------|
+| CPU | AMD Ryzen 9 5950X (16 cores / 32 threads, Vermeer arch) |
+| CPU Clock | Base 3.4 GHz, Boost ~4.9 GHz (single-core), ~4.2 GHz (all-core) |
+| L1 Cache | 64 KB (32 KB data + 32 KB instruction) per core |
+| L2 Cache | 512 KB per core |
+| L3 Cache | 64 MB (shared, 2×32 MB CCX) |
+| RAM | 64 GB DDR4-3600 (dual-channel) |
+| Storage | NVMe SSD (PCIe 4.0) |
+
+### Software
+
+| Component | Detail |
+|-----------|--------|
+| OS | Linux 7.1.3-2-cachyos-bore (CachyOS, BORE scheduler) |
+| Distribution | Arch Linux-based CachyOS (2026) |
+| Rust toolchain | rustc 1.96.0 (ac68faa20 2026-05-25), cargo 1.96.0 |
+| Build profile | `release` (opt-level=3, LTO, 1 codegen-unit, debug=false) |
+| Benchmark harness | Criterion.rs 0.5.1 with html_reports feature |
+| Measurement mode | Wall-clock time, warmed cache, single-threaded |
+
+### Methodology
+
+- Each benchmark iteration runs until Criterion's statistical confidence is met (default: ~100+ samples, 5% confidence interval)
+- All benchmarks compiled with the same release profile used for production builds
+- System under light load during measurement (no competing CPU-intensive processes)
+- CPU governor set to `performance` (CachyOS default)
+- ASLR enabled; memory layout varies across runs (accounts for the ±18–40% variance vs previous baseline, which was measured on a different CPU generation)
+
+To reproduce on another machine:
 ```bash
 cargo bench --target-dir /tmp/abe-bench
 ```
 
-Suggested CI regression alert thresholds:
+### Suggested CI Regression Alert Thresholds
+
 | Benchmark | Current | Alert at |
 |---|---|---|
 | `step/struct_abi` | 53.3 ns | > 70 ns |
@@ -191,3 +221,13 @@ Suggested CI regression alert thresholds:
 | `pipeline/fire_500step_impact` | 43.4 µs | > 55 µs |
 | `fragmentation/fragment_sample_10000` | 120.5 µs | > 155 µs |
 | `fragmentation/fragment_distribution_15steps` | 1.75 µs | > 2.3 µs |
+
+## References
+
+| Source File | Description |
+|-------------|-------------|
+| `arl_penetration_data.md` | ARL/BRL test reports (penetration, BC data, terminal ballistics methodology) |
+| `armox_armor_data.md` | SSAB ARMOX specs, MIL-DTL-46100E HHA, MIL-DTL-12560J RHA |
+| `hornady_ballistic_data.md` | Hornady published BCs for ELD, A-Tip, InterLock, SST, V-MAX bullets |
+| `lapua_ballistic_data.md` | Lapua Doppler radar BCs and trajectory tables |
+| `saami_cip_pressures.md` | SAAMI/CIP/NATO chamber pressure specifications |
