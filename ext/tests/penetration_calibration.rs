@@ -194,6 +194,122 @@ fn check_v50(
     (stats.v50_ms, stats.sigma_ms)
 }
 
+// ── Model-Independent Consistency Tests ──────────────────────────────────
+//
+// These tests validate the solver's internal consistency independent of
+// absolute accuracy against empirical data. They pass regardless of the
+// K constants' calibration state and serve as regression guards.
+
+/// De Marre formula should be strictly monotonic: thicker armor → higher V50.
+#[test]
+fn de_marre_monotonic_thickness() {
+    for proj in ["ball", "ap"] {
+        let mut prev_v50 = 0.0;
+        for thickness_mm in [5.0, 10.0, 15.0, 20.0, 30.0, 50.0] {
+            let v_req = de_marre_v_required(
+                proj,
+                0.00762,
+                0.0095,
+                thickness_mm / 1000.0,
+                0.0,
+                "steel_rha",
+            );
+            let stats = penetration_statistics(v_req, proj, 0.00762, "steel_rha", 0.05);
+            assert!(
+                stats.v50_ms > prev_v50,
+                "{}: V50 not monotonic with thickness: {:.0} ≤ {:.0} at {}mm",
+                proj,
+                stats.v50_ms,
+                prev_v50,
+                thickness_mm
+            );
+            prev_v50 = stats.v50_ms;
+        }
+    }
+}
+
+#[test]
+fn de_marre_heavier_needs_less_velocity() {
+    // De Marre: V50 ∝ 1/√m, so doubling mass should decrease V50.
+    let base_mass_kg = 0.0095;
+    let double_mass_kg = 0.0190;
+    let cal_m = 0.00762;
+    let thick_m = 0.010;
+
+    let base_v50 = {
+        let v_req = de_marre_v_required("ball", cal_m, base_mass_kg, thick_m, 0.0, "steel_rha");
+        penetration_statistics(v_req, "ball", cal_m, "steel_rha", 0.05).v50_ms
+    };
+    let double_v50 = {
+        let v_req = de_marre_v_required("ball", cal_m, double_mass_kg, thick_m, 0.0, "steel_rha");
+        penetration_statistics(v_req, "ball", cal_m, "steel_rha", 0.05).v50_ms
+    };
+    assert!(
+        double_v50 < base_v50,
+        "doubling mass should decrease V50: base={:.0} double={:.0}",
+        base_v50,
+        double_v50,
+    );
+    // With all else equal, V50 should scale by 1/√(2) ≈ 0.707
+    let ratio = double_v50 / base_v50;
+    let expected_ratio = 1.0 / 2.0f64.sqrt();
+    assert!(
+        (ratio - expected_ratio).abs() < 1e-9,
+        "V50 ratio {:.10} should match 1/√2 = {:.10}",
+        ratio,
+        expected_ratio,
+    );
+}
+
+#[test]
+fn de_marre_ap_better_than_ball() {
+    // For identical inputs, AP should have equal or lower V50 than ball
+    // because De Marre K(AP) < K(ball) → higher penetration efficiency.
+    let cal_m = 0.00762;
+    let mass_kg = 0.0095;
+    let thick_m = 0.010;
+
+    for angle in [0.0, 15.0, 30.0, 45.0] {
+        let ball_v50 = {
+            let v_req = de_marre_v_required("ball", cal_m, mass_kg, thick_m, angle, "steel_rha");
+            penetration_statistics(v_req, "ball", cal_m, "steel_rha", 0.05).v50_ms
+        };
+        let ap_v50 = {
+            let v_req = de_marre_v_required("ap", cal_m, mass_kg, thick_m, angle, "steel_rha");
+            penetration_statistics(v_req, "ap", cal_m, "steel_rha", 0.05).v50_ms
+        };
+        assert!(
+            ap_v50 <= ball_v50,
+            "AP V50 {:.0} > ball V50 {:.0} at {:.0}° — K constants inconsistent",
+            ap_v50,
+            ball_v50,
+            angle,
+        );
+    }
+}
+
+#[test]
+fn de_marre_obliquity_increases_v50() {
+    // Increasing impact angle should always increase V50 (harder to pen).
+    let cal_m = 0.00762;
+    let mass_kg = 0.0095;
+    let thick_m = 0.010;
+    let mut prev_v50 = 0.0;
+
+    for angle in [0.0, 15.0, 30.0, 45.0, 60.0] {
+        let v_req = de_marre_v_required("ball", cal_m, mass_kg, thick_m, angle, "steel_rha");
+        let stats = penetration_statistics(v_req, "ball", cal_m, "steel_rha", 0.05);
+        assert!(
+            stats.v50_ms > prev_v50,
+            "V50 not increasing with angle: {:.0} at {:.0}° ≤ {:.0} at previous",
+            stats.v50_ms,
+            angle,
+            prev_v50,
+        );
+        prev_v50 = stats.v50_ms;
+    }
+}
+
 // ── Logistic Function Shape Test ──────────────────────────────────────────
 
 /// Verify the logistic probability function is mathematically correct.
