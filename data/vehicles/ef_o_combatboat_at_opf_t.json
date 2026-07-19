@@ -1,0 +1,6 @@
+{
+  "class": "EF_O_CombatBoat_AT_OPF_T",
+  "armor_thickness_mm": 600,
+  "armor_structural": 1,
+  "notes": "armor=600.0, armorStructural=1.0."
+}

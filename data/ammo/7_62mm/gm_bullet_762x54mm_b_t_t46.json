@@ -1,0 +1,19 @@
+{
+  "class": "gm_bullet_762x54mm_B_T_T46",
+  "projectile": {
+    "model": "gm_bullet_762x54mm_b_t_t46",
+    "caliber_mm": 7.925,
+    "mass_g": 9.65,
+    "muzzle_velocity_ms": 809.0,
+    "bc_g1": 0.395,
+    "cdm_id": "g1",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::gm_bullet_762x54mm_B_T_T46",
+      "methodology": "Extracted from ACE3 ballistics config via Arma 3 RPT dump.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Generated from Arma 3 config dump. ACE3 ballistics: caliber=7.925mm, mass=9.65g, drag=g1, BC=0.395."
+}

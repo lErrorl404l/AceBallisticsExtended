@@ -1,0 +1,18 @@
+{
+  "class": "srifle_GM6_snake_lxWS",
+  "caliber_mm": 12.7,
+  "barrel_length_mm": 730.0,
+  "rifling_twist_mm": 381.0,
+  "chamber_pressure_mpa": 400.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 41.9,
+  "muzzle_velocity_ms": 800.0,
+  "zero_range_m": 300,
+  "source": {
+    "type": "inferred",
+    "reference": "ACE3 ace_ballistics CfgWeapons::srifle_GM6_snake_lxWS",
+    "methodology": "Barrel/twist from ACE3. Caliber inferred from class naming (12.7mm). Chamber pressure estimated for caliber.",
+    "confidence": "medium"
+  },
+  "notes": "ACE3 barrel=730.0mm, twist=381.0mm. Caliber inferred as 12.7mm. Generated from Arma 3 config dump."
+}

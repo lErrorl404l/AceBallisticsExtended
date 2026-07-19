@@ -1,0 +1,19 @@
+{
+  "class": "gm_bullet_545x39mm_B_7N6",
+  "projectile": {
+    "model": "gm_bullet_545x39mm_b_7n6",
+    "caliber_mm": 5.588,
+    "mass_g": 3.4279,
+    "muzzle_velocity_ms": 880.0,
+    "bc_g7": 0.168,
+    "cdm_id": "g7",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::gm_bullet_545x39mm_B_7N6",
+      "methodology": "Extracted from ACE3 ballistics config via Arma 3 RPT dump.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Generated from Arma 3 config dump. ACE3 ballistics: caliber=5.588mm, mass=3.42792g, drag=g7, BC=0.168."
+}

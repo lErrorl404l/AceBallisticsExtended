@@ -1,0 +1,19 @@
+{
+  "class": "gm_bullet_556x45mm_B_T_M196",
+  "projectile": {
+    "model": "gm_bullet_556x45mm_b_t_m196",
+    "caliber_mm": 5.69,
+    "mass_g": 3.5,
+    "muzzle_velocity_ms": 954.3,
+    "bc_g7": 0.118,
+    "cdm_id": "g7",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::gm_bullet_556x45mm_B_T_M196",
+      "methodology": "Extracted from ACE3 ballistics config via Arma 3 RPT dump.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Generated from Arma 3 config dump. ACE3 ballistics: caliber=5.69mm, mass=3.5g, drag=g7, BC=0.118."
+}

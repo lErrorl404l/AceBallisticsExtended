@@ -1,0 +1,6 @@
+{
+  "class": "B_Ship_MRLS_01_F",
+  "armor_thickness_mm": 400,
+  "armor_structural": 6,
+  "notes": "armor=400.0, armorStructural=6.0."
+}

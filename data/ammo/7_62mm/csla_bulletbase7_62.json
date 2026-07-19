@@ -1,0 +1,19 @@
+{
+  "class": "CSLA_BulletBase7_62",
+  "projectile": {
+    "model": "csla_bulletbase7_62",
+    "caliber_mm": 7.92,
+    "mass_g": 7.97,
+    "muzzle_velocity_ms": 723.0,
+    "bc_g1": 0.275,
+    "cdm_id": "g1",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::CSLA_BulletBase7_62",
+      "methodology": "Extracted from ACE3 ballistics config via Arma 3 RPT dump.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Generated from Arma 3 config dump. ACE3 ballistics: caliber=7.92mm, mass=7.97g, drag=g1, BC=0.275."
+}

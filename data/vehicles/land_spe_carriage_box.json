@@ -1,0 +1,6 @@
+{
+  "class": "Land_SPE_Carriage_Box",
+  "armor_thickness_mm": 120,
+  "armor_structural": 1,
+  "notes": "armor=120.0, armorStructural=1.0."
+}

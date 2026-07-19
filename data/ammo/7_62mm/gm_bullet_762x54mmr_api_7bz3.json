@@ -1,0 +1,19 @@
+{
+  "class": "gm_bullet_762x54mmR_API_7bz3",
+  "projectile": {
+    "model": "gm_bullet_762x54mmr_api_7bz3",
+    "caliber_mm": 7.925,
+    "mass_g": 10.39,
+    "muzzle_velocity_ms": 809.0,
+    "bc_g1": 0.401,
+    "cdm_id": "g1",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::gm_bullet_762x54mmR_API_7bz3",
+      "methodology": "Extracted from ACE3 ballistics config via Arma 3 RPT dump.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Generated from Arma 3 config dump. ACE3 ballistics: caliber=7.925mm, mass=10.39g, drag=g1, BC=0.401."
+}

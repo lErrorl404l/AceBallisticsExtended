@@ -1,0 +1,6 @@
+{
+  "class": "Land_vn_railwaycar_01_tank_f",
+  "armor_thickness_mm": 400,
+  "armor_structural": 1,
+  "notes": "armor=400.0, armorStructural=1.0."
+}

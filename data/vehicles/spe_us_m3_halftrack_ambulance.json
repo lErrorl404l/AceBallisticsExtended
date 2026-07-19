@@ -1,0 +1,6 @@
+{
+  "class": "SPE_US_M3_Halftrack_Ambulance",
+  "armor_thickness_mm": 100,
+  "armor_structural": 12,
+  "notes": "armor=100.0, armorStructural=12.0."
+}

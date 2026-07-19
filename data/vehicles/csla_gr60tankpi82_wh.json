@@ -1,0 +1,6 @@
+{
+  "class": "CSLA_gr60tankPi82_wh",
+  "armor_thickness_mm": 200,
+  "armor_structural": 1,
+  "notes": "armor=200.0, armorStructural=1.0."
+}

@@ -1,0 +1,6 @@
+{
+  "class": "B_Plane_Fighter_01_Stealth_F",
+  "armor_thickness_mm": 60,
+  "armor_structural": 2,
+  "notes": "armor=60.0, armorStructural=2.0."
+}

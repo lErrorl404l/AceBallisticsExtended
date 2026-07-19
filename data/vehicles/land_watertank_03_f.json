@@ -1,0 +1,6 @@
+{
+  "class": "Land_WaterTank_03_F",
+  "armor_thickness_mm": 2000,
+  "armor_structural": 1,
+  "notes": "armor=2000.0, armorStructural=1.0."
+}

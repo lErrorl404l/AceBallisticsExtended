@@ -1,0 +1,6 @@
+{
+  "class": "C_Boat_Civil_01_rescue_F",
+  "armor_thickness_mm": 60,
+  "armor_structural": 1,
+  "notes": "armor=60.0, armorStructural=1.0."
+}

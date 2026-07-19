@@ -1,0 +1,6 @@
+{
+  "class": "SmartMarker_T_CarChargeActive_F",
+  "armor_thickness_mm": 150,
+  "armor_structural": 1,
+  "notes": "armor=150.0, armorStructural=1.0."
+}

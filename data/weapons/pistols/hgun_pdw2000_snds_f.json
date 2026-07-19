@@ -1,0 +1,18 @@
+{
+  "class": "hgun_PDW2000_snds_F",
+  "caliber_mm": 9.0,
+  "barrel_length_mm": 177.8,
+  "rifling_twist_mm": 228.6,
+  "chamber_pressure_mpa": 250.0,
+  "cdm_id": "g1",
+  "projectile_mass_g": 8.0,
+  "muzzle_velocity_ms": 800.0,
+  "zero_range_m": 100,
+  "source": {
+    "type": "inferred",
+    "reference": "ACE3 ace_ballistics CfgWeapons::hgun_PDW2000_snds_F",
+    "methodology": "Barrel/twist from ACE3. Caliber inferred from class naming (9mm). Chamber pressure estimated for caliber.",
+    "confidence": "medium"
+  },
+  "notes": "ACE3 barrel=177.8mm, twist=228.6mm. Caliber inferred as 9mm. Generated from Arma 3 config dump."
+}

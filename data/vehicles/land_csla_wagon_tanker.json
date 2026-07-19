@@ -1,0 +1,6 @@
+{
+  "class": "Land_csla_wagon_tanker",
+  "armor_thickness_mm": 1750,
+  "armor_structural": 1,
+  "notes": "armor=1750.0, armorStructural=1.0."
+}

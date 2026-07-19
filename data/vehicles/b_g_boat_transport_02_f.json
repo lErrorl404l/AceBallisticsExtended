@@ -1,0 +1,6 @@
+{
+  "class": "B_G_Boat_Transport_02_F",
+  "armor_thickness_mm": 50,
+  "armor_structural": 1,
+  "notes": "armor=50.0, armorStructural=1.0."
+}

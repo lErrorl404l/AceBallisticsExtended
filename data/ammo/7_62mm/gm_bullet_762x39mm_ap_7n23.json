@@ -1,0 +1,19 @@
+{
+  "class": "gm_bullet_762x39mm_AP_7N23",
+  "projectile": {
+    "model": "gm_bullet_762x39mm_ap_7n23",
+    "caliber_mm": 7.92,
+    "mass_g": 7.899,
+    "muzzle_velocity_ms": 716.0,
+    "bc_g1": 0.275,
+    "cdm_id": "g1",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::gm_bullet_762x39mm_AP_7N23",
+      "methodology": "Extracted from ACE3 ballistics config via Arma 3 RPT dump.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Generated from Arma 3 config dump. ACE3 ballistics: caliber=7.92mm, mass=7.899g, drag=g1, BC=0.275."
+}

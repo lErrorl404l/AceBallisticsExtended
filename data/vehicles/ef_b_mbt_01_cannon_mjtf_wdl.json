@@ -1,0 +1,6 @@
+{
+  "class": "EF_B_MBT_01_cannon_MJTF_Wdl",
+  "armor_thickness_mm": 900,
+  "armor_structural": 6,
+  "notes": "armor=900.0, armorStructural=6.0."
+}

@@ -1,0 +1,6 @@
+{
+  "class": "B_ION_Pickup_rcws_rf",
+  "armor_thickness_mm": 50,
+  "armor_structural": 4,
+  "notes": "armor=50.0, armorStructural=4.0."
+}

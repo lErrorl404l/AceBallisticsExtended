@@ -1,0 +1,6 @@
+{
+  "class": "B_Ship_Gun_01_F",
+  "armor_thickness_mm": 400,
+  "armor_structural": 4,
+  "notes": "armor=400.0, armorStructural=4.0."
+}

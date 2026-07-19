@@ -1,0 +1,18 @@
+{
+  "class": "srifle_DMR_07_blk_DMS_Snds_F",
+  "caliber_mm": 7.62,
+  "barrel_length_mm": 640.0,
+  "rifling_twist_mm": 206.0,
+  "chamber_pressure_mpa": 380.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 9.5,
+  "muzzle_velocity_ms": 800.0,
+  "zero_range_m": 300,
+  "source": {
+    "type": "inferred",
+    "reference": "ACE3 ace_ballistics CfgWeapons::srifle_DMR_07_blk_DMS_Snds_F",
+    "methodology": "Barrel/twist from ACE3. Caliber inferred from class naming (7.62mm). Chamber pressure estimated for caliber.",
+    "confidence": "medium"
+  },
+  "notes": "ACE3 barrel=640.0mm, twist=206.0mm. Caliber inferred as 7.62mm. Generated from Arma 3 config dump."
+}

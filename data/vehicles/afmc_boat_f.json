@@ -1,0 +1,6 @@
+{
+  "class": "AFMC_Boat_F",
+  "armor_thickness_mm": 1000,
+  "armor_structural": 1,
+  "notes": "armor=1000.0, armorStructural=1.0."
+}

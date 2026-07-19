@@ -1,0 +1,6 @@
+{
+  "class": "O_Plane_CAS_02_dynamicLoadout_F",
+  "armor_thickness_mm": 80,
+  "armor_structural": 2,
+  "notes": "armor=80.0, armorStructural=2.0."
+}

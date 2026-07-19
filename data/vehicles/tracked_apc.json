@@ -1,0 +1,6 @@
+{
+  "class": "Tracked_APC",
+  "armor_thickness_mm": 400,
+  "armor_structural": 2,
+  "notes": "armor=400.0, armorStructural=2.0."
+}

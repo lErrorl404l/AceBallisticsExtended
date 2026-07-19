@@ -1,0 +1,19 @@
+{
+  "class": "gm_bullet_9x19mm_AP_dm91",
+  "projectile": {
+    "model": "gm_bullet_9x19mm_ap_dm91",
+    "caliber_mm": 9.017,
+    "mass_g": 5.7023,
+    "muzzle_velocity_ms": 440.0,
+    "bc_g1": 0.165,
+    "cdm_id": "g1",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::gm_bullet_9x19mm_AP_dm91",
+      "methodology": "Extracted from ACE3 ballistics config via Arma 3 RPT dump.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Generated from Arma 3 config dump. ACE3 ballistics: caliber=9.017mm, mass=5.7023g, drag=g1, BC=0.165."
+}

@@ -1,0 +1,6 @@
+{
+  "class": "O_MBT_04_cannon_F",
+  "armor_thickness_mm": 700,
+  "armor_structural": 6,
+  "notes": "armor=700.0, armorStructural=6.0."
+}

@@ -1,0 +1,19 @@
+{
+  "class": "lxWS_B_SG_HE",
+  "projectile": {
+    "model": "lxws_b_sg_he",
+    "caliber_mm": 17.5,
+    "mass_g": 28.35,
+    "muzzle_velocity_ms": 434.3,
+    "bc_g1": 0.11,
+    "cdm_id": "g1",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::lxWS_B_SG_HE",
+      "methodology": "Extracted from ACE3 ballistics config via Arma 3 RPT dump.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Generated from Arma 3 config dump. ACE3 ballistics: caliber=17.5mm, mass=28.35g, drag=g1, BC=0.11."
+}

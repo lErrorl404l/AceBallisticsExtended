@@ -1,0 +1,19 @@
+{
+  "class": "B_BlankRound_SubAmmo",
+  "projectile": {
+    "model": "b_blankround_subammo",
+    "caliber_mm": 5.69,
+    "mass_g": 4.0176,
+    "muzzle_velocity_ms": 878.0,
+    "bc_g7": 0.151,
+    "cdm_id": "g7",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::B_BlankRound_SubAmmo",
+      "methodology": "Extracted from ACE3 ballistics config via Arma 3 RPT dump.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Generated from Arma 3 config dump. ACE3 ballistics: caliber=5.69mm, mass=4.0176g, drag=g7, BC=0.151."
+}

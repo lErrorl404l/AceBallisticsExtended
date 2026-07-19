@@ -1,0 +1,6 @@
+{
+  "class": "I_A_AlienDrone_01_F",
+  "armor_thickness_mm": 6000,
+  "armor_structural": 300,
+  "notes": "armor=6000.0, armorStructural=300.0."
+}

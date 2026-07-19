@@ -1,0 +1,6 @@
+{
+  "class": "SPE_US_G503_MB_Ambulance",
+  "armor_thickness_mm": 30,
+  "armor_structural": 4,
+  "notes": "armor=30.0, armorStructural=4.0."
+}

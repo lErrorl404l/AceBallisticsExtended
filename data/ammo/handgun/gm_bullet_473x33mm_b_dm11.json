@@ -1,0 +1,19 @@
+{
+  "class": "gm_bullet_473x33mm_B_dm11",
+  "projectile": {
+    "model": "gm_bullet_473x33mm_b_dm11",
+    "caliber_mm": 4.92,
+    "mass_g": 3.33,
+    "muzzle_velocity_ms": 925.0,
+    "bc_g7": 0.115,
+    "cdm_id": "g7",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::gm_bullet_473x33mm_B_dm11",
+      "methodology": "Extracted from ACE3 ballistics config via Arma 3 RPT dump.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Generated from Arma 3 config dump. ACE3 ballistics: caliber=4.92mm, mass=3.33g, drag=g7, BC=0.115."
+}

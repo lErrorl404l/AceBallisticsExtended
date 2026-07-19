@@ -1,0 +1,6 @@
+{
+  "class": "EF_B_CombatBoat_HMG_MJTF_Wdl",
+  "armor_thickness_mm": 600,
+  "armor_structural": 1,
+  "notes": "armor=600.0, armorStructural=1.0."
+}

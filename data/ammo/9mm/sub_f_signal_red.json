@@ -1,0 +1,19 @@
+{
+  "class": "Sub_F_Signal_Red",
+  "projectile": {
+    "model": "sub_f_signal_red",
+    "caliber_mm": 9.042,
+    "mass_g": 7.452,
+    "muzzle_velocity_ms": 420.0,
+    "bc_g1": 0.17,
+    "cdm_id": "g1",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::Sub_F_Signal_Red",
+      "methodology": "Extracted from ACE3 ballistics config via Arma 3 RPT dump.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Generated from Arma 3 config dump. ACE3 ballistics: caliber=9.042mm, mass=7.452g, drag=g1, BC=0.17."
+}

@@ -1,0 +1,6 @@
+{
+  "class": "EF_I_CombatBoat_Unarmed_AAF",
+  "armor_thickness_mm": 600,
+  "armor_structural": 1,
+  "notes": "armor=600.0, armorStructural=1.0."
+}

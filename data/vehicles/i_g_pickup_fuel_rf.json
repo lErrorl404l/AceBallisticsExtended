@@ -1,0 +1,6 @@
+{
+  "class": "I_G_Pickup_fuel_rf",
+  "armor_thickness_mm": 50,
+  "armor_structural": 4,
+  "notes": "armor=50.0, armorStructural=4.0."
+}

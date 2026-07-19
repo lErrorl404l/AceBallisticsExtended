@@ -1,0 +1,6 @@
+{
+  "class": "Land_FlexibleTank_Yellow_RF",
+  "armor_thickness_mm": 250,
+  "armor_structural": 0,
+  "notes": "armor=250.0, armorStructural=0.1."
+}

@@ -1,0 +1,6 @@
+{
+  "class": "FxCartridge_65_caseless",
+  "armor_thickness_mm": 100,
+  "armor_structural": 1,
+  "notes": "armor=100.0, armorStructural=1.0."
+}
