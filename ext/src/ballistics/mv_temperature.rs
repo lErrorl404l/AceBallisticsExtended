@@ -115,6 +115,7 @@ mod tests {
     use super::*;
 
     // Helper: round to 1 decimal for readable assertions
+    #[allow(dead_code)]
     fn r1(v: f64) -> f64 {
         (v * 10.0).round() / 10.0
     }

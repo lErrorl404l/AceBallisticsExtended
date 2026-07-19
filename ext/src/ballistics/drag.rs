@@ -185,6 +185,7 @@ fn g8_drag(mach: f64) -> f64 {
 
 // ── Custom Drag Model Builder ──────────────────────────────────────────────
 
+#[allow(dead_code)] // ponytail: custom drag models, wire when user-supplied drag curve data is available
 struct DragFunc(Box<dyn Fn(f64) -> f64>);
 
 // Safety: the only closures we store are from build_custom_drag_model which
@@ -244,6 +245,7 @@ pub fn get_custom_drag(name: &str, mach: f64) -> f64 {
 
 // ── Boat-tail Drag Reduction ──────────────────────────────────────────────
 
+#[allow(dead_code)] // ponytail: boat-tail drag reduction, wire when projectile geometry is exposed
 /// Compute the drag multiplier for a boat-tail projectile.
 ///
 /// Boat-tail projectiles have reduced base drag compared to flat-base

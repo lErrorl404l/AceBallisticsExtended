@@ -8,6 +8,8 @@
 //   - ISO 2533:1975
 //   - MIL-STD-210C
 
+#![allow(dead_code)] // ponytail: non-ISA, humidity, precipitation, and wind models are forward-looking
+
 pub const GRAVITY: f64 = 9.80665; // m/s²
 pub const R_SPECIFIC: f64 = 287.058; // J/(kg·K) - specific gas constant for air
 pub const LAPSE_RATE: f64 = -0.0065; // K/m - temperature lapse rate in troposphere
@@ -118,6 +120,7 @@ pub fn density_from_altitude(altitude_m: f64, temp_c: f64) -> f64 {
 
 // ── Non-ISA Atmosphere ─────────────────────────────────────────────────────────
 
+#[allow(dead_code)] // ponytail: non-ISA atmosphere model, wire when weather system is integrated
 /// Non-ISA atmosphere parameters representing deviations from the standard model.
 pub struct NonIsaAtmosphere {
     /// Temperature offset from ISA at any altitude (°C). Positive = warmer.
@@ -128,6 +131,7 @@ pub struct NonIsaAtmosphere {
     pub humidity_pct: f64,
 }
 
+#[allow(dead_code)] // ponytail: gust/turbulence, wire when wind variation is needed
 /// Turbulence parameters for gust and eddy modeling.
 pub struct TurbulenceParams {
     /// Turbulence intensity (0.0 = calm, 1.0 = severe).
@@ -138,6 +142,7 @@ pub struct TurbulenceParams {
     pub gust_amplitude_ms: f64,
 }
 
+#[allow(dead_code)] // ponytail: wind profile model, wire when altitude-varying wind needed
 /// Wind profile defined by a power-law model.
 ///
 /// U(z) = U_ref * (z / z_ref)^α
@@ -152,6 +157,7 @@ pub struct WindProfile {
     pub reference_height_m: f64,
 }
 
+#[allow(dead_code)] // ponytail: combined weather state, wire when full weather ingestion is ready
 /// Combined weather state at a given altitude.
 pub struct WeatherState {
     /// Altitude (m).
@@ -172,6 +178,7 @@ pub struct WeatherState {
 
 // ── Humidity Correction Functions ──────────────────────────────────────────────
 
+#[allow(dead_code)] // ponytail: humidity correction, wire when weather data is available
 /// Compute air density corrected for water vapour (kg/m³).
 ///
 /// Moist air is lighter than dry air at the same temperature and pressure
@@ -257,6 +264,7 @@ const MAGNUS_B: f64 = 243.04;
 /// Saturation vapour pressure (Pa) via the improved Magnus formula.
 ///
 /// Reference: Alduchov & Eskridge (1996), J. Appl. Meteor.
+#[allow(dead_code)] // ponytail: used by humidity correction, dead when humidity not wired
 fn saturation_vapor_pressure(temp_c: f64) -> f64 {
     610.94 * ((MAGNUS_A * temp_c) / (temp_c + MAGNUS_B)).exp()
 }

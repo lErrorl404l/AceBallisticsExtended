@@ -27,6 +27,7 @@
 ///
 /// These values correspond to the Mayer-Krause characteristic length
 /// used in the burn-rate efficiency model.
+#[allow(dead_code)] // ponytail: reference values for powder burn rates, wire when propellant charge data available
 pub mod burn_rate_constants {
     /// Fast pistol powders (Bullseye, Titegroup, N320) — short characteristic length.
     pub const FAST_PISTOL: f64 = 0.17;
@@ -243,6 +244,7 @@ pub fn calc_muzzle_velocity_with_burn(
 
 // ── Muzzle brake ───────────────────────────────────────────────────────────────
 
+#[allow(dead_code)] // ponytail: muzzle brake flash/overpressure model, wire when brake data exposed
 /// Parameters describing a muzzle brake installation.
 ///
 /// Used with [`evaluate_muzzle_brake`] to compute recoil reduction and
@@ -261,6 +263,7 @@ pub struct MuzzleBrakeParams {
     pub efficiency: f64,
 }
 
+#[allow(dead_code)]
 impl MuzzleBrakeParams {
     /// Create a no-brake configuration.
     ///
@@ -279,6 +282,7 @@ impl MuzzleBrakeParams {
 /// Blast overpressure and recoil reduction from a muzzle brake evaluation.
 ///
 /// Returned by [`evaluate_muzzle_brake`].
+#[allow(dead_code)] // ponytail: muzzle brake evaluation, wire when brake data exposed
 #[derive(Debug, Clone)]
 pub struct MuzzleBrakeResult {
     /// Fraction of original recoil retained.
@@ -293,6 +297,7 @@ pub struct MuzzleBrakeResult {
     pub overpressure_duration_ms: f64,
 }
 
+#[allow(dead_code)] // ponytail: muzzle brake evaluation, wire when brake data exposed
 /// Evaluate muzzle brake blast overpressure and recoil reduction.
 ///
 /// Uses an empirical model based on peak chamber pressure (estimated from

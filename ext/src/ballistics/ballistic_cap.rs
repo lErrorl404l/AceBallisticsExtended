@@ -78,7 +78,7 @@ pub struct CapDetachResult {
 
 /// Minimum velocity (m/s) for reliable ballistic cap detachment on impact.
 /// Below this the cap may crumple rather than shear off cleanly.
-const BALLISTIC_CAP_MIN_DETACH_VELOCITY_MS: f64 = 150.0;
+pub const BALLISTIC_CAP_MIN_DETACH_VELOCITY_MS: f64 = 150.0;
 
 /// Minimum velocity (m/s) for piercing cap detachment during penetration.
 /// Below this the cap may not separate and could hinder penetration.
