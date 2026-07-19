@@ -13,6 +13,9 @@
 //     stiffens on impact.  Transition modelled as a sigmoid centred at
 //     ~300 m/s.  Below threshold → flexible fabric; above → up to 5×
 //     effective hardness.
+// ponytail: not wired into armour evaluation — whole module is forward-looking
+
+#![allow(dead_code)]
 //
 //   Spaced / sloped dynamic array — multiple thin plates at angles.
 //     Each plate induces 1–3° yaw; after 3–4 plates even AP projectiles
@@ -326,7 +329,7 @@ pub fn evaluate_dynamic_armor(params: &DynamicArmorParams) -> DynamicArmorResult
                 armor_damaged: damaged,
                 computed_effective_thickness_mm: effective,
             }
-        }
+        },
 
         DynamicArmorType::ShearThickeningFluid {
             thickness_mm,
@@ -367,7 +370,7 @@ pub fn evaluate_dynamic_armor(params: &DynamicArmorParams) -> DynamicArmorResult
                 armor_damaged: damaged,
                 computed_effective_thickness_mm: effective,
             }
-        }
+        },
 
         DynamicArmorType::SpacedSlopedArray {
             plate_count,
@@ -406,7 +409,7 @@ pub fn evaluate_dynamic_armor(params: &DynamicArmorParams) -> DynamicArmorResult
                         armor_damaged: true,
                         computed_effective_thickness_mm: base_thickness * total_mult,
                     }
-                }
+                },
 
                 _ => {
                     // KE / Fragment: each plate induces cumulative yaw.
@@ -438,9 +441,9 @@ pub fn evaluate_dynamic_armor(params: &DynamicArmorParams) -> DynamicArmorResult
                         armor_damaged: total_yaw > 3.0,
                         computed_effective_thickness_mm: base_thickness * yaw_mult,
                     }
-                }
+                },
             }
-        }
+        },
 
         DynamicArmorType::MultiLayerComposite {
             layers,
@@ -494,7 +497,7 @@ fn evaluate_mlc(
                 let abs = viscoelastic_absorption(v, 5.0 * weight, DEFAULT_VISCO_AREA_M2);
                 weighted_mult_sum += mult * weight;
                 total_energy_abs += abs;
-            }
+            },
             'S' => {
                 let mult = stf_multiplier(v, 3.0 * weight);
                 let vel_ratio = (v / STF_V0_MS).min(3.0);
@@ -505,7 +508,7 @@ fn evaluate_mlc(
                 };
                 total_energy_abs += ke * frac_abs * weight / total_layers as f64;
                 weighted_mult_sum += mult * weight;
-            }
+            },
             'A' => {
                 let n = (count * 2).max(1); // each 'A' unit approximates 2 plates
                 let total_yaw = (n as f64 * YAW_PER_PLATE_DEG * 0.7).min(MAX_CUMULATIVE_YAW_DEG);
@@ -514,11 +517,11 @@ fn evaluate_mlc(
                 max_yaw = max_yaw.max(total_yaw);
                 weighted_mult_sum += mult * weight;
                 total_energy_abs += ke * 0.05 * (n as f64).min(5.0) * weight / total_layers as f64;
-            }
+            },
             _ => {
                 // Unknown component: treat as mild homogeneous composite (~1.8×)
                 weighted_mult_sum += 1.8 * weight;
-            }
+            },
         }
     }
 

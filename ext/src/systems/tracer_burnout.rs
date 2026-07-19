@@ -10,6 +10,9 @@
 // Burn rate depends on velocity (faster flight = faster consumption),
 // temperature (cold reduces burn rate), and altitude (reduced oxygen
 // at altitude slows combustion).
+// ponytail: not wired into the projectile state update — whole module is forward-looking
+
+#![allow(dead_code)]
 //
 // References:
 //   - US Army ARDEC Tracer Ammunition Specifications

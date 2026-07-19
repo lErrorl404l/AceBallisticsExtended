@@ -14,6 +14,9 @@
 //     perpendicular to the penetrator.  Against KE penetrators the plate
 //     reduces penetration by momentum transfer; against HEAT jets it
 //     disrupts the shaped-charge jet with 3–6× effectiveness of
+// ponytail: not wired into armour evaluation — test-only constants
+
+#![allow(dead_code)]
 //     conventional ERA.
 //
 //   Dynamic ERA — Velocity-gated response that only activates above a
@@ -347,7 +350,7 @@ fn base_effectiveness(threat_type: &str, apfsds_tip_factor: f64) -> f64 {
             } else {
                 KE_EFFECTIVENESS
             }
-        }
+        },
         "heat" | "he" | "chemical" => HEAT_EFFECTIVENESS,
         _ => 2.5, // generic / missile
     }
@@ -378,13 +381,13 @@ fn flyer_velocity_reduction(
             let dv = COUPLING_EFFICIENCY * p_flyer / total_mass;
             let reduction = (dv / threat_velocity_ms.max(1.0)).min(0.85);
             reduction * timing_factor
-        }
+        },
         "heat" | "he" | "chemical" | "missile" | _ => {
             // HEAT / missiles: the shaped-charge jet is disrupted by even
             // small lateral perturbations.  Base reduction is higher.
             let reduction = 0.55 + 0.20 * (flyer_velocity_ms / DEFAULT_FLYER_VELOCITY_MS).min(1.5);
             (reduction * timing_factor).min(0.95)
-        }
+        },
     }
 }
 
@@ -523,7 +526,7 @@ pub fn evaluate_predictive_era(
             _ => {
                 params.threat_velocity_ms
                     >= threshold_ke_velocity_ms.min(threshold_heat_velocity_ms)
-            }
+            },
         },
         PredictiveERAType::Hybrid { .. } => params.threat_velocity_ms >= velocity_threshold,
         _ => true, // non-gated types always pass
@@ -533,7 +536,7 @@ pub fn evaluate_predictive_era(
     let sensor_acquired = match params.era_type {
         PredictiveERAType::PredictiveERA { .. } | PredictiveERAType::Hybrid { .. } => {
             detection_range_m > 0.0 && params.threat_range_m <= detection_range_m
-        }
+        },
         _ => true, // non-sensor types are always "acquired"
     };
 

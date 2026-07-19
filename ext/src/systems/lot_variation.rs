@@ -189,8 +189,8 @@ pub fn lot_variation_statistics(params: &LotVariationParams) -> LotStatistics {
     LotStatistics {
         mean_mv_ms: mean_mv,
         std_mv_ms: std_mv,
-        mean_bc: mean_bc,
-        std_bc: std_bc,
+        mean_bc,
+        std_bc,
         lot_samples: samples,
     }
 }

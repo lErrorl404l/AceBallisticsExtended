@@ -137,7 +137,7 @@ pub fn validate_calibration(calibration_path: &std::path::Path) -> CalibrationRe
                 zones_warning: 0,
                 rmse_mm: 0.0,
             };
-        }
+        },
     };
 
     let registry = get_data_registry();

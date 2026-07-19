@@ -10,6 +10,9 @@
 //   - "Iron Fist" (IMI, Israel) — hard/soft-kill hybrid
 //   - "Zaslon" (Ukraine) — hard-kill, directional, limited coverage
 //   - "Afghanit" (Russia, T-14 Armata) — hard-kill with AESA radar
+// ponytail: not wired into projectile interception — whole module is forward-looking
+
+#![allow(dead_code)]
 //   - "Drozd" (Russia, T-55AD) — first-gen hard-kill
 //   - "Shtora" (Russia) — soft-kill IR dazzler / smoke screen
 //   - O'Gorman, T.J. et al., "Active Protection System Effectiveness

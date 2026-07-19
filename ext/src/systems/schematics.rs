@@ -243,16 +243,16 @@ fn load_database() -> Option<&'static Vec<VehicleSchematic>> {
                             path
                         );
                         Some(convert(raw))
-                    }
+                    },
                     Err(e) => {
                         eprintln!("[schematics] Warning: failed to parse {}: {}", path, e);
                         None
-                    }
+                    },
                 },
                 Err(e) => {
                     eprintln!("[schematics] Warning: failed to read {}: {}", path, e);
                     None
-                }
+                },
             }
         })
         .as_ref()

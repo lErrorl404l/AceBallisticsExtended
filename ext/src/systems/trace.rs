@@ -10,6 +10,9 @@
 //
 // trace_init();
 // trace_println!("step: v={:.1} x={:.1}", vx, x);
+// ponytail: debug-only tracing, not used in production builds
+
+#![allow(dead_code)]
 // if trace_enabled() {
 //     // heavy work only when tracing
 // }
