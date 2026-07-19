@@ -74,6 +74,7 @@ jobs:
       - uses: EmbarkStudios/cargo-deny-action@v2
         with:
           manifest-path: ./ext/Cargo.toml
+          deny-file: ./deny.toml
           arguments: --all-features
 
   # ── Cross-compile ────────────────────────────────────────────────────
