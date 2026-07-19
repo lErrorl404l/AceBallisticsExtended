@@ -204,6 +204,8 @@ pub fn yaw_drag_penalty(yaw_angle_rad: f64, projectile_type: &str) -> f64 {
 ///
 /// # Returns
 /// `(new_vx, new_vy, new_vz, new_yaw)` after `dt_s`
+#[allow(clippy::too_many_arguments)]
+// ponytail: physics kernel, all params required
 pub fn step_4dof(
     vel_x: f64,
     vel_y: f64,

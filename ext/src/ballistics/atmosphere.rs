@@ -103,7 +103,7 @@ pub fn wind_shear_factor(altitude_m: f64) -> f64 {
     let ln_ref = WIND_REF_HEIGHT.ln();
 
     let factor = (ln_z - ln_z0) / (ln_ref - ln_z0);
-    factor.max(1.0).min(3.0) // Sanity bounds
+    factor.clamp(1.0, 3.0) // Sanity bounds
 }
 
 /// Convenience: density from altitude with temperature override

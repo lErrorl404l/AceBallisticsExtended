@@ -87,7 +87,7 @@ fn regime_efficiency_multiplier(chamber_pressure_pa: f64, caliber_m: f64) -> f64
     }
     // Medium-pressure medium-bore: pistols, SMGs.
     // Fast pistol powders, short barrels — model over-predicts.
-    if chamber_pressure_pa < 300e6 && caliber_m >= 0.007 && caliber_m <= 0.015 {
+    if chamber_pressure_pa < 300e6 && (0.007..=0.015).contains(&caliber_m) {
         return 0.80;
     }
     // High-pressure medium-bore: HMGs, anti-materiel rifles.

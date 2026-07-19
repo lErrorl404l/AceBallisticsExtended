@@ -165,11 +165,11 @@ pub fn evaluate_barrel_harmonics(params: &BarrelHarmonicsParams) -> BarrelHarmon
     // For steel: E(T) = E₂₀ · (1 - α_E · (T - 20))
     // α_E ≈ 3.5e-4 /°C for carbon steel.
     let temp_diff = params.barrel_temp_c - 20.0;
-    let e_correction: f64 = 1.0 - 3.5e-4 * temp_diff.max(-50.0).min(300.0);
+    let e_correction: f64 = 1.0 - 3.5e-4 * temp_diff.clamp(-50.0, 300.0);
 
     // Thermal expansion: L(T) = L₂₀ · (1 + α_L · (T - 20))
     // α_L ≈ 1.2e-5 /°C for steel.
-    let l_correction: f64 = 1.0 + 1.2e-5 * temp_diff.max(-50.0).min(300.0);
+    let l_correction: f64 = 1.0 + 1.2e-5 * temp_diff.clamp(-50.0, 300.0);
 
     // Fouling adds effective mass, lowering resonance:
     // fouling_correction ≈ 1 - 0.001 · rounds / (1 + 0.001 · rounds)
