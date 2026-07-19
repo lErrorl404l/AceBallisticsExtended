@@ -12,11 +12,6 @@
 use std::collections::HashMap;
 use std::sync::Mutex;
 
-/// Single-entry L1 cache for `get_cd`: stores (drag_model, mach, cd).
-/// Covers the hot-path case where the same bullet is re-queried at the
-/// same Mach number across consecutive steps.
-static CD_L1_CACHE: Mutex<Option<(String, f64, f64)>> = Mutex::new(None);
-
 /// Linear interpolation in a sorted (mach, cd) lookup table.
 #[inline]
 fn table_lookup(table: &[(f64, f64)], mach: f64) -> f64 {
@@ -126,28 +121,19 @@ const G8_TABLE: [(f64, f64); 20] = [
 /// - "g8": G8 standard projectile (flat-base, secant ogive)
 /// - custom model IDs via lookup table (future)
 pub fn get_cd(drag_model: &str, mach: f64) -> f64 {
-    // L1 cache: check if we already computed this exact (model, mach) pair
-    if let Ok(cache) = CD_L1_CACHE.lock() {
-        if let Some((ref model, cached_mach, cached_cd)) = *cache {
-            if model.as_str() == drag_model && cached_mach == mach {
-                return cached_cd;
-            }
+    // The tables are 20-25 entries — a linear scan is faster than Mutex overhead.
+    // No L1 cache needed: the branch predictor + L1 cache handle the hot repeat case.
+    #[cold]
+    fn select_drag(m: &str, mach: f64) -> f64 {
+        if m.eq_ignore_ascii_case("g1") {
+            g1_drag(mach)
+        } else if m.eq_ignore_ascii_case("g8") {
+            g8_drag(mach)
+        } else {
+            g7_drag(mach) // Default to G7 (also handles "g7")
         }
     }
-
-    let cd = match drag_model.to_lowercase().as_str() {
-        "g1" => g1_drag(mach),
-        "g7" => g7_drag(mach),
-        "g8" => g8_drag(mach),
-        _ => g7_drag(mach), // Default to G7
-    };
-
-    // Store in cache for next call
-    if let Ok(mut cache) = CD_L1_CACHE.lock() {
-        *cache = Some((drag_model.to_string(), mach, cd));
-    }
-
-    cd
+    select_drag(drag_model, mach)
 }
 
 /// G1 drag curve — standard reference for flat-base tangent-ogive bullets.
