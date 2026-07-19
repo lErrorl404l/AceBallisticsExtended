@@ -54,8 +54,38 @@ fn cdm_str(buf: &[u8; 32]) -> &str {
 // ── Rust-native replica of interior::calc_muzzle_velocity ──────────────────
 //
 // Exact copy of the closed-form interior ballistics model from
-// ext/src/interior.rs (lines 47–119).  The C ABI (abe_fire) applies the same
+// ext/src/interior.rs.  The C ABI (abe_fire) applies the same
 // unit conversions then calls the same kernel.
+
+/// Regime efficiency multiplier (mirrors interior.rs).
+fn replica_regime_mult(chamber_pressure_pa: f64, caliber_m: f64) -> f64 {
+    if chamber_pressure_pa < 100e6 && caliber_m > 0.015 {
+        return 1.60;
+    }
+    if chamber_pressure_pa < 300e6 && caliber_m >= 0.007 && caliber_m <= 0.015 {
+        return 0.80;
+    }
+    if chamber_pressure_pa >= 300e6 && caliber_m >= 0.010 {
+        return 1.55;
+    }
+    if chamber_pressure_pa >= 300e6 && caliber_m < 0.010 {
+        return 1.15;
+    }
+    1.0
+}
+
+/// Select char_length proportional to barrel length (mirrors interior.rs).
+fn replica_char_length(barrel_m: f64) -> f64 {
+    if barrel_m < 0.30 {
+        0.17 // fast pistol powder
+    } else if barrel_m < 0.50 {
+        0.28 // medium rifle
+    } else if barrel_m < 0.80 {
+        0.35 // slow rifle
+    } else {
+        0.45 // magnum
+    }
+}
 
 fn native_muzzle_velocity(
     barrel_length_mm: f64,
@@ -75,13 +105,14 @@ fn native_muzzle_velocity(
     let bore_area = std::f64::consts::PI * (caliber_m / 2.0).powi(2);
 
     // ── Gas expansion pressure curve model ─────────────────────────────────
-    let char_length = 0.28; // m, characteristic expansion length
+    let char_length = replica_char_length(barrel_m);
     let work_integral = char_length * (1.0 - (-barrel_m / char_length).exp());
 
     // ── Energy losses ──────────────────────────────────────────────────────
     let base_efficiency = 0.87;
     let length_efficiency = (-0.30 * barrel_m).exp();
-    let efficiency = base_efficiency * length_efficiency;
+    let regime_mult = replica_regime_mult(pressure_pa, caliber_m);
+    let efficiency = (base_efficiency * length_efficiency * regime_mult).clamp(0.1, 1.0);
 
     // ── Muzzle velocity ────────────────────────────────────────────────────
     // AVG_PRESSURE_FACTOR (0.58) converts peak chamber pressure to effective

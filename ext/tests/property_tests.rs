@@ -16,40 +16,38 @@ use abe_ballistics_ext::{
         density_at_altitude, density_from_altitude, pressure_at_altitude, temperature_at_altitude,
         wind_shear_factor,
     },
-    ballistic_cap::{self, BallisticCapParams, CapDetachTiming},
+    ballistic_cap::{self, BallisticCapParams},
     barrel_harmonics::{self, BarrelHarmonicsParams},
     dof::{
-        self, induced_drag_multiplier, magnus_acceleration, total_angle_of_attack,
-        yaw_drag_penalty, yaw_of_repose,
+        induced_drag_multiplier, magnus_acceleration, total_angle_of_attack, yaw_drag_penalty,
+        yaw_of_repose,
     },
-    drag::{self, bc_at_mach, boat_tail_drag_factor, get_cd},
-    exterior::{self, calc_mach, speed_of_sound, spin_drift, wind_drift},
-    mv_temperature::{
-        self, cartridge_temp_sensitivity, mv_temp_standard, mv_temperature_correction,
-    },
-    stability::{self, estimate_inertia, gyroscopic_stability, is_over_stabilized, is_stable},
+    drag::{bc_at_mach, boat_tail_drag_factor, get_cd},
+    exterior::{calc_mach, speed_of_sound, spin_drift, wind_drift},
+    mv_temperature::{cartridge_temp_sensitivity, mv_temp_standard, mv_temperature_correction},
+    stability::{estimate_inertia, gyroscopic_stability, is_over_stabilized, is_stable},
 };
 
 // ── Strategy helpers ──────────────────────────────────────────────────────────
 
 /// Strictly positive f64 in `(0, 1e6)` — safe for physical quantities.
 fn positive() -> impl Strategy<Value = f64> {
-    (f64::EPSILON..1e6)
+    f64::EPSILON..1e6
 }
 
 /// Mach number in `[0, 10]` — covers subsonic through hypersonic.
 fn mach_strategy() -> impl Strategy<Value = f64> {
-    (0.0f64..10.0)
+    0.0f64..10.0
 }
 
 /// Altitude in metres `[0, 50_000]` — troposphere through stratosphere.
 fn altitude_strategy() -> impl Strategy<Value = f64> {
-    (0.0f64..50_000.0)
+    0.0f64..50_000.0
 }
 
 /// Temperature in °C `[-60, 60]` — covers all realistic atmospheres.
 fn temp_c_strategy() -> impl Strategy<Value = f64> {
-    (-60.0f64..60.0)
+    -60.0f64..60.0
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -160,7 +158,6 @@ proptest! {
 
     #[test]
     fn g7_less_than_g1(mach in (0.1f64..5.0)) {
-        let _g1 = get_cd("g1", mach);
         let g7 = get_cd("g7", mach);
         let cd_g1 = get_cd("g1", mach);
         // G7 <= G1 everywhere within a small tolerance for transonic crossover
@@ -170,7 +167,6 @@ proptest! {
 
     #[test]
     fn g8_between_g1_and_g7(mach in (0.1f64..3.0)) {
-        let cd_g1 = get_cd("g1", mach);
         let g7 = get_cd("g7", mach);
         let g8 = get_cd("g8", mach);
         prop_assert!(g8 > g7, "G8 ({g8:.4}) > G7 ({g7:.4}) at M={mach}");

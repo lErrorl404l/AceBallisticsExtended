@@ -709,6 +709,7 @@ fn bench_penetration_multilayer(c: &mut Criterion) {
                     black_box(0.0),
                     black_box(mat),
                     black_box("ap"),
+                    None,
                 );
                 v = r.residual_velocity;
             }
@@ -884,6 +885,7 @@ fn bench_predictive_era(c: &mut Criterion) {
         impact_angle_deg: 0.0,
         time_since_last_fire_s: 5.0,
         threat_caliber_mm: 125.0,
+        apfsds_tip_shedding_factor: 1.0,
     };
     c.bench_function("predictive_era/ke_threat", |b| {
         b.iter(|| {

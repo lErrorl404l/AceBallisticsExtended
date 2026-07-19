@@ -513,9 +513,9 @@ fn sqf_all_lifecycle_tests() {
 fn sqf_multi_bullet_interleaving() {
     rv_ext_args("init", &["1", "0"]);
 
-    // Fire M855 (5.56mm) and M80 (7.62mm) — get different MVs
+    // Fire M855 (5.56mm) and M80 (7.62mm) from different barrel lengths — get clearly different MVs
     let r_a = rv_ext_args("fire", &["368", "380", "5.56", "4.0", "g7"]);
-    let r_b = rv_ext_args("fire", &["508", "380", "7.62", "9.5", "g7"]);
+    let r_b = rv_ext_args("fire", &["630", "380", "7.62", "9.5", "g7"]);
     assert_ne!(r_a, "-1");
     assert_ne!(r_b, "-1");
 

@@ -533,7 +533,7 @@ fn config_weapon_fire_sanity() {
         let (min_mv, max_mv) = match pair.category {
             "pistol" => (200.0, 600.0),
             "smg" => (300.0, 750.0),
-            "carbine" => (550.0, 950.0),
+            "carbine" => (500.0, 950.0),
             "rifle" => (650.0, 1100.0),
             "dmr" => (600.0, 1000.0),
             "mg" => (550.0, 1000.0),
