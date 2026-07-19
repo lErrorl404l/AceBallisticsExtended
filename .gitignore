@@ -40,6 +40,4 @@ __pycache__/
 .hemttprivatekey
 .biprivatekey
 
-# Docker credentials
-docker/.env
 *.rlib

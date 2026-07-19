@@ -1,0 +1,28 @@
+# Normalize line endings
+* text=auto eol=lf
+
+# Rust source
+*.rs text diff=rust
+*.toml text
+
+# Arma config
+*.cpp text
+*.hpp text
+*.sqf text
+*.sqm text
+
+# Data files
+*.json text
+*.md text diff=markdown
+
+# Binaries
+*.so binary
+*.dll binary
+*.dylib binary
+*.pbo binary
+*.paa binary
+
+# Generated
+*.png binary
+*.jpg binary
+*.pdf binary
