@@ -785,7 +785,7 @@ def main():
         cal_dir_name = None
         if caliber < 5.0:
             continue  # Skip very small calibers (pellets, etc)
-        elif caliber < 5.6:
+        elif caliber <= 5.6:
             cal_dir_name = "5_45mm"
         elif caliber < 6.0:
             cal_dir_name = "5_56mm"
