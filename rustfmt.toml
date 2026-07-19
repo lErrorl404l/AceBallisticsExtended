@@ -1,0 +1,25 @@
+# Rust formatting configuration
+# cargo fmt uses this automatically
+
+max_width = 100
+hard_tabs = false
+tab_spaces = 4
+newline_style = "Unix"
+use_small_heuristics = "Default"
+
+# Imports
+imports_granularity = "Crate"
+reorder_imports = true
+reorder_modules = true
+
+# Comments
+format_code_in_doc_comments = true
+wrap_comments = true
+comment_width = 100
+
+# Match
+match_block_trailing_comma = true
+
+# Misc
+use_field_init_shorthand = true
+use_try_shorthand = false
