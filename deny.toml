@@ -15,7 +15,6 @@ unknown-git = "deny"
 allow-git = []
 
 [licenses]
-unlicensed = "deny"
 allow = [
     "MIT",
     "Apache-2.0",
@@ -27,10 +26,6 @@ allow = [
     "Unicode-3.0",
     "CC0-1.0",
 ]
-deny = [
-    "GPL-2.0",
-    "AGPL-3.0",
-    "GPL-3.0",
-    # Note: ABE itself is GPL-3.0, but dependencies must use compatible permissive licenses
-]
+# Note: ABE itself is GPL-3.0, but dependencies must use compatible permissive licenses.
+# GPL-2.0/AGPL-3.0/GPL-3.0 are denied by omission from the allow list above.
 confidence-threshold = 0.8

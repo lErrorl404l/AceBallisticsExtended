@@ -71,10 +71,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Place deny.toml alongside Cargo.toml
+        run: cp deny.toml ext/deny.toml
       - uses: EmbarkStudios/cargo-deny-action@v2
         with:
           manifest-path: ./ext/Cargo.toml
-          deny-file: ./deny.toml
           arguments: --all-features
 
   # ── Cross-compile ────────────────────────────────────────────────────
