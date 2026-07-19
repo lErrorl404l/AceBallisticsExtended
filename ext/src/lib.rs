@@ -141,7 +141,7 @@ fn handle_string_command(function: &str, output: &mut String) {
             }
         },
         other => {
-            let _ = write!(output, "{}", format!("unknown: {}", other));
+            let _ = write!(output, "unknown: {}", other);
         },
     }
 }
@@ -518,6 +518,12 @@ fn handle_component(args: &[&str]) -> String {
 // ── ARMA 3 entry points ───────────────────────────────────────────────────────
 
 /// String-mode callExtension: "ext" callExtension "command"
+///
+/// # Safety
+///
+/// `output` must be a valid, writable buffer of at least `output_size` bytes.
+/// `function` must be a valid null-terminated C string.
+/// Both pointers are guaranteed valid per the ARMA 3 extension contract.
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn RVExtension(
     output: *mut c_char,
@@ -533,6 +539,13 @@ pub unsafe extern "C" fn RVExtension(
 }
 
 /// Array-mode callExtension: "ext" callExtension ["command", [args...]]
+///
+/// # Safety
+///
+/// `output` must be a valid, writable buffer of at least `output_size` bytes.
+/// `function` must be a valid null-terminated C string.
+/// `args` must be a valid pointer to an array of `args_cnt` null-terminated C strings.
+/// All pointers are guaranteed valid per the ARMA 3 extension contract.
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn RVExtensionArgs(
     output: *mut c_char,
@@ -967,9 +980,12 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
         (0.0, 0.0)
     };
 
-    let vx = params.vel_x - drag_decel * (params.vel_x / speed) * params.dt_s;
-    let vy = params.vel_y - drag_decel * (params.vel_y / speed) * params.dt_s + mag_y * params.dt_s;
-    let vz = params.vel_z - drag_decel * (params.vel_z / speed) * params.dt_s + mag_z * params.dt_s;
+    // Guard against division by zero: speed must never be 0.0 in the velocity update.
+    // f64::MIN_POSITIVE is the smallest representable positive normal (~2.2e-308).
+    let ss = speed.max(f64::MIN_POSITIVE);
+    let vx = params.vel_x - drag_decel * (params.vel_x / ss) * params.dt_s;
+    let vy = params.vel_y - drag_decel * (params.vel_y / ss) * params.dt_s + mag_y * params.dt_s;
+    let vz = params.vel_z - drag_decel * (params.vel_z / ss) * params.dt_s + mag_z * params.dt_s;
 
     // Gravity
     let vz = vz + atmosphere::GRAVITY * params.dt_s;
