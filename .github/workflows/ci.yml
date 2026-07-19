@@ -108,7 +108,7 @@ jobs:
       - run: cargo test --all-features
         working-directory: ${{ env.EXT_SRC }}
         if: matrix.os == 'windows-latest'
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: abe_ext_${{ matrix.target }}
           path: ${{ env.EXT_SRC }}/target/${{ matrix.target }}/release/abe_ballistics_ext${{ matrix.ext }}
