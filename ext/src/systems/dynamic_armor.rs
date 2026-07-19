@@ -241,7 +241,7 @@ fn yaw_penalty(yaw_angle_deg: f64) -> f64 {
     let yaw_rad = yaw_angle_deg.to_radians();
     // penalty = cos(yaw)^0.5 / (1 + 0.5·sin(yaw))
     let penalty = yaw_rad.cos().sqrt() / (1.0 + 0.5 * yaw_rad.sin());
-    penalty.max(0.1).min(1.0)
+    penalty.clamp(0.1, 1.0)
 }
 
 /// Kinetic energy of a projectile in joules.

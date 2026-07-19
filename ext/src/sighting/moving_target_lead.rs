@@ -162,9 +162,9 @@ pub fn optimal_aim_point(
 /// 2. Estimate the initial lead using the nominal TOF and range.
 /// 3. For each iteration:
 ///    a. Estimate the lateral offset at the intercept (target displacement
-///       during the bullet's flight).
+///    during the bullet's flight).
 ///    b. Compute the intercept range as the hypotenuse of the lateral
-///       offset and the initial range.
+///    offset and the initial range.
 ///    c. Scale the TOF proportionally to the range change.
 ///    d. Recompute the lead with the refined TOF.
 /// 4. After convergence, compute the vertical correction for LOS motion:

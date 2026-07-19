@@ -382,7 +382,7 @@ fn flyer_velocity_reduction(
             let reduction = (dv / threat_velocity_ms.max(1.0)).min(0.85);
             reduction * timing_factor
         },
-        "heat" | "he" | "chemical" | "missile" | _ => {
+        _ => {
             // HEAT / missiles: the shaped-charge jet is disrupted by even
             // small lateral perturbations.  Base reduction is higher.
             let reduction = 0.55 + 0.20 * (flyer_velocity_ms / DEFAULT_FLYER_VELOCITY_MS).min(1.5);

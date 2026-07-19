@@ -162,7 +162,7 @@ fn normal_force_derivative(projectile_length_calibers: f64, ogive_radius_caliber
         / (1.0 + (1.0 + (aspect_ratio / 2.0).powi(2)).sqrt());
 
     // Ogive correction: sharper ogive → lower normal force at nose
-    let ogive_factor = (ogive_radius_calibers / 6.0).min(1.5).max(0.5);
+    let ogive_factor = (ogive_radius_calibers / 6.0).clamp(0.5, 1.5);
 
     c_na_sub * ogive_factor
 }
@@ -193,7 +193,7 @@ fn estimate_bc(projectile_mass_g: f64, caliber_m: f64, _projectile_length_calibe
 /// 1. Compute (or use provided) yaw of repose — the equilibrium yaw angle.
 /// 2. Compute the normal force coefficient derivative from geometry.
 /// 3. Compute the aerodynamic jump angle:
-///      α_jump ≈ C_Nα · δ · q · S / (m · v²)
+///    α_jump ≈ C_Nα · δ · q · S / (m · v²)
 ///    where q is dynamic pressure, S is reference area.
 /// 4. Convert to MOA and lateral deflection at range.
 ///

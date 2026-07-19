@@ -83,6 +83,8 @@ struct StepState {
 ///
 /// Applies drag (via BC-based look-up), gravity, the yaw-of-repose
 /// induced drag multiplier, and wind.
+#[allow(clippy::too_many_arguments)]
+// ponytail: physics kernel, all params required
 fn local_step(
     state: &StepState,
     dt_s: f64,
@@ -187,6 +189,8 @@ fn local_step(
 /// computed from the sight height and zero range.  Two passes are
 /// performed: one with zero crosswind for the baseline drop, and one
 /// with 1 m/s crosswind to extract the windage coefficient.
+#[allow(clippy::too_many_arguments)]
+// ponytail: physics kernel, all params required
 pub fn compute_solution(
     mv_ms: f64,
     bc: f64,

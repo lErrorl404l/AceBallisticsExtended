@@ -155,7 +155,7 @@ pub fn validate_calibration(calibration_path: &std::path::Path) -> CalibrationRe
             // Find matching plate
             let computed = vehicle_armor
                 .and_then(|arm| arm.plates.iter().find(|p| p.name == zone_cal.name))
-                .map(|plate| plate_effective_rhae(plate))
+                .map(plate_effective_rhae)
                 .unwrap_or(0.0);
 
             let err = computed - zone_cal.reference_rhae_mm;
