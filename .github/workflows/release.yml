@@ -19,7 +19,7 @@ jobs:
 
       # ── Cache ───────────────────────────────────────────────────────
       - name: Cache Rust build artifacts
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: |
             ${{ env.EXT_SRC }}/target
