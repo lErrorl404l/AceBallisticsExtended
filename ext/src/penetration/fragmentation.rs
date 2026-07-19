@@ -85,7 +85,7 @@ pub fn evaluate(
         "soft_point" | "hollow_point" => 3 + (12.0 * (velocity_ratio - 1.0)) as i32,
         _ => 1 + (5.0 * (velocity_ratio - 1.0)) as i32,
     };
-    let num_fragments = base_count.max(1).min(50);
+    let num_fragments = base_count.clamp(1, 50);
 
     // ── Mass distribution ───────────────────────────────────────────
     // Fragment masses follow a log-normal distribution.
@@ -124,7 +124,7 @@ pub fn evaluate(
             // Small fragments lose velocity faster. Use velocity partitioning:
             //   V_frag = V_impact * (M_frag / M_total)^0.33
             // Smaller fragments retain less velocity.
-            let mass_ratio = (mass / projectile_mass_g).max(0.001).min(1.0);
+            let mass_ratio = (mass / projectile_mass_g).clamp(0.001, 1.0);
             let frag_speed = velocity_ms * mass_ratio.powf(0.33);
 
             // ── Spray pattern ────────────────────────────────────────
@@ -187,9 +187,9 @@ fn inverse_normal_cdf(p: f64) -> f64 {
     const A0: f64 = -3.969_683_028_665_416e1;
     const A1: f64 = 2.209_460_984_245_205e2;
     const A2: f64 = -2.759_285_104_382_374e2;
-    const A3: f64 = 1.383_577_518_672_690e2;
+    const A3: f64 = 1.383_577_518_672_69e2;
     const A4: f64 = -3.066_429_263_862_405e1;
-    const A5: f64 = 2.586_803_618_085_770e0;
+    const A5: f64 = 2.586_803_618_085_77;
     const B0: f64 = -5.447_609_879_822_406e1;
     const B1: f64 = 1.615_858_368_580_409e2;
     const B2: f64 = -1.556_989_798_598_866e2;
@@ -229,9 +229,8 @@ fn inverse_normal_cdf(p: f64) -> f64 {
     // Central region
     let q = p - 0.5;
     let r = q * q;
-    let e = (((((A0 * r + A1) * r + A2) * r + A3) * r + A4) * r + A5) * q
-        / (((((B0 * r + B1) * r + B2) * r + B3) * r + B4) * r + 1.0);
-    e
+    (((((A0 * r + A1) * r + A2) * r + A3) * r + A4) * r + A5) * q
+        / (((((B0 * r + B1) * r + B2) * r + B3) * r + B4) * r + 1.0)
 }
 
 // ── Tests ─────────────────────────────────────────────────────────────────────

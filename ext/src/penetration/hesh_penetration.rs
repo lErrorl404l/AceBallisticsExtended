@@ -311,8 +311,7 @@ pub fn evaluate_hesh(params: &HeshParams) -> HeshResult {
         let thickness_narrowing = (5.0 / params.target_thickness_mm.max(5.0)).min(1.0) * 10.0;
         let material_broadening = 10.0 / mat_factor.max(0.5);
         (base_angle + obliquity_broadening + material_broadening - thickness_narrowing)
-            .max(5.0)
-            .min(90.0)
+            .clamp(5.0, 90.0)
     } else {
         0.0
     };
@@ -323,7 +322,7 @@ pub fn evaluate_hesh(params: &HeshParams) -> HeshResult {
     // for 45° optimal launch angle, simplified to v_spall / 10 as a
     // heuristic for "lethal range".
     let residual_spall_range_m = if armor_penetrated && spall_velocity_ms > 50.0 {
-        (spall_velocity_ms / 10.0).max(2.0).min(300.0)
+        (spall_velocity_ms / 10.0).clamp(2.0, 300.0)
     } else {
         0.0
     };

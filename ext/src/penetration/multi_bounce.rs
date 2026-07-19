@@ -215,7 +215,7 @@ pub fn evaluate_multi_bounce(params: &MultiBounceParams) -> BounceResult {
             // Exit angle: complement of impact relative to threshold,
             // scaled by deflection factor.
             let exit_angle = (adjusted_threshold - current_angle_deg) * deflection_factor(surface);
-            let exit_angle = exit_angle.max(1.0).min(85.0);
+            let exit_angle = exit_angle.clamp(1.0, 85.0);
 
             // Lateral offset accumulates per bounce
             total_offset_m += lateral_deflection_cal(surface) * params.caliber_m;

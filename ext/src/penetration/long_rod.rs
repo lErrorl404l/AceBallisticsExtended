@@ -161,6 +161,8 @@ pub fn evaluate_long_rod(params: &LongRodParams) -> LongRodPenetrationResult {
 /// ```
 ///
 /// where dimensions are in km/s internally.
+#[allow(clippy::too_many_arguments)]
+// ponytail: physics kernel, all params required
 pub fn lanz_odermatt_depth_with_ld(
     velocity_ms: f64,
     v_min_ms: f64,

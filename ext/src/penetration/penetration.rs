@@ -570,6 +570,8 @@ pub struct PenetrationResult {
 /// * `projectile_type` - Projectile type identifier string
 /// * `ricochet_angle_deg` - Optional maximum ricochet angle in degrees.
 ///   Pass `None` to use the default formula.
+#[allow(clippy::too_many_arguments)]
+// ponytail: physics kernel, all params required
 pub fn evaluate(
     velocity_ms: f64,
     projectile_mass_kg: f64,
@@ -656,6 +658,8 @@ pub fn yaw_coefficient(projectile_type: &str) -> f64 {
 /// * `ricochet_angle_deg` - Optional maximum ricochet angle in degrees.
 ///   When `Some(angle)`, the ricochet angle is capped at this value.
 ///   When `None`, the default formula `(90 - impact_angle) * 0.9` is used.
+#[allow(clippy::too_many_arguments)]
+// ponytail: physics kernel, all params required
 pub fn evaluate_yaw(
     velocity_ms: f64,
     projectile_mass_kg: f64,

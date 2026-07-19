@@ -1,3 +1,5 @@
+#[allow(clippy::module_inception)]
+// ponytail: module name matches file name for penetration module
 mod penetration;
 pub use penetration::*;
 pub mod armor_array;

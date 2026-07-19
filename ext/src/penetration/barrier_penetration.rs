@@ -270,8 +270,7 @@ fn soil_eval(
 
     let exit_v = if fully_penetrated {
         let energy_ratio = total_stopping_mm / t_mm.max(1.0);
-        let v_remaining = v * (1.0 - 1.0 / energy_ratio).sqrt().max(0.0);
-        v_remaining
+        v * (1.0 - 1.0 / energy_ratio).sqrt().max(0.0)
     } else {
         0.0
     };
