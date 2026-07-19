@@ -406,13 +406,13 @@ pub fn platform_motion_envelope(platform: PlatformType) -> (f64, f64, f64) {
             };
             let roll = 0.5 * speed_factor;
             (pitch, yaw, roll)
-        }
+        },
         PlatformType::Watercraft { sea_state } => {
             let pitch = sea_state_pitch_rate(sea_state);
             let yaw = sea_state_yaw_rate(sea_state);
             let roll = sea_state_roll_rate(sea_state);
             (pitch, yaw, roll)
-        }
+        },
         PlatformType::Aircraft { speed_kmh, .. } => {
             // Manoeuvring aircraft: faster = tighter possible turns.
             // At low speeds the aircraft must bank harder to turn,
@@ -422,7 +422,7 @@ pub fn platform_motion_envelope(platform: PlatformType) -> (f64, f64, f64) {
             let yaw = 15.0 * speed_factor;
             let roll = 10.0 * speed_factor;
             (pitch, yaw, roll)
-        }
+        },
         PlatformType::HumanStanding => (1.5, 1.5, 0.5),
         PlatformType::HumanProne => (0.3, 0.2, 0.1),
         PlatformType::HumanKneeling => (0.8, 0.6, 0.3),
@@ -440,7 +440,7 @@ fn platform_forward_speed(platform: PlatformType) -> f64 {
         PlatformType::Watercraft { .. } => {
             // Ships/boats typically move at 5–15 m/s (10–30 kts).
             10.0
-        }
+        },
         PlatformType::Aircraft { speed_kmh, .. } => speed_kmh / 3.6,
         PlatformType::HumanStanding
         | PlatformType::HumanProne
@@ -458,12 +458,12 @@ fn platform_lateral_speed(platform: PlatformType) -> f64 {
         PlatformType::Watercraft { sea_state } => {
             // Lateral drift from wind/current, scales with sea state.
             0.5 * (sea_state.clamp(0, 9) as f64)
-        }
+        },
         PlatformType::Aircraft { .. } => {
             // Side-slip during crosswind landing / evasive manoeuvres;
             // usually small.
             1.0
-        }
+        },
         _ => 0.0,
     }
 }

@@ -356,7 +356,7 @@ pub fn interpolate_solution(sol: &BallisticSolution, range_m: f64) -> Option<Sol
                 return Some(entries[0]);
             }
             i - 1
-        }
+        },
     };
 
     let lo = &entries[idx];

@@ -264,15 +264,15 @@ fn bdc_aim_point_for_pattern(pattern: &ReticlePattern, range_m: f64) -> f64 {
         ReticlePattern::BDC => {
             let table = generic_bdc_table();
             bdc_aim_point(&table, range_m)
-        }
+        },
         ReticlePattern::SVDPSO1 => {
             let table = svd_pso1_table();
             bdc_aim_point(&table, range_m)
-        }
+        },
         ReticlePattern::ACOG => {
             let table = acog_table();
             bdc_aim_point(&table, range_m)
-        }
+        },
         // Non-BDC reticles have no stadia-table aim point
         _ => 0.0,
     }
