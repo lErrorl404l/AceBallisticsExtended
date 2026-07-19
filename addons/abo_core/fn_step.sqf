@@ -39,40 +39,47 @@ private _bulletIds = keys _tracked;
     // Calculate delta time
     private _dt = diag_tickTime - _fireTime;
 
-    // Read environment
-    private _wind = wind;
-    private _altitude = (_pos select 2) max 0;
-    private _temp = ([_altitude] call ace_weather_fnc_calculateTemperature) param [0, 15.0];
-    private _density = 1.225;
+    // Per-frame throttle: skip extension calls for distant/old bullets
+    // <1s flight: step every frame (close-range, needs precision)
+    // 1-2.5s flight: step every 2nd frame (medium range)
+    // >2.5s flight: step every 4th frame (long range, small visual error)
+    private _stepEvery = if (_dt < 1.0) then { 1 } else { if (_dt < 2.5) then { 2 } else { 4 } };
+    if (diag_frameNo % _stepEvery == 0) then {
+        // Read environment
+        private _wind = wind;
+        private _altitude = (_pos select 2) max 0;
+        private _temp = ([_altitude] call ace_weather_fnc_calculateTemperature) param [0, 15.0];
+        private _density = 1.225;
 
-    // Call extension to step bullet
-    private _stepResult = _extension callExtension [
-        "step",
-        [
-            _pos select 0, _pos select 1, _pos select 2,
-            _vel select 0, _vel select 1, _vel select 2,
-            _dt,
-            _wind select 0, _wind select 1, 0,
-            _density,
-            _temp,
-            _altitude,
-            _cdmId,
-            _bc,
-            _massG,
-            _caliberMm
-        ]
-    ];
+        // Call extension to step bullet
+        private _stepResult = _extension callExtension [
+            "step",
+            [
+                _pos select 0, _pos select 1, _pos select 2,
+                _vel select 0, _vel select 1, _vel select 2,
+                _dt,
+                _wind select 0, _wind select 1, 0,
+                _density,
+                _temp,
+                _altitude,
+                _cdmId,
+                _bc,
+                _massG,
+                _caliberMm
+            ]
+        ];
 
-    // Update bullet position and velocity
-    if (count _stepResult >= 6) then {
-        private _newPos = [_stepResult select 0, _stepResult select 1, _stepResult select 2];
-        private _newVel = [_stepResult select 3, _stepResult select 4, _stepResult select 5];
+        // Update bullet position and velocity
+        if (count _stepResult >= 6) then {
+            private _newPos = [_stepResult select 0, _stepResult select 1, _stepResult select 2];
+            private _newVel = [_stepResult select 3, _stepResult select 4, _stepResult select 5];
 
-        _projectile setPosASL _newPos;
-        _projectile setVelocity _newVel;
+            _projectile setPosASL _newPos;
+            _projectile setVelocity _newVel;
 
-        // Update tracked state
-        _tracked set [_bulletId, [_newPos, _newVel, _fireTime, _cdmId, _bc, _massG, _caliberMm]];
+            // Update tracked state
+            _tracked set [_bulletId, [_newPos, _newVel, _fireTime, _cdmId, _bc, _massG, _caliberMm]];
+        };
     };
     };
 } forEach _bulletIds;
