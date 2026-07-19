@@ -7,11 +7,9 @@
 //
 // Both call the same physics kernels.
 
-#![allow(dead_code)]
-
 // ── Module groups ───────────────────────────────────────────────────────────────
 mod ballistics;
-pub(crate) use ballistics::{atmosphere, interior};
+pub use ballistics::{atmosphere, interior};
 pub use ballistics::{
     ballistic_cap, barrel_harmonics, dof, drag, exterior, mv_temperature, stability,
 };
@@ -55,6 +53,7 @@ const ABE_VERSION: &str = "0.1.0";
 
 // ── Global state ──────────────────────────────────────────────────────────────
 
+#[allow(dead_code)] // ponytail: fields store runtime state queried via FFI
 struct AbeState {
     initialized: bool,
     ace_present: bool,
@@ -131,10 +130,10 @@ fn handle_string_command(function: &str, output: &mut String) {
             } else {
                 "0".into()
             }
-        }
+        },
         other => {
             let _ = write!(output, "{}", format!("unknown: {}", other));
-        }
+        },
     }
 }
 
@@ -167,14 +166,31 @@ fn handle_fire(args: &[&str]) -> String {
     let caliber_mm: f64 = args.get(2).and_then(|s| s.parse().ok()).unwrap_or(0.0);
     let projectile_mass_g: f64 = args.get(3).and_then(|s| s.parse().ok()).unwrap_or(0.0);
     let cdm_id = args.get(4).copied().unwrap_or("g7");
+    let char_length: f64 = args.get(5).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let burn_rate_coeff: f64 = args.get(6).and_then(|s| s.parse().ok()).unwrap_or(0.0);
 
-    let r = interior::calc_muzzle_velocity(
-        barrel_length_mm / 1000.0,
-        chamber_pressure_mpa * 1e6,
-        caliber_mm / 1000.0,
-        projectile_mass_g / 1000.0,
-        cdm_id,
-    );
+    // When burn-rate data is provided, use the extended model that accounts
+    // for propellant chemistry and grain geometry. Otherwise fall back to
+    // the simplified average-pressure model.
+    let r = if char_length > 0.0 && burn_rate_coeff > 0.0 {
+        interior::calc_muzzle_velocity_with_burn(
+            barrel_length_mm / 1000.0,
+            chamber_pressure_mpa * 1e6,
+            caliber_mm / 1000.0,
+            projectile_mass_g / 1000.0,
+            cdm_id,
+            char_length,
+            burn_rate_coeff,
+        )
+    } else {
+        interior::calc_muzzle_velocity(
+            barrel_length_mm / 1000.0,
+            chamber_pressure_mpa * 1e6,
+            caliber_mm / 1000.0,
+            projectile_mass_g / 1000.0,
+            cdm_id,
+        )
+    };
 
     match r {
         Some(mv) => {
@@ -185,7 +201,7 @@ fn handle_fire(args: &[&str]) -> String {
                 fmt_f64(mv.propellant_burn_fraction),
                 fmt_f64(mv.barrel_time_ms),
             )
-        }
+        },
         None => "-1".into(),
     }
 }
@@ -212,12 +228,15 @@ fn handle_step(args: &[&str]) -> String {
     let bc: f64 = args.get(14).and_then(|s| s.parse().ok()).unwrap_or(0.157);
     let mass_g: f64 = args.get(15).and_then(|s| s.parse().ok()).unwrap_or(4.0);
     let caliber_mm: f64 = args.get(16).and_then(|s| s.parse().ok()).unwrap_or(5.56);
+    let boat_tail_angle: f64 = args.get(17).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let boat_tail_length: f64 = args.get(18).and_then(|s| s.parse().ok()).unwrap_or(0.0);
     let _ = mass_g;
     let _ = caliber_mm;
 
     let speed = (vel_x.powi(2) + vel_y.powi(2) + vel_z.powi(2)).sqrt();
     let mach = exterior::calc_mach(speed, temp_c);
-    let cd = drag::get_cd(cdm_id, mach);
+    let cd = drag::get_cd(cdm_id, mach)
+        * drag::boat_tail_drag_factor(boat_tail_angle, boat_tail_length, mach);
 
     let air_density = if altitude_m > 0.0 && (temp_c - 15.0).abs() < 0.1 {
         atmosphere::density_from_altitude(altitude_m, temp_c)
@@ -684,7 +703,7 @@ pub extern "C" fn abe_fire(params: &FireParams, result: &mut FireResult) -> i32 
                 barrel_time_ms: mv.barrel_time_ms,
             };
             0
-        }
+        },
         None => -1,
     }
 }
