@@ -122,8 +122,8 @@ pub fn material_factor(material: &str) -> f64 {
     if let Some(&val) = cache.get(key.as_str()) {
         return val;
     }
-    // Fallback match (preserves all existing behavior)
-    match material.to_lowercase().as_str() {
+    // Fallback match — reuses `key` from the cache lookup, avoids a second allocation
+    match key.as_str() {
         "steel_rha" => 1.0,
         "steel_hha" => 1.25, // High-hardness armor
         "aluminum_5083" => 0.35,
@@ -218,8 +218,9 @@ fn check_shatter(
     impact_angle_deg: f64,
 ) -> bool {
     // Only AP projectiles are hard enough to shatter
-    let lower_proj = projectile_type.to_lowercase();
-    if lower_proj != "ap" && lower_proj != "armor_piercing" {
+    if !projectile_type.eq_ignore_ascii_case("ap")
+        && !projectile_type.eq_ignore_ascii_case("armor_piercing")
+    {
         return false;
     }
 
@@ -458,14 +459,19 @@ pub fn erode_projectile_mass(
 /// | heat             | 100000  | Inefficient by KE (shaped chrg) |
 /// | soft_point / hollow_point | 95000 | Deforms on impact, less eff. |
 pub fn de_marre_k(projectile_type: &str) -> f64 {
-    match projectile_type.to_lowercase().as_str() {
-        "ball" | "fmj" => 91000.0,
-        "ap" | "armor_piercing" => 70000.0,
-        "apds" | "apfsds" => 50500.0,
-        "apcr" => 60700.0,
-        "heat" => 100000.0,
-        "soft_point" | "hollow_point" => 95000.0,
-        _ => 91000.0,
+    let p = projectile_type;
+    if p.eq_ignore_ascii_case("ap") || p.eq_ignore_ascii_case("armor_piercing") {
+        70000.0
+    } else if p.eq_ignore_ascii_case("apds") || p.eq_ignore_ascii_case("apfsds") {
+        50500.0
+    } else if p.eq_ignore_ascii_case("apcr") {
+        60700.0
+    } else if p.eq_ignore_ascii_case("heat") {
+        100000.0
+    } else if p.eq_ignore_ascii_case("soft_point") || p.eq_ignore_ascii_case("hollow_point") {
+        95000.0
+    } else {
+        91000.0 // "ball", "fmj", or default
     }
 }
 
@@ -601,12 +607,25 @@ pub fn evaluate(
 /// | Ball/FMJ        | 0.028 | Round-nose ogive, reference baseline     |
 /// | Blunt/HP        | 0.040 | Flat meplat — most yaw-sensitive         |
 pub fn yaw_coefficient(projectile_type: &str) -> f64 {
-    match projectile_type.to_lowercase().as_str() {
-        "apfsds" | "long_rod" => 0.015,
-        "ap" | "armor_piercing" | "aphe" | "apcr" => 0.022,
-        "ball" | "fmj" => 0.028,
-        "blunt" | "hp" | "hollow_point" | "soft_point" => 0.040,
-        _ => 0.028,
+    let p = projectile_type;
+    if p.eq_ignore_ascii_case("apfsds") || p.eq_ignore_ascii_case("long_rod") {
+        0.015
+    } else if p.eq_ignore_ascii_case("ap")
+        || p.eq_ignore_ascii_case("armor_piercing")
+        || p.eq_ignore_ascii_case("aphe")
+        || p.eq_ignore_ascii_case("apcr")
+    {
+        0.022
+    } else if p.eq_ignore_ascii_case("ball") || p.eq_ignore_ascii_case("fmj") {
+        0.028
+    } else if p.eq_ignore_ascii_case("blunt")
+        || p.eq_ignore_ascii_case("hp")
+        || p.eq_ignore_ascii_case("hollow_point")
+        || p.eq_ignore_ascii_case("soft_point")
+    {
+        0.040
+    } else {
+        0.028
     }
 }
 
