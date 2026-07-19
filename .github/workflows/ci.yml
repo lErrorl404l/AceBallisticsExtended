@@ -8,26 +8,45 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
+  CARGO_NET_RETRY: 3
+  CARGO_HTTP_TIMEOUT: 60
   EXT_SRC: ext
   RUSTFLAGS: -D warnings
 
 jobs:
+  # ── MSRV (Minimum Supported Rust Version) ────────────────────────────
+  msrv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract MSRV from Cargo.toml
+        id: msrv
+        run: |
+          version=$(sed -n 's/^rust-version = "\(.*\)"/\1/p' ${{ env.EXT_SRC }}/Cargo.toml)
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "Extracted MSRV: $version"
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: ${{ steps.msrv.outputs.version }}
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: ${{ env.EXT_SRC }}
+      - run: cargo check --all-features
+        working-directory: ${{ env.EXT_SRC }}
+
   # ── Unit tests ───────────────────────────────────────────────────────
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions-rust-lang/setup-rust-toolchain@v1
-      - uses: actions/cache@v4
+      - uses: Swatinem/rust-cache@v2
         with:
-          path: |
-            ${{ env.EXT_SRC }}/target
-            ~/.cargo/registry
-          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-      - run: cargo test
+          workspaces: ${{ env.EXT_SRC }}
+      - run: cargo test --all-features
         working-directory: ${{ env.EXT_SRC }}
 
-  # ── Lint ─────────────────────────────────────────────────────────────
+  # ── Lint (formatting, clippy, docs) ──────────────────────────────────
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -35,16 +54,17 @@ jobs:
       - uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
           components: clippy, rustfmt
-      - uses: actions/cache@v4
+      - uses: Swatinem/rust-cache@v2
         with:
-          path: |
-            ${{ env.EXT_SRC }}/target
-            ~/.cargo/registry
-          key: ${{ runner.os }}-lint-${{ hashFiles('**/Cargo.lock') }}
+          workspaces: ${{ env.EXT_SRC }}
       - run: cargo fmt --check
         working-directory: ${{ env.EXT_SRC }}
-      - run: cargo clippy -- -D warnings
+      - run: cargo clippy --all-features -- -D warnings
         working-directory: ${{ env.EXT_SRC }}
+      - run: cargo doc --no-deps --all-features
+        working-directory: ${{ env.EXT_SRC }}
+        env:
+          RUSTDOCFLAGS: -D warnings
 
   # ── Dependency audit ─────────────────────────────────────────────────
   deny:
@@ -57,7 +77,7 @@ jobs:
 
   # ── Cross-compile ────────────────────────────────────────────────────
   build:
-    needs: [test, lint, deny]
+    needs: [msrv, test, lint, deny]
     strategy:
       matrix:
         include:
@@ -71,13 +91,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
-          target: x86_64-pc-windows-gnu
-      - uses: actions/cache@v4
+          targets: ${{ matrix.target }}
+      - uses: Swatinem/rust-cache@v2
         with:
-          path: |
-            ${{ env.EXT_SRC }}/target
-            ~/.cargo/registry
-          key: ${{ runner.os }}-build-${{ matrix.target }}-${{ hashFiles('**/Cargo.lock') }}
+          workspaces: ${{ env.EXT_SRC }}
+          key: ${{ matrix.target }}
       - if: matrix.deps
         run: sudo apt-get update -qq && sudo apt-get install -y -qq ${{ matrix.deps }}
       - run: cargo build --release --target ${{ matrix.target }}
@@ -87,7 +105,7 @@ jobs:
           name: abe_ext_${{ matrix.target }}
           path: ${{ env.EXT_SRC }}/target/${{ matrix.target }}/release/abe_ballistics_ext${{ matrix.ext }}
 
-  # ── HEMTT build ──────────────────────────────────────────────────────
+  # ── HEMTT build (Arma 3 mod packaging) ───────────────────────────────
   hemtt:
     needs: [build]
     runs-on: ubuntu-latest
@@ -117,8 +135,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions-rust-lang/setup-rust-toolchain@v1
-      - run: cargo install cargo-tarpaulin
-      - run: cargo tarpaulin --out Xml --engine llvm
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: ${{ env.EXT_SRC }}
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-tarpaulin
+      - run: cargo tarpaulin --out Xml --engine llvm --all-features
         working-directory: ${{ env.EXT_SRC }}
       - uses: codecov/codecov-action@v5
         with:
