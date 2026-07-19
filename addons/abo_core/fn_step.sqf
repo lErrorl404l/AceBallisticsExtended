@@ -28,7 +28,7 @@ private _bulletIds = keys _tracked;
     private _bulletId = _x;
     private _state = _tracked get _bulletId;
     if (!isNil "_state") then {
-        _state params ["_pos", "_vel", "_fireTime", "_cdmId", "_bc", "_massG", "_caliberMm"];
+        _state params ["_pos", "_vel", "_lastStepTime", "_cdmId", "_bc", "_massG", "_caliberMm"];
 
     // Find the projectile object
     private _projectile = _bulletId call BIS_fnc_objectFromNetId;
@@ -36,8 +36,8 @@ private _bulletIds = keys _tracked;
         _toRemove pushBack _bulletId;
     };
 
-    // Calculate delta time
-    private _dt = diag_tickTime - _fireTime;
+    // Delta time since last step (NOT since fire — throttle skips frames)
+    private _dt = diag_tickTime - _lastStepTime;
 
     // Per-frame throttle: skip extension calls for distant/old bullets
     // <1s flight: step every frame (close-range, needs precision)
@@ -48,7 +48,10 @@ private _bulletIds = keys _tracked;
         // Read environment
         private _wind = wind;
         private _altitude = (_pos select 2) max 0;
-        private _temp = ([_altitude] call ace_weather_fnc_calculateTemperature) param [0, 15.0];
+        private _temp = 15.0; // default ISA sea-level temperature
+        if (GVAR(ace3Overridden)) then {
+            _temp = ([_altitude] call ace_weather_fnc_calculateTemperature) param [0, 15.0];
+        };
         private _density = 1.225;
 
         // Call extension to step bullet
@@ -77,8 +80,8 @@ private _bulletIds = keys _tracked;
             _projectile setPosASL _newPos;
             _projectile setVelocity _newVel;
 
-            // Update tracked state
-            _tracked set [_bulletId, [_newPos, _newVel, _fireTime, _cdmId, _bc, _massG, _caliberMm]];
+            // Update tracked state with new step time
+            _tracked set [_bulletId, [_newPos, _newVel, diag_tickTime, _cdmId, _bc, _massG, _caliberMm]];
         };
     };
     };
