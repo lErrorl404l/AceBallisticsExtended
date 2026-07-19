@@ -20,10 +20,15 @@ jobs:
         include:
           - target: x86_64-unknown-linux-gnu
             ext: .so
+            os: ubuntu-latest
           - target: x86_64-pc-windows-gnu
             ext: .dll
             deps: mingw-w64
-    runs-on: ubuntu-latest
+            os: ubuntu-latest
+          - target: x86_64-pc-windows-msvc
+            ext: .dll
+            os: windows-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions-rust-lang/setup-rust-toolchain@v1
@@ -37,6 +42,9 @@ jobs:
         run: sudo apt-get update -qq && sudo apt-get install -y -qq ${{ matrix.deps }}
       - run: cargo build --release --target ${{ matrix.target }}
         working-directory: ${{ env.EXT_SRC }}
+      - run: cargo test --all-features
+        working-directory: ${{ env.EXT_SRC }}
+        if: matrix.os == 'windows-latest'
       - uses: actions/upload-artifact@v4
         with:
           name: abe_ext_${{ matrix.target }}
@@ -104,3 +112,34 @@ jobs:
           generate_release_notes: true
           draft: false
           prerelease: ${{ steps.prerelease.outputs.prerelease }}
+
+  # ── Publish to Steam Workshop (optional) ──────────────────────────
+  steam-workshop:
+    needs: [package]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: abe-mod-${{ github.ref_name }}
+          path: release/
+
+      - name: Publish to Steam Workshop
+        env:
+          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
+          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
+          STEAM_ITEM_ID: ${{ secrets.STEAM_ITEM_ID }}
+        if: env.STEAM_USERNAME != '' && env.STEAM_PASSWORD != '' && env.STEAM_ITEM_ID != ''
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq steamcmd
+          cat > release/item.vdf << VDF
+          "workshopitem"
+          {
+            "appid" "107410"
+            "publishedfileid" "${STEAM_ITEM_ID}"
+            "contentfolder" "${GITHUB_WORKSPACE}/release/"
+            "changenote" "Release ${{ github.ref_name }}"
+          }
+          VDF
+          steamcmd +login "${STEAM_USERNAME}" "${STEAM_PASSWORD}" \
+            +workshop_build_item "${GITHUB_WORKSPACE}/release/item.vdf" \
+            +quit

@@ -83,10 +83,15 @@ jobs:
         include:
           - target: x86_64-unknown-linux-gnu
             ext: .so
+            os: ubuntu-latest
           - target: x86_64-pc-windows-gnu
             ext: .dll
             deps: mingw-w64
-    runs-on: ubuntu-latest
+            os: ubuntu-latest
+          - target: x86_64-pc-windows-msvc
+            ext: .dll
+            os: windows-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions-rust-lang/setup-rust-toolchain@v1
@@ -100,6 +105,9 @@ jobs:
         run: sudo apt-get update -qq && sudo apt-get install -y -qq ${{ matrix.deps }}
       - run: cargo build --release --target ${{ matrix.target }}
         working-directory: ${{ env.EXT_SRC }}
+      - run: cargo test --all-features
+        working-directory: ${{ env.EXT_SRC }}
+        if: matrix.os == 'windows-latest'
       - uses: actions/upload-artifact@v4
         with:
           name: abe_ext_${{ matrix.target }}
