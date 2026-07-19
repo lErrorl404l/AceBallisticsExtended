@@ -528,8 +528,9 @@ mod tests {
     fn non_existent_zone_returns_none() {
         setup();
         let m1 = load_schematic("m1a2_abrams_sepv2").expect("M1A2 not found");
-        assert!(m1
-            .evaluate_zone("non_existent_zone", 853.0, 0.0095, 0.00762, "ball")
-            .is_none());
+        assert!(
+            m1.evaluate_zone("non_existent_zone", 853.0, 0.0095, 0.00762, "ball")
+                .is_none()
+        );
     }
 }

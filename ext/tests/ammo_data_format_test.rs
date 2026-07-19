@@ -46,7 +46,7 @@ fn all_ammo_jsons_load() {
                 Err(_) => {
                     skipped_count += 1;
                     continue;
-                }
+                },
             };
 
             let file_name = path.file_name().unwrap().to_string_lossy();

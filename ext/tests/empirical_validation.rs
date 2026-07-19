@@ -18,7 +18,7 @@
 //
 // All tests call the pure-Rust `abe_step` function directly (struct C ABI).
 
-use abe_ballistics_ext::{abe_init, abe_step, BulletState, StepParams, MAGIC_ABE};
+use abe_ballistics_ext::{BulletState, MAGIC_ABE, StepParams, abe_init, abe_step};
 
 const ABE_API_VERSION: u32 = 1;
 const DT_S: f64 = 0.01;

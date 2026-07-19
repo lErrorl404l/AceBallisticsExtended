@@ -1195,11 +1195,7 @@ pub extern "C" fn abe_impact(params: &ImpactParams, result: &mut ImpactResult) -
 /// Safe to call before `abe_init` (will return 0).
 #[unsafe(no_mangle)]
 pub extern "C" fn abe_health() -> i32 {
-    if get_state().initialized {
-        1
-    } else {
-        0
-    }
+    if get_state().initialized { 1 } else { 0 }
 }
 
 // ── Tests ─────────────────────────────────────────────────────────────────────

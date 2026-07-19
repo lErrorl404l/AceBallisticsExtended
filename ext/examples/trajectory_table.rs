@@ -2,7 +2,7 @@
 //!
 //! Run: cargo run --example trajectory_table
 
-use abe_ballistics_ext::{abe_init, abe_step, BulletState, StepParams, MAGIC_ABE};
+use abe_ballistics_ext::{BulletState, MAGIC_ABE, StepParams, abe_init, abe_step};
 
 const ABE_API_VERSION: u32 = 1;
 const DT_S: f64 = 0.01;
@@ -272,8 +272,10 @@ fn main() {
         let (_, d6, v6, _) = f(600.0);
         let (_, d8, v8, _) = f(800.0);
         let (_, d10, v10, _) = f(1000.0);
-        println!("{:<24} {:>6.0} {:>5.3} {:>7.3} {:>6.0} {:>7.3} {:>6.0} {:>7.3} {:>6.0} {:>7.3} {:>6.0}",
-            r.name, r.mv_ms, r.bc, d3, v3, d6, v6, d8, v8, d10, v10);
+        println!(
+            "{:<24} {:>6.0} {:>5.3} {:>7.3} {:>6.0} {:>7.3} {:>6.0} {:>7.3} {:>6.0} {:>7.3} {:>6.0}",
+            r.name, r.mv_ms, r.bc, d3, v3, d6, v6, d8, v8, d10, v10
+        );
     }
 
     println!("=== End ===\n");

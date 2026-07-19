@@ -6,7 +6,7 @@
 // Run:  cargo bench
 // Quick: cargo bench -- --quick --warm-up-time 1 --measurement-time 2
 
-use criterion::{black_box, criterion_group, criterion_main, Criterion};
+use criterion::{Criterion, black_box, criterion_group, criterion_main};
 use std::ffi::CString;
 use std::os::raw::c_char;
 
@@ -753,7 +753,7 @@ fn bench_interior_wall(c: &mut Criterion) {
 }
 
 fn bench_armor_array(c: &mut Criterion) {
-    use abe_ballistics_ext::armor_array::{evaluate_armor_array, ArrayPlate};
+    use abe_ballistics_ext::armor_array::{ArrayPlate, evaluate_armor_array};
     let plates = [
         ArrayPlate {
             thickness_m: 0.010,

@@ -40,7 +40,7 @@ fn all_armor_jsons_load() {
             Err(_) => {
                 skipped_count += 1;
                 continue;
-            }
+            },
         };
 
         // Verify every plate has non-empty name, non-empty material, positive thickness

@@ -22,8 +22,8 @@
 // If any field differs by even one ULP, the test suite fails.
 
 use abe_ballistics_ext::{
-    abe_fire, abe_health, abe_impact, abe_init, abe_step, drag, exterior, penetration, BulletState,
-    FireParams, FireResult, ImpactParams, ImpactResult, StepParams, MAGIC_ABE,
+    BulletState, FireParams, FireResult, ImpactParams, ImpactResult, MAGIC_ABE, StepParams,
+    abe_fire, abe_health, abe_impact, abe_init, abe_step, drag, exterior, penetration,
 };
 use std::ffi::CStr;
 

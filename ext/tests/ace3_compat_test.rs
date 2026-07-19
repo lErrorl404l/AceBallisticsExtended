@@ -19,7 +19,7 @@
 //   - ACE3's native extension behavior
 //   - ACE3 medical classification (tested in soft_tissue.rs)
 
-use abe_ballistics_ext::{abe_health, abe_init, abe_version, RVExtension, RVExtensionArgs};
+use abe_ballistics_ext::{RVExtension, RVExtensionArgs, abe_health, abe_init, abe_version};
 use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 

@@ -599,8 +599,8 @@ mod tests {
         let mut p = test_params();
         p.platform = PlatformType::GroundVehicle { speed_kmh: 50.0 };
         p.pitch_rate_deg_per_s = 2.0; // 2 °/s terrain pitch
-                                      // Pivot = 2.5 m, TOF = 1.5 s
-                                      // Expected: (2° × π/180) × 2.5 × 1.5 = 0.1309 m
+        // Pivot = 2.5 m, TOF = 1.5 s
+        // Expected: (2° × π/180) × 2.5 × 1.5 = 0.1309 m
         let r = evaluate_platform_motion(&p);
         let expected = 2.0 * DEG_TO_RAD * 2.5 * 1.5;
         assert!(
@@ -617,8 +617,8 @@ mod tests {
         let mut p = test_params();
         p.platform = PlatformType::GroundVehicle { speed_kmh: 50.0 };
         p.yaw_rate_deg_per_s = 3.0; // 3 °/s steering yaw
-                                    // Pivot = 2.5 m, TOF = 1.5 s
-                                    // Expected: (3° × π/180) × 2.5 × 1.5 = 0.19635 m
+        // Pivot = 2.5 m, TOF = 1.5 s
+        // Expected: (3° × π/180) × 2.5 × 1.5 = 0.19635 m
         let r = evaluate_platform_motion(&p);
         let expected = 3.0 * DEG_TO_RAD * 2.5 * 1.5;
         assert!(
@@ -653,7 +653,7 @@ mod tests {
         let mut p = test_params();
         p.platform = PlatformType::GroundVehicle { speed_kmh: 50.0 };
         p.lateral_speed_ms = 2.0; // sliding sideways
-                                  // Expected: 2.0 × 1.5 = 3.0 m
+        // Expected: 2.0 × 1.5 = 3.0 m
         let r = evaluate_platform_motion(&p);
         assert!(
             (r.lateral_motion_offset_m - 3.0).abs() < 1e-10,

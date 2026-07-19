@@ -865,11 +865,7 @@ pub fn evaluate_yaw(
     let residual_velocity = if penetrated {
         // R_p = sqrt(V^2 - V_req^2)
         let vr_sq = velocity_ms.powi(2) - v_required.powi(2);
-        if vr_sq > 0.0 {
-            vr_sq.sqrt()
-        } else {
-            0.0
-        }
+        if vr_sq > 0.0 { vr_sq.sqrt() } else { 0.0 }
     } else {
         velocity_ms * 0.1 // Stopped or minimal pass-through
     };

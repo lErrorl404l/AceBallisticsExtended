@@ -12,7 +12,7 @@
 
 #![allow(dead_code)]
 
-use abe_ballistics_ext::{abe_init, abe_step, BulletState, StepParams, MAGIC_ABE};
+use abe_ballistics_ext::{BulletState, MAGIC_ABE, StepParams, abe_init, abe_step};
 
 const ABE_API_VERSION: u32 = 1;
 

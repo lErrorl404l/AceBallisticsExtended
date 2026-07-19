@@ -21,7 +21,7 @@
 // when another test has already initialized — mirroring the guard
 // pattern in lib.rs unit tests.
 
-use abe_ballistics_ext::{abe_health, abe_init, abe_version, RVExtension, RVExtensionArgs};
+use abe_ballistics_ext::{RVExtension, RVExtensionArgs, abe_health, abe_init, abe_version};
 use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 
