@@ -7,5 +7,11 @@
   "rhaEquivalent": 4.5,
   "ductility": 0.02,
   "spallCoeff": 0.9,
-  "notes": "Boron carbide (B4C). Density 2.52 g/cm³ — lightest armor ceramic. Knoop hardness ~3700 HK (30 GPa) — hardest ceramic. RHAe ~4.0-5.0 per mm vs KE standalone tile. Higher with backing (ESAPI/XSAPI arrays ~5.0). Used in M1A2 SEP v2 turret behind DU inserts. Highest areal density efficiency but most expensive. Degrades under extremely high pressure (shock-induced amorphization at ~25 GPa). Fracture toughness K1c ~2.5-3.5 MPa·m^½."
+  "notes": "Boron carbide (B4C). Density 2.52 g/cm³ — lightest armor ceramic. Knoop hardness ~3700 HK (30 GPa) — hardest ceramic. RHAe ~4.0-5.0 per mm vs KE standalone tile. Higher with backing (ESAPI/XSAPI arrays ~5.0). Used in M1A2 SEP v2 turret behind DU inserts. Highest areal density efficiency but most expensive. Degrades under extremely high pressure (shock-induced amorphization at ~25 GPa). Fracture toughness K1c ~2.5-3.5 MPa·m^½.",
+  "source": {
+    "type": "academic_paper",
+    "reference": "ARL ceramic armor research literature, NIST materials database",
+    "methodology": "RHAe from ARL ballistic test data on B4C standalone tiles vs AP threats, normalized to RHA thickness. Knoop hardness and fracture toughness from published materials science characterization.",
+    "confidence": "high"
+  }
 }

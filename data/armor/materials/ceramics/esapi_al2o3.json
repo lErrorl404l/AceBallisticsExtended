@@ -7,5 +7,11 @@
   "rhaEquivalent": 3.0,
   "ductility": 0.02,
   "spallCoeff": 0.85,
-  "notes": "Al2O3 ceramic in an ESAPI backing array configuration. Higher effective RHAe than standalone tile (~3.0 vs 2.5) due to ductile backing (UHMWPE/Dyneema) trapping ceramic fragments and extending dwell. ESAPI (US DoD) standard: polyethylene-backed Al2O3 or SiC defeating .30-06 AP M2 AP (Level IV). Backing adds ~0.3-0.5 RHAe multiplier."
+  "notes": "Al2O3 ceramic in an ESAPI backing array configuration. Higher effective RHAe than standalone tile (~3.0 vs 2.5) due to ductile backing (UHMWPE/Dyneema) trapping ceramic fragments and extending dwell. ESAPI (US DoD) standard: polyethylene-backed Al2O3 or SiC defeating .30-06 AP M2 AP (Level IV). Backing adds ~0.3-0.5 RHAe multiplier.",
+  "source": {
+    "type": "academic_paper",
+    "reference": "ARL ESAPI research, US DoD body armor testing reports",
+    "methodology": "RHAe from ARL published ballistic test data on ESAPI arrays (Al2O3 + UHMWPE) vs .30-06 AP M2. Backing efficiency multiplier derived from ARL ceramic dwell studies.",
+    "confidence": "high"
+  }
 }

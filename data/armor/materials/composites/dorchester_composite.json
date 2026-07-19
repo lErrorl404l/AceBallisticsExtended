@@ -7,5 +7,11 @@
   "rhaEquivalent": 2.5,
   "ductility": 0.05,
   "spallCoeff": 0.6,
-  "notes": "Dorchester composite \u2014 2nd generation UK special armor, successor to Chobham. Ceramic/composite layered modules in steel cavity. RHAe ~2.3-2.7 per mm vs KE. Used in Challenger 2 turret and hull. Enhanced protection vs shaped charges and APFSDS. Developed by DERA; snip precise composition classified."
+  "notes": "Dorchester composite — 2nd generation UK special armor, successor to Chobham. Ceramic/composite layered modules in steel cavity. RHAe ~2.3-2.7 per mm vs KE. Used in Challenger 2 turret and hull. Enhanced protection vs shaped charges and APFSDS. Developed by DERA; precise composition classified.",
+  "source": {
+    "type": "estimated",
+    "reference": "Classified UK MoD armor program, open-source analysis",
+    "methodology": "RHAe estimated from Challenger 2 reported protection levels vs known threats (APFSDS, HEAT). Value 2.5 is approximate improvement over original Chobham. Precise composition classified.",
+    "confidence": "low"
+  }
 }

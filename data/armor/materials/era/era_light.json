@@ -7,5 +7,11 @@
   "rhaEquivalent": 1.3,
   "ductility": 0.1,
   "spallCoeff": 0.6,
-  "notes": "Light ERA / soft-kill appliqué armor. Lower protection than full Kontakt-5 or Relikt. Used on vehicle sides, turret roofs, and light armored vehicles. Typical: ~1.2-1.5x vs HEAT, minimal vs APFSDS. Common on light IFVs, up-armored MRAPs, and legacy MBT side skirts. BHN placeholder — ERA does not have Brinell hardness."
+  "notes": "Light ERA / soft-kill appliqué armor. Lower protection than full Kontakt-5 or Relikt. Used on vehicle sides, turret roofs, and light armored vehicles. Typical: ~1.2-1.5x vs HEAT, minimal vs APFSDS. Common on light IFVs, up-armored MRAPs, and legacy MBT side skirts. BHN placeholder — ERA does not have Brinell hardness.",
+  "source": {
+    "type": "estimated",
+    "reference": "General ERA performance data, field observations",
+    "methodology": "RHAe estimated for light ERA cassette: lower explosive content and thinner flyer plates than Kontakt-5/Relikt. Primarily effective against HEAT, limited KE resistance.",
+    "confidence": "low"
+  }
 }

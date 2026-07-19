@@ -7,5 +7,11 @@
   "rhaEquivalent": 1.25,
   "ductility": 0.3,
   "spallCoeff": 0.7,
-  "notes": "High-hardness armor steel, MIL-DTL-46100 class (477-534 BHN). ~1.2-1.3x RHA per mm vs AP per ARL-TR-4632 (Showalter). ARMOX 600S (570-640 HBW UHH) is higher (see armox_600). This JSON corrected from 1.35 to 1.25 for standard HHA."
+  "notes": "High-hardness armor steel, MIL-DTL-46100 class (477-534 BHN). ~1.2-1.3x RHA per mm vs AP per ARL-TR-4632 (Showalter). ARMOX 600S (570-640 HBW UHH) is higher (see armox_600). This JSON corrected from 1.35 to 1.25 for standard HHA.",
+  "source": {
+    "type": "military_standard",
+    "reference": "MIL-DTL-46100, ARL-TR-4632 (Showalter)",
+    "methodology": "RHAe from ARL-TR-4632 showing ~1.25x RHA for 477-534 BHN class HHA vs AP projectiles. Density per MIL-DTL-46100 specification.",
+    "confidence": "high"
+  }
 }

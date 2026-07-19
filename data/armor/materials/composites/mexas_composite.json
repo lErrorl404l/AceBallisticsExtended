@@ -7,5 +7,11 @@
   "rhaEquivalent": 1.8,
   "ductility": 0.05,
   "spallCoeff": 0.6,
-  "notes": "MEXAS (Modular Expandable Armor System) by IBD Deisenroth. Ceramic tile (Al2O3/SiC) strike face + polymer/rubber matrix backing. Areal density ~65-75 kg/m² at 30mm module thickness. RHAe ~1.5-2.0 per module mm vs KE, higher vs shaped charges (~2.5-3.0). Used as bolt-on applique on Stryker, M113, CV90, Leopard 2. Multi-hit capability limited by ceramic fracture. SpallCoeff moderate: ceramic face produces fragments but backing catches most."
+  "notes": "MEXAS (Modular Expandable Armor System) by IBD Deisenroth. Ceramic tile (Al2O3/SiC) strike face + polymer/rubber matrix backing. Areal density ~65-75 kg/m² at 30mm module thickness. RHAe ~1.5-2.0 per module mm vs KE, higher vs shaped charges (~2.5-3.0). Used as bolt-on applique on Stryker, M113, CV90, Leopard 2. Multi-hit capability limited by ceramic fracture. SpallCoeff moderate: ceramic face produces fragments but backing catches most.",
+  "source": {
+    "type": "manufacturer_data",
+    "reference": "IBD Deisenroth MEXAS technical datasheets",
+    "methodology": "RHAe from IBD Deisenroth published ballistic test data for MEXAS modules vs KE and shaped charge threats. Areal density per manufacturer specification.",
+    "confidence": "medium"
+  }
 }

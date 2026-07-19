@@ -7,5 +7,11 @@
   "rhaEquivalent": 1.35,
   "ductility": 0.25,
   "spallCoeff": 0.55,
-  "notes": "Swedish ARMOX 600T armor steel by SSAB. 600 HBW hardness. Per ARL ADA493654: 15-25% higher V50 than MIL-DTL-46100 HHA → ~1.35 RHAe. Used in combat vehicles requiring elevated protection levels. ARMOX 600S is 570-640 HBW (UHH grade)."
+  "notes": "Swedish ARMOX 600T armor steel by SSAB. 600 HBW hardness. Per ARL ADA493654: 15-25% higher V50 than MIL-DTL-46100 HHA → ~1.35 RHAe. Used in combat vehicles requiring elevated protection levels. ARMOX 600S is 570-640 HBW (UHH grade).",
+  "source": {
+    "type": "manufacturer_data",
+    "reference": "SSAB ARMOX 600 datasheet, ARL ADA493654",
+    "methodology": "RHAe from ARL report ADA493654: ARMOX 600T V50 15-25% above MIL-DTL-46100 HHA (RHAe~1.25) → RHAe~1.35. Hardness per SSAB specification (600 HBW).",
+    "confidence": "high"
+  }
 }

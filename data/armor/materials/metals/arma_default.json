@@ -7,5 +7,11 @@
   "rhaEquivalent": 1.0,
   "ductility": 0.5,
   "spallCoeff": 0.5,
-  "notes": "Arma 3 default armor material (material = -1). Engine base coeff 1.0x. Used as fallback when no specific material is assigned. Serves as baseline for all other armor material coefficients."
+  "notes": "Arma 3 default armor material (material = -1). Engine base coeff 1.0x. Used as fallback when no specific material is assigned. Serves as baseline for all other armor material coefficients. Represents generic RHA-like behavior in the game engine.",
+  "source": {
+    "type": "estimated",
+    "reference": "ARMA 3 game engine configuration, BI config reference",
+    "methodology": "RHAe=1.0 by definition as the game's baseline material. Density and hardness set to approximate generic steel for game physics compatibility.",
+    "confidence": "low"
+  }
 }

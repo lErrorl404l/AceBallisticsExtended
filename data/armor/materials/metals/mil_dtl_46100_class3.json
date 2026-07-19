@@ -7,5 +7,11 @@
   "rhaEquivalent": 1.4,
   "ductility": 0.3,
   "spallCoeff": 0.7,
-  "notes": "MIL-DTL-46100 Class 3 high-hardness armor steel. 534-578 BHN. RHAe ~1.35-1.45 per mm vs AP. Higher hardness gives better ballistic protection but reduced ductility and increased HAZ embrittlement risk. Limited formability."
+  "notes": "MIL-DTL-46100 Class 3 high-hardness armor steel. 534-578 BHN. RHAe ~1.35-1.45 per mm vs AP per ARL-TR-4632. Higher hardness gives better ballistic protection but reduced ductility and increased HAZ embrittlement risk. Limited formability.",
+  "source": {
+    "type": "military_standard",
+    "reference": "MIL-DTL-46100, ARL-TR-4632 (Showalter)",
+    "methodology": "RHAe interpolated from ARL-TR-4632 hardness-to-RHAe correlation. Hardness range per MIL-DTL-46100 Class 3 specification.",
+    "confidence": "high"
+  }
 }

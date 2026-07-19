@@ -7,5 +7,11 @@
   "rhaEquivalent": 1.8,
   "ductility": 0.1,
   "spallCoeff": 0.75,
-  "notes": "Kontakt-5 \u2014 2nd generation Soviet ERA (NII Stali). First ERA effective against APFSDS: heavy flyer plates shear long-rod penetrators. ~1.5-1.8x vs KE (APFSDS), ~2.5-3.0x vs HEAT. Used on T-80U, T-72B3. Contains 4S22 explosive elements. Replaced by Relikt on newer platforms. BHN placeholder \u2014 ERA does not have Brinell hardness."
+  "notes": "Kontakt-5 \u2014 2nd generation Soviet ERA (NII Stali). First ERA effective against APFSDS: heavy flyer plates shear long-rod penetrators. ~1.5-1.8x vs KE (APFSDS), ~2.5-3.0x vs HEAT. Used on T-80U, T-72B3. Contains 4S22 explosive elements. Replaced by Relikt on newer platforms. BHN placeholder \u2014 ERA does not have Brinell hardness.",
+  "source": {
+    "type": "academic_paper",
+    "reference": "NII Stali publications, open-source ERA analysis",
+    "methodology": "RHAe estimated from published ERA efficiency data: Kontakt-5 reported at 1.5-1.8x vs KE in technical literature. Density approximate for ERA cassette assembly.",
+    "confidence": "medium"
+  }
 }

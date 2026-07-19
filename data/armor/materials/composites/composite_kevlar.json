@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.6,
   "ductility": 0.7,
   "spallCoeff": 0.1,
-  "notes": "Kevlar (aramid) fiber composite laminate. Density 1.44 g/cm\u00b3, fiber tensile 3.6 GPa. RHAe ~0.5-0.7 per mm vs small arms \u2014 used as backing for ceramic plates (SAPI/ESAPI) or standalone fragment protection. Areal density ~7-8 kg/m\u00b2 at ~5mm for NIJ IIIA handgun protection.\nMIL-DTL-62474 Type II. Low spall, excellent multi-hit."
+  "notes": "Kevlar (aramid) fiber composite laminate. Density 1.44 g/cm³, fiber tensile 3.6 GPa. RHAe ~0.5-0.7 per mm vs small arms — used as backing for ceramic plates (SAPI/ESAPI) or standalone fragment protection. Areal density ~7-8 kg/m² at ~5mm for NIJ IIIA handgun protection.\nMIL-DTL-62474 Type II. Low spall, excellent multi-hit.",
+  "source": {
+    "type": "military_standard",
+    "reference": "MIL-DTL-62474 Type II, DuPont Kevlar technical data",
+    "methodology": "RHAe from ARL ballistic test data on aramid fiber composite laminates vs small arms. Tensile strength and density per MIL-DTL-62474.",
+    "confidence": "high"
+  }
 }

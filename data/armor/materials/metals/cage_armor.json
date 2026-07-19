@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.15,
   "ductility": 0.10,
   "spallCoeff": 0.4,
-  "notes": "Cage armor (stand-off wire/cage armor) uses lightweight wire mesh or thin bars to defeat RPGs and HEAT projectiles by crushing the shaped charge cone or shorting the piezoelectric fuse before the warhead reaches the main armor. Even lighter than slat armor; RHAe ~0.15 vs KE threats. Primary mechanism is HEAT warhead disruption via fuze shorting or cone deformation. Common on light tactical vehicles and convoy protection."
+  "notes": "Cage armor (stand-off wire/cage armor) uses lightweight wire mesh or thin bars to defeat RPGs and HEAT projectiles by crushing the shaped charge cone or shorting the piezoelectric fuse before the warhead reaches the main armor. Even lighter than slat armor; RHAe ~0.15 vs KE threats. Primary mechanism is HEAT warhead disruption via fuze shorting or cone deformation. Common on light tactical vehicles and convoy protection.",
+  "source": {
+    "type": "estimated",
+    "reference": "Field observations, IDF/Russian employment reports",
+    "methodology": "RHAe estimated from minimal structural cross-section: wire mesh presents ~5-15% of solid plate area. HEAT disruption mechanism is primary, KE resistance is incidental.",
+    "confidence": "low"
+  }
 }

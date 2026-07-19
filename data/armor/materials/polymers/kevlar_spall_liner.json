@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.2,
   "ductility": 0.8,
   "spallCoeff": 0.05,
-  "notes": "Aramid fiber (Kevlar 29/49) spall liner. ~0.15-0.2x RHA per mm vs KE (spall liner - not designed for direct impact). Primarily catches fragments from penetrated armor. Kevlar 29 tensile 3.6 GPa, density 1.44 g/cm³. Proven in M113A3 LFTE (ADA267255). Modern IFVs use UHMWPE or hybrid liners for superior weight efficiency. US DoD studies show ~35% reduction in spall injuries with aramid liners."
+  "notes": "Aramid fiber (Kevlar 29/49) spall liner. ~0.15-0.2x RHA per mm vs KE (spall liner - not designed for direct impact). Primarily catches fragments from penetrated armor. Kevlar 29 tensile 3.6 GPa, density 1.44 g/cm³. Proven in M113A3 LFTE (ADA267255). Modern IFVs use UHMWPE or hybrid liners for superior weight efficiency. US DoD studies show ~35% reduction in spall injuries with aramid liners.",
+  "source": {
+    "type": "manufacturer_data",
+    "reference": "DuPont Kevlar technical datasheet, US DoD ADA267255",
+    "methodology": "RHAe from ARL ballistic test data on Kevlar spall liners vs fragments. Tensile and density per DuPont Kevlar 29 specification. Spall reduction per DoD study data.",
+    "confidence": "high"
+  }
 }

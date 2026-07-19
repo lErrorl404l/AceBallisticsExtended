@@ -7,5 +7,11 @@
   "rhaEquivalent": 1.1,
   "ductility": 0.25,
   "spallCoeff": 0.75,
-  "notes": "MARS (Medium Archival Reference Standard) armor \u2014 US ARL reference dual-hardness standard. Similar construction to MIL-A-46099C: hard face on ductile backer. Established as cross-lab reference material for ballistic test validation. See ARL-TR-4632."
+  "notes": "MARS (Medium Archival Reference Standard) armor \u2014 US ARL reference dual-hardness standard. Similar construction to MIL-A-46099C: hard face on ductile backer. Established as cross-lab reference material for ballistic test validation. See ARL-TR-4632.",
+  "source": {
+    "type": "academic_paper",
+    "reference": "ARL-TR-4632 (Showalter), MARS standard documentation",
+    "methodology": "RHAe per ARL-TR-4632 characterization of MARS reference material. Dual-hardness construction similar to MIL-A-46099C.",
+    "confidence": "high"
+  }
 }

@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.85,
   "ductility": 0.4,
   "spallCoeff": 0.7,
-  "notes": "Cast armor steel per MIL-S-21885. Density 7.85. BHN ~240-260 (softer than rolled RHA). UTS ~700-800 MPa. RHAe ~0.8-0.9 per mm vs KE — inferior to rolled RHA due to casting defects, anisotropy, and lower hardness. Used in T-72 and BMP-series cast turrets. Soviet cast turrets typically 85-90% the ballistic efficiency of rolled plate of same thickness."
+  "notes": "Cast armor steel per MIL-S-21885. Density 7.85. BHN ~240-260 (softer than rolled RHA). UTS ~700-800 MPa. RHAe ~0.8-0.9 per mm vs KE — inferior to rolled RHA due to casting defects, anisotropy, and lower hardness. Used in T-72 and BMP-series cast turrets. Soviet cast turrets typically 85-90% the ballistic efficiency of rolled plate of same thickness.",
+  "source": {
+    "type": "military_standard",
+    "reference": "MIL-S-21885, Soviet armor metallurgy literature",
+    "methodology": "RHAe from hardness ratio (250/280=0.89) and published data showing cast armor at 85-90% of rolled RHA ballistic efficiency. Density and tensile per MIL-S-21885.",
+    "confidence": "high"
+  }
 }

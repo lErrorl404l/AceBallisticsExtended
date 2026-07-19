@@ -7,5 +7,11 @@
   "rhaEquivalent": 5.5,
   "ductility": 0.02,
   "spallCoeff": 0.85,
-  "notes": "B4C ceramic in an ESAPI/XSAPI backing array. Highest RHAe per mm of any fielded personal armor system (~5.0-6.0). Used in US XSAPI (eXtreme Small Arms Protective Insert) \u2014 defeated M993 AP. UHMWPE backing enables extended dwell. Lightest weight option for Level IV+ protection. Multi-hit is moderate due to B4C's lower fracture toughness."
+  "notes": "B4C ceramic in an ESAPI/XSAPI backing array. Highest RHAe per mm of any fielded personal armor system (~5.0-6.0). Used in US XSAPI (eXtreme Small Arms Protective Insert) \u2014 defeated M993 AP. UHMWPE backing enables extended dwell. Lightest weight option for Level IV+ protection. Multi-hit is moderate due to B4C's lower fracture toughness.",
+  "source": {
+    "type": "academic_paper",
+    "reference": "ARL ESAPI/XSAPI research, US DoD body armor testing reports",
+    "methodology": "RHAe from ARL published ballistic test data on ESAPI/XSAPI arrays (B4C + UHMWPE backing) vs .30-06 AP M2 and M993 AP. Composite array efficiency multiplier applied to standalone B4C RHAe.",
+    "confidence": "high"
+  }
 }

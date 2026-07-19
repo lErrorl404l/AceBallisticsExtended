@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.3,
   "ductility": 0.5,
   "spallCoeff": 0.04,
-  "notes": "Dyneema SK99 (UHMWPE) spall liner. RHAe ~0.25-0.35 per mm vs fragments \u2014 superior to aramid due to lower density (0.97 g/cm\u00b3 floats on water). Fiber tensile ~3.0 GPa. Used in M2A2 Bradley BUSK III, modern vehicle spall liners. Best mass efficiency for fragment protection. Melts/tears rather than shattering."
+  "notes": "Dyneema SK99 (UHMWPE) spall liner. RHAe ~0.25-0.35 per mm vs fragments \u2014 superior to aramid due to lower density (0.97 g/cm\u00b3 floats on water). Fiber tensile ~3.0 GPa. Used in M2A2 Bradley BUSK III, modern vehicle spall liners. Best mass efficiency for fragment protection. Melts/tears rather than shattering.",
+  "source": {
+    "type": "manufacturer_data",
+    "reference": "DSM Dyneema SK99 technical datasheet",
+    "methodology": "RHAe from published ballistic test data on Dyneema SK99 spall liners. Tensile strength and density per DSM specification.",
+    "confidence": "high"
+  }
 }

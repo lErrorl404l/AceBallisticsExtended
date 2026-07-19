@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.6,
   "ductility": 0.3,
   "spallCoeff": 0.5,
-  "notes": "Perforated armor plate \u2014 steel with regular hole pattern that disrupts projectiles by yaw induction or shear. Effective RHAe ~0.55-0.65 vs AP (60% of solid plate weight). Used in IDF armor upgrades, vehicle skirts. Effective against small arms and fragments; snip less so against APFSDS. Areal density ~20-35% lower than solid plate of same ballistic resistance."
+  "notes": "Perforated armor plate \u2014 steel with regular hole pattern that disrupts projectiles by yaw induction or shear. Effective RHAe ~0.55-0.65 vs AP (60% of solid plate weight). Used in IDF armor upgrades, vehicle skirts. Effective against small arms and fragments; less so against APFSDS. Areal density ~20-35% lower than solid plate of same ballistic resistance.",
+  "source": {
+    "type": "estimated",
+    "reference": "IDF armor research, open-source ballistic evaluations",
+    "methodology": "RHAe estimated from geometric fill ratio and published IDF test data on perforated armor (RHAe ~60% of solid plate at ~70% weight). Density adjusted for hole pattern.",
+    "confidence": "medium"
+  }
 }

@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.15,
   "ductility": 0.1,
   "spallCoeff": 0.8,
-  "notes": "Laminated armored glass per MIL-PRF-32348. Float glass + polyvinyl butyral (PVB) interlayer construction. Density ~2.5 g/cm³, surface hardness ~600 HK. RHAe ~0.12-0.18 per mm vs KE. Provides small-arms protection at considerable thickness (50-100mm typical). Brittle outer layers spall on impact; PVB interlayer retains fragments. Used for vehicle windscreens (M-ATV, Stryker, JLTV). SpallCoeff high due to glass fragmentation."
+  "notes": "Laminated armored glass per MIL-PRF-32348. Float glass + polyvinyl butyral (PVB) interlayer construction. Density ~2.5 g/cm³, surface hardness ~600 HK. RHAe ~0.12-0.18 per mm vs KE. Provides small-arms protection at considerable thickness (50-100mm typical). Brittle outer layers spall on impact; PVB interlayer retains fragments. Used for vehicle windscreens (M-ATV, Stryker, JLTV). SpallCoeff high due to glass fragmentation.",
+  "source": {
+    "type": "military_standard",
+    "reference": "MIL-PRF-32348, armored glass manufacturer data",
+    "methodology": "RHAe from published ballistic test data on MIL-PRF-32348 laminated armored glass vs small arms. Surface hardness per glass industry standards.",
+    "confidence": "high"
+  }
 }

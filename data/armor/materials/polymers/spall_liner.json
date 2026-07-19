@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.1,
   "ductility": 0.9,
   "spallCoeff": 0.02,
-  "notes": "Generic spall liner \u2014 minimum structural resistance. RHAe ~0.08-0.12 per mm. Represents basic fabric or rubber spall containment layer in vehicles. Primarily catches armor fragments after penetration, not designed for direct ballistic impact."
+  "notes": "Generic spall liner \u2014 minimum structural resistance. RHAe ~0.08-0.12 per mm. Represents basic fabric or rubber spall containment layer in vehicles. Primarily catches armor fragments after penetration, not designed for direct ballistic impact.",
+  "source": {
+    "type": "estimated",
+    "reference": "Generic spall liner design, general fragment protection data",
+    "methodology": "RHAe estimated as minimum representative value for non-structural fabric/rubber spall containment layers. Density approximate for mixed fabric materials.",
+    "confidence": "low"
+  }
 }

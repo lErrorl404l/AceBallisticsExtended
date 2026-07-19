@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.12,
   "ductility": 0.3,
   "spallCoeff": 0.6,
-  "notes": "E-glass fiber in polyester/vinyl-ester resin (GRP). Density ~1.9 g/cm\u00b3. RHAe ~0.10-0.14 per mm vs small arms. Used for vehicle body panels, landing craft, and non-critical structural-baliistic applications. Lower cost than aramid or S2-glass."
+  "notes": "E-glass fiber in polyester/vinyl-ester resin (GRP). Density ~1.9 g/cm³. RHAe ~0.10-0.14 per mm vs small arms. Used for vehicle body panels, landing craft, and non-critical structural-baliistic applications. Lower cost than aramid or S2-glass.",
+  "source": {
+    "type": "manufacturer_data",
+    "reference": "E-glass/polyester composite industry data, GRP ballistic test literature",
+    "methodology": "RHAe from published ballistic test data on standard E-glass GRP laminates vs small arms. Density per composite manufacturing standards.",
+    "confidence": "medium"
+  }
 }

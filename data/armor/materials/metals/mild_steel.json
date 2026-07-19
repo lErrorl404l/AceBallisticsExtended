@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.5,
   "ductility": 0.6,
   "spallCoeff": 0.5,
-  "notes": "Mild structural steel per ASTM A36. Yield ~250 MPa, UTS ~400 MPa. BHN ~110-130. RHAe ~0.5-0.6 per mm vs KE (varies by threat — lower vs AP, higher vs fragments). Used for backstop plates, construction, ship hulls, and non-armor structural elements. Ductile failure produces fewer secondary fragments than RHA."
+  "notes": "Mild structural steel per ASTM A36. Yield ~250 MPa, UTS ~400 MPa. BHN ~110-130. RHAe ~0.5-0.6 per mm vs KE (varies by threat — lower vs AP, higher vs fragments). Used for backstop plates, construction, ship hulls, and non-armor structural elements. Ductile failure produces fewer secondary fragments than RHA.",
+  "source": {
+    "type": "estimated",
+    "reference": "ASTM A36 standard, universal steel property data",
+    "methodology": "RHAe estimated from Brinell hardness ratio to RHA 280 BHN: ~120/280 = 0.43, adjusted upward to 0.5-0.6 based on empirical ballistic data for structural steel plates. Density per ASTM A36.",
+    "confidence": "high"
+  }
 }

@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.5,
   "ductility": 0.7,
   "spallCoeff": 0.1,
-  "notes": "Arma 3 stock aluminum armor material. Engine coeff ~0.5x vs Default. Used for light vehicle hulls (HMMWV, truck cabs) in CfgVehicleHitPoints."
+  "notes": "Arma 3 stock aluminum armor material. Engine coeff ~0.5x vs Default. Used for light vehicle hulls (HMMWV, truck cabs) in CfgVehicleHitPoints. Represents the game's abstract 'aluminum' armor class, roughly corresponding to 5083/7039 series armor aluminum.",
+  "source": {
+    "type": "estimated",
+    "reference": "ARMA 3 game engine configuration, BI config reference",
+    "methodology": "RHAe=0.5 is the ARMA 3 game engine value for its 'aluminum' armor class, consistent with 5083/7039 aluminum RHAe range of 0.35-0.50. Density per 5083 specification.",
+    "confidence": "low"
+  }
 }

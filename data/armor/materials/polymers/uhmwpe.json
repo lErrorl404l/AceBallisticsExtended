@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.25,
   "ductility": 0.5,
   "spallCoeff": 0.04,
-  "notes": "Ultra-high molecular weight polyethylene (Dyneema SK99, Spectra). Density 0.97 g/cm³ — floats on water. Fiber tensile ~3.0 GPa (SK99). RHAe ~0.2-0.3 per mm vs small arms (7.62mm Ball, 5.56mm M855), higher against fragments (~0.4). Superior spall containment (low spallCoeff). Used as standalone lightweight armor, spall liners (M2A2 Bradley BUSK III), and helmet backing. Fails by melting/tearing, not shattering. BHN meaningless for this material."
+  "notes": "Ultra-high molecular weight polyethylene (Dyneema SK99, Spectra). Density 0.97 g/cm³ — floats on water. Fiber tensile ~3.0 GPa (SK99). RHAe ~0.2-0.3 per mm vs small arms (7.62mm Ball, 5.56mm M855), higher against fragments (~0.4). Superior spall containment (low spallCoeff). Used as standalone lightweight armor, spall liners (M2A2 Bradley BUSK III), and helmet backing. Fails by melting/tearing, not shattering. BHN meaningless for this material.",
+  "source": {
+    "type": "manufacturer_data",
+    "reference": "DSM Dyneema SK99 technical datasheet, Honeywell Spectra technical data",
+    "methodology": "RHAe from manufacturer published ballistic limit data for UHMWPE laminates vs small arms and fragments. Density per DSM specification.",
+    "confidence": "high"
+  }
 }

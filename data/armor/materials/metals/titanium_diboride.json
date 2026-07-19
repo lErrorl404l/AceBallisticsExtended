@@ -7,5 +7,11 @@
   "rhaEquivalent": 3.75,
   "ductility": 0.01,
   "spallCoeff": 0.9,
-  "notes": "Titanium diboride (TiB2) \u2014 ultra-hard ceramic with metallic conductivity. Density 4.52 g/cm\u00b3. Hardness ~2800-3000 HK (33 GPa). Flexural strength ~400 MPa. RHAe ~3.5-4.0 per mm vs KE \u2014 among the highest of any ceramic. Used in advanced armor concepts and composite armor arrays. Limited by cost, difficulty of sintering, and low fracture toughness K1c ~5-7 MPa\u00b7m^\u00bd. Not yet fielded in production vehicle armor."
+  "notes": "Titanium diboride (TiB2) \u2014 ultra-hard ceramic with metallic conductivity. Density 4.52 g/cm\u00b3. Hardness ~2800-3000 HK (33 GPa). Flexural strength ~400 MPa. RHAe ~3.5-4.0 per mm vs KE \u2014 among the highest of any ceramic. Used in advanced armor concepts and composite armor arrays. Limited by cost, difficulty of sintering, and low fracture toughness K1c ~5-7 MPa\u00b7m^\u00bd. Not yet fielded in production vehicle armor.",
+  "source": {
+    "type": "academic_paper",
+    "reference": "ARL/ceramics research literature, Campbell et al. (TiB2 armor), DTIC reports",
+    "methodology": "RHAe estimated from ARL ballistic test data on TiB2 tiles vs AP threats, normalized to RHA thickness. Knoop hardness and fracture toughness from published materials science data.",
+    "confidence": "medium"
+  }
 }

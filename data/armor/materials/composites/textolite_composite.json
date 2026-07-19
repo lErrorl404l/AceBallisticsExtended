@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.35,
   "ductility": 0.5,
   "spallCoeff": 0.3,
-  "notes": "Textolite AG-4S glass-reinforced plastic. ~1.7-1.9 g/cm³, unidirectional tensile 300-400 MPa. Used as intermediate layer in Soviet/Russian tank composite arrays (T-64/T-72/T-90 glacis). RHAe ~0.3-0.5 per mm vs KE. Functions as low-density filler between steel plates to disrupt long-rod penetrators. Fiberglass splinters create secondary fragmentation. BHN not applicable — value shown is theoretical equivalent."
+  "notes": "Textolite AG-4S glass-reinforced plastic. ~1.7-1.9 g/cm³, unidirectional tensile 300-400 MPa. Used as intermediate layer in Soviet/Russian tank composite arrays (T-64/T-72/T-90 glacis). RHAe ~0.3-0.5 per mm vs KE. Functions as low-density filler between steel plates to disrupt long-rod penetrators. Fiberglass splinters create secondary fragmentation. BHN not applicable — value shown is theoretical equivalent.",
+  "source": {
+    "type": "reference_book",
+    "reference": "Soviet GOST standards (AG-4S), Soviet armor design literature",
+    "methodology": "RHAe estimated from Soviet armor literature on textolite AG-4S layers in T-64/T-72 glacis arrays. Density and tensile per GOST material specification.",
+    "confidence": "medium"
+  }
 }

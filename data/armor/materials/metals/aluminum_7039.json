@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.45,
   "ductility": 0.6,
   "spallCoeff": 0.1,
-  "notes": "Aluminum 7039-T64 per MIL-DTL-46027E. Higher strength than 5083 (yield ~380 MPa) with similar density. RHAe ~0.40-0.50 per mm vs small arms. Used in BMP turret applique armor, M113 upgrades. Superior ballistic performance to 5083 at similar weight. Higher susceptibility to stress corrosion than 5083. Joined by gas tungsten arc welding (GTAW)."
+  "notes": "Aluminum 7039-T64 per MIL-DTL-46027E. Higher strength than 5083 (yield ~380 MPa) with similar density. RHAe ~0.40-0.50 per mm vs small arms per MIL-HDBK-5. Used in BMP turret applique armor, M113 upgrades. Superior ballistic performance to 5083 at similar weight. Higher susceptibility to stress corrosion than 5083. Joined by gas tungsten arc welding (GTAW).",
+  "source": {
+    "type": "military_standard",
+    "reference": "MIL-DTL-46027E, MIL-HDBK-5J (MMPDS)",
+    "methodology": "RHAe from MIL-HDBK-5J ballistic limit curves for 7039-T64, normalized to RHA. Hardness and density per MIL-DTL-46027E.",
+    "confidence": "high"
+  }
 }

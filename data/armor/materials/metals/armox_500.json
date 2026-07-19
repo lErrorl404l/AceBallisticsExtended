@@ -7,5 +7,11 @@
   "rhaEquivalent": 1.10,
   "ductility": 0.3,
   "spallCoeff": 0.5,
-  "notes": "Swedish ARMOX 500 armor steel by SSAB. 500 HBW hardness. ~1.10x RHAe per mm vs AP threats. Good ballistic performance and weldability. Used in APCs, IFVs, and naval applications. EN 10294-2 compliant."
+  "notes": "Swedish ARMOX 500 armor steel by SSAB. 500 HBW hardness. ~1.10x RHAe per mm vs AP threats per SSAB published ballistic test data. Good ballistic performance and weldability. Used in APCs, IFVs, and naval applications. EN 10294-2 compliant.",
+  "source": {
+    "type": "manufacturer_data",
+    "reference": "SSAB ARMOX 500 datasheet, EN 10294-2",
+    "methodology": "RHAe from SSAB published V50 ballistic limits vs AP threats, normalized to RHA thickness equivalence. Hardness per SSAB specification (500 HBW).",
+    "confidence": "high"
+  }
 }

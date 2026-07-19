@@ -7,5 +7,11 @@
   "rhaEquivalent": 2.2,
   "ductility": 0.03,
   "spallCoeff": 0.85,
-  "notes": "AD90 \u2014 90% aluminum oxide armor ceramic by CoorsTek. Lower purity than AD95/AD995, lower cost. RHAe ~1.8-2.2 per mm vs 7.62 AP. Adequate for medium-threat applications. More affordable than AD95 with acceptable ballistic performance. Used in vehicle applique kits and lower-tier body armor."
+  "notes": "AD90 \u2014 90% aluminum oxide armor ceramic by CoorsTek. Lower purity than AD95/AD995, lower cost. RHAe ~1.8-2.2 per mm vs 7.62 AP. Adequate for medium-threat applications. More affordable than AD95 with acceptable ballistic performance. Used in vehicle applique kits and lower-tier body armor.",
+  "source": {
+    "type": "manufacturer_data",
+    "reference": "CoorsTek AD90 technical datasheet",
+    "methodology": "RHAe from CoorsTek published ballistic test data for AD90 vs 7.62mm AP. Density and hardness per manufacturer specification.",
+    "confidence": "high"
+  }
 }

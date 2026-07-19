@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.3,
   "ductility": 0.6,
   "spallCoeff": 0.3,
-  "notes": "Arma 3 stock plastic armor material. Engine coeff ~0.3x vs Default. Used for non-structural body panels and light vehicle components."
+  "notes": "Arma 3 stock plastic armor material. Engine coeff ~0.3x vs Default. Used for non-structural body panels and light vehicle components. Represents the game's abstract 'plastic' armor class.",
+  "source": {
+    "type": "estimated",
+    "reference": "ARMA 3 game engine configuration, BI config reference",
+    "methodology": "RHAe=0.3 is the ARMA 3 game engine value for its 'plastic' armor class. Density set to approximate reinforced plastic material.",
+    "confidence": "low"
+  }
 }

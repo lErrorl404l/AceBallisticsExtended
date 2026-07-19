@@ -7,5 +7,11 @@
   "rhaEquivalent": 2.0,
   "ductility": 0.05,
   "spallCoeff": 0.85,
-  "notes": "Alumina ceramic (Al2O3 ~3.93 g/cm³, 1200-1500 HV) / UHMWPE backing (~0.97 g/cm³, 2-3 GPa tensile). RHAe ~1.5-2.5 per mm vs KE threats (2.0 typical). BHN meaningless for composites - strike face hardness shown. Al2O3 K1c ~3.5 MPa·m^½. Areal density ~40-50% less than steel for STANAG 4569 Level 4 (14.5mm API). Per research: 10mm Al2O3 + 8mm UHMWPE configuration shows optimal energy absorption. Multi-hit capability limited by ceramic fracture."
+  "notes": "Alumina ceramic (Al2O3 ~3.93 g/cm³, 1200-1500 HV) / UHMWPE backing (~0.97 g/cm³, 2-3 GPa tensile). RHAe ~1.5-2.5 per mm vs KE threats (2.0 typical). BHN meaningless for composites - strike face hardness shown. Al2O3 K1c ~3.5 MPa·m^½. Areal density ~40-50% less than steel for STANAG 4569 Level 4 (14.5mm API). Per research: 10mm Al2O3 + 8mm UHMWPE configuration shows optimal energy absorption. Multi-hit capability limited by ceramic fracture.",
+  "source": {
+    "type": "reference_book",
+    "reference": "STANAG 4569 Level 4 standard, ARL composite armor research",
+    "methodology": "RHAe range from published research on Al2O3/UHMWPE composite arrays meeting STANAG 4569 Level 4. Areal density and configuration from optimization studies.",
+    "confidence": "medium"
+  }
 }

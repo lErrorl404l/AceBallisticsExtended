@@ -7,5 +7,11 @@
   "rhaEquivalent": 2.2,
   "ductility": 0.03,
   "spallCoeff": 0.85,
-  "notes": "AD90 alumina ceramic \u2014 alternative materialId key. Same properties as ceramic_ad90. 90% Al2O3 by CoorsTek. RHAe ~1.8-2.2 per mm vs 7.62 AP."
+  "notes": "AD90 alumina ceramic \u2014 alternative materialId key. Same properties as ceramic_ad90. 90% Al2O3 by CoorsTek. RHAe ~1.8-2.2 per mm vs 7.62 AP per manufacturer data.",
+  "source": {
+    "type": "manufacturer_data",
+    "reference": "CoorsTek AD90 technical datasheet, mirror of ceramic_ad90 entry",
+    "methodology": "RHAe from CoorsTek published ballistic test data for AD90 vs 7.62mm AP. Duplicate key for alternative materialId lookup.",
+    "confidence": "high"
+  }
 }

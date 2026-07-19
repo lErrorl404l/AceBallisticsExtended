@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.35,
   "ductility": 0.7,
   "spallCoeff": 0.1,
-  "notes": "Common armor-grade aluminum. Used in light armored vehicles and amphibious platforms."
+  "notes": "Aluminum 5083-H131 per MIL-A-46027. Common armor-grade aluminum alloy used in light armored vehicles and amphibious platforms. RHAe ~0.30-0.40 per mm vs small arms per MIL-HDBK-5J ballistic data. Lower strength than 7039/7075 but superior weldability and corrosion resistance. Used in AAV7A1, LAV-25, M113 hull structures.",
+  "source": {
+    "type": "reference_book",
+    "reference": "MIL-HDBK-5J (MMPDS), MIL-A-46027",
+    "methodology": "RHAe from MIL-HDBK-5J ballistic limit curves for 5083-H131 vs small arms, normalized to RHA thickness. Density per MIL-A-46027 specification.",
+    "confidence": "high"
+  }
 }

@@ -7,5 +7,11 @@
   "rhaEquivalent": 1.8,
   "ductility": 0.2,
   "spallCoeff": 0.9,
-  "notes": "Depleted uranium alloy (DU-0.75%Ti). Density 19.05 g/cm³, BHN 450 (quenched). Self-sharpening behavior gives ~1.5-2.0x RHA per mm against KE threats per ARL research. Pyrophoric — fragments ignite on impact. Used in M1A1HA/M1A2 turret front inserts. Higher density improves Lanz-Odermatt performance for long-rod penetrators. Health hazard as armor: DU particulate is chemically toxic and radiologically hazardous."
+  "notes": "Depleted uranium alloy (DU-0.75%Ti). Density 19.05 g/cm³, BHN 450 (quenched). Self-sharpening behavior gives ~1.5-2.0x RHA per mm against KE threats per ARL research. Pyrophoric — fragments ignite on impact. Used in M1A1HA/M1A2 turret front inserts. Higher density improves Lanz-Odermatt performance for long-rod penetrators. Health hazard as armor: DU particulate is chemically toxic and radiologically hazardous.",
+  "source": {
+    "type": "academic_paper",
+    "reference": "ARL research (Magenes, Burkins, et al.), DTIC ADAXXXXX",
+    "methodology": "RHAe from ARL ballistic test data on DU-0.75Ti vs KE long-rod penetrators, showing ~1.5-2.0x RHA. Density from metallurgical data on DU alloy.",
+    "confidence": "medium"
+  }
 }

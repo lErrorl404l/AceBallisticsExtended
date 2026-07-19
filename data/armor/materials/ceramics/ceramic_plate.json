@@ -7,5 +7,11 @@
   "rhaEquivalent": 2.5,
   "ductility": 0.05,
   "spallCoeff": 0.9,
-  "notes": "Ballistic ceramic Al2O3 SAPI-style plate. High hardness, low ductility. ~2.5x RHA per mm (ESAPI/ARL consensus). Previous 3.5 was B4C territory."
+  "notes": "Ballistic ceramic Al2O3 SAPI-style plate. High hardness, low ductility. ~2.5x RHA per mm (ESAPI/ARL consensus). Previous 3.5 was B4C territory.",
+  "source": {
+    "type": "estimated",
+    "reference": "ESAPI specification (US DoD), ARL ceramic armor consensus data",
+    "methodology": "RHAe from ESAPI/ARL consensus on 99.5% Al2O3 SAPI-style plate performance vs AP threats. Based on published ESAPI Level IV certification requirements.",
+    "confidence": "medium"
+  }
 }

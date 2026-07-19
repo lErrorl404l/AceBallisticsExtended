@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.80,
   "ductility": 0.4,
   "spallCoeff": 0.45,
-  "notes": "Swedish Hardox 450 structural/abrasion-resistant steel by SSAB. 450 HBW hardness. Not certified armor plate — per Acar et al. 2024 published ballistic tests: ~0.70-0.85x RHAe. Reduced from 0.95 to 0.80 per IRL data. Primarily used in vehicle hulls where some ballistic protection is beneficial but not primary."
+  "notes": "Swedish Hardox 450 structural/abrasion-resistant steel by SSAB. 450 HBW hardness. Not certified armor plate — per Acar et al. 2024 published ballistic tests: ~0.70-0.85x RHAe. Reduced from 0.95 to 0.80 per IRL data. Primarily used in vehicle hulls where some ballistic protection is beneficial but not primary.",
+  "source": {
+    "type": "manufacturer_data",
+    "reference": "SSAB Hardox 450 datasheet, Acar et al. 2024 ballistic test study",
+    "methodology": "RHAe from Acar et al. 2024 published ballistic test results for Hardox 450 vs 7.62mm AP, normalized to RHA equivalence. Hardness per SSAB specification (450 HBW).",
+    "confidence": "high"
+  }
 }

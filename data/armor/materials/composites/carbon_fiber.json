@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.2,
   "ductility": 0.6,
   "spallCoeff": 0.08,
-  "notes": "Carbon fiber reinforced polymer (CFRP) laminate. Density ~1.6 g/cm\u00b3, fiber tensile ~3.5 GPa. RHAe ~0.15-0.25 per mm vs small arms \u2014 primarily structural with secondary ballistic benefit. Used in vehicle hulls, structural armor supports, and lightweight spall containment. Excellent stiffness-to-weight ratio. Fails by delamination and fiber fracture."
+  "notes": "Carbon fiber reinforced polymer (CFRP) laminate. Density ~1.6 g/cm³, fiber tensile ~3.5 GPa. RHAe ~0.15-0.25 per mm vs small arms — primarily structural with secondary ballistic benefit. Used in vehicle hulls, structural armor supports, and lightweight spall containment. Excellent stiffness-to-weight ratio. Fails by delamination and fiber fracture.",
+  "source": {
+    "type": "military_standard",
+    "reference": "MIL-DTL-81061, carbon fiber composite industry data",
+    "methodology": "RHAe from published ballistic test data on CFRP laminates. Primarily structural - ballistic resistance is secondary. Tensile per MIL-DTL-81061.",
+    "confidence": "medium"
+  }
 }

@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.04,
   "ductility": 0.7,
   "spallCoeff": 0.3,
-  "notes": "Lead alloy (Pb-Sb 1-6% antimony). Density 11.34 g/cm³ — high density with minimal structural strength. BHN ~4-6 (pure lead 5), UTS ~10-20 MPa. RHAe ~0.03-0.05 per mm vs KE — negligible ballistic resistance per thickness. Used in some armor composites (BMP-3) as high-density filler and for x-ray/radiation shielding. Very ductile — deforms rather than fragments on impact. Not a structural armor material."
+  "notes": "Lead alloy (Pb-Sb 1-6% antimony). Density 11.34 g/cm\u00b3 \u2014 high density with minimal structural strength. BHN ~4-6 (pure lead 5), UTS ~10-20 MPa. RHAe ~0.03-0.05 per mm vs KE \u2014 negligible ballistic resistance per thickness. Used in some armor composites (BMP-3) as high-density filler and for x-ray/radiation shielding. Very ductile \u2014 deforms rather than fragments on impact. Not a structural armor material.",
+  "source": {
+    "type": "reference_book",
+    "reference": "Materials property databases, BMP-3 armor design documentation",
+    "methodology": "RHAe estimated from Brinell hardness ratio to RHA 280 BHN: 5/280 = 0.018, adjusted for ductile deformation behavior. Density per elemental lead specification.",
+    "confidence": "medium"
+  }
 }

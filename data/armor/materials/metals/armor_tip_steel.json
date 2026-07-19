@@ -7,5 +7,11 @@
   "rhaEquivalent": 1.15,
   "ductility": 0.2,
   "spallCoeff": 0.6,
-  "notes": "Hardened steel used for AP projectile cores and penetrator tips. High-carbon/high-hardness tool steel grade. RHAe ~1.15 relative to standard RHA for hardness-matched comparison. Not used as armor but as reference material."
+  "notes": "Hardened steel used for AP projectile cores and penetrator tips. High-carbon/high-hardness tool steel grade. RHAe ~1.15 relative to standard RHA for hardness-matched comparison per ARL-TR-4632 hardness correlation. Not used as armor but as reference material.",
+  "source": {
+    "type": "estimated",
+    "reference": "Tool steel industry specifications, ARL-TR-4632 hardness-RHAe correlation",
+    "methodology": "RHAe estimated from Brinell hardness ratio to RHA 280 BHN: 600/280 = 2.14, but actual ballistic performance vs AP is lower due to brittleness. Value 1.15 based on hardness correlation from ARL-TR-4632.",
+    "confidence": "medium"
+  }
 }

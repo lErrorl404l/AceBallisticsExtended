@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.2,
   "ductility": 0.9,
   "spallCoeff": 0.1,
-  "notes": "Arma 3 stock rubber armor material. Engine coeff ~0.2x vs Default. Used for tires, seals, and flexible components. High ductility absorbs some KE."
+  "notes": "Arma 3 stock rubber armor material. Engine coeff ~0.2x vs Default. Used for tires, seals, and flexible components. High ductility absorbs some KE. Represents the game's abstract 'rubber' armor class.",
+  "source": {
+    "type": "estimated",
+    "reference": "ARMA 3 game engine configuration, BI config reference",
+    "methodology": "RHAe=0.2 is the ARMA 3 game engine value for its 'rubber' armor class. Density set to approximate rubber material.",
+    "confidence": "low"
+  }
 }

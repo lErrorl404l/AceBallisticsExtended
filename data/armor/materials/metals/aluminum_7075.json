@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.48,
   "ductility": 0.5,
   "spallCoeff": 0.15,
-  "notes": "Aluminum 7075-T6 per MIL-A-12576. Higher strength than 7039 (ultimate ~570 MPa) but over-aging beyond ~75mm reduces ballistic performance. RHAe ~0.45-0.50 per mm vs small arms. Used in limited armor applications where higher strength-to-weight ratio than 5083 is needed. Susceptible to stress corrosion cracking (SCC)."
+  "notes": "Aluminum 7075-T6 per MIL-A-12576. Higher strength than 7039 (ultimate ~570 MPa) but over-aging beyond ~75mm reduces ballistic performance. RHAe ~0.45-0.50 per mm vs small arms per MIL-HDBK-5. Used in limited armor applications where higher strength-to-weight ratio than 5083 is needed. Susceptible to stress corrosion cracking (SCC).",
+  "source": {
+    "type": "reference_book",
+    "reference": "MIL-HDBK-5J (MMPDS), MIL-A-12576",
+    "methodology": "RHAe from MIL-HDBK-5J ballistic limit curves for 7075-T6, normalized to RHA thickness. Strength and density per MIL-A-12576.",
+    "confidence": "high"
+  }
 }

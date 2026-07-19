@@ -7,5 +7,11 @@
   "rhaEquivalent": 2.4,
   "ductility": 0.02,
   "spallCoeff": 0.85,
-  "notes": "AD95 \u2014 95% aluminum oxide armor ceramic by CoorsTek. Higher purity and ballistic performance than AD90. RHAe ~2.3-2.5 per mm vs KE. Used in Leopard 2A6 turret composite arrays. Better multi-hit than higher-purity AD995 due to optimized grain structure."
+  "notes": "AD95 \u2014 95% aluminum oxide armor ceramic by CoorsTek. Higher purity and ballistic performance than AD90. RHAe ~2.3-2.5 per mm vs KE per manufacturer data. Used in Leopard 2A6 turret composite arrays. Better multi-hit than higher-purity AD995 due to optimized grain structure.",
+  "source": {
+    "type": "manufacturer_data",
+    "reference": "CoorsTek AD95 technical datasheet",
+    "methodology": "RHAe from CoorsTek published ballistic test data for AD95 vs AP threats. Density and purity per manufacturer specification.",
+    "confidence": "high"
+  }
 }

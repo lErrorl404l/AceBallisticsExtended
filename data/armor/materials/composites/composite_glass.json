@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.4,
   "ductility": 0.3,
   "spallCoeff": 0.6,
-  "notes": "S2-glass fiber in phenolic resin matrix. Density ~1.9 g/cm\u00b3. RHAe ~0.4-0.6 per mm vs KE (ARL reference). Used in vehicle composite armor arrays (Leopard 2, Type 90, K2 Black Panther). Provides both ballistic and structural function. Lower cost than aramid, good fire resistance. Moderate spall generation from glass fiber fracture."
+  "notes": "S2-glass fiber in phenolic resin matrix. Density ~1.9 g/cm³. RHAe ~0.4-0.6 per mm vs KE (ARL reference). Used in vehicle composite armor arrays (Leopard 2, Type 90, K2 Black Panther). Provides both ballistic and structural function. Lower cost than aramid, good fire resistance. Moderate spall generation from glass fiber fracture.",
+  "source": {
+    "type": "military_standard",
+    "reference": "MIL-DTL-64192, ARL composite armor research",
+    "methodology": "RHAe from ARL published ballistic test data on S2-glass/phenolic composite vs KE threats. Density and tensile per MIL-DTL-64192 specification.",
+    "confidence": "high"
+  }
 }

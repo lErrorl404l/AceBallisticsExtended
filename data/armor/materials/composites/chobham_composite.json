@@ -7,5 +7,11 @@
   "rhaEquivalent": 2.2,
   "ductility": 0.05,
   "spallCoeff": 0.65,
-  "notes": "Chobham composite \u2014 original UK special armor developed at Chobham Common (FERMAN/MACLEAN projects, 1960s). Ceramic tiles in resin matrix between steel plates. RHAe ~2.0-2.4 per mm vs KE. Used in Challenger 1, early M1 Abrams prototypes. Superior to Burlington in later variants."
+  "notes": "Chobham composite — original UK special armor developed at Chobham Common (FERMAN/MACLEAN projects, 1960s). Ceramic tiles in resin matrix between steel plates. RHAe ~2.0-2.4 per mm vs KE. Used in Challenger 1, early M1 Abrams prototypes. Superior to Burlington in later variants.",
+  "source": {
+    "type": "estimated",
+    "reference": "Classified UK MoD armor program, open-source analysis (FERMAN/MACLEAN)",
+    "methodology": "RHAe estimated from declassified references and indirect data: Chobham was reported as '2-3x RHA per weight'. Value 2.2 represents approximate thickness-efficiency midpoint. Precise layup remains classified.",
+    "confidence": "low"
+  }
 }

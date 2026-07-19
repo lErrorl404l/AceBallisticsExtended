@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.25,
   "ductility": 0.8,
   "spallCoeff": 0.05,
-  "notes": "Aramid (Kevlar 29/49) fabric spall liner. RHAe ~0.2-0.25 per mm vs KE \u2014 designed to catch fragments, not stop direct impacts. Kevlar 29 tensile 3.6 GPa, density 1.44 g/cm\u00b3. Proven in M113A3 LFTE (ADA267255). ~35% reduction in spall injuries per US DoD studies."
+  "notes": "Aramid (Kevlar 29/49) fabric spall liner. RHAe ~0.2-0.25 per mm vs KE \u2014 designed to catch fragments, not stop direct impacts. Kevlar 29 tensile 3.6 GPa, density 1.44 g/cm\u00b3. Proven in M113A3 LFTE (ADA267255). ~35% reduction in spall injuries per US DoD studies.",
+  "source": {
+    "type": "manufacturer_data",
+    "reference": "DuPont Kevlar technical datasheet, MIL-DTL-62474, US DoD ADA267255",
+    "methodology": "RHAe from ARL ballistic test data on aramid spall liners vs fragments. Tensile strength and density per DuPont Kevlar 29 specification.",
+    "confidence": "high"
+  }
 }

@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.55,
   "ductility": 0.3,
   "spallCoeff": 0.5,
-  "notes": "Slotted armor \u2014 steel with slot pattern designed to disrupt projectiles and improve multi-hit capability. RHAe ~0.50-0.60 vs KE. Similar concept to perforated armor but with elongated slots. Weight savings of 30-40% vs solid plate for equivalent multi-hit protection. Used in military vehicle add-on armor kits."
+  "notes": "Slotted armor \u2014 steel with slot pattern designed to disrupt projectiles and improve multi-hit capability. RHAe ~0.50-0.60 vs KE. Similar concept to perforated armor but with elongated slots. Weight savings of 30-40% vs solid plate for equivalent multi-hit protection. Used in military vehicle add-on armor kits.",
+  "source": {
+    "type": "estimated",
+    "reference": "Open-source armor design analysis, IDR reports",
+    "methodology": "RHAe estimated from geometric fill ratio: ~60-70% of solid plate material remaining after slotting. Density adjusted for slot openings to 6.5 g/cm\u00b3 effective.",
+    "confidence": "low"
+  }
 }

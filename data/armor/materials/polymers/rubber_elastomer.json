@@ -7,5 +7,11 @@
   "rhaEquivalent": 0.015,
   "ductility": 0.9,
   "spallCoeff": 0.05,
-  "notes": "Armor-grade rubber/elastomer interlayer. Density ~1.1-1.3 g/cm³, Shore A ~70. RHAe ~0.01-0.02 per mm vs KE. Used as intermediate layer in Soviet composite armor (T-72 reflecting plate between steel layers) and as spall coating on interior hull surfaces. Elastic behavior absorbs and deflects fragments. Negligible direct ballistic resistance but disrupts long-rod penetrator through wave impedance mismatch."
+  "notes": "Armor-grade rubber/elastomer interlayer. Density ~1.1-1.3 g/cm³, Shore A ~70. RHAe ~0.01-0.02 per mm vs KE. Used as intermediate layer in Soviet composite armor (T-72 reflecting plate between steel layers) and as spall coating on interior hull surfaces. Elastic behavior absorbs and deflects fragments. Negligible direct ballistic resistance but disrupts long-rod penetrator through wave impedance mismatch.",
+  "source": {
+    "type": "estimated",
+    "reference": "Soviet/Russian armor design literature, rubber interlayer research",
+    "methodology": "RHAe estimated from minimal density and Shore hardness: elastomer interlayer primary function is impedance mismatch, not direct ballistic resistance. Density approximate for armor-grade rubber compounds.",
+    "confidence": "medium"
+  }
 }

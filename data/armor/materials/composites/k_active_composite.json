@@ -7,5 +7,11 @@
   "rhaEquivalent": 2.3,
   "ductility": 0.05,
   "spallCoeff": 0.6,
-  "notes": "K-Active (\u041a-\u0410\u043a\u0442\u0438\u0432) \u2014 modern Russian ceramic composite armor developed for T-90M/T-14. Enhanced multi-hit ceramic blocks in resin matrix. RHAe ~2.1-2.5 per mm vs KE. Improved over Kvarts/K-5 era composites. Likely uses SiC or Al2O3 tiles with optimized backing."
+  "notes": "K-Active (К-Актив) — modern Russian ceramic composite armor developed for T-90M/T-14. Enhanced multi-hit ceramic blocks in resin matrix. RHAe ~2.1-2.5 per mm vs KE. Improved over Kvarts/K-5 era composites. Likely uses SiC or Al2O3 tiles with optimized backing.",
+  "source": {
+    "type": "estimated",
+    "reference": "Open-source Russian armor analysis, T-90M/T-14 publications",
+    "methodology": "RHAe estimated from reported T-90M and T-14 Armata protection levels, inferring composite efficiency from known glacis thickness.",
+    "confidence": "low"
+  }
 }

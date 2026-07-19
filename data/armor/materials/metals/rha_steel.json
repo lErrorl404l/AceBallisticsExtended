@@ -7,5 +7,11 @@
   "rhaEquivalent": 1.0,
   "ductility": 0.5,
   "spallCoeff": 0.6,
-  "notes": "Standard rolled homogeneous armor. Reference material for all penetration models."
+  "notes": "Standard rolled homogeneous armor. Reference material for all penetration models. MIL-A-12560 specification covers RHA plate from 0.25 to 6.0 inches thickness, 260-320 BHN range. RHAe = 1.0 by definition as the reference material.",
+  "source": {
+    "type": "military_standard",
+    "reference": "MIL-A-12560, MIL-DTL-12560",
+    "methodology": "Reference material: RHAe=1.0 by definition. Hardness per MIL-DTL-12560 class 1 (260-320 BHN). Density per standard steel.",
+    "confidence": "high"
+  }
 }
