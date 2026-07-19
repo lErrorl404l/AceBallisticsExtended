@@ -14,6 +14,8 @@
 //   - ISO 19906:2019 Arctic offshore structures
 //   - Mellor, M., "Mechanical Properties of Snow and Ice" (1975)
 
+#![allow(dead_code)]
+
 // ── Constants ──────────────────────────────────────────────────────────────────
 
 /// Temperature (°C) above which ground is considered fully thawed (factor = 1.0).

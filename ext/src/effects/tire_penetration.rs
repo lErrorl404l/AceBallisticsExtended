@@ -10,6 +10,9 @@
 //   - Run-flat insert (optional hard rubber/composite ring)
 //
 // References:
+// ponytail: not wired into hit detection — whole module is forward-looking
+
+#![allow(dead_code)]
 //   - FMVSS 139 / ECE R30 (passenger tyre construction standards)
 //   - DOT / NHTSA tyre safety research data
 //   - De Marre penetration formula (belt steel-equivalent resistance)
@@ -275,7 +278,7 @@ fn check_blowout(
 ) -> bool {
     match proj_type.to_lowercase().as_str() {
         "he" | "heat" | "he_i" | "incendiary" => return true, // explosive
-        _ => {}
+        _ => {},
     }
 
     // Large calibre through sidewall → blowout
@@ -566,7 +569,7 @@ pub fn evaluate_tire_penetration(params: &TirePenetrationParams) -> TirePenetrat
         ImpactZone::Sidewall => {
             // Sidewall: no belts; always perforated above a low threshold
             params.impact_velocity_ms > 50.0
-        }
+        },
         ImpactZone::Tread | ImpactZone::Shoulder => belts > 0,
     };
 

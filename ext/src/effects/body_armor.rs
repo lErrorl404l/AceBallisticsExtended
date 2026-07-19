@@ -22,17 +22,29 @@
 //
 // This module uses penetration::material_factor() for base material
 // resistance values.
+// ponytail: entire module is forward-looking, wire body armor into hit detection
+
+#![allow(dead_code)]
 
 use std::collections::HashMap;
 
 use crate::penetration;
 
 // ── NIJ 0101.06 reference threat velocities (m/s) ─────────────────────────────
+//
+// Source: NIJ Standard 0101.06, Table 1 — Test Rounds & Reference Velocities.
+//   Level IIIA: .357 SIG FMJ FN 125gr @ 448 m/s (primary),
+//               .44 Mag SJHP 240gr @ 430 m/s (secondary),
+//               9 mm FMJ RN 124gr @ 436 m/s (3-shot conditioning).
+//   Level III:  7.62×51 mm M80 ball 147gr @ 847 m/s.
+//   Level IV:   .30-06 M2 AP 166gr @ 878 m/s.
 
-const NIJ_IIIA_9MM_V: f64 = 436.0; // 9 mm FMJ RN @ 436 ± 10 m/s
-const NIJ_IIIA_44_V: f64 = 436.0; // .44 Mag SJHP @ 436 ± 10 m/s
-const NIJ_III_M80_V: f64 = 847.0; // 7.62×51 mm M80 ball @ 847 ± 10 m/s
-const NIJ_IV_AP_V: f64 = 878.0; // .30-06 M2 AP @ 878 ± 10 m/s
+#[allow(dead_code)] // ponytail: NIJ reference threat velocities, wire when body armor is integrated
+const NIJ_IIIA_357SIG_V: f64 = 448.0; // .357 SIG FMJ FN @ 448 ± 9.1 m/s
+const NIJ_IIIA_44_V: f64 = 430.0; // .44 Mag SJHP @ 430 ± 9.1 m/s
+const NIJ_IIIA_9MM_V: f64 = 436.0; // 9 mm FMJ RN @ 436 ± 9.1 m/s (conditioning)
+const NIJ_III_M80_V: f64 = 847.0; // 7.62×51 mm M80 ball @ 847 ± 9.1 m/s
+const NIJ_IV_AP_V: f64 = 878.0; // .30-06 M2 AP @ 878 ± 9.1 m/s
 
 /// Backface deformation limit per NIJ 0101.06 (44 mm).
 const BFD_LIMIT_MM: f64 = 44.0;

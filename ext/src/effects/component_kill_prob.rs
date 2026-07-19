@@ -164,6 +164,7 @@ fn vehicle_density_energy_cost(vehicle: VehicleType) -> f64 {
 /// Scale factor applied to component vulnerability thresholds by vehicle
 /// type.  Heavier vehicles house components behind more robust casings
 /// and sub-assemblies, raising the effective kill threshold.
+#[allow(dead_code)] // ponytail: test-only, wire when component kill linked to vehicle damage model
 fn vehicle_kill_modifier(vehicle: VehicleType) -> f64 {
     match vehicle {
         VehicleType::MBT => 1.4,

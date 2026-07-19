@@ -8,6 +8,10 @@
 // a concrete material factor adjusted for slab type, density, reinforcement,
 // voids, and spall behaviour.
 //
+// ponytail: SlabType and helpers are test-only — whole module is dead until
+// urban-combat map features require floor/ceiling penetration.
+
+#![allow(dead_code)]
 // References:
 //   - UFC 3-340-01 (Unified Facilities Criteria — Structures to Resist
 //     the Effects of Accidental Explosions), Chapters 5–6 (concrete
@@ -181,15 +185,15 @@ fn rha_equivalent_thickness(params: &ConcreteSlabParams) -> f64 {
             // Voids reduce effective cross-section
             let solid_fraction = 1.0 - params.void_fraction;
             params.thickness_mm * total_concrete_factor * solid_fraction
-        }
+        },
         SlabType::CompositeDeck => {
             // Steel deck adds ~1–2 mm RHA-equivalent
             params.thickness_mm * total_concrete_factor * 1.05
-        }
+        },
         SlabType::SuspendedGypsum => {
             // Gypsum board has negligible penetration resistance
             params.thickness_mm * 0.01 * density_factor
-        }
+        },
     };
 
     base

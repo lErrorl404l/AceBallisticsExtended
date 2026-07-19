@@ -244,7 +244,7 @@ pub fn evaluate_frangible_impact(
                     residual_velocity_ms: residual_vel,
                     max_penetration_mm: max_pen,
                     fragment_count,
-                    avg_fragment_mass_g: avg_fragment_mass_g,
+                    avg_fragment_mass_g,
                 }
             } else {
                 // ── Below threshold: soft-lead behaviour ──────────────
@@ -253,7 +253,7 @@ pub fn evaluate_frangible_impact(
                 // and retaining most of its mass.
                 below_threshold_result(ke, params)
             }
-        }
+        },
 
         "bone" => {
             if params.impact_velocity_ms >= threshold
@@ -280,18 +280,18 @@ pub fn evaluate_frangible_impact(
                     residual_velocity_ms: residual_vel,
                     max_penetration_mm: max_pen,
                     fragment_count,
-                    avg_fragment_mass_g: avg_fragment_mass_g,
+                    avg_fragment_mass_g,
                 }
             } else {
                 // ── Below threshold against bone: partial penetration ─
                 below_threshold_result(ke, params)
             }
-        }
+        },
 
         _ => {
             // ── Soft target: no shatter, normal behaviour ─────────────
             below_threshold_result(ke, params)
-        }
+        },
     }
 }
 

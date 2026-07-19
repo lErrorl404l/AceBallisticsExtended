@@ -95,6 +95,7 @@ const HEI_FRAGMENT_SPRAY_MAX_DEG: f64 = 60.0;
 /// Maximum number of credible HEI casing fragments.
 const HEI_FRAGMENTS_MAX: i32 = 200;
 
+#[allow(dead_code)] // ponytail: HEI scatter scaling, wire when combined effects fully integrated
 /// Incendiary particle scatter radius scaling for HEI.
 ///   scatter (m) = K · m_filler^⅓
 const HEI_PARTICLE_SCATTER_K: f64 = 4.0;
@@ -309,12 +310,12 @@ pub fn evaluate_combined_effects(params: &CombinedAmmoParams) -> CombinedEffectR
                 // Delay fuze: detonates after armour penetration, or on
                 // impact at high velocity (self-destruct if stopped).
                 pen || v_impact > 500.0
-            }
+            },
             _ => {
                 // Impact fuze: arm only above a minimum velocity to
                 // prevent low-velocity duds.
                 v_impact >= HEI_FUZE_ARM_MS
-            }
+            },
         }
     } else {
         false

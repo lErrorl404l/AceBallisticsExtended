@@ -455,7 +455,7 @@ pub fn evaluate_glass_penetration(params: &GlassPenetrationParams) -> GlassPenet
         SecurityGlassType::AutomotiveSide { thickness_mm } => {
             // Automotive side glass is tempered — same physics
             evaluate_tempered(thickness_mm, params)
-        }
+        },
         SecurityGlassType::Laminated {
             glass_thickness_mm,
             pvb_layer_count,

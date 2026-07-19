@@ -105,7 +105,7 @@ pub fn will_supercavitate(velocity_ms: f64, projectile_type: &str, nose_shape: &
             } else {
                 velocity_ms >= threshold
             }
-        }
+        },
         _ => velocity_ms >= threshold,
     }
 }
