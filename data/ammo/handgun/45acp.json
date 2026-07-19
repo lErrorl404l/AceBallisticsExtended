@@ -6,7 +6,12 @@
     "caliber_mm": 11.43,
     "bc_g7": 0.173,
     "cdm_id": "g1",
-    "source": "G1 BC=0.173 for 230gr FMJ (Federal/Speer average). Federal AE45AP 0.173, Speer 230gr TMJ RN 0.173. Winchester 230gr FMJ 0.162. G1 model for flat-base pistol bullets.",
+    "source": {
+      "type": "manufacturer_data",
+      "reference": "G1 BC=0.173 for 230gr FMJ (Federal/Speer average). Federal AE45AP 0.173, Speer 230gr TMJ RN 0.173. Winchester 230gr FMJ 0.162. G1 model for flat-base pistol bullets.",
+      "methodology": "Values sourced from manufacturer published ballistic data (factory BC tables, reloading manuals, or product specifications).",
+      "confidence": "high"
+    },
     "frag_mass_mean": 0.5,
     "frag_mass_std": 0.3,
     "ricochet_angle_deg": 20.0,

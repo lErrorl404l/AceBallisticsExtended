@@ -1,18 +1,23 @@
 {
-    "class": "ACE_300BLK_Subsonic_Ball",
-    "projectile": {
-        "model": "M277_220gr_Subsonic",
-        "mass_g": 14.3,
-        "caliber_mm": 7.82,
-        "bc_g7": 0.313,
-        "cdm_id": "g7",
-        "source": ".300 AAC Blackout subsonic 220gr SMK/HPBT. G7=0.313 (Barnes VOR-TX, Sierra SMK). MV~305 m/s subsonic. Barnes/Sierra factory BC data.",
-        "fragmentation": null,
-        "frag_mass_mean": 0.5,
-        "frag_mass_std": 0.3,
-        "ricochet_angle_deg": 22.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "ACE_300BLK_Subsonic_Ball",
+  "projectile": {
+    "model": "M277_220gr_Subsonic",
+    "mass_g": 14.3,
+    "caliber_mm": 7.82,
+    "bc_g7": 0.313,
+    "cdm_id": "g7",
+    "source": {
+      "type": "manufacturer_data",
+      "reference": ".300 AAC Blackout subsonic 220gr SMK/HPBT. G7=0.313 (Barnes VOR-TX, Sierra SMK). MV~305 m/s subsonic. Barnes/Sierra factory BC data.",
+      "methodology": "Values sourced from manufacturer published ballistic data (factory BC tables, reloading manuals, or product specifications).",
+      "confidence": "high"
+    },
+    "fragmentation": null,
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3,
+    "ricochet_angle_deg": 22.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
 }

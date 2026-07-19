@@ -6,7 +6,12 @@
     "caliber_mm": 6.5,
     "bc_g7": 0.245,
     "cdm_id": "g7",
-    "source": "6.5mm Grendel 120gr FMJ. G7 BC~0.245. ~800 m/s (24\"). Intermediate AR-15 round with excellent ballistic coefficients.",
+    "source": {
+      "type": "estimated",
+      "reference": "6.5mm Grendel 120gr FMJ. G7 BC~0.245. ~800 m/s (24\"). Intermediate AR-15 round with excellent ballistic coefficients.",
+      "methodology": "BC values estimated from typical projectile form factor for this caliber and weight.",
+      "confidence": "low"
+    },
     "fragmentation": {
       "threshold_vel_ms": 600.0,
       "avg_fragments": 5,

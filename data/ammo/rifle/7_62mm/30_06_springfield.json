@@ -1,26 +1,31 @@
 {
-    "class": "ACE_30_06_Springfield",
-    "projectile": {
-        "model": "M2AP_165gr",
-        "mass_g": 10.7,
-        "caliber_mm": 7.823,
-        "bc_g7": 0.2,
-        "cdm_id": "g7",
-        "source": ".30-06 Springfield M2 AP 165gr. G7 BC~0.200. ~855 m/s (24\"). Standard US service cartridge WWII-era. Various loadings 150-180gr.",
-        "fragmentation": {
-            "threshold_vel_ms": 650.0,
-            "avg_fragments": 8,
-            "mass_distribution": "log_normal",
-            "params": {
-                "mean": 0.1,
-                "std": 0.05
-            }
-        },
-        "frag_mass_mean": 2.0,
-        "frag_mass_std": 0.8,
-        "ricochet_angle_deg": 20.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "ACE_30_06_Springfield",
+  "projectile": {
+    "model": "M2AP_165gr",
+    "mass_g": 10.7,
+    "caliber_mm": 7.823,
+    "bc_g7": 0.2,
+    "cdm_id": "g7",
+    "source": {
+      "type": "estimated",
+      "reference": ".30-06 Springfield M2 AP 165gr. G7 BC~0.200. ~855 m/s (24\"). Standard US service cartridge WWII-era. Various loadings 150-180gr.",
+      "methodology": "Values based on commonly published historical ballistics data for this military cartridge.",
+      "confidence": "medium"
+    },
+    "fragmentation": {
+      "threshold_vel_ms": 650.0,
+      "avg_fragments": 8,
+      "mass_distribution": "log_normal",
+      "params": {
+        "mean": 0.1,
+        "std": 0.05
+      }
+    },
+    "frag_mass_mean": 2.0,
+    "frag_mass_std": 0.8,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
 }

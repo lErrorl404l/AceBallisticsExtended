@@ -6,7 +6,12 @@
     "caliber_mm": 7.13,
     "bc_g7": 1.052,
     "cdm_id": "g1",
-    "source": "ACE3 ballistics:  ACE3: caliber=7.13mm, mass=27.95g, drag=1, BC=[1.052]. Velocities: 1068.0m/s@730.0mm",
+    "source": {
+      "type": "ace3_data",
+      "reference": "ACE3 ballistics:  ACE3: caliber=7.13mm, mass=27.95g, drag=1, BC=[1.052]. Velocities: 1068.0m/s@730.0mm",
+      "methodology": "Values sourced from ACE3 Advanced Ballistics configuration data. ACE3 sources its data from a mix of IRL references, manufacturer data, and community estimates.",
+      "confidence": "medium"
+    },
     "fragmentation": null,
     "frag_mass_mean": null,
     "frag_mass_std": null,

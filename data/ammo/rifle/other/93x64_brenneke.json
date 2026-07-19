@@ -1,18 +1,23 @@
 {
-    "class": "B_93x64_Ball",
-    "projectile": {
-        "model": "Brenneke_285gr",
-        "mass_g": 18.5,
-        "caliber_mm": 9.3,
-        "bc_g7": 0.28,
-        "cdm_id": "g7",
-        "source": "Litz-estimated G7 for 9.3\u00d764mm Brenneke 285gr pointed solid. Litz, Ballistic Performance of Rifle Bullets, 3rd Ed. \u00a79.7. Form factor i\u22480.95 for modest meplat. No Doppler-published BC for this caliber.",
-        "fragmentation": null,
-        "frag_mass_mean": 2.0,
-        "frag_mass_std": 0.8,
-        "ricochet_angle_deg": 20.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "B_93x64_Ball",
+  "projectile": {
+    "model": "Brenneke_285gr",
+    "mass_g": 18.5,
+    "caliber_mm": 9.3,
+    "bc_g7": 0.28,
+    "cdm_id": "g7",
+    "source": {
+      "type": "estimated",
+      "reference": "Litz-estimated G7 for 9.3×64mm Brenneke 285gr pointed solid. Litz, Ballistic Performance of Rifle Bullets, 3rd Ed. §9.7. Form factor i≈0.95 for modest meplat. No Doppler-published BC for this caliber.",
+      "methodology": "BC values estimated from similar known projectiles using form factor approximations or Litz estimation methods. Not directly measured or published.",
+      "confidence": "low"
+    },
+    "fragmentation": null,
+    "frag_mass_mean": 2.0,
+    "frag_mass_std": 0.8,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
 }

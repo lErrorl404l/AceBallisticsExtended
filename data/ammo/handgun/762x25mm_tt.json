@@ -1,17 +1,22 @@
 {
-    "class": "B_762x25_Ball",
-    "projectile": {
-        "model": "FMJ_85gr",
-        "mass_g": 5.5,
-        "caliber_mm": 7.85,
-        "bc_g7": 0.17,
-        "cdm_id": "g1",
-        "source": "7.62x25mm Tokarev 85gr FMJ. G1 BC~0.170. ~470 m/s (5\"). High-velocity Soviet pistol round. Steel-core variants exist.",
-        "frag_mass_mean": 0.5,
-        "frag_mass_std": 0.3,
-        "ricochet_angle_deg": 20.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "B_762x25_Ball",
+  "projectile": {
+    "model": "FMJ_85gr",
+    "mass_g": 5.5,
+    "caliber_mm": 7.85,
+    "bc_g7": 0.17,
+    "cdm_id": "g1",
+    "source": {
+      "type": "estimated",
+      "reference": "7.62x25mm Tokarev 85gr FMJ. G1 BC~0.170. ~470 m/s (5\"). High-velocity Soviet pistol round. Steel-core variants exist.",
+      "methodology": "BC values estimated from typical projectile form factor for this caliber and weight.",
+      "confidence": "low"
+    },
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
 }

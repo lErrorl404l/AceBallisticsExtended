@@ -6,7 +6,12 @@
     "caliber_mm": 12.7,
     "bc_g7": 0.34,
     "cdm_id": "g7",
-    "source": "APG G7 BC=0.340 (US ARL, M33 650gr FMJ)",
+    "source": {
+      "type": "military_standard",
+      "reference": "APG G7 BC=0.340 (US ARL, M33 650gr FMJ)",
+      "methodology": "Values sourced from US Army Ballistic Research Laboratory (BRL) / Armament Research, Development and Engineering Center (ARDEC) published reports, Doppler radar measurements, or SAAMI/CIP/NATO EPVAT test data.",
+      "confidence": "high"
+    },
     "fragmentation": {
       "threshold_vel_ms": 700.0,
       "avg_fragments": 15,

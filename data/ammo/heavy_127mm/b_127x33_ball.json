@@ -6,7 +6,12 @@
     "caliber_mm": 12.7,
     "bc_g7": 0.129,
     "cdm_id": "g7",
-    "source": "Arma 3 config. hit=7.5, airFriction=-0.002, cal=12.70",
+    "source": {
+      "type": "arma_config",
+      "reference": "Arma 3 config. hit=7.5, airFriction=-0.002, cal=12.70",
+      "methodology": "Values extracted from Arma 3 config files (hit, airFriction, caliber). Not validated against IRL sources.",
+      "confidence": "low"
+    },
     "fragmentation": null,
     "frag_mass_mean": null,
     "frag_mass_std": null,

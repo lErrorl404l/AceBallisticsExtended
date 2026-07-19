@@ -16,7 +16,12 @@
       }
     },
     "ricochet_angle_deg": 20.0,
-    "source": "APG/US Army BRL G7 BC=0.200 (M80 149gr FMJ, AD0815788, Piddington & Maynard 1966)"
+    "source": {
+      "type": "military_standard",
+      "reference": "APG/US Army BRL G7 BC=0.200 (M80 149gr FMJ, AD0815788, Piddington & Maynard 1966)",
+      "methodology": "Values sourced from US Army Ballistic Research Laboratory (BRL) / Armament Research, Development and Engineering Center (ARDEC) published reports, Doppler radar measurements, or SAAMI/CIP/NATO EPVAT test data.",
+      "confidence": "high"
+    }
   },
   "notes": "M80 149-gr FMJ. NATO standard. G7 BC=0.200 per APG/US Army BRL (AD0815788). Frag above 600 m/s. Chamber pressure: 415 MPa.",
   "chamber_pressure_mpa": 415.0

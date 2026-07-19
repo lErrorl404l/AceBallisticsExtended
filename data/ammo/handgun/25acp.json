@@ -1,17 +1,22 @@
 {
-    "class": "B_25ACP_Ball",
-    "projectile": {
-        "model": "FMJ_50gr",
-        "mass_g": 3.2,
-        "caliber_mm": 6.35,
-        "bc_g7": 0.07,
-        "cdm_id": "g1",
-        "source": ".25 ACP 50gr FMJ. G1 BC~0.070. Low velocity ~230 m/s. Minimal fragmentation risk. Pocket pistol round.",
-        "frag_mass_mean": 0.3,
-        "frag_mass_std": 0.2,
-        "ricochet_angle_deg": 20.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "B_25ACP_Ball",
+  "projectile": {
+    "model": "FMJ_50gr",
+    "mass_g": 3.2,
+    "caliber_mm": 6.35,
+    "bc_g7": 0.07,
+    "cdm_id": "g1",
+    "source": {
+      "type": "estimated",
+      "reference": ".25 ACP 50gr FMJ. G1 BC~0.070. Low velocity ~230 m/s. Minimal fragmentation risk. Pocket pistol round.",
+      "methodology": "BC values estimated from typical projectile form factor for this caliber and weight.",
+      "confidence": "low"
+    },
+    "frag_mass_mean": 0.3,
+    "frag_mass_std": 0.2,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
 }

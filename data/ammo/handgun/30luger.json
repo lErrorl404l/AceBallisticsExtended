@@ -1,17 +1,22 @@
 {
-    "class": "B_765x21_Ball",
-    "projectile": {
-        "model": "FMJ_93gr",
-        "mass_g": 6.0,
-        "caliber_mm": 7.65,
-        "bc_g7": 0.1,
-        "cdm_id": "g1",
-        "source": "7.65x21mm Parabellum/Luger 93gr FMJ. G1 BC~0.100. ~370 m/s (5\"). Original Luger pistol cartridge.",
-        "frag_mass_mean": 0.5,
-        "frag_mass_std": 0.3,
-        "ricochet_angle_deg": 20.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "B_765x21_Ball",
+  "projectile": {
+    "model": "FMJ_93gr",
+    "mass_g": 6.0,
+    "caliber_mm": 7.65,
+    "bc_g7": 0.1,
+    "cdm_id": "g1",
+    "source": {
+      "type": "estimated",
+      "reference": "7.65x21mm Parabellum/Luger 93gr FMJ. G1 BC~0.100. ~370 m/s (5\"). Original Luger pistol cartridge.",
+      "methodology": "BC values estimated from typical projectile form factor for this caliber and weight.",
+      "confidence": "low"
+    },
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
 }

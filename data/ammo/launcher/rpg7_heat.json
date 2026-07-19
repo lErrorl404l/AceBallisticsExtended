@@ -1,18 +1,23 @@
 {
-    "class": "R_PG7_F",
-    "projectile": {
-        "model": "PG-7VL",
-        "mass_g": 2500.0,
-        "caliber_mm": 85.0,
-        "bc_g7": 0.0,
-        "cdm_id": "g7",
-        "source": "Vanilla Arma 3 config values. RPG-7 PG-7VL HEAT rocket 85mm, 2.5kg.",
-        "notes": "launcher munition \u2014 uses custom drag model",
-        "frag_mass_mean": 5.0,
-        "frag_mass_std": 3.0,
-        "ricochet_angle_deg": 35.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "R_PG7_F",
+  "projectile": {
+    "model": "PG-7VL",
+    "mass_g": 2500.0,
+    "caliber_mm": 85.0,
+    "bc_g7": 0.0,
+    "cdm_id": "g7",
+    "source": {
+      "type": "arma_config",
+      "reference": "Vanilla Arma 3 config values. RPG-7 PG-7VL HEAT rocket 85mm, 2.5kg.",
+      "methodology": "Values extracted from vanilla Arma 3 game configuration files. May not reflect IRL ballistics.",
+      "confidence": "low"
+    },
+    "notes": "launcher munition — uses custom drag model",
+    "frag_mass_mean": 5.0,
+    "frag_mass_std": 3.0,
+    "ricochet_angle_deg": 35.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
 }

@@ -1,17 +1,22 @@
 {
-    "class": "B_32ACP_Ball",
-    "projectile": {
-        "model": "FMJ_71gr",
-        "mass_g": 4.6,
-        "caliber_mm": 7.65,
-        "bc_g7": 0.1,
-        "cdm_id": "g1",
-        "source": ".32 ACP 71gr FMJ. G1 BC~0.100. ~280 m/s (4\"). No fragmentation. Common pocket pistol round.",
-        "frag_mass_mean": 0.3,
-        "frag_mass_std": 0.2,
-        "ricochet_angle_deg": 20.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "B_32ACP_Ball",
+  "projectile": {
+    "model": "FMJ_71gr",
+    "mass_g": 4.6,
+    "caliber_mm": 7.65,
+    "bc_g7": 0.1,
+    "cdm_id": "g1",
+    "source": {
+      "type": "estimated",
+      "reference": ".32 ACP 71gr FMJ. G1 BC~0.100. ~280 m/s (4\"). No fragmentation. Common pocket pistol round.",
+      "methodology": "BC values estimated from typical projectile form factor for this caliber and weight.",
+      "confidence": "low"
+    },
+    "frag_mass_mean": 0.3,
+    "frag_mass_std": 0.2,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
 }

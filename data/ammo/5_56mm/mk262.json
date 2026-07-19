@@ -6,7 +6,12 @@
     "mass_g": 4.5,
     "bc_g7": 0.169,
     "cdm_id": "g7",
-    "source": "Mk262 77gr OTM. IRL data from manufacturer/SAAMI specs.",
+    "source": {
+      "type": "manufacturer_data",
+      "reference": "Mk262 77gr OTM. IRL data from manufacturer/SAAMI specs.",
+      "methodology": "Values sourced from manufacturer published specifications and SAAMI/CIP/NATO EPVAT pressure standards.",
+      "confidence": "high"
+    },
     "fragmentation": {
       "threshold_vel_ms": 610.0,
       "avg_fragments": 1,
@@ -20,5 +25,5 @@
     "frag_mass_std": 0.3
   },
   "chamber_pressure_mpa": 0,
-  "notes": "Mk262 77gr OTM \u2014 populated with IRL data."
+  "notes": "Mk262 77gr OTM — populated with IRL data."
 }

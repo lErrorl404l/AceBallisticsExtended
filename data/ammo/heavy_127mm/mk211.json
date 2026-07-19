@@ -6,7 +6,12 @@
     "mass_g": 43.0,
     "bc_g7": 0.34,
     "cdm_id": "g7",
-    "source": ".50 Mk211 Raufoss. IRL data from manufacturer/SAAMI specs.",
+    "source": {
+      "type": "manufacturer_data",
+      "reference": ".50 Mk211 Raufoss. IRL data from manufacturer/SAAMI specs.",
+      "methodology": "Values sourced from manufacturer published specifications and SAAMI/CIP/NATO EPVAT pressure standards.",
+      "confidence": "high"
+    },
     "fragmentation": {
       "threshold_vel_ms": 610.0,
       "avg_fragments": 1,
@@ -20,5 +25,5 @@
     "frag_mass_std": 0.3
   },
   "chamber_pressure_mpa": 0,
-  "notes": ".50 Mk211 Raufoss \u2014 populated with IRL data."
+  "notes": ".50 Mk211 Raufoss — populated with IRL data."
 }

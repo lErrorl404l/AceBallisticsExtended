@@ -5,7 +5,12 @@
     "mass_g": 8.42,
     "caliber_mm": 7.823,
     "bc_g7": 0.185,
-    "source": "Definitive BC: JBM drag calc from M80A1 dimensions yields ~0.190 G7; 68ics.blog analysis avg 0.180; TFB 'conservative 0.185 G7 BC'",
+    "source": {
+      "type": "mixed",
+      "reference": "Definitive BC: JBM drag calc from M80A1 dimensions yields ~0.190 G7; 68ics.blog analysis avg 0.180; TFB 'conservative 0.185 G7 BC'",
+      "methodology": "BC value compiled from multiple authoritative sources (Litz, ARL, community analysis) and synthesized into a definitive value.",
+      "confidence": "high"
+    },
     "fragmentation": {
       "threshold_vel_ms": 550.0,
       "avg_fragments": 28,

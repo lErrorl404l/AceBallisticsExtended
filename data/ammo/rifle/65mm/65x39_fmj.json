@@ -6,7 +6,12 @@
     "caliber_mm": 6.5,
     "bc_g7": 0.196,
     "cdm_id": "g7",
-    "source": "Est. 122gr 6.5mm FMJ-BT (heavy MX loading). Litz 123gr SMK G7=0.230, conservative est. for FMJ.",
+    "source": {
+      "type": "estimated",
+      "reference": "Est. 122gr 6.5mm FMJ-BT (heavy MX loading). Litz 123gr SMK G7=0.230, conservative est. for FMJ.",
+      "methodology": "BC values estimated from similar known projectiles using form factor approximations or Litz estimation methods. Not directly measured or published.",
+      "confidence": "low"
+    },
     "fragmentation": {
       "threshold_vel_ms": 780.0,
       "avg_fragments": 2,

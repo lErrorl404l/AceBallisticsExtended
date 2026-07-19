@@ -1,19 +1,24 @@
 {
-    "class": "rpg_29",
-    "projectile": {
-        "model": "PG-29V",
-        "mass_g": 4500.0,
-        "caliber_mm": 105.0,
-        "bc_g7": 0.58,
-        "cdm_id": "g7",
-        "source": "RPG-29 PG-29V tandem HEAT rocket. Precursor charge defeats ERA; main charge penetrates base armour.",
-        "tandem_charge_delay_us": 250.0,
-        "tandem_charge_separation_mm": 300.0,
-        "frag_mass_mean": 5.0,
-        "frag_mass_std": 3.0,
-        "ricochet_angle_deg": 35.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "rpg_29",
+  "projectile": {
+    "model": "PG-29V",
+    "mass_g": 4500.0,
+    "caliber_mm": 105.0,
+    "bc_g7": 0.58,
+    "cdm_id": "g7",
+    "source": {
+      "type": "estimated",
+      "reference": "RPG-29 PG-29V tandem HEAT rocket. Precursor charge defeats ERA; main charge penetrates base armour.",
+      "methodology": "Values based on known HEAT/EFP warhead performance characteristics from public defence references.",
+      "confidence": "medium"
+    },
+    "tandem_charge_delay_us": 250.0,
+    "tandem_charge_separation_mm": 300.0,
+    "frag_mass_mean": 5.0,
+    "frag_mass_std": 3.0,
+    "ricochet_angle_deg": 35.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
 }

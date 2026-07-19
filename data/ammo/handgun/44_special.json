@@ -1,17 +1,22 @@
 {
-    "class": "B_44SPL_Ball",
-    "projectile": {
-        "model": "LRN_240gr",
-        "mass_g": 15.6,
-        "caliber_mm": 10.9,
-        "bc_g7": 0.16,
-        "cdm_id": "g1",
-        "source": ".44 Special 240gr LRN. G1 BC~0.160. ~260 m/s (4\"). Lower pressure revolver round, predecessor to .44 Magnum.",
-        "frag_mass_mean": 0.5,
-        "frag_mass_std": 0.3,
-        "ricochet_angle_deg": 20.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "B_44SPL_Ball",
+  "projectile": {
+    "model": "LRN_240gr",
+    "mass_g": 15.6,
+    "caliber_mm": 10.9,
+    "bc_g7": 0.16,
+    "cdm_id": "g1",
+    "source": {
+      "type": "estimated",
+      "reference": ".44 Special 240gr LRN. G1 BC~0.160. ~260 m/s (4\"). Lower pressure revolver round, predecessor to .44 Magnum.",
+      "methodology": "BC values estimated from typical projectile form factor for this caliber and weight.",
+      "confidence": "low"
+    },
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
 }

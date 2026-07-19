@@ -6,7 +6,12 @@
     "caliber_mm": 5.56,
     "bc_g7": 0.151,
     "cdm_id": "m855",
-    "source": "APG G7 BC=0.151 (US Army BRL, M855 62gr SS109/M855, ARL-TR-5182)",
+    "source": {
+      "type": "military_standard",
+      "reference": "APG G7 BC=0.151 (US Army BRL, M855 62gr SS109/M855, ARL-TR-5182)",
+      "methodology": "Values sourced from US Army Ballistic Research Laboratory (BRL) / Armament Research, Development and Engineering Center (ARDEC) published reports, Doppler radar measurements, or SAAMI/CIP/NATO EPVAT test data.",
+      "confidence": "high"
+    },
     "fragmentation": {
       "threshold_vel_ms": 762.0,
       "avg_fragments": 12,

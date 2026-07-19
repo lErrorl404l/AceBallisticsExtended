@@ -6,7 +6,12 @@
     "caliber_mm": 9.0,
     "bc_g7": 0.075,
     "cdm_id": "g1",
-    "source": "G1 BC ~0.150 for 124gr FMJ. G1 drag model (handgun). No fragmentation.",
+    "source": {
+      "type": "estimated",
+      "reference": "G1 BC ~0.150 for 124gr FMJ. G1 drag model (handgun). No fragmentation.",
+      "methodology": "BC values estimated from typical projectile form factor for this caliber and weight.",
+      "confidence": "low"
+    },
     "frag_mass_mean": 0.5,
     "frag_mass_std": 0.3,
     "ricochet_angle_deg": 20.0,

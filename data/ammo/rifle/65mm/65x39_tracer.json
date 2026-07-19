@@ -6,7 +6,12 @@
     "caliber_mm": 6.5,
     "bc_g7": 0.245,
     "cdm_id": "g7",
-    "source": "Tracer variant of fictional 6.5mm CT. BC estimated ~4% below ball based on M856 tracer vs M855 relationship (Litz \u00a78.5 tracer BC degradation).",
+    "source": {
+      "type": "estimated",
+      "reference": "Tracer variant of fictional 6.5mm CT. BC estimated ~4% below ball based on M856 tracer vs M855 relationship (Litz §8.5 tracer BC degradation).",
+      "methodology": "BC values estimated from similar known projectiles using form factor approximations or Litz estimation methods. Not directly measured or published.",
+      "confidence": "low"
+    },
     "frag_mass_mean": 1.2,
     "frag_mass_std": 0.4,
     "ricochet_angle_deg": 20.0,

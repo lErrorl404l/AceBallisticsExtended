@@ -6,7 +6,12 @@
     "caliber_mm": 7.62,
     "bc_g7": 0.2,
     "cdm_id": "g7",
-    "source": "APG G7 BC=0.200 (US Army BRL, M80 149gr FMJ, AD0815788)",
+    "source": {
+      "type": "military_standard",
+      "reference": "APG G7 BC=0.200 (US Army BRL, M80 149gr FMJ, AD0815788)",
+      "methodology": "Values sourced from US Army Ballistic Research Laboratory (BRL) / Armament Research, Development and Engineering Center (ARDEC) published reports, Doppler radar measurements, or SAAMI/CIP/NATO EPVAT test data.",
+      "confidence": "high"
+    },
     "fragmentation": null,
     "frag_mass_mean": 2.0,
     "frag_mass_std": 0.8,

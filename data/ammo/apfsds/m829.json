@@ -6,7 +6,12 @@
     "caliber_mm": 27.0,
     "bc_g7": 0.7,
     "cdm_id": "g7",
-    "source": "M829 APFSDS baseline round. 627mm DU penetrator, 27mm rod diameter, 23.2:1 L/D. JA-2 propellant 8.1kg. MV 1,670 m/s. Penetration ~540mm RHA @2km (Jane's). Replaced by M829A1.",
+    "source": {
+      "type": "reference_publication",
+      "reference": "M829 APFSDS baseline round. 627mm DU penetrator, 27mm rod diameter, 23.2:1 L/D. JA-2 propellant 8.1kg. MV 1,670 m/s. Penetration ~540mm RHA @2km (Jane's). Replaced by M829A1.",
+      "methodology": "Values sourced from Jane's Defence reference publications.",
+      "confidence": "high"
+    },
     "sabot_mass_g": 2850.0,
     "sabot_discard_velocity_ms": 100.0,
     "apfsds_tip_length_mm": 50.0,

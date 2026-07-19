@@ -6,7 +6,12 @@
     "caliber_mm": 5.8,
     "bc_g7": 0.21,
     "cdm_id": "g7",
-    "source": "ACE3 ballistics:  ACE3: caliber=Nonemm, mass=5.0g, drag=None, BC=[0.21]. Velocities: 903.0m/s@640.0mm",
+    "source": {
+      "type": "ace3_data",
+      "reference": "ACE3 ballistics:  ACE3: caliber=Nonemm, mass=5.0g, drag=None, BC=[0.21]. Velocities: 903.0m/s@640.0mm",
+      "methodology": "Values sourced from ACE3 Advanced Ballistics configuration data. ACE3 sources its data from a mix of IRL references, manufacturer data, and community estimates.",
+      "confidence": "medium"
+    },
     "fragmentation": null,
     "frag_mass_mean": null,
     "frag_mass_std": null,

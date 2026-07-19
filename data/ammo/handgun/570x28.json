@@ -6,8 +6,13 @@
     "caliber_mm": 5.7,
     "bc_g7": 0.09,
     "cdm_id": "g7",
-    "source": "FN SS190 31gr. G7 BC=0.090 (FN factory data). Steel-core AP. Harmonized with 57x28.json.",
-    "notes": "PDW round \u2014 high velocity light projectile, steel core for armor piercing",
+    "source": {
+      "type": "manufacturer_data",
+      "reference": "FN SS190 31gr. G7 BC=0.090 (FN factory data). Steel-core AP. Harmonized with 57x28.json.",
+      "methodology": "Values sourced from manufacturer published ballistic data.",
+      "confidence": "high"
+    },
+    "notes": "PDW round — high velocity light projectile, steel core for armor piercing",
     "frag_mass_mean": 0.5,
     "frag_mass_std": 0.3,
     "ricochet_angle_deg": 15.0,

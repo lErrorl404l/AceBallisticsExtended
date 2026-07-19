@@ -1,18 +1,23 @@
 {
-    "class": "ACE_224_Valkyrie",
-    "projectile": {
-        "model": "Valkyrie_60gr",
-        "mass_g": 3.9,
-        "caliber_mm": 5.56,
-        "bc_g7": 0.15,
-        "cdm_id": "g7",
-        "source": ".224 Valkyrie 60gr HP. G7 BC~0.150. ~975 m/s (24\"). Long-range precision round in AR-15 platform. Excellent long-range performance for caliber.",
-        "fragmentation": null,
-        "frag_mass_mean": 1.0,
-        "frag_mass_std": 0.5,
-        "ricochet_angle_deg": 20.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "ACE_224_Valkyrie",
+  "projectile": {
+    "model": "Valkyrie_60gr",
+    "mass_g": 3.9,
+    "caliber_mm": 5.56,
+    "bc_g7": 0.15,
+    "cdm_id": "g7",
+    "source": {
+      "type": "estimated",
+      "reference": ".224 Valkyrie 60gr HP. G7 BC~0.150. ~975 m/s (24\"). Long-range precision round in AR-15 platform. Excellent long-range performance for caliber.",
+      "methodology": "BC values estimated from typical projectile form factor for this caliber and weight.",
+      "confidence": "low"
+    },
+    "fragmentation": null,
+    "frag_mass_mean": 1.0,
+    "frag_mass_std": 0.5,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
 }

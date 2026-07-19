@@ -1,17 +1,22 @@
 {
-    "class": "B_380ACP_Ball",
-    "projectile": {
-        "model": "FMJ_95gr",
-        "mass_g": 6.1,
-        "caliber_mm": 9.0,
-        "bc_g7": 0.14,
-        "cdm_id": "g1",
-        "source": ".380 ACP 95gr FMJ. G1 BC~0.140. ~300 m/s (3.8\"). Also known as 9x17mm Browning Short.",
-        "frag_mass_mean": 0.5,
-        "frag_mass_std": 0.3,
-        "ricochet_angle_deg": 20.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "B_380ACP_Ball",
+  "projectile": {
+    "model": "FMJ_95gr",
+    "mass_g": 6.1,
+    "caliber_mm": 9.0,
+    "bc_g7": 0.14,
+    "cdm_id": "g1",
+    "source": {
+      "type": "estimated",
+      "reference": ".380 ACP 95gr FMJ. G1 BC~0.140. ~300 m/s (3.8\"). Also known as 9x17mm Browning Short.",
+      "methodology": "BC values estimated from typical projectile form factor for this caliber and weight.",
+      "confidence": "low"
+    },
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
 }

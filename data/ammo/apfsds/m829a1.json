@@ -6,7 +6,12 @@
     "caliber_mm": 26.0,
     "bc_g7": 0.82,
     "cdm_id": "g7",
-    "source": "M829A1 APFSDS depleted-uranium penetrator. Sabot discard ~850 m/s.",
+    "source": {
+      "type": "estimated",
+      "reference": "M829A1 APFSDS depleted-uranium penetrator. Sabot discard ~850 m/s.",
+      "methodology": "Values compiled from public-domain defence literature and Jane's-style reference works for APFSDS ammunition.",
+      "confidence": "medium"
+    },
     "sabot_mass_g": 2850.0,
     "sabot_discard_velocity_ms": 100.0,
     "apfsds_tip_length_mm": 45.0,

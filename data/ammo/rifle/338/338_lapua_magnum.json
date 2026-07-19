@@ -1,18 +1,23 @@
 {
-    "class": "B_338_NM_Ball",
-    "projectile": {
-        "model": "Lapua_250gr",
-        "mass_g": 16.2,
-        "caliber_mm": 8.6,
-        "bc_g7": 0.31,
-        "cdm_id": "g7",
-        "source": "Lapua 250gr Scenar G7=0.310 (Lapua factory data). Confirmed by Litz, Applied Ballistics for Long Range Shooting, 4th Ed. \u00a711.5, Doppler radar measurements show 0.305-0.312 range.",
-        "fragmentation": null,
-        "frag_mass_mean": 2.0,
-        "frag_mass_std": 0.8,
-        "ricochet_angle_deg": 20.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "B_338_NM_Ball",
+  "projectile": {
+    "model": "Lapua_250gr",
+    "mass_g": 16.2,
+    "caliber_mm": 8.6,
+    "bc_g7": 0.31,
+    "cdm_id": "g7",
+    "source": {
+      "type": "academic_literature",
+      "reference": "Lapua 250gr Scenar G7=0.310 (Lapua factory data). Confirmed by Litz, Applied Ballistics for Long Range Shooting, 4th Ed. §11.5, Doppler radar measurements show 0.305-0.312 range.",
+      "methodology": "BC values sourced from Bryan Litz's Applied Ballistics published Doppler radar measurements and form factor analysis.",
+      "confidence": "high"
+    },
+    "fragmentation": null,
+    "frag_mass_mean": 2.0,
+    "frag_mass_std": 0.8,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
 }

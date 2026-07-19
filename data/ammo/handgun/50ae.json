@@ -1,17 +1,22 @@
 {
-    "class": "B_50AE_Ball",
-    "projectile": {
-        "model": "JHP_300gr",
-        "mass_g": 19.4,
-        "caliber_mm": 12.7,
-        "bc_g7": 0.195,
-        "cdm_id": "g1",
-        "source": ".50 Action Express 300gr JHP. G1 BC~0.195. ~425 m/s (6\"). Large-bore semi-auto pistol round (Desert Eagle).",
-        "frag_mass_mean": 0.5,
-        "frag_mass_std": 0.3,
-        "ricochet_angle_deg": 20.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "B_50AE_Ball",
+  "projectile": {
+    "model": "JHP_300gr",
+    "mass_g": 19.4,
+    "caliber_mm": 12.7,
+    "bc_g7": 0.195,
+    "cdm_id": "g1",
+    "source": {
+      "type": "estimated",
+      "reference": ".50 Action Express 300gr JHP. G1 BC~0.195. ~425 m/s (6\"). Large-bore semi-auto pistol round (Desert Eagle).",
+      "methodology": "BC values estimated from typical projectile form factor for this caliber and weight.",
+      "confidence": "low"
+    },
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
 }

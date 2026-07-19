@@ -6,7 +6,12 @@
     "caliber_mm": 7.62,
     "bc_g7": 0.148,
     "cdm_id": "g7",
-    "source": "7.62x39mm M43 123gr FMJ (mild steel core). APG G7 BC=0.156 (AFTE Doppler). Litz G7\u22480.138. Consensus 0.148 (midpoint diverse production lots). Fackler: no reliable soft-tissue fragmentation. G7 model.",
+    "source": {
+      "type": "academic_literature",
+      "reference": "7.62x39mm M43 123gr FMJ (mild steel core). APG G7 BC=0.156 (AFTE Doppler). Litz G7≈0.138. Consensus 0.148 (midpoint diverse production lots). Fackler: no reliable soft-tissue fragmentation. G7 model.",
+      "methodology": "BC values sourced from Bryan Litz's Applied Ballistics published Doppler radar measurements and form factor analysis.",
+      "confidence": "high"
+    },
     "fragmentation": null,
     "frag_mass_mean": 1.5,
     "frag_mass_std": 0.5,

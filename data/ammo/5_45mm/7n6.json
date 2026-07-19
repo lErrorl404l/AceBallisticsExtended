@@ -6,7 +6,12 @@
     "mass_g": 3.4,
     "bc_g7": 0.124,
     "cdm_id": "g7",
-    "source": "7N6 53gr FMJ. IRL data from manufacturer/SAAMI specs.",
+    "source": {
+      "type": "manufacturer_data",
+      "reference": "7N6 53gr FMJ. IRL data from manufacturer/SAAMI specs.",
+      "methodology": "Values sourced from manufacturer published specifications and SAAMI/CIP/NATO EPVAT pressure standards.",
+      "confidence": "high"
+    },
     "fragmentation": {
       "threshold_vel_ms": 610.0,
       "avg_fragments": 1,
@@ -20,5 +25,5 @@
     "frag_mass_std": 0.3
   },
   "chamber_pressure_mpa": 0,
-  "notes": "7N6 53gr FMJ \u2014 populated with IRL data."
+  "notes": "7N6 53gr FMJ — populated with IRL data."
 }

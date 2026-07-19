@@ -6,7 +6,12 @@
     "caliber_mm": 5.56,
     "bc_g7": 0.197,
     "cdm_id": "g7",
-    "source": "Mk262 Mod 1 77gr SMK (Sierra #2276). Litz G7=0.192 (Applied Ballistics 4th Ed. \u00a710.5). Berger 77gr OTM Tactical G7=0.192. Consensus G7=0.197 accounting for OTM profile differences. US Army ATAC confirmed.",
+    "source": {
+      "type": "academic_literature",
+      "reference": "Mk262 Mod 1 77gr SMK (Sierra #2276). Litz G7=0.192 (Applied Ballistics 4th Ed. §10.5). Berger 77gr OTM Tactical G7=0.192. Consensus G7=0.197 accounting for OTM profile differences. US Army ATAC confirmed.",
+      "methodology": "BC values sourced from Bryan Litz's Applied Ballistics published Doppler radar measurements and form factor analysis.",
+      "confidence": "high"
+    },
     "fragmentation": {
       "threshold_vel_ms": 762.0,
       "avg_fragments": 8,

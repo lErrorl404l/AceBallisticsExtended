@@ -6,7 +6,12 @@
     "caliber_mm": 7.62,
     "bc_g7": 0.146,
     "cdm_id": "g1",
-    "source": ".30 Carbine M1 Ball 110gr FMJ. G7 BC~0.146. US carbine round WWII. Velocity ~607 m/s (18\" barrel). Intermediate pistol-class pressure.",
+    "source": {
+      "type": "estimated",
+      "reference": ".30 Carbine M1 Ball 110gr FMJ. G7 BC~0.146. US carbine round WWII. Velocity ~607 m/s (18\" barrel). Intermediate pistol-class pressure.",
+      "methodology": "BC values estimated from typical projectile form factor for this caliber and weight.",
+      "confidence": "low"
+    },
     "fragmentation": null,
     "frag_mass_mean": null,
     "frag_mass_std": null,

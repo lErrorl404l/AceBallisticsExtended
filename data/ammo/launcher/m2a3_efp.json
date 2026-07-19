@@ -1,20 +1,25 @@
 {
-    "class": "m2a3_efp",
-    "projectile": {
-        "model": "M2A3",
-        "mass_g": 40.0,
-        "caliber_mm": 50.0,
-        "bc_g7": 0.35,
-        "cdm_id": "g7",
-        "source": "M2A3 claymore-type EFP mine. Copper liner forms a high-velocity slug.",
-        "efp_standoff_mm": 500.0,
-        "efp_velocity_ms": 1200.0,
-        "efp_mass_g": 35.0,
-        "frag_mass_mean": 10.0,
-        "frag_mass_std": 4.0,
-        "ricochet_angle_deg": 30.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "m2a3_efp",
+  "projectile": {
+    "model": "M2A3",
+    "mass_g": 40.0,
+    "caliber_mm": 50.0,
+    "bc_g7": 0.35,
+    "cdm_id": "g7",
+    "source": {
+      "type": "estimated",
+      "reference": "M2A3 claymore-type EFP mine. Copper liner forms a high-velocity slug.",
+      "methodology": "Values based on known HEAT/EFP warhead performance characteristics from public defence references.",
+      "confidence": "medium"
+    },
+    "efp_standoff_mm": 500.0,
+    "efp_velocity_ms": 1200.0,
+    "efp_mass_g": 35.0,
+    "frag_mass_mean": 10.0,
+    "frag_mass_std": 4.0,
+    "ricochet_angle_deg": 30.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
 }

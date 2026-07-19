@@ -1,17 +1,22 @@
 {
-    "class": "B_500SW_Ball",
-    "projectile": {
-        "model": "JHP_350gr",
-        "mass_g": 22.7,
-        "caliber_mm": 12.7,
-        "bc_g7": 0.2,
-        "cdm_id": "g1",
-        "source": ".500 S&W Magnum 350gr JHP. G1 BC~0.200. ~450 m/s (7.5\"). Most powerful production revolver round.",
-        "frag_mass_mean": 0.5,
-        "frag_mass_std": 0.3,
-        "ricochet_angle_deg": 20.0,
-        "tracer_burn_time_s": 0.0,
-        "incendiary": false,
-        "incendiary_ignition_temp_k": 0.0
-    }
+  "class": "B_500SW_Ball",
+  "projectile": {
+    "model": "JHP_350gr",
+    "mass_g": 22.7,
+    "caliber_mm": 12.7,
+    "bc_g7": 0.2,
+    "cdm_id": "g1",
+    "source": {
+      "type": "estimated",
+      "reference": ".500 S&W Magnum 350gr JHP. G1 BC~0.200. ~450 m/s (7.5\"). Most powerful production revolver round.",
+      "methodology": "BC values estimated from typical projectile form factor for this caliber and weight.",
+      "confidence": "low"
+    },
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3,
+    "ricochet_angle_deg": 20.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  }
 }

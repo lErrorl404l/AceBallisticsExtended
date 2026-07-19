@@ -6,7 +6,12 @@
     "caliber_mm": 12.7,
     "bc_g7": 0.34,
     "cdm_id": "g7",
-    "source": "M33 .50 BMG 660gr (42.8g) FMJ. G7 BC=0.340 (APG/ARL ADA219106, identical drag to M33/M8). Heavy fragmentation.",
+    "source": {
+      "type": "military_standard",
+      "reference": "M33 .50 BMG 660gr (42.8g) FMJ. G7 BC=0.340 (APG/ARL ADA219106, identical drag to M33/M8). Heavy fragmentation.",
+      "methodology": "Values sourced from US Army Ballistic Research Laboratory (BRL) / Armament Research, Development and Engineering Center (ARDEC) published reports, Doppler radar measurements, or SAAMI/CIP/NATO EPVAT test data.",
+      "confidence": "high"
+    },
     "fragmentation": {
       "threshold_vel_ms": 1000.0,
       "avg_fragments": 15,

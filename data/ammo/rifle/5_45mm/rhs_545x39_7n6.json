@@ -6,7 +6,12 @@
     "caliber_mm": 5.45,
     "bc_g7": 0.168,
     "cdm_id": "g7",
-    "source": "ACE3 rhs_B_545x39_Ball G7 BC=0.168 (US Army BRL, 7N6 53gr FMJ, ARL-TR-5182). ACE3 ACE_bulletMass=3.43g.",
+    "source": {
+      "type": "military_standard",
+      "reference": "ACE3 rhs_B_545x39_Ball G7 BC=0.168 (US Army BRL, 7N6 53gr FMJ, ARL-TR-5182). ACE3 ACE_bulletMass=3.43g.",
+      "methodology": "Values sourced from US Army Ballistic Research Laboratory (BRL) / Armament Research, Development and Engineering Center (ARDEC) published reports, Doppler radar measurements, or SAAMI/CIP/NATO EPVAT test data.",
+      "confidence": "high"
+    },
     "fragmentation": {
       "threshold_vel_ms": 700,
       "avg_fragments": 40,

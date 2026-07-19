@@ -6,7 +6,12 @@
     "caliber_mm": 5.45,
     "bc_g7": 0.176,
     "cdm_id": "g7",
-    "source": "7N10 enhanced penetration 5.45x39mm (55gr). Russian source G7~0.176 (higher than 7N6 due to improved form factor). ACE3 ACE_bulletMass=3.43g base.",
+    "source": {
+      "type": "ace3_data",
+      "reference": "7N10 enhanced penetration 5.45x39mm (55gr). Russian source G7~0.176 (higher than 7N6 due to improved form factor). ACE3 ACE_bulletMass=3.43g base.",
+      "methodology": "Values sourced from ACE3 Advanced Ballistics configuration, possibly combined with RHS mod data.",
+      "confidence": "medium"
+    },
     "fragmentation": {
       "threshold_vel_ms": 700,
       "avg_fragments": 40,

@@ -6,7 +6,12 @@
     "caliber_mm": 18.53,
     "bc_g7": 0.055,
     "cdm_id": "g7",
-    "source": "12ga 1oz rifled slug. Federal Power-Shok G1=0.110 \u2192 G7=0.055 (flat-base \u00d70.5 conversion). Federal Premium factory spec. Remington AccuTip sabot G1=0.145.",
+    "source": {
+      "type": "manufacturer_data",
+      "reference": "12ga 1oz rifled slug. Federal Power-Shok G1=0.110 → G7=0.055 (flat-base ×0.5 conversion). Federal Premium factory spec. Remington AccuTip sabot G1=0.145.",
+      "methodology": "Values sourced from manufacturer published ballistic data (factory BC tables, reloading manuals, or product specifications).",
+      "confidence": "high"
+    },
     "fragmentation": null,
     "frag_mass_mean": 20.0,
     "frag_mass_std": 5.0,
