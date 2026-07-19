@@ -347,7 +347,7 @@ pub fn evaluate_armor_with_backing(
                 projectile_type,
                 None,
             );
-        }
+        },
     };
 
     // Evaluate the front plate

@@ -533,6 +533,7 @@ mod tests {
         }
     }
 
+    #[allow(dead_code)]
     fn maaws_heat_params() -> HeatJetParams {
         HeatJetParams {
             jet_tip_velocity_ms: 0.0,

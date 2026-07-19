@@ -339,6 +339,7 @@ pub fn interface_defeat_penetration_multiplier(velocity_ms: f64) -> f64 {
     mult.clamp(0.4, 0.7)
 }
 
+#[allow(dead_code)] // ponytail: test-only, material_factor() is the active variant
 /// Projectile type modifier
 fn projectile_modifier(proj_type: &str) -> f64 {
     match proj_type.to_lowercase().as_str() {

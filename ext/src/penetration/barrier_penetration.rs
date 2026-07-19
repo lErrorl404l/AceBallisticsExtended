@@ -10,6 +10,9 @@
 //   - De Marre ballistics formula (modified for wood)
 //   - FM 5-34 Engineer Field Data (sandbag/earth berms)
 //   - UFC 3-340-01 (concrete and masonry barriers)
+// ponytail: barrier model not wired into hit detection yet — entire module is forward-looking
+
+#![allow(dead_code)]
 
 /// Barrier type enumeration covering common battlefield barriers.
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -100,6 +103,11 @@ const BRICK_DENSITY: f64 = 2000.0;
 
 // ── Projectile type modifier (reuse from penetration.rs) ───────────────────────
 
+/// Projectile-type efficiency modifier against barriers.
+///
+/// AP/APFSDS rounds penetrate barriers more effectively at the same
+/// velocity due to harder core, better sectional density, and superior
+/// shape retention through the penetration event.
 fn projectile_modifier(proj_type: &str) -> f64 {
     match proj_type.to_lowercase().as_str() {
         "ball" | "fmj" => 1.0,
@@ -133,24 +141,31 @@ pub fn evaluate_barrier(params: &BarrierPenetrationParams) -> BarrierPenetration
     let t = params.barrier_thickness_m;
     let angle = params.impact_angle_deg;
 
+    // Projectile-type efficiency modifier — AP rounds penetrate barriers
+    // more effectively than ball at the same velocity (harder core, better
+    // sectional density retention). Applied as an effective velocity multiplier.
+    // ponytail: modifier mapped to projectile_type, add clay/ice/snow types if needed
+    let proj_mod = projectile_modifier(&params.projectile_type);
+    let v_eff = v * proj_mod;
+
     let energy_j = 0.5 * m * v * v;
 
     match params.barrier {
         BarrierType::ConcreteBunker | BarrierType::ReinforcedConcrete => {
-            concrete_eval(v, m, d, t, angle, params)
-        }
+            concrete_eval(v_eff, m, d, t, angle, params)
+        },
 
         BarrierType::Sandbag | BarrierType::EarthBerm | BarrierType::CompactedSoil => {
-            soil_eval(v, m, d, t, angle, energy_j, params)
-        }
+            soil_eval(v_eff, m, d, t, angle, energy_j, params)
+        },
 
         BarrierType::SoftWood | BarrierType::HardWood | BarrierType::Plywood => {
-            wood_eval(v, m, d, t, angle, energy_j, params)
-        }
+            wood_eval(v_eff, m, d, t, angle, energy_j, params)
+        },
 
         BarrierType::BrickSolid | BarrierType::BrickHollow | BarrierType::Masonry => {
-            brick_eval(v, m, d, t, angle, energy_j, params)
-        }
+            brick_eval(v_eff, m, d, t, angle, energy_j, params)
+        },
     }
 }
 
@@ -189,19 +204,27 @@ fn concrete_eval(
         0.0
     };
 
-    // Spall cone: deeper penetration → wider cone
+    // Spall cone: deeper penetration → wider cone, denser concrete suppresses spall
+    let density_factor = (CONCRETE_DENSITY / 2400.0).sqrt();
     let spall_cone = if v > 300.0 && pen_depth_mm > 10.0 {
         let frac = (pen_depth_mm / 1000.0 / t).min(1.0);
-        Some(60.0 + frac * 40.0) // 60°–100° cone based on penetration fraction
+        Some((60.0 + frac * 40.0) / density_factor) // denser concrete → narrower cone
     } else {
         None
     };
 
-    // Crater diameter: ~2-4× caliber depending on velocity
+    // Crater diameter: ~2-4× caliber depending on velocity, inversely with density
     let crater = if v > 300.0 {
-        Some(d * 1000.0 * (1.5 + (v / 800.0)))
+        Some(d * 1000.0 * (1.5 + (v / 800.0)) / density_factor)
     } else {
         None
+    };
+
+    // Density-adjusted residual energy: denser concrete absorbs more energy
+    let exit_v = if fully_penetrated {
+        exit_v * density_factor.recip().min(1.0)
+    } else {
+        exit_v
     };
 
     BarrierPenetrationResult {
@@ -282,6 +305,13 @@ fn wood_eval(
         _ => "softwood",
     };
 
+    // Wood density affects stopping power: denser wood absorbs more energy
+    let wood_density = match params.barrier {
+        BarrierType::HardWood => HARDWOOD_DENSITY,
+        _ => SOFTWOOD_DENSITY,
+    };
+    let density_factor = (wood_density / 600.0).sqrt(); // normalized to ~mid-range
+
     let (_, pen_depth_m) = wood_penetration(v, m, d, wood_type, params.wood_grain_direction_deg);
 
     let t_mm = t * 1000.0;
@@ -289,7 +319,7 @@ fn wood_eval(
     let fully_penetrated = pen_depth_mm >= t_mm;
 
     let exit_v = if fully_penetrated {
-        let v_req = v * (t_mm / pen_depth_mm.max(1.0));
+        let v_req = v * (t_mm / pen_depth_mm.max(1.0)) * density_factor;
         let vr_sq = v * v - v_req * v_req;
         if vr_sq > 0.0 {
             vr_sq.sqrt()
@@ -332,6 +362,9 @@ fn brick_eval(
     // Mortar quality: moisture degrades mortar (range 0.5-1.0)
     let mortar_quality = (1.0 - params.moisture_pct / 200.0).clamp(0.5, 1.0);
 
+    // Brick density affects crater size: denser brick = tougher, smaller crater
+    let density_factor = (BRICK_DENSITY / 2000.0).sqrt();
+
     let (_, pen_depth_m) = brick_penetration(v, m, d, brick_type, mortar_quality);
 
     let t_mm = t * 1000.0;
@@ -350,9 +383,9 @@ fn brick_eval(
         0.0
     };
 
-    // Brick crater and spall
+    // Brick crater and spall — denser brick gives smaller crater
     let crater = if v > 200.0 {
-        Some(d * 1000.0 * (1.2 + v / 1500.0))
+        Some(d * 1000.0 * (1.2 + v / 1500.0) / density_factor)
     } else {
         None
     };
