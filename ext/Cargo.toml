@@ -18,7 +18,7 @@ glob = "0.3"
 proptest = "1"
 
 [dev-dependencies.criterion]
-version = "0.5"
+version = "0.7"
 features = ["html_reports"]
 
 [[bench]]
