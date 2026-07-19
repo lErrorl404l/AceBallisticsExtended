@@ -8,113 +8,82 @@ on:
 env:
   CARGO_TERM_COLOR: always
   EXT_SRC: ext
-  EXT_DLL: ext/abe_ballistics_ext.dll
-  EXT_SO: ext/libabe_ballistics_ext.so
 
 jobs:
   build:
+    strategy:
+      matrix:
+        include:
+          - target: x86_64-unknown-linux-gnu
+            ext: .so
+          - target: x86_64-pc-windows-gnu
+            ext: .dll
+            deps: mingw-w64
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      # ── Cache ───────────────────────────────────────────────────────
-      - name: Cache Rust build artifacts
-        uses: actions/cache@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          target: x86_64-pc-windows-gnu
+      - uses: actions/cache@v4
         with:
           path: |
             ${{ env.EXT_SRC }}/target
             ~/.cargo/registry
-          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-cargo-
-
-      # ── Rust toolchain ──────────────────────────────────────────────
-      - name: Setup Rust
-        uses: actions-rust-lang/setup-rust-toolchain@v1
+          key: ${{ runner.os }}-release-${{ matrix.target }}-${{ hashFiles('**/Cargo.lock') }}
+      - if: matrix.deps
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ${{ matrix.deps }}
+      - run: cargo build --release --target ${{ matrix.target }}
+        working-directory: ${{ env.EXT_SRC }}
+      - uses: actions/upload-artifact@v4
         with:
-          target: x86_64-pc-windows-gnu
+          name: abe_ext_${{ matrix.target }}
+          path: ${{ env.EXT_SRC }}/target/${{ matrix.target }}/release/abe_ballistics_ext${{ matrix.ext }}
 
-      # ── Cross-compile dependencies ──────────────────────────────────
-      - name: Install cross-compile deps
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq mingw-w64
+  package:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: curl -sSf https://hemtt.dev/install.sh | sh
+      - run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
-      # ── Rust build ──────────────────────────────────────────────────
-      - name: Build Linux .so
-        working-directory: ${{ env.EXT_SRC }}
-        run: cargo build --release
+      - name: Download Linux ext
+        uses: actions/download-artifact@v4
+        with:
+          name: abe_ext_x86_64-unknown-linux-gnu
+          path: ext/
 
-      - name: Build Windows DLL (cross)
-        working-directory: ${{ env.EXT_SRC }}
-        run: cargo build --release --target x86_64-pc-windows-gnu
+      - name: Download Windows ext
+        uses: actions/download-artifact@v4
+        with:
+          name: abe_ext_x86_64-pc-windows-gnu
+          path: ext/
 
-      # Copy binaries to locations expected by HEMTT [files]
-      - name: Stage extension binaries
-        run: |
-          cp "${{ env.EXT_SRC }}/target/release/libabe_ballistics_ext.so" "${{ env.EXT_SO }}"
-          cp "${{ env.EXT_SRC }}/target/x86_64-pc-windows-gnu/release/abe_ballistics_ext.dll" "${{ env.EXT_DLL }}"
+      - run: hemtt build
 
-      # ── HEMTT ───────────────────────────────────────────────────────
-      - name: Setup HEMTT
-        run: |
-          curl -sSf https://hemtt.dev/install.sh | sh
-          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
-
-      - name: HEMTT build
-        run: hemtt build
-
-      # ── Package ─────────────────────────────────────────────────────
       - name: Package HEMTT build
         run: |
           mkdir -p dist
           (cd .hemttout/build && zip -r ../../dist/abe-${{ github.ref_name }}.zip .)
 
-      # ── Upload artifacts ────────────────────────────────────────────
-      - name: Upload HEMTT release zip
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: abe-mod-${{ github.ref_name }}
           path: dist/abe-${{ github.ref_name }}.zip
 
-      - name: Upload extension .so
-        uses: actions/upload-artifact@v4
-        with:
-          name: abe-ext-so-${{ github.ref_name }}
-          path: ${{ env.EXT_SO }}
-
-      - name: Upload extension .dll
-        uses: actions/upload-artifact@v4
-        with:
-          name: abe-ext-dll-${{ github.ref_name }}
-          path: ${{ env.EXT_DLL }}
-
   release:
-    needs: [build]
+    needs: [package]
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - name: Download HEMTT build
-        uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4
         with:
           name: abe-mod-${{ github.ref_name }}
           path: release/
 
-      - name: Download extension .so
-        uses: actions/download-artifact@v4
-        with:
-          name: abe-ext-so-${{ github.ref_name }}
-          path: release/
-
-      - name: Download extension .dll
-        uses: actions/download-artifact@v4
-        with:
-          name: abe-ext-dll-${{ github.ref_name }}
-          path: release/
-
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@v2
         with:
           name: ABE ${{ github.ref_name }}
           files: release/*

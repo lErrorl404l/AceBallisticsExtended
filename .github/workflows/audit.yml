@@ -1,0 +1,36 @@
+name: Audit
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Weekly: Monday 06:00 UTC
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+  EXT_SRC: ext
+
+jobs:
+  miri:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          components: miri
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.EXT_SRC }}/target
+            ~/.cargo/registry
+          key: ${{ runner.os }}-miri-${{ hashFiles('**/Cargo.lock') }}
+      - run: cargo miri test
+        working-directory: ${{ env.EXT_SRC }}
+
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - run: cargo install cargo-audit
+      - run: cargo audit
+        working-directory: ${{ env.EXT_SRC }}

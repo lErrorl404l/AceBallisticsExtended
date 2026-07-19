@@ -1,0 +1,126 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: [main]
+
+env:
+  CARGO_TERM_COLOR: always
+  EXT_SRC: ext
+  RUSTFLAGS: -D warnings
+
+jobs:
+  # ── Unit tests ───────────────────────────────────────────────────────
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.EXT_SRC }}/target
+            ~/.cargo/registry
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+      - run: cargo test
+        working-directory: ${{ env.EXT_SRC }}
+
+  # ── Lint ─────────────────────────────────────────────────────────────
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          components: clippy, rustfmt
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.EXT_SRC }}/target
+            ~/.cargo/registry
+          key: ${{ runner.os }}-lint-${{ hashFiles('**/Cargo.lock') }}
+      - run: cargo fmt --check
+        working-directory: ${{ env.EXT_SRC }}
+      - run: cargo clippy -- -D warnings
+        working-directory: ${{ env.EXT_SRC }}
+
+  # ── Dependency audit ─────────────────────────────────────────────────
+  deny:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: EmbarkStudios/cargo-deny-action@v2
+        with:
+          arguments: --all-features
+
+  # ── Cross-compile ────────────────────────────────────────────────────
+  build:
+    needs: [test, lint, deny]
+    strategy:
+      matrix:
+        include:
+          - target: x86_64-unknown-linux-gnu
+            ext: .so
+          - target: x86_64-pc-windows-gnu
+            ext: .dll
+            deps: mingw-w64
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          target: x86_64-pc-windows-gnu
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.EXT_SRC }}/target
+            ~/.cargo/registry
+          key: ${{ runner.os }}-build-${{ matrix.target }}-${{ hashFiles('**/Cargo.lock') }}
+      - if: matrix.deps
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ${{ matrix.deps }}
+      - run: cargo build --release --target ${{ matrix.target }}
+        working-directory: ${{ env.EXT_SRC }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: abe_ext_${{ matrix.target }}
+          path: ${{ env.EXT_SRC }}/target/${{ matrix.target }}/release/abe_ballistics_ext${{ matrix.ext }}
+
+  # ── HEMTT build ──────────────────────────────────────────────────────
+  hemtt:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: curl -sSf https://hemtt.dev/install.sh | sh
+      - run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Download Linux ext
+        uses: actions/download-artifact@v4
+        with:
+          name: abe_ext_x86_64-unknown-linux-gnu
+          path: ext/
+
+      - name: Download Windows ext
+        uses: actions/download-artifact@v4
+        with:
+          name: abe_ext_x86_64-pc-windows-gnu
+          path: ext/
+
+      - run: hemtt build
+
+  # ── Code coverage (main branch only) ─────────────────────────────────
+  coverage:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - run: cargo install cargo-tarpaulin
+      - run: cargo tarpaulin --out Xml --engine llvm
+        working-directory: ${{ env.EXT_SRC }}
+      - uses: codecov/codecov-action@v5
+        with:
+          files: ${{ env.EXT_SRC }}/cobertura.xml
+          fail_ci_if_error: false
