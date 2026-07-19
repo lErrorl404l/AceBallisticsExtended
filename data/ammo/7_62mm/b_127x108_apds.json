@@ -1,0 +1,19 @@
+{
+  "class": "B_127x108_APDS",
+  "projectile": {
+    "model": "b_127x108_apds",
+    "caliber_mm": 7.13,
+    "mass_g": 27.95,
+    "muzzle_velocity_ms": 1068.0,
+    "bc_g1": 1.052,
+    "cdm_id": "g1",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::B_127x108_APDS",
+      "methodology": "Extracted from ACE3 ballistics config. Values as published by ACE3 team, originally sourced from manufacturer/DoD references.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo::B_127x108_APDS."
+}

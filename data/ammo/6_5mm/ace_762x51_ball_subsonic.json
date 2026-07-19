@@ -1,0 +1,19 @@
+{
+  "class": "ACE_762x51_Ball_Subsonic",
+  "projectile": {
+    "model": "ace_762x51_ball_subsonic",
+    "caliber_mm": 7.823,
+    "mass_g": 12.96,
+    "muzzle_velocity_ms": 335.0,
+    "bc_g7": 0.235,
+    "cdm_id": "g7",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::ACE_762x51_Ball_Subsonic",
+      "methodology": "Extracted from ACE3 ballistics config. Values as published by ACE3 team, originally sourced from manufacturer/DoD references.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo::ACE_762x51_Ball_Subsonic."
+}

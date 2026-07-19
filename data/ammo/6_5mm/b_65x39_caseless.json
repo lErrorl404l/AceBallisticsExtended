@@ -1,0 +1,19 @@
+{
+  "class": "B_65x39_Caseless",
+  "projectile": {
+    "model": "b_65x39_caseless",
+    "caliber_mm": 6.706,
+    "mass_g": 7.9704,
+    "muzzle_velocity_ms": 800.0,
+    "bc_g7": 0.263,
+    "cdm_id": "g7",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::B_65x39_Caseless",
+      "methodology": "Extracted from ACE3 ballistics config. Values as published by ACE3 team, originally sourced from manufacturer/DoD references.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo::B_65x39_Caseless."
+}

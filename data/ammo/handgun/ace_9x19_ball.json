@@ -1,0 +1,19 @@
+{
+  "class": "ACE_9x19_Ball",
+  "projectile": {
+    "model": "ace_9x19_ball",
+    "caliber_mm": 9.017,
+    "mass_g": 8.0352,
+    "muzzle_velocity_ms": 370.0,
+    "bc_g1": 0.165,
+    "cdm_id": "g1",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::ACE_9x19_Ball",
+      "methodology": "Extracted from ACE3 ballistics config. Values as published by ACE3 team, originally sourced from manufacturer/DoD references.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo::ACE_9x19_Ball."
+}

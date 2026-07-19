@@ -1,0 +1,19 @@
+{
+  "class": "ACE_762x54_Ball_7T2",
+  "projectile": {
+    "model": "ace_762x54_ball_7t2",
+    "caliber_mm": 7.925,
+    "mass_g": 9.6552,
+    "muzzle_velocity_ms": 809.0,
+    "bc_g1": 0.395,
+    "cdm_id": "g1",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::ACE_762x54_Ball_7T2",
+      "methodology": "Extracted from ACE3 ballistics config. Values as published by ACE3 team, originally sourced from manufacturer/DoD references.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo::ACE_762x54_Ball_7T2."
+}

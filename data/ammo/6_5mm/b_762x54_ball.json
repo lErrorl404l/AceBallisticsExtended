@@ -1,0 +1,19 @@
+{
+  "class": "B_762x54_Ball",
+  "projectile": {
+    "model": "b_762x54_ball",
+    "caliber_mm": 7.925,
+    "mass_g": 9.8496,
+    "muzzle_velocity_ms": 835.0,
+    "bc_g1": 0.4,
+    "cdm_id": "g1",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::B_762x54_Ball",
+      "methodology": "Extracted from ACE3 ballistics config. Values as published by ACE3 team, originally sourced from manufacturer/DoD references.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo::B_762x54_Ball."
+}

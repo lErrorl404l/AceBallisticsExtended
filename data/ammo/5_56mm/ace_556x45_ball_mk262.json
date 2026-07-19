@@ -1,0 +1,19 @@
+{
+  "class": "ACE_556x45_Ball_Mk262",
+  "projectile": {
+    "model": "ace_556x45_ball_mk262",
+    "caliber_mm": 5.69,
+    "mass_g": 4.9896,
+    "muzzle_velocity_ms": 832.0,
+    "bc_g1": 0.361,
+    "cdm_id": "g1",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::ACE_556x45_Ball_Mk262",
+      "methodology": "Extracted from ACE3 ballistics config. Values as published by ACE3 team, originally sourced from manufacturer/DoD references.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo::ACE_556x45_Ball_Mk262."
+}

@@ -1,0 +1,19 @@
+{
+  "class": "B_408_Ball",
+  "projectile": {
+    "model": "b_408_ball",
+    "caliber_mm": 10.363,
+    "mass_g": 27.1507,
+    "muzzle_velocity_ms": 867.0,
+    "bc_g7": 0.434,
+    "cdm_id": "g7",
+    "source": {
+      "type": "reference_data",
+      "reference": "ACE3 ace_ballistics CfgAmmo::B_408_Ball",
+      "methodology": "Extracted from ACE3 ballistics config. Values as published by ACE3 team, originally sourced from manufacturer/DoD references.",
+      "confidence": "high"
+    }
+  },
+  "chamber_pressure_mpa": 0,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo::B_408_Ball."
+}
