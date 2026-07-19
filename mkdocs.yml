@@ -12,6 +12,7 @@ nav:
   - Architecture: architecture.md
   - Data Format: data-format.md
   - Module Guide: module-guide.md
+  - SQF API: sqf-api.md
   - Testing: testing.md
 plugins:
   - search
