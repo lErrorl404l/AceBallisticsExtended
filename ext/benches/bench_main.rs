@@ -385,6 +385,7 @@ fn bench_full_pipeline_realistic(c: &mut Criterion) {
             let mut fr = FireResult::default();
             abe_fire(&fire, &mut fr);
             let mv = fr.muzzle_velocity_ms;
+            let bc = 0.200; // M80 G7 BC
 
             // ── 500 steps @ dt=0.01 with crosswind at altitude ──────
             let mut x = 0.0;
