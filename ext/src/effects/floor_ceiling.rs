@@ -177,7 +177,7 @@ fn rha_equivalent_thickness(params: &ConcreteSlabParams) -> f64 {
     let total_concrete_factor = BASE_CONCRETE_RHA_FACTOR * density_factor;
 
     // Base RHA-equivalent from slab type
-    let base = match params.slab_type {
+    match params.slab_type {
         SlabType::LightweightConcrete
         | SlabType::ReinforcedConcreteFloor
         | SlabType::ReinforcedConcreteCeiling => params.thickness_mm * total_concrete_factor,
@@ -194,9 +194,7 @@ fn rha_equivalent_thickness(params: &ConcreteSlabParams) -> f64 {
             // Gypsum board has negligible penetration resistance
             params.thickness_mm * 0.01 * density_factor
         },
-    };
-
-    base
+    }
 }
 
 /// Convert RHA-equivalent thickness back to physical concrete depth.

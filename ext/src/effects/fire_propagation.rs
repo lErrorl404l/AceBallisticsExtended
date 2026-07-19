@@ -109,6 +109,8 @@ pub fn evaluate_fire_propagation(
         let source_intensity = new_states[i].fire_intensity;
 
         // Check all other components for potential ignition
+        #[allow(clippy::needless_range_loop)]
+        // ponytail: need index for both read and conditional write; iterator borrow conflicts
         for j in 0..n {
             if i == j {
                 continue;

@@ -439,6 +439,8 @@ pub fn barrel_cooling_step(
 /// * `cooling_coefficient` — Convective cooling coefficient (1/s).
 /// * `barrel_mass_kg` — Barrel mass (kg) — affects inter-shot cooling rate
 ///   scaling (heavier barrel = more thermal inertia = slower temp change).
+#[allow(clippy::too_many_arguments)]
+// ponytail: physics kernel, all params required
 pub fn barrel_temperature_after_string(
     initial_temp_c: f64,
     ambient_temp_c: f64,

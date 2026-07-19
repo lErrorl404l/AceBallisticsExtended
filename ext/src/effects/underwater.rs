@@ -124,6 +124,8 @@ pub fn will_supercavitate(velocity_ms: f64, projectile_type: &str, nose_shape: &
 ///
 /// # Returns
 /// `(new_velocity_ms, new_depth_m, new_dist_m, cavitating)`
+#[allow(clippy::too_many_arguments)]
+// ponytail: physics kernel, all params required
 pub fn step_underwater(
     velocity_ms: f64,
     depth_m: f64,

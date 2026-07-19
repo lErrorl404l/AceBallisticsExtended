@@ -223,8 +223,8 @@ impl Default for CombinedEffectResult {
 ///     and filler mass > threshold.
 ///   - Delay fuze (SAP_HEI): detonates after armour penetration, or
 ///     on impact if the projectile was stopped (self-destruct).
-///   Blast overpressure ∝ `m_charge^⅓` · `r^{-1}`; the casing produces
-///   fragments according to its mass.
+///     Blast overpressure ∝ `m_charge^⅓` · `r^{-1}`; the casing produces
+///     fragments according to its mass.
 ///
 /// **Secondary ignition** — hot fragments and blast thermal flux
 /// contribute a 0–0.95 probability of igniting nearby flammable
@@ -329,7 +329,7 @@ pub fn evaluate_combined_effects(params: &CombinedAmmoParams) -> CombinedEffectR
         let p_ref = BLAST_REF_K * chg.powf(1.0 / 3.0);
         // Distance where overpressure decays to threshold.
         // Overpressure ∝ P_ref / r  (simplified Sachs scaling).
-        let r_blast = (p_ref / BLAST_DAMAGE_THRESHOLD_KPA).max(1.0).min(20.0);
+        let r_blast = (p_ref / BLAST_DAMAGE_THRESHOLD_KPA).clamp(1.0, 20.0);
         (p_ref, r_blast)
     } else {
         (0.0, 0.0)

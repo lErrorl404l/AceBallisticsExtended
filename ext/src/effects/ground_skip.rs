@@ -325,7 +325,7 @@ pub fn evaluate_ground_skip(params: &GroundSkipParams) -> GroundSkipResult {
     let dist_no_drag = exit_v * exit_v * (2.0 * exit_rad).sin() / g;
 
     // Drag reduction factor: higher velocity = more drag, longer L/d = more drag
-    let drag_factor = (0.5 - (exit_v / 1000.0) * 0.2).max(0.15).min(0.65);
+    let drag_factor = (0.5 - (exit_v / 1000.0) * 0.2).clamp(0.15, 0.65);
     let distance = dist_no_drag * drag_factor;
 
     // Max skip height: from vertical component of exit velocity

@@ -176,7 +176,7 @@ fn generate_fragment_masses(total_mass_g: f64, num_fragments: i32, is_apfsds: bo
                                                  // For β > 1, the CDF is: F(m) = 1 - (m/m_min)^(-(β-1))
                                                  // Inverse: m = m_min * (1 - u)^(-1/(β-1))
         let m_min = total_kg / count as f64 * 0.1; // smallest fragment is 10% of average
-        let m = m_min * (1.0 - u as f64).powf(-1.0 / (beta - 1.0));
+        let m = m_min * (1.0 - u).powf(-1.0 / (beta - 1.0));
         masses.push(m);
         total += m;
     }

@@ -654,8 +654,6 @@ pub fn classify_ace3_wound(
         let approx_babt = 0.5 * mass_kg * velocity_ms.powi(2) * 0.05; // ~5% transmitted
         if approx_babt > 50.0 {
             ACE3WoundType::CrushWound
-        } else if approx_babt > 15.0 {
-            ACE3WoundType::ContusionWound
         } else {
             ACE3WoundType::ContusionWound
         }
@@ -697,11 +695,8 @@ pub fn classify_ace3_wound(
     }
 
     // Body region: head wounds smaller but more severe
-    match region.as_str() {
-        "head" => {
-            wound_size = wound_size.clamp(1, 8);
-        },
-        _ => {},
+    if region.as_str() == "head" {
+        wound_size = wound_size.clamp(1, 8);
     }
     let wound_size = wound_size.clamp(1, 14);
 
@@ -730,7 +725,7 @@ pub fn classify_ace3_wound(
 
     // Avulsion: 10-30 ml/s
     if matches!(wound_type, ACE3WoundType::AvulsionWound) {
-        blood_loss = blood_loss.max(10.0).min(30.0);
+        blood_loss = blood_loss.clamp(10.0, 30.0);
     }
 
     // Head: minimal blood loss but high incapacitation

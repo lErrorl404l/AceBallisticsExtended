@@ -121,7 +121,7 @@ pub fn material_thin_barrier_mult(barrier_type: &str, thickness_m: f64) -> f64 {
     let blend = (thickness_m / 0.050).min(1.0); // 0 → 1 over 0–50 mm
     let thickness_factor = (1.0 - blend) * base + blend * 1.0;
 
-    thickness_factor.max(0.001).min(1.0)
+    thickness_factor.clamp(0.001, 1.0)
 }
 
 /// Evaluate a projectile passing through a sequence of barriers.

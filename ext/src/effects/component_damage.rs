@@ -270,6 +270,8 @@ fn projectile_frag_multiplier(proj_type: &str) -> f64 {
 ///
 /// # Returns
 /// `ComponentDamageResult` describing the damage state.
+#[allow(clippy::too_many_arguments)]
+// ponytail: physics kernel, all params required
 pub fn evaluate_component_damage(
     component: &ComponentConfig,
     residual_velocity_ms: f64,
