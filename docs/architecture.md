@@ -34,32 +34,31 @@ abe_ballistics_ext.[dll/so]
 
 ```
 ext/src/
-  ├── lib.rs           — C ABI dispatcher, FFI boundary
-  ├── interior.rs      — Barrel length to MV, chamber pressure, propellant model
-  ├── exterior.rs      — Custom CDM, wind gradient, BC-vs-Mach scaling
-  ├── terminal.rs      — Fragmentation, yaw/tumbling, temporary cavity
-  ├── penetration.rs   — De Marre and L-O formulas, angle curves, overmatch
-  ├── ricochet.rs      — Energy-retaining ricochets, skip/bounce/tumble
-  ├── atmosphere.rs    — ICAO/ISA standard atmosphere with altitude lapse rates
-  ├── drag.rs          — Drag functions, G1/G7/G8 standard curves, CDM lookup
-  ├── armor.rs         — Material database, layered armor array evaluation
-  ├── damage.rs        — Yaw-dependent wounding, fragmentation damage channels
-  ├── environment.rs   — Dynamic weather, air density gradients
-  ├── zeroing.rs       — Ballistic reticles, cant error, altitude zero correction
-  ├── degradation.rs   — Barrel heat, fouling, erosion, round-count tracking
-  ├── config.rs        — JSON data table loader with schema validation
-  └── data/            — Built-in weapon/ammo/armor reference data
+  ├── lib.rs              — C ABI dispatcher, FFI boundary
+  ├── interior.rs         — Barrel length to MV, chamber pressure (AVG_PRESSURE_FACTOR=0.58)
+  ├── exterior.rs         — Custom CDM, wind gradient, BC-vs-Mach scaling
+  ├── penetration.rs      — De Marre and L-O formulas, angle curves, overmatch
+  ├── heat_penetration.rs — Birkhoff/Eichelberger shaped-charge HEAT jet model
+  ├── fragmentation.rs    — Log-normal fragment mass distribution, spray cone
+  ├── behind_armor_debris.rs — Spall and behind-armor debris generation, bad_params
+  ├── atmosphere.rs       — ICAO/ISA standard atmosphere with altitude lapse rates
+  ├── drag.rs             — G1/G7/G8 standard curves, linear interpolation CDM lookup
+  └── config.rs           — JSON data table loader with serde validation
 ```
 
 ## SQF Framework
 
 The SQF layer handles per-frame orchestration, event handling, and data configuration.
-Each module is a separate PBO under `addons/`. Modules call into the extension for
+Each module is a separate PBO (planned structure). Modules call into the extension for
 computation and read JSON data tables for configuration values.
 
 Modules are organized into a dependency tree rooted at `abo_core`. The SQF code is kept
 thin: it dispatches parameters to the extension, receives results, and applies them to
 the game state. No physics logic lives in SQF.
+
+> **Note:** The SQF framework and `abo_*` PBO modules described below are the target
+> architecture and have not yet been implemented. The Rust extension and JSON data tables
+> are the current deliverable.
 
 The framework supports two dispatch modes:
 
@@ -74,17 +73,17 @@ layer changes.
 
 ## Data Tables
 
-Configuration data lives in JSON files under `ext/src/data/` (built-in reference data)
-and `data/` (community-contributed data). Each file is validated against a JSON schema
-at compile and test time.
+Configuration data lives in JSON files under `data/` at the repository root. Each file is validated against a JSON schema at test time.
 
 ```
 data/
-  ├── weapons/      — Weapon configs (caliber, barrel length, chamber pressure, CDM)
+  ├── weapons/      — Weapon configs (barrel length, chamber pressure, caliber, CDM)
   ├── ammo/         — Ammo configs (projectile mass, BC, fragmentation params)
-  ├── armor/        — Vehicle armor arrays (plate materials, thickness, angle)
+  ├── calibers/     — Catridge caliber definitions
+  ├── armor/        — Armor material and plate configurations
+  ├── vehicles/     — Vehicle armor array definitions (plate materials, thickness, angle)
   ├── schemas/      — JSON validation schemas
-  └── reference/    — Reference trajectory tables (CSV)
+  └── reports/      — Generated validation and benchmark reports
 ```
 
 The data pipeline works as follows:

@@ -104,30 +104,23 @@ weapon appears in-game automatically. No code change required.
 
 ```
 AceBallisticsExtention/
-  ├── ext/                  — Rust extension (physics engine)
+  ├──   ext/                    — Rust extension (physics engine)
   │   ├── src/
-  │   │   ├── lib.rs        — C ABI dispatcher
-  │   │   ├── interior.rs   — Interior ballistics
-  │   │   ├── exterior.rs   — External ballistics
-  │   │   ├── terminal.rs   — Terminal ballistics
-  │   │   ├── penetration.rs— Penetration models
-  │   │   ├── ricochet.rs   — Ricochet physics
-  │   │   ├── atmosphere.rs — Atmosphere model
-  │   │   ├── drag.rs       — Drag functions / CDM
-  │   │   ├── armor.rs      — Armor array model
-  │   │   ├── damage.rs     — Fragmentation / yaw
-  │   │   ├── environment.rs— Weather / lapse rates
-  │   │   ├── zeroing.rs    — Ballistic reticle / zero
-  │   │   ├── degradation.rs— Barrel heat / fouling
-  │   │   ├── config.rs     — Data table loader
-  │   │   └── data/         — Built-in weapon/ammo data
+  │   │   ├── lib.rs              — C ABI dispatcher
+  │   │   ├── interior.rs         — Interior ballistics (AVG_PRESSURE_FACTOR=0.58)
+  │   │   ├── exterior.rs         — External ballistics (RK4 integration)
+  │   │   ├── penetration.rs      — De Marre + Lanz-Odermatt penetration models
+  │   │   ├── heat_penetration.rs — HEAT shaped-charge jet penetration
+  │   │   ├── fragmentation.rs    — Fragment mass distribution / spray cone
+  │   │   ├── behind_armor_debris.rs — Spall and BAD generation
+  │   │   ├── atmosphere.rs       — ICAO standard atmosphere model
+  │   │   ├── drag.rs             — G1/G7/G8 drag curves / CDM lookup
+  │   │   └── config.rs           — JSON data table loader
   │   └── Cargo.toml
-  ├── addons/               — SQF modules (PBOs)
-  ├── data/                 — Community data staging
-  ├── tests/                — Test missions and suites
+  ├── data/                 — Weapon, ammo, armor, vehicle configuration (JSON)
+  ├── ext/tests/            — Rust integration and compatibility tests
   ├── docs/                 — Documentation
-  ├── mkdocs.yml            — Documentation config
-  └── .hemtt.json           — HEMTT config
+  └── tools/                — Data population and validation scripts
 ```
 
 ## Contributing

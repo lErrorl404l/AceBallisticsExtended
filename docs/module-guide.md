@@ -4,6 +4,10 @@ ABE is organized into discrete addon modules (PBOs), each responsible for one ba
 domain. This page documents every module, its dependencies, configuration options, and
 what it does.
 
+> **Status:** The `abo_*` PBO modules described below are the **target architecture**.
+> They have not yet been implemented. The current deliverable is the Rust extension
+> (`ext/`) and JSON data tables (`data/`).
+
 ## Table of Contents
 
 - [Module Overview](#module-overview)
