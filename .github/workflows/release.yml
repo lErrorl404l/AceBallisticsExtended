@@ -96,19 +96,19 @@ jobs:
       contents: write
     steps:
       - name: Download HEMTT build
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: abe-mod-${{ github.ref_name }}
           path: release/
 
       - name: Download extension .so
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: abe-ext-so-${{ github.ref_name }}
           path: release/
 
       - name: Download extension .dll
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: abe-ext-dll-${{ github.ref_name }}
           path: release/
