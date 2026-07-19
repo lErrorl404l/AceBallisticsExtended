@@ -1,0 +1,12 @@
+{
+  "class": "gm_hk33_base",
+  "caliber_mm": 5.56,
+  "barrel_length_mm": 390.0,
+  "rifling_twist_mm": 178.0,
+  "chamber_pressure_mpa": 430.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 4.0,
+  "muzzle_velocity_ms": 880,
+  "zero_range_m": 100.0,
+  "notes": "IRL: H&K HK33 5.56x45mm. 390mm barrel, 1:7\" twist."
+}

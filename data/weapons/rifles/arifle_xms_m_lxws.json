@@ -1,0 +1,12 @@
+{
+  "class": "arifle_XMS_M_lxWS",
+  "caliber_mm": 6.8,
+  "barrel_length_mm": 508.0,
+  "rifling_twist_mm": 178.0,
+  "chamber_pressure_mpa": 380.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 8.75,
+  "muzzle_velocity_ms": 940,
+  "zero_range_m": 100.0,
+  "notes": "IRL: XM7 DMR 6.8mm. 20\" barrel, 1:7\" twist. 6.8x51mm hybrid marksman variant."
+}

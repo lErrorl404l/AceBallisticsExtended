@@ -1,0 +1,12 @@
+{
+  "class": "gm_g36_base",
+  "caliber_mm": 5.56,
+  "barrel_length_mm": 480.0,
+  "rifling_twist_mm": 178.0,
+  "chamber_pressure_mpa": 430.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 4.0,
+  "muzzle_velocity_ms": 890,
+  "zero_range_m": 100.0,
+  "notes": "IRL: H&K G36 5.56x45mm. 480mm barrel, 1:7\" twist."
+}

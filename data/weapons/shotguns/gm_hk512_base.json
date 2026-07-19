@@ -1,0 +1,12 @@
+{
+  "class": "gm_hk512_base",
+  "caliber_mm": 18.5,
+  "barrel_length_mm": 460.0,
+  "rifling_twist_mm": 600.0,
+  "chamber_pressure_mpa": 79.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 28.0,
+  "muzzle_velocity_ms": 400,
+  "zero_range_m": 50.0,
+  "notes": "IRL: H&K 512 12ga semi-auto shotgun. 460mm barrel."
+}

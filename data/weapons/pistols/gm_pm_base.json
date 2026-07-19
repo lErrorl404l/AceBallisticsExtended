@@ -1,0 +1,12 @@
+{
+  "class": "gm_pm_base",
+  "caliber_mm": 9.0,
+  "barrel_length_mm": 93.5,
+  "rifling_twist_mm": 260.0,
+  "chamber_pressure_mpa": 180.0,
+  "cdm_id": "g1",
+  "projectile_mass_g": 6.0,
+  "muzzle_velocity_ms": 315,
+  "zero_range_m": 25.0,
+  "notes": "IRL: Makarov PM 9x18mm. 93.5mm barrel, 1:10.2\" twist."
+}

@@ -1,0 +1,12 @@
+{
+  "class": "gm_mpikms72k_base",
+  "caliber_mm": 7.62,
+  "barrel_length_mm": 317.0,
+  "rifling_twist_mm": 240.0,
+  "chamber_pressure_mpa": 355.0,
+  "cdm_id": "g1",
+  "projectile_mass_g": 8.0,
+  "muzzle_velocity_ms": 680,
+  "zero_range_m": 100.0,
+  "notes": "IRL: MPi-KMS-72 7.62x39mm. 317mm barrel. East German AK folder."
+}

@@ -1,0 +1,12 @@
+{
+  "class": "gm_msg90_base",
+  "caliber_mm": 7.62,
+  "barrel_length_mm": 599.0,
+  "rifling_twist_mm": 279.0,
+  "chamber_pressure_mpa": 415.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 9.5,
+  "muzzle_velocity_ms": 830,
+  "zero_range_m": 100.0,
+  "notes": "IRL: H&K MSG90 7.62x51mm. 599mm barrel, 1:11\" twist. Precision sniper/DMR."
+}

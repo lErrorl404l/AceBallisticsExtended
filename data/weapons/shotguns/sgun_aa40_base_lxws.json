@@ -1,0 +1,12 @@
+{
+  "class": "sgun_aa40_base_lxWS",
+  "caliber_mm": 18.5,
+  "barrel_length_mm": 457.0,
+  "rifling_twist_mm": 0.0,
+  "chamber_pressure_mpa": 79.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 32.0,
+  "muzzle_velocity_ms": 400,
+  "zero_range_m": 50.0,
+  "notes": "IRL: AA-40 12ga auto-shotgun. 18\" barrel. 12 gauge 2.75\"."
+}

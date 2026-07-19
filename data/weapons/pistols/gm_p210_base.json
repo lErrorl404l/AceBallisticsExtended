@@ -1,0 +1,12 @@
+{
+  "class": "gm_p210_base",
+  "caliber_mm": 9.0,
+  "barrel_length_mm": 120.0,
+  "rifling_twist_mm": 254.0,
+  "chamber_pressure_mpa": 241.0,
+  "cdm_id": "g1",
+  "projectile_mass_g": 8.0,
+  "muzzle_velocity_ms": 350,
+  "zero_range_m": 25.0,
+  "notes": "IRL: SIG P210 9x19mm. 120mm barrel, 1:10\" twist."
+}

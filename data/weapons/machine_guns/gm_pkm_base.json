@@ -1,0 +1,12 @@
+{
+  "class": "gm_pkm_base",
+  "caliber_mm": 7.62,
+  "barrel_length_mm": 645.0,
+  "rifling_twist_mm": 240.0,
+  "chamber_pressure_mpa": 360.0,
+  "cdm_id": "g1",
+  "projectile_mass_g": 9.85,
+  "muzzle_velocity_ms": 825,
+  "zero_range_m": 100.0,
+  "notes": "IRL: PKM 7.62x54mmR. 645mm barrel, 1:9.45\" twist."
+}

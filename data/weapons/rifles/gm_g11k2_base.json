@@ -1,0 +1,12 @@
+{
+  "class": "gm_g11k2_base",
+  "caliber_mm": 4.73,
+  "barrel_length_mm": 540.0,
+  "rifling_twist_mm": 155.0,
+  "chamber_pressure_mpa": 380.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 3.2,
+  "muzzle_velocity_ms": 930,
+  "zero_range_m": 100.0,
+  "notes": "IRL: H&K G11K2 4.73x33mm caseless. 540mm barrel, 1:6.1\" twist."
+}

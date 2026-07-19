@@ -1,0 +1,12 @@
+{
+  "class": "gm_mp5sd_base",
+  "caliber_mm": 9.0,
+  "barrel_length_mm": 146.0,
+  "rifling_twist_mm": 254.0,
+  "chamber_pressure_mpa": 241.0,
+  "cdm_id": "g1",
+  "projectile_mass_g": 8.0,
+  "muzzle_velocity_ms": 300,
+  "zero_range_m": 50.0,
+  "notes": "IRL: H&K MP5SD 9x19mm. 146mm integrated suppressed barrel, 1:10\" twist."
+}
