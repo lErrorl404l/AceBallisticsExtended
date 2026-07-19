@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project name="ABE">
+  <Package name="ABE_Main">
+    <Key ID="STR_ABE_MOD_NAME">
+      <English>Advanced Ballistics Extension</English>
+      <French>Extension de balistique avancée</French>
+      <German>Erweiterte Ballistik-Erweiterung</German>
+      <Spanish>Extensión de balística avanzada</Spanish>
+      <Czech>Rozšíření pokročilé balistiky</Czech>
+      <Polish>Zaawansowane rozszerzenie balistyczne</Polish>
+      <Russian>Расширенное баллистическое расширение</Russian>
+      <Chinese>先进弹道扩展</Chinese>
+      <Japanese>高度弾道拡張</Japanese>
+      <Korean>고급 탄도 확장</Korean>
+    </Key>
+    <Key ID="STR_ABE_MOD_DESCRIPTION">
+      <English>Data-driven interior, exterior, terminal, and penetration ballistics engine for ARMA 3</English>
+    </Key>
+    <Key ID="STR_ABE_SETTINGS_CATEGORY">
+      <English>ABE Advanced Ballistics Extension</English>
+    </Key>
+    <Key ID="STR_ABE_SETTING_ENABLED">
+      <English>Enable ABE ballistics simulation</English>
+      <French>Activer la simulation balistique ABE</French>
+      <German>ABE-Ballistiksimulation aktivieren</German>
+    </Key>
+    <Key ID="STR_ABE_SETTING_ENABLED_TOOLTIP">
+      <English>Replaces Arma 3 default ballistics with ABE physics-based interior, exterior, terminal, and penetration models</English>
+    </Key>
+    <Key ID="STR_ABE_SETTING_WIND_EFFECTS">
+      <English>Wind effects on projectiles</English>
+    </Key>
+    <Key ID="STR_ABE_SETTING_WIND_EFFECTS_TOOLTIP">
+      <English>Enables crosswind drift, headwind/tailwind velocity offset, and turbulence</English>
+    </Key>
+    <Key ID="STR_ABE_SETTING_CORIOLIS">
+      <English>Coriolis effect (Earth rotation drift)</English>
+    </Key>
+    <Key ID="STR_ABE_SETTING_CORIOLIS_TOOLTIP">
+      <English>Enables Coriolis and Eötvös effect on long-range trajectories (significant above 800 m)</English>
+    </Key>
+    <Key ID="STR_ABE_SETTING_TEMP_EFFECTS">
+      <English>Temperature effects on muzzle velocity</English>
+    </Key>
+    <Key ID="STR_ABE_SETTING_TEMP_EFFECTS_TOOLTIP">
+      <English>Affects propellant burn rate and chamber pressure based on ambient temperature</English>
+    </Key>
+    <Key ID="STR_ABE_SETTING_RICOCHET">
+      <English>Ricochet behaviour</English>
+    </Key>
+    <Key ID="STR_ABE_SETTING_RICOCHET_TOOLTIP">
+      <English>Enables angle-dependent ricochet with energy retention and secondary fragment hazards</English>
+    </Key>
+    <Key ID="STR_ABE_SETTING_PENETRATION_QUALITY">
+      <English>Penetration calculation quality</English>
+    </Key>
+    <Key ID="STR_ABE_SETTING_PENETRATION_QUALITY_TOOLTIP">
+      <English>Standard: uses De Marre formula. Detailed: adds yaw effects and layered armour modelling</English>
+    </Key>
+    <Key ID="STR_ABE_EXT_VERSION">
+      <English>Extension version: %1</English>
+    </Key>
+    <Key ID="STR_ABE_EXT_LOADED">
+      <English>ABE extension loaded successfully</English>
+    </Key>
+    <Key ID="STR_ABE_EXT_FAILED">
+      <English>ABE extension failed to load or version mismatch</English>
+    </Key>
+    <Key ID="STR_ABE_ACE3_COMPAT">
+      <English>ACE3 ballistics override active — ABE replacing ace_advanced_ballistics</English>
+    </Key>
+  </Package>
+</Project>
