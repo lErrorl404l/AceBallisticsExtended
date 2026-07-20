@@ -44,3 +44,7 @@ data/generated/
 .biprivatekey
 
 *.rlib
+
+# Agent session artifacts
+.cortexkit/
+.omo/
