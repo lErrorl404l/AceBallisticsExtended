@@ -270,11 +270,10 @@ mod tests {
             }),
         ];
         let r = evaluate_fire_propagation(&states, &cfgs, FireSuppression::None, 1.0, false);
-        assert!(
-            r.component_fires
-                .iter()
-                .all(|s| s.fire_status == FireStatus::NoFire)
-        );
+        assert!(r
+            .component_fires
+            .iter()
+            .all(|s| s.fire_status == FireStatus::NoFire));
     }
 
     #[test]

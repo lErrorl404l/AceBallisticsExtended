@@ -624,7 +624,7 @@ mod tests {
     #[test]
     fn out_of_azimuth_no_intercept() {
         let aps = APSConfig::zaslon(); // 120° coverage
-        // Target at 180° — outside coverage
+                                       // Target at 180° — outside coverage
         let result = evaluate_intercept(&aps, 200.0, 15.0, "heat", 180.0, 0.0);
         assert!(!result.detection_succeeded);
         assert!(!result.intercepted);
@@ -649,7 +649,7 @@ mod tests {
     #[test]
     fn arena_intercepts_ke_partially() {
         let aps = APSConfig::arena(); // P_kill = 0.85 for KE
-        // Very fast KE round at close range
+                                      // Very fast KE round at close range
         let result = evaluate_intercept(&aps, 1400.0, 10.0, "ke", 0.0, 0.0);
         // Should attempt intercept (detectin check passes since 1400 <= 1500)
         assert!(result.detection_succeeded);
@@ -662,7 +662,7 @@ mod tests {
     #[test]
     fn iron_fist_edge_of_coverage() {
         let aps = APSConfig::iron_fist(); // 360° azimuth, 90° elevation
-        // At the edge of elevation coverage
+                                          // At the edge of elevation coverage
         let result = evaluate_intercept(&aps, 800.0, 20.0, "heat", 350.0, 85.0);
         assert!(
             result.detection_succeeded,

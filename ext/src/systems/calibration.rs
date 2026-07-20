@@ -17,7 +17,7 @@
 //           vehicle armour schematics are integrated — the layout table
 //           is the extension point.
 
-use crate::config::{ArmorPlate, get_data_registry};
+use crate::config::{get_data_registry, ArmorPlate};
 #[cfg(test)]
 use crate::penetration::evaluate;
 use crate::penetration::material_factor;

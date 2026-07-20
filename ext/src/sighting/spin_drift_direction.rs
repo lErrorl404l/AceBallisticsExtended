@@ -78,9 +78,9 @@ pub fn twist_drift_coefficient(v_ms: f64, caliber_mm: f64, rate_rev_per_m: f64) 
     }
     let d = caliber_mm / 1000.0; // convert to metres
     let spin_rate_hz = rate_rev_per_m * v_ms; // rev/s
-    // Empirical coefficient from McCoy / Litz:
-    //   SD_coeff = k_coeff · (π · d · n / v)² · (L / d)^(1/3)
-    // For typical spitzer bullets L/d ≈ 4, so (L/d)^(1/3) ≈ 1.587
+                                              // Empirical coefficient from McCoy / Litz:
+                                              //   SD_coeff = k_coeff · (π · d · n / v)² · (L / d)^(1/3)
+                                              // For typical spitzer bullets L/d ≈ 4, so (L/d)^(1/3) ≈ 1.587
     let aspect_ratio_factor = 4.0_f64.cbrt(); // ≈ 1.587
     let k_coeff = 0.082; // empirical constant
     let arg = std::f64::consts::PI * d * spin_rate_hz / v_ms;
