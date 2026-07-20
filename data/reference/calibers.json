@@ -1,0 +1,572 @@
+[
+  {
+    "name": "5.56x45mm NATO",
+    "bullet_diameter_mm": 5.7,
+    "case_length_mm": 44.7,
+    "overall_length_mm": 57.4,
+    "max_pressure_mpa": 430,
+    "max_pressure_source": "NATO EPVAT STANAG 4172",
+    "rifling_twist_mm": 178,
+    "twist_source": "STANAG 4172 (1:7\")",
+    "common_bullet_mass_g": 4.0,
+    "common_muzzle_velocity_ms": 948,
+    "mv_source": "M855 SS109 508mm barrel, TM 9-1005-319-10",
+    "notes": "Standard NATO intermediate cartridge. M855 G7 BC=0.151 per ARL BRL.",
+    "variants": [
+      {
+        "name": "M193",
+        "mass_g": 3.56,
+        "mv_ms": 993,
+        "bc_g7": 0.132
+      },
+      {
+        "name": "M855 (SS109)",
+        "mass_g": 4.0,
+        "mv_ms": 948,
+        "bc_g7": 0.151
+      },
+      {
+        "name": "M855A1 EPR",
+        "mass_g": 4.0,
+        "mv_ms": 961,
+        "bc_g7": 0.152
+      },
+      {
+        "name": "Mk262 (77gr SMK)",
+        "mass_g": 5.0,
+        "mv_ms": 869,
+        "bc_g7": 0.19
+      },
+      {
+        "name": "Mk318 SOST",
+        "mass_g": 4.0,
+        "mv_ms": 940,
+        "bc_g7": 0.155
+      }
+    ],
+    "sources": [
+      "Wikipedia: 5.56x45mm NATO",
+      "STANAG 4172",
+      "C.I.P. TDCC 5.56x45",
+      "SAAMI .223 Rem",
+      "ARL BRL G7 BC=0.151 for M855"
+    ]
+  },
+  {
+    "name": "7.62x51mm NATO",
+    "bullet_diameter_mm": 7.82,
+    "case_length_mm": 51.2,
+    "overall_length_mm": 71.1,
+    "max_pressure_mpa": 415,
+    "max_pressure_source": "NATO EPVAT STANAG 2310",
+    "rifling_twist_mm": 305,
+    "twist_source": "STANAG 2310 (1:12\")",
+    "common_bullet_mass_g": 9.5,
+    "common_muzzle_velocity_ms": 853,
+    "mv_source": "M80 ball 147gr 559mm barrel, TM 9-1005-298-12",
+    "notes": "Standard NATO full-power cartridge. Replaced .30-06 Springfield.",
+    "variants": [
+      {
+        "name": "M80 ball",
+        "mass_g": 9.53,
+        "mv_ms": 853,
+        "bc_g7": 0.2
+      },
+      {
+        "name": "M118LR (175gr SMK)",
+        "mass_g": 11.3,
+        "mv_ms": 792,
+        "bc_g7": 0.243
+      },
+      {
+        "name": "M61 AP",
+        "mass_g": 9.8,
+        "mv_ms": 838,
+        "bc_g7": 0.195
+      },
+      {
+        "name": "M80A1 EPR",
+        "mass_g": 9.4,
+        "mv_ms": 867,
+        "bc_g7": 0.21
+      },
+      {
+        "name": "M993 AP",
+        "mass_g": 8.2,
+        "mv_ms": 930,
+        "bc_g7": 0.19
+      }
+    ],
+    "sources": [
+      "Wikipedia: 7.62x51mm NATO",
+      "STANAG 2310",
+      "C.I.P. TDCC .308 Win",
+      "MIL-C-46277B",
+      "FN Herstal SS77/1 spec (at 25m: 833.5 m/s, 9.3g)"
+    ]
+  },
+  {
+    "name": "7.62x39mm Soviet",
+    "bullet_diameter_mm": 7.89,
+    "case_length_mm": 38.65,
+    "overall_length_mm": 56.0,
+    "max_pressure_mpa": 355,
+    "max_pressure_source": "C.I.P. TDCC",
+    "rifling_twist_mm": 240,
+    "twist_source": "AK-pattern 1:9.45\"",
+    "common_bullet_mass_g": 7.9,
+    "common_muzzle_velocity_ms": 730,
+    "mv_source": "M43 ball 415mm AK barrel",
+    "notes": "Soviet intermediate cartridge. Most-produced intermediate cartridge worldwide.",
+    "variants": [
+      {
+        "name": "M43 ball (PS)",
+        "mass_g": 7.9,
+        "mv_ms": 730,
+        "bc_g7": 0.138
+      },
+      {
+        "name": "57-N-231 AP",
+        "mass_g": 7.9,
+        "mv_ms": 740,
+        "bc_g7": 0.152
+      },
+      {
+        "name": "M67 Yugoslav ball",
+        "mass_g": 8.0,
+        "mv_ms": 720,
+        "bc_g7": 0.135
+      }
+    ],
+    "sources": [
+      "Wikipedia: 7.62x39mm",
+      "C.I.P. TDCC",
+      "SAAMI 7.62x39"
+    ]
+  },
+  {
+    "name": "5.45x39mm Soviet",
+    "bullet_diameter_mm": 5.6,
+    "case_length_mm": 39.82,
+    "overall_length_mm": 57.0,
+    "max_pressure_mpa": 355,
+    "max_pressure_source": "C.I.P. TDCC",
+    "rifling_twist_mm": 255,
+    "twist_source": "AK-74 pattern 1:10\"",
+    "common_bullet_mass_g": 3.43,
+    "common_muzzle_velocity_ms": 880,
+    "mv_source": "7N6 ball, 415mm AK-74 barrel",
+    "notes": "Soviet small-bore intermediate. 7N6 bullet has steel core, air cavity, copper jacket.",
+    "variants": [
+      {
+        "name": "7N6 ball",
+        "mass_g": 3.43,
+        "mv_ms": 880,
+        "bc_g7": 0.168
+      },
+      {
+        "name": "7N10 enhanced penetration",
+        "mass_g": 3.56,
+        "mv_ms": 870,
+        "bc_g7": 0.17
+      },
+      {
+        "name": "7N22 AP",
+        "mass_g": 3.68,
+        "mv_ms": 870,
+        "bc_g7": 0.165
+      }
+    ],
+    "sources": [
+      "Wikipedia: 5.45x39mm",
+      "C.I.P. TDCC",
+      "ARL BRL G7 BC=0.168 for 7N6"
+    ]
+  },
+  {
+    "name": "9x19mm Parabellum",
+    "bullet_diameter_mm": 9.01,
+    "case_length_mm": 19.15,
+    "overall_length_mm": 29.69,
+    "max_pressure_mpa": 252,
+    "max_pressure_source": "NATO EPVAT STANAG 4090",
+    "rifling_twist_mm": 250,
+    "twist_source": "Common 1:9.84\"",
+    "common_bullet_mass_g": 8.0,
+    "common_muzzle_velocity_ms": 360,
+    "mv_source": "Standard 124gr FMJ, 100mm pistol barrel",
+    "notes": "Standard NATO pistol cartridge. Also CIP 235 MPa, SAAMI 241 MPa.",
+    "variants": [
+      {
+        "name": "124gr FMJ",
+        "mass_g": 8.0,
+        "mv_ms": 360,
+        "bc_g1": 0.16
+      },
+      {
+        "name": "115gr FMJ",
+        "mass_g": 7.5,
+        "mv_ms": 375,
+        "bc_g1": 0.145
+      },
+      {
+        "name": "147gr JHP",
+        "mass_g": 9.5,
+        "mv_ms": 320,
+        "bc_g1": 0.17
+      }
+    ],
+    "sources": [
+      "Wikipedia: 9x19mm Parabellum",
+      "C.I.P. TDCC",
+      "SAAMI",
+      "STANAG 4090"
+    ]
+  },
+  {
+    "name": ".45 ACP",
+    "bullet_diameter_mm": 11.43,
+    "case_length_mm": 22.81,
+    "overall_length_mm": 32.4,
+    "max_pressure_mpa": 131,
+    "max_pressure_source": "SAAMI (19,000 psi)",
+    "rifling_twist_mm": 406,
+    "twist_source": "Common 1:16\"",
+    "common_bullet_mass_g": 15.0,
+    "common_muzzle_velocity_ms": 253,
+    "mv_source": "230gr FMJ, 127mm barrel, TM 9-1005-211-35",
+    "notes": "US military standard pistol cartridge since 1911. CIP: 130 MPa.",
+    "variants": [
+      {
+        "name": "230gr FMJ (M1911)",
+        "mass_g": 15.0,
+        "mv_ms": 253,
+        "bc_g1": 0.17
+      },
+      {
+        "name": "185gr JHP",
+        "mass_g": 12.0,
+        "mv_ms": 290,
+        "bc_g1": 0.14
+      }
+    ],
+    "sources": [
+      "Wikipedia: .45 ACP",
+      "C.I.P. TDCC",
+      "SAAMI",
+      "TM 9-1005-211-35"
+    ]
+  },
+  {
+    "name": ".338 Lapua Magnum",
+    "bullet_diameter_mm": 8.61,
+    "case_length_mm": 69.2,
+    "overall_length_mm": 96.0,
+    "max_pressure_mpa": 420,
+    "max_pressure_source": "C.I.P. (4200 bar)",
+    "rifling_twist_mm": 254,
+    "twist_source": "Common 1:10\"",
+    "common_bullet_mass_g": 16.2,
+    "common_muzzle_velocity_ms": 905,
+    "mv_source": "250gr SMK or 250gr Lapua Scenar",
+    "notes": "Long-range military sniper cartridge. Effective past 1500m.",
+    "variants": [
+      {
+        "name": "250gr SMK",
+        "mass_g": 16.2,
+        "mv_ms": 905,
+        "bc_g7": 0.349
+      },
+      {
+        "name": "300gr SMK",
+        "mass_g": 19.4,
+        "mv_ms": 835,
+        "bc_g7": 0.381
+      },
+      {
+        "name": "285gr ELD-X",
+        "mass_g": 18.5,
+        "mv_ms": 855,
+        "bc_g7": 0.352
+      }
+    ],
+    "sources": [
+      "Wikipedia: .338 Lapua Magnum",
+      "C.I.P. TDCC official datasheet (Pmax=4200 bar, proof=5250 bar)",
+      "Manson Reamer spec"
+    ]
+  },
+  {
+    "name": ".300 Winchester Magnum",
+    "bullet_diameter_mm": 7.82,
+    "case_length_mm": 67.0,
+    "overall_length_mm": 85.0,
+    "max_pressure_mpa": 430,
+    "max_pressure_source": "SAAMI (64,000 psi) / C.I.P. (4300 bar)",
+    "rifling_twist_mm": 254,
+    "twist_source": "Common 1:10\"",
+    "common_bullet_mass_g": 12.3,
+    "common_muzzle_velocity_ms": 930,
+    "mv_source": "190gr SMK, 660mm barrel",
+    "notes": "Most widely used military long-range sniper cartridge before .338 LM.",
+    "variants": [
+      {
+        "name": "190gr SMK (Mk 248 Mod 1)",
+        "mass_g": 12.3,
+        "mv_ms": 930,
+        "bc_g7": 0.287
+      },
+      {
+        "name": "168gr SMK",
+        "mass_g": 10.9,
+        "mv_ms": 970,
+        "bc_g7": 0.26
+      },
+      {
+        "name": "175gr SMK",
+        "mass_g": 11.3,
+        "mv_ms": 930,
+        "bc_g7": 0.27
+      }
+    ],
+    "sources": [
+      "Wikipedia: .300 Winchester Magnum",
+      "C.I.P. TDCC",
+      "SAAMI",
+      "Berger Bullets data"
+    ]
+  },
+  {
+    "name": "12.7x99mm (.50 BMG)",
+    "bullet_diameter_mm": 12.98,
+    "case_length_mm": 99.0,
+    "overall_length_mm": 138.0,
+    "max_pressure_mpa": 379,
+    "max_pressure_source": "TM43-0001-27 (55,000 psi) / EPVAT 417 MPa",
+    "rifling_twist_mm": 381,
+    "twist_source": "STANAG 4383 (1:15\")",
+    "common_bullet_mass_g": 42.0,
+    "common_muzzle_velocity_ms": 893,
+    "mv_source": "M33 ball, 737mm M2HB barrel",
+    "notes": "Standard NATO heavy machine gun cartridge. STANAG 4383.",
+    "variants": [
+      {
+        "name": "M33 ball",
+        "mass_g": 42.0,
+        "mv_ms": 893,
+        "bc_g7": 0.29
+      },
+      {
+        "name": "M17 tracer",
+        "mass_g": 40.0,
+        "mv_ms": 910,
+        "bc_g7": 0.28
+      },
+      {
+        "name": "M8 API",
+        "mass_g": 40.0,
+        "mv_ms": 887,
+        "bc_g7": 0.34
+      },
+      {
+        "name": "M903 SLAP",
+        "mass_g": 23.0,
+        "mv_ms": 1200,
+        "bc_g7": 0.28
+      }
+    ],
+    "sources": [
+      "Wikipedia: .50 BMG",
+      "STANAG 4383",
+      "TM43-0001-27",
+      "C.I.P. TDCC .50 BMG"
+    ]
+  },
+  {
+    "name": "12.7x108mm Russian",
+    "bullet_diameter_mm": 12.98,
+    "case_length_mm": 108.0,
+    "overall_length_mm": 147.0,
+    "max_pressure_mpa": 360,
+    "max_pressure_source": "Estimated (similar to .50 BMG class)",
+    "rifling_twist_mm": 381,
+    "twist_source": "NSV/DShK pattern 1:15\"",
+    "common_bullet_mass_g": 48.0,
+    "common_muzzle_velocity_ms": 830,
+    "mv_source": "B-32 API, 1000mm NSV barrel",
+    "notes": "Soviet equivalent to .50 BMG. Used in NSV, DShK, Kord HMG.",
+    "variants": [
+      {
+        "name": "B-32 API",
+        "mass_g": 48.0,
+        "mv_ms": 830,
+        "bc_g7": 0.31
+      },
+      {
+        "name": "BZT-44 API-T",
+        "mass_g": 45.0,
+        "mv_ms": 850,
+        "bc_g7": 0.29
+      }
+    ],
+    "sources": [
+      "Wikipedia: 12.7x108mm",
+      "Soviet small arms manual data"
+    ]
+  },
+  {
+    "name": "14.5x114mm Russian",
+    "bullet_diameter_mm": 14.5,
+    "case_length_mm": 114.0,
+    "overall_length_mm": 156.0,
+    "max_pressure_mpa": 370,
+    "max_pressure_source": "Estimated",
+    "rifling_twist_mm": 460,
+    "twist_source": "KPV pattern 1:18\"",
+    "common_bullet_mass_g": 60.0,
+    "common_muzzle_velocity_ms": 1000,
+    "mv_source": "B-32 API, 1350mm KPVT barrel",
+    "notes": "Soviet heavy machine gun/anti-materiel cartridge.",
+    "variants": [
+      {
+        "name": "B-32 API",
+        "mass_g": 60.0,
+        "mv_ms": 1000,
+        "bc_g7": 0.38
+      },
+      {
+        "name": "MDZ incendiary",
+        "mass_g": 59.5,
+        "mv_ms": 1010,
+        "bc_g7": 0.37
+      }
+    ],
+    "sources": [
+      "Wikipedia: 14.5x114mm",
+      "Soviet small arms manual data"
+    ]
+  },
+  {
+    "name": "9x39mm Soviet",
+    "bullet_diameter_mm": 9.27,
+    "case_length_mm": 38.76,
+    "overall_length_mm": 56.0,
+    "max_pressure_mpa": 280,
+    "max_pressure_source": "Estimated (subsonic)",
+    "rifling_twist_mm": 250,
+    "twist_source": "VSS/AS Val pattern",
+    "common_bullet_mass_g": 16.0,
+    "common_muzzle_velocity_ms": 290,
+    "mv_source": "SP-5 ball (subsonic)",
+    "notes": "Russian subsonic special-purpose cartridge. Used in VSS, AS Val.",
+    "variants": [
+      {
+        "name": "SP-5 ball",
+        "mass_g": 16.0,
+        "mv_ms": 290,
+        "bc_g7": 0.12
+      },
+      {
+        "name": "SP-6 AP",
+        "mass_g": 16.0,
+        "mv_ms": 305,
+        "bc_g7": 0.115
+      }
+    ],
+    "sources": [
+      "Wikipedia: 9x39mm",
+      "Soviet small arms data"
+    ]
+  },
+  {
+    "name": "6.8x51mm Fury (XM5)",
+    "bullet_diameter_mm": 6.78,
+    "case_length_mm": 51.0,
+    "overall_length_mm": 71.0,
+    "max_pressure_mpa": 517,
+    "max_pressure_source": "US Army NGSW program (75,000 psi hybrid case)",
+    "rifling_twist_mm": 254,
+    "twist_source": "1:10\" estimated",
+    "common_bullet_mass_g": 8.7,
+    "common_muzzle_velocity_ms": 914,
+    "mv_source": "US Army NGSW specification",
+    "notes": "Next Generation Squad Weapon cartridge. Hybrid steel-aluminum case.",
+    "variants": [
+      {
+        "name": "XM1186 ball",
+        "mass_g": 8.7,
+        "mv_ms": 914,
+        "bc_g7": 0.21
+      }
+    ],
+    "sources": [
+      "Wikipedia: 6.8x51mm Fury",
+      "US Army NGSW program docs"
+    ]
+  },
+  {
+    "name": "6.5mm Creedmoor",
+    "bullet_diameter_mm": 6.71,
+    "case_length_mm": 48.77,
+    "overall_length_mm": 71.0,
+    "max_pressure_mpa": 413,
+    "max_pressure_source": "SAAMI (60,000 psi) / C.I.P.",
+    "rifling_twist_mm": 203,
+    "twist_source": "Common 1:8\"",
+    "common_bullet_mass_g": 9.0,
+    "common_muzzle_velocity_ms": 826,
+    "mv_source": "140gr ELD, 610mm barrel",
+    "notes": "Modern long-range precision cartridge. Adopted by US SOCOM for Mk 28.",
+    "variants": [
+      {
+        "name": "140gr ELD Match",
+        "mass_g": 9.0,
+        "mv_ms": 826,
+        "bc_g7": 0.319
+      },
+      {
+        "name": "130gr OTM Berger",
+        "mass_g": 8.4,
+        "mv_ms": 855,
+        "bc_g7": 0.305
+      },
+      {
+        "name": "147gr ELD Match",
+        "mass_g": 9.5,
+        "mv_ms": 808,
+        "bc_g7": 0.35
+      }
+    ],
+    "sources": [
+      "Wikipedia: 6.5mm Creedmoor",
+      "SAAMI",
+      "C.I.P."
+    ]
+  },
+  {
+    "name": ".224 Valkyrie",
+    "bullet_diameter_mm": 5.56,
+    "case_length_mm": 40.0,
+    "overall_length_mm": 57.0,
+    "max_pressure_mpa": 410,
+    "max_pressure_source": "SAAMI (59,000 psi)",
+    "rifling_twist_mm": 178,
+    "twist_source": "Common 1:7\"",
+    "common_bullet_mass_g": 3.9,
+    "common_muzzle_velocity_ms": 930,
+    "mv_source": "60gr G1 BC 0.315",
+    "notes": "AR-15 compatible high-BC cartridge for long-range competition.",
+    "variants": [
+      {
+        "name": "90gr SMK",
+        "mass_g": 5.8,
+        "mv_ms": 823,
+        "bc_g7": 0.19
+      }
+    ],
+    "sources": [
+      "Wikipedia: .224 Valkyrie",
+      "SAAMI"
+    ]
+  }
+]
