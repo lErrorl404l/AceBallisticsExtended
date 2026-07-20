@@ -29,6 +29,23 @@ missionNamespace setVariable ["ABE_aceMode", _acePresent];
 GVAR(trackedBullets) = createHashMap;
 GVAR(armorState) = createHashMap;
 
+// Pre-register ACE3 weapon config values as overrides for the IRL lookup
+[{
+    params ["_extension"];
+    private _weaponClasses = "getText (_x >> 'ACE_barrelLength') != ''" configClasses (configFile >> "CfgWeapons");
+    {
+        private _cls = configName _x;
+        private _barrel = getNumber (_x >> "ACE_barrelLength");
+        private _twist = getNumber (_x >> "ACE_barrelTwist");
+        if (_barrel > 0) then {
+            _extension callExtension ["register_override", [
+                _cls, 0, _barrel, _twist, 0, 0
+            ]];
+        };
+    } forEach _weaponClasses;
+    diag_log format ["[ABE] Registered %1 ACE3 weapon overrides", count _weaponClasses];
+}, [_extensionName], 0.5] call CBA_fnc_waitAndExecute;
+
 diag_log format ["[ABE] Initialized successfully (ACE3 mode: %1)", _acePresent];
 
     // Register EH for firing
