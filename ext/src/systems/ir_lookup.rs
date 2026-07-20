@@ -92,8 +92,7 @@ fn normalize(class: &str) -> String {
     // look like mod identifiers. Mod prefixes are alpha-only (rhs, cup, gm,
     // 3cb, ace, vn, spe, csla, ws, rf, etc.). Weapon model designations
     // (m4, ak47, p07, mk18) contain digits mixed with letters — keep those.
-    loop {
-        let Some(uscore) = s.find('_') else { break };
+    while let Some(uscore) = s.find('_') {
         let (candidate, rest) = s.split_at(uscore);
         let rest = &rest[1..]; // skip '_'
 
