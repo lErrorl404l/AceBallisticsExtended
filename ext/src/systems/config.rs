@@ -11,129 +11,6 @@ use std::sync::OnceLock;
 
 // ── Data structures ───────────────────────────────────────────────────────────
 
-/// Configuration for a weapon system.
-///
-/// Deserialised from the JSON weapon config files in `data/weapons/`.
-/// Maps to a single CfgWeapons class in ARMA 3.
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct WeaponConfig {
-    /// CfgWeapons class name (e.g. `"rhs_weap_m4a1"`).
-    pub class: String,
-    /// Barrel calibre in millimetres.
-    pub caliber_mm: f64,
-    /// Barrel length in millimetres.
-    pub barrel_length_mm: f64,
-    /// Rifling twist rate in mm per revolution (optional, default 0).
-    ///
-    /// Accepts both `rifling_twist_mm` and `twist_rate_mm` JSON keys.
-    #[serde(default)]
-    #[serde(alias = "twist_rate_mm")]
-    pub rifling_twist_mm: f64,
-    /// Peak chamber pressure in MPa (SAAMI/CIP).
-    pub chamber_pressure_mpa: f64,
-    /// Drag model curve identifier (default `"g7"`).
-    #[serde(default = "default_cdm")]
-    pub cdm_id: String,
-    /// Published muzzle velocity in m/s (optional, for reference).
-    #[serde(default)]
-    pub muzzle_velocity_ms: f64,
-    /// Zero range in metres (default 100 m).
-    #[serde(default = "default_zero")]
-    pub zero_range_m: f64,
-}
-
-fn default_cdm() -> String {
-    "g7".to_string()
-}
-fn default_zero() -> f64 {
-    100.0
-}
-
-/// Configuration for an ammunition type.
-///
-/// Deserialised from the JSON ammo config files in `data/ammo/`.
-/// Maps to a single CfgAmmo class in ARMA 3.
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct AmmoConfig {
-    /// CfgAmmo class name.
-    pub class: String,
-    /// Projectile physical and ballistic properties.
-    pub projectile: ProjectileConfig,
-}
-
-/// Physical and ballistic properties of a projectile.
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct ProjectileConfig {
-    /// Projectile model name (e.g. `"M855"`, `"M80"`).
-    pub model: String,
-    /// Projectile mass in grams.
-    pub mass_g: f64,
-    /// Projectile calibre in millimetres.
-    pub caliber_mm: f64,
-    /// Ballistic coefficient for the G7 drag model.
-    pub bc_g7: f64,
-    /// Drag model curve identifier (default `"g7"`).
-    #[serde(default = "default_cdm")]
-    pub cdm_id: String,
-    /// Optional fragmentation parameters (velocity threshold,
-    /// fragment count, mass distribution).
-    #[serde(default)]
-    pub fragmentation: Option<FragmentationConfig>,
-    /// Mean fragment mass in grams for log-normal distribution (0 = auto).
-    #[serde(default)]
-    pub frag_mass_mean: Option<f64>,
-    /// Standard deviation of fragment mass in grams (0 = auto).
-    #[serde(default)]
-    pub frag_mass_std: Option<f64>,
-    /// Maximum ricochet angle in degrees; 0 uses default calc.
-    #[serde(default)]
-    pub ricochet_angle_deg: Option<f64>,
-    /// Tracer burn duration in seconds; 0 or None = no tracer.
-    #[serde(default)]
-    pub tracer_burn_time_s: Option<f64>,
-    /// Whether projectile has incendiary effect.
-    #[serde(default)]
-    pub incendiary: Option<bool>,
-    /// Ignition temperature of incendiary filler in Kelvin.
-    #[serde(default)]
-    pub incendiary_ignition_temp_k: Option<f64>,
-    /// Sabot/pusher mass in grams (for APFSDS discarding sabot rounds).
-    /// The sabot falls away after muzzle, carrying no down-range effect,
-    /// but its mass affects in-bore acceleration.
-    #[serde(default)]
-    pub sabot_mass_g: Option<f64>,
-    /// Velocity at which the sabot petals separate from the sub-projectile (m/s).
-    /// Typically 800–900 m/s for tank APFSDS, lower for small-calibre.
-    #[serde(default)]
-    pub sabot_discard_velocity_ms: Option<f64>,
-    /// APFSDS stepped-tip length in millimetres (e.g. 100 mm on M829A3).
-    /// A sacrificial steel tip breaks off on ERA impact, allowing the
-    /// main DU rod to penetrate undeflected.
-    #[serde(default)]
-    pub apfsds_tip_length_mm: Option<f64>,
-    /// APFSDS stepped-tip mass in grams.
-    #[serde(default)]
-    pub apfsds_tip_mass_g: Option<f64>,
-    /// Minimum impact velocity (m/s) for the tip to shear off.
-    /// Below this velocity, the tip behaves as part of the penetrator.
-    /// Typical: 500–700 m/s for ERA-defeat designs.
-    #[serde(default)]
-    pub apfsds_tip_shedding_velocity_ms: Option<f64>,
-}
-
-/// Fragmentation behaviour parameters for a projectile.
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct FragmentationConfig {
-    /// Minimum impact velocity for fragmentation to occur (m/s).
-    pub threshold_vel_ms: f64,
-    /// Average number of fragments generated.
-    pub avg_fragments: u32,
-    /// Mass distribution model (typically `"log_normal"`).
-    pub mass_distribution: String,
-    /// Distribution parameters (e.g. `{"mean": 0.08, "std": 0.04}`).
-    pub params: HashMap<String, f64>,
-}
-
 /// Armour configuration for a vehicle.
 ///
 /// Deserialised from the JSON armour config files in `data/armor/`.
@@ -199,32 +76,6 @@ fn collect_json_files_top_level(root: &Path) -> Result<Vec<std::path::PathBuf>, 
         }
     }
     Ok(files)
-}
-
-/// Load a directory tree of JSON weapon configs (searched recursively).
-pub fn load_weapon_configs(path: &Path) -> Result<Vec<WeaponConfig>, String> {
-    let mut configs = Vec::new();
-    for path in collect_json_files(path)? {
-        let content = std::fs::read_to_string(&path)
-            .map_err(|e| format!("Failed to read {}: {}", path.display(), e))?;
-        let config: WeaponConfig = serde_json::from_str(&content)
-            .map_err(|e| format!("Failed to parse {}: {}", path.display(), e))?;
-        configs.push(config);
-    }
-    Ok(configs)
-}
-
-/// Load a directory tree of JSON ammo configs (searched recursively).
-pub fn load_ammo_configs(path: &Path) -> Result<Vec<AmmoConfig>, String> {
-    let mut configs = Vec::new();
-    for path in collect_json_files(path)? {
-        let content = std::fs::read_to_string(&path)
-            .map_err(|e| format!("Failed to read {}: {}", path.display(), e))?;
-        let config: AmmoConfig = serde_json::from_str(&content)
-            .map_err(|e| format!("Failed to parse {}: {}", path.display(), e))?;
-        configs.push(config);
-    }
-    Ok(configs)
 }
 
 /// Load JSON armor configs from `root` only (no subdirectory recursion).
@@ -294,8 +145,6 @@ pub fn load_material_configs(data_dir: &Path) -> Result<HashMap<String, Material
 
 /// Registry of loaded configuration data.
 pub struct DataRegistry {
-    pub weapons: Vec<WeaponConfig>,
-    pub ammo: Vec<AmmoConfig>,
     pub armor: Vec<ArmorConfig>,
     pub materials: HashMap<String, MaterialConfig>,
 }
@@ -312,17 +161,12 @@ pub fn initialize_data(data_dir: &Path) -> Result<(), String> {
     if DATA_REGISTRY.get().is_some() {
         return Ok(());
     }
-    let weapons = load_weapon_configs(&data_dir.join("weapons"))?;
-    let ammo = load_ammo_configs(&data_dir.join("ammo"))?;
+    // Weapons and ammo are served from the compile-time PHF map (ir_weapons.tsv / ir_ammo.tsv).
+    // Armor/material configs are loaded from JSON at runtime.
     let armor = load_armor_configs(&data_dir.join("armor/plates"))?;
     let materials = load_material_configs(data_dir)?;
     DATA_REGISTRY
-        .set(DataRegistry {
-            weapons,
-            ammo,
-            armor,
-            materials,
-        })
+        .set(DataRegistry { armor, materials })
         .map_err(|_| "Data already initialized".to_string())
 }
 
@@ -364,72 +208,6 @@ mod tests {
     use super::*;
 
     #[test]
-    fn weapon_config_deserialize() {
-        let json = r#"
-        {
-            "class": "rhs_weap_m4a1",
-            "caliber_mm": 5.56,
-            "barrel_length_mm": 368.0,
-            "rifling_twist_mm": 178.0,
-            "chamber_pressure_mpa": 380.0,
-            "cdm_id": "g7",
-            "projectile_mass_g": 4.0,
-            "muzzle_velocity_ms": 948.0,
-            "zero_range_m": 100.0
-        }
-        "#;
-
-        let config: WeaponConfig = serde_json::from_str(json).unwrap();
-        assert_eq!(config.class, "rhs_weap_m4a1");
-        assert!((config.barrel_length_mm - 368.0).abs() < 0.01);
-        assert_eq!(config.cdm_id, "g7");
-    }
-
-    #[test]
-    fn weapon_config_defaults() {
-        let json = r#"
-        {
-            "class": "test_weapon",
-            "caliber_mm": 7.62,
-            "barrel_length_mm": 500.0,
-            "chamber_pressure_mpa": 360.0,
-            "projectile_mass_g": 9.5
-        }
-        "#;
-
-        let config: WeaponConfig = serde_json::from_str(json).unwrap();
-        assert_eq!(config.cdm_id, "g7"); // Default
-        assert!((config.zero_range_m - 100.0).abs() < 0.01); // Default
-    }
-
-    #[test]
-    fn ammo_config_with_fragmentation() {
-        let json = r#"
-        {
-            "class": "rhs_mag_30Rnd_556x45_M855_Stanag",
-            "projectile": {
-                "model": "m855",
-                "mass_g": 4.0,
-                "caliber_mm": 5.56,
-                "bc_g7": 0.157,
-                "cdm_id": "m855_custom",
-                "fragmentation": {
-                    "threshold_vel_ms": 762.0,
-                    "avg_fragments": 12,
-                    "mass_distribution": "log_normal",
-                    "params": {"mean": 0.08, "std": 0.04}
-                }
-            }
-        }
-        "#;
-
-        let config: AmmoConfig = serde_json::from_str(json).unwrap();
-        assert_eq!(config.projectile.model, "m855");
-        let frag = config.projectile.fragmentation.unwrap();
-        assert_eq!(frag.avg_fragments, 12);
-    }
-
-    #[test]
     fn armor_config_deserialize() {
         let json = r#"
         {
@@ -460,73 +238,5 @@ mod tests {
             config.plates[1].backing.as_deref(),
             Some("spall_liner_kevlar")
         );
-    }
-
-    #[test]
-    fn ammo_config_new_option_fields_default_to_none() {
-        let json = r#"
-        {
-            "class": "test_ammo",
-            "projectile": {
-                "model": "test",
-                "mass_g": 4.0,
-                "caliber_mm": 5.56,
-                "bc_g7": 0.157,
-                "cdm_id": "g7"
-            }
-        }
-        "#;
-
-        let config: AmmoConfig = serde_json::from_str(json).unwrap();
-        // All new fields should default to None when absent from JSON
-        assert!(config.projectile.frag_mass_mean.is_none());
-        assert!(config.projectile.frag_mass_std.is_none());
-        assert!(config.projectile.ricochet_angle_deg.is_none());
-        assert!(config.projectile.tracer_burn_time_s.is_none());
-        assert!(config.projectile.incendiary.is_none());
-        assert!(config.projectile.incendiary_ignition_temp_k.is_none());
-    }
-
-    #[test]
-    fn ammo_config_new_option_fields_with_values() {
-        let json = r#"
-        {
-            "class": "test_ammo_tracer_api",
-            "projectile": {
-                "model": "test",
-                "mass_g": 4.0,
-                "caliber_mm": 5.56,
-                "bc_g7": 0.157,
-                "cdm_id": "g7",
-                "frag_mass_mean": 0.05,
-                "frag_mass_std": 0.025,
-                "ricochet_angle_deg": 15.0,
-                "tracer_burn_time_s": 2.5,
-                "incendiary": true,
-                "incendiary_ignition_temp_k": 550.0
-            }
-        }
-        "#;
-
-        let config: AmmoConfig = serde_json::from_str(json).unwrap();
-        let p = &config.projectile;
-        assert_eq!(p.frag_mass_mean, Some(0.05));
-        assert_eq!(p.frag_mass_std, Some(0.025));
-        assert_eq!(p.ricochet_angle_deg, Some(15.0));
-        assert_eq!(p.tracer_burn_time_s, Some(2.5));
-        assert_eq!(p.incendiary, Some(true));
-        assert_eq!(p.incendiary_ignition_temp_k, Some(550.0));
-    }
-
-    #[test]
-    fn invalid_json_returns_error() {
-        let result = serde_json::from_str::<WeaponConfig>("not valid json");
-        assert!(result.is_err());
-    }
-
-    #[test]
-    fn load_nonexistent_directory() {
-        let result = load_weapon_configs(Path::new("/nonexistent/path"));
-        assert!(result.is_err());
     }
 }

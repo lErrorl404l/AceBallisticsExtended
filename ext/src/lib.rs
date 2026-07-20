@@ -35,9 +35,10 @@ pub use sighting::{
     zero_manager,
 };
 
+mod generated;
 mod systems;
 pub use systems::{
-    aps, calibration, config, dynamic_armor, lot_variation, predictive_era, schematics,
+    aps, calibration, config, dynamic_armor, ir_lookup, lot_variation, predictive_era, schematics,
     wind_uncertainty,
 };
 
@@ -376,6 +377,54 @@ fn handle_zeroing(args: &[&str]) -> String {
     }
 }
 
+fn handle_resolve_weapon(args: &[&str]) -> String {
+    if !get_state().initialized {
+        return "-1".into();
+    }
+    let class_name = args.first().copied().unwrap_or("");
+    if class_name.is_empty() {
+        return "-1".into();
+    }
+    let caliber_hint: f64 = args.get(1).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let res = ir_lookup::resolve_weapon(class_name, caliber_hint);
+    if res.params.caliber_mm <= 0.0 {
+        return "0".into(); // not found
+    }
+    format!(
+        "[{},{},{},{},{}]",
+        fmt_f64(res.params.caliber_mm),
+        fmt_f64(res.params.barrel_length_mm),
+        fmt_f64(res.params.barrel_twist_mm),
+        fmt_f64(res.params.chamber_pressure_mpa),
+        fmt_f64(res.params.projectile_mass_g),
+    )
+}
+
+fn handle_register_override(args: &[&str]) -> String {
+    if !get_state().initialized {
+        return "-1".into();
+    }
+    let class_name = args.first().copied().unwrap_or("");
+    if class_name.is_empty() {
+        return "-1".into();
+    }
+    let caliber_mm: f64 = args.get(1).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let barrel_length_mm: f64 = args.get(2).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let barrel_twist_mm: f64 = args.get(3).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let chamber_pressure_mpa: f64 = args.get(4).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let projectile_mass_g: f64 = args.get(5).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+
+    let wp = ir_lookup::WeaponParams {
+        caliber_mm,
+        barrel_length_mm,
+        barrel_twist_mm,
+        chamber_pressure_mpa,
+        projectile_mass_g,
+    };
+    ir_lookup::register_override(class_name, wp);
+    "1".into()
+}
+
 fn handle_shooter(args: &[&str]) -> String {
     if !get_state().initialized {
         return "-1".into();
@@ -567,6 +616,8 @@ pub unsafe extern "C" fn RVExtensionArgs(
         "zeroing" => handle_zeroing(&parsed),
         "shooter" => handle_shooter(&parsed),
         "component" => handle_component(&parsed),
+        "resolve_weapon" => handle_resolve_weapon(&parsed),
+        "register_override" => handle_register_override(&parsed),
         other => format!("unknown: {}", other),
     };
 
@@ -1195,7 +1246,83 @@ pub extern "C" fn abe_impact(params: &ImpactParams, result: &mut ImpactResult) -
 /// Safe to call before `abe_init` (will return 0).
 #[unsafe(no_mangle)]
 pub extern "C" fn abe_health() -> i32 {
-    if get_state().initialized { 1 } else { 0 }
+    if get_state().initialized {
+        1
+    } else {
+        0
+    }
+}
+
+// ── IRL Weapon/Ammo Resolution C ABI ──────────────────────────────────────────
+
+/// Struct-mode parameter for `abe_resolve_weapon()`.
+#[repr(C)]
+pub struct ResolveWeaponParams {
+    /// Magic number — must be `MAGIC_ABE`.
+    pub magic: u64,
+    /// Null-terminated Arma 3 weapon class name (padded to 128 bytes).
+    pub class_name: [u8; 128],
+    /// Calibre hint for type-based fallback.  Pass 0.0 for auto-detect.
+    pub caliber_hint: f64,
+}
+
+/// Register an override for a weapon class via `abe_register_override()`.
+#[repr(C)]
+pub struct RegisterOverrideParams {
+    /// Magic number — must be `MAGIC_ABE`.
+    pub magic: u64,
+    /// Null-terminated Arma 3 weapon class name (padded to 128 bytes).
+    pub class_name: [u8; 128],
+    /// Physical parameters to override.
+    pub weapon_params: ir_lookup::WeaponParams,
+}
+
+/// Resolve IRL weapon parameters for an Arma weapon class.
+///
+/// Returns 0 on success with `result` populated, -1 if not initialised,
+/// -2 on bad magic.
+pub extern "C" fn abe_resolve_weapon(
+    params: &ResolveWeaponParams,
+    result: &mut ir_lookup::WeaponParams,
+) -> i32 {
+    if !get_state().initialized {
+        return -1;
+    }
+    if params.magic != MAGIC_ABE {
+        return -2;
+    }
+    let class = match CStr::from_bytes_until_nul(&params.class_name) {
+        Ok(s) => s.to_str().unwrap_or(""),
+        Err(_) => "",
+    };
+    if class.is_empty() {
+        return -1;
+    }
+    let res = ir_lookup::resolve_weapon(class, params.caliber_hint);
+    *result = res.params;
+    0
+}
+
+/// Register a weapon override at runtime.
+///
+/// Called by SQF at init time to inject ACE3 or ABO config values
+/// above the built-in IRL lookup table.
+pub extern "C" fn abe_register_override(params: &RegisterOverrideParams) -> i32 {
+    if !get_state().initialized {
+        return -1;
+    }
+    if params.magic != MAGIC_ABE {
+        return -2;
+    }
+    let class = match CStr::from_bytes_until_nul(&params.class_name) {
+        Ok(s) => s.to_str().unwrap_or(""),
+        Err(_) => "",
+    };
+    if class.is_empty() {
+        return -1;
+    }
+    ir_lookup::register_override(class, params.weapon_params);
+    0
 }
 
 // ── Tests ─────────────────────────────────────────────────────────────────────
