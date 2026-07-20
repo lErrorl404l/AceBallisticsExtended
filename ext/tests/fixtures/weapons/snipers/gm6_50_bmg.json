@@ -1,0 +1,12 @@
+{
+  "class": "srifle_GM6_base_F",
+  "caliber_mm": 12.7,
+  "barrel_length_mm": 737.0,
+  "rifling_twist_mm": 381.0,
+  "chamber_pressure_mpa": 379.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 42.0,
+  "muzzle_velocity_ms": 890,
+  "zero_range_m": 100.0,
+  "notes": "IRL: GM6 Lynx .50 BMG."
+}

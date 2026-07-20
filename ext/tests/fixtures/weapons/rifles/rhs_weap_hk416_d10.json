@@ -1,0 +1,13 @@
+{
+  "class": "rhs_weap_hk416_d10",
+  "caliber_mm": 5.56,
+  "barrel_length_mm": 254.0,
+  "rifling_twist_mm": 177.8,
+  "chamber_pressure_mpa": 400,
+  "cdm_id": "g7",
+  "projectile_mass_g": 4.0,
+  "muzzle_velocity_ms": 825,
+  "zero_range_m": 100.0,
+  "effective_range_m": 500,
+  "notes": "IRL: HK416 10.4\"."
+}

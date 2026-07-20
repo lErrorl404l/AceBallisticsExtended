@@ -1,0 +1,25 @@
+{
+  "class": "R_PG7VL_AT",
+  "projectile": {
+    "model": "pg7vl",
+    "mass_g": 2000.0,
+    "caliber_mm": 85.0,
+    "bc_g7": 0.0,
+    "cdm_id": "g7",
+    "source": {
+      "type": "arma_config",
+      "reference": "Arma 3 config. hit=110, caliber=85mm",
+      "methodology": "RPG-7 PG-7VL HEAT round. Warhead diameter 85mm, mass ~2.0 kg. BC is 0 — HEAT round uses custom drag model.",
+      "confidence": "medium"
+    },
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 80.0,
+  "notes": "PG-7VL HEAT. 85mm warhead, 2.0 kg projectile mass."
+}

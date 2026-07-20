@@ -1,0 +1,28 @@
+{
+  "class": "B_762x51_Ball",
+  "projectile": {
+    "model": "m80",
+    "mass_g": 9.65,
+    "caliber_mm": 7.62,
+    "bc_g7": 0.2,
+    "cdm_id": "g7",
+    "fragmentation": {
+      "threshold_vel_ms": 790.0,
+      "avg_fragments": 1,
+      "mass_distribution": "log_normal",
+      "params": {
+        "mean": 0.15,
+        "std": 0.12
+      }
+    },
+    "ricochet_angle_deg": 20.0,
+    "source": {
+      "type": "military_standard",
+      "reference": "APG/US Army BRL G7 BC=0.200 (M80 149gr FMJ, AD0815788, Piddington & Maynard 1966)",
+      "methodology": "Values sourced from US Army Ballistic Research Laboratory (BRL) / Armament Research, Development and Engineering Center (ARDEC) published reports, Doppler radar measurements, or SAAMI/CIP/NATO EPVAT test data.",
+      "confidence": "high"
+    }
+  },
+  "notes": "M80 149-gr FMJ. NATO standard. G7 BC=0.200 per APG/US Army BRL (AD0815788). Frag above 600 m/s. Chamber pressure: 415 MPa.",
+  "chamber_pressure_mpa": 415.0
+}

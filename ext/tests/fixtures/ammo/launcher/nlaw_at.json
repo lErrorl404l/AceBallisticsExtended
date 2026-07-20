@@ -1,0 +1,25 @@
+{
+  "class": "NLAW_F",
+  "projectile": {
+    "model": "nlaw_at",
+    "mass_g": 7000.0,
+    "caliber_mm": 150.0,
+    "bc_g7": 0.0,
+    "cdm_id": "g7",
+    "source": {
+      "type": "arma_config",
+      "reference": "Arma 3 config. hit=120, caliber=150mm",
+      "methodology": "NLAW ATGM. Missile diameter 150mm, mass ~7.0 kg. BC is 0 — ATGM uses custom drag model.",
+      "confidence": "medium"
+    },
+    "fragmentation": null,
+    "frag_mass_mean": null,
+    "frag_mass_std": null,
+    "ricochet_angle_deg": null,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 80.0,
+  "notes": "NLAW ATGM. 150mm warhead, 7.0 kg launch projectile."
+}

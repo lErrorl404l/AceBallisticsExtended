@@ -1,0 +1,19 @@
+{
+  "class": "B_545x39_Ball",
+  "projectile": {
+    "model": "7n6",
+    "mass_g": 3.43,
+    "caliber_mm": 5.45,
+    "bc_g7": 0.168,
+    "cdm_id": "g7",
+    "ricochet_angle_deg": 20.0,
+    "source": {
+      "type": "military_standard",
+      "reference": "US Army BRL G7 BC=0.168 (ARL-TR-5182, 7N6 53gr FMJ, 15th Intl Symposium on Ballistics)",
+      "methodology": "Values sourced from US Army Ballistic Research Laboratory (BRL) / Armament Research, Development and Engineering Center (ARDEC) published reports, Doppler radar measurements, or SAAMI/CIP/NATO EPVAT test data.",
+      "confidence": "high"
+    }
+  },
+  "notes": "7N6M 53-gr FMJ. Steel core, no fragmentation. G7 BC=0.168 per US Army BRL (ARL-TR-5182). Chamber pressure: 355 MPa.",
+  "chamber_pressure_mpa": 355.0
+}

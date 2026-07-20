@@ -1,0 +1,12 @@
+{
+  "class": "rhs_weap_m240B",
+  "caliber_mm": 7.62,
+  "barrel_length_mm": 533.0,
+  "rifling_twist_mm": 304.8,
+  "chamber_pressure_mpa": 415.0,
+  "cdm_id": "g7",
+  "projectile_mass_g": 9.5,
+  "muzzle_velocity_ms": 840,
+  "zero_range_m": 100.0,
+  "notes": "IRL: M240B."
+}

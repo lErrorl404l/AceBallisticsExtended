@@ -1,0 +1,33 @@
+{
+  "class": "B_127x108_Ball",
+  "projectile": {
+    "model": "M33",
+    "mass_g": 42.0,
+    "caliber_mm": 12.7,
+    "bc_g7": 0.34,
+    "cdm_id": "g7",
+    "source": {
+      "type": "military_standard",
+      "reference": "APG G7 BC=0.340 (US ARL, M33 650gr FMJ)",
+      "methodology": "Values sourced from US Army Ballistic Research Laboratory (BRL) / Armament Research, Development and Engineering Center (ARDEC) published reports, Doppler radar measurements, or SAAMI/CIP/NATO EPVAT test data.",
+      "confidence": "high"
+    },
+    "fragmentation": {
+      "threshold_vel_ms": 700.0,
+      "avg_fragments": 15,
+      "mass_distribution": "log_normal",
+      "params": {
+        "mean": 0.15,
+        "std": 0.08
+      }
+    },
+    "frag_mass_mean": 3.0,
+    "frag_mass_std": 1.5,
+    "ricochet_angle_deg": 15.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 360.0,
+  "notes": "Chamber pressure: 360 MPa."
+}

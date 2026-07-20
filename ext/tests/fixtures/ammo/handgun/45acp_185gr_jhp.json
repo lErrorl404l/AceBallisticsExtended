@@ -1,0 +1,25 @@
+{
+  "class": "B_45ACP_JHP",
+  "projectile": {
+    "model": "JHP_185gr",
+    "mass_g": 12.0,
+    "caliber_mm": 11.43,
+    "bc_g7": 0.11,
+    "cdm_id": "g1",
+    "source": {
+      "type": "manufacturer_data",
+      "reference": ".45 ACP 185gr JHP. G1 BC=0.110 (Speer GDHP factory: 0.109-0.112). JHP expansion only — no fragmentation per FBI/IWBA.",
+      "methodology": "Values sourced from manufacturer published ballistic data.",
+      "confidence": "high"
+    },
+    "fragmentation": null,
+    "frag_mass_mean": 0.5,
+    "frag_mass_std": 0.3,
+    "ricochet_angle_deg": 25.0,
+    "tracer_burn_time_s": 0.0,
+    "incendiary": false,
+    "incendiary_ignition_temp_k": 0.0
+  },
+  "chamber_pressure_mpa": 145.0,
+  "notes": "Chamber pressure: 145 MPa."
+}

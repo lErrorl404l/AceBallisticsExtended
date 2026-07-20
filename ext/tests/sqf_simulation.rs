@@ -371,18 +371,24 @@ impl BulletTracker {
 
 macro_rules! weapon {
     ($file:literal) => {{
-        let path = concat!(env!("CARGO_MANIFEST_DIR"), "/../data/weapons/", $file);
+        // ponytail: fixture copied from data/weapons/ before the directory was removed
+        let path = concat!(
+            env!("CARGO_MANIFEST_DIR"),
+            "/tests/fixtures/weapons/",
+            $file
+        );
         load_weapon_from_json(
-            &std::fs::read_to_string(path).expect(concat!("weapon file not found: ", $file)),
+            &std::fs::read_to_string(path).expect(concat!("weapon fixture not found: ", $file)),
         )
     }};
 }
 
 macro_rules! ammo {
     ($file:literal) => {{
-        let path = concat!(env!("CARGO_MANIFEST_DIR"), "/../data/ammo/", $file);
+        // ponytail: fixture copied from data/ammo/ before the directory was removed
+        let path = concat!(env!("CARGO_MANIFEST_DIR"), "/tests/fixtures/ammo/", $file);
         load_ammo_from_json(
-            &std::fs::read_to_string(path).expect(concat!("ammo file not found: ", $file)),
+            &std::fs::read_to_string(path).expect(concat!("ammo fixture not found: ", $file)),
         )
     }};
 }
