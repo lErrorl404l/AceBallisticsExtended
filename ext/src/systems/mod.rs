@@ -2,6 +2,7 @@ pub mod aps;
 pub mod calibration;
 pub mod config;
 pub mod dynamic_armor;
+pub mod ir_lookup;
 pub mod lot_variation;
 pub mod predictive_era;
 pub mod schematics;
