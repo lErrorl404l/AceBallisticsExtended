@@ -208,7 +208,7 @@ print('All C ABI symbols validated.')
           tool: cargo-tarpaulin
       - run: cargo tarpaulin --out Xml --engine llvm --all-features
         working-directory: ${{ env.EXT_SRC }}
-      - uses: codecov/codecov-action@v5
+      - uses: codecov/codecov-action@v7
         with:
           files: ${{ env.EXT_SRC }}/cobertura.xml
           fail_ci_if_error: false
