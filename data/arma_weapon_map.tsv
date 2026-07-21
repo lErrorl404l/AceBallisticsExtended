@@ -1,0 +1,248 @@
+arma_key	weapon_id	match_type	notes
+m4a1	colt_m4a1	exact	Catalog primary key
+m4	colt_m4a1	variant	Catalog alias
+colt_m4	colt_m4a1	variant	Catalog alias
+m4a1_blockii	colt_m4a1_block_ii	exact	Catalog primary key
+m4a1blockii	colt_m4a1_block_ii	variant	Catalog alias
+blockii	colt_m4a1_block_ii	variant	Catalog alias
+m16a4	colt_m16a4	exact	Catalog primary key
+m16	colt_m16a4	variant	Catalog alias
+hk416	heckler_koch_hk416	exact	Catalog primary key
+hk416a5	heckler_koch_hk416a5	exact	Catalog primary key
+hk416a	heckler_koch_hk416a5	variant	Catalog alias
+hk417	heckler_koch_hk417	exact	Catalog primary key
+g36	heckler_koch_g36	exact	Catalog primary key
+g36a2	heckler_koch_g36a2	exact	Catalog primary key
+g36a	heckler_koch_g36a2	variant	Catalog alias
+g3	heckler_koch_g3	exact	Catalog primary key
+hk33	heckler_koch_hk33	exact	Catalog primary key
+hk53	heckler_koch_hk53	exact	Catalog primary key
+scar_l	fn_herstal_scar_l	exact	Catalog primary key
+scar_light	fn_herstal_scar_l	variant	Catalog alias
+mk16	fn_herstal_scar_l	variant	Catalog alias
+scar_h	fn_herstal_scar_h	exact	Catalog primary key
+scar_heavy	fn_herstal_scar_h	variant	Catalog alias
+mk17	fn_herstal_scar_h	variant	Catalog alias
+fal	fn_herstal_fal	exact	Catalog primary key
+fn_fal	fn_herstal_fal	variant	Catalog alias
+f2000	fn_herstal_f2000	exact	Catalog primary key
+fn_f2000	fn_herstal_f2000	variant	Catalog alias
+p90	fn_herstal_p90	exact	Catalog primary key
+fn_p90	fn_herstal_p90	variant	Catalog alias
+aug	steyr_aug	exact	Catalog primary key
+steyr_aug	steyr_aug	variant	Catalog alias
+auga3	steyr_aug_a3	exact	Catalog primary key
+aug_a3	steyr_aug_a3	variant	Catalog alias
+x95	iwi_tavor_x95	exact	Catalog primary key
+tar21	iwi_tavor_x95	variant	Catalog alias
+tavor_x95	iwi_tavor_x95	variant	Catalog alias
+tar_21	iwi_tavor_x95	variant	Catalog alias
+mtar	iwi_tavor_x95	variant	Catalog alias
+mtar21	iwi_tavor_x95	variant	Catalog alias
+galil	iwi_galil_ace	exact	Catalog primary key
+galil_ace	iwi_galil_ace	variant	Catalog alias
+ace_galil	iwi_galil_ace	variant	Catalog alias
+negev	iwi_negev	exact	Catalog primary key
+uzi	imi_uzi	exact	Catalog primary key
+mini_uzi	imi_uzi	variant	Catalog alias
+micro_uzi	imi_uzi	variant	Catalog alias
+microuzi	imi_uzi	variant	Catalog alias
+l85	bae_systems_l85a2	exact	Catalog primary key
+l85a2	bae_systems_l85a2	variant	Catalog alias
+l85a	bae_systems_l85a2	variant	Catalog alias
+l86	bae_systems_l86a2_lsw	exact	Catalog primary key
+l86a2	bae_systems_l86a2_lsw	variant	Catalog alias
+l86a	bae_systems_l86a2_lsw	variant	Catalog alias
+awm	accuracy_internation_awm	exact	Catalog primary key
+l115	accuracy_internation_awm	variant	Catalog alias
+l115a3	accuracy_internation_awm	variant	Catalog alias
+a_i_awm	accuracy_internation_awm	variant	Catalog alias
+aw	accuracy_internation_aw	exact	Catalog primary key
+l118	accuracy_internation_aw	variant	Catalog alias
+l96	accuracy_internation_aw	variant	Catalog alias
+ax50	accuracy_internation_ax50	exact	Catalog primary key
+ax_50	accuracy_internation_ax50	variant	Catalog alias
+l129	lewis_machine_tool_l129a1	exact	Catalog primary key
+l129a1	lewis_machine_tool_l129a1	variant	Catalog alias
+lmt	lewis_machine_tool_l129a1	variant	Catalog alias
+ak74m	kalashnikov_concern_ak_74m	exact	Catalog primary key
+ak74	kalashnikov_concern_ak_74m	variant	Catalog alias
+ak74	kalashnikov_concern_ak_74	exact	Catalog primary key
+ak47	kalashnikov_concern_ak_47	exact	Catalog primary key
+akm	kalashnikov_concern_akm	exact	Catalog primary key
+ak103	kalashnikov_concern_ak_103	exact	Catalog primary key
+ak105	kalashnikov_concern_ak_105	exact	Catalog primary key
+ak10	kalashnikov_concern_ak_105	variant	Catalog alias
+ak12	kalashnikov_concern_ak_12	exact	Catalog primary key
+rpk74	kalashnikov_concern_rpk_74	exact	Catalog primary key
+rpk	kalashnikov_concern_rpk_74	variant	Catalog alias
+pkm	kalashnikov_concern_pkm	exact	Catalog primary key
+pk_base	kalashnikov_concern_pkm	variant	Catalog alias
+pkp	kalashnikov_concern_pkm	variant	Catalog alias
+pkp	kalashnikov_concern_pkp_pecheneg	exact	Catalog primary key
+pecheneg	kalashnikov_concern_pkp_pecheneg	variant	Catalog alias
+sv98	tula_arms_plant_sv_98	exact	Catalog primary key
+sv_98	tula_arms_plant_sv_98	variant	Catalog alias
+rpk16	degtyaryov_plant_rpk_16	exact	Catalog primary key
+rpk_16	degtyaryov_plant_rpk_16	variant	Catalog alias
+svd	izhmash_svd_dragunov	exact	Catalog primary key
+dragunov	izhmash_svd_dragunov	variant	Catalog alias
+svds	izhmash_svds	exact	Catalog primary key
+vss	tskib_soo_vss_vintorez	exact	Catalog primary key
+vintorez	tskib_soo_vss_vintorez	variant	Catalog alias
+asval	tskib_soo_as_val	exact	Catalog primary key
+as_val	tskib_soo_as_val	variant	Catalog alias
+bizon	kbp_pp_19_bizon	exact	Catalog primary key
+pp19	kbp_pp_19_bizon	variant	Catalog alias
+pp_bizon	kbp_pp_19_bizon	variant	Catalog alias
+rpk_74	zavod_imeni_degtyary_rpk_74m	exact	Catalog primary key
+rpk_74m	zavod_imeni_degtyary_rpk_74m	variant	Catalog alias
+glock17	glock_glock_17	exact	Catalog primary key
+g17	glock_glock_17	variant	Catalog alias
+glock18	glock_glock_18	exact	Catalog primary key
+g18	glock_glock_18	variant	Catalog alias
+glock19	glock_glock_19	exact	Catalog primary key
+g19	glock_glock_19	variant	Catalog alias
+p226	sig_sauer_p226	exact	Catalog primary key
+sig_p226	sig_sauer_p226	variant	Catalog alias
+p320	sig_sauer_p320	exact	Catalog primary key
+sig_p320	sig_sauer_p320	variant	Catalog alias
+p229	sig_sauer_p229	exact	Catalog primary key
+sig_p229	sig_sauer_p229	variant	Catalog alias
+p220	sig_sauer_p220	exact	Catalog primary key
+sig_p220	sig_sauer_p220	variant	Catalog alias
+mcx	sig_sauer_mcx	exact	Catalog primary key
+sig_mcx	sig_sauer_mcx	variant	Catalog alias
+usp	heckler_koch_usp	exact	Catalog primary key
+hk_usp	heckler_koch_usp	variant	Catalog alias
+mk23	heckler_koch_mk23	exact	Catalog primary key
+hk_mk23	heckler_koch_mk23	variant	Catalog alias
+p7	heckler_koch_p7	exact	Catalog primary key
+hk_p7	heckler_koch_p7	variant	Catalog alias
+m9	beretta_m9	exact	Catalog primary key
+beretta_m9	beretta_m9	variant	Catalog alias
+m9a1	beretta_m9	variant	Catalog alias
+m9a3	beretta_m9a3	exact	Catalog primary key
+fnx45	fn_herstal_fnx_45	exact	Catalog primary key
+fnx_45	fn_herstal_fnx_45	variant	Catalog alias
+fnx	fn_herstal_fnx_45	variant	Catalog alias
+57	fn_herstal_five_seven	exact	Catalog primary key
+five_seven	fn_herstal_five_seven	variant	Catalog alias
+fn57	fn_herstal_five_seven	variant	Catalog alias
+fn_57	fn_herstal_five_seven	variant	Catalog alias
+mnp	smith_wesson_m_p	exact	Catalog primary key
+mn_p	smith_wesson_m_p	variant	Catalog alias
+mp5	heckler_koch_mp5	exact	Catalog primary key
+mp7	heckler_koch_mp7	exact	Catalog primary key
+ump	heckler_koch_ump_45	exact	Catalog primary key
+ump45	heckler_koch_ump_45	variant	Catalog alias
+ump_45	heckler_koch_ump_45	variant	Catalog alias
+mp5k	heckler_koch_mp5k	exact	Catalog primary key
+mp5_k	heckler_koch_mp5k	variant	Catalog alias
+mp5sd	heckler_koch_mp5sd	exact	Catalog primary key
+mp5_sd	heckler_koch_mp5sd	variant	Catalog alias
+mp9	br_gger_thomet_mp9	exact	Catalog primary key
+tp9	br_gger_thomet_mp9	variant	Catalog alias
+apc9	br_gger_thomet_apc9	exact	Catalog primary key
+apc_pro	br_gger_thomet_apc9	variant	Catalog alias
+pdr	magpul_pdr	exact	Catalog primary key
+magpul_pdr	magpul_pdr	variant	Catalog alias
+fort221	rpc_fort_fort_221	exact	Catalog primary key
+fort_221	rpc_fort_fort_221	variant	Catalog alias
+mac10	mac_mac_10	exact	Catalog primary key
+mac11	mac_mac_11	exact	Catalog primary key
+mac_11	mac_mac_11	variant	Catalog alias
+m870	remington_m870	exact	Catalog primary key
+remington_870	remington_m870	variant	Catalog alias
+m1014	benelli_m1014	exact	Catalog primary key
+benelli_m4	benelli_m1014	variant	Catalog alias
+spas12	franchi_spas_12	exact	Catalog primary key
+m590	mossberg_m590	exact	Catalog primary key
+m82	barrett_m82_m107	exact	Catalog primary key
+m107	barrett_m82_m107	variant	Catalog alias
+barrett_m82	barrett_m82_m107	variant	Catalog alias
+barrett_m107	barrett_m82_m107	variant	Catalog alias
+m95	barrett_m95	exact	Catalog primary key
+barrett_m95	barrett_m95	variant	Catalog alias
+mrad	barrett_mrad	exact	Catalog primary key
+barrett_mrad	barrett_mrad	variant	Catalog alias
+m24	remington_m24	exact	Catalog primary key
+m40a5	remington_m40a5	exact	Catalog primary key
+m40	remington_m40a5	variant	Catalog alias
+m2010	remington_m2010	exact	Catalog primary key
+m700	remington_m700	exact	Catalog primary key
+remington_700	remington_m700	variant	Catalog alias
+r700	remington_m700	variant	Catalog alias
+tac50	mcmillan_tac_50	exact	Catalog primary key
+tac_50	mcmillan_tac_50	variant	Catalog alias
+ssg69	steyr_ssg_69	exact	Catalog primary key
+ssg_69	steyr_ssg_69	variant	Catalog alias
+m110	knight_s_armament_m110	exact	Catalog primary key
+kac_m110	knight_s_armament_m110	variant	Catalog alias
+sr25	knight_s_armament_sr_25	exact	Catalog primary key
+kac_sr25	knight_s_armament_sr_25	variant	Catalog alias
+mk11	knight_s_armament_mk_11	exact	Catalog primary key
+trg22	sako_trg_22	exact	Catalog primary key
+sako_trg	sako_trg_22	variant	Catalog alias
+trg	sako_trg_22	variant	Catalog alias
+sako_trg22	sako_trg_22	variant	Catalog alias
+trg42	sako_trg_42	exact	Catalog primary key
+sako_trg42	sako_trg_42	variant	Catalog alias
+hecate	pgm_h_cate_ii	exact	Catalog primary key
+pgm_hecate	pgm_h_cate_ii	variant	Catalog alias
+msg90	heckler_koch_msg90	exact	Catalog primary key
+msg_90	heckler_koch_msg90	variant	Catalog alias
+psg1	heckler_koch_psg1	exact	Catalog primary key
+srs	desert_tactical_srs_stealth_recon_scout	exact	Catalog primary key
+dt_srs	desert_tactical_srs_stealth_recon_scout	variant	Catalog alias
+srs_covert	desert_tactical_srs_stealth_recon_scout	variant	Catalog alias
+m200	cheytac_m200_intervention	exact	Catalog primary key
+intervention	cheytac_m200_intervention	variant	Catalog alias
+cheytac	cheytac_m200_intervention	variant	Catalog alias
+m249	fn_herstal_minimi_m249	exact	Catalog primary key
+minimi	fn_herstal_minimi_m249	variant	Catalog alias
+fn_minimi	fn_herstal_minimi_m249	variant	Catalog alias
+m240	fn_herstal_mag_m240	exact	Catalog primary key
+fn_mag	fn_herstal_mag_m240	variant	Catalog alias
+mg4	heckler_koch_mg4	exact	Catalog primary key
+hk_mg4	heckler_koch_mg4	variant	Catalog alias
+mg5	heckler_koch_mg5	exact	Catalog primary key
+hk_mg5	heckler_koch_mg5	variant	Catalog alias
+mg3	rheinmetall_mg3	exact	Catalog primary key
+mg338	sig_mg_338	exact	Catalog primary key
+sig_mg338	sig_mg_338	variant	Catalog alias
+m249_para	aai_corporation_m249_para	exact	Catalog primary key
+m249para	aai_corporation_m249_para	variant	Catalog alias
+nsv	russian_federation_nsv_utes	exact	Catalog primary key
+utes	russian_federation_nsv_utes	variant	Catalog alias
+kord	russian_federation_kord	exact	Catalog primary key
+m2	browning_m2hb	exact	Catalog primary key
+browning_m2	browning_m2hb	variant	Catalog alias
+m2hb	browning_m2hb	variant	Catalog alias
+carl_gustaf	saab_bofors_dynamics_carl_gustaf_m3	exact	Catalog primary key
+m3_maaw	saab_bofors_dynamics_carl_gustaf_m3	variant	Catalog alias
+maaw	saab_bofors_dynamics_carl_gustaf_m3	variant	Catalog alias
+carl_gustaf_m4	saab_bofors_dynamics_carl_gustaf_m4	exact	Catalog primary key
+rpg7	rpg_concern_rpg_7	exact	Catalog primary key
+rpg_7	rpg_concern_rpg_7	variant	Catalog alias
+rpg18	rpg_concern_rpg_18	exact	Catalog primary key
+rpg_18	rpg_concern_rpg_18	variant	Catalog alias
+rpg26	rpg_concern_rpg_26	exact	Catalog primary key
+rpg_26	rpg_concern_rpg_26	variant	Catalog alias
+rpg32	rpg_concern_rpg_32	exact	Catalog primary key
+rpg_32	rpg_concern_rpg_32	variant	Catalog alias
+rpo_a	rgs_rpo_a_shmel	exact	Catalog primary key
+shmel	rgs_rpo_a_shmel	variant	Catalog alias
+strela	tula_kbp_9k32_strela_2	exact	Catalog primary key
+9k32	tula_kbp_9k32_strela_2	variant	Catalog alias
+stinger	mbda_fim_92_stinger	exact	Catalog primary key
+fim92	mbda_fim_92_stinger	variant	Catalog alias
+javelin	raytheon_fgm_148_javelin	exact	Catalog primary key
+fgm148	raytheon_fgm_148_javelin	variant	Catalog alias
+fgm_148	raytheon_fgm_148_javelin	variant	Catalog alias
+m136	raytheon_m136_at4	exact	Catalog primary key
+at4	raytheon_m136_at4	variant	Catalog alias
+m72_law	nammo_m72_law	exact	Catalog primary key
+m72	nammo_m72_law	variant	Catalog alias
+m79	dynamit_nobel_m79_osa	exact	Catalog primary key
+osa	dynamit_nobel_m79_osa	variant	Catalog alias
