@@ -1,77 +1,77 @@
 weapon_id	manufacturer	model	variant	cartridge	caliber_mm	barrel_mm	twist_mm	twist_dir	pressure_mpa	projectile_mass_g	muzzle_velocity_ms	source	confidence
-colt_m4a1	Colt	M4A1	Assault Rifle	5.56×45mm NATO	5.56	368	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-colt_m4a1_block_ii	Colt	M4A1 Block II	Assault Rifle	5.56×45mm NATO	5.56	368	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-colt_m16a4	Colt	M16A4	Assault Rifle	5.56×45mm NATO	5.56	508	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-heckler_koch_hk416	Heckler & Koch	HK416	Assault Rifle	5.56×45mm NATO	5.56	368	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-heckler_koch_hk416a5	Heckler & Koch	HK416A5	Assault Rifle	5.56×45mm NATO	5.56	368	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-heckler_koch_hk417	Heckler & Koch	HK417	Sniper Rifle	7.62×51mm NATO	7.62	419	279	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-heckler_koch_g36	Heckler & Koch	G36	Assault Rifle	5.56×45mm NATO	5.56	480	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-heckler_koch_g36a2	Heckler & Koch	G36A2	Assault Rifle	5.56×45mm NATO	5.56	480	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-heckler_koch_g3	Heckler & Koch	G3	Sniper Rifle	7.62×51mm NATO	7.62	450	305	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-heckler_koch_hk33	Heckler & Koch	HK33	Assault Rifle	5.56×45mm NATO	5.56	390	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-heckler_koch_hk53	Heckler & Koch	HK53	Assault Rifle	5.56×45mm NATO	5.56	211	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-fn_herstal_scar_l	FN Herstal	SCAR-L	Assault Rifle	5.56×45mm NATO	5.56	355	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-fn_herstal_scar_h	FN Herstal	SCAR-H	Sniper Rifle	7.62×51mm NATO	7.62	406	279	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-fn_herstal_fal	FN Herstal	FAL	Sniper Rifle	7.62×51mm NATO	7.62	533	305	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-fn_herstal_f2000	FN Herstal	F2000	Assault Rifle	5.56×45mm NATO	5.56	400	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
+colt_m4a1	Colt	M4A1	Assault Rifle	5.56×45mm NATO	5.56	368	178	1	430	4.0	862	researched (NATO EPVAT/M855)	researched
+colt_m4a1_block_ii	Colt	M4A1 Block II	Assault Rifle	5.56×45mm NATO	5.56	368	178	1	430	4.0	862	researched (NATO EPVAT/M855)	researched
+colt_m16a4	Colt	M16A4	Assault Rifle	5.56×45mm NATO	5.56	508	178	1	430	4.0	940	researched (NATO EPVAT/M855)	researched
+heckler_koch_hk416	Heckler & Koch	HK416	Assault Rifle	5.56×45mm NATO	5.56	368	178	1	430	4.0	862	researched (NATO EPVAT/M855)	researched
+heckler_koch_hk416a5	Heckler & Koch	HK416A5	Assault Rifle	5.56×45mm NATO	5.56	368	178	1	430	4.0	862	researched (NATO EPVAT/M855)	researched
+heckler_koch_hk417	Heckler & Koch	HK417	Sniper Rifle	7.62×51mm NATO	7.62	419	279	1	427	9.5	785	researched (SAAMI .308/M80)	researched
+heckler_koch_g36	Heckler & Koch	G36	Assault Rifle	5.56×45mm NATO	5.56	480	178	1	430	4.0	932	researched (NATO EPVAT/M855)	researched
+heckler_koch_g36a2	Heckler & Koch	G36A2	Assault Rifle	5.56×45mm NATO	5.56	480	178	1	430	4.0	932	researched (NATO EPVAT/M855)	researched
+heckler_koch_g3	Heckler & Koch	G3	Sniper Rifle	7.62×51mm NATO	7.62	450	305	1	427	9.5	798	researched (SAAMI .308/M80)	researched
+heckler_koch_hk33	Heckler & Koch	HK33	Assault Rifle	5.56×45mm NATO	5.56	390	178	1	430	4.0	878	researched (NATO EPVAT/M855)	researched
+heckler_koch_hk53	Heckler & Koch	HK53	Assault Rifle	5.56×45mm NATO	5.56	211	178	1	430	4.0	723	researched (NATO EPVAT/M855)	researched
+fn_herstal_scar_l	FN Herstal	SCAR-L	Assault Rifle	5.56×45mm NATO	5.56	355	178	1	430	4.0	855	researched (NATO EPVAT/M855)	researched
+fn_herstal_scar_h	FN Herstal	SCAR-H	Sniper Rifle	7.62×51mm NATO	7.62	406	279	1	427	9.5	780	researched (SAAMI .308/M80)	researched
+fn_herstal_fal	FN Herstal	FAL	Sniper Rifle	7.62×51mm NATO	7.62	533	305	1	427	9.5	830	researched (SAAMI .308/M80)	researched
+fn_herstal_f2000	FN Herstal	F2000	Assault Rifle	5.56×45mm NATO	5.56	400	178	1	430	4.0	886	researched (NATO EPVAT/M855)	researched
 fn_herstal_p90	FN Herstal	P90	Submachine Gun	5.7×28mm	5.7	264	231	1	345	2.0	715	researched (CIP/SS190)	researched
-steyr_aug	Steyr	AUG	Assault Rifle	5.56×45mm NATO	5.56	508	229	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-steyr_aug_a3	Steyr	AUG A3	Assault Rifle	5.56×45mm NATO	5.56	417	229	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-iwi_tavor_x95	IWI	Tavor X95	Assault Rifle	5.56×45mm NATO	5.56	330	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-iwi_galil_ace	IWI	Galil ACE	Assault Rifle	5.56×45mm NATO	5.56	419	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-iwi_negev	IWI	Negev	Light Machine Gun	5.56×45mm NATO	5.56	460	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-imi_uzi	IMI	Uzi	Submachine Gun	9×19mm Parabellum	9.01	260	254	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
-bae_systems_l85a2	BAE Systems	L85A2	Assault Rifle	5.56×45mm NATO	5.56	518	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-bae_systems_l86a2_lsw	BAE Systems	L86A2 LSW	Light Machine Gun	5.56×45mm NATO	5.56	646	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-accuracy_internation_awm	Accuracy International	AWM	Sniper Rifle	.338 Lapua Magnum	8.58	686	279	1	420	16.2	900	researched (CIP/250gr)	researched
-accuracy_internation_aw	Accuracy International	AW	Sniper Rifle	7.62×51mm NATO	7.62	660	305	1	427	9.5	856	researched (SAAMI .308/M80)	researched
+steyr_aug	Steyr	AUG	Assault Rifle	5.56×45mm NATO	5.56	508	229	1	430	4.0	940	researched (NATO EPVAT/M855)	researched
+steyr_aug_a3	Steyr	AUG A3	Assault Rifle	5.56×45mm NATO	5.56	417	229	1	430	4.0	897	researched (NATO EPVAT/M855)	researched
+iwi_tavor_x95	IWI	Tavor X95	Assault Rifle	5.56×45mm NATO	5.56	330	178	1	430	4.0	821	researched (NATO EPVAT/M855)	researched
+iwi_galil_ace	IWI	Galil ACE	Assault Rifle	5.56×45mm NATO	5.56	419	178	1	430	4.0	898	researched (NATO EPVAT/M855)	researched
+iwi_negev	IWI	Negev	Light Machine Gun	5.56×45mm NATO	5.56	460	178	1	430	4.0	922	researched (NATO EPVAT/M855)	researched
+imi_uzi	IMI	Uzi	Submachine Gun	9×19mm Parabellum	9.01	260	254	1	235	8.0	398	researched (CIP/124gr FMJ)	researched
+bae_systems_l85a2	BAE Systems	L85A2	Assault Rifle	5.56×45mm NATO	5.56	518	178	1	430	4.0	943	researched (NATO EPVAT/M855)	researched
+bae_systems_l86a2_lsw	BAE Systems	L86A2 LSW	Light Machine Gun	5.56×45mm NATO	5.56	646	178	1	430	4.0	981	researched (NATO EPVAT/M855)	researched
+accuracy_internation_awm	Accuracy International	AWM	Sniper Rifle	.338 Lapua Magnum	8.58	686	279	1	420	16.2	905	researched (CIP/250gr)	researched
+accuracy_internation_aw	Accuracy International	AW	Sniper Rifle	7.62×51mm NATO	7.62	660	305	1	427	9.5	862	researched (SAAMI .308/M80)	researched
 accuracy_internation_ax50	Accuracy International	AX50	Sniper Rifle	12.7×99mm NATO (.50 BMG)	12.7	686	381	1	379	42.8	860	researched (TM43/M33)	researched
-lewis_machine_tool_l129a1	Lewis Machine & Tool	L129A1	Sniper Rifle	7.62×51mm NATO	7.62	406	286	1	427	9.5	856	researched (SAAMI .308/M80)	researched
+lewis_machine_tool_l129a1	Lewis Machine & Tool	L129A1	Sniper Rifle	7.62×51mm NATO	7.62	406	286	1	427	9.5	780	researched (SAAMI .308/M80)	researched
 kalashnikov_concern_ak_74m	Kalashnikov Concern	AK-74M	Assault Rifle	5.45×39mm	5.45	415	200	1	355	3.4	880	researched (CIP/7N6)	researched
 kalashnikov_concern_ak_74	Kalashnikov Concern	AK-74	Assault Rifle	5.45×39mm	5.45	415	200	1	355	3.4	880	researched (CIP/7N6)	researched
 kalashnikov_concern_ak_47	Kalashnikov Concern	AK-47	Assault Rifle	7.62×39mm	7.62	415	240	1	355	8.0	710	researched (CIP/M43)	researched
 kalashnikov_concern_akm	Kalashnikov Concern	AKM	Assault Rifle	7.62×39mm	7.62	415	240	1	355	8.0	710	researched (CIP/M43)	researched
 kalashnikov_concern_ak_103	Kalashnikov Concern	AK-103	Assault Rifle	7.62×39mm	7.62	415	240	1	355	8.0	710	researched (CIP/M43)	researched
-kalashnikov_concern_ak_105	Kalashnikov Concern	AK-105	Assault Rifle	5.45×39mm	5.45	314	200	1	355	3.4	880	researched (CIP/7N6)	researched
+kalashnikov_concern_ak_105	Kalashnikov Concern	AK-105	Assault Rifle	5.45×39mm	5.45	314	200	1	355	3.4	850	researched (CIP/7N6)	researched
 kalashnikov_concern_ak_12	Kalashnikov Concern	AK-12	Assault Rifle	5.45×39mm	5.45	415	200	1	355	3.4	880	researched (CIP/7N6)	researched
-kalashnikov_concern_rpk_74	Kalashnikov Concern	RPK-74	Light Machine Gun	5.45×39mm	5.45	590	200	1	355	3.4	880	researched (CIP/7N6)	researched
-kalashnikov_concern_pkm	Kalashnikov Concern	PKM	Light Machine Gun	7.62×51mm NATO	7.62	645	240	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-kalashnikov_concern_pkp_pecheneg	Kalashnikov Concern	PKP Pecheneg	Light Machine Gun	7.62×51mm NATO	7.62	658	240	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-tula_arms_plant_sv_98	Tula Arms Plant	SV-98	Sniper Rifle	7.62×51mm NATO	7.62	650	320	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-degtyaryov_plant_rpk_16	Degtyaryov Plant	RPK-16	Light Machine Gun	5.45×39mm	5.45	550	200	1	355	3.4	880	researched (CIP/7N6)	researched
-izhmash_svd_dragunov	Izhmash	SVD Dragunov	Sniper Rifle	7.62×51mm NATO	7.62	620	320	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-izhmash_svds	Izhmash	SVDS	Sniper Rifle	7.62×51mm NATO	7.62	565	320	1	427	9.5	856	researched (SAAMI .308/M80)	researched
+kalashnikov_concern_rpk_74	Kalashnikov Concern	RPK-74	Light Machine Gun	5.45×39mm	5.45	590	200	1	355	3.4	895	researched (CIP/7N6)	researched
+kalashnikov_concern_pkm	Kalashnikov Concern	PKM	Light Machine Gun	7.62×54mmR	7.62	645	240	1	390	9.6	825	researched (CIP/57-N-323S)	researched
+kalashnikov_concern_pkp_pecheneg	Kalashnikov Concern	PKP Pecheneg	Light Machine Gun	7.62×54mmR	7.62	658	240	1	390	9.6	828	researched (CIP/57-N-323S)	researched
+tula_arms_plant_sv_98	Tula Arms Plant	SV-98	Sniper Rifle	7.62×51mm NATO	7.62	650	320	1	427	9.5	860	researched (SAAMI .308/M80)	researched
+degtyaryov_plant_rpk_16	Degtyaryov Plant	RPK-16	Light Machine Gun	5.45×39mm	5.45	550	200	1	355	3.4	890	researched (CIP/7N6)	researched
+izhmash_svd_dragunov	Izhmash	SVD Dragunov	Sniper Rifle	7.62×54mmR	7.62	620	320	1	390	9.6	830	researched (CIP/7N1)	researched
+izhmash_svds	Izhmash	SVDS	Sniper Rifle	7.62×54mmR	7.62	565	320	1	390	9.6	810	researched (CIP/7N1)	researched
 tskib_soo_vss_vintorez	TsKIB SOO	VSS Vintorez	Sniper Rifle	9×39mm	9.0	200	250	1	355	16.8	290	researched (CIP/SP-5)	researched
 tskib_soo_as_val	TsKIB SOO	AS Val	Assault Rifle	9×39mm	9.0	200	250	1	355	16.8	290	researched (CIP/SP-5)	researched
-kbp_pp_19_bizon	KBP	PP-19 Bizon	Submachine Gun	9×19mm Parabellum	9.01	225	240	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
-zavod_imeni_degtyary_rpk_74m	Zavod imeni Degtyaryova	RPK-74M	Light Machine Gun	5.45×39mm	5.45	590	200	1	355	3.4	880	researched (CIP/7N6)	researched
-glock_glock_17	Glock	Glock 17	Pistol	9×19mm Parabellum	9.01	114	250	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
-glock_glock_18	Glock	Glock 18	Pistol	9×19mm Parabellum	9.01	114	250	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
-glock_glock_19	Glock	Glock 19	Pistol	9×19mm Parabellum	9.01	102	250	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
-sig_sauer_p226	Sig Sauer	P226	Pistol	9×19mm Parabellum	9.01	112	250	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
-sig_sauer_p320	Sig Sauer	P320	Pistol	9×19mm Parabellum	9.01	120	250	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
-sig_sauer_p229	Sig Sauer	P229	Pistol	9×19mm Parabellum	9.01	99	250	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
+kbp_pp_19_bizon	KBP	PP-19 Bizon	Submachine Gun	9×19mm Parabellum	9.01	225	240	1	235	8.0	390	researched (CIP/124gr FMJ)	researched
+zavod_imeni_degtyary_rpk_74m	Zavod imeni Degtyaryova	RPK-74M	Light Machine Gun	5.45×39mm	5.45	590	200	1	355	3.4	895	researched (CIP/7N6)	researched
+glock_glock_17	Glock	Glock 17	Pistol	9×19mm Parabellum	9.01	114	250	1	235	8.0	355	researched (CIP/124gr FMJ)	researched
+glock_glock_18	Glock	Glock 18	Pistol	9×19mm Parabellum	9.01	114	250	1	235	8.0	355	researched (CIP/124gr FMJ)	researched
+glock_glock_19	Glock	Glock 19	Pistol	9×19mm Parabellum	9.01	102	250	1	235	8.0	345	researched (CIP/124gr FMJ)	researched
+sig_sauer_p226	Sig Sauer	P226	Pistol	9×19mm Parabellum	9.01	112	250	1	235	8.0	352	researched (CIP/124gr FMJ)	researched
+sig_sauer_p320	Sig Sauer	P320	Pistol	9×19mm Parabellum	9.01	120	250	1	235	8.0	358	researched (CIP/124gr FMJ)	researched
+sig_sauer_p229	Sig Sauer	P229	Pistol	9×19mm Parabellum	9.01	99	250	1	235	8.0	340	researched (CIP/124gr FMJ)	researched
 sig_sauer_p220	Sig Sauer	P220	Pistol	.45 ACP	11.43	112	406	1	145	15.0	255	researched (SAAMI/230gr ball)	researched
-sig_sauer_mcx	Sig Sauer	MCX	Assault Rifle	5.56×45mm NATO	5.56	406	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-heckler_koch_usp	Heckler & Koch	USP	Pistol	9×19mm Parabellum	9.01	108	250	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
-heckler_koch_mk23	Heckler & Koch	Mk23	Pistol	.45 ACP	11.43	149	378	1	145	15.0	255	researched (SAAMI/230gr ball)	researched
-heckler_koch_p7	Heckler & Koch	P7	Pistol	9×19mm Parabellum	9.01	105	250	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
+sig_sauer_mcx	Sig Sauer	MCX	Assault Rifle	5.56×45mm NATO	5.56	406	178	1	430	4.0	890	researched (NATO EPVAT/M855)	researched
+heckler_koch_usp	Heckler & Koch	USP	Pistol	9×19mm Parabellum	9.01	108	250	1	235	8.0	350	researched (CIP/124gr FMJ)	researched
+heckler_koch_mk23	Heckler & Koch	Mk23	Pistol	.45 ACP	11.43	149	378	1	145	15.0	265	researched (SAAMI/230gr ball)	researched
+heckler_koch_p7	Heckler & Koch	P7	Pistol	9×19mm Parabellum	9.01	105	250	1	235	8.0	348	researched (CIP/124gr FMJ)	researched
 beretta_m9	Beretta	M9	Pistol	9×19mm Parabellum	9.01	125	250	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
 beretta_m9a3	Beretta	M9A3	Pistol	9×19mm Parabellum	9.01	125	250	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
-fn_herstal_fnx_45	FN Herstal	FNX-45	Pistol	.45 ACP	11.43	114	406	1	145	15.0	255	researched (SAAMI/230gr ball)	researched
+fn_herstal_fnx_45	FN Herstal	FNX-45	Pistol	.45 ACP	11.43	114	406	1	145	15.0	257	researched (SAAMI/230gr ball)	researched
 fn_herstal_five_seven	FN Herstal	Five-seveN	Pistol	5.7×28mm	5.7	122	231	1	345	2.0	715	researched (CIP/SS190)	researched
-smith_wesson_m_p	Smith & Wesson	M&P	Pistol	9×19mm Parabellum	9.01	108	254	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
-heckler_koch_mp5	Heckler & Koch	MP5	Submachine Gun	9×19mm Parabellum	9.01	225	250	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
+smith_wesson_m_p	Smith & Wesson	M&P	Pistol	9×19mm Parabellum	9.01	108	254	1	235	8.0	350	researched (CIP/124gr FMJ)	researched
+heckler_koch_mp5	Heckler & Koch	MP5	Submachine Gun	9×19mm Parabellum	9.01	225	250	1	235	8.0	390	researched (CIP/124gr FMJ)	researched
 heckler_koch_mp7	Heckler & Koch	MP7	Submachine Gun	4.6×30mm	4.6	180	160	1	400	1.9	725	researched (CIP/DM11)	researched
-heckler_koch_ump_45	Heckler & Koch	UMP-45	Submachine Gun	.45 ACP	11.43	200	406	1	145	15.0	255	researched (SAAMI/230gr ball)	researched
-heckler_koch_mp5k	Heckler & Koch	MP5K	Submachine Gun	9×19mm Parabellum	9.01	115	250	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
-heckler_koch_mp5sd	Heckler & Koch	MP5SD	Submachine Gun	9×19mm Parabellum	9.01	146	250	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
-br_gger_thomet_mp9	Brügger & Thomet	MP9	Submachine Gun	9×19mm Parabellum	9.01	130	250	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
-br_gger_thomet_apc9	Brügger & Thomet	APC9	Submachine Gun	9×19mm Parabellum	9.01	175	250	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
-magpul_pdr	MAGPUL	PDR	Submachine Gun	5.56×45mm NATO	5.56	267	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-rpc_fort_fort_221	RPC Fort	Fort-221	Submachine Gun	9×19mm Parabellum	9.01	468	178	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
-mac_mac_10	MAC	MAC-10	Submachine Gun	.45 ACP	11.43	146	406	1	145	15.0	255	researched (SAAMI/230gr ball)	researched
-mac_mac_11	MAC	MAC-11	Submachine Gun	9×19mm Parabellum	9.01	133	254	1	235	8.0	360	researched (CIP/124gr FMJ)	researched
+heckler_koch_ump_45	Heckler & Koch	UMP-45	Submachine Gun	.45 ACP	11.43	200	406	1	145	15.0	268	researched (SAAMI/230gr ball)	researched
+heckler_koch_mp5k	Heckler & Koch	MP5K	Submachine Gun	9×19mm Parabellum	9.01	115	250	1	235	8.0	356	researched (CIP/124gr FMJ)	researched
+heckler_koch_mp5sd	Heckler & Koch	MP5SD	Submachine Gun	9×19mm Parabellum	9.01	146	250	1	235	8.0	368	researched (CIP/124gr FMJ)	researched
+br_gger_thomet_mp9	Brügger & Thomet	MP9	Submachine Gun	9×19mm Parabellum	9.01	130	250	1	235	8.0	362	researched (CIP/124gr FMJ)	researched
+br_gger_thomet_apc9	Brügger & Thomet	APC9	Submachine Gun	9×19mm Parabellum	9.01	175	250	1	235	8.0	375	researched (CIP/124gr FMJ)	researched
+magpul_pdr	MAGPUL	PDR	Submachine Gun	5.56×45mm NATO	5.56	267	178	1	430	4.0	770	researched (NATO EPVAT/M855)	researched
+rpc_fort_fort_221	RPC Fort	Fort-221	Submachine Gun	9×19mm Parabellum	9.01	468	178	1	235	8.0	420	researched (CIP/124gr FMJ)	researched
+mac_mac_10	MAC	MAC-10	Submachine Gun	.45 ACP	11.43	146	406	1	145	15.0	264	researched (SAAMI/230gr ball)	researched
+mac_mac_11	MAC	MAC-11	Submachine Gun	9×19mm Parabellum	9.01	133	254	1	235	8.0	364	researched (CIP/124gr FMJ)	researched
 remington_m870	Remington	M870	Shotgun	12 Gauge	12.0	470	0	0	0	28.0	480	researched (SAAMI/1oz slug)	researched
 benelli_m1014	Benelli	M1014	Shotgun	12 Gauge	12.0	470	0	0	0	28.0	480	researched (SAAMI/1oz slug)	researched
 franchi_spas_12	Franchi	SPAS-12	Shotgun	12 Gauge	12.0	457	0	0	0	28.0	480	researched (SAAMI/1oz slug)	researched
@@ -79,65 +79,78 @@ mossberg_m590	Mossberg	M590	Shotgun	12 Gauge	12.0	508	0	0	0	28.0	480	researched 
 barrett_m82_m107	Barrett	M82 (M107)	Sniper Rifle	12.7×99mm NATO (.50 BMG)	12.7	737	381	1	379	42.8	860	researched (TM43/M33)	researched
 barrett_m95	Barrett	M95	Sniper Rifle	12.7×99mm NATO (.50 BMG)	12.7	737	381	1	379	42.8	860	researched (TM43/M33)	researched
 barrett_mrad	Barrett	MRAD	Sniper Rifle	.338 Lapua Magnum	8.58	660	240	1	420	16.2	900	researched (CIP/250gr)	researched
-remington_m24	Remington	M24	Sniper Rifle	7.62×51mm NATO	7.62	610	286	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-remington_m40a5	Remington	M40A5	Sniper Rifle	7.62×51mm NATO	7.62	635	305	1	427	9.5	856	researched (SAAMI .308/M80)	researched
+remington_m24	Remington	M24	Sniper Rifle	7.62×51mm NATO	7.62	610	286	1	427	9.5	853	researched (SAAMI .308/M80)	researched
+remington_m40a5	Remington	M40A5	Sniper Rifle	7.62×51mm NATO	7.62	635	305	1	427	9.5	858	researched (SAAMI .308/M80)	researched
 remington_m2010	Remington	M2010	Sniper Rifle	.300 Winchester Magnum	7.62	610	254	1	441	12.3	880	researched (SAAMI/190gr)	researched
-remington_m700	Remington	M700	Sniper Rifle	7.62×51mm NATO	7.62	610	305	1	427	9.5	856	researched (SAAMI .308/M80)	researched
+remington_m700	Remington	M700	Sniper Rifle	7.62×51mm NATO	7.62	610	305	1	427	9.5	853	researched (SAAMI .308/M80)	researched
 mcmillan_tac_50	McMillan	TAC-50	Sniper Rifle	12.7×99mm NATO (.50 BMG)	12.7	737	381	1	379	42.8	860	researched (TM43/M33)	researched
-steyr_ssg_69	Steyr	SSG 69	Sniper Rifle	7.62×51mm NATO	7.62	650	305	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-knight_s_armament_m110	Knight's Armament	M110	Sniper Rifle	7.62×51mm NATO	7.62	508	279	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-knight_s_armament_sr_25	Knight's Armament	SR-25	Sniper Rifle	7.62×51mm NATO	7.62	610	286	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-knight_s_armament_mk_11	Knight's Armament	Mk 11	Sniper Rifle	7.62×51mm NATO	7.62	508	279	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-sako_trg_22	Sako	TRG-22	Sniper Rifle	7.62×51mm NATO	7.62	660	280	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-sako_trg_42	Sako	TRG-42	Sniper Rifle	.338 Lapua Magnum	8.58	690	254	1	420	16.2	900	researched (CIP/250gr)	researched
+steyr_ssg_69	Steyr	SSG 69	Sniper Rifle	7.62×51mm NATO	7.62	650	305	1	427	9.5	860	researched (SAAMI .308/M80)	researched
+knight_s_armament_m110	Knight's Armament	M110	Sniper Rifle	7.62×51mm NATO	7.62	508	279	1	427	9.5	820	researched (SAAMI .308/M80)	researched
+knight_s_armament_sr_25	Knight's Armament	SR-25	Sniper Rifle	7.62×51mm NATO	7.62	610	286	1	427	9.5	853	researched (SAAMI .308/M80)	researched
+knight_s_armament_mk_11	Knight's Armament	Mk 11	Sniper Rifle	7.62×51mm NATO	7.62	508	279	1	427	9.5	820	researched (SAAMI .308/M80)	researched
+sako_trg_22	Sako	TRG-22	Sniper Rifle	7.62×51mm NATO	7.62	660	280	1	427	9.5	862	researched (SAAMI .308/M80)	researched
+sako_trg_42	Sako	TRG-42	Sniper Rifle	.338 Lapua Magnum	8.58	690	254	1	420	16.2	906	researched (CIP/250gr)	researched
 pgm_h_cate_ii	PGM	Hécate II	Sniper Rifle	12.7×99mm NATO (.50 BMG)	12.7	700	381	1	379	42.8	860	researched (TM43/M33)	researched
-heckler_koch_msg90	Heckler & Koch	MSG90	Sniper Rifle	7.62×51mm NATO	7.62	600	305	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-heckler_koch_psg1	Heckler & Koch	PSG1	Sniper Rifle	7.62×51mm NATO	7.62	650	305	1	427	9.5	856	researched (SAAMI .308/M80)	researched
+heckler_koch_msg90	Heckler & Koch	MSG90	Sniper Rifle	7.62×51mm NATO	7.62	600	305	1	427	9.5	850	researched (SAAMI .308/M80)	researched
+heckler_koch_psg1	Heckler & Koch	PSG1	Sniper Rifle	7.62×51mm NATO	7.62	650	305	1	427	9.5	860	researched (SAAMI .308/M80)	researched
 desert_tactical_srs_stealth_recon_scout	Desert Tactical	SRS (Stealth Recon Scout)	Sniper Rifle	.338 Lapua Magnum	8.58	660	254	1	420	16.2	900	researched (CIP/250gr)	researched
 cheytac_m200_intervention	CheyTac	M200 Intervention	Sniper Rifle	.408 CheyTac	10.36	737	330	1	440	19.8	1067	researched (CIP/305gr)	researched
-fn_herstal_minimi_m249	FN Herstal	Minimi (M249)	Light Machine Gun	5.56×45mm NATO	5.56	465	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-fn_herstal_mag_m240	FN Herstal	MAG (M240)	Light Machine Gun	7.62×51mm NATO	7.62	630	305	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-heckler_koch_mg4	Heckler & Koch	MG4	Light Machine Gun	5.56×45mm NATO	5.56	482	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-heckler_koch_mg5	Heckler & Koch	MG5	Light Machine Gun	7.62×51mm NATO	7.62	550	305	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-rheinmetall_mg3	Rheinmetall	MG3	Light Machine Gun	7.62×51mm NATO	7.62	565	305	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-sig_mg_338	SIG	MG 338	Light Machine Gun	.338 Lapua Magnum	8.58	610	254	1	420	16.2	900	researched (CIP/250gr)	researched
-aai_corporation_m249_para	AAI Corporation	M249 Para	Light Machine Gun	5.56×45mm NATO	5.56	349	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
+fn_herstal_minimi_m249	FN Herstal	Minimi (M249)	Light Machine Gun	5.56×45mm NATO	5.56	465	178	1	430	4.0	924	researched (NATO EPVAT/M855)	researched
+fn_herstal_mag_m240	FN Herstal	MAG (M240)	Light Machine Gun	7.62×51mm NATO	7.62	630	305	1	427	9.5	857	researched (SAAMI .308/M80)	researched
+heckler_koch_mg4	Heckler & Koch	MG4	Light Machine Gun	5.56×45mm NATO	5.56	482	178	1	430	4.0	932	researched (NATO EPVAT/M855)	researched
+heckler_koch_mg5	Heckler & Koch	MG5	Light Machine Gun	7.62×51mm NATO	7.62	550	305	1	427	9.5	837	researched (SAAMI .308/M80)	researched
+rheinmetall_mg3	Rheinmetall	MG3	Light Machine Gun	7.62×51mm NATO	7.62	565	305	1	427	9.5	841	researched (SAAMI .308/M80)	researched
+sig_mg_338	SIG	MG 338	Light Machine Gun	.338 Lapua Magnum	8.58	610	254	1	420	16.2	895	researched (CIP/250gr)	researched
+aai_corporation_m249_para	AAI Corporation	M249 Para	Light Machine Gun	5.56×45mm NATO	5.56	349	178	1	430	4.0	842	researched (NATO EPVAT/M855)	researched
 russian_federation_nsv_utes	Russian Federation	NSV 'Utes'	Heavy Machine Gun	12.7×108mm	12.7	1070	340	1	360	49.0	820	researched (CIP/B-32)	researched
 russian_federation_kord	Russian Federation	KORD	Heavy Machine Gun	12.7×108mm	12.7	1070	340	1	360	49.0	820	researched (CIP/B-32)	researched
 browning_m2hb	Browning	M2HB	Heavy Machine Gun	12.7×99mm NATO (.50 BMG)	12.7	1143	381	1	379	42.8	860	researched (TM43/M33)	researched
 saab_bofors_dynamics_carl_gustaf_m3	Saab Bofors Dynamics	Carl Gustaf M3	Launcher	84mm	84.0	1130	840	1	0	0	0	researched (launcher)	researched
 saab_bofors_dynamics_carl_gustaf_m4	Saab Bofors Dynamics	Carl Gustaf M4	Launcher	84mm	84.0	950	840	1	0	0	0	researched (launcher)	researched
-rpg_concern_rpg_7	RPG Concern	RPG-7	Launcher	40mm	40.0	0.0	0.0	0	0.0	0.0	0.0	catalog	seed
-rpg_concern_rpg_18	RPG Concern	RPG-18	Launcher	64mm	64.0	0.0	0.0	0	0.0	0.0	0.0	catalog	seed
-rpg_concern_rpg_26	RPG Concern	RPG-26	Launcher	72.5mm	72.5	0.0	0.0	0	0.0	0.0	0.0	catalog	seed
-rpg_concern_rpg_32	RPG Concern	RPG-32	Launcher	105mm	105.0	0.0	0.0	0	0.0	0.0	0.0	catalog	seed
-rgs_rpo_a_shmel	RGS	RPO-A Shmel	Launcher	93mm	93.0	0.0	0.0	0	0.0	0.0	0.0	catalog	seed
-tula_kbp_9k32_strela_2	Tula KBP	9K32 Strela-2	Launcher	72mm	72.0	0.0	0.0	0	0.0	0.0	0.0	catalog	seed
-mbda_fim_92_stinger	MBDA	FIM-92 Stinger	Launcher	70mm	70.0	0.0	0.0	0	0.0	0.0	0.0	catalog	seed
-raytheon_fgm_148_javelin	Raytheon	FGM-148 Javelin	Launcher	127mm	127.0	0.0	0.0	0	0.0	0.0	0.0	catalog	seed
-raytheon_m136_at4	Raytheon	M136 AT4	Launcher	84mm	84.0	0.0	0.0	0	0.0	0.0	0.0	catalog	seed
-nammo_m72_law	Nammo	M72 LAW	Launcher	66mm	66.0	0.0	0.0	0	0.0	0.0	0.0	catalog	seed
-dynamit_nobel_m79_osa	Dynamit Nobel	M79 Osa	Launcher	90mm	90.0	0.0	0.0	0	0.0	0.0	0.0	catalog	seed
-heckler_koch_hk416_10	Heckler & Koch	"HK416 (10.4"")"	Assault Rifle	5.56×45mm NATO	5.56	264.0	177.8	1	0.0	0.0	0.0	catalog	researched
-heckler_koch_hk416_165	Heckler & Koch	"HK416 (16.5"")"	Assault Rifle	5.56×45mm NATO	5.56	419.0	177.8	1	0.0	0.0	0.0	catalog	researched
-heckler_koch_hk417_13	Heckler & Koch	"HK417 (13"")"	Sniper Rifle	7.62×51mm NATO	7.62	330.2	280.0	1	0.0	0.0	0.0	catalog	researched
-heckler_koch_hk417_20	Heckler & Koch	"HK417 (20"")"	Sniper Rifle	7.62×51mm NATO	7.62	508.0	280.0	1	0.0	0.0	0.0	catalog	researched
-fn_herstal_scar_l_10	FN Herstal	SCAR-L CQC	Assault Rifle	5.56×45mm NATO	5.56	254.0	177.8	1	0.0	0.0	0.0	catalog	researched
-fn_herstal_scar_l_18	FN Herstal	SCAR-L LB	Assault Rifle	5.56×45mm NATO	5.56	457.0	177.8	1	0.0	0.0	0.0	catalog	researched
-fn_herstal_scar_h_13	FN Herstal	SCAR-H CQC	Sniper Rifle	7.62×51mm NATO	7.62	330.2	279.4	1	0.0	0.0	0.0	catalog	researched
-fn_herstal_scar_h_20	FN Herstal	SCAR-H LB	Sniper Rifle	7.62×51mm NATO	7.62	508.0	279.4	1	0.0	0.0	0.0	catalog	researched
-steyr_aug_16	Steyr	"AUG (16"")"	Assault Rifle	5.56×45mm NATO	5.56	417.0	228.6	1	0.0	0.0	0.0	catalog	researched
-degtyaryov_plant_rpk_16_lb	Degtyaryov Plant	RPK-16 (Long)	Light Machine Gun	5.45×39mm	5.45	550.0	200.0	1	0.0	0.0	0.0	catalog	researched
-heckler_koch_hk416_20	Heckler & Koch	HK416	"20"" barrel"	5.56×45mm NATO	5.56	508	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-fn_herstal_scar_l_cqc	FN Herstal	SCAR-L	"10"" CQC barrel"	5.56×45mm NATO	5.56	254	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-fn_herstal_scar_l_lb	FN Herstal	SCAR-L	"18"" LB barrel"	5.56×45mm NATO	5.56	457	178	1	430	4.0	900	researched (NATO EPVAT/M855)	researched
-fn_herstal_scar_h_cqc	FN Herstal	SCAR-H	"13"" CQC barrel"	7.62×51mm NATO	7.62	330	279	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-fn_herstal_scar_h_lb	FN Herstal	SCAR-H	"20"" LB barrel"	7.62×51mm NATO	7.62	508	279	1	427	9.5	856	researched (SAAMI .308/M80)	researched
+rpg_concern_rpg_7	RPG Concern	RPG-7	Launcher	40mm	40.0	950	0	0	0.0	0.0	0.0	researched (Wikipedia/manufacturer)	researched
+rpg_concern_rpg_18	RPG Concern	RPG-18	Launcher	64mm	64.0	1050	0	0	0.0	0.0	0.0	researched (Wikipedia/manufacturer)	researched
+rpg_concern_rpg_26	RPG Concern	RPG-26	Launcher	72.5mm	72.5	770	0	0	0.0	0.0	0.0	researched (Wikipedia/manufacturer)	researched
+rpg_concern_rpg_32	RPG Concern	RPG-32	Launcher	105mm	105.0	1200	0	0	0.0	0.0	0.0	researched (Wikipedia/manufacturer)	researched
+rgs_rpo_a_shmel	RGS	RPO-A Shmel	Launcher	93mm	93.0	920	0	0	0.0	0.0	0.0	researched (Wikipedia/manufacturer)	researched
+tula_kbp_9k32_strela_2	Tula KBP	9K32 Strela-2	Launcher	72mm	72.0	1490	0	0	0.0	0.0	0.0	researched (Wikipedia/manufacturer)	researched
+mbda_fim_92_stinger	MBDA	FIM-92 Stinger	Launcher	70mm	70.0	1520	0	0	0.0	0.0	0.0	researched (Wikipedia/manufacturer)	researched
+raytheon_fgm_148_javelin	Raytheon	FGM-148 Javelin	Launcher	127mm	127.0	1209	0	0	0.0	0.0	0.0	researched (Wikipedia/manufacturer)	researched
+raytheon_m136_at4	Raytheon	M136 AT4	Launcher	84mm	84.0	1020	0	0	0.0	0.0	0.0	researched (Wikipedia/manufacturer)	researched
+nammo_m72_law	Nammo	M72 LAW	Launcher	66mm	66.0	881	0	0	0.0	0.0	0.0	researched (Wikipedia/manufacturer)	researched
+dynamit_nobel_m79_osa	Dynamit Nobel	M79 Osa	Launcher	90mm	90.0	1910	0	0	0.0	0.0	0.0	researched (Wikipedia/manufacturer)	researched
+m14	Springfield Armory	M14	Battle Rifle	7.62×51mm NATO	7.62	559	305	1	427	9.5	840	researched (US Army TM)	researched
+m60	Saco Defense	M60	General Purpose Machine Gun	7.62×51mm NATO	7.62	560	305	1	427	9.5	840	researched (US Army TM)	researched
+m1911	Colt	M1911A1	Pistol	.45 ACP	11.43	127	406	2	145	15.0	260	researched (US Army TM)	researched
+heckler_koch_hk416_10	Heckler & Koch	"HK416 (10.4"")"	Assault Rifle	5.56×45mm NATO	5.56	264.0	177.8	1	430			4.0		767	catalog	researched
+
+heckler_koch_hk416_165	Heckler & Koch	"HK416 (16.5"")"	Assault Rifle	5.56×45mm NATO	5.56	419.0	177.8	1	430			4.0		898	catalog	researched
+
+heckler_koch_hk417_13	Heckler & Koch	"HK417 (13"")"	Sniper Rifle	7.62×51mm NATO	7.62	330.2	280.0	1	427			9.5		730	catalog	researched
+
+heckler_koch_hk417_20	Heckler & Koch	"HK417 (20"")"	Sniper Rifle	7.62×51mm NATO	7.62	508.0	280.0	1	427			9.5		820	catalog	researched
+
+fn_herstal_scar_l_10	FN Herstal	SCAR-L CQC	Assault Rifle	5.56×45mm NATO	5.56	254.0	177.8	1	430			4.0		759	catalog	researched
+
+fn_herstal_scar_l_18	FN Herstal	SCAR-L LB	Assault Rifle	5.56×45mm NATO	5.56	457.0	177.8	1	430			4.0		920	catalog	researched
+
+fn_herstal_scar_h_13	FN Herstal	SCAR-H CQC	Sniper Rifle	7.62×51mm NATO	7.62	330.2	279.4	1	427			9.5		730	catalog	researched
+
+fn_herstal_scar_h_20	FN Herstal	SCAR-H LB	Sniper Rifle	7.62×51mm NATO	7.62	508.0	279.4	1	427			9.5		820	catalog	researched
+
+steyr_aug_16	Steyr	"AUG (16"")"	Assault Rifle	5.56×45mm NATO	5.56	417.0	228.6	1	430			4.0		897	catalog	researched
+
+degtyaryov_plant_rpk_16_lb	Degtyaryov Plant	RPK-16 (Long)	Light Machine Gun	5.45×39mm	5.45	550.0	200.0	1	355			3.4		890	catalog	researched
+
+heckler_koch_hk416_20	Heckler & Koch	HK416	"20"" barrel"	5.56×45mm NATO	5.56	508	178	1	430	4.0	940	researched (NATO EPVAT/M855)	researched
+fn_herstal_scar_l_cqc	FN Herstal	SCAR-L	"10"" CQC barrel"	5.56×45mm NATO	5.56	254	178	1	430	4.0	759	researched (NATO EPVAT/M855)	researched
+fn_herstal_scar_l_lb	FN Herstal	SCAR-L	"18"" LB barrel"	5.56×45mm NATO	5.56	457	178	1	430	4.0	920	researched (NATO EPVAT/M855)	researched
+fn_herstal_scar_h_cqc	FN Herstal	SCAR-H	"13"" CQC barrel"	7.62×51mm NATO	7.62	330	279	1	427	9.5	730	researched (SAAMI .308/M80)	researched
+fn_herstal_scar_h_lb	FN Herstal	SCAR-H	"20"" LB barrel"	7.62×51mm NATO	7.62	508	279	1	427	9.5	820	researched (SAAMI .308/M80)	researched
 barrett_m82_m107_cqc	Barrett	M82 (M107)	"20"" CQC barrel"	12.7×99mm NATO (.50 BMG)	12.7	508	381	1	379	42.8	860	researched (TM43/M33)	researched
-kalashnikov_concern_ak_12_k	Kalashnikov Concern	AK-12	Short barrel	5.45×39mm	5.45	290	200	1	355	3.4	880	researched (CIP/7N6)	researched
-degtyaryov_plant_rpk_16_short	Degtyaryov Plant	RPK-16	Short barrel	5.45×39mm	5.45	370	200	1	355	3.4	880	researched (CIP/7N6)	researched
-knight_s_armament_sr_25_20	Knight's Armament	SR-25	"20"" barrel"	7.62×51mm NATO	7.62	508	286	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-knight_s_armament_sr_25_16	Knight's Armament	SR-25	"16"" carbine"	7.62×51mm NATO	7.62	406	286	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-sako_trg_22_short	Sako	TRG-22	"20"" barrel"	7.62×51mm NATO	7.62	510	280	1	427	9.5	856	researched (SAAMI .308/M80)	researched
-sako_trg_42_short	Sako	TRG-42	"20"" barrel"	.338 Lapua Magnum	8.58	510	254	1	420	16.2	900	researched (CIP/250gr)	researched
-remington_m700_hvy	Remington	M700	"26"" heavy barrel"	7.62×51mm NATO	7.62	660	305	1	427	9.5	856	researched (SAAMI .308/M80)	researched
+kalashnikov_concern_ak_12_k	Kalashnikov Concern	AK-12	Short barrel	5.45×39mm	5.45	290	200	1	355	3.4	820	researched (CIP/7N6)	researched
+degtyaryov_plant_rpk_16_short	Degtyaryov Plant	RPK-16	Short barrel	5.45×39mm	5.45	370	200	1	355	3.4	870	researched (CIP/7N6)	researched
+knight_s_armament_sr_25_20	Knight's Armament	SR-25	"20"" barrel"	7.62×51mm NATO	7.62	508	286	1	427	9.5	820	researched (SAAMI .308/M80)	researched
+knight_s_armament_sr_25_16	Knight's Armament	SR-25	"16"" carbine"	7.62×51mm NATO	7.62	406	286	1	427	9.5	780	researched (SAAMI .308/M80)	researched
+sako_trg_22_short	Sako	TRG-22	"20"" barrel"	7.62×51mm NATO	7.62	510	280	1	427	9.5	821	researched (SAAMI .308/M80)	researched
+sako_trg_42_short	Sako	TRG-42	"20"" barrel"	.338 Lapua Magnum	8.58	510	254	1	420	16.2	880	researched (CIP/250gr)	researched
+remington_m700_hvy	Remington	M700	"26"" heavy barrel"	7.62×51mm NATO	7.62	660	305	1	427	9.5	862	researched (SAAMI .308/M80)	researched

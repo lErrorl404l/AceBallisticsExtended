@@ -408,11 +408,7 @@ pub fn evaluate_body_armor(params: &BodyArmorParams) -> BodyArmorResult {
     // ── Residual velocity and energy deposition ─────────────────────────
     let residual_velocity_ms = if penetrated {
         let vr_sq = params.impact_velocity_ms.powi(2) - v_threshold.powi(2);
-        if vr_sq > 0.0 {
-            vr_sq.sqrt()
-        } else {
-            0.0
-        }
+        if vr_sq > 0.0 { vr_sq.sqrt() } else { 0.0 }
     } else {
         0.0
     };

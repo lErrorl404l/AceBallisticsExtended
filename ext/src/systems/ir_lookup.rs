@@ -5,7 +5,7 @@
 // Override mechanism: SQF calls abe_register_override() at init to store
 // mod-provided or ACE3 values above these built-in IRL specs.
 
-use crate::generated::{IRL_AMMO, IRL_WEAPONS};
+use crate::generated::{I4L_ARMOR_PLATES, I4L_MATERIALS, IR_CLOTHING, IRL_AMMO, IRL_WEAPONS};
 use std::collections::HashMap;
 use std::sync::{Mutex, OnceLock};
 
@@ -31,6 +31,54 @@ pub struct AmmoParams {
     pub bc_g1: f64,
     pub bc_g7: f64,
     pub drag_model: u8, // 1=G1, 7=G7, 8=G8
+}
+
+/// Parameters for a single armor plate, resolved from compile-time PHF data.
+#[derive(Debug, Clone)]
+pub struct ArmorPlateParams {
+    pub material: String,
+    pub thickness_mm: f64,
+    pub angle_deg: f64,
+    pub backing: String,
+    pub backing_thickness_mm: f64,
+    pub backing_angle_deg: f64,
+}
+
+/// Material properties resolved from compile-time PHF data.
+#[derive(Debug, Clone)]
+pub struct MaterialParams {
+    pub density_gcm3: f64,
+    pub hardness_bhn: f64,
+    pub tensile_strength_mpa: f64,
+    pub rha_equivalent: f64,
+    pub ductility: f64,
+    pub spall_coeff: f64,
+}
+
+/// Parameters for a clothing/headgear/vest item, resolved from compile-time PHF data.
+#[derive(Debug, Clone)]
+#[repr(C)]
+pub struct ClothingParams {
+    /// Item type category: Glasses, Headgear, Uniform, or Vest.
+    pub item_type: [u8; 32],
+    /// Functional clothing category (e.g. ballistic_helmet, plate_carrier, combat_uniform).
+    pub clothing_category: [u8; 48],
+    /// Primary construction material (e.g. ceramic_sic, composite_kevlar, cloth).
+    pub primary_material: [u8; 32],
+    /// Secondary/backing material (e.g. uhmwpe, spall_liner, empty = none).
+    pub backing_material: [u8; 32],
+    /// Areal thickness of the ballistic insert in mm (0.0 = non-ballistic).
+    pub thickness_mm: f64,
+    /// NIJ body armour rating as a string (e.g. "IIIA", "III", "IV", "N/A").
+    pub nij_rating: [u8; 16],
+    /// RHA equivalent thickness in mm from the combination of materials.
+    pub rha_mm: f64,
+    /// Confidence score for the assigned properties (0.0–1.0).
+    pub confidence: f64,
+    /// Manufacturer name string.
+    pub manufacturer: [u8; 48],
+    /// Specific model / product line name.
+    pub model: [u8; 64],
 }
 
 /// Result of a weapon resolution attempt.
@@ -322,4 +370,123 @@ pub fn resolve_ammo(class: &str) -> (AmmoParams, f64) {
         },
         0.3,
     )
+}
+
+// ── Armor plate resolution ──────────────────────────────────────────────────
+
+/// Parse a pipe-delimited armor plate value string into `ArmorPlateParams`.
+fn parse_armor_value(val: &str) -> ArmorPlateParams {
+    let parts: Vec<&str> = val.split('|').collect();
+    ArmorPlateParams {
+        material: parts.first().unwrap_or(&"").to_string(),
+        thickness_mm: parts.get(1).and_then(|s| s.parse().ok()).unwrap_or(0.0),
+        angle_deg: parts.get(2).and_then(|s| s.parse().ok()).unwrap_or(0.0),
+        backing: parts.get(3).unwrap_or(&"").to_string(),
+        backing_thickness_mm: parts.get(4).and_then(|s| s.parse().ok()).unwrap_or(0.0),
+        backing_angle_deg: parts.get(5).and_then(|s| s.parse().ok()).unwrap_or(0.0),
+    }
+}
+
+/// Resolve armor plate parameters for a vehicle/plate combination.
+///
+/// Key format: `"{vehicle}/{plate_name}"` (e.g. `"rhs_t90a_tv/hull_front_upper"`).
+/// Returns `None` if no matching plate is found.
+pub fn resolve_armor(vehicle: &str, plate_name: &str) -> Option<ArmorPlateParams> {
+    let key = format!("{}/{}", vehicle, plate_name);
+    I4L_ARMOR_PLATES.get(&key).map(|val| parse_armor_value(val))
+}
+
+// ── Material resolution ─────────────────────────────────────────────────────
+
+/// Parse a pipe-delimited material value string into `MaterialParams`.
+fn parse_material_value(val: &str) -> MaterialParams {
+    let parts: Vec<&str> = val.split('|').collect();
+    // parts[0] = display_name (string, skipped for numeric parsing)
+    MaterialParams {
+        density_gcm3: parts.get(1).and_then(|s| s.parse().ok()).unwrap_or(0.0),
+        hardness_bhn: parts.get(2).and_then(|s| s.parse().ok()).unwrap_or(0.0),
+        tensile_strength_mpa: parts.get(3).and_then(|s| s.parse().ok()).unwrap_or(0.0),
+        rha_equivalent: parts.get(4).and_then(|s| s.parse().ok()).unwrap_or(1.0),
+        ductility: parts.get(5).and_then(|s| s.parse().ok()).unwrap_or(0.0),
+        spall_coeff: parts.get(6).and_then(|s| s.parse().ok()).unwrap_or(0.0),
+    }
+}
+
+/// Resolve material properties by material ID.
+/// Returns `None` if the material is not found.
+pub fn resolve_material(material_id: &str) -> Option<MaterialParams> {
+    I4L_MATERIALS
+        .get(material_id)
+        .map(|val| parse_material_value(val))
+}
+
+/// Compute effective RHA thickness for a given vehicle armor plate.
+///
+/// Multiplies the plate's thickness by its material's RHA equivalence factor.
+/// Returns 0.0 if either the plate or material is not found.
+pub fn resolve_effective_rha(vehicle: &str, plate_name: &str) -> f64 {
+    let plate = match resolve_armor(vehicle, plate_name) {
+        Some(p) => p,
+        None => return 0.0,
+    };
+    let mat = match resolve_material(&plate.material) {
+        Some(m) => m,
+        None => return 0.0,
+    };
+    plate.thickness_mm * mat.rha_equivalent
+}
+
+// ── Clothing / wearable resolution ──────────────────────────────────────────
+
+/// Parse a pipe-delimited clothing value string into `ClothingParams`.
+fn parse_clothing_value(val: &str) -> ClothingParams {
+    let parts: Vec<&str> = val.split('|').collect();
+    let str_to_arr = |s: &str, buf: &mut [u8]| {
+        let bytes = s.as_bytes();
+        let len = bytes.len().min(buf.len() - 1);
+        buf[..len].copy_from_slice(bytes);
+        buf[len] = 0;
+    };
+
+    let mut item_type = [0u8; 32];
+    str_to_arr(parts.first().unwrap_or(&""), &mut item_type);
+
+    let mut clothing_category = [0u8; 48];
+    str_to_arr(parts.get(1).unwrap_or(&""), &mut clothing_category);
+
+    let mut primary_material = [0u8; 32];
+    str_to_arr(parts.get(2).unwrap_or(&""), &mut primary_material);
+
+    let mut backing_material = [0u8; 32];
+    str_to_arr(parts.get(3).unwrap_or(&""), &mut backing_material);
+
+    let mut nij_rating = [0u8; 16];
+    str_to_arr(parts.get(5).unwrap_or(&""), &mut nij_rating);
+
+    let mut manufacturer = [0u8; 48];
+    str_to_arr(parts.get(8).unwrap_or(&""), &mut manufacturer);
+
+    let mut model = [0u8; 64];
+    str_to_arr(parts.get(9).unwrap_or(&""), &mut model);
+
+    ClothingParams {
+        item_type,
+        clothing_category,
+        primary_material,
+        backing_material,
+        thickness_mm: parts.get(4).and_then(|s| s.parse().ok()).unwrap_or(0.0),
+        nij_rating,
+        rha_mm: parts.get(6).and_then(|s| s.parse().ok()).unwrap_or(0.0),
+        confidence: parts.get(7).and_then(|s| s.parse().ok()).unwrap_or(0.0),
+        manufacturer,
+        model,
+    }
+}
+
+/// Resolve clothing/headgear/vest parameters for an Arma class name.
+///
+/// Returns `Some(ClothingParams)` if the class is found in the
+/// compile-time PHF map, `None` otherwise.
+pub fn resolve_clothing(class: &str) -> Option<ClothingParams> {
+    IR_CLOTHING.get(class).map(|val| parse_clothing_value(val))
 }

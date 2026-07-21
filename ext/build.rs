@@ -120,9 +120,7 @@ fn main() {
         let key = arma_key.replace('\\', "\\\\").replace('\'', "\\'");
         let val = weapon_id.replace('\\', "\\\\").replace('\'', "\\'");
         // First occurrence wins (consistent with legacy behavior)
-        if !arma_to_weapon.contains_key(&key) {
-            arma_to_weapon.insert(key, val);
-        }
+        arma_to_weapon.entry(key).or_insert(val);
     }
 
     // ── Load legacy ir_weapons.tsv ──

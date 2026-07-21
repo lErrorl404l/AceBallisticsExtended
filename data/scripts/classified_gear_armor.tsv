@@ -1,0 +1,8 @@
+# classname	item_type	material	thickness_mm	angle_deg	backing	backing_thickness_mm	backing_angle_deg
+V_PlateCarrier1_blk	Vest	ceramic_sic	3.4	0.0	uhmwpe	1.7	0.0
+V_PlateCarrier2_blk	Vest	ceramic_sic	10.3	0.0	uhmwpe	5.1	0.0
+V_PlateCarrier3_blk	Vest	ceramic_sic	27.1	0.0	uhmwpe	13.6	0.0
+V_TacVest_blk	Vest	composite_kevlar	20.0	0.0	spall_liner	10.0	0.0
+H_HelmetB_plain	Headgear	composite_kevlar	20.0	0.0		0	0.0
+H_HelmetO_ocamo	Headgear	composite_kevlar	20.0	0.0		0	0.0
+H_Cap_blk	Headgear	arma_plastic	0.0	0.0		0	0.0

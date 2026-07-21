@@ -195,11 +195,7 @@ fn concrete_eval(
         // effective vs nominal thickness ratio
         let v_req = v * (eff_t / t).sqrt();
         let vr_sq = v * v - v_req * v_req;
-        if vr_sq > 0.0 {
-            vr_sq.sqrt()
-        } else {
-            0.0
-        }
+        if vr_sq > 0.0 { vr_sq.sqrt() } else { 0.0 }
     } else {
         0.0
     };
@@ -320,11 +316,7 @@ fn wood_eval(
     let exit_v = if fully_penetrated {
         let v_req = v * (t_mm / pen_depth_mm.max(1.0)) * density_factor;
         let vr_sq = v * v - v_req * v_req;
-        if vr_sq > 0.0 {
-            vr_sq.sqrt()
-        } else {
-            0.0
-        }
+        if vr_sq > 0.0 { vr_sq.sqrt() } else { 0.0 }
     } else {
         0.0
     };
@@ -373,11 +365,7 @@ fn brick_eval(
     let exit_v = if fully_penetrated {
         let v_req = v * (t_mm / pen_depth_mm.max(1.0));
         let vr_sq = v * v - v_req * v_req;
-        if vr_sq > 0.0 {
-            vr_sq.sqrt()
-        } else {
-            0.0
-        }
+        if vr_sq > 0.0 { vr_sq.sqrt() } else { 0.0 }
     } else {
         0.0
     };

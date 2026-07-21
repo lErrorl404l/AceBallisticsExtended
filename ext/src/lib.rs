@@ -336,6 +336,83 @@ fn handle_impact(args: &[&str]) -> String {
     )
 }
 
+fn handle_body_armor(args: &[&str]) -> String {
+    if !get_state().initialized {
+        return "-1".into();
+    }
+
+    // ── Parse args ──────────────────────────────────────────────────────────
+    // [0]: calibre_mm (projectile diameter)
+    // [1]: mass_g (projectile mass)
+    // [2]: impact_velocity_ms
+    // [3]: projectile_type ("ball", "ap", "fmj", "soft_point")
+    // [4]: armor_config ("LevelIIIA", "LevelIII", "LevelIV", "ESAPI", "SAPI", "Custom")
+    // [5]: ceramic_thickness_mm (custom only)
+    // [6]: backing_thickness_mm (custom only)
+    // [7]: ceramic_material (custom only, e.g. "ceramic_sic")
+    // [8]: backing_material (custom only, e.g. "uhmwpe")
+
+    let caliber_mm: f64 = args.first().and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let mass_g: f64 = args.get(1).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let impact_velocity_ms: f64 = args.get(2).and_then(|s| s.parse().ok()).unwrap_or(0.0);
+    let projectile_type = args.get(3).copied().unwrap_or("ball");
+    let armor_config = args.get(4).copied().unwrap_or("LevelIIIA");
+
+    if caliber_mm <= 0.0 || mass_g <= 0.0 || impact_velocity_ms <= 0.0 {
+        return "-1".into();
+    }
+
+    // ── Build armor configuration ───────────────────────────────────────────
+    let armor_package = match armor_config {
+        "LevelIIIA" => body_armor::BodyArmorConfiguration::LevelIIIA,
+        "LevelIII" => body_armor::BodyArmorConfiguration::LevelIII,
+        "LevelIV" => body_armor::BodyArmorConfiguration::LevelIV,
+        "ESAPI" => body_armor::BodyArmorConfiguration::ESAPI,
+        "SAPI" => body_armor::BodyArmorConfiguration::SAPI,
+        "GenericCeramicComposite" => body_armor::BodyArmorConfiguration::GenericCeramicComposite,
+        "Custom" => {
+            let ceramic_mm: f64 = args.get(5).and_then(|s| s.parse().ok()).unwrap_or(8.0);
+            let backing_mm: f64 = args.get(6).and_then(|s| s.parse().ok()).unwrap_or(12.0);
+            let ceramic_mat = args.get(7).copied().unwrap_or("ceramic_sic");
+            let backing_mat = args.get(8).copied().unwrap_or("uhmwpe");
+
+            body_armor::BodyArmorConfiguration::Custom(body_armor::BodyArmorCustomConfig {
+                ceramic_thickness_mm: ceramic_mm,
+                backing_thickness_mm: backing_mm,
+                ceramic_material: ceramic_mat.to_string(),
+                backing_material: backing_mat.to_string(),
+                areal_density_kgm2: 22.0, // default for a typical plate
+                plate_dimensions_mm: (250.0, 300.0),
+                trauma_backface_limit_mm: 44.0,
+                multi_hit_capability: 6,
+            })
+        },
+        _ => body_armor::BodyArmorConfiguration::LevelIIIA,
+    };
+
+    // ── Evaluate ─────────────────────────────────────────────────────────────
+    let params = body_armor::BodyArmorParams {
+        projectile_caliber_mm: caliber_mm,
+        projectile_mass_g: mass_g,
+        impact_velocity_ms,
+        projectile_type: projectile_type.to_string(),
+        armor_package,
+    };
+
+    let result = body_armor::evaluate_body_armor(&params);
+
+    // ── Format result ────────────────────────────────────────────────────────
+    format!(
+        "[{},{},{},{},{},{}]",
+        result.penetrated as i32,
+        fmt_f64(result.residual_velocity_ms),
+        fmt_f64(result.backface_deformation_mm),
+        result.plate_cracked as i32,
+        fmt_f64(result.estimated_trauma_depth_mm),
+        result.armor_defeated as i32,
+    )
+}
+
 fn handle_wound(args: &[&str]) -> String {
     if !get_state().initialized {
         return "-1".into();
@@ -398,6 +475,52 @@ fn handle_resolve_weapon(args: &[&str]) -> String {
         fmt_f64(res.params.chamber_pressure_mpa),
         fmt_f64(res.params.projectile_mass_g),
     )
+}
+
+fn handle_resolve_clothing(args: &[&str]) -> String {
+    if !get_state().initialized {
+        return "-1".into();
+    }
+    let class_name = args.first().copied().unwrap_or("");
+    if class_name.is_empty() {
+        return "-1".into();
+    }
+    match ir_lookup::resolve_clothing(class_name) {
+        Some(cp) => {
+            let item_type = match CStr::from_bytes_until_nul(&cp.item_type) {
+                Ok(s) => s.to_str().unwrap_or(""),
+                Err(_) => "",
+            };
+            let category = match CStr::from_bytes_until_nul(&cp.clothing_category) {
+                Ok(s) => s.to_str().unwrap_or(""),
+                Err(_) => "",
+            };
+            let material = match CStr::from_bytes_until_nul(&cp.primary_material) {
+                Ok(s) => s.to_str().unwrap_or(""),
+                Err(_) => "",
+            };
+            let backing = match CStr::from_bytes_until_nul(&cp.backing_material) {
+                Ok(s) => s.to_str().unwrap_or(""),
+                Err(_) => "",
+            };
+            let nij = match CStr::from_bytes_until_nul(&cp.nij_rating) {
+                Ok(s) => s.to_str().unwrap_or(""),
+                Err(_) => "",
+            };
+            format!(
+                "[{},{},{},{},{},{},{},{}]",
+                item_type,
+                category,
+                material,
+                backing,
+                fmt_f64(cp.thickness_mm),
+                nij,
+                fmt_f64(cp.rha_mm),
+                fmt_f64(cp.confidence),
+            )
+        },
+        None => "0".into(), // not found
+    }
 }
 
 fn handle_register_override(args: &[&str]) -> String {
@@ -612,11 +735,13 @@ pub unsafe extern "C" fn RVExtensionArgs(
         "fire" => handle_fire(&parsed),
         "step" => handle_step(&parsed),
         "impact" => handle_impact(&parsed),
+        "body_armor" => handle_body_armor(&parsed),
         "wound" => handle_wound(&parsed),
         "zeroing" => handle_zeroing(&parsed),
         "shooter" => handle_shooter(&parsed),
         "component" => handle_component(&parsed),
         "resolve_weapon" => handle_resolve_weapon(&parsed),
+        "resolve_clothing" => handle_resolve_clothing(&parsed),
         "register_override" => handle_register_override(&parsed),
         other => format!("unknown: {}", other),
     };
@@ -1246,11 +1371,7 @@ pub extern "C" fn abe_impact(params: &ImpactParams, result: &mut ImpactResult) -
 /// Safe to call before `abe_init` (will return 0).
 #[unsafe(no_mangle)]
 pub extern "C" fn abe_health() -> i32 {
-    if get_state().initialized {
-        1
-    } else {
-        0
-    }
+    if get_state().initialized { 1 } else { 0 }
 }
 
 // ── IRL Weapon/Ammo Resolution C ABI ──────────────────────────────────────────
@@ -1323,6 +1444,48 @@ pub extern "C" fn abe_register_override(params: &RegisterOverrideParams) -> i32 
     }
     ir_lookup::register_override(class, params.weapon_params);
     0
+}
+
+// ── IRL Clothing Resolution C ABI ─────────────────────────────────────────────
+
+/// Struct-mode parameter for `abe_resolve_clothing()`.
+#[repr(C)]
+pub struct ResolveClothingParams {
+    /// Magic number — must be `MAGIC_ABE`.
+    pub magic: u64,
+    /// Null-terminated Arma 3 clothing class name (padded to 128 bytes).
+    pub class_name: [u8; 128],
+}
+
+/// Resolve IRL clothing parameters for an Arma clothing class.
+///
+/// Returns 0 on success with `result` populated, -1 if not initialised,
+/// -2 on bad magic, -3 if class not found.
+#[unsafe(no_mangle)]
+pub extern "C" fn abe_resolve_clothing(
+    params: &ResolveClothingParams,
+    result: &mut ir_lookup::ClothingParams,
+) -> i32 {
+    if !get_state().initialized {
+        return -1;
+    }
+    if params.magic != MAGIC_ABE {
+        return -2;
+    }
+    let class = match CStr::from_bytes_until_nul(&params.class_name) {
+        Ok(s) => s.to_str().unwrap_or(""),
+        Err(_) => "",
+    };
+    if class.is_empty() {
+        return -1;
+    }
+    match ir_lookup::resolve_clothing(class) {
+        Some(cp) => {
+            *result = cp;
+            0
+        },
+        None => -3,
+    }
 }
 
 // ── Tests ─────────────────────────────────────────────────────────────────────

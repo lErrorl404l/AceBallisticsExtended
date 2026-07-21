@@ -246,3 +246,7 @@ m72_law	nammo_m72_law	exact	Catalog primary key
 m72	nammo_m72_law	variant	Catalog alias
 m79	dynamit_nobel_m79_osa	exact	Catalog primary key
 osa	dynamit_nobel_m79_osa	variant	Catalog alias
+m14	m14	exact	Catalog primary key
+m60	m60	exact	Catalog primary key
+m1911	m1911	exact	Catalog primary key
+colt_1911	m1911	variant	Catalog alias

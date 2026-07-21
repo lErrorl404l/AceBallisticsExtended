@@ -21,11 +21,11 @@
 // Re-export public items from submodules to maintain the original public API.
 // These types were previously defined directly in this module.
 pub use super::crew_injury::{
-    evaluate_crew_refined, BodyRegion, BodyRegionInjury, CrewInjuryResult, InjurySeverity,
+    BodyRegion, BodyRegionInjury, CrewInjuryResult, InjurySeverity, evaluate_crew_refined,
 };
 pub use super::fire_propagation::{
-    damage_to_fire_state, evaluate_fire_propagation, ComponentFireState, FirePropagationResult,
-    FireStatus, FireSuppression,
+    ComponentFireState, FirePropagationResult, FireStatus, FireSuppression, damage_to_fire_state,
+    evaluate_fire_propagation,
 };
 
 use super::crew_injury::rand_threshold;

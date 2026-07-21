@@ -15,7 +15,6 @@ use std::sync::OnceLock;
 
 use crate::behind_armor_debris::{self, BehindArmorDebrisParams};
 use crate::heat_penetration::{self, HeatJetParams};
-use crate::systems::config::get_data_registry;
 
 static MATERIAL_CACHE: OnceLock<HashMap<&'static str, f64>> = OnceLock::new();
 
@@ -109,13 +108,6 @@ fn build_material_cache() -> HashMap<&'static str, f64> {
 /// dwell/interface defeat to erosion. The values here represent nominal
 /// mid-velocity (500–900 m/s) performance.
 pub fn material_factor(material: &str) -> f64 {
-    // Prefer data-loaded material configs
-    if let Some(registry) = get_data_registry() {
-        if let Some(mat) = registry.materials.get(material) {
-            return mat.rha_equivalent;
-        }
-    }
-
     // O(1) cache lookup — built once on first call
     let cache = MATERIAL_CACHE.get_or_init(build_material_cache);
     let key = material.to_lowercase();
@@ -865,11 +857,7 @@ pub fn evaluate_yaw(
     let residual_velocity = if penetrated {
         // R_p = sqrt(V^2 - V_req^2)
         let vr_sq = velocity_ms.powi(2) - v_required.powi(2);
-        if vr_sq > 0.0 {
-            vr_sq.sqrt()
-        } else {
-            0.0
-        }
+        if vr_sq > 0.0 { vr_sq.sqrt() } else { 0.0 }
     } else {
         velocity_ms * 0.1 // Stopped or minimal pass-through
     };

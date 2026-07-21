@@ -17,17 +17,26 @@
 //           vehicle armour schematics are integrated — the layout table
 //           is the extension point.
 
-use crate::config::{get_data_registry, ArmorPlate};
+// Local ArmorPlate definition (replaced the old one from config.rs which was
+// part of the now-removed runtime JSON loader — kept for plate_effective_rhae
+// tests. Name and backing removed (unused after loader deletion).
+#[derive(Debug, Clone)]
+pub struct ArmorPlate {
+    material: String,
+    thickness_mm: f64,
+    angle_deg: f64,
+}
 #[cfg(test)]
 use crate::penetration::evaluate;
 use crate::penetration::material_factor;
+use crate::systems::ir_lookup::{resolve_armor, resolve_material};
 
 /// Single calibration entry for one armour zone of a specific vehicle.
 #[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
 pub struct CalibrationEntry {
     /// Vehicle class name (matches `ArmorConfig.vehicle` in the JSON data).
     pub vehicle: String,
-    /// Armour zone name (matches `ArmorPlate.name`).
+    /// Armour zone name.
     pub zone: String,
     /// Published reference RHAe thickness in mm.
     pub reference_rhae_mm: f64,
@@ -57,7 +66,7 @@ pub struct VehicleCalibration {
 /// A single calibration zone within a vehicle.
 #[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
 pub struct CalibrationZone {
-    /// Zone name (matches `ArmorPlate.name`).
+    /// Zone name.
     pub name: String,
     /// Published reference RHAe in mm.
     pub reference_rhae_mm: f64,
@@ -140,22 +149,23 @@ pub fn validate_calibration(calibration_path: &std::path::Path) -> CalibrationRe
         },
     };
 
-    let registry = get_data_registry();
-    let armor = registry.map(|r| &r.armor);
-
+    // ponytail: armor data is compile-time PHF (ir_armor.tsv) resolved via
+    // resolve_armor + resolve_material. Calibration computes predicted RHAe
+    // as thickness × rha_equivalent × angle_multiplier for each zone.
     let mut validations: Vec<ZoneValidation> = Vec::new();
     let mut sq_error_sum = 0.0_f64;
 
     for vehicle_cal in &cal_data {
-        // Find matching armor config for this vehicle
-        let vehicle_armor =
-            armor.and_then(|all| all.iter().find(|a| a.vehicle == vehicle_cal.vehicle));
-
         for zone_cal in &vehicle_cal.zones {
-            // Find matching plate
-            let computed = vehicle_armor
-                .and_then(|arm| arm.plates.iter().find(|p| p.name == zone_cal.name))
-                .map(plate_effective_rhae)
+            let computed = resolve_armor(&vehicle_cal.vehicle, &zone_cal.name)
+                .map(|plate| {
+                    let mat_factor = resolve_material(&plate.material)
+                        .map(|m| m.rha_equivalent)
+                        .unwrap_or_else(|| material_factor(&plate.material));
+                    let angle_rad = plate.angle_deg.to_radians();
+                    let angle_mult = 1.0 / angle_rad.cos().max(0.087); // cap at cos(85°)
+                    plate.thickness_mm * mat_factor * angle_mult
+                })
                 .unwrap_or(0.0);
 
             let err = computed - zone_cal.reference_rhae_mm;
@@ -234,6 +244,7 @@ pub fn format_calibration_report(report: &CalibrationReport) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::systems::ir_lookup::resolve_effective_rha;
 
     fn calibration_path() -> std::path::PathBuf {
         std::path::PathBuf::from(concat!(
@@ -265,11 +276,9 @@ mod tests {
     fn plate_effective_calculation() {
         // 10mm RHA at 0° → 10mm RHAe
         let plate = ArmorPlate {
-            name: "test".into(),
             material: "steel_rha".into(),
             thickness_mm: 10.0,
             angle_deg: 0.0,
-            backing: None,
         };
         let rhae = plate_effective_rhae(&plate);
         assert!(
@@ -282,18 +291,14 @@ mod tests {
     #[test]
     fn angle_increases_effective() {
         let plate_0 = ArmorPlate {
-            name: "test0".into(),
             material: "steel_rha".into(),
             thickness_mm: 10.0,
             angle_deg: 0.0,
-            backing: None,
         };
         let plate_60 = ArmorPlate {
-            name: "test60".into(),
             material: "steel_rha".into(),
             thickness_mm: 10.0,
             angle_deg: 60.0,
-            backing: None,
         };
         let r0 = plate_effective_rhae(&plate_0);
         let r60 = plate_effective_rhae(&plate_60);
@@ -309,6 +314,76 @@ mod tests {
         // but at least some should be within tolerance
         assert!(report.zones_warning >= 0, "Should report warning count");
         assert!(report.rmse_mm >= 0.0, "RMSE should be non-negative");
+    }
+
+    #[test]
+    fn phf_armor_resolve_t90_front_upper() {
+        let plate = resolve_armor("rhs_t90a_tv", "hull_front_upper");
+        assert!(plate.is_some(), "Should resolve T-90 hull_front_upper");
+        let plate = plate.unwrap();
+        assert_eq!(plate.material, "kvarts_composite");
+        assert!((plate.thickness_mm - 63.0).abs() < 0.1);
+        assert!((plate.angle_deg - 68.0).abs() < 0.1);
+    }
+
+    #[test]
+    fn phf_armor_resolve_m1_front_upper() {
+        let plate = resolve_armor("rhs_m1a2sep1tuskii_d", "hull_front_upper");
+        assert!(plate.is_some(), "Should resolve M1 hull_front_upper");
+        let plate = plate.unwrap();
+        assert_eq!(plate.material, "burlington_composite");
+        assert!((plate.thickness_mm - 74.0).abs() < 0.1);
+    }
+
+    #[test]
+    fn phf_armor_unknown_returns_none() {
+        let plate = resolve_armor("nonexistent_vehicle", "nonexistent_plate");
+        assert!(plate.is_none(), "Unknown armor plate should return None");
+    }
+
+    #[test]
+    fn phf_material_resolve_steel_rha() {
+        let mat = resolve_material("steel_rha");
+        assert!(mat.is_some(), "Should resolve steel_rha");
+        let mat = mat.unwrap();
+        assert!((mat.rha_equivalent - 1.0).abs() < 0.01);
+        assert!((mat.density_gcm3 - 7.85).abs() < 0.01);
+        assert!((mat.hardness_bhn - 280.0).abs() < 1.0);
+    }
+
+    #[test]
+    fn phf_material_resolve_silicon_carbide() {
+        let mat = resolve_material("silicon_carbide");
+        assert!(mat.is_some(), "Should resolve silicon_carbide");
+        let mat = mat.unwrap();
+        assert!((mat.rha_equivalent - 3.5).abs() < 0.1);
+        assert!((mat.density_gcm3 - 3.2).abs() < 0.01);
+    }
+
+    #[test]
+    fn phf_material_unknown_returns_none() {
+        let mat = resolve_material("nonexistent_material");
+        assert!(mat.is_none(), "Unknown material should return None");
+    }
+
+    #[test]
+    fn phf_resolve_effective_rha_t90_front_upper() {
+        let rha = resolve_effective_rha("rhs_t90a_tv", "hull_front_upper");
+        // kvarts_composite has rha_equivalent ~2.1, thickness 63mm → ~132mm RHAe
+        assert!(
+            (rha - 132.3).abs() < 10.0,
+            "T-90 hull_front_upper effective RHA should be ~132mm, got {}",
+            rha
+        );
+    }
+
+    #[test]
+    fn phf_armor_with_backing() {
+        let plate = resolve_armor("rhs_t90a_tv", "hull_sides");
+        assert!(plate.is_some(), "T-90 hull_sides should resolve");
+        let plate = plate.unwrap();
+        assert_eq!(plate.backing, "twaron_liner");
+        assert!((plate.backing_thickness_mm - 8.0).abs() < 0.1);
     }
 
     #[test]
