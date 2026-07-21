@@ -3,6 +3,7 @@ name = "abe_ballistics_ext"
 version = "0.1.0"
 edition = "2024"
 description = "Advanced Ballistics Extension - Rust physics engine for ARMA 3"
+license = "GPL-3.0-only"
 rust-version = "1.85"
 
 [lib]

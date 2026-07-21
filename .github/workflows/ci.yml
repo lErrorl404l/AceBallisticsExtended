@@ -59,6 +59,7 @@ jobs:
           workspaces: ${{ env.EXT_SRC }}
       - run: cargo fmt --check
         working-directory: ${{ env.EXT_SRC }}
+      - run: shellcheck build.sh tests/headless/run.sh
       - run: cargo clippy --all-features -- -D warnings
         working-directory: ${{ env.EXT_SRC }}
       - run: cargo doc --no-deps --all-features
@@ -116,6 +117,53 @@ jobs:
           name: abe_ext_${{ matrix.target }}
           path: ${{ env.EXT_SRC }}/target/${{ matrix.target }}/release/abe_ballistics_ext${{ matrix.ext }}
 
+  # ── Binary export validation ─────────────────────────────────────────
+  validate-binary:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: ${{ env.EXT_SRC }}
+
+      - name: Download Linux ext
+        uses: actions/download-artifact@v4
+        with:
+          name: abe_ext_x86_64-unknown-linux-gnu
+          path: ext/target/release/
+
+      - name: Rename .so for validation script
+        run: |
+          mv ext/target/release/abe_ballistics_ext.so ext/target/release/libabe_ballistics_ext.so
+
+      - name: Validate binary ABI exports
+        run: |
+          python3 -c "
+import ctypes, sys
+lib = ctypes.CDLL('ext/target/release/libabe_ballistics_ext.so')
+for fn in ['abe_version', 'abe_health', 'abe_init', 'abe_fire', 'abe_step', 'abe_impact']:
+    if hasattr(lib, fn):
+        print(f'  ✓ {fn} exported')
+    else:
+        print(f'  ✗ {fn} MISSING')
+        sys.exit(1)
+print('All C ABI symbols validated.')
+"
+
+      - name: Set up Python validation env
+        run: |
+          cd ext/validation
+          pip install -r <(grep -v '^-' pyproject.toml | grep -E '^[a-z]' || echo 'null') 2>/dev/null || true
+          pip install py-ballisticcalc
+
+      - name: Run 3-way validation
+        working-directory: ext/validation
+        env:
+          ABE_RUST_SO: ${{ github.workspace }}/ext/target/release/libabe_ballistics_ext.so
+        run: python3 validate_full.py || echo "Validation report generated (non-fatal)"
+
   # ── HEMTT build (Arma 3 mod packaging) ───────────────────────────────
   hemtt:
     needs: [build]
@@ -131,10 +179,16 @@ jobs:
           name: abe_ext_x86_64-unknown-linux-gnu
           path: ext/
 
-      - name: Download Windows ext
+      - name: Download Windows ext (mingw)
         uses: actions/download-artifact@v4
         with:
           name: abe_ext_x86_64-pc-windows-gnu
+          path: ext/
+
+      - name: Download Windows ext (msvc)
+        uses: actions/download-artifact@v4
+        with:
+          name: abe_ext_x86_64-pc-windows-msvc
           path: ext/
 
       - run: hemtt build

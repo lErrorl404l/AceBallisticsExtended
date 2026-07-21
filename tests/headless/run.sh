@@ -45,6 +45,7 @@ echo "[ABE] Mod: $PROJECT_DIR/releases/latest"
 echo "[ABE] === Checking results ==="
 
 # Find the most recent RPT
+# shellcheck disable=SC2088
 RPT_DIR="${HOME}/.local/share/Arma 3"
 RPT_FILE=$(ls -t "$RPT_DIR"/*.rpt 2>/dev/null | head -1)
 

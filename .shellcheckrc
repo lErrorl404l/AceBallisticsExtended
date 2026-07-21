@@ -1,0 +1,8 @@
+# ABE shellcheck configuration
+# Shellcheck is run as part of CI lint step
+
+# Sourced files may not exist in CI (HEMTT paths)
+disable=SC1091
+
+# Project scripts use `set -e` with intentional exit paths
+disable=SC2310,SC2311,SC2312
