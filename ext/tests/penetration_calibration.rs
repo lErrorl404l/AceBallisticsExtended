@@ -8,17 +8,20 @@
 // where k depends on projectile type, d = caliber, t_eff = effective thickness
 // (line-of-sight × material factor), and m = projectile mass.
 //
-// Calibration note (ponytail: wide tolerances document systematic model bias):
-// The ABE De Marre constants (ball=91000, ap=70000) are conservative —
-// they systematically overestimate V50 by 40-140% vs ARL reference data.
-// This is a deliberate design choice: the evaluate() function uses the
-// bare De Marre threshold for pass/fail, so conservative K values ensure
-// conservative penetration predictions in-game. The penetration_statistics
-// V50 multiplier (+3-5%) adds further conservatism.
+// Calibration note:
+// The ABE De Marre constants (ball=56509, ap=50666) are fitted to 70 reference
+// V50 data points (ARL-TR-4632 + common ammo calibration) via least-squares
+// optimization. The fitted K values reduce RMSE by ~65%: ball 344→104 m/s,
+// AP 276→108 m/s.
 //
-// These tests document the gap between the model and reference data so that
-// future calibration passes can tighten the constants. When the K values or
-// the V50 multiplier are adjusted, tighten these tolerances accordingly.
+// Previously the constants (ball=91000, ap=70000) overestimated V50 by 40-140%,
+// which was a deliberate conservative design choice. The fitted values are still
+// conservative but substantially more accurate. The penetration_statistics V50
+// multiplier (+3-5%) retains a small conservatism margin.
+//
+// If you adjust the K values or add projectile-type sub-classification
+// (e.g., tungsten-carbide AP separate from steel AP), tighten these tolerances.
+// Run `ext/tools/fit_de_marre_k.py` to recompute fitted K from reference data.
 //
 // Reference:
 //   - ARL-TR-4632 (2009): "V50 Ballistic Test Data for Small Arms Projectiles
@@ -561,10 +564,11 @@ fn pen_calibration_data_driven_arl() {
 
         let rel_err = (stats.v50_ms - tc.v50_ms).abs() / tc.v50_ms;
 
-        // Per-case tolerance (see module-level note on conservative constants)
+        // Per-case tolerance for fitted K constants (ball=56509, ap=50666)
+        // Previously 150% / 90% with the old hand-picked K.
         let tolerance = match proj_type {
-            "ap" => 0.90,
-            _ => 1.50,
+            "ap" => 0.60,
+            _ => 0.60,
         };
 
         if rel_err > tolerance {
@@ -636,9 +640,13 @@ fn pen_calibration_data_driven_common_ammo() {
 
                 let rel_err = (stats.v50_ms - dp.v50_ms).abs() / dp.v50_ms;
 
+                // Tighter tolerances with fitted K (previously 200%/150% for old hand-picked K)
+                // Remaining edge cases: .50 BMG ball (12.7mm, core construction differs from
+                // sub-9mm ball), thin armor (t/d<1), tungsten-carbide AP (M995),
+                // very small (1.6mm) and very thick (25.4mm) targets
                 let tolerance = match proj_type {
-                    "ap" => 1.50,
-                    _ => 2.00,
+                    "ap" => 0.80,
+                    _ => 0.85,
                 };
 
                 if rel_err > tolerance {
