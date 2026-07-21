@@ -103,8 +103,11 @@ pub fn evaluate_long_rod(params: &LongRodParams) -> LongRodPenetrationResult {
     // Rod length in metres for internal computation
     let rod_length_m = params.rod_length_mm / 1000.0;
 
-    // Un-capped Lanz-Odermatt penetration depth (metres)
-    let max_penetration_m = p_over_l * rod_length_m;
+    // Un-capped Lanz-Odermatt penetration depth (metres).
+    // Apply the V3 L/D correction factor for high-fineness-ratio rods
+    // (L/D > 30). For conventional L/D ≤ 30 the factor is 1.0 (no change).
+    let v3_factor = crate::penetration::lanz_odermatt_v3_factor(ld_ratio);
+    let max_penetration_m = p_over_l * rod_length_m * v3_factor;
 
     // Erosion-limited penetration depth using the simplified erosion model
     // k_erosion = 1.0 gives comparable magnitude to P/L for typical APFSDS;

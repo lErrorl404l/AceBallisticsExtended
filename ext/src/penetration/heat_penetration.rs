@@ -496,6 +496,7 @@ pub fn evaluate_heat_jet(params: &HeatJetParams) -> HeatJetResult {
         projectile_fragments: if jet_disrupted { 15 } else { 5 },
         residual_velocity_ms: residual_v,
         penetrated,
+        spall_coefficient: 1.0,
     });
 
     HeatJetResult {

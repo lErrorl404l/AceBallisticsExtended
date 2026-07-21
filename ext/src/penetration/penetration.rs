@@ -798,6 +798,7 @@ pub fn evaluate_yaw(
             projectile_fragments: 0,
             residual_velocity_ms: residual_v,
             penetrated: false,
+            spall_coefficient: 1.0,
         });
 
         return PenetrationResult {
@@ -885,6 +886,7 @@ pub fn evaluate_yaw(
             projectile_fragments: frag_result.num_fragments.max(4),
             residual_velocity_ms: 0.0,
             penetrated: false,
+            spall_coefficient: 1.0,
         });
         return PenetrationResult {
             penetrated: false,
@@ -956,6 +958,7 @@ pub fn evaluate_yaw(
                 projectile_fragments: fragments,
                 residual_velocity_ms: residual_velocity,
                 penetrated,
+                spall_coefficient: 1.0,
             });
             return PenetrationResult {
                 penetrated,
@@ -1036,6 +1039,7 @@ pub fn evaluate_yaw(
         projectile_fragments: fragments,
         residual_velocity_ms: residual_velocity,
         penetrated,
+        spall_coefficient: 1.0,
     });
 
     PenetrationResult {

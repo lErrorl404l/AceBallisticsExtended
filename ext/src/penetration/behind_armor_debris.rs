@@ -52,6 +52,15 @@ pub struct BehindArmorDebrisParams {
     pub residual_velocity_ms: f64,
     /// Whether the projectile fully perforated the plate.
     pub penetrated: bool,
+    /// Spall coefficient (0.0–1.0) controlling the fraction of spall mass.
+    ///
+    /// - `1.0` — maximum spall (default, "not specified" / normal)
+    /// - `0.0` — zero spall (spall-liner equivalent without the liner check)
+    /// - `0.5` — 50 % of the calculated spall mass
+    ///
+    /// Applied multiplicatively on top of the material-driven spall factor
+    /// so existing callers default to full spall with no behavioural change.
+    pub spall_coefficient: f64,
 }
 
 /// Result of a behind-armour debris evaluation.
@@ -235,6 +244,11 @@ pub fn evaluate_bad(params: &BehindArmorDebrisParams) -> BehindArmorDebrisResult
         1.0 / mat_factor.max(0.01)
     };
 
+    // Apply spall coefficient (default 1.0 = no reduction).
+    // When < 1.0 it scales the spall mass proportionally, e.g. 0.5 → half spall.
+    // Clamped to [0, 1] so a caller cannot accidentally amplify spall.
+    let spall_factor = spall_factor * params.spall_coefficient.clamp(0.0, 1.0);
+
     // Energy-to-spall-mass conversion: ~5 % of deposited energy goes into
     // spall fragment mass (fragment KE + surface energy), with the specific
     // energy per kg varying by material.  5 × 10⁻⁶ gives ~7 g of spall per
@@ -329,6 +343,7 @@ mod tests {
             projectile_fragments: 5,
             residual_velocity_ms,
             penetrated,
+            spall_coefficient: 1.0,
         }
     }
 
