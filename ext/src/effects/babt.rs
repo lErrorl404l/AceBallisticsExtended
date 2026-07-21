@@ -252,4 +252,66 @@ mod tests {
             aramid.backface_deformation_mm
         );
     }
+
+    // ── NIJ 0101.06 Reference Validation ───────────────────────────────────
+    // Validates BABT model against NIJ Standard 0101.06 reference threats.
+    // NIJ requires BFD ≤ 44mm for all soft armor levels (IIA, II, IIIA).
+    // These are model-consistency checks, not certified test data validation.
+
+    /// NIJ Level IIA: 9mm FMJ at 373 m/s, 8.0g, vs 5mm aramid → BFD < 44mm
+    #[test]
+    fn nij_iia_9mm_bfd_compliant() {
+        let r = evaluate_babt(373.0, 8.0, 0.00901, "fmj", 5.0, "aramid", 0.0);
+        assert!(
+            nij_bfd_compliant(r.backface_deformation_mm, "iia"),
+            "NIJ IIA 9mm BFD should be ≤44mm: got {:.1}mm",
+            r.backface_deformation_mm
+        );
+    }
+
+    /// NIJ Level II: 9mm FMJ at 398 m/s, 8.0g, vs 6mm aramid → BFD < 44mm
+    #[test]
+    fn nij_ii_9mm_bfd_compliant() {
+        let r = evaluate_babt(398.0, 8.0, 0.00901, "fmj", 6.0, "aramid", 0.0);
+        assert!(
+            nij_bfd_compliant(r.backface_deformation_mm, "ii"),
+            "NIJ II 9mm BFD should be ≤44mm: got {:.1}mm",
+            r.backface_deformation_mm
+        );
+    }
+
+    /// NIJ Level IIIA: .44 Mag at 436 m/s, 15.6g, vs 6mm aramid → BFD < 44mm
+    #[test]
+    fn nij_iiia_44mag_bfd_compliant() {
+        let r = evaluate_babt(436.0, 15.6, 0.0109, "fmj", 6.0, "aramid", 0.0);
+        assert!(
+            nij_bfd_compliant(r.backface_deformation_mm, "iiia"),
+            "NIJ IIIA .44 Mag BFD should be ≤44mm: got {:.1}mm",
+            r.backface_deformation_mm
+        );
+    }
+
+    /// NIJ Level III: 7.62mm M80 at 847 m/s, 9.5g, vs 8mm UHMWPE → BFD < 44mm
+    #[test]
+    fn nij_iii_m80_bfd_compliant() {
+        let r = evaluate_babt(847.0, 9.5, 0.00762, "fmj", 8.0, "uhmwpe", 0.0);
+        assert!(
+            nij_bfd_compliant(r.backface_deformation_mm, "iii"),
+            "NIJ III M80 BFD should be ≤44mm: got {:.1}mm",
+            r.backface_deformation_mm
+        );
+    }
+
+    /// Thicker armor reduces BFD (monotonicity validation)
+    #[test]
+    fn babt_thicker_armor_reduces_bfd() {
+        let thin = evaluate_babt(400.0, 10.0, 0.00901, "fmj", 4.0, "aramid", 0.0);
+        let thick = evaluate_babt(400.0, 10.0, 0.00901, "fmj", 8.0, "aramid", 0.0);
+        assert!(
+            thick.backface_deformation_mm < thin.backface_deformation_mm,
+            "Thicker armor should reduce BFD: thin={:.1}, thick={:.1}",
+            thin.backface_deformation_mm,
+            thick.backface_deformation_mm
+        );
+    }
 }

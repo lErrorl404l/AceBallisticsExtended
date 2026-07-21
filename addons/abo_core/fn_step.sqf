@@ -45,6 +45,16 @@ private _bulletIds = keys _tracked;
     // >2.5s flight: step every 4th frame (long range, small visual error)
     private _stepEvery = if (_dt < 1.0) then { 1 } else { if (_dt < 2.5) then { 2 } else { 4 } };
     if (diag_frameNo % _stepEvery == 0) then {
+        // Distance-based throttle: skip bullets >800m from nearest player
+        private _nearestPlayer = allPlayers select 0;
+        if (!isNil "_nearestPlayer") then {
+            private _bulletPos = _pos;
+            private _playerPos = getPosASL _nearestPlayer;
+            if (_bulletPos distance _playerPos > 800.0) then {
+                _tracked set [_bulletId, [_pos, _vel, diag_tickTime, _cdmId, _bc, _massG, _caliberMm]];
+                continue;
+            };
+        };
         // Read environment
         private _wind = wind;
         private _altitude = (_pos select 2) max 0;

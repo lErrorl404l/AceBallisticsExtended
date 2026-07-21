@@ -1,4 +1,18 @@
 weapon_id	manufacturer	model	variant	cartridge	caliber_mm	barrel_mm	twist_mm	twist_dir	pressure_mpa	projectile_mass_g	muzzle_velocity_ms	source	confidence
+m1_garand	Springfield Armory	M1 Garand	Battle Rifle	.30-06 Springfield	7.62	610	254	1	365	9.7	837	researched (US Army TM 23-20)	researched
+m1_carbine	Winchester	M1 Carbine	Carbine	.30 Carbine	7.62	458	508	1	310	7.2	607	researched (US Army TM)	researched
+thompson_m1a1	Auto-Ordnance	Thompson M1A1	Submachine Gun	.45 ACP	11.43	267	406	2	145	15.0	287	researched (US Army TM)	researched
+m3_grease_gun	General Motors	M3 Grease Gun	Submachine Gun	.45 ACP	11.43	203	406	2	145	15.0	280	researched (US Army TM)	researched
+mg34	Mauser	MG34	General Purpose Machine Gun	7.92×57mm Mauser	7.92	627	240	1	390	11.8	755	researched (WWII German TM)	researched
+mg42	Mauser	MG42	General Purpose Machine Gun	7.92×57mm Mauser	7.92	533	240	1	390	11.8	740	researched (WWII German TM)	researched
+mp40	Erma Werke	MP40	Submachine Gun	9×19mm Parabellum	9.01	251	254	1	235	8.0	380	researched (German TM)	researched
+stg44	C.G. Haenel	StG 44	Assault Rifle	7.92×33mm Kurz	7.92	419	240	1	345	8.1	650	researched (German TM)	researched
+k98k	Mauser	Kar98k	Battle Rifle	7.92×57mm Mauser	7.92	600	240	1	390	11.9	760	researched (German TM)	researched
+fg42	Rheinmetall	FG 42	Battle Rifle	7.92×57mm Mauser	7.92	502	240	1	390	11.8	770	researched (German TM)	researched
+ppsh41	Degtyaryov	PPSh-41	Submachine Gun	7.62×25mm Tokarev	7.62	269	240	1	270	5.5	488	researched (Soviet TM)	researched
+mosin_nagant	Izhevsk	Mosin-Nagant M91/30	Battle Rifle	7.62×54mmR	7.62	730	240	1	365	11.9	820	researched (Soviet TM)	researched
+svt40	Izhevsk	SVT-40	Battle Rifle	7.62×54mmR	7.62	625	240	1	365	11.9	775	researched (Soviet TM)	researched
+dp27	Degtyaryov	DP-27	Light Machine Gun	7.62×54mmR	7.62	605	240	1	365	11.9	760	researched (Soviet TM)	researched
 colt_m4a1	Colt	M4A1	Assault Rifle	5.56×45mm NATO	5.56	368	178	1	430	4.0	862	researched (NATO EPVAT/M855)	researched
 colt_m4a1_block_ii	Colt	M4A1 Block II	Assault Rifle	5.56×45mm NATO	5.56	368	178	1	430	4.0	862	researched (NATO EPVAT/M855)	researched
 colt_m16a4	Colt	M16A4	Assault Rifle	5.56×45mm NATO	5.56	508	178	1	430	4.0	940	researched (NATO EPVAT/M855)	researched
