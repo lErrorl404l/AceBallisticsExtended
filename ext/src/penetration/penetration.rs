@@ -15,6 +15,7 @@ use std::sync::OnceLock;
 
 use crate::behind_armor_debris::{self, BehindArmorDebrisParams};
 use crate::heat_penetration::{self, HeatJetParams};
+use crate::long_rod;
 
 static MATERIAL_CACHE: OnceLock<HashMap<&'static str, f64>> = OnceLock::new();
 
@@ -474,6 +475,66 @@ pub fn de_marre_k(projectile_type: &str) -> f64 {
     }
 }
 
+/// Estimate long-rod penetrator parameters from projectile data.
+///
+/// For APFSDS and APDS projectiles, estimates rod geometry from
+/// caliber, mass, and typical long-rod density (tungsten heavy alloy,
+/// ~17 500 kg/m³). Returns `None` for non-APFSDS projectile types
+/// or when input data is insufficient.
+///
+/// # Rod geometry derivation
+/// 1. Rod diameter ≈ 25 % of full caliber (sub-calibre penetrator)
+/// 2. Rod length derived from cylindrical volume: L = m / (ρ · π · r²)
+/// 3. Fineness ratio L/D computed from length and diameter
+fn estimate_rod_params(
+    projectile_type: &str,
+    caliber_m: f64,
+    mass_kg: f64,
+    velocity_ms: f64,
+    impact_angle_deg: f64,
+) -> Option<long_rod::LongRodParams> {
+    let proj_lower = projectile_type.to_lowercase();
+    if proj_lower != "apfsds" && proj_lower != "apds" {
+        return None;
+    }
+
+    // Sub-calibre penetrator: rod diameter ≈ 25 % of full caliber
+    let rod_diameter_mm = caliber_m * 1000.0 * 0.25;
+    if rod_diameter_mm <= 0.0 || mass_kg <= 0.0 || velocity_ms <= 0.0 {
+        return None;
+    }
+
+    // Tungsten heavy alloy density (typical WHA: 17.5–18.5 g/cm³)
+    let rod_density_kgm3 = 17500.0;
+
+    // Derive rod length from mass and cylindrical geometry:
+    //   mass = density × volume = ρ × π × r² × L
+    //   L = mass / (ρ × π × r²)
+    let radius_m = rod_diameter_mm / 2000.0; // mm → m
+    let rod_length_mm = {
+        let length_m = mass_kg / (rod_density_kgm3 * std::f64::consts::PI * radius_m * radius_m);
+        length_m * 1000.0
+    };
+
+    // Sanity check: rod must be at least as long as it is wide
+    if rod_length_mm < rod_diameter_mm {
+        return None;
+    }
+
+    let rod_fineness_ratio = rod_length_mm / rod_diameter_mm;
+
+    Some(long_rod::LongRodParams {
+        rod_length_mm,
+        rod_diameter_mm,
+        rod_density_kgm3,
+        impact_velocity_ms: velocity_ms,
+        impact_angle_deg,
+        target_density_kgm3: 0.0,        // caller fills in
+        target_yield_strength_m_pa: 0.0, // caller fills in
+        rod_fineness_ratio,
+    })
+}
+
 // TODO: Add THOR equation alternative penetration model for high-hardness
 // rolled homogenous armor. THOR provides better accuracy for RHA targets
 // with hardness > 350 BHN at velocities below 1000 m/s. Reference:
@@ -841,6 +902,79 @@ pub fn evaluate_yaw(
         };
     }
 
+    // ── APFSDS / long-rod branch (Lanz-Odermatt) ──────────────────────────────
+    // Long-rod penetrators follow different physics from the De Marre
+    // formula.  When rod parameters can be estimated, use the enhanced
+    // Lanz-Odermatt model for higher fidelity.
+    if proj_lower == "apfsds" || proj_lower == "apds" {
+        if let Some(rod_params) = estimate_rod_params(
+            projectile_type,
+            caliber_m,
+            projectile_mass_kg,
+            velocity_ms,
+            impact_angle_deg,
+        ) {
+            let rod = long_rod::LongRodParams {
+                target_density_kgm3: 7850.0,
+                target_yield_strength_m_pa: 1500.0,
+                ..rod_params
+            };
+            let rod_result = long_rod::evaluate_long_rod(&rod);
+            let effective_mm = effective_thickness * 1000.0;
+            let penetrated = rod_result.penetration_depth_mm >= effective_mm;
+
+            // Residual velocity: scale by unused penetration capacity
+            let residual_velocity = if penetrated && rod_result.penetration_depth_mm > 0.0 {
+                let ratio = (1.0 - effective_mm / rod_result.penetration_depth_mm).max(0.0);
+                velocity_ms * ratio.sqrt()
+            } else {
+                velocity_ms * 0.1
+            };
+
+            let frag_result = crate::fragmentation::evaluate(
+                velocity_ms,
+                projectile_mass_kg * 1000.0,
+                projectile_type,
+                300.0,
+                None,
+            );
+            let fragments = if penetrated {
+                frag_result.num_fragments.max(2)
+            } else if velocity_ms > 500.0 {
+                (frag_result.num_fragments / 2).max(0)
+            } else {
+                0
+            };
+            let bad_result = behind_armor_debris::evaluate_bad(&BehindArmorDebrisParams {
+                impact_velocity_ms: velocity_ms,
+                projectile_mass_kg,
+                caliber_m,
+                armor_thickness_m,
+                armor_material: armor_material.to_string(),
+                impact_angle_deg,
+                projectile_type: projectile_type.to_string(),
+                projectile_fragments: fragments,
+                residual_velocity_ms: residual_velocity,
+                penetrated,
+            });
+            return PenetrationResult {
+                penetrated,
+                residual_velocity,
+                effective_thickness,
+                ricochet: false,
+                ricochet_angle: 0.0,
+                ricochet_energy_fraction: 0.0,
+                fragments,
+                spall_fragments: bad_result.num_spall_fragments,
+                spall_cone_angle: bad_result.spall_cone_angle_deg,
+                debris_spray_cone: bad_result.debris_spray_cone_deg,
+                temp_cavity_diameter: bad_result.temp_cavity_diameter_mm,
+                temp_cavity_volume: bad_result.temp_cavity_volume_cc,
+            };
+        }
+        // Fall through to De Marre if rod params could not be estimated
+    }
+
     // ── De Marre penetration ───────────────────────────────────────────────
     // V_required = k * D^0.75 * T^0.7 / M^0.5
     // where k is the De Marre coefficient, calibrated per projectile type.
@@ -864,7 +998,11 @@ pub fn evaluate_yaw(
     let residual_velocity = if penetrated {
         // R_p = sqrt(V^2 - V_req^2)
         let vr_sq = velocity_ms.powi(2) - v_required.powi(2);
-        if vr_sq > 0.0 { vr_sq.sqrt() } else { 0.0 }
+        if vr_sq > 0.0 {
+            vr_sq.sqrt()
+        } else {
+            0.0
+        }
     } else {
         velocity_ms * 0.1 // Stopped or minimal pass-through
     };

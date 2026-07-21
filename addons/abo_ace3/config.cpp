@@ -13,12 +13,3 @@ class CfgPatches {
     };
 };
 
-class CfgFunctions {
-    class abe {
-        class abo_ace3 {
-            file = "z\abe\addons\abo_ace3";
-            class hookAceBallistics {};
-            class dispatchStandalone {};
-        };
-    };
-};
