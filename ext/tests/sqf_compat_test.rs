@@ -21,7 +21,7 @@
 // when another test has already initialized — mirroring the guard
 // pattern in lib.rs unit tests.
 
-use abe_ballistics_ext::{RVExtension, RVExtensionArgs, abe_health, abe_init, abe_version};
+use abe_ballistics_ext::{abe_health, abe_init, abe_version, RVExtension, RVExtensionArgs};
 use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 
@@ -1021,12 +1021,12 @@ fn sqf_corner_case_args() {
 
 #[test]
 fn sqf_impact_material_matrix() {
-    // All at 10mm, 880 m/s, 7.62mm ball, 9.5g, 0°
+    // All at 20mm, 880 m/s, 7.62mm ball, 9.5g, 0° (K=56509 after ARL calibration)
     macro_rules! impact_mat {
         ($mat:expr) => {{
             let r = rv_ext_args(
                 "impact",
-                &["880", "0", "0", "9.5", "7.62", "10", $mat, "0", "ball"],
+                &["880", "0", "0", "9.5", "7.62", "20", $mat, "0", "ball"],
             );
             assert_ne!(r, "-1", "impact({}) should succeed", $mat);
             assert!(r.starts_with('['), "{}: '[' prefix", $mat);
@@ -1093,14 +1093,14 @@ fn sqf_impact_material_matrix() {
         "Ceramic (2.5) blocks better than RHA (1.0)"
     );
 
-    // Known absolute thresholds at 10mm/880 m/s/7.62mm ball
-    assert_eq!(al_pen, 1, "10mm Al5083 should PEN at 880m/s");
-    assert_eq!(glass_pen, 1, "10mm composite glass should PEN at 880m/s");
-    assert_eq!(wood_pen, 1, "10mm wood should PEN at 880m/s");
-    assert_eq!(rha_pen, 0, "10mm RHA should NOT PEN at 880m/s");
+    // Known absolute thresholds at 20mm/880 m/s/7.62mm ball (K=56509 after ARL calibration)
+    assert_eq!(al_pen, 1, "20mm Al5083 should PEN at 880m/s");
+    assert_eq!(glass_pen, 1, "20mm composite glass should PEN at 880m/s");
+    assert_eq!(wood_pen, 1, "20mm wood should PEN at 880m/s");
+    assert_eq!(rha_pen, 0, "20mm RHA should NOT PEN at 880m/s");
     assert_eq!(
         ceramic_pen, 0,
-        "10mm Al2O3 ceramic should NOT PEN at 880m/s"
+        "20mm Al2O3 ceramic should NOT PEN at 880m/s"
     );
 
     // Unknown material → RHA-equivalent fallback

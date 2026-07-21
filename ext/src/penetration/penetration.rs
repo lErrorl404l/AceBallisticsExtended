@@ -436,9 +436,9 @@ pub fn erode_projectile_mass(
 ///
 /// # Provenance
 /// - **ball / fmj (56509)**: Least-squares fit against 36 ARL/BRL reference V50 data points
-///     (ARL-TR-4632 + common ammo calibration). RMSE reduced from 344 to 104 m/s (70%).
+///   (ARL-TR-4632 + common ammo calibration). RMSE reduced from 344 to 104 m/s (70%).
 /// - **AP (hard steel, 50666)**: Least-squares fit against 34 ARL/BRL V50 data points.
-///     RMSE reduced from 276 to 108 m/s (61%).
+///   RMSE reduced from 276 to 108 m/s (61%).
 /// - **APFSDS (tungsten long rod, 50500)**: Community standard from BALI/Litz extended De Marre fits.
 /// - **Tungsten carbide AP (e.g. M995): fitted K ~39200** — separate type needed if accuracy desired.
 /// - **.50 BMG ball: fitted K ~38200** — caliber-dependent residual from D^0.75 exponent.
@@ -864,11 +864,7 @@ pub fn evaluate_yaw(
     let residual_velocity = if penetrated {
         // R_p = sqrt(V^2 - V_req^2)
         let vr_sq = velocity_ms.powi(2) - v_required.powi(2);
-        if vr_sq > 0.0 {
-            vr_sq.sqrt()
-        } else {
-            0.0
-        }
+        if vr_sq > 0.0 { vr_sq.sqrt() } else { 0.0 }
     } else {
         velocity_ms * 0.1 // Stopped or minimal pass-through
     };

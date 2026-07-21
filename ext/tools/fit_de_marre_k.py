@@ -194,6 +194,41 @@ def main():
             }
         )
 
+    # ── Sub-classification for refined fit ──
+    # Ball: separate sub-9mm (5.56, 7.62) from heavy (9mm, .50 BMG)
+    # AP: separate WC core (M995) from steel core
+    SUB_CLASS = {
+        "ball_small": lambda p: (
+            p["caliber_mm"] < 9.0 and classify_type(p["core_material"]) == "ball"
+        ),
+        "ball_heavy": lambda p: (
+            p["caliber_mm"] >= 9.0 and classify_type(p["core_material"]) == "ball"
+        ),
+        "ap_steel": lambda p: (
+            p["core_material"] == "hardened_steel"
+            or (
+                classify_type(p["core_material"]) == "ap"
+                and "tungsten" not in p["core_material"]
+            )
+        ),
+        "ap_wc": lambda p: "tungsten" in p["core_material"],
+    }
+    by_sub = defaultdict(list)
+    for pt in all_points:
+        k = solve_k(
+            pt["v50_ms"],
+            pt["mass_g"],
+            pt["caliber_mm"],
+            pt["thickness_mm"],
+            pt["obliquity_deg"],
+        )
+        if math.isnan(k) or k <= 0:
+            continue
+        for sub_name, pred in SUB_CLASS.items():
+            if pred(pt):
+                by_sub[sub_name].append({**pt, "k_fitted": k})
+                break  # first match only
+
     # ── Report per type ──
     print(
         f"{'Type':<12} {'Points':>6} {'Current K':>10} {'Fitted K':>10} "

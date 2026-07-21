@@ -19,7 +19,7 @@
 //   - ACE3's native extension behavior
 //   - ACE3 medical classification (tested in soft_tissue.rs)
 
-use abe_ballistics_ext::{RVExtension, RVExtensionArgs, abe_health, abe_init, abe_version};
+use abe_ballistics_ext::{abe_health, abe_init, abe_version, RVExtension, RVExtensionArgs};
 use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 
@@ -332,7 +332,7 @@ fn ace3_impact_material_matrix() {
         ($mat:expr) => {{
             let r = rv_ext_args(
                 "impact",
-                &["880", "0", "0", "9.5", "7.62", "10", $mat, "0", "ball"],
+                &["880", "0", "0", "9.5", "7.62", "20", $mat, "0", "ball"],
             );
             assert_ne!(r, "-1", "impact({}) should succeed in ACE3 mode", $mat);
             assert!(r.starts_with('['), "{}: '[' prefix", $mat);
@@ -386,11 +386,11 @@ fn ace3_impact_material_matrix() {
         "Ceramic blocks better than RHA in ACE3 mode"
     );
 
-    // Absolute thresholds at 10mm/880m/s/7.62mm ball
-    assert_eq!(al_pen, 1, "10mm Al5083 PENs in ACE3 mode");
-    assert_eq!(wood_pen, 1, "10mm wood PENs in ACE3 mode");
-    assert_eq!(rha_pen, 0, "10mm RHA does NOT PEN in ACE3 mode");
-    assert_eq!(ceramic_pen, 0, "10mm ceramic does NOT PEN in ACE3 mode");
+    // Absolute thresholds at 20mm/880m/s/7.62mm ball (K=56509 after ARL calibration)
+    assert_eq!(al_pen, 1, "20mm Al5083 PENs in ACE3 mode");
+    assert_eq!(wood_pen, 1, "20mm wood PENs in ACE3 mode");
+    assert_eq!(rha_pen, 0, "20mm RHA does NOT PEN in ACE3 mode");
+    assert_eq!(ceramic_pen, 0, "20mm ceramic does NOT PEN in ACE3 mode");
 }
 
 #[test]

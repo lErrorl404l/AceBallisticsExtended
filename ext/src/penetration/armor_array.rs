@@ -476,16 +476,16 @@ mod tests {
 
     #[test]
     fn thick_plate_stops_round() {
-        // M80 ball at 853 m/s cannot pen 15mm RHA in this model
+        // M80 ball at 853 m/s cannot pen 20mm RHA (K=56509 after ARL calibration)
         let plates = vec![ArrayPlate {
-            thickness_m: 0.015,
+            thickness_m: 0.020,
             material: "steel_rha",
             angle_from_vertical_deg: 0.0,
             gap_to_next_m: 0.0,
             open_area_fraction: 0.0,
         }];
         let r = evaluate_armor_array(&plates, 853.0, 0.0095, 0.00762, "ball");
-        assert!(!r.array_perforated, "M80 ball should NOT pen 15mm RHA");
+        assert!(!r.array_perforated, "M80 ball should NOT pen 20mm RHA");
     }
 
     #[test]
@@ -579,9 +579,9 @@ mod tests {
 
     #[test]
     fn front_plate_alone_stops() {
-        // 15mm RHA stops M80 ball at 853 m/s
-        let r = evaluate_armor_with_backing(15.0, "steel_rha", 0.0, None, None, M80_KE_J, "ball");
-        assert!(!r.penetrated, "15mm RHA should stop M80 ball");
+        // 20mm RHA stops M80 ball at 853 m/s (K=56509 after ARL calibration)
+        let r = evaluate_armor_with_backing(20.0, "steel_rha", 0.0, None, None, M80_KE_J, "ball");
+        assert!(!r.penetrated, "20mm RHA should stop M80 ball");
     }
 
     #[test]
@@ -598,20 +598,20 @@ mod tests {
             evaluate_armor_with_backing(6.0, "steel_rha", 0.0, None, None, M80_KE_J, "ball");
         assert!(alone.penetrated, "6mm RHA alone should be perforated");
 
-        // 6mm RHA + 20mm Al 5083 backing: the interface disrupts the
-        // projectile so the backing stops it
+        // 10mm RHA + 35mm Al 5083 backing: the interface disrupts the
+        // projectile so the backing stops it (K=56509 after ARL calibration)
         let backed = evaluate_armor_with_backing(
-            6.0,
+            10.0,
             "steel_rha",
             0.0,
             Some("aluminum_5083"),
-            Some(20.0),
+            Some(35.0),
             M80_KE_J,
             "ball",
         );
         assert!(
             !backed.penetrated,
-            "6mm RHA + 20mm Al backing should stop M80 ball",
+            "10mm RHA + 35mm Al backing should stop M80 ball",
         );
     }
 
@@ -646,14 +646,14 @@ mod tests {
             evaluate_armor_with_backing(6.0, "steel_rha", 0.0, None, None, M80_KE_J, "ball");
         assert!(alone.penetrated, "6mm RHA alone should be perforated");
 
-        // 6mm RHA + 20mm Al 5083: backing stops the projectile,
-        // effective thickness includes both layers
+        // 10mm RHA + 35mm Al 5083: backing stops the projectile,
+        // effective thickness includes both layers (K=56509 after ARL calibration)
         let backed = evaluate_armor_with_backing(
-            6.0,
+            10.0,
             "steel_rha",
             0.0,
             Some("aluminum_5083"),
-            Some(20.0),
+            Some(35.0),
             M80_KE_J,
             "ball",
         );
