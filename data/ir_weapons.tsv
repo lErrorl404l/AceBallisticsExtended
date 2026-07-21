@@ -1783,3 +1783,13 @@ gm_svd	7.62	620.0	239.0	380	9.8
 # RF/Creator DLC
 deagle	12.7	127.0	482.0	250	19.0
 
+# SPE DLC — WWII firearms (without ACE3 params)
+spe_p08	9.0	102.0	250.0	250	8.0
+spe_sten	9.0	196.0	254.0	250	8.0
+
+# VN DLC — Vietnam War firearms
+vn_ppsh41	7.62	269.0	240.0	250	5.5
+vn_rpd	7.62	521.0	240.0	355	8.0
+vn_svd	7.62	620.0	240.0	380	9.8
+vn_tt33	7.62	116.0	240.0	250	5.5
+
