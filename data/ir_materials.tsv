@@ -1,0 +1,81 @@
+# source=Compiled from MIL-DTL-46100, MIL-A-12560, CoorsTek/ALAN/Foster-Miller datasheets, academic papers
+# confidence=Medium — values are typical ranges; see data/armor/materials/*.json for per-material citations
+# material_id	display_name	density_gcm3	hardness_bhn	tensile_strength_mpa	rha_equivalent	ductility	spall_coeff
+ad90	AD90 Alumina (90% Al2O3, short form)	3.7	1100	240	2.2	0.03	0.85
+ad95	AD95 Alumina (95% Al2O3, short form)	3.75	1300	270	2.4	0.02	0.85
+boron_carbide	Boron Carbide (B4C, lightest armor ceramic)	2.52	3700	250	4.5	0.02	0.9
+ceramic_ad90	AD90 Armor Ceramic (90% Al2O3, CoorsTek)	3.7	1100	240	2.2	0.03	0.85
+ceramic_ad95	AD95 Armor Ceramic (95% Al2O3, CoorsTek)	3.75	1300	270	2.4	0.02	0.85
+ceramic_al2o3	Aluminum Oxide (Al2O3, 99.5% sintered alumina)	3.85	1200	260	2.5	0.02	0.9
+ceramic_b4c	Boron Carbide (B4C, lightest armor ceramic)	2.52	3700	250	4.5	0.02	0.9
+ceramic_plate	Al2O3 Ceramic Plate (SAPI-style)	3.85	1200	260	2.5	0.05	0.9
+ceramic_sic	Silicon Carbide (SiC, sintered armor ceramic)	3.2	2500	350	3.5	0.02	0.9
+esapi_al2o3	ESAPI Al2O3 Array (Enhanced Small Arms Protective Insert)	3.85	1200	260	3.0	0.02	0.85
+esapi_b4c	ESAPI B4C Array (Enhanced Small Arms Protective Insert)	2.52	3700	250	5.5	0.02	0.85
+esapi_sic	ESAPI SiC Array (Enhanced Small Arms Protective Insert)	3.2	2500	350	4.0	0.02	0.85
+mar_ceramic	MAR Ceramic (Medium Archival Reference — ARL standard)	3.6	1600	300	2.8	0.02	0.85
+silicon_carbide	Silicon Carbide (SiC, sintered armor ceramic)	3.2	2500	350	3.5	0.02	0.9
+arma_glass	Arma 3 Glass (Armor class)	2.5	50	50	0.1	0.05	0.9
+burlington_composite	Burlington Composite (M1 Abrams special armor)	2.6	1000	350	2.0	0.05	0.65
+carbon_fiber	Carbon Fiber Composite (MIL-DTL-81061, structural/ballistic)	1.6	10	3500	0.2	0.6	0.08
+chobham_composite	Chobham Composite (UK 1st-gen special armor)	2.7	1100	350	2.2	0.05	0.65
+composite_glass	S2-Glass/Phenolic Composite (per ARL MIL-DTL-64192)	1.9	100	350	0.4	0.3	0.6
+composite_kevlar	Kevlar Composite (Aramid fiber laminate, SAPI backer)	1.44	15	3620	0.6	0.7	0.1
+dorchester_composite	Dorchester Composite (2nd-gen Chobham, Challenger 2)	2.8	1200	400	2.5	0.05	0.6
+k_active_composite	K-Active Composite (T-90M modern ceramic array)	2.7	1100	350	2.3	0.05	0.6
+kvarts_composite	Kvarts Composite (Russian quartz-reinforced, T-72/T-90)	2.65	1100	350	2.1	0.05	0.65
+laminated_glass	Laminated Armored Glass (vehicle windscreen, MIL-PRF-32348)	2.5	600	50	0.15	0.1	0.8
+mexas_composite	MEXAS Composite (Modular Expandable Armor System, IBD Deisenroth)	2.8	1000	200	1.8	0.05	0.6
+stanag_composite	STANAG 4569 Composite Armor (Al2O3/UHMWPE)	2.6	900	350	2.0	0.05	0.85
+stef_composite	STEF Composite (Soviet multilayer armor, T-80 family)	2.5	800	300	1.9	0.08	0.65
+textolite_composite	Textolite GRP (Soviet Glass-Reinforced Plastic, AG-4S)	1.8	20	400	0.35	0.5	0.3
+era_kontakt5	Kontakt-5 ERA (NII Stali, 2nd-gen Soviet)	3.0	280	380	1.8	0.1	0.75
+era_light	Light ERA (soft-kill / light appliqué)	3.0	180	200	1.3	0.1	0.6
+era_relikt	Relikt ERA (NII Stali, T-90M/T-14)	3.2	300	400	2.0	0.1	0.8
+malachite_era	Malachite ERA (NII Stali/Kurganmashzavod)	3.5	350	450	2.0	0.1	0.75
+relikt_era	Relikt ERA (NII Stali)	3.2	300	400	2.0	0.1	0.8
+aluminum_5083	Aluminum 5083-H131	2.66	90	290	0.35	0.7	0.1
+aluminum_7039	Aluminum Alloy 7039-T64 (MIL-DTL-46027E)	2.74	100	420	0.45	0.6	0.1
+aluminum_7075	Aluminum Alloy 7075-T6 (MIL-DTL-46027E alt.)	2.81	150	570	0.48	0.5	0.15
+arma_aluminum	Arma 3 Aluminum (Armor class)	2.7	90	290	0.5	0.7	0.1
+arma_default	Arma 3 Default (Base armor class)	7.85	250	800	1.0	0.5	0.5
+arma_steel	Arma 3 Steel (Armor class)	7.85	280	900	2.0	0.5	0.6
+armor_tip_steel	Armor-Piercing Core Tip Steel (hardened tool steel)	7.85	600	2000	1.15	0.2	0.6
+armox_500	ARMOX 500 (SSAB)	7.85	500	1600	1.1	0.3	0.5
+armox_600	ARMOX 600 (SSAB)	7.85	600	2000	1.35	0.25	0.55
+cage_armor	Cage Armor (stand-off wire/cage)	7.85	150	300	0.15	0.1	0.4
+cast_steel	Cast Armor Steel (Soviet cast turret, MIL-S-21885)	7.85	250	750	0.85	0.4	0.7
+depleted_uranium	Depleted Uranium Alloy (DU-0.75Ti, M1A1HA/M1A2 turret inserts)	19.05	450	1000	1.8	0.2	0.9
+dual_hardness_steel	Dual-Hardness Armor Steel (MIL-A-46099C)	7.85	600	1800	1.1	0.25	0.75
+hardox_450	Hardox 450 (SSAB)	7.85	450	1400	0.8	0.4	0.45
+hha_steel	UHH Steel (ARMOX 600S class, 570-640 HBW)	7.85	600	2000	1.25	0.3	0.7
+lead_alloy	Lead Alloy (BMP-3 armor insert, radiation shielding)	11.34	5	15	0.04	0.7	0.3
+mars_armor	MARS Armor (Medium Archival Reference Standard)	7.85	600	1800	1.1	0.25	0.75
+mil_dtl_46100_class1	MIL-DTL-46100 Class 1 HHA (477-534 BHN)	7.85	500	1520	1.3	0.35	0.65
+mil_dtl_46100_class3	MIL-DTL-46100 Class 3 HHA (534-578 BHN)	7.85	555	1750	1.4	0.3	0.7
+mil_dtl_46100_class4	MIL-DTL-46100 Class 4 HHA (578-640 BHN)	7.85	605	1950	1.5	0.25	0.75
+mild_steel	Mild/Structural Steel (A36, backstop and building material)	7.85	120	400	0.5	0.6	0.5
+perforated_armor	Perforated Armor Plate (PAP, IDF Slat-style)	6.5	300	900	0.6	0.3	0.5
+steel_rha	RHA Steel (MIL-A-12560)	7.85	280	900	1.0	0.5	0.6
+slat_armor	Slat Armor (stand-off bar armor)	7.85	200	400	0.2	0.15	0.5
+slotted_armor	Slotted Armor (MEXAS-style multi-impact)	6.5	300	900	0.55	0.3	0.5
+titanium_alloy	Ti-6Al-4V Titanium Alloy	4.43	340	950	0.9	0.4	0.5
+titanium_diboride	Titanium Diboride (TiB2, advanced ceramic-metal)	4.52	2800	400	3.75	0.01	0.9
+tungsten_carbide	Tungsten Carbide (WC-Co, AP core material)	15.0	1550	600	2.75	0.01	0.7
+arma_plastic	Arma 3 Plastic (Armor class)	1.2	20	60	0.3	0.6	0.3
+arma_rubber	Arma 3 Rubber (Armor class)	1.1	5	15	0.2	0.9	0.1
+dyneema_liner	Dyneema UHMWPE Spall Liner (DSM, SK99 fiber)	0.97	5	3000	0.3	0.5	0.04
+fiberglass	Fiberglass/GRP (E-glass polyester laminate)	1.9	100	350	0.12	0.3	0.6
+kevlar_liner	Kevlar Spall Liner (Aramid, MIL-DTL-62474)	1.44	15	3620	0.25	0.8	0.05
+spall_liner_kevlar	Kevlar Spall Liner (Aramid Fiber)	1.44	15	3620	0.2	0.8	0.05
+rubber_elastomer	Rubber/Elastomer Interlayer (T-72 reflecting plate, spall coating)	1.2	5	25	0.015	0.9	0.05
+rubber_solid	Solid Rubber (vehicle track pads/rubber skirts)	1.2	70	15	0.08	0.9	0.02
+spall_liner	Generic Spall Liner (non-structural, fragment catch)	1.2	10	100	0.1	0.9	0.02
+twaron_liner	Twaron Spall Liner (Teijin Aramid, para-aramid)	1.44	15	3200	0.22	0.8	0.05
+uhmwpe	UHMWPE (Dyneema SK99 / Spectra Shield)	0.97	5	3000	0.25	0.5	0.04
+polycarbonate	Polycarbonate Glazing (MIL-PRF-32446, ballistic transparent)	1.2	70	65	0.3	0.5	0.7
+cloth	Fabric / Textile (uniform, non-ballistic clothing)	0.5	1	50	0.01	0.95	0.05
+concrete	Concrete (unreinforced, 28 MPa / 4000 psi)	2.4	5	4	0.08	0.01	0.85
+wood	Pine / Softwood Timber (construction, furniture)	0.55	2	40	0.02	0.3	0.4
+brick	Common Brick / Masonry (clay, mortar)	1.9	3	10	0.06	0.02	0.8
+soil	Compacted Soil / Sandbag (MIL-DTL-xxx ballistic earth)	1.6	1	0	0.02	0.3	0.3

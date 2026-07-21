@@ -1,4 +1,6 @@
-# source=Generated from data/ammo/ JSON + validate_and_clean_tsv.py
+# source=Generated from Arma 3 PBO CfgAmmo config dumps; BC values from ACE3 ace_ballistics.pbo HPP derivations
+# confidence=Machine-derived from XML/JSON dumps — see tools/infer_bc.py and tools/bc_reference.md for methodology
+# Per-entry source: see ext/build.rs compile-time PHF mapping from arma_weapon_map.tsv + real_weapons.tsv
 model	bullet_diameter_mm	projectile_mass_g	bc_g1	bc_g7	drag_model
 model	bullet_diameter_mm	projectile_mass_g	bc_g1	bc_g7	drag_model
 100rnd762x54mmlps	7.62	9.6	0	0.21	7

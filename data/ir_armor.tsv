@@ -1,0 +1,213 @@
+# source=Estimated from vehicle config viewer (CfgVehicles) & published armor specs (Jane's, Hunnicutt)
+# confidence=Estimated — see data/calibration/vehicle_calibration.json for validated reference values
+# vehicle	name	material	thickness_mm	angle_deg	backing	backing_thickness_mm	backing_angle_deg
+rhs_bmd4_vdv	hull_front_upper	aluminum_5083	43	60.0		0	0.0
+rhs_bmd4_vdv	hull_front_lower	aluminum_5083	55	50.0		0	0.0
+rhs_bmd4_vdv	hull_sides	aluminum_5083	12.0	0.0		0	0.0
+rhs_bmd4_vdv	hull_rear	aluminum_5083	10.0	10.0		0	0.0
+rhs_bmd4_vdv	hull_top	aluminum_5083	5.0	80.0		0	0.0
+rhs_bmd4_vdv	hull_belly	aluminum_5083	5.0	0.0		0	0.0
+rhs_bmd4_vdv	turret_front	aluminum_5083	65	25.0		0	0.0
+rhs_bmd4_vdv	turret_sides	aluminum_5083	15.0	15.0		0	0.0
+rhs_bmd4_vdv	turret_rear	aluminum_5083	8.0	20.0		0	0.0
+rhs_bmd4_vdv	turret_top	aluminum_5083	5.0	80.0		0	0.0
+rhs_bmp1d_msv	hull_front_upper	steel_rha	10.0	60.0		0	0.0
+rhs_bmp1d_msv	hull_front_lower	steel_rha	11.5	55.0		0	0.0
+rhs_bmp1d_msv	hull_sides	cast_steel	16.0	0.0	twaron_liner	6	0.0
+rhs_bmp1d_msv	hull_rear	steel_rha	10.0	14.0		0	0.0
+rhs_bmp1d_msv	hull_top	steel_rha	5.0	80.0		0	0.0
+rhs_bmp1d_msv	hull_belly	steel_rha	7.0	0.0		0	0.0
+rhs_bmp1d_msv	turret_front	steel_rha	17.5	30.0		0	0.0
+rhs_bmp1d_msv	turret_sides	steel_rha	17.0	32.0		0	0.0
+rhs_bmp1d_msv	turret_rear	steel_rha	9.0	25.0		0	0.0
+rhs_bmp1d_msv	turret_top	steel_rha	1.0	80.0		0	0.0
+rhs_bmp2d_msv	hull_front_upper	steel_rha	15.0	60.0		0	0.0
+rhs_bmp2d_msv	hull_front_lower	steel_rha	17.0	56.0		0	0.0
+rhs_bmp2d_msv	hull_sides	steel_rha	21.0	0.0	twaron_liner	6	0.0
+rhs_bmp2d_msv	hull_rear	steel_rha	13.0	14.0		0	0.0
+rhs_bmp2d_msv	hull_top	steel_rha	5.0	80.0		0	0.0
+rhs_bmp2d_msv	hull_belly	steel_rha	8.0	0.0		0	0.0
+rhs_bmp2d_msv	turret_front	steel_rha	25	35.0		0	0.0
+rhs_bmp2d_msv	turret_sides	steel_rha	22.0	32.0		0	0.0
+rhs_bmp2d_msv	turret_rear	steel_rha	10.0	25.0		0	0.0
+rhs_bmp2d_msv	turret_top	steel_rha	6.0	80.0		0	0.0
+rhs_bmp3_late_msv	hull_front_upper	aluminum_5083	100	60.0		0	0.0
+rhs_bmp3_late_msv	hull_front_lower	aluminum_5083	129	50.0		0	0.0
+rhs_bmp3_late_msv	hull_sides	aluminum_5083	18.0	0.0	twaron_liner	6	0.0
+rhs_bmp3_late_msv	hull_rear	aluminum_5083	15.0	15.0		0	0.0
+rhs_bmp3_late_msv	hull_top	aluminum_5083	10.0	80.0		0	0.0
+rhs_bmp3_late_msv	hull_belly	aluminum_5083	7.0	0.0		0	0.0
+rhs_bmp3_late_msv	turret_front	aluminum_5083	155	25.0		0	0.0
+rhs_bmp3_late_msv	turret_sides	aluminum_5083	18.0	10.0		0	0.0
+rhs_bmp3_late_msv	turret_rear	aluminum_5083	12.0	15.0		0	0.0
+rhs_bmp3_late_msv	turret_top	aluminum_5083	8.0	80.0		0	0.0
+RHS_Boxer_MRAV	hull_front_upper	mexas_composite	35	45.0		0	0.0
+RHS_Boxer_MRAV	hull_front_lower	mexas_composite	46	30.0		0	0.0
+RHS_Boxer_MRAV	hull_sides	mexas_composite	15.0	0.0	kevlar_liner	6	0.0
+RHS_Boxer_MRAV	hull_rear	steel_rha	8.0	15.0		0	0.0
+RHS_Boxer_MRAV	hull_top	steel_rha	5.0	80.0		0	0.0
+RHS_Boxer_MRAV	hull_belly	steel_rha	6.0	0.0		0	0.0
+RHS_M2A2_BUSKIII	hull_front_upper	stanag_composite	30	55.0		0	0.0
+RHS_M2A2_BUSKIII	hull_front_lower	stanag_composite	40	45.0		0	0.0
+RHS_M2A2_BUSKIII	hull_sides	aluminum_5083	35.0	0.0	kevlar_liner	8	0.0
+RHS_M2A2_BUSKIII	hull_rear	aluminum_5083	25.0	15.0		0	0.0
+RHS_M2A2_BUSKIII	hull_top	aluminum_5083	15.0	80.0		0	0.0
+RHS_M2A2_BUSKIII	hull_belly	aluminum_5083	15.0	0.0		0	0.0
+RHS_M2A2_BUSKIII	turret_front	stanag_composite	65	25.0		0	0.0
+RHS_M2A2_BUSKIII	turret_sides	hha_steel	79	10.0		0	0.0
+RHS_M2A2_BUSKIII	turret_rear	steel_rha	25.0	15.0		0	0.0
+RHS_M2A2_BUSKIII	turret_top	steel_rha	12.0	85.0		0	0.0
+RHS_M2A3_Bradley	hull_front_upper	chobham_composite	12.0	65.0		0	0.0
+RHS_M2A3_Bradley	hull_front_lower	chobham_composite	17.5	55.0		0	0.0
+RHS_M2A3_Bradley	hull_sides	aluminum_5083	32.0	0.0	kevlar_liner	8	0.0
+RHS_M2A3_Bradley	hull_sides_era	era_light	10.0	0.0		0	0.0
+RHS_M2A3_Bradley	hull_rear	aluminum_5083	25.0	15.0		0	0.0
+RHS_M2A3_Bradley	hull_top	aluminum_5083	15.0	80.0		0	0.0
+RHS_M2A3_Bradley	hull_belly	aluminum_5083	15.0	0.0		0	0.0
+RHS_M2A3_Bradley	turret_front	stanag_composite	41	30.0		0	0.0
+RHS_M2A3_Bradley	turret_sides	hha_steel	38.0	10.0		0	0.0
+RHS_M2A3_Bradley	turret_rear	steel_rha	25.0	15.0		0	0.0
+RHS_M2A3_Bradley	turret_top	steel_rha	12.0	85.0		0	0.0
+rhs_btr80a_msv	hull_front_upper	hha_steel	5.5	64.0		0	0.0
+rhs_btr80a_msv	hull_front_lower	hha_steel	8.5	45.0		0	0.0
+rhs_btr80a_msv	hull_sides	hha_steel	10.0	25.0	twaron_liner	6	25.0
+rhs_btr80a_msv	hull_rear	hha_steel	8.0	0.0		0	0.0
+rhs_btr80a_msv	hull_top	hha_steel	7.0	80.0		0	0.0
+rhs_btr80a_msv	hull_belly	hha_steel	6.0	0.0		0	0.0
+rhs_btr80a_msv	turret_front	hha_steel	8.5	45.0		0	0.0
+rhs_btr80a_msv	turret_sides	hha_steel	10.0	45.0		0	0.0
+rhs_btr80a_msv	turret_rear	hha_steel	8.0	45.0		0	0.0
+rhs_btr80a_msv	turret_top	hha_steel	7.0	80.0		0	0.0
+rhs_btr80a_msv	hull_front_upper	hha_steel	4.0	64.0		0	0.0
+rhs_btr80a_msv	hull_front_lower	hha_steel	7.0	45.0		0	0.0
+rhs_btr80a_msv	hull_sides	hha_steel	9.0	25.0	twaron_liner	6	25.0
+rhs_btr80a_msv	hull_rear	hha_steel	7.0	0.0		0	0.0
+rhs_btr80a_msv	hull_top	hha_steel	7.0	80.0		0	0.0
+rhs_btr80a_msv	hull_belly	hha_steel	6.0	0.0		0	0.0
+rhs_btr80a_msv	turret_front	hha_steel	7.0	45.0		0	0.0
+rhs_btr80a_msv	turret_sides	hha_steel	9.0	45.0		0	0.0
+rhs_btr80a_msv	turret_rear	hha_steel	7.0	45.0		0	0.0
+rhs_btr80a_msv	turret_top	hha_steel	7.0	80.0		0	0.0
+RHS_LAV25	hull_front	aluminum_5083	30	45.0		0	0.0
+RHS_LAV25	hull_sides	aluminum_5083	10.0	0.0		0	0.0
+RHS_LAV25	hull_rear	aluminum_5083	10.0	15.0		0	0.0
+RHS_LAV25	hull_top	aluminum_5083	7.0	80.0		0	0.0
+RHS_LAV25	hull_belly	aluminum_5083	7.0	0.0		0	0.0
+RHS_LAV25	turret_front	aluminum_5083	15.0	25.0		0	0.0
+RHS_LAV25	turret_sides	aluminum_5083	10.0	10.0		0	0.0
+RHS_LAV25	turret_rear	aluminum_5083	7.0	15.0		0	0.0
+RHS_LAV25	turret_top	aluminum_5083	7.0	80.0		0	0.0
+RHS_Leopard2A4_German	hull_front_upper	burlington_composite	74	60.0		0	0.0
+RHS_Leopard2A4_German	hull_front_lower	burlington_composite	87	55.0		0	0.0
+RHS_Leopard2A4_German	hull_sides_front	hha_steel	35.0	0.0	kevlar_liner	10	0.0
+RHS_Leopard2A4_German	hull_sides_rear	steel_rha	25.0	0.0	kevlar_liner	10	0.0
+RHS_Leopard2A4_German	hull_rear	steel_rha	25.0	20.0		0	0.0
+RHS_Leopard2A4_German	hull_top	steel_rha	20.0	80.0		0	0.0
+RHS_Leopard2A4_German	hull_belly	steel_rha	20.0	0.0		0	0.0
+RHS_Leopard2A4_German	turret_front	burlington_composite	162	45.0		0	0.0
+RHS_Leopard2A4_German	turret_sides	burlington_composite	93	20.0		0	0.0
+RHS_Leopard2A4_German	turret_rear	steel_rha	25.0	10.0		0	0.0
+RHS_Leopard2A4_German	turret_top	steel_rha	20.0	85.0		0	0.0
+RHS_Leopard2A6_German	hull_front_upper	chobham_composite	74	60.0		0	0.0
+RHS_Leopard2A6_German	hull_front_lower	chobham_composite	88	55.0		0	0.0
+RHS_Leopard2A6_German	hull_sides_front	hha_steel	35.0	0.0	kevlar_liner	10	0.0
+RHS_Leopard2A6_German	hull_sides_rear	steel_rha	25.0	0.0	kevlar_liner	10	0.0
+RHS_Leopard2A6_German	hull_rear	steel_rha	25.0	20.0		0	0.0
+RHS_Leopard2A6_German	hull_top	steel_rha	20.0	80.0		0	0.0
+RHS_Leopard2A6_German	hull_belly	steel_rha	20.0	0.0		0	0.0
+RHS_Leopard2A6_German	turret_front	chobham_composite	203	45.0		0	0.0
+RHS_Leopard2A6_German	turret_sides	chobham_composite	126	20.0		0	0.0
+RHS_Leopard2A6_German	turret_rear	steel_rha	25.0	10.0		0	0.0
+RHS_Leopard2A6_German	turret_top	steel_rha	20.0	85.0		0	0.0
+rhs_m1078a1p2_wd	cab_front	mild_steel	3.0	45.0		0	0.0
+rhs_m1078a1p2_wd	cab_sides	mild_steel	2.0	0.0		0	0.0
+rhs_m1078a1p2_wd	hull_belly	mild_steel	2.0	0.0		0	0.0
+rhs_m1078a1p2_wd	hull_rear	mild_steel	2.0	0.0		0	0.0
+rhs_m1078a1p2_wd	hull_top	mild_steel	2.0	80.0		0	0.0
+rhs_m1078a1p2_wd	cargo_bed	mild_steel	2.0	0.0		0	0.0
+RHS_M109_Base	hull_front	aluminum_5083	30	45.0		0	0.0
+RHS_M109_Base	hull_sides	aluminum_5083	15.0	0.0		0	0.0
+RHS_M109_Base	hull_rear	aluminum_5083	12.0	15.0		0	0.0
+RHS_M109_Base	hull_top	aluminum_5083	8.0	80.0		0	0.0
+RHS_M109_Base	hull_belly	aluminum_5083	8.0	0.0		0	0.0
+RHS_M113A3	hull_front	aluminum_5083	61	45.0		0	0.0
+RHS_M113A3	hull_sides	aluminum_5083	32.0	0.0	dyneema_liner	8	0.0
+RHS_M113A3	hull_rear	aluminum_5083	32.0	15.0		0	0.0
+RHS_M113A3	hull_top	aluminum_5083	12.0	80.0		0	0.0
+RHS_M113A3	hull_belly	aluminum_5083	12.0	0.0		0	0.0
+rhs_m1a2sep1tuskii_d	hull_front_upper	burlington_composite	74	60.0		0	0.0
+rhs_m1a2sep1tuskii_d	hull_front_lower	burlington_composite	87	55.0		0	0.0
+rhs_m1a2sep1tuskii_d	hull_sides_front	hha_steel	35.0	0.0	kevlar_liner	10	0.0
+rhs_m1a2sep1tuskii_d	hull_sides_rear	steel_rha	25.0	0.0	kevlar_liner	10	0.0
+rhs_m1a2sep1tuskii_d	hull_rear	steel_rha	25.0	20.0		0	0.0
+rhs_m1a2sep1tuskii_d	hull_top	steel_rha	20.0	80.0		0	0.0
+rhs_m1a2sep1tuskii_d	hull_belly	steel_rha	20.0	0.0		0	0.0
+rhs_m1a2sep1tuskii_d	turret_front	chobham_composite	174	45.0		0	0.0
+rhs_m1a2sep1tuskii_d	turret_sides	burlington_composite	116	20.0		0	0.0
+rhs_m1a2sep1tuskii_d	turret_rear	steel_rha	25.0	10.0		0	0.0
+rhs_m1a2sep1tuskii_d	turret_top	steel_rha	20.0	85.0		0	0.0
+rhs_m1a1aim_tv	hull_front_upper	burlington_composite	74	60.0		0	0.0
+rhs_m1a1aim_tv	hull_front_lower	burlington_composite	87	55.0		0	0.0
+rhs_m1a1aim_tv	hull_sides_front	hha_steel	35.0	0.0	kevlar_liner	10	0.0
+rhs_m1a1aim_tv	hull_sides_rear	steel_rha	25.0	0.0	kevlar_liner	10	0.0
+rhs_m1a1aim_tv	hull_rear	steel_rha	25.0	20.0		0	0.0
+rhs_m1a1aim_tv	hull_top	steel_rha	20.0	80.0		0	0.0
+rhs_m1a1aim_tv	hull_belly	steel_rha	20.0	0.0		0	0.0
+rhs_m1a1aim_tv	turret_front	chobham_composite	145	45.0		0	0.0
+rhs_m1a1aim_tv	turret_sides	burlington_composite	93	20.0		0	0.0
+rhs_m1a1aim_tv	turret_rear	steel_rha	25.0	10.0		0	0.0
+rhs_m1a1aim_tv	turret_top	steel_rha	20.0	85.0		0	0.0
+rhsusf_M1230a1_usarmy	hull_front	hha_steel	10.0	45.0		0	0.0
+rhsusf_M1230a1_usarmy	hull_sides	hha_steel	8.0	0.0		0	0.0
+rhsusf_M1230a1_usarmy	hull_rear	hha_steel	8.0	15.0		0	0.0
+rhsusf_M1230a1_usarmy	hull_top	hha_steel	5.0	80.0		0	0.0
+rhsusf_M1230a1_usarmy	hull_belly	hha_steel	12.0	0.0		0	0.0
+rhsusf_M1230a1_usarmy	hull_windshield	laminated_glass	50.0	30.0		0	0.0
+rhs_mtlb_vv	hull_front_upper	steel_rha	6.5	62.0		0	0.0
+rhs_mtlb_vv	hull_front_lower	steel_rha	10.0	45.0		0	0.0
+rhs_mtlb_vv	hull_sides	steel_rha	7.0	0.0	twaron_liner	6	0.0
+rhs_mtlb_vv	hull_rear	steel_rha	7.0	0.0		0	0.0
+rhs_mtlb_vv	hull_top	steel_rha	5.0	80.0		0	0.0
+rhs_mtlb_vv	hull_belly	steel_rha	5.0	0.0		0	0.0
+RHS_M1126_ICV_BUSKI	hull_front_upper	hha_steel	16.0	45.0		0	0.0
+RHS_M1126_ICV_BUSKI	hull_front_lower	hha_steel	16.0	30.0		0	0.0
+RHS_M1126_ICV_BUSKI	hull_sides	hha_steel	12.0	10.0	kevlar_liner	6	10.0
+RHS_M1126_ICV_BUSKI	hull_rear	hha_steel	12.0	15.0		0	0.0
+RHS_M1126_ICV_BUSKI	hull_top	hha_steel	8.0	80.0		0	0.0
+RHS_M1126_ICV_BUSKI	hull_belly	hha_steel	8.0	0.0		0	0.0
+RHS_M1126_ICV_BUSKI	turret_front	hha_steel	15.0	20.0		0	0.0
+RHS_M1126_ICV_BUSKI	turret_sides	steel_rha	12.0	10.0		0	0.0
+RHS_M1126_ICV_BUSKI	turret_rear	steel_rha	10.0	15.0		0	0.0
+RHS_M1126_ICV_BUSKI	turret_top	steel_rha	8.0	80.0		0	0.0
+rhs_t72bb_tv	hull_front_upper	stef_composite	60	68.0		0	0.0
+rhs_t72bb_tv	hull_front_lower	stef_composite	44	62.0		0	0.0
+rhs_t72bb_tv	hull_sides	steel_rha	60.0	0.0	twaron_liner	8	0.0
+rhs_t72bb_tv	hull_rear	steel_rha	40.0	15.0		0	0.0
+rhs_t72bb_tv	hull_top	steel_rha	30.0	80.0		0	0.0
+rhs_t72bb_tv	hull_belly	steel_rha	20.0	0.0		0	0.0
+rhs_t72bb_tv	turret_front	kvarts_composite	179	30.0		0	0.0
+rhs_t72bb_tv	turret_sides	steel_rha	246	10.0		0	0.0
+rhs_t72bb_tv	turret_rear	steel_rha	65.0	10.0		0	0.0
+rhs_t72bb_tv	turret_top	steel_rha	30.0	80.0		0	0.0
+rhs_t80uea_tv	hull_front_upper	stef_composite	68	68.0		0	0.0
+rhs_t80uea_tv	hull_front_upper_era	era_kontakt5	10.0	68.0		0	0.0
+rhs_t80uea_tv	hull_front_lower	stef_composite	55	62.0		0	0.0
+rhs_t80uea_tv	hull_sides	steel_rha	60.0	0.0	twaron_liner	8	0.0
+rhs_t80uea_tv	hull_rear	steel_rha	40.0	15.0		0	0.0
+rhs_t80uea_tv	hull_top	steel_rha	30.0	80.0		0	0.0
+rhs_t80uea_tv	hull_belly	steel_rha	20.0	0.0		0	0.0
+rhs_t80uea_tv	turret_front	kvarts_composite	199	30.0		0	0.0
+rhs_t80uea_tv	turret_front_era	era_kontakt5	10.0	30.0		0	0.0
+rhs_t80uea_tv	turret_sides	steel_rha	246	10.0		0	0.0
+rhs_t80uea_tv	turret_rear	steel_rha	65.0	10.0		0	0.0
+rhs_t80uea_tv	turret_top	steel_rha	30.0	80.0		0	0.0
+rhs_t90a_tv	hull_front_upper	kvarts_composite	63	68.0		0	0.0
+rhs_t90a_tv	hull_front_lower	kvarts_composite	46	62.0		0	0.0
+rhs_t90a_tv	hull_sides	steel_rha	60.0	0.0	twaron_liner	8	0.0
+rhs_t90a_tv	hull_rear	steel_rha	40.0	15.0		0	0.0
+rhs_t90a_tv	hull_top	steel_rha	30.0	80.0		0	0.0
+rhs_t90a_tv	hull_belly	steel_rha	20.0	0.0		0	0.0
+rhs_t90a_tv	turret_front	kvarts_composite	219	30.0		0	0.0
+rhs_t90a_tv	turret_sides	steel_rha	246	10.0		0	0.0
+rhs_t90a_tv	turret_rear	steel_rha	64	10.0		0	0.0
+rhs_t90a_tv	turret_top	steel_rha	30.0	80.0		0	0.0

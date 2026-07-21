@@ -48,3 +48,7 @@ data/generated/
 # Agent session artifacts
 .cortexkit/
 .omo/
+
+# Research / data extraction artifacts
+data/scripts/extracted/
+data/scripts/data/
