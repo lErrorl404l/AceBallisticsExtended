@@ -1932,3 +1932,218 @@ stoeger_p3000_waterfowl_28_camo	Stoeger	P3000	Waterfowl 28" camo	12 Gauge	18.5	7
 stoeger_m3020_semi_auto_20ga_26	Stoeger	M3020	semi-auto 20ga 26"	20 Gauge	15.6	660	0	0	0	21.1	450	researched	estimated
 stoeger_double_defense_over_under_12ga_20	Stoeger	Double Defense	over-under 12ga 20"	12 Gauge	18.5	508	0	0	0	28.0	480	researched	estimated
 stoeger_condor_outback_26_matte_nickel	Stoeger	Condor	Outback 26" matte nickel	12 Gauge	18.5	660	0	0	0	28.0	480	researched	estimated
+wc_edc_x9	Wilson Combat	EDC X9	3.9" barrel, 15rd 9mm 1911-style	9×19mm Parabellum	9.01	99	250	1	250	8.0	355	researched	3
+wc_edc_x9s	Wilson Combat	EDC X9S	3.3" barrel, subcompact 1911-style	9×19mm Parabellum	9.01	84	250	1	250	8.0	340	researched	3
+wc_sfx9	Wilson Combat	SFX9	3.25" barrel, 10rd 1911-style	9×19mm Parabellum	9.01	83	250	1	250	8.0	340	researched	3
+wc_sfx9_4	Wilson Combat	SFX9 4"	4" barrel, 15rd 1911-style	9×19mm Parabellum	9.01	102	250	1	250	8.0	360	researched	3
+wc_sfx9_5	Wilson Combat	SFX9 5"	5" barrel, 18rd 1911-style	9×19mm Parabellum	9.01	127	250	1	250	8.0	370	researched	3
+wc_cqb	Wilson Combat	CQB	5" barrel, full-size 1911 .45 ACP	.45 ACP	11.48	127	406	1	145	15.0	253	researched	3
+wc_cqb_compact	Wilson Combat	CQB Compact	4.25" barrel, compact 1911 .45 ACP	.45 ACP	11.48	108	406	1	145	15.0	248	researched	3
+wc_x_tac	Wilson Combat	X-TAC	5" barrel, tactical 1911 .45 ACP	.45 ACP	11.48	127	406	1	145	15.0	253	researched	3
+wc_hunter	Wilson Combat	Hunter	6" barrel, longslide 1911 .45 ACP	.45 ACP	11.48	152	406	1	145	15.0	260	researched	3
+wc_sentinel	Wilson Combat	Sentinel	4" barrel, lightweight 1911 .45 ACP	.45 ACP	11.48	102	406	1	145	15.0	245	researched	3
+wc_experior	Wilson Combat	Experior	4" barrel, polymer 1911-style 9mm	9×19mm Parabellum	9.01	102	250	1	250	8.0	360	researched	3
+wc_ar9	Wilson Combat	AR9	PCC 16" barrel, 9mm AR-15 pattern	9×19mm Parabellum	9.01	406	250	1	250	8.0	410	researched	3
+wc_recon_tactical	Wilson Combat	Recon Tactical	16" barrel, AR-15 .223 Wylde	.223 Remington	5.69	406	203	1	379	4.0	945	researched	3
+wc_92g_brigadier_tactical	Wilson Combat	92G Brigadier Tactical	Vertec-style Beretta 92G custom	9×19mm Parabellum	9.01	125	250	1	250	8.0	360	researched	3
+zev_oz9	ZEV Technologies	OZ9	Full-size modular pistol 4.5" barrel	9×19mm Parabellum	9.01	114	250	1	250	8.0	365	researched	3
+zev_oz9_combat	ZEV Technologies	OZ9 Combat	Full-size optics-ready 4.5" barrel	9×19mm Parabellum	9.01	114	250	1	250	8.0	365	researched	3
+zev_oz9_hyper	ZEV Technologies	OZ9 Hyper	Competition compensated 5.22" barrel	9×19mm Parabellum	9.01	133	250	1	250	8.0	375	researched	3
+zev_oz9_compact	ZEV Technologies	OZ9 Compact	Compact 4.0" barrel	9×19mm Parabellum	9.01	102	250	1	250	8.0	355	researched	3
+zev_oz9_compact_x	ZEV Technologies	OZ9 Compact-X	Compact optics-ready 4.0" barrel	9×19mm Parabellum	9.01	102	250	1	250	8.0	355	researched	3
+zev_z365	ZEV Technologies	Z365	Modular micro-compact 3.1" barrel	9×19mm Parabellum	9.01	79	250	1	250	8.0	330	researched	3
+zev_z365xl	ZEV Technologies	Z365XL	Micro-compact XL 3.7" barrel	9×19mm Parabellum	9.01	94	250	1	250	8.0	350	researched	3
+zev_oz9_duty	ZEV Technologies	OZ9 Duty	Duty 4.5" barrel with rail	9×19mm Parabellum	9.01	114	250	1	250	8.0	365	researched	3
+zev_citadel	ZEV Technologies	Citadel	Match precision pistol 5" barrel	9×19mm Parabellum	9.01	127	250	1	250	8.0	370	researched	3
+rra_lar_15_standard_a2	Rock River Arms	LAR-15 Standard A2	20" barrel A2 fixed stock, 5.56	5.56×45mm NATO	5.69	508	178	1	430	4.0	948	researched	3
+rra_lar_15_entry_tactical	Rock River Arms	LAR-15 Entry Tactical	16" CAR stock, flip sights	5.56×45mm NATO	5.69	406	178	1	430	4.0	906	researched	3
+rra_lar_15_operator	Rock River Arms	LAR-15 Operator	16" free-floated quadrail, 5.56	5.56×45mm NATO	5.69	406	178	1	430	4.0	906	researched	3
+rra_lar_15_elite_car	Rock River Arms	LAR-15 Elite CAR	16" chrome-lined, CAR stock, 5.56	5.56×45mm NATO	5.69	406	178	1	430	4.0	906	researched	3
+rra_lar_15_national_match	Rock River Arms	LAR-15 National Match	20" stainless barrel, NM trigger	5.56×45mm NATO	5.69	508	178	1	430	4.0	948	researched	3
+rra_lar_8	Rock River Arms	LAR-8	7.62 semi-auto AR 20" barrel	7.62×51mm NATO	7.82	508	279	1	415	9.5	800	researched	3
+rra_lar_8_operator	Rock River Arms	LAR-8 Operator	7.62 AR 16" barrel, quadrail	7.62×51mm NATO	7.82	406	279	1	415	9.5	780	researched	3
+rra_lar_9	Rock River Arms	LAR-9	9mm AR 16" barrel, Colt mags	9×19mm Parabellum	9.01	406	250	1	250	8.0	410	researched	3
+rra_lar_45	Rock River Arms	LAR-45	.45 ACP AR 16" barrel	.45 ACP	11.48	406	406	1	145	15.0	260	researched	3
+rra_1911_gi	Rock River Arms	1911 GI	Full-size 1911 .45 ACP 5" barrel	.45 ACP	11.48	127	406	1	145	15.0	253	researched	3
+rra_1911_compact	Rock River Arms	1911 Compact	Compact 1911 .45 ACP 4" barrel	.45 ACP	11.48	102	406	1	145	15.0	245	researched	3
+ptr_ptr_91_a3s	PTR Industries	PTR-91 A3S	Collapsible stock, 18" barrel	7.62×51mm NATO	7.82	457	279	1	415	9.5	790	researched	3
+ptr_ptr_91_a3r	PTR Industries	PTR-91 A3R	Picatinny rail, 18" barrel	7.62×51mm NATO	7.82	457	279	1	415	9.5	790	researched	3
+ptr_ptr_91_kfr	PTR Industries	PTR-91 KFR	Carbine, 12.5" barrel	7.62×51mm NATO	7.82	318	279	1	415	9.5	740	researched	3
+ptr_ptr_91_gir	PTR Industries	PTR-91 GIR	GI with integrated rail, 18"	7.62×51mm NATO	7.82	457	279	1	415	9.5	790	researched	3
+ptr_ptr_32	PTR Industries	PTR-32	7.62×39mm roller-delayed, 16" barrel	7.62×39mm Soviet	7.85	406	240	1	355	7.9	715	researched	3
+ptr_ptr_9ct	PTR Industries	PTR-9CT	9mm roller carbine, 16.5" barrel	9×19mm Parabellum	9.01	419	250	1	250	8.0	410	researched	3
+ptr_ptr_9r	PTR Industries	PTR-9R	9mm roller carbine, 16.5", railed	9×19mm Parabellum	9.01	419	250	1	250	8.0	410	researched	3
+ptr_ptr_ms	PTR Industries	PTR-MS	Multi-caliber, 16.5" roller carrier	7.62×51mm NATO	7.82	419	279	1	415	9.5	785	researched	3
+jp_jp_15	JP Enterprises	JP-15	Competition AR, 16" stainless barrel	5.56×45mm NATO	5.69	406	178	1	430	4.0	920	researched	3
+jp_scr_11	JP Enterprises	SCR-11	Semi-auto compensated rifle, 18"	6.5 Creedmoor	6.71	457	203	1	415	9.0	800	researched	3
+jp_lrp_07	JP Enterprises	LRP-07	Long-range precision, 20" barrel	.308 Winchester	7.82	508	279	1	415	9.5	805	researched	3
+jp_gmr_15	JP Enterprises	GMR-15	9mm competition PCC, 16" barrel	9×19mm Parabellum	9.01	406	250	1	250	8.0	410	researched	3
+jp_jp_5	JP Enterprises	JP-5	Competition shotgun, 22" barrel	12 Gauge	18.5	559	0	0	65	28.4	480	researched	3
+std_mfg_dp_12	Standard Manufacturing	DP-12	Bullpup double-barrel 12ga, 20" barrels	12 Gauge	18.5	508	0	0	65	28.4	480	researched	3
+std_mfg_s333_thunderstruck	Standard Manufacturing	S333 Thunderstruck	.22 WMR 8-shot derringer	.22 Winchester Magnum	5.66	76	406	1	220	2.6	550	researched	3
+std_mfg_1911_g_i	Standard Manufacturing	1911 G.I.	Full-size 1911 .45 ACP 5"	.45 ACP	11.48	127	406	1	145	15.0	253	researched	3
+std_mfg_1911_commander	Standard Manufacturing	1911 Commander	Commander 4.25" .45 ACP	.45 ACP	11.48	108	406	1	145	15.0	248	researched	3
+std_mfg_1911_target	Standard Manufacturing	1911 Target	5" barrel target 1911 with adj sights	.45 ACP	11.48	127	406	1	145	15.0	253	researched	3
+troy_m7a1	Troy Industries	M7A1	16" AR with Troy rail, 5.56	5.56×45mm NATO	5.69	406	178	1	430	4.0	906	researched	3
+troy_m7a1_cqb	Troy Industries	M7A1 CQB	14.5" pinned carbine, BattleRail	5.56×45mm NATO	5.69	368	178	1	430	4.0	890	researched	3
+troy_m7a1_pdw	Troy Industries	M7A1 PDW	10.5" SBR, folding front sight	5.56×45mm NATO	5.69	267	178	1	430	4.0	840	researched	3
+troy_m14_sopmod	Troy Industries	M14 SOPMOD	18" precision stock, railed handguard	7.62×51mm NATO	7.82	457	279	1	415	9.5	795	researched	3
+troy_par_5_56	Troy Industries	PAR 5.56	Pump-action rifle, 16" barrel	5.56×45mm NATO	5.69	406	178	1	430	4.0	906	researched	3
+troy_par_308	Troy Industries	PAR .308	Pump-action rifle, 20" barrel	.308 Winchester	7.82	508	279	1	415	9.5	800	researched	3
+colt_1991a1	Colt	1991A1	Government Model .45 ACP 5" barrel	.45 ACP	11.48	127	406	1	145	15.0	253	researched	3
+colt_government_xse	Colt	Government XSE	XSE 5" barrel .45 ACP	.45 ACP	11.48	127	406	1	145	15.0	253	researched	3
+colt_series_70_government	Colt	Series 70 Government	Classic Series 70 .45 ACP	.45 ACP	11.48	127	406	1	145	15.0	253	researched	3
+colt_diamondback	Colt	Diamondback	4" vent-rib .38 Special revolver	.38 Special	9.06	102	381	2	240	10.2	260	researched	3
+colt_trooper_mk_iii	Colt	Trooper Mk III	4" heavy barrel .357 Magnum revolver	.357 Magnum	9.07	102	356	2	345	8.1	410	researched	3
+colt_official_police	Colt	Official Police	4" .38 Special service revolver	.38 Special	9.06	102	381	2	240	10.2	260	researched	3
+colt_1903_pocket_hammerless	Colt	1903 Pocket Hammerless	.32 ACP pocket pistol	.32 ACP	7.65	97	250	1	141	4.6	259	researched	3
+colt_buntline	Colt	Buntline	12" barrel .45 Colt single action	.45 Colt	11.48	305	508	2	145	16.2	280	researched	3
+ruger_security_9_compact	Ruger	Security-9 Compact	Compact 9mm 3.14" barrel	9×19mm Parabellum	9.01	80	254	1	250	8.0	340	researched	3
+ruger_super_blackhawk	Ruger	Super Blackhawk	.44 Magnum 7.5" barrel stainless	.44 Magnum	10.90	191	508	1	360	15.6	460	researched	3
+ruger_single_six	Ruger	Single Six	.22 LR/.22 WMR convertible 5.5" barrel	.22 LR	5.66	140	406	1	165	2.6	320	researched	3
+ruger_american_ranch	Ruger	American Ranch	5.56×45mm 16.12" barrel ranch rifle	5.56×45mm NATO	5.69	409	178	1	430	4.0	945	researched	3
+ruger_mini_14_tactical	Ruger	Mini-14 Tactical	16.12" barrel synthetic stock	5.56×45mm NATO	5.69	409	229	1	430	4.0	920	researched	3
+ruger_sfar	Ruger	SFAR	Small-frame AR-10 16" .308	.308 Winchester	7.82	406	279	1	415	9.5	780	researched	3
+ruger_lc_carbine	Ruger	LC Carbine	9mm pistol-caliber carbine 16.12"	9×19mm Parabellum	9.01	409	254	1	250	8.0	400	researched	3
+ruger_57	Ruger	57	5.7×28mm striker-fired pistol 4.94" barrel	5.7×28mm	5.70	125	229	1	345	2.9	620	researched	3
+smw_model_27	Smith & Wesson	Model 27	Classic N-frame 6.5" .357 Magnum	.357 Magnum	9.07	165	356	2	345	8.1	430	researched	3
+smw_model_28	Smith & Wesson	Model 28	Highway Patrolman 4" .357 Magnum	.357 Magnum	9.07	102	356	2	345	8.1	410	researched	3
+smw_model_57	Smith & Wesson	Model 57	N-frame 6" .41 Magnum	.41 Magnum	10.41	152	406	2	345	12.0	450	researched	3
+smw_model_617	Smith & Wesson	Model 617	K-frame 6" .22 LR 10-shot	.22 LR	5.66	152	406	2	165	2.6	320	researched	3
+smw_model_460_xvr	Smith & Wesson	Model 460 XVR	5" .460 S&W Magnum X-frame	.460 S&W Magnum	11.48	127	508	2	379	19.4	640	researched	3
+smw_model_500	Smith & Wesson	Model 500	4" .500 S&W Magnum X-frame	.500 S&W Magnum	12.70	102	483	2	379	22.7	500	researched	3
+smw_model_586	Smith & Wesson	Model 586	L-frame 6" .357 Magnum blued	.357 Magnum	9.07	152	356	2	345	8.1	425	researched	3
+smw_m&p_22_compact	Smith & Wesson	M&P 22 Compact	.22 LR compact trainer	.22 LR	5.66	89	406	1	165	2.6	270	researched	3
+taurus_g3	Taurus	G3	Full-size 9mm 4.25" barrel	9×19mm Parabellum	9.01	108	250	1	250	8.0	360	researched	3
+taurus_gx4xl	Taurus	GX4XL	Micro-compact 9mm extended 3.32"	9×19mm Parabellum	9.01	84	250	1	250	8.0	340	researched	3
+taurus_tx22_competition	Taurus	TX22 Competition	Competition .22 LR 5.2" barrel	.22 LR	5.66	132	406	1	165	2.6	335	researched	3
+taurus_tx22_compact	Taurus	TX22 Compact	Compact .22 LR 3.6" barrel	.22 LR	5.66	91	406	1	165	2.6	290	researched	3
+taurus_model_66	Taurus	Model 66	7-shot .357 Magnum 4.25" barrel	.357 Magnum	9.07	108	356	2	345	8.1	420	researched	3
+taurus_model_692	Taurus	Model 692	7-shot .357 Mag/.38 Spl 3" barrel	.357 Magnum	9.07	76	356	2	345	8.1	390	researched	3
+taurus_judge_public_defender	Taurus	Judge Public Defender	Polymer .45 Colt/.410 2" barrel	.45 Colt	11.48	51	508	1	145	16.2	230	researched	3
+taurus_raging_hunter_454	Taurus	Raging Hunter .454	.454 Casull 6.75" barrel ported	.454 Casull	11.48	171	406	2	379	19.4	520	researched	3
+taurus_pt140	Taurus	PT140	Millennium .40 S&W compact	.40 S&W	10.17	83	406	1	240	10.0	330	researched	3
+taurus_th40	Taurus	TH40	DAO 10+1 .40 S&W 4" barrel	.40 S&W	10.17	102	406	1	240	10.0	340	researched	3
+mossberg_500_field	Mossberg	500 Field	28" barrel 12ga field pump	12 Gauge	18.5	711	0	0	65	28.4	480	researched	3
+mossberg_590_shockwave	Mossberg	590 Shockwave	14" barrel 12ga shockwave grip	12 Gauge	18.5	356	0	0	65	28.4	420	researched	3
+mossberg_590_mariner	Mossberg	590 Mariner	20" barrel marinecote 12ga	12 Gauge	18.5	508	0	0	65	28.4	480	researched	3
+mossberg_835_ulti_mag	Mossberg	835 Ulti-Mag	28" barrel 12ga 3.5" magnum	12 Gauge 3.5"	18.5	711	0	0	83	34.0	500	researched	3
+mossberg_940_tactical	Mossberg	940 Tactical	18.5" barrel 12ga semi-auto	12 Gauge	18.5	470	0	0	65	28.4	480	researched	3
+mossberg_sa_20	Mossberg	SA-20	20ga semi-auto 28" barrel	20 Gauge	15.6	711	0	0	62	19.5	450	researched	3
+mossberg_mc1sc	Mossberg	MC1sc	9mm striker-fired 3.4" barrel	9×19mm Parabellum	9.01	86	254	1	250	8.0	350	researched	3
+mossberg_mc2c	Mossberg	MC2c	9mm striker-fired 3.9" barrel	9×19mm Parabellum	9.01	99	254	1	250	8.0	360	researched	3
+remington_model_700_xhr	Remington	Model 700 XHR	X-treme Hunting Rifle 26" .300 Win Mag	.300 Winchester Magnum	7.82	660	254	1	413	11.7	1000	researched	3
+remington_model_700_varmint	Remington	Model 700 Varmint	26" heavy barrel .223 Syn-Tech	.223 Remington	5.69	660	305	1	379	4.0	1000	researched	3
+remington_model_870_fieldmaster	Remington	Model 870 Fieldmaster	28" vent-rib 12ga field pump	12 Gauge	18.5	711	0	0	65	28.4	480	researched	3
+remington_model_870_tactical	Remington	Model 870 Tactical	18.5" barrel 12ga tactical pump	12 Gauge	18.5	470	0	0	65	28.4	480	researched	3
+remington_v3_field	Remington	V3 Field	28" barrel 12ga gas semi-auto	12 Gauge	18.5	711	0	0	65	28.4	480	researched	3
+remington_v3_tactical	Remington	V3 Tactical	18.5" barrel 12ga tactical semi	12 Gauge	18.5	470	0	0	65	28.4	480	researched	3
+remington_rp45	Remington	RP45	15+1 .45 ACP striker-fired 4.5" barrel	.45 ACP	11.48	114	406	1	145	15.0	255	researched	3
+remington_1911_r1_commander	Remington	1911 R1 Commander	4.25" barrel .45 ACP commander	.45 ACP	11.48	108	406	1	145	15.0	248	researched	3
+sig_sauer_p227	Sig Sauer	P227	Full-size .45 ACP 4.4" barrel	.45 ACP	11.48	112	406	1	145	15.0	260	researched	3
+sig_sauer_p322	Sig Sauer	P322	.22 LR 4" barrel striker-fired	.22 LR	5.66	102	406	1	165	2.6	290	researched	3
+sig_sauer_p365_x_macro	Sig Sauer	P365 X-Macro	3.1" barrel 17+1 9mm macro compact	9×19mm Parabellum	9.01	78	250	1	250	8.0	310	researched	3
+sig_sauer_p320_x_carry	Sig Sauer	P320 X-Carry	3.9" barrel 9mm carry-size	9×19mm Parabellum	9.01	99	250	1	250	8.0	345	researched	3
+sig_sauer_mcx_virtus_16	Sig Sauer	MCX Virtus 16"	16" barrel 5.56mm piston rifle	5.56×45mm NATO	5.69	406	178	1	430	4.0	890	researched	3
+sig_sauer_cross_prf	Sig Sauer	Cross PRF	Precision Rifle 20" .277 Fury folding	.277 Fury	7.04	508	203	1	552	8.4	915	researched	3
+arc_archimedes	American Rifle Company	Archimedes	Bolt-action open-source precision, 6.5CM	6.5 Creedmoor	6.71	610	203	1	415	9.0	810	researched	3
+arc_mausingfield	American Rifle Company	Mausingfield	Bolt-action precision, 308 Win 22"	.308 Winchester	7.82	559	279	1	415	9.5	790	researched	3
+arc_coup_de_grace	American Rifle Company	Coup de Grace	Bolt-action competition action, 20"	6.5 Creedmoor	6.71	508	203	1	415	9.0	795	researched	3
+arc_mausingfield_300wm	American Rifle Company	Mausingfield .300WM	Long action .300 Win Mag 26"	.300 Winchester Magnum	7.82	660	254	1	413	11.7	1000	researched	3
+arc_coup_de_grace_338	American Rifle Company	Coup de Grace .338	Bolt-action .338 Lapua 26"	.338 Lapua Magnum	8.58	660	254	1	420	19.4	880	researched	3
+ga_precision_gap_10	GA Precision	GAP-10	7.62 semi-auto precision DMR 20" barrel	7.62×51mm NATO	7.82	508	279	1	415	9.5	805	researched	3
+ga_precision_gap_10_crusader	GA Precision	GAP-10 Crusader	Crusader chassis 6.5CM semi-auto	6.5 Creedmoor	6.71	508	203	1	415	9.0	800	researched	3
+ga_precision_tempest	GA Precision	Tempest	Bolt-action precision 6.5CM 22"	6.5 Creedmoor	6.71	559	203	1	415	9.0	810	researched	3
+ga_precision_gladius	GA Precision	Gladius	Bolt-action competition 308 20"	.308 Winchester	7.82	508	279	1	415	9.5	795	researched	3
+ga_precision_psr	GA Precision	PSR	Precision sniper .300WM 22" barreled action	.300 Winchester Magnum	7.82	559	254	1	413	11.7	990	researched	3
+surgeon_scalpel	Surgeon Rifles	Scalpel	Short action precision bolt, 308 22"	.308 Winchester	7.82	559	279	1	415	9.5	795	researched	3
+surgeon_scalpel_long	Surgeon Rifles	Scalpel Long	Long action precision bolt, 300WM 26"	.300 Winchester Magnum	7.82	660	254	1	413	11.7	1000	researched	3
+surgeon_medium_action	Surgeon Rifles	Medium Action	Medium action .338LM 26" precision	.338 Lapua Magnum	8.58	660	254	1	420	19.4	880	researched	3
+bighorn_tl3	Bighorn Arms	TL3	Short action custom bolt, 308 22"	.308 Winchester	7.82	559	279	1	415	9.5	795	researched	3
+bighorn_origin	Bighorn Arms	Origin	Short action production bolt, 6.5CM	6.5 Creedmoor	6.71	610	203	1	415	9.0	810	researched	3
+bighorn_zermatt_arms	Bighorn Arms	Zermatt Arms	Bolt-action SR3, 308 Win 20"	.308 Winchester	7.82	508	279	1	415	9.5	790	researched	3
+defiance_deviant	Defiance Machine	Deviant	Tactical bolt action, 308 20"	.308 Winchester	7.82	508	279	1	415	9.5	790	researched	3
+defiance_anti_x	Defiance Machine	AnTi-X	Lightweight action, 6.5CM 22"	6.5 Creedmoor	6.71	559	203	1	415	9.0	810	researched	3
+defiance_ruckus	Defiance Machine	Ruckus	Competition short action, 6 Dasher	6mm Dasher	6.17	610	203	1	430	6.7	900	researched	3
+defiance_tenacity	Defiance Machine	Tenacity	Production action, 308 20"	.308 Winchester	7.82	508	279	1	415	9.5	790	researched	3
+mack_bros_edm	Mack Brothers	EDM	Short action custom, 308 Win 22"	.308 Winchester	7.82	559	279	1	415	9.5	795	researched	3
+mack_bros_maco_ss	Mack Brothers	MACO SS	Smooth side short action, 6.5CM 22"	6.5 Creedmoor	6.71	559	203	1	415	9.0	810	researched	3
+stiller_tac_300	Stiller Precision	Tac 300	Tactical action 308 Win 22"	.308 Winchester	7.82	559	279	1	415	9.5	795	researched	3
+stiller_tac_400	Stiller Precision	Tac 400	Long action magnum 300WM 26"	.300 Winchester Magnum	7.82	660	254	1	413	11.7	1000	researched	3
+stiller_viper	Stiller Precision	Viper	Competition short action, 22" barrel	6.5 Creedmoor	6.71	559	203	1	415	9.0	810	researched	3
+stiller_predator	Stiller Precision	Predator	Hunting action 308 Win 20"	.308 Winchester	7.82	508	279	1	415	9.5	790	researched	3
+beretta_1301_tactical_gen_2	Beretta	1301 Tactical Gen 2	Semi-auto shotgun 18.7" barrel, 7-round	12 Gauge	18.5	475	0	0	69	32.0	470	researched	3
+beretta_1301_competition	Beretta	1301 Competition	Semi-auto shotgun 21" barrel, competition	12 Gauge	18.5	533	0	0	69	32.0	470	researched	3
+beretta_a300_ultima_patrol	Beretta	A300 Ultima Patrol	Semi-auto shotgun 19" barrel, M-Lok	12 Gauge	18.5	483	0	0	69	32.0	470	researched	3
+beretta_a300_outlander	Beretta	A300 Outlander	Semi-auto shotgun 28" barrel, hunting	12 Gauge	18.5	711	0	0	69	32.0	470	researched	3
+beretta_a400_xcel	Beretta	A400 Xcel	Semi-auto shotgun 30" barrel, competition	12 Gauge	18.5	762	0	0	69	28.0	430	researched	3
+beretta_80x_cheetah	Beretta	80X Cheetah	Semi-auto pistol .380 ACP, optics-ready	.380 ACP	9.02	89	254	1	200	6.2	280	researched	3
+beretta_92xi_squalo	Beretta	92XI Squalo	Semi-auto pistol SAO, optics-cut 5"	9×19mm Parabellum	9.01	127	254	1	240	8.0	380	researched	3
+beretta_92x_performance_fr	Beretta	92X Performance FR	Optics-ready competition 5" barrel	9×19mm Parabellum	9.01	127	254	1	240	8.0	380	researched	3
+beretta_apx_a1_carry	Beretta	APX A1 Carry	Subcompact single-stack 3.5" barrel	9×19mm Parabellum	9.01	89	254	1	240	8.0	360	researched	3
+beretta_apx_a1_compact	Beretta	APX A1 Compact	Compact 4" barrel	9×19mm Parabellum	9.01	102	254	1	240	8.0	375	researched	3
+beretta_687_silver_pigeon_iii	Beretta	687 Silver Pigeon III	Over-under shotgun 28" barrel	12 Gauge	18.5	711	0	0	69	32.0	420	researched	3
+beretta_687_silver_pigeon_v	Beretta	687 Silver Pigeon V	Over-under shotgun 30" barrel	12 Gauge	18.5	762	0	0	69	32.0	420	researched	3
+beretta_dt11	Beretta	DT11	Over-under competition 32" barrel	12 Gauge	18.5	813	0	0	69	28.0	420	researched	3
+sig_sauer_p238_hd	Sig Sauer	P238 HD	Semi-auto .380, heavy-duty slide	.380 ACP	9.02	71	254	1	200	6.2	275	researched	3
+sig_sauer_p238_nitron	Sig Sauer	P238 Nitron	Semi-auto .380, Nitron finish	.380 ACP	9.02	71	254	1	200	6.2	275	researched	3
+sig_sauer_p938_sas	Sig Sauer	P938 SAS	Semi-auto 9mm, Sig Anti-Snag	9×19mm Parabellum	9.01	76	254	1	240	8.0	335	researched	3
+sig_sauer_p938_extreme	Sig Sauer	P938 Extreme	Semi-auto 9mm, extended controls	9×19mm Parabellum	9.01	76	254	1	240	8.0	335	researched	3
+sig_sauer_p320_x_five_legion	Sig Sauer	P320 X-Five Legion	Tungsten grip 5" 9mm competition	9×19mm Parabellum	9.01	127	254	1	240	8.0	375	researched	3
+sig_sauer_p320_x_carry_legion	Sig Sauer	P320 X-Carry Legion	Carry-size Legion trigger 9mm	9×19mm Parabellum	9.01	99	254	1	240	8.0	365	researched	3
+sig_sauer_p320_axg_classic	Sig Sauer	P320 AXG Classic	Aluminum grip module 9mm 4.7"	9×19mm Parabellum	9.01	120	254	1	240	8.0	375	researched	3
+sig_sauer_p365_x-macro_14	Sig Sauer	P365 X-Macro	17-round comp, 3.1" barrel, 9mm	9×19mm Parabellum	9.01	79	254	1	240	8.0	360	researched	3
+sig_sauer_p365_axg_legion	Sig Sauer	P365 AXG Legion	Aluminum grip Legion micro, 9mm	9×19mm Parabellum	9.01	79	254	1	240	8.0	360	researched	3
+sig_sauer_p226_x_five	Sig Sauer	P226 X-Five	SAO 5" match barrel, 9mm	9×19mm Parabellum	9.01	127	254	1	240	8.0	380	researched	3
+sig_sauer_p226_x_six	Sig Sauer	P226 X-Six	SAO 6" barrel, 9mm	9×19mm Parabellum	9.01	152	254	1	240	8.0	390	researched	3
+sig_sauer_p226_legion	Sig Sauer	P226 Legion	Legion SAO DA/SA 9mm 4.4"	9×19mm Parabellum	9.01	112	254	1	240	8.0	370	researched	3
+sig_sauer_p229_elite	Sig Sauer	P229 Elite	Elite SRT .357 SIG 3.9"	.357 SIG	9.02	99	406	1	280	8.1	430	researched	3
+sig_sauer_p229_scorpion	Sig Sauer	P229 Scorpion	FDE Scorpion .40 S&W 3.9"	.40 S&W	10.17	99	406	1	240	11.7	340	researched	3
+sig_sauer_p229_legion	Sig Sauer	P229 Legion	Legion DA/SA 9mm 3.9"	9×19mm Parabellum	9.01	99	254	1	240	8.0	365	researched	3
+sig_sauer_cross	Sig Sauer	Cross	Bolt-action 18" .308 Win	.308 Winchester	7.82	457	254	1	380	9.5	850	researched	3
+sig_sauer_mcx_canebrake	Sig Sauer	MCX CANEBRAKE	Semi-auto 16" 5.56, unique handguard	5.56×45mm NATO	5.69	406	178	1	430	4.0	914	researched	3
+sig_sauer_mcx_rattler	Sig Sauer	MCX Rattler	5.5" PDW .300 BLK	.300 AAC Blackout	7.85	140	178	1	345	14.3	640	researched	3
+sig_sauer_716i_tread	Sig Sauer	716i Tread	Semi-auto 16" 7.62 NATO	7.62×51mm NATO	7.82	406	254	1	380	9.5	850	researched	3
+sig_sauer_716_dmr	Sig Sauer	716 DMR	Semi-auto DMR 20" 7.62	7.62×51mm NATO	7.82	508	254	1	380	9.5	870	researched	3
+walther_pdp_pro_sd_full	Walther	PDP Pro SD Full	Threaded 5.1" 9mm	9×19mm Parabellum	9.01	130	254	1	240	8.0	380	researched	3
+walther_pdp_compact_4	Walther	PDP Compact 4"	Compact 4" barrel 9mm	9×19mm Parabellum	9.01	102	254	1	240	8.0	365	researched	3
+walther_pps_m2	Walther	PPS M2	Single-stack 3.18" barrel 9mm	9×19mm Parabellum	9.01	81	254	1	240	8.0	335	researched	3
+walther_ppk_s	Walther	PPK/S	.380 ACP stainless	.380 ACP	9.02	83	254	1	200	6.2	256	researched	3
+walther_ccp_m2	Walther	CCP M2	Gas-delayed blowback 3.38" barrel	9×19mm Parabellum	9.01	86	254	1	240	8.0	345	researched	3
+walther_p22_ca	Walther	P22 CA	.22 LR 3.4" barrel	.22 LR	5.66	87	406	1	165	2.6	320	researched	3
+walther_q4_sf	Walther	Q4-SF	Steel frame 4" barrel 9mm	9×19mm Parabellum	9.01	102	254	1	240	8.0	370	researched	3
+walther_q5_sf_steel_frame	Walther	Q5-SF Steel Frame	Steel frame 5" barrel 9mm	9×19mm Parabellum	9.01	127	254	1	240	8.0	380	researched	3
+feg_pa_38	FÉG	PA-38	Semi-auto .380 ACP	.380 ACP	9.02	100	254	1	200	6.2	256	researched	3
+feg_sfp_9	FÉG	SFP-9	Semi-auto 9x18 Makarov compact	9×18mm Makarov	9.27	100	254	1	245	6.1	315	researched	3
+feg_r_9	FÉG	R-9	Revolver .357 Mag 4" barrel	.357 Magnum	9.07	102	508	1	310	10.2	440	researched	3
+feg_r_61	FÉG	R-61	Revolver .38 Special 2" barrel	.38 Special	9.07	51	508	1	240	10.2	270	researched	3
+feg_pmk_82	FÉG	PMK-82	Semi-auto 9x18 Makarov aluminum frame	9×18mm Makarov	9.27	100	254	1	245	6.1	315	researched	3
+amt_automag_ii	AMT	Automag II	Semi-auto .22 WMR 6" barrel	.22 Winchester Magnum	5.66	152	406	1	220	2.6	550	researched	3
+amt_automag_iii	AMT	Automag III	Semi-auto .30 Carbine 6.37" barrel	.30 Carbine	7.62	162	406	1	290	7.9	660	researched	3
+amt_automag_iv	AMT	Automag IV	Semi-auto 10mm 6.5" barrel	10mm Auto	10.17	165	406	1	315	11.7	430	researched	3
+amt_automag_v	AMT	Automag V	Semi-auto .50 AE 6.5" barrel	.50 Action Express	12.70	165	406	1	330	19.4	440	researched	3
+amt_on_duty	AMT	On Duty	DAO 9mm 4.5" barrel	9×19mm Parabellum	9.01	114	254	1	240	8.0	355	researched	3
+amt_hardballer_longslide	AMT	Hardballer Longslide	Stainless 7" barrel .45 ACP	.45 ACP	11.48	178	406	1	130	15.0	270	researched	3
+amt_backup_380	AMT	Backup .380	DAO subcompact .380 ACP	.380 ACP	9.02	71	254	1	200	6.2	256	researched	3
+amt_backup_45	AMT	Backup .45	DAO subcompact .45 ACP	.45 ACP	11.48	76	406	1	130	15.0	245	researched	3
+cetme_model_a	CETME	Model A	Assault rifle 7.62mm CETME select-fire	7.62×51mm NATO	7.85	450	305	1	380	9.3	780	researched	3
+cetme_model_b	CETME	Model B	Assault rifle 7.62mm NATO improved	7.62×51mm NATO	7.85	450	305	1	380	9.3	800	researched	3
+cetme_model_c	CETME	Model C	Battle rifle 7.62mm NATO standard	7.62×51mm NATO	7.85	450	305	1	380	9.3	800	researched	3
+cetme_model_l	CETME	Model L	Assault rifle 5.56 NATO	5.56×45mm NATO	5.69	400	178	1	430	4.0	875	researched	3
+cetme_model_lc	CETME	Model LC	Carbine 5.56 NATO collapsing stock	5.56×45mm NATO	5.69	320	178	1	430	4.0	832	researched	3
+mateba_model_6_unica_hunter	Mateba	Model 6 Unica Hunter	Auto-revolver 8" barrel .44 Magnum	.44 Magnum	10.90	203	508	2	360	15.6	450	researched	3
+mateba_model_6_unica_defense	Mateba	Model 6 Unica Defense	Auto-revolver 4" barrel .357 Magnum	.357 Magnum	9.07	102	508	2	310	10.2	430	researched	3
+mateba_grifone_carbine	Mateba	Grifone Carbine	Auto-revolver carbine 18" .44	.44 Magnum	10.90	457	508	2	360	15.6	520	researched	3
+mateba_grifone_short	Mateba	Grifone Short	Auto-revolver carbine 13" .357	.357 Magnum	9.07	330	508	2	310	10.2	500	researched	3
+eaa_vindicator	EAA	Vindicator	Revolver .357 Mag 4" barrel	.357 Magnum	9.07	102	508	1	310	10.2	440	researched	3
+eaa_bounty_hunter_saa	EAA	Bounty Hunter SAA	Single-action revolver 5.5" .45 Colt	.45 Colt	11.48	140	406	1	130	15.6	260	researched	3
+eaa_witness_steel_full_size	EAA	Witness Steel Full Size	Steel frame 9mm 4.5" barrel	9×19mm Parabellum	9.01	114	254	1	240	8.0	370	researched	3
+eaa_witness_hunter	EAA	Witness Hunter	6" barrel 10mm	10mm Auto	10.17	152	406	1	315	11.7	430	researched	3
+eaa_witness_compact	EAA	Witness Compact	Compact .45 ACP 3.75"	.45 ACP	11.48	95	406	1	130	15.0	250	researched	3
+eaa_witness_match	EAA	Witness Match	Competition 9mm 5" barrel	9×19mm Parabellum	9.01	127	254	1	240	8.0	380	researched	3
+molot_vepr_12	Molot	VEPR-12	Semi-auto 12ga 20" barrel	12 Gauge	18.5	508	0	0	69	32.0	470	researched	3
+molot_vepr_super	Molot	VEPR Super	Semi-auto .308 Win 22" barrel	.308 Winchester	7.85	559	305	1	380	9.5	830	researched	3
+molot_vepr_7_62x54r	Molot	VEPR-7.62x54R	Semi-auto 7.62x54R 23" barrel	7.62×54mmR	7.85	584	254	1	390	9.8	860	researched	3
+molot_vepr_k	Molot	VEPR-K	Semi-auto carbine 7.62x39 16" barrel	7.62×39mm Soviet	7.85	406	254	1	355	8.0	710	researched	3
+molot_km_7	Molot	KM-7	Semi-auto carbine 7.62x39 AKM pattern	7.62×39mm Soviet	7.85	415	254	1	355	8.0	710	researched	3
+molot_ko_44	Molot	KO-44	Semi-auto 7.62x54R Mosin pattern	7.62×54mmR	7.85	514	254	1	390	9.8	860	researched	3
