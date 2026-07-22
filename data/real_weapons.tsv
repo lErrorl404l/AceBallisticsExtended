@@ -1201,3 +1201,62 @@ uberti_1866_yellowboy	Uberti	1866 Yellowboy	lever-action rifle	.38 Special	9.06	
 uberti_1873_winchester	Uberti	1873 Winchester	lever-action rifle	.357 Magnum	9.07	508	356	1	345	8.1	514	estimated	estimated
 uberti_1885_highwall	Uberti	1885 Highwall	falling-block single-shot	.45-70	11.48	762	457	1	180	19.9		estimated	estimated
 uberti_stallion	Uberti	Stallion	single-action revolver	.22 LR	5.66	120	356	1	165	2.6	224	estimated	estimated
+glock_17	Glock	17	short-recoil	9×19mm Parabellum	9.01	114	250	1	250	8.0	360	estimated	estimated
+glock_19	Glock	19	short-recoil	9×19mm Parabellum	9.01	102	250	1	250	8.0	358	estimated	estimated
+glock_22	Glock	22	short-recoil	.40 S&W	10.17	114	250	1	240	10.0	323	estimated	estimated
+glock_23	Glock	23	short-recoil	.40 S&W	10.17	102	250	1	240	10.0	320	estimated	estimated
+glock_26	Glock	26	short-recoil	9×19mm Parabellum	9.01	88	250	1	250	8.0	356	estimated	estimated
+glock_34	Glock	34	short-recoil	9×19mm Parabellum	9.01	135	250	1	250	8.0	363	estimated	estimated
+glock_42	Glock	42	short-recoil	.380 ACP	9.02	83	250	1	141	6.0	282	estimated	estimated
+glock_20	Glock	20	short-recoil	10mm Auto	10.17	117	250	1	310	10.0	351	estimated	estimated
+magnum_research_de_50	Magnum Research	De 50	gas-operated	.50 AE	12.70	152	483	1	345	18.9	433	estimated	estimated
+magnum_research_de_44	Magnum Research	De 44	gas-operated	.44 Remington Magnum		152	457	1			406	estimated	estimated
+magnum_research_de_357	Magnum Research	De 357	gas-operated	.357 Magnum	9.07	152	356	1	345	8.1	426	estimated	estimated
+magnum_research_de_50_10in	Magnum Research	De 50 10In	gas-operated	.50 AE	12.70	254	483	1	345	18.9	458	estimated	estimated
+magnum_research_mr_eagle	Magnum Research	Mr Eagle	short-recoil	9×19mm Parabellum	9.01	109	250	1	250	8.0	359	estimated	estimated
+kahr_arms_cm9	Kahr Arms	Cm9	short-recoil	9×19mm Parabellum	9.01	76	250	1	250	8.0	354	estimated	estimated
+kahr_arms_pm9	Kahr Arms	Pm9	short-recoil	9×19mm Parabellum	9.01	76	250	1	250	8.0	354	estimated	estimated
+kahr_arms_cw9	Kahr Arms	Cw9	short-recoil	9×19mm Parabellum	9.01	88	250	1	250	8.0	356	estimated	estimated
+kahr_arms_p380	Kahr Arms	P380	short-recoil	.380 ACP	9.02	68	250	1	141	6.0	280	estimated	estimated
+mossberg_500_28	Mossberg	500 28	pump-action	12 Gauge	18.5	711	0		65	28.4	423	estimated	estimated
+mossberg_maverick_88	Mossberg	Maverick 88	pump-action	12 Gauge	18.5	470	0		65	28.4	410	estimated	estimated
+mossberg_mvp_223	Mossberg	Mvp 223	bolt-action	.223 Rem	5.69	559	229	1	379	4.0	900	estimated	estimated
+mossberg_mvp_308	Mossberg	Mvp 308	bolt-action	.308 Win	7.82	559	254	1	415	9.5	838	estimated	estimated
+mossberg_464_3030	Mossberg	464 3030	lever-action	.30-30 Win	7.82	508	254	1	331	11.1	680	estimated	estimated
+mossberg_590a1_20	Mossberg	590A1 20	pump-action	12 Gauge	18.5	508	0		65	28.4	412	estimated	estimated
+savage_42_22lr_410	Savage	42 22Lr 410	break-action	.22 LR	5.66	508	406	1	165	2.6	340	estimated	estimated
+savage_110_223	Savage	110 223	bolt-action	.223 Rem	5.69	559	229	1	379	4.0	900	estimated	estimated
+savage_10_308	Savage	10 308	bolt-action	.308 Win	7.82	559	254	1	415	9.5	838	estimated	estimated
+savage_10_6_5cm	Savage	10 6 5Cm	bolt-action	6.5 Creedmoor	6.71	559	203	1	415	9.0	830	estimated	estimated
+savage_axis_243	Savage	Axis 243	bolt-action	.243 Win	6.17	559	254	1	400	6.5		estimated	estimated
+savage_12_223	Savage	12 223	bolt-action	.223 Rem	5.69	610	229	1	379	4.0	921	estimated	estimated
+auto_ord_thompson_m1921	Auto-Ordnance	Thompson M1921	blowback	.45 ACP	11.48	267	406	1	145	15.0	280	estimated	estimated
+auto_ord_thompson_m1928	Auto-Ordnance	Thompson M1928	blowback	.45 ACP	11.48	267	406	1	145	15.0	280	estimated	estimated
+auto_ord_1911_9mm	Auto-Ordnance	1911 9Mm	short-recoil	9×19mm Parabellum	9.01	127	250	1	250	8.0	362	estimated	estimated
+auto_ord_1911a1_parkerized	Auto-Ordnance	1911A1 Parkerized	short-recoil	.45 ACP	11.48	127	406	1	145	15.0	259	estimated	estimated
+auto_ord_1911_commander	Auto-Ordnance	1911 Commander	short-recoil	.45 ACP	11.48	108	406	1	145	15.0	256	estimated	estimated
+auto_ord_thompson_m1928a1	Auto-Ordnance	Thompson M1928A1	blowback	.45 ACP	11.48	267	406	1	145	15.0	280	estimated	estimated
+mauser_gew98	Mauser	Gew98	bolt-action	7.92×57mm Mauser		740	240	1				estimated	estimated
+mauser_hsc	Mauser	Hsc	blowback	.32 ACP	7.65	86	250	1	141	4.6	263	estimated	estimated
+mauser_m1910	Mauser	M1910	blowback	.25 ACP	6.38	78	250	1	141	3.2	235	estimated	estimated
+mauser_m712	Mauser	M712	blowback	7.63×25mm Mauser		140	240	1				estimated	estimated
+mauser_m18	Mauser	M18	bolt-action	.308 Win	7.82	584	305	1	415	9.5	848	estimated	estimated
+canik_tp9_elite_sc	Canik	Tp9 Elite Sc	short-recoil	9×19mm Parabellum	9.01	94	250	1	250	8.0	357	estimated	estimated
+canik_tp9_da	Canik	Tp9 Da	short-recoil	9×19mm Parabellum	9.01	104	250	1	250	8.0	358	estimated	estimated
+canik_mete_sfx	Canik	Mete Sfx	short-recoil	9×19mm Parabellum	9.01	132	250	1	250	8.0	362	estimated	estimated
+tisas_1911a1	Tisas	1911A1	short-recoil	.45 ACP	11.48	127	406	1	145	15.0	259	estimated	estimated
+tisas_1911_b45	Tisas	1911 B45	short-recoil	.45 ACP	11.48	127	406	1	145	15.0	259	estimated	estimated
+tisas_zigana_f	Tisas	Zigana F	short-recoil	9×19mm Parabellum	9.01	123	250	1	250	8.0	361	estimated	estimated
+barrett_m82a1	Barrett	M82A1	gas-operated	.50 BMG	12.95	737	381	1	379	42.0	853	estimated	estimated
+barrett_m107a1	Barrett	M107A1	gas-operated	.50 BMG	12.95	737	381	1	379	42.0	853	estimated	estimated
+barrett_m98b	Barrett	M98B	bolt-action	.338 Lapua	8.58	660	254	1	420	19.4	896	estimated	estimated
+dan_wesson_715_4in	Dan Wesson	715 4In	revolver	.357 Magnum	9.07	102	356	1	345	8.1	413	estimated	estimated
+dan_wesson_715_6in	Dan Wesson	715 6In	revolver	.357 Magnum	9.07	152	356	1	345	8.1	426	estimated	estimated
+dan_wesson_715_8in	Dan Wesson	715 8In	revolver	.357 Magnum	9.07	203	356	1	345	8.1	438	estimated	estimated
+dan_wesson_valor	Dan Wesson	Valor	short-recoil	.45 ACP	11.48	127	406	1	145	15.0	259	estimated	estimated
+stoeger_str9	Stoeger	Str9	short-recoil	9×19mm Parabellum	9.01	106	250	1	250	8.0	358	estimated	estimated
+stoeger_cougar_8000	Stoeger	Cougar 8000	short-recoil	9×19mm Parabellum	9.01	92	250	1	250	8.0	356	estimated	estimated
+stoeger_coach_gun	Stoeger	Coach Gun	break-action	12 Gauge	18.5	508	0		65	28.4	412	estimated	estimated
+girsan_mc28	Girsan	Mc28	short-recoil	9×19mm Parabellum	9.01	127	250	1	250	8.0	362	estimated	estimated
+girsan_regard	Girsan	Regard	short-recoil	9×19mm Parabellum	9.01	125	250	1	250	8.0	361	estimated	estimated
+girsan_mc1911	Girsan	Mc1911	short-recoil	.45 ACP	11.48	127	406	1	145	15.0	259	estimated	estimated
