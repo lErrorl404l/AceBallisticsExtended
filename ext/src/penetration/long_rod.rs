@@ -86,7 +86,10 @@ pub fn evaluate_long_rod(params: &LongRodParams) -> LongRodPenetrationResult {
 
     // Adjust k inversely with efficiency so longer rods (higher η)
     // yield a lower effective k → more penetration
-    let k = 2.0 / efficiency;
+    // Base k=3.4 calibrated from M829 reference (120mm, 460mm rod @ 1670 m/s → 535mm RHA)
+    // and DM53 reference (120mm, 685mm rod @ 1720 m/s → 650mm RHA).
+    // ponytail: k_base = 3.4, add yield-strength scaling if target varies from 1000 MPa
+    let k = 3.4 / efficiency;
 
     // P/L from the enhanced Lanz-Odermatt formula
     let p_over_l = lanz_odermatt_depth_with_ld(
