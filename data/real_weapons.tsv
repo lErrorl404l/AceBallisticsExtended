@@ -1067,3 +1067,77 @@ taurus_gx4	Taurus	Gx4	semi	9×19mm Parabellum	9.01	84	250	1	250	8.0	355	research
 taurus_g3x	Taurus	G3X	semi	9×19mm Parabellum	9.01	89	250	1	250	8.0	356	researched (Taurus USA G3X product page, Wikipedia Taurus G3 series, Gun Builders Depot G3X specs)	estimated
 taurus_th9	Taurus	Th9	semi	9×19mm Parabellum	9.01	102	250	1	250	8.0	358	researched (Taurus USA TH9 product page, Wikipedia Taurus TH series, American Rifleman TH9 review)	estimated
 taurus_raging_hunter	Taurus	Raging Hunter	revolver	.44 Remington Magnum		165	508	1				researched (Taurus USA Raging Hunter product page, Wikipedia Taurus Raging Hunter, Gunblast Raging Hunter review, SAAMI .44 Magnum)	estimated
+webley_mk6	Webley & Scott	Mk6	revolver	.455 Webley		150	508	1			180	researched (Wikipedia: Webley Revolver)	estimated
+webley_mk4_38	Webley & Scott	Mk4 38	revolver	.38 S&W		125	380	1			185	researched (Wikipedia: Webley Revolver, Wikipedia: .38 S&W)	estimated
+webley_auto_455	Webley & Scott	Auto 455	semi-automatic pistol	.455 Webley Auto		127	406	1				researched (Wikipedia: Webley Self-Loading Pistol)	estimated
+webley_32acp	Webley & Scott	32Acp	semi-automatic pistol	.32 ACP	7.65	89	254	1	141	4.6		researched (Wikipedia: Webley & Scott)	estimated
+webley_fosbery	Webley & Scott	Fosbery	revolver	.455 Webley		152	508	1			180	researched (Wikipedia: Webley Revolver)	estimated
+korth_combat	Korth	Combat	revolver	.357 Magnum	9.07	102	476	1	345	8.1	413	estimated (Korth company product line, NO_RELIABLE_SOURCE)	estimated
+korth_mongoose	Korth	Mongoose	revolver	.357 Magnum	9.07	51	476	1	345	8.1	400	estimated (Korth company product line, NO_RELIABLE_SOURCE)	estimated
+korth_nxr_357	Korth	Nxr 357	revolver	.357 Magnum	9.07	152	476	1	345	8.1	426	estimated (Korth company product line, NO_RELIABLE_SOURCE)	estimated
+korth_nxr_44	Korth	Nxr 44	revolver	.44 Remington Magnum		152	508	1			406	estimated (Korth company product line, NO_RELIABLE_SOURCE)	estimated
+naa_22lr	NAA	22Lr	revolver	.22 LR	5.66	41	406	1	165	2.6	200	researched (Wikipedia: North American Arms)	estimated
+naa_22wmr	NAA	22Wmr	revolver	.22 WMR	5.66	41	406	1	179	2.6	452	researched (Wikipedia: North American Arms)	estimated
+naa_pug	NAA	Pug	revolver	.22 WMR	5.66	28	406	1	179	2.6	447	estimated (Wikipedia: North American Arms)	estimated
+naa_sidewinder	NAA	Sidewinder	revolver	.22 WMR	5.66	64	406	1	179	2.6	460	estimated (Wikipedia: North American Arms)	estimated
+naa_earl	NAA	Earl	revolver	.22 WMR	5.66	102	406	1	179	2.6	473	estimated (Wikipedia: North American Arms)	estimated
+american180		American180	submachine gun	.22 LR	5.66	356	406	1	165	2.6	294	researched (Wikipedia: American-180)	estimated
+rohrbaugh_r9	Rohrbaugh	R9	semi-automatic pistol	9×19mm Parabellum	9.01	74	254	1	250	8.0	354	researched (Wikipedia: Rohrbaugh R9)	estimated
+rohrbaugh_r9s	Rohrbaugh	R9S	semi-automatic pistol	9×19mm Parabellum	9.01	74	254	1	250	8.0	354	researched (Wikipedia: Rohrbaugh R9)	estimated
+rohrbaugh_stealth	Rohrbaugh	Stealth	semi-automatic pistol	9×19mm Parabellum	9.01	74	254	1	250	8.0	354	researched (Wikipedia: Rohrbaugh R9)	estimated
+mas_36	MAS	36	bolt	7.5×54mm French		575	254	1			818	researched (Wikipedia)	estimated
+mas_38	MAS	38	blowback	7.65mm Longue		224	254	1			350	researched (Wikipedia)	estimated
+mas_49	MAS	49	gas_semi_auto	7.5×54mm French		580	254	1			820	researched (Wikipedia)	estimated
+mas_4956	MAS	4956	gas_semi_auto	7.5×54mm French		525	254	1			798	researched (Wikipedia)	estimated
+mas_fr_f1	MAS	Fr F1	bolt	7.5×54mm French		552	300	1			809	researched (Wikipedia)	estimated
+bersa_thunder_380	Bersa	Thunder 380	blowback	.380 ACP	9.02	90	254	1	141	6.0	284	researched (Wikipedia)	estimated
+bersa_thunder_9	Bersa	Thunder 9	short_recoil	9×19mm Parabellum	9.01	110	254	1	250	8.0	359	researched (Wikipedia)	estimated
+bersa_tpr9	Bersa	Tpr9	short_recoil	9×19mm Parabellum	9.01	110	254	1	250	8.0	359	researched (Wikipedia)	estimated
+bersa_bp9cc	Bersa	Bp9Cc	striker_fired	9×19mm Parabellum	9.01	89	254	1	250	8.0	356	researched (Wikipedia)	estimated
+bersa_firestorm_22	Bersa	Firestorm 22	blowback	.22 LR	5.66	89	406	1	165	2.6	214	researched (Wikipedia)	estimated
+luger_p08	Luger	P08	toggle_lock	9×19mm Parabellum	9.01	100	254	1	250	8.0	358	researched (Wikipedia)	estimated
+luger_artillery	Luger	Artillery	toggle_lock	9×19mm Parabellum	9.01	200	254	1	250	8.0	372	researched (Wikipedia)	estimated
+luger_navy	Luger	Navy	toggle_lock	9×19mm Parabellum	9.01	150	254	1	250	8.0	365	researched (Wikipedia)	estimated
+luger_swiss	Luger	Swiss	toggle_lock	7.65×21mm Parabellum		120	254	1				researched (Wikipedia)	estimated
+nambu_type_14	Nambu	Type 14	recoil_locked	8×22mm Nambu		117	254	1			308	researched (Wikipedia)	estimated
+nambu_type_94	Nambu	Type 94	recoil_locked	8×22mm Nambu		96	254	1			304	researched (Wikipedia)	estimated
+nambu_type_100	Nambu	Type 100	blowback	8×22mm Nambu		230	254	1			324	researched (Wikipedia)	estimated
+schmidt_rubin_k31	Schmidt-Rubin	K31	straight_pull_bolt	7.5×55mm Swiss		652	270	1			861	researched (Wikipedia)	estimated
+schmidt_rubin_g1911	Schmidt-Rubin	G1911	straight_pull_bolt	7.5×55mm Swiss		780	270	1			912	researched (Wikipedia)	estimated
+schmidt_rubin_m1889	Schmidt-Rubin	M1889	straight_pull_bolt	7.5×53.5mm Swiss		780	254	1			912	researched (Wikipedia)	estimated
+para_p14_45		Para P14 45	semi-automatic pistol	.45 ACP	11.48	127	406	1	145	15.0	259	researched (SAAMI .45 ACP 1911 chamber spec, Para-Ordnance product literature)	estimated
+para_p16_40		Para P16 40	semi-automatic pistol	.40 S&W	10.17	127	406	1	240	10.0	325	researched (SAAMI .40 S&W chamber spec, Para-Ordnance product literature)	estimated
+para_p18_9		Para P18 9	semi-automatic pistol	9×19mm Parabellum	9.01	127	250	1	250	8.0	362	researched (CIP 9×19mm Parabellum chamber spec, Para-Ordnance product literature)	estimated
+para_carry_12		Para Carry 12	semi-automatic pistol	.45 ACP	11.48	89	406	1	145	15.0	253	estimated (Para-Ordnance compact 1911 variant, barrel/twist consistent with standard .45 ACP 1911)	estimated
+para_lda_14_45		Para Lda 14 45	semi-automatic pistol	.45 ACP	11.48	127	406	1	145	15.0	259	estimated (Para-Ordnance LDA trigger variant of P14-45, barrel/twist same as standard 1911)	estimated
+ithaca_m37	Ithaca	M37	pump shotgun	12 Gauge	18.5	470	0		65	28.4	410	researched (Ithaca Gun Co. catalog, NRA Firearms Sourcebook)	estimated
+ithaca_m37_ds	Ithaca	M37 Ds	pump shotgun	12 Gauge	18.5	510	0		65	28.4	412	researched (Ithaca Deerslayer product catalog)	estimated
+ithaca_m3a1	Ithaca	M3A1	submachine gun	.45 ACP	11.48	203	406	1	145	15.0	270	researched (US Army TM 9-1005-229-35/M3A1 Grease Gun, Ithaca wartime production)	estimated
+tristar_c100	Tristar	C100	semi-automatic pistol	9×19mm Parabellum	9.01	102	250	1	250	8.0	358	researched (Tristar Arms catalog, CZ-75 clone manufacturer specs)	estimated
+tristar_t120	Tristar	T120	semi-automatic pistol	9×19mm Parabellum	9.01	114	250	1	250	8.0	360	researched (Tristar Arms catalog, CZ-75 clone manufacturer specs)	estimated
+tristar_compact	Tristar	Compact	semi-automatic pistol	9×19mm Parabellum	9.01	89	250	1	250	8.0	356	estimated (Tristar compact model based on CZ-75 compact/ subcompact family)	estimated
+tristar_viper_g2	Tristar	Viper G2	semi-automatic shotgun	12 Gauge	18.5	610	0		65	28.4	418	researched (Tristar Arms Viper G2 product specifications)	estimated
+mendoza_hm3	Mendoza	Hm3	submachine gun	9×19mm Parabellum	9.01	254	250	1	250	8.0	381	researched (Mexican defense industry documentation, Jane's Infantry Weapons)	estimated
+mendoza_c1934	Mendoza	C1934	semi-automatic pistol	.22 LR	5.66	100	406	1	165	2.6	218	estimated (Mendoza .22 LR pistol typical .22 LR rifling specs)	estimated
+mendoza_rm1	Mendoza	Rm1	bolt-action rifle	.30-30 Win	7.82	559	305	1	331	11.1	695	estimated (Mendoza RM-1 sporting rifle consistent with typical .30-30 barrel specs)	estimated
+jatimatic_gg95	Jatimatic	Gg95	submachine gun	9×19mm Parabellum	9.01	203	250	1	250	8.0	373	researched (Jali-Levyt Jati-Matic manufacturer specs, Jane's Infantry Weapons)	estimated
+sar_tur_9x	Sarsilmaz	9X	semi-automatic pistol	9×19mm Parabellum	9.01	102	250	1	250	8.0	358	researched (sarusa.com, en.wikipedia.org/wiki/Sarsılmaz_Arms)	estimated
+sar_tur_cm9	Sarsilmaz	Cm9	semi-automatic pistol	9×19mm Parabellum	9.01	89	250	1	250	8.0	356	researched (sarusa.com, en.wikipedia.org/wiki/Sarsılmaz_Arms)	estimated
+sar_tur_b6c	Sarsilmaz	B6C	semi-automatic pistol	9×19mm Parabellum	9.01	95	250	1	250	8.0	357	researched (sarusa.com, en.wikipedia.org/wiki/Sarsılmaz_Arms)	estimated
+sar_tur_st9	Sarsilmaz	St9	semi-automatic pistol	9×19mm Parabellum	9.01	120	250	1	250	8.0	360	researched (sarusa.com, en.wikipedia.org/wiki/Sarsılmaz_Arms)	estimated
+sar_tur_2000sport	Sarsilmaz	2000Sport	semi-automatic pistol	9×19mm Parabellum	9.01	127	250	1	250	8.0	362	researched (sarusa.com, en.wikipedia.org/wiki/Sarsılmaz_Arms)	estimated
+sar_tur_k12	Sarsilmaz	K12	semi-automatic pistol	9×19mm Parabellum	9.01	100	250	1	250	8.0	358	researched (sarusa.com, en.wikipedia.org/wiki/Sarsılmaz_Arms)	estimated
+sar_tur_940	Sarsilmaz	940	semi-automatic pistol	9×19mm Parabellum	9.01	112	250	1	250	8.0	359	estimated (extrapolated from SAR 9 specs, sarsilmaz.com)	estimated
+sar_tur_1911	Sarsilmaz	1911	semi-automatic pistol	.45 ACP	11.48	127	406	1	145	15.0	259	researched (sarusa.com, en.wikipedia.org/wiki/Sarsılmaz_Arms)	estimated
+snt_motiv_k5	SNT Motiv	K5	semi-automatic pistol	9×19mm Parabellum	9.01	104.14	250	1	250	8.0	358	researched (en.wikipedia.org/wiki/Daewoo_Precision_Industries_K5, sntmotiv.com)	estimated
+snt_motiv_k13	SNT Motiv	K13	assault rifle	5.56×45mm NATO	5.69	292	185	1	430	4.0	830	researched (en.wikipedia.org/wiki/SNT_Motiv, sadefensejournal.com)	estimated
+snt_motiv_k15	SNT Motiv	K15	light machine gun	5.56×45mm NATO	5.69	533	178	1	430	4.0	931	researched (en.wikipedia.org/wiki/Daewoo_Precision_Industries_K3, sntmotiv.com)	estimated
+snt_motiv_k16	SNT Motiv	K16	light machine gun	.308 Win	7.82	610	279	1	415	9.5	858	researched (en.wikipedia.org/wiki/S%26T_Motiv_K16, sntmotiv.com)	estimated
+snt_motiv_stsm21	SNT Motiv	Stsm21	submachine gun	9×19mm Parabellum	9.01	200	250	1	250	8.0	372	researched (en.wikipedia.org/wiki/SNT_Motiv, sadefensejournal.com)	estimated
+iof_insas_rifle	Indian Ordnance Factory	Insas Rifle	assault rifle	5.56×45mm NATO	5.69	464	254	1	430	4.0	902	researched (en.wikipedia.org/wiki/INSAS_rifle, ofbindia.gov.in)	estimated
+iof_insas_lmg	Indian Ordnance Factory	Insas Lmg	light machine gun	5.56×45mm NATO	5.69	535	254	1	430	4.0	932	researched (en.wikipedia.org/wiki/INSAS_rifle, ofbindia.gov.in)	estimated
+iof_1a1	Indian Ordnance Factory	1A1	semi-automatic rifle	7.62×51mm NATO	7.82	554	305	1	415	9.5	836	researched (en.wikipedia.org/wiki/L1A1_Self-Loading_Rifle, ofbindia.gov.in)	estimated
+iof_1a_pistol	Indian Ordnance Factory	1A Pistol	semi-automatic pistol	9×19mm Parabellum	9.01	118	250	1	250	8.0	360	researched (en.wikipedia.org/wiki/Pistol_Auto_9mm_1A, ofbindia.gov.in)	estimated
+iof_32_revolver	Indian Ordnance Factory	32 Revolver	revolver	.32 S&W Long		76.2	190	1			159	researched (en.wikipedia.org/wiki/Indian_Ordnance_Factories_.32_Revolver, ofbindia.gov.in)	estimated
+iof_22_revolver	Indian Ordnance Factory	22 Revolver	revolver	.22 LR	5.66	76.2	190	1	165	2.6	210	researched (en.wikipedia.org/wiki/IOF_.22_revolver, ofbindia.gov.in)	estimated
+iof_1a_smg	Indian Ordnance Factory	1A Smg	submachine gun	9×19mm Parabellum	9.01	196	250	1	250	8.0	372	researched (en.wikipedia.org/wiki/Sterling_submachine_gun, ofbindia.gov.in)	estimated
