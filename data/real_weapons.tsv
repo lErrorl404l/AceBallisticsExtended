@@ -865,3 +865,100 @@ bt_spr300	B&T	Spr300	bolt-action	.300 BLK	7.82	250	178	1	379	8.4	585	researched 
 bt_ghm9	B&T	Ghm9	semi-automatic	9×19mm	9.01	175	254	1	250	8.0	369	researched (bt-ag.ch modernfirearms.net weaponsystems.net)	researched
 bt_tp9	B&T	Tp9	semi-automatic	9×19mm	9.01	130	254	1	250	8.0	362	researched (bt-ag.ch modernfirearms.net weaponsystems.net)	researched
 bt_mp9	B&T	Mp9	submachine-gun	9×19mm	9.01	130	254	1	250	8.0	362	researched (bt-ag.ch modernfirearms.net weaponsystems.net)	researched
+mateba_autorevolver	Mateba	Mateba Autorevolver	pistol	9×19mm Parabellum	9.0	152.4	355.6	1	250	7.45	423.8	ACE3 ace_ballistics	estimated
+sterling_l2a3	Sterling Armaments Company	Sterling L2A3	submachine gun	9×19mm Parabellum	9.0	250.0	254.0	1	250	7.45	435.0	ACE3 ace_ballistics	estimated
+sten_mk5	Royal Small Arms Factory	Sten Mk5	submachine gun	9×19mm Parabellum	9.0	196.0	254.0	1	250	7.45	430.2	ACE3 ace_ballistics	estimated
+mke_mpt_76	MKE	Mpt 76	gas_select	7.62×51mm	7.82	406	279	1	415	9.5	780	researched (en.wikipedia.org/wiki/MKE_MPT, savunmasanayi.com)	researched
+mke_mpt_55	MKE	Mpt 55	gas_select	5.56×45mm	5.69	368	178	1	430	4.0	862	researched (en.wikipedia.org/wiki/MKE_MPT, savunmasanayi.com)	researched
+mke_mpt_76_k	MKE	Mpt 76 K	gas_select	7.62×51mm	7.82	330	279	1	415	9.5	751	researched (en.wikipedia.org/wiki/MKE_MPT, millisavunma.com)	researched
+mke_knt_76	MKE	Knt 76	gas_semi	7.62×51mm	7.82	508	279	1	415	9.5	819	researched (en.wikipedia.org/wiki/MKE_MPT, millisavunma.com)	researched
+mke_g3	MKE	G3	roller_delayed_select	7.62×51mm	7.82	450	305	1	415	9.5	797	researched (en.wikipedia.org/wiki/Heckler_%26_Koch_G3, modernfirearms.net)	researched
+mke_g3a4	MKE	G3A4	roller_delayed_select	7.62×51mm	7.82	450	305	1	415	9.5	797	researched (en.wikipedia.org/wiki/Heckler_%26_Koch_G3, modernfirearms.net)	researched
+daewoo_k1a	Daewoo	K1A	gas_select	5.56×45mm	5.69	263	305	1	430	4.0	818	researched (en.wikipedia.org/wiki/Daewoo_Precision_Industries_K1, modernfirearms.net)	researched
+daewoo_k2	Daewoo	K2	gas_select	5.56×45mm	5.69	465	185	1	430	4.0	903	researched (en.wikipedia.org/wiki/Daewoo_Precision_Industries_K2, sntmotiv.com)	researched
+daewoo_k2c	Daewoo	K2C	gas_select	5.56×45mm	5.69	310	185	1	430	4.0	838	researched (en.wikipedia.org/wiki/Daewoo_Precision_Industries_K2, sntmotiv.com)	researched
+daewoo_k3	Daewoo	K3	gas_select	5.56×45mm	5.69	533	178	1	430	4.0	931	researched (en.wikipedia.org/wiki/Daewoo_Precision_Industries_K3, modernfirearms.net)	researched
+daewoo_k7	Daewoo	K7	blowback_select	9×19mm	9.01	134	250	1	250	8.0	363	researched (en.wikipedia.org/wiki/Daewoo_Telecom_K7, sntmotiv.com)	researched
+daewoo_k14	Daewoo	K14	bolt_semi	7.62×51mm	7.82	610	279	1	415	9.5	858	researched (en.wikipedia.org/wiki/S%26T_Motiv_K14, sntmotiv.com)	researched
+daewoo_usas_12	Daewoo	Usas 12	gas_select	12 Gauge	18.5	460	0		65	28.4	410	researched (en.wikipedia.org/wiki/Daewoo_Precision_Industries_USAS-12, modernfirearms.net)	researched
+tanfoglio_witness_hunter	Tanfoglio	Witness Hunter	recoil_sa_da	10mm Auto	10.17	150	406	1	310	10.0	358	researched (en.wikipedia.org/wiki/Tanfoglio, en.wikipedia.org/wiki/CZ_75)	researched
+tanfoglio_witness_stock_ii	Tanfoglio	Witness Stock Ii	recoil_sa_da	9×19mm	9.01	120	250	1	250	8.0	360	researched (en.wikipedia.org/wiki/Tanfoglio, tanfoglio.it)	researched
+tanfoglio_witness_match	Tanfoglio	Witness Match	recoil_sa_da	9×19mm	9.01	130	250	1	250	8.0	362	researched (en.wikipedia.org/wiki/Tanfoglio, en.wikipedia.org/wiki/CZ_75)	researched
+tanfoglio_witness_elite_gold	Tanfoglio	Witness Elite Gold	recoil_sa_da	9×19mm	9.01	127	250	1	250	8.0	362	researched (en.wikipedia.org/wiki/Tanfoglio, tanfoglio.it)	researched
+tanfoglio_witness_compact	Tanfoglio	Witness Compact	recoil_sa_da	9×19mm	9.01	100	250	1	250	8.0	358	researched (en.wikipedia.org/wiki/Tanfoglio, en.wikipedia.org/wiki/CZ_75)	researched
+tanfoglio_force_99	Tanfoglio	Force 99	recoil_sa_da	9×19mm	9.01	108	250	1	250	8.0	359	researched (en.wikipedia.org/wiki/Tanfoglio, tanfoglio.it)	researched
+tanfoglio_limited_custom	Tanfoglio	Limited Custom	recoil_sa_da	.45 ACP	11.48	127	406	1	145	15.0	259	researched (en.wikipedia.org/wiki/Tanfoglio, en.wikipedia.org/wiki/CZ_75)	researched
+tanfoglio_witness_pavona	Tanfoglio	Witness Pavona	recoil_sa_da	9×19mm	9.01	92	250	1	250	8.0	356	researched (en.wikipedia.org/wiki/Tanfoglio, tanfoglio.it)	researched
+honey_badger_q	Q	Q	semi-auto	.300 BLK	7.82	178	127	1	379	8.4	563	researched (liveqordie.com (Q LLC product page HB-300BLK-7IN), Wikipedia (Q Honey Badger))	researched
+sugar_weasel_q	Q	Q	semi-auto	5.56×45mm	5.69	406	203	1	430	4.0	878	researched (liveqordie.com (Q LLC SW-556-16IN-RIFLE), third-party reviews (1:8 twist))	estimated
+fix_q	Q	Q	bolt action	6.5 Creedmoor	6.71	406	203	1	415	9.0	776	researched (liveqordie.com (FIX product pages), also available in .308 Win with 279mm twist)	estimated
+raccoon_q	Q	Q	semi-auto	.22 LR	5.66	210	406	1	165	2.6	251	researched (Q LLC not listing on liveqordie.com as of 2026, barrel length per user estimate)	estimated
+vector_gen2_kriss	KRISS	Gen2 Kriss	delayed blowback	.45 ACP	11.48	165	406	1	145	15.0	265	researched (Wikipedia (KRISS Vector), Modern Firearms (Popenker), caliber standard twist)	estimated
+vector_crb_kriss	KRISS	Crb Kriss	delayed blowback	.45 ACP	11.48	406	406	1	145	15.0	301	researched (Wikipedia (KRISS Vector CRB), Modern Firearms)	estimated
+vector_sbr_kriss	KRISS	Sbr Kriss	delayed blowback	.45 ACP	11.48	140	406	1	145	15.0	261	researched (Wikipedia (KRISS Vector SBR), caliber standard twist)	estimated
+vector_9mm_kriss	KRISS	9Mm Kriss	delayed blowback	9×19mm	9.01	165	250	1	250	8.0	367	researched (Wikipedia (KRISS Vector 9mm variant), caliber standard twist)	estimated
+vector_10mm_kriss	KRISS	10Mm Kriss	delayed blowback	10mm Auto	10.17	165	406	1	310	10.0	361	researched (Wikipedia (KRISS Vector 10mm variant), caliber standard twist)	estimated
+rhino_20ds_chiappa	Chiappa	20Ds Chiappa	DA/SA	.357 Magnum	9.07	51	483	1	345	8.1	400	researched (Chiappa Firearms SKU 340.056/340.084, Wikipedia (Chiappa Rhino))	researched
+rhino_30ds_chiappa	Chiappa	30Ds Chiappa	DA/SA	.357 Magnum	9.07	76	483	1	345	8.1	406	researched (Chiappa Firearms SKU 340.289 (1:19 Twist Rate), Wikipedia)	researched
+rhino_40ds_chiappa	Chiappa	40Ds Chiappa	DA/SA	.357 Magnum	9.07	102	483	1	345	8.1	413	researched (Chiappa Firearms SKU 340.219 (1:19 Twist Rate), Wikipedia)	researched
+rhino_60ds_chiappa	Chiappa	60Ds Chiappa	DA/SA	.357 Magnum	9.07	152	483	1	345	8.1	426	researched (Chiappa Firearms SKU 340.221 (1:19 Twist Rate), Wikipedia)	researched
+m6_survival_chiappa	Chiappa	Survival Chiappa	break-action	.22 LR	5.66	470	406	1	165	2.6	329	researched (Chiappa Firearms SKU 500.188, Wikipedia (M6 Survival), shotgun barrel smoothbore)	estimated
+m9_chiappa	Chiappa		semi-auto	9×19mm	9.01	125	250	1	250	8.0	361	researched (Wikipedia (Chiappa M9 Beretta 92 clone), Beretta 92FS technical specifications)	estimated
+acr_bushmaster	Bushmaster	Bushmaster	semi-auto	5.56×45mm	5.69	419	229	1	430	4.0	883	researched (Wikipedia (BREN/ACR), Athlon Outdoors Tactical Life, 1:9 standard twist)	researched
+acr_762_bushmaster	Bushmaster	762 Bushmaster	semi-auto	7.62×39mm	7.85	419	240	1	355	7.9	711	researched (Wikipedia (BREN/ACR), Templar Precision conversion aftermarket, caliber standard twist)	estimated
+m4_type_bushmaster	Bushmaster	Bushmaster	semi-auto	5.56×45mm	5.69	406	229	1	430	4.0	878	researched (Wikipedia (Bushmaster M4-type Carbine), Bushmaster XM-15 manual (1:9 rifling))	researched
+qrc_bushmaster	Bushmaster	Bushmaster	semi-auto	5.56×45mm	5.69	292	203	1	430	4.0	830	researched (Wikipedia (Bushmaster XM-15: QRC 1:8 twist melonite barrel), barrel length per user estimate)	estimated
+orc_bushmaster	Bushmaster	Bushmaster	semi-auto	5.56×45mm	5.69	406	203	1	430	4.0	878	researched (Wikipedia (Bushmaster XM-15: ORC/QRC same product line, 1:8 twist), barrel 406mm)	estimated
+carbon_15_bushmaster	Bushmaster	Bushmaster	semi-auto	5.56×45mm	5.69	406	229	1	430	4.0	878	researched (Wikipedia (Carbon 15 Type R21), Bushmaster XM-15 standard 1:9 twist)	researched
+moe_bushmaster	Bushmaster	Bushmaster	semi-auto	5.56×45mm	5.69	406	229	1	430	4.0	878	researched (Bushmaster XM-15 MOE (Magpul furniture variant), standard 1:9 twist)	estimated
+r4_vektor	Vektor		gas	5.56×45mm	5.69	460	305	1	430	4.0	901	researched (Wikipedia(en), Jane's Infantry Weapons 1997-98)	estimated
+r5_vektor	Vektor		gas	5.56×45mm	5.69	332	305	1	430	4.0	847	researched (Wikipedia(en), Jane's Infantry Weapons 1997-98)	estimated
+r6_vektor	Vektor		gas	5.56×45mm	5.69	280	305	1	430	4.0	825	researched (Wikipedia(en), Tilstra Small Arms For Urban Combat)	estimated
+cr21_vektor	Vektor	Vektor	gas	5.56×45mm	5.69	460	305	1	430	4.0	901	researched (Wikipedia(en), world.guns.ru)	estimated
+ss77_vektor	Vektor	Vektor	gas	7.62×51mm	7.82	550	279	1	415	9.5	835	researched (Wikipedia(en), defenceweb.co.za fact file)	estimated
+ntw20_vektor	Vektor	Vektor	bolt	20×82mm		1000	560	1			880	researched (Wikipedia(en), Denel Land Systems brochure)	estimated
+ntw145_vektor	Vektor	Vektor	bolt	14.5×114mm		1220	408	1			928	researched (Wikipedia(en), Denel Land Systems brochure)	estimated
+z88_vektor	Vektor	Vektor	recoil	9×19mm	9.01	125	250	1	250	8.0	361	researched (Wikipedia(en) Beretta 92, modernfirearms.net)	estimated
+sp1_vektor	Vektor	Vektor	recoil	9×19mm	9.01	118	250	1	250	8.0	360	researched (Wikipedia(en), modernfirearms.net)	estimated
+sp2_vektor	Vektor	Vektor	recoil	9×19mm	9.01	105	250	1	250	8.0	358	researched (Wikipedia(en), Cutshaw Tactical Small Arms)	estimated
+amd65_feg	FÉG	Feg	gas	7.62×39mm	7.85	317	241	1	355	7.9	676	researched (Wikipedia(en), modernfirearms.net)	estimated
+amd63_feg	FÉG	Feg	gas	7.62×39mm	7.85	415	240	1	355	7.9	710	researched (Wikipedia(en), hungariae.com)	estimated
+ak63_feg	FÉG	Feg	gas	7.62×39mm	7.85	415	240	1	355	7.9	710	researched (Wikipedia(en), modernfirearms.net)	estimated
+ngm81_feg	FÉG	Feg	gas	5.56×45mm	5.69	415	178	1	430	4.0	882	researched (Wikipedia(en) Kalashnikov derivatives, modernfirearms.net)	estimated
+pa63_feg	FÉG	Feg	blowback	9×18mm Makarov	9.27	100	240	1	180	6.1	285	researched (Wikipedia(en), hungariae.com)	estimated
+r61_feg	FÉG	Feg	recoil	9×19mm	9.01	115	250	1	250	8.0	360	researched (modernfirearms.net, FÉG catalogs)	estimated
+b9r_feg	FÉG	Feg	blowback	9×19mm	9.01	190	250	1	250	8.0	371	researched (modernfirearms.net, FÉG documentation)	estimated
+kgp9_feg	FÉG	Feg	blowback	9×19mm	9.01	200	250	1	250	8.0	372	researched (Wikipedia(en), ARES monograph)	estimated
+sar21_stkin	ST Kinetics	Stkin	gas	5.56×45mm	5.69	508	203	1	430	4.0	921	researched (Wikipedia(en), ST Engineering brochure)	estimated
+sar21mms_stkin		Sar21Mms Stkin	gas	5.56×45mm	5.69	508	203	1	430	4.0	921	researched (Wikipedia(en), ST Engineering brochure)	estimated
+sar21gl_stkin		Sar21Gl Stkin	gas	5.56×45mm	5.69	508	203	1	430	4.0	921	researched (Wikipedia(en), ST Engineering brochure)	estimated
+sar21p_stkin		Sar21P Stkin	gas	5.56×45mm	5.69	360	203	1	430	4.0	859	researched (Wikipedia(en), Jane's Guns Recognition Guide)	estimated
+sar21a_stkin		Sar21A Stkin	gas	5.56×45mm	5.69	508	178	1	430	4.0	921	researched (Wikipedia(en), The Firearm Blog)	estimated
+ultimax100mk3_stkin		Ultimax100Mk3 Stkin	gas	5.56×45mm	5.69	508	203	1	430	4.0	921	researched (Wikipedia(en), STK brochure)	estimated
+ultimax100mk5_stkin		Ultimax100Mk5 Stkin	gas	5.56×45mm	5.69	330	203	1	430	4.0	846	researched (Wikipedia(en), Defense Review)	estimated
+cp1_stkin	ST Kinetics	Stkin	blowback	.22 LR	5.66	100	406	1	165	2.6	218	researched (ST Engineering small arms catalog, Internet references)	estimated
+dsa_sa58_fal_std	DSA	Sa58 Fal Std	gas	7.62×51mm	7.82	533	279	1	415	9.5	828	researched (DSArms.com product page, Wikipedia FN FAL, SAAMI 7.62×51mm)	estimated
+dsa_sa58_fal_carbine	DSA	Sa58 Fal Carbine	gas	7.62×51mm	7.82	406	279	1	415	9.5	780	researched (DSArms.com product listings, Wikipedia FN FAL variants)	estimated
+dsa_sa58_fal_para	DSA	Sa58 Fal Para	gas	7.62×51mm	7.82	406	279	1	415	9.5	780	researched (DSArms.com, Wikipedia FN FAL 50.61/50.63 variants)	estimated
+dsa_sa58_fal_21pbr	DSA	Sa58 Fal 21Pbr	gas	7.62×51mm	7.82	533	279	1	415	9.5	828	"researched (DSArms.com product page (""21"""" Barrel, PRIMARY PARA Folding Stock 7.62x51mm Rifle""))"	estimated
+dsa_sa58_osw	DSA	Sa58 Osw	gas	7.62×51mm	7.82	330	279	1	415	9.5	751	researched (DSArms.com, modernfirearms.net FN FAL variants)	estimated
+dsa_sa58_rpc	DSA	Sa58 Rpc	gas	7.62×51mm	7.82	330	279	1	415	9.5	751	researched (DSArms.com product listings, Small Arms Review)	estimated
+dsa_xm16a1	DSA	Xm16A1	gas	5.56×45mm	5.69	508	305	1	430	4.0	921	researched (DSArms.com product catalog, Colt M16A1 TM 9-1005-249-23&P)	estimated
+dsa_zm4	DSA	Zm4	gas	5.56×45mm	5.69	368	178	1	430	4.0	862	researched (DSArms.com product catalog, US Army M4 TM 9-1005-319-10)	estimated
+rob_xcr_l_std	Robinson Armament	L Std	gas	5.56×45mm	5.69	406	178	1	430	4.0	878	researched (Wikipedia Robinson Armament XCR, Shooting Illustrated review 2025, RobinsonArmament.com)	estimated
+rob_xcr_l_micro	Robinson Armament	L Micro	gas	5.56×45mm	5.69	190	178	1	430	4.0	787	researched (Wikipedia Robinson Armament XCR, XCR-L variant specs, RobinsonArmament.com)	estimated
+rob_xcr_m	Robinson Armament	M	gas	7.62×51mm	7.82	406	254	1	415	9.5	780	researched (Wikipedia Robinson Armament XCR-M, RobinsonArmament.com XCR-M product page)	estimated
+rob_xcr_l_762x39	Robinson Armament	L 762X39	gas	7.62×39mm	7.85	406	241	1	355	7.9	707	researched (Wikipedia Robinson Armament XCR, Robarm.com caliber specs)	estimated
+rob_m96_expeditionary	Robinson Armament	Expeditionary	gas	5.56×45mm	5.69	508	229	1	430	4.0	921	researched (Wikipedia Robinson Armament M96, modernfirearms.net)	estimated
+rob_m96_recon	Robinson Armament	Recon	gas	5.56×45mm	5.69	406	229	1	430	4.0	878	researched (Wikipedia Robinson Armament M96 Expeditionary)	estimated
+blaser_r93_lrs2_308	Blaser	R93 Lrs2 308	straight-pull	7.62×51mm	7.82	635	279	1	415	9.5	867	researched (Wikipedia Blaser R93 Tactical, Blaser LRS2 USA manual 2002, Bluercer Blaser R93 PDF)	estimated
+blaser_r93_t2_338lm	Blaser	R93 T2 338Lm	straight-pull	.338 Lapua Magnum	8.58	668	254	1	420	19.4	899	researched (Wikipedia Blaser R93 Tactical .338LM specs, Blaser Tactical 2 brochure)	estimated
+blaser_r93_t2_300wm	Blaser	R93 T2 300Wm	straight-pull	.300 Winchester Magnum	7.82	635	254	1	413	11.7	941	researched (Wikipedia Blaser R93 Tactical, Blaser Tactical 2 USA manual)	estimated
+blaser_r8_pro_308	Blaser	R8 Pro 308	straight-pull	7.62×51mm	7.82	654	279	1	415	9.5	874	researched (Wikipedia Blaser R8, American Rifleman R8 review, Blaser R8 manual)	estimated
+blaser_r8_pro_300wm	Blaser	R8 Pro 300Wm	straight-pull	.300 Winchester Magnum	7.82	654	254	1	413	11.7	948	researched (Wikipedia Blaser R8 caliber overview, Blaser R8 Professional catalog)	estimated
+blaser_r8_pro_65creed	Blaser	R8 Pro 65Creed	straight-pull	6.5 Creedmoor	6.71	654	203	1	415	9.0	863	researched (Wikipedia Blaser R8, Hornady 6.5 Creedmoor SAAMI specs)	estimated
+serbu_bfg50	Serbu	Bfg50	bolt	.50 BMG	12.95	914	381	1	379	42.0	906	researched (Wikipedia Serbu Firearms, Shooting Illustrated top 5 budget .50 BMG, Forgotten Weapons)	estimated
+serbu_bfg50a	Serbu	Bfg50A	gas	.50 BMG	12.95	914	381	1	379	42.0	906	researched (Wikipedia Serbu Firearms, Forgotten Weapons BFG-50A review, Ballistic Magazine 2019)	estimated
+serbu_bfg50_carbine	Serbu	Bfg50 Carbine	bolt	.50 BMG	12.95	660	381	1	379	42.0	830	estimated (Serbu BFG-50 platform; carbine barrel length from dealer listings/forums)	estimated
+serbu_rn50	Serbu	Rn50	break	.50 BMG	12.95	559	381	1	379	42.0	800	researched (Wikipedia Serbu Firearms, GunsAmerica RN-50 review 2017, Recoil Web 2016)	estimated
+serbu_super_shorty	Serbu	Super Shorty	pump	12 Gauge	18.5	210	0		65	28.4	398	researched (Wikipedia Serbu Firearms, Defense Review Super-Shorty 2002, Shooting Illustrated 2019)	estimated
