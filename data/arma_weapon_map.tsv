@@ -1466,3 +1466,169 @@ mas_50	mas_50	exact	Catalog primary key (Batch 10)
 mas_aa52	mas_aa52	exact	Catalog primary key (Batch 10)
 mas_36_cr39	mas_36_cr39	exact	Catalog primary key (Batch 10)
 mas_45	mas_45	exact	Catalog primary key (Batch 10)
+para_p12_45		P12-45	Para Ordnance	.45 ACP
+para_p13_45		P13-45	Para Ordnance	.45 ACP
+para_gi_expert		GI Expert	Para Ordnance	.45 ACP
+para_warthog		Warthog	Para Ordnance	.45 ACP
+para_hawg_9		Hawg 9	Para Ordnance	9×19mm Parabellum
+para_black_ops		Black Ops	Para Ordnance	.45 ACP
+para_tac_s		TAC-S	Para Ordnance	.45 ACP
+para_carry_9		Carry 9	Para Ordnance	9×19mm Parabellum
+ria_gi_standard_fs		GI Standard FS	Rock Island Armory	.45 ACP
+ria_tactical		Tactical	Rock Island Armory	.45 ACP
+ria_match		Match	Rock Island Armory	.45 ACP
+ria_compact		Compact	Rock Island Armory	.45 ACP
+ria_pro_match_ultra		Pro Match Ultra	Rock Island Armory	.45 ACP
+ria_ultra_fs		Ultra FS	Rock Island Armory	.45 ACP
+ria_rock_ultra		Rock Ultra	Rock Island Armory	.45 ACP
+ria_1911a1		1911-A1	Rock Island Armory	.45 ACP
+ria_m200		M200	Rock Island Armory	.38 Special
+ria_m206		M206	Rock Island Armory	.38 Special
+ria_mapp		MAPP	Rock Island Armory	9×19mm Parabellum
+rossi_model_92		Model 92	Rossi	.357 Magnum
+rossi_r92		R92	Rossi	.44 Magnum
+rossi_rm64		RM64	Rossi	.357 Magnum
+rossi_r851		R851	Rossi	.38 Special
+rossi_ranch_hand		Ranch Hand	Rossi	.45 Colt
+rossi_model_351		Model 351	Rossi	.38 Special
+rossi_model_461		Model 461	Rossi	.357 Magnum
+rossi_circuit_judge		Circuit Judge	Rossi	.410 bore
+rossi_brawler		Brawler	Rossi	.45 Colt
+hr_topper		Topper	H&R 1871	12 Gauge
+hr_model_949		Model 949	H&R 1871	.22 LR
+hr_model_999		Model 999 Sportsman	H&R 1871	.22 LR
+hr_handi_rifle		Handi-Rifle	H&R 1871	.45-70 Government
+hr_pardner		Pardner	H&R 1871	12 Gauge
+sccy_cpx1		CPX-1	SCCY Industries	9×19mm Parabellum
+sccy_cpx2		CPX-2	SCCY Industries	9×19mm Parabellum
+sccy_cpx3		CPX-3	SCCY Industries	.380 ACP
+sccy_dvg1		DVG-1	SCCY Industries	9×19mm Parabellum
+diamondback_db9		DB9	Diamondback Firearms	9×19mm Parabellum
+diamondback_db380		DB380	Diamondback Firearms	.380 ACP
+diamondback_db15		DB15	Diamondback Firearms	5.56×45mm NATO
+diamondback_db10		DB10	Diamondback Firearms	.308 Win
+diamondback_sidekick		Sidekick	Diamondback Firearms	.22 LR
+shadow_mr920		MR920	Shadow Systems	9×19mm Parabellum
+shadow_dr920		DR920	Shadow Systems	9×19mm Parabellum
+shadow_xr920		XR920	Shadow Systems	9×19mm Parabellum
+shadow_cr920		CR920	Shadow Systems	9×19mm Parabellum
+shadow_ss300		SS300	Shadow Systems	.300 BLK
+shadow_ss400		SS400	Shadow Systems	10mm Auto
+gsg_gsg5		GSG-5	German Sport Guns	.22 LR
+gsg_gsg522		GSG-522	German Sport Guns	.22 LR
+gsg_gsg9		GSG-9	German Sport Guns	.22 LR
+gsg_gsg1911		GSG-1911	German Sport Guns	.22 LR
+gsg_firefly		Firefly	German Sport Guns	.22 LR
+gsg_mp22		MP22	German Sport Guns	.22 LR
+gsg_stg44		STG-44 .22	German Sport Guns	.22 LR
+grand_power_stribog_sp9a1		Stribog SP9A1	Grand Power	9×19mm Parabellum
+grand_power_stribog_sp9a3		Stribog SP9A3	Grand Power	9×19mm Parabellum
+grand_power_k100		K100 X-Trim	Grand Power	9×19mm Parabellum
+grand_power_p1		P1	Grand Power	9×19mm Parabellum
+grand_power_p11		P11	Grand Power	9×19mm Parabellum
+grand_power_p40		P40	Grand Power	.40 S&W
+grand_power_stribog_sp45		Stribog SP45	Grand Power	.45 ACP
+cz_527_american		CZ 527 American	BRNO / CZ	.223 Remington
+cz_527_varmint		CZ 527 Varmint	BRNO / CZ	.223 Remington
+cz_550_american		CZ 550 American	BRNO / CZ	.30-06 Springfield
+cz_550_safari		CZ 550 Safari Magnum	BRNO / CZ	.375 Holland & Holland
+cz_557_american		CZ 557 American	BRNO / CZ	.308 Win
+cz_455_american		CZ 455 American	BRNO / CZ	.22 LR
+cz_455_varmint		CZ 455 Varmint	BRNO / CZ	.22 LR
+cz_512		CZ 512	BRNO / CZ	.22 LR
+baikal_mp_443_grach		MP-443 Grach (PYa)	Baikal	9×19mm Parabellum
+baikal_mp_446		MP-446 Viking	Baikal	9×19mm Parabellum
+baikal_ij_70		IJ-70	Baikal	.380 ACP
+baikal_mp_340		MP-340	Baikal	.38 Special
+baikal_mp_27		MP-27	Baikal	12 Gauge
+manurhin_mr73_gign		MR 73 GIGN	Manurhin	.357 Magnum
+manurhin_mr73_sport		MR 73 Sport	Manurhin	.357 Magnum
+manurhin_mr73_gendarmerie		MR 73 Gendarmerie	Manurhin	.357 Magnum
+manurhin_f1		F1	Manurhin	.357 Magnum
+krieghoff_k80		K-80	Krieghoff	12 Gauge
+krieghoff_k20		K-20	Krieghoff	20 Gauge
+krieghoff_semprio		Semprio	Krieghoff	12 Gauge
+krieghoff_drilling		Drilling	Krieghoff	12 Gauge / .30-06
+cassull_model_410		Cassull Model 410	Fausti / Cassull / Rizzini	.410 Bore
+fausti_dea_round		Fausti DEA Round	Fausti / Cassull / Rizzini	12 Gauge
+rizzini_rb		Rizzini RB/BR	Fausti / Cassull / Rizzini	12 Gauge
+rohrbaugh_r380		R380	Rohrbaugh	.380 ACP
+sw_sw1911_e_series		SW1911 E-Series	Smith & Wesson	.45 ACP
+sw_sw1911_pro_series		SW1911 Pro Series	Smith & Wesson	.45 ACP
+sw_model_627		Model 627	Smith & Wesson	.357 Magnum
+sw_model_629		Model 629	Smith & Wesson	.44 Magnum
+sw_model_442		Model 442	Smith & Wesson	.38 Special
+sw_model_642		Model 642	Smith & Wesson	.38 Special
+sw_mp12		M&P12	Smith & Wesson	12 Gauge
+sw_mp45_m2_0		M&P45 M2.0	Smith & Wesson	.45 ACP
+ruger_1022_takedown		10/22 Takedown	Sturm Ruger	.22 LR
+ruger_1022_tactical		10/22 Tactical	Sturm Ruger	.22 LR
+ruger_22_charger		22 Charger	Sturm Ruger	.22 LR
+ruger_redhawk_44		Redhawk	Sturm Ruger	.44 Magnum
+ruger_redhawk_357		Redhawk	Sturm Ruger	.357 Magnum
+ruger_lcr_357		LCR	Sturm Ruger	.357 Magnum
+ruger_lcr_9mm		LCR	Sturm Ruger	9×19mm Parabellum
+ruger_american_predator_308		American Rifle Predator	Sturm Ruger	.308 Win
+colt_gold_cup		Gold Cup 1911	Colt	.45 ACP
+colt_combat_commander		Combat Commander	Colt	.45 ACP
+colt_defender		Defender	Colt	.45 ACP
+colt_competition		Competition 1911	Colt	.45 ACP
+colt_cm901		CM901	Colt	7.62×51mm NATO
+ithaca_model_37_stakeout		Model 37 Stakeout	Ithaca	12 Gauge
+ithaca_model_37_defense		Model 37 Defense	Ithaca	12 Gauge
+ithaca_model_37_featherlight		Model 37 Featherlight	Ithaca	12 Gauge
+ithaca_model_51		Model 51	Ithaca	12 Gauge
+henry_big_boy_44		Big Boy .44 Mag	Henry	.44 Magnum
+henry_big_boy_45		Big Boy .45 Colt	Henry	.45 Colt
+henry_h001		H001 .22 LR	Henry	.22 LR
+henry_x_model_44		X Model .44 Mag	Henry	.44 Magnum
+henry_x_model_4570		X Model .45-70	Henry	.45-70 Government
+henry_homesteader		Homesteader 9mm	Henry	9×19mm Parabellum
+marlin_1894_45colt		Model 1894 .45 Colt	Marlin	.45 Colt
+marlin_1895_dark		Model 1895 Dark Series	Marlin	.45-70 Government
+marlin_336_dark		Model 336 Dark Series	Marlin	.30-30 Win
+marlin_70p_papoose		Model 70P Papoose	Marlin	.22 LR
+marlin_1894_csbl		Model 1894 CSBL	Marlin	.357 Magnum
+kimber_hunter_308		Hunter .308	Kimber	.308 Win
+kimber_solo_cdp		Solo CDP	Kimber	9×19mm Parabellum
+kimber_rapide_dawn		Rapide Dawn	Kimber	.45 ACP
+kimber_target_ii		Target II 1911	Kimber	.45 ACP
+beretta_px4_40		Px4 Storm	Beretta	.40 S&W
+beretta_px4_45		Px4 Storm	Beretta	.45 ACP
+beretta_px4_40_compact		Px4 Storm	Beretta	.40 S&W
+beretta_apx_compact		APX Compact	Beretta	9×19mm Parabellum
+beretta_92x_performance		92X Performance	Beretta	9×19mm Parabellum
+beretta_92xi		92XI	Beretta	9×19mm Parabellum
+beretta_92g_elite_ltt		92G Elite LTT	Beretta	9×19mm Parabellum
+beretta_1301_comp_pro		1301 Comp Pro	Beretta	12 Gauge
+beretta_686_silver_pigeon_iii_20		686 Silver Pigeon III	Beretta	20 Gauge
+sig_p320_xcarry		P320 XCarry	Sig Sauer	9×19mm Parabellum
+sig_p320_xfive_legion		P320 XFive Legion	Sig Sauer	9×19mm Parabellum
+sig_p365_xmacro		P365 XMacro	Sig Sauer	9×19mm Parabellum
+sig_p224		P224	Sig Sauer	9×19mm Parabellum
+sig_p938		P938	Sig Sauer	9×19mm Parabellum
+sig_p238		P238	Sig Sauer	.380 ACP
+sig_mcx_regulator		MCX-Regulator	Sig Sauer	5.56×45mm NATO
+sig_556xi		556XI	Sig Sauer	5.56×45mm NATO
+sig_mcx_spear_lt		MCX Spear LT	Sig Sauer	7.62×51mm NATO
+sig_p229_40		P229	Sig Sauer	.40 S&W
+walther_ppx		PPX	Walther	9×19mm Parabellum
+walther_pdp_pro_sd		PDP Pro SD	Walther	9×19mm Parabellum
+bt_apc45		APC45	B&T	.45 ACP
+bt_ghm45		GHM45	B&T	.45 ACP
+bt_spc9		SPC9	B&T	9×19mm Parabellum
+bt_tp380		TP380	B&T	.380 ACP
+bt_usw_a1		USW A1	B&T	9×19mm Parabellum
+bt_kh9		KH9	B&T	9×19mm Parabellum
+bt_apc9sd		APC9SD	B&T	9×19mm Parabellum
+benelli_sbe3		Super Black Eagle 3	Benelli	12 Gauge
+benelli_sbe3_20		Super Black Eagle 3	Benelli	20 Gauge
+benelli_lupo_3006		Lupo	Benelli	.30-06 Springfield
+franchi_veloce		Veloce	Franchi	12 Gauge
+franchi_affinity_h2o		Affinity H2O	Franchi	12 Gauge
+franchi_law12		Law-12	Franchi	12 Gauge
+franchi_pa8		PA-8	Franchi	12 Gauge
+franchi_horizon_3006		Horizon	Franchi	.30-06 Springfield
+breda_930		Breda 930	Breda	12 Gauge
+breda_b12i		Breda B12i	Breda	12 Gauge
+breda_930_20		Breda 930	Breda	20 Gauge
