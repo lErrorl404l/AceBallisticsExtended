@@ -1511,3 +1511,212 @@ sw_sw1911_e_series	Smith & Wesson	SW1911 E-Series	5" stainless frame, wood grips
 sw_sw1911_pro_series	Smith & Wesson	SW1911 Pro Series	5" adjustable target sights, ambi safety	.45 ACP	11.48	127	406	1	145	15.0	253	researched (manufacturer/public domain specifications)	researched
 walther_pdp_pro_sd	Walther	PDP Pro SD	optics-ready, threaded barrel	9×19mm Parabellum	9.01	114	250	1	235	8.0	365	researched (manufacturer/public domain specifications)	researched
 walther_ppx	Walther	PPX	striker-fired duty pistol	9×19mm Parabellum	9.01	102	250	1	235	8.0	355	researched (manufacturer/public domain specifications)	researched
+zastava_arms_doo_m85	Zastava Arms d.o.o.	M85	Carbine	5.56×45mm NATO	5.69	254	178	1	430	4.0	780	researched (manufacturer specifications)	researched
+zastava_arms_doo_m90	Zastava Arms d.o.o.	M90	Rifle	5.56×45mm NATO	5.69	460	178	1	430	4.0	900	researched (manufacturer specifications)	researched
+zastava_arms_doo_m91	Zastava Arms d.o.o.	M91	Designated Marksman Rifle	7.62×54mmR	7.92	620	240	1	390	9.6	830	researched (manufacturer specifications)	researched
+zastava_arms_doo_m93_black_arrow	Zastava Arms d.o.o.	M93 Black Arrow	Anti-Materiel Rifle	12.7×108mm	12.7	900	381	1	360	48.0	888	researched (manufacturer specifications)	researched
+zastava_arms_doo_m07	Zastava Arms d.o.o.	M07	Sniper Rifle	7.62×51mm NATO	7.82	620	279	1	415	10.9	800	researched (manufacturer specifications)	researched
+zastava_arms_doo_m12	Zastava Arms d.o.o.	M12	Designated Marksman Rifle	7.62×39mm M67	7.85	525	240	1	355	8.0	740	researched (manufacturer specifications)	researched
+zastava_arms_doo_pap_m70	Zastava Arms d.o.o.	PAP M70	Semi-Automatic Rifle	7.62×39mm M67	7.85	415	240	1	355	8.0	720	researched (manufacturer specifications)	researched
+zastava_arms_doo_pap_m85	Zastava Arms d.o.o.	PAP M85	Semi-Automatic Carbine	5.56×45mm NATO	5.69	254	178	1	430	4.0	780	researched (manufacturer specifications)	researched
+zastava_arms_doo_pap_m92	Zastava Arms d.o.o.	PAP M92	Semi-Automatic Pistol	7.62×39mm M67	7.85	254	240	1	355	8.0	678	researched (manufacturer specifications)	researched
+zastava_arms_doo_m21	Zastava Arms d.o.o.	M21	Assault Rifle	5.56×45mm NATO	5.69	415	178	1	430	4.0	890	researched (manufacturer specifications)	researched
+zastava_arms_doo_m21a	Zastava Arms d.o.o.	M21A	Assault Rifle	5.56×45mm NATO	5.69	415	178	1	430	4.0	890	researched (manufacturer specifications)	researched
+zastava_arms_doo_m20	Zastava Arms d.o.o.	M20	Assault Rifle	7.62×39mm M67	7.85	415	240	1	355	8.0	720	researched (manufacturer specifications)	researched
+fb_lucznik_radom_msbs_grot_c	FB "Lucznik" Radom	MSBS Grot C	Carbine	5.56×45mm NATO	5.69	267	203	1	430	4.0	835	researched (manufacturer specifications)	researched
+fb_lucznik_radom_msbs_grot_r	FB "Lucznik" Radom	MSBS Grot R	Rifle	5.56×45mm NATO	5.69	406	203	1	430	4.0	890	researched (manufacturer specifications)	researched
+fb_radom_beryl_762	FB Radom	Beryl 762	Assault Rifle	7.62×39mm	7.85	457	240	1	355	8.0	710	researched (manufacturer specifications)	researched
+fb_radom_p_83_wanad	FB Radom	P-83 Wanad	Pistol	9×18mm Makarov	9.27	90	250	1	160	6.0	316	researched (manufacturer specifications)	researched
+fb_radom_p_64	FB Radom	P-64	Pistol	9×18mm Makarov	9.27	84	250	1	160	6.0	315	researched (manufacturer specifications)	researched
+fb_radom_pm_63_rak	FB Radom	PM-63 RAK	Submachine Gun	9×18mm Makarov	9.27	150	250	1	160	6.0	325	researched (manufacturer specifications)	researched
+fb_radom_pm_84p_glauberyt	FB Radom	PM-84P Glauberyt	Submachine Gun	9×19mm Parabellum	9.01	185	250	1	250	8.0	360	researched (manufacturer specifications)	researched
+sig_sauer_ag_sg_552	SIG Sauer AG (Swiss)	SG 552	Commando Carbine	5.56×45mm NATO	5.69	226	254	1	430	4.0	800	researched (manufacturer specifications)	researched
+sig_sauer_ag_sg_556	SIG Sauer AG (Swiss)	SG 556	Export Semi-Automatic Rifle	5.56×45mm NATO	5.69	406	254	1	430	4.0	910	researched (manufacturer specifications)	researched
+sig_sauer_ag_p220	SIG Sauer AG (Swiss)	P220	Service Pistol	9×19mm Parabellum	9.01	112	250	1	250	8.0	355	researched (manufacturer specifications)	researched
+sig_sauer_ag_p225	SIG Sauer AG (Swiss)	P225	Pistol	9×19mm Parabellum	9.01	99	250	1	250	8.0	350	researched (manufacturer specifications)	researched
+sig_sauer_ag_p228	SIG Sauer AG (Swiss)	P228	Service Pistol	9×19mm Parabellum	9.01	99	250	1	250	8.0	350	researched (manufacturer specifications)	researched
+sig_sauer_ag_ssg_3000	SIG Sauer AG (Swiss)	SSG 3000	Sniper Rifle	7.62×51mm NATO	7.82	600	279	1	415	10.9	800	researched (manufacturer specifications)	researched
+sig_sauer_ag_sg_553_r	SIG Sauer AG (Swiss)	SG 553 R	Assault Rifle	7.62×39mm	7.85	226	240	1	355	8.0	700	researched (manufacturer specifications)	researched
+arsenal_ar_m9f	Arsenal	AR-M9F	Assault Rifle	7.62×39mm	7.85	415	240	1	355	8.0	710	researched (manufacturer specifications)	researched
+arsenal_sam5	Arsenal	SAM5	Assault Rifle	5.56×45mm NATO	5.69	415	178	1	430	4.0	890	researched (manufacturer specifications)	researched
+arsenal_sam5k	Arsenal	SAM5K	Carbine	5.56×45mm NATO	5.69	305	178	1	430	4.0	840	researched (manufacturer specifications)	researched
+arsenal_samr	Arsenal	SAMR	Light Machine Gun	7.62×39mm	7.85	590	240	1	355	8.0	740	researched (manufacturer specifications)	researched
+arsenal_slr_106f	Arsenal	SLR-106F	Assault Rifle	5.56×45mm NATO	5.69	415	178	1	430	4.0	890	researched (manufacturer specifications)	researched
+arsenal_shipka	Arsenal	Shipka	Submachine Gun	9×19mm Parabellum	9.01	210	250	1	250	8.0	370	researched (manufacturer specifications)	researched
+arsenal_sporter_5_56	Arsenal	Sporter 5.56	Semi-Automatic Rifle	5.56×45mm NATO	5.69	415	178	1	430	4.0	890	researched (manufacturer specifications)	researched
+arsenal_sporter_7_62	Arsenal	Sporter 7.62	Semi-Automatic Rifle	7.62×39mm	7.85	415	240	1	355	8.0	710	researched (manufacturer specifications)	researched
+snt_motiv_k11	SNT Motiv	K11	Dual-Caliber Rifle	5.56×45mm NATO	5.69	310	185	1	430	4.0	820	researched (manufacturer specifications)	researched
+snt_motiv_k12	SNT Motiv	K12	Carbine	5.56×45mm NATO	5.69	310	185	1	430	4.0	838	researched (manufacturer specifications)	researched
+daewoo_dp_51	Daewoo	DP-51	Pistol	9×19mm Parabellum	9.01	104	250	1	250	8.0	358	researched (manufacturer specifications)	researched
+daewoo_k2a	Daewoo	K2A	Assault Rifle	5.56×45mm NATO	5.69	465	185	1	430	4.0	903	researched (manufacturer specifications)	researched
+daewoo_k1a1	Daewoo	K1A1	Carbine	5.56×45mm NATO	5.69	263	305	1	430	4.0	818	researched (manufacturer specifications)	researched
+daewoo_dp_380	Daewoo	DP-380	Pistol	.380 ACP	9.01	100	250	1	200	6.2	300	researched (manufacturer specifications)	researched
+kel-tec_p_32	Kel-Tec	P-32	Semi-auto Pistol	.32 ACP	7.94	68	254	1	165	4.6	265	researched (manufacturer specifications)	researched
+kel-tec_p_3at	Kel-Tec	P-3AT	Semi-auto Pistol	.380 ACP	9.02	69	254	1	175	6.1	292	researched (manufacturer specifications)	researched
+kel-tec_pf_9	Kel-Tec	PF-9	Semi-auto Pistol	9×19mm	9.01	77	250	1	250	8.0	343	researched (manufacturer specifications)	researched
+kel-tec_pmr_30	Kel-Tec	PMR-30	Semi-auto Pistol	.22 WMR	5.66	109	356	1	179	2.6	579	researched (manufacturer specifications)	researched
+kel-tec_cp33	Kel-Tec	CP33	Semi-auto Pistol	.22 LR	5.66	140	406	1	165	2.6	341	researched (manufacturer specifications)	researched
+kel-tec_plr_16	Kel-Tec	PLR-16	Semi-auto Pistol	5.56×45mm	5.56	222	178	1	430	4.0	757	researched (manufacturer specifications)	researched
+kel-tec_sub_2000_cqb	Kel-Tec	SUB-2000 CQB	Semi-auto Carbine	9×19mm	9.01	413	254	1	250	8.0	404	researched (manufacturer specifications)	researched
+kel-tec_su_16c	Kel-Tec	SU-16C	Semi-auto Rifle	5.56×45mm	5.56	470	178	1	430	4.0	905	researched (manufacturer specifications)	researched
+kel-tec_r50	Kel-Tec	R50	Semi-auto Carbine	5.7×28mm	5.70	406	229	1	345	2.9	709	researched (manufacturer specifications)	researched
+kel-tec_pr57	Kel-Tec	PR57	Semi-auto Pistol	5.7×28mm	5.70	102	229	1	345	2.0	700	researched (manufacturer specifications)	researched
+kel-tec_p15	Kel-Tec	P15	Semi-auto Pistol	9×19mm	9.01	89	250	1	250	8.0	340	researched (manufacturer specifications)	researched
+kel-tec_p17	Kel-Tec	P17	Semi-auto Pistol	.22 LR	5.66	90	406	1	165	2.6	320	researched (manufacturer specifications)	researched
+kel-tec_ksg_25	Kel-Tec	KSG-25	Pump Shotgun	12 Gauge	18.5	736	0	0	65	28.0	480	researched (manufacturer specifications)	researched
+kel-tec_ksg_compact	Kel-Tec	KSG Compact	Pump Shotgun	12 Gauge	18.5	292	0	0	65	28.0	479	researched (manufacturer specifications)	researched
+kriss_usa_vector_crb_9mm	KRISS USA	Vector CRB 9mm	Semi-auto Carbine	9×19mm	9.01	406	250	1	250	8.0	367	researched (manufacturer specifications)	researched
+kriss_usa_vector_sbr_9mm	KRISS USA	Vector SBR 9mm	Semi-auto Carbine	9×19mm	9.01	140	250	1	250	8.0	360	researched (manufacturer specifications)	researched
+kriss_usa_vector_sdp_45	KRISS USA	Vector SDP .45	Semi-auto Pistol	.45 ACP	11.48	140	406	1	145	15.0	261	researched (manufacturer specifications)	researched
+kriss_usa_vector_sdp_9mm	KRISS USA	Vector SDP 9mm	Semi-auto Pistol	9×19mm	9.01	140	250	1	250	8.0	360	researched (manufacturer specifications)	researched
+kriss_usa_vector_22lr	KRISS USA	Vector .22LR	Semi-auto Rifle	.22 LR	5.66	165	406	1	165	2.6	341	researched (manufacturer specifications)	researched
+kriss_usa_vector_gen_3_45	KRISS USA	Vector Gen 3 .45	Semi-auto Carbine	.45 ACP	11.48	165	406	1	145	15.0	265	researched (manufacturer specifications)	researched
+kriss_usa_vector_gen_3_9mm	KRISS USA	Vector Gen 3 9mm	Semi-auto Carbine	9×19mm	9.01	165	250	1	250	8.0	367	researched (manufacturer specifications)	researched
+kriss_usa_sphinx_sdp_compact	KRISS USA	Sphinx SDP Compact	Semi-auto Pistol	9×19mm	9.01	89	250	1	250	8.0	340	researched (manufacturer specifications)	researched
+kriss_usa_sphinx_sdp_sub_compact	KRISS USA	Sphinx SDP Sub-Compact	Semi-auto Pistol	9×19mm	9.01	78	250	1	250	8.0	332	researched (manufacturer specifications)	researched
+magnum_research_bfr_45_70	Magnum Research	BFR .45-70	Revolver	.45-70 Government	11.48	254	406	1	241	22.7	460	researched (manufacturer specifications)	researched
+magnum_research_bfr_454_casull	Magnum Research	BFR .454 Casull	Revolver	.454 Casull	11.48	191	406	1	262	16.2	509	researched (manufacturer specifications)	researched
+magnum_research_bfr_500_s&w	Magnum Research	BFR .500 S&W	Revolver	.500 S&W Magnum	12.70	191	381	1	276	22.7	569	researched (manufacturer specifications)	researched
+magnum_research_bfr_44_mag	Magnum Research	BFR .44 Mag	Revolver	.44 Remington Magnum	10.90	191	457	1	248	15.6	450	researched (manufacturer specifications)	researched
+magnum_research_bfr_357_mag	Magnum Research	BFR .357 Mag	Revolver	.357 Magnum	9.07	191	356	1	241	8.1	426	researched (manufacturer specifications)	researched
+magnum_research_micro_desert_eagle	Magnum Research	Micro Desert Eagle	Semi-auto Pistol	.380 ACP	9.02	66	254	1	175	6.1	290	researched (manufacturer specifications)	researched
+magnum_research_baby_eagle_iii	Magnum Research	Baby Eagle III	Semi-auto Pistol	9×19mm	9.01	99	250	1	250	8.0	350	researched (manufacturer specifications)	researched
+magnum_research_baby_eagle_iii_45	Magnum Research	Baby Eagle III .45	Semi-auto Pistol	.45 ACP	11.48	99	406	1	145	15.0	260	researched (manufacturer specifications)	researched
+magnum_research_desert_eagle_429_de	Magnum Research	Desert Eagle .429 DE	Semi-auto Pistol	.429 DE	10.90	152	457	1	317	16.0	495	researched (manufacturer specifications)	researched
+magnum_research_mountain_eagle_308	Magnum Research	Mountain Eagle .308	Bolt-action Rifle	.308 Winchester	7.82	559	305	1	427	9.5	840	researched (manufacturer specifications)	researched
+magnum_research_mountain_eagle_300_wm	Magnum Research	Mountain Eagle .300 WM	Bolt-action Rifle	.300 Winchester Magnum	7.62	610	254	1	441	12.3	880	researched (manufacturer specifications)	researched
+magnum_research_lone_eagle_308	Magnum Research	Lone Eagle .308	Single-shot Pistol	.308 Winchester	7.82	356	305	1	427	9.5	760	researched (manufacturer specifications)	researched
+magnum_research_magnum_lite	Magnum Research	Magnum Lite	Bolt-action Rifle	.22 LR	5.66	508	406	1	165	2.6	320	researched (manufacturer specifications)	researched
+magnum_research_desert_eagle_1911	Magnum Research	Desert Eagle 1911	Semi-auto Pistol	.45 ACP	11.48	127	406	1	145	15.0	260	researched (manufacturer specifications)	researched
+armalite_ar_180b	ArmaLite	AR-180B	Semi-auto Rifle	5.56×45mm NATO	5.69	464	305	1	430	4.0	920	researched (manufacturer specifications)	researched
+armalite_ar_10b	ArmaLite	AR-10B	Semi-auto Rifle	7.62×51mm NATO	7.82	508	286	1	415	9.5	820	researched (manufacturer specifications)	researched
+armalite_ar_10_super_sass	ArmaLite	AR-10 Super SASS	Semi-auto Sniper Rifle	7.62×51mm NATO	7.82	508	279	1	427	9.5	820	researched (manufacturer specifications)	researched
+armalite_m_15	ArmaLite	M-15	Semi-auto Rifle	5.56×45mm NATO	5.69	406	178	1	430	4.0	878	researched (manufacturer specifications)	researched
+armalite_ar_30	ArmaLite	AR-30	Bolt-action Rifle	.338 Lapua Magnum	8.58	610	254	1	420	16.2	900	researched (manufacturer specifications)	researched
+armalite_ar_30a1	ArmaLite	AR-30A1	Bolt-action Rifle	.338 Lapua Magnum	8.58	660	254	1	420	16.2	905	researched (manufacturer specifications)	researched
+armalite_ar_31	ArmaLite	AR-31	Bolt-action Rifle	.308 Winchester	7.82	508	279	1	427	9.5	820	researched (manufacturer specifications)	researched
+armalite_ar_50	ArmaLite	AR-50	Single-shot Rifle	12.7×99mm NATO (.50 BMG)	12.7	762	381	1	379	42.8	860	researched (manufacturer specifications)	researched
+armalite_ar_7	ArmaLite	AR-7	Semi-auto Survival Rifle	.22 LR	5.66	406	406	1	165	2.6	320	researched (manufacturer specifications)	researched
+armalite_ar_24	ArmaLite	AR-24	Semi-auto Pistol	9×19mm Parabellum	9.01	108	250	1	250	8.0	350	researched (manufacturer specifications)	researched
+bushmaster_ba_50	Bushmaster	BA-50	Single-shot Rifle	12.7×99mm NATO (.50 BMG)	12.7	737	381	1	379	42.8	860	researched (manufacturer specifications)	researched
+bushmaster_m17s	Bushmaster	M17S	Semi-auto Bullpup Rifle	5.56×45mm NATO	5.69	550	229	1	430	4.0	940	researched (manufacturer specifications)	researched
+bushmaster_dissipator	Bushmaster	Dissipator	Semi-auto Rifle	5.56×45mm NATO	5.69	406	229	1	430	4.0	878	researched (manufacturer specifications)	researched
+bushmaster__450_bushmaster	Bushmaster	.450 Bushmaster	Semi-auto Rifle	.450 Bushmaster	11.48	406	406	1	248	15.6	610	researched (manufacturer specifications)	researched
+bushmaster_bar_10	Bushmaster	BAR-10	Semi-auto Rifle	7.62×51mm NATO	7.82	508	305	1	415	9.5	820	researched (manufacturer specifications)	researched
+bushmaster_arm_pistol	Bushmaster	Arm Pistol	Semi-auto Pistol	.45 ACP	11.48	267	406	1	145	15.0	280	researched (manufacturer specifications)	researched
+bushmaster_xm_15_dmr	Bushmaster	XM-15 DMR	Semi-auto Rifle	5.56×45mm NATO	5.69	508	229	1	430	4.0	940	researched (manufacturer specifications)	researched
+bushmaster_xm_15_a3g	Bushmaster	XM-15 A3G	Semi-auto Rifle	5.56×45mm NATO	5.69	406	229	1	430	4.0	878	researched (manufacturer specifications)	researched
+bushmaster_xm_15_a4g	Bushmaster	XM-15 A4G	Semi-auto Rifle	5.56×45mm NATO	5.69	508	229	1	430	4.0	940	researched (manufacturer specifications)	researched
+tikka_t3x_compact_243_win	Tikka	T3x Compact .243 Win	Bolt-action	.243 Win	6.17	510	254	1	400	6.5	920	researched (manufacturer specifications)	researched
+tikka_t3x_compact_7mm_08	Tikka	T3x Compact 7mm-08	Bolt-action	7mm-08	7.21	510	254	1	400	9.7	830	researched (manufacturer specifications)	researched
+tikka_t3x_varmint_223	Tikka	T3x Varmint .223	Bolt-action	.223 Rem	5.69	600	305	1	379	4.0	990	researched (manufacturer specifications)	researched
+tikka_t3x_varmint_6_5_cm	Tikka	T3x Varmint 6.5 CM	Bolt-action	6.5 Creedmoor	6.71	600	203	1	415	9.0	805	researched (manufacturer specifications)	researched
+tikka_t3x_super_varmint	Tikka	T3x Super Varmint	Bolt-action	.223 Rem	5.69	510	305	1	379	4.0	975	researched (manufacturer specifications)	researched
+tikka_t3x_upr_308	Tikka	T3x UPR .308	Bolt-action	.308 Win	7.82	600	279	1	415	9.5	855	researched (manufacturer specifications)	researched
+tikka_t3x_upr_6_5_cm	Tikka	T3x UPR 6.5 CM	Bolt-action	6.5 Creedmoor	6.71	600	203	1	415	9.0	805	researched (manufacturer specifications)	researched
+tikka_t3x_upr_300_wm	Tikka	T3x UPR .300 WM	Bolt-action	.300 Win Mag	7.82	600	254	1	413	11.7	930	researched (manufacturer specifications)	researched
+tikka_t3x_arctic	Tikka	T3x Arctic	Bolt-action	7.62x51mm	7.82	610	279	1	415	9.5	858	researched (manufacturer specifications)	researched
+tikka_t3x_battue_30_06	Tikka	T3x Battue .30-06	Bolt-action	.30-06	7.82	560	254	1	400	11.3	795	researched (manufacturer specifications)	researched
+tikka_t3x_roughtech_30_06	Tikka	T3x Roughtech .30-06	Bolt-action	.30-06	7.82	620	254	1	400	11.3	815	researched (manufacturer specifications)	researched
+tikka_t3x_game_308	Tikka	T3x Game .308	Bolt-action	.308 Win	7.82	600	279	1	415	9.5	855	researched (manufacturer specifications)	researched
+sako_s20_hunter_6_5_cm	Sako	S20 Hunter 6.5 CM	Bolt-action	6.5 Creedmoor	6.71	620	203	1	415	9.0	810	researched (manufacturer specifications)	researched
+sako_s20_hunter_308	Sako	S20 Hunter .308	Bolt-action	.308 Win	7.82	620	279	1	415	9.5	855	researched (manufacturer specifications)	researched
+sako_s20_precision_6_5_cm	Sako	S20 Precision 6.5 CM	Bolt-action	6.5 Creedmoor	6.71	620	203	1	415	9.0	810	researched (manufacturer specifications)	researched
+sako_s20_precision_308	Sako	S20 Precision .308	Bolt-action	.308 Win	7.82	620	279	1	415	9.5	855	researched (manufacturer specifications)	researched
+sako_85_finnlight_308	Sako	85 Finnlight .308	Bolt-action	.308 Win	7.82	510	279	1	415	9.5	821	researched (manufacturer specifications)	researched
+sako_85_finnlight_6_5_cm	Sako	85 Finnlight 6.5 CM	Bolt-action	6.5 Creedmoor	6.71	510	203	1	415	9.0	780	researched (manufacturer specifications)	researched
+sako_85_black_308	Sako	85 Black .308	Bolt-action	.308 Win	7.82	570	279	1	415	9.5	842	researched (manufacturer specifications)	researched
+sako_85_classic_270	Sako	85 Classic .270	Bolt-action	.270 Win	7.04	600	254	1	400	9.7	900	researched (manufacturer specifications)	researched
+sako_85_hunter_30_06	Sako	85 Hunter .30-06	Bolt-action	.30-06	7.82	600	254	1	400	11.3	810	researched (manufacturer specifications)	researched
+sako_90_hunter_6_5_cm	Sako	90 Hunter 6.5 CM	Bolt-action	6.5 Creedmoor	6.71	570	203	1	415	9.0	795	researched (manufacturer specifications)	researched
+sako_100_308	Sako	100 .308	Bolt-action	.308 Win	7.82	620	279	1	415	9.5	855	researched (manufacturer specifications)	researched
+sako_100_6_5_cm	Sako	100 6.5 CM	Bolt-action	6.5 Creedmoor	6.71	620	203	1	415	9.0	810	researched (manufacturer specifications)	researched
+tristar_cobra_justice	Tristar	Cobra Justice	Semi-auto Shotgun	12 Gauge	18.5	508	0		65	28.4	405	researched (manufacturer specifications)	researched
+tristar_cobra_patriot	Tristar	Cobra Patriot	Semi-auto Shotgun	12 Gauge	18.5	610	0		65	28.4	418	researched (manufacturer specifications)	researched
+tristar_t_140	Tristar	T-140	Semi-auto Shotgun	12 Gauge	18.5	610	0		65	28.4	418	researched (manufacturer specifications)	researched
+tristar_tt_15	Tristar	TT-15	Semi-auto Shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (manufacturer specifications)	researched
+tristar_trap	Tristar	Trap	Over/Under Shotgun	12 Gauge	18.5	760	0		65	28.4	430	researched (manufacturer specifications)	researched
+tristar_sporting	Tristar	Sporting	Over/Under Shotgun	12 Gauge	18.5	710	0		65	28.4	425	researched (manufacturer specifications)	researched
+stoeger_str_9mc	Stoeger	STR-9MC	Semi-auto Pistol	9x19mm Parabellum	9.01	89	250	1	250	8.0	352	researched (manufacturer specifications)	researched
+stoeger_cougar_8000_40	Stoeger	Cougar 8000 .40	Semi-auto Pistol	.40 S&W	10.17	92	406	1	240	10.0	320	researched (manufacturer specifications)	researched
+stoeger_cougar_8000_45	Stoeger	Cougar 8000 .45	Semi-auto Pistol	.45 ACP	11.48	92	406	1	145	15.0	250	researched (manufacturer specifications)	researched
+stoeger_p_350	Stoeger	P-350	Pump Shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (manufacturer specifications)	researched
+stoeger_m3500	Stoeger	M3500	Semi-auto Shotgun	12 Gauge 3.5"	18.5	660	0		83	34.0	440	researched (manufacturer specifications)	researched
+stoeger_condor	Stoeger	Condor	Over/Under Shotgun	12 Gauge	18.5	710	0		65	28.4	425	researched (manufacturer specifications)	researched
+girsan_mc_1911_commander	Girsan	MC 1911 Commander	Semi-auto Pistol	.45 ACP	11.48	108	406	1	145	15.0	250	researched (manufacturer specifications)	researched
+girsan_mc_14_tipat	Girsan	MC 14 Tipat	Semi-auto Pistol	.380 ACP	9.02	102	250	1	141	6.0	300	researched (manufacturer specifications)	researched
+girsan_yavuz_16	Girsan	Yavuz 16	Semi-auto Pistol	9x19mm Parabellum	9.01	127	250	1	250	8.0	362	researched (manufacturer specifications)	researched
+girsan_pi	Girsan	PI	Semi-auto Pistol	9x19mm Parabellum	9.01	127	250	1	250	8.0	362	researched (manufacturer specifications)	researched
+girsan_m9	Girsan	M9	Semi-auto Pistol	9x19mm Parabellum	9.01	125	250	1	250	8.0	361	researched (manufacturer specifications)	researched
+girsan_regard_40	Girsan	Regard .40	Semi-auto Pistol	.40 S&W	10.17	125	406	1	240	10.0	340	researched (manufacturer specifications)	researched
+hatsan_armsan_a620	Hatsan	Armsan A620	Semi-auto Shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (manufacturer specifications)	researched
+hatsan_armsan_a612	Hatsan	Armsan A612	Semi-auto Shotgun	12 Gauge	18.5	508	0		65	28.4	405	researched (manufacturer specifications)	researched
+hatsan_model_125	Hatsan	Model 125	Magnum Shotgun	12 Gauge Magnum	18.5	610	0		76	32.0	425	researched (manufacturer specifications)	researched
+hatsan_model_100	Hatsan	Model 100	Semi-auto Shotgun	12 Gauge	18.5	610	0		65	28.4	418	researched (manufacturer specifications)	researched
+hatsan_striker_12	Hatsan	Striker 12	Pump Shotgun	12 Gauge	18.5	381	0		65	28.4	385	researched (manufacturer specifications)	researched
+derya_mk12	Derya	MK12	Semi-auto Shotgun	12 Gauge	18.5	470	0		65	28.4	400	researched (manufacturer specifications)	researched
+derya_820	Derya	820	Semi-auto Shotgun	12 Gauge	18.5	610	0		65	28.4	418	researched (manufacturer specifications)	researched
+derya_dy_9	Derya	DY-9	Semi-auto Pistol	9x19mm Parabellum	9.01	114	250	1	250	8.0	360	researched (manufacturer specifications)	researched
+derya_dy_11	Derya	DY-11	Semi-auto Shotgun	12 Gauge	18.5	610	0		65	28.4	418	researched (manufacturer specifications)	researched
+derya_ds_9	Derya	DS-9	Semi-auto Pistol	9x19mm Parabellum	9.01	127	250	1	250	8.0	362	researched (manufacturer specifications)	researched
+daniel_defense_ddm4_v7	Daniel Defense	DDM4 V7	Rifle	5.56×45mm NATO	5.56	406.4	177.8	1	430	3.56	945	researched (manufacturer specifications)	researched
+daniel_defense_m4a1_riii	Daniel Defense	M4A1 RIII	Carbine	5.56×45mm NATO	5.56	368.3	177.8	1	430	3.56	915	researched (manufacturer specifications)	researched
+daniel_defense_dd5_v4	Daniel Defense	DD5 V4	Rifle	7.62×51mm NATO	7.62	457.2	254.0	1	415	9.53	855	researched (manufacturer specifications)	researched
+daniel_defense_dd5_v5	Daniel Defense	DD5 V5	Rifle	6.5 Creedmoor	6.5	508.0	203.2	1	415	9.07	817	researched (manufacturer specifications)	researched
+daniel_defense_ddm4_pdw	Daniel Defense	DDM4 PDW	SBR	.300 AAC Blackout	7.62	177.8	177.8	1	345	14.26	305	researched (manufacturer specifications)	researched
+daniel_defense_mk18	Daniel Defense	MK18	SBR	5.56×45mm NATO	5.56	261.6	177.8	1	430	4.02	785	researched (manufacturer specifications)	researched
+daniel_defense_mk18_riii	Daniel Defense	MK18 RIII	SBR	5.56×45mm NATO	5.56	261.6	177.8	1	430	4.02	785	researched (manufacturer specifications)	researched
+daniel_defense_ddm4_v7_pro	Daniel Defense	DDM4 V7 PRO	Rifle	5.56×45mm NATO	5.56	457.2	177.8	1	430	4.02	888	researched (manufacturer specifications)	researched
+daniel_defense_m4a1	Daniel Defense	M4A1	Carbine	5.56×45mm NATO	5.56	368.3	177.8	1	430	4.02	870	researched (manufacturer specifications)	researched
+daniel_defense_ddm4_v7_slw	Daniel Defense	DDM4 V7 SLW	Carbine	5.56×45mm NATO	5.56	368.3	177.8	1	430	4.02	870	researched (manufacturer specifications)	researched
+daniel_defense_spriii	Daniel Defense	SPRIII	Rifle	5.56×45mm NATO	5.56	457.2	177.8	1	430	4.99	855	researched (manufacturer specifications)	researched
+daniel_defense_ddm4_v9	Daniel Defense	DDM4 V9	Rifle	5.56×45mm NATO	5.56	406.4	177.8	1	430	3.56	945	researched (manufacturer specifications)	researched
+daniel_defense_ddm4_v7_k	Daniel Defense	DDM4 V7 K	SBR	5.56×45mm NATO	5.56	261.6	177.8	1	430	4.02	785	researched (manufacturer specifications)	researched
+daniel_defense_dd5_sbr	Daniel Defense	DD5 SBR	SBR	7.62×51mm NATO	7.62	317.5	254.0	1	415	9.53	777	researched (manufacturer specifications)	researched
+daniel_defense_ddm4_v1	Daniel Defense	DDM4 V1	Rifle	5.56×45mm NATO	5.56	406.4	177.8	1	430	3.56	945	researched (manufacturer specifications)	researched
+daniel_defense_dd4_riii_s	Daniel Defense	DD4 RIII S	SBR	5.56×45mm NATO	5.56	292.1	177.8	1	430	4.02	815	researched (manufacturer specifications)	researched
+daniel_defense_gl/ssc	Daniel Defense	GL/SSC	SBR	5.56×45mm NATO	5.56	317.5	177.8	1	430	4.02	835	researched (manufacturer specifications)	researched
+daniel_defense_mk12	Daniel Defense	MK12	Rifle	5.56×45mm NATO	5.56	457.2	177.8	1	430	4.99	855	researched (manufacturer specifications)	researched
+noveske_rifleworks_n4_patriot	Noveske Rifleworks	N4 Patriot	Rifle	5.56×45mm NATO	5.56	406.4	177.8	1	430	3.56	945	researched (manufacturer specifications)	researched
+noveske_rifleworks_n4_300_blk	Noveske Rifleworks	N4 300 BLK	Carbine	.300 AAC Blackout	7.62	406.4	177.8	1	345	8.10	701	researched (manufacturer specifications)	researched
+noveske_rifleworks_gen_4	Noveske Rifleworks	Gen 4	Rifle	5.56×45mm NATO	5.56	406.4	177.8	1	430	3.56	945	researched (manufacturer specifications)	researched
+noveske_rifleworks_ghetto_blaster	Noveske Rifleworks	Ghetto Blaster	SBR	.300 AAC Blackout	7.62	203.2	177.8	1	345	14.26	311	researched (manufacturer specifications)	researched
+noveske_rifleworks_chainsaw	Noveske Rifleworks	Chainsaw	Carbine	5.56×45mm NATO	5.56	368.3	177.8	1	430	3.56	915	researched (manufacturer specifications)	researched
+noveske_rifleworks_diplomat	Noveske Rifleworks	Diplomat	Pistol	.300 AAC Blackout	7.62	177.8	177.8	1	345	14.26	305	researched (manufacturer specifications)	researched
+noveske_rifleworks_space_invader	Noveske Rifleworks	Space Invader	PDW	5.56×45mm NATO	5.56	266.7	177.8	1	430	4.02	792	researched (manufacturer specifications)	researched
+noveske_rifleworks_vis	Noveske Rifleworks	VIS	Rifle	5.56×45mm NATO	5.56	406.4	177.8	1	430	3.56	945	researched (manufacturer specifications)	researched
+noveske_rifleworks_noveske9_carbine	Noveske Rifleworks	Noveske9 Carbine	Carbine	9×19mm Parabellum	9.01	203.2	254.0	1	235	8.04	351	researched (manufacturer specifications)	researched
+noveske_rifleworks_noveske9_pistol	Noveske Rifleworks	Noveske9 Pistol	Pistol	9×19mm Parabellum	9.01	127.0	254.0	1	235	8.04	335	researched (manufacturer specifications)	researched
+lmt_defense_cqb_mrp	LMT Defense	CQB MRP	Carbine	5.56×45mm NATO	5.56	368.3	177.8	1	430	4.02	870	researched (manufacturer specifications)	researched
+lmt_defense_lm308mws	LMT Defense	LM308MWS	Rifle	7.62×51mm NATO	7.62	406.4	254.0	1	415	9.53	838	researched (manufacturer specifications)	researched
+lmt_defense_l129a1	LMT Defense	L129A1	Rifle	7.62×51mm NATO	7.62	406.4	254.0	1	415	9.53	838	researched (manufacturer specifications)	researched
+lmt_defense_mars_l	LMT Defense	MARS-L	Rifle	5.56×45mm NATO	5.56	406.4	177.8	1	430	3.56	945	researched (manufacturer specifications)	researched
+lmt_defense_mars_h_308	LMT Defense	MARS-H .308	Rifle	7.62×51mm NATO	7.62	406.4	254.0	1	415	9.53	838	researched (manufacturer specifications)	researched
+lmt_defense_mars_h_6_5_cm	LMT Defense	MARS-H 6.5 CM	Rifle	6.5 Creedmoor	6.5	508.0	203.2	1	415	9.07	817	researched (manufacturer specifications)	researched
+lmt_defense_mars_h_300_blk	LMT Defense	MARS-H 300 BLK	Rifle	.300 AAC Blackout	7.62	406.4	177.8	1	345	8.10	701	researched (manufacturer specifications)	researched
+lmt_defense_defender_l	LMT Defense	Defender-L	Rifle	5.56×45mm NATO	5.56	406.4	177.8	1	430	3.56	945	researched (manufacturer specifications)	researched
+lmt_defense_defender_h	LMT Defense	Defender-H	Rifle	7.62×51mm NATO	7.62	406.4	254.0	1	415	9.53	838	researched (manufacturer specifications)	researched
+knights_armament_co_sr_15_e3	Knight's Armament Co	SR-15 E3	Rifle	5.56×45mm NATO	5.56	406.4	177.8	1	430	3.56	945	researched (manufacturer specifications)	researched
+knights_armament_co_sr_15_cqb	Knight's Armament Co	SR-15 CQB	Carbine	5.56×45mm NATO	5.56	368.3	177.8	1	430	3.56	915	researched (manufacturer specifications)	researched
+knights_armament_co_sr_15_cqb_sbr	Knight's Armament Co	SR-15 CQB SBR	SBR	5.56×45mm NATO	5.56	292.1	177.8	1	430	4.02	815	researched (manufacturer specifications)	researched
+knights_armament_co_sr_25	Knight's Armament Co	SR-25	Rifle	7.62×51mm NATO	7.62	508.0	285.8	1	415	10.89	808	researched (manufacturer specifications)	researched
+knights_armament_co_sr_25_apc_6_5	Knight's Armament Co	SR-25 APC 6.5	Rifle	6.5 Creedmoor	6.5	508.0	203.2	1	415	9.07	817	researched (manufacturer specifications)	researched
+knights_armament_co_kac_pdw	Knight's Armament Co	KAC PDW	PDW	.300 AAC Blackout	7.62	203.2	177.8	1	345	14.26	311	researched (manufacturer specifications)	researched
+knights_armament_co_mk11_mod_0	Knight's Armament Co	MK11 Mod 0	DMR	7.62×51mm NATO	7.62	508.0	285.8	1	415	10.89	808	researched (manufacturer specifications)	researched
+knights_armament_co_m110	Knight's Armament Co	M110	DMR	7.62×51mm NATO	7.62	508.0	285.8	1	415	10.89	808	researched (manufacturer specifications)	researched
+knights_armament_co_ks_1	Knight's Armament Co	KS-1	Assault Rifle	5.56×45mm NATO	5.56	368.3	177.8	1	430	4.02	870	researched (manufacturer specifications)	researched
+lwrc_international_ic_spr	LWRC International	IC-SPR	Rifle	5.56×45mm NATO	5.56	406.4	177.8	1	430	3.56	945	researched (manufacturer specifications)	researched
+lwrc_international_ic_di	LWRC International	IC-DI	Rifle	5.56×45mm NATO	5.56	406.4	177.8	1	430	3.56	945	researched (manufacturer specifications)	researched
+lwrc_international_repr_7_62	LWRC International	REPR 7.62	Rifle	7.62×51mm NATO	7.62	508.0	254.0	1	415	9.53	869	researched (manufacturer specifications)	researched
+lwrc_international_repr_6_5	LWRC International	REPR 6.5	Rifle	6.5 Creedmoor	6.5	508.0	203.2	1	415	9.07	817	researched (manufacturer specifications)	researched
+lwrc_international_m6_ic	LWRC International	M6 IC	Carbine	5.56×45mm NATO	5.56	368.3	177.8	1	430	4.02	870	researched (manufacturer specifications)	researched
+lwrc_international_smg_45	LWRC International	SMG-45	SMG	.45 ACP	11.43	203.2	406.4	1	131	14.90	274	researched (manufacturer specifications)	researched
+lwrc_international_m6a2	LWRC International	M6A2	Rifle	5.56×45mm NATO	5.56	406.4	177.8	1	430	3.56	945	researched (manufacturer specifications)	researched
+lwrc_international_m6a4	LWRC International	M6A4	Carbine	5.56×45mm NATO	5.56	368.3	177.8	1	430	4.02	870	researched (manufacturer specifications)	researched
+radian_weapons_model_1	Radian Weapons	Model 1	Rifle	5.56×45mm NATO	5.56	406.4	177.8	1	430	3.56	945	researched (manufacturer specifications)	researched
+radian_weapons_model_1_carbine	Radian Weapons	Model 1 Carbine	Carbine	5.56×45mm NATO	5.56	368.3	177.8	1	430	4.02	870	researched (manufacturer specifications)	researched
+radian_weapons_radian_9	Radian Weapons	Radian 9	Carbine	9×19mm Parabellum	9.01	203.2	254.0	1	235	8.04	351	researched (manufacturer specifications)	researched
+lancer_systems_lch_5_56	Lancer Systems	LCH-5.56	Rifle	5.56×45mm NATO	5.56	406.4	177.8	1	430	3.56	945	researched (manufacturer specifications)	researched
+lancer_systems_lch_5_56_carbine	Lancer Systems	LCH-5.56 Carbine	Carbine	5.56×45mm NATO	5.56	368.3	177.8	1	430	4.02	870	researched (manufacturer specifications)	researched
+lancer_systems_lch_7_62	Lancer Systems	LCH-7.62	Rifle	7.62×51mm NATO	7.62	406.4	254.0	1	415	9.53	838	researched (manufacturer specifications)	researched
+lancer_systems_lch_7_62_6_5cm	Lancer Systems	LCH-7.62 6.5CM	Rifle	6.5 Creedmoor	6.5	508.0	203.2	1	415	9.07	817	researched (manufacturer specifications)	researched
