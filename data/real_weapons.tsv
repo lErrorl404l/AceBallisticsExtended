@@ -1316,3 +1316,32 @@ mas_50	MAS	50	recoil-operated	9×19mm Parabellum	9.01	111	254	1	250	8.0	359	rese
 mas_aa52	MAS	Aa52	lever-delayed blowback	7.5×54mm French		600	254	1				researched (Wikipedia: AA-52)	researched
 mas_36_cr39	MAS	36 Cr39	bolt-action	7.5×54mm French		490	254	1				estimated (MAS 36 CR 39 variant, standard MAS 7.5mm twist)	estimated
 mas_45	MAS	45	bolt-action	.22 LR	5.66	580	406	1	165	2.6	362	estimated (MAS 45 training rifle, standard .22 LR 1:16in twist)	estimated
+bae_systems_l85a3	Heckler & Koch / Royal Ordnance	L85A3	SA80A3	5.56×45mm NATO	5.56	518	178	1	380	4.02	940	researched (Wikipedia SA80 / British Army specs)	researched
+bae_systems_l22a2	Heckler & Koch / Royal Ordnance	L22A2	SA80 Carbine	5.56×45mm NATO	5.56	318	178	1	380	4.02	850	researched (Wikipedia SA80 / Modern Firearms)	researched
+bae_systems_l1a1_slr	RSAF Enfield / BSA	L1A1 SLR	Self-Loading Rifle	7.62×51mm NATO	7.62	554	305	1	405	9.5	823	researched (Wikipedia L1A1 SLR / British Army manual)	researched
+bae_systems_l7a2_gpmg	FN Herstal / RSAF Enfield	L7A2 GPMG	General Purpose Machine Gun	7.62×51mm NATO	7.62	630	305	1	405	9.5	840	researched (Wikipedia FN MAG / British Army manual)	researched
+bae_systems_l110a1_minimi	FN Herstal	L110A1 Minimi	Light Machine Gun	5.56×45mm NATO	5.56	465	178	1	380	4.02	915	researched (Wikipedia M249 / FN Minimi specs)	researched
+colt_canada_l119a1	Colt Canada (Diemaco)	L119A1 C8SFW	Carbine	5.56×45mm NATO	5.56	410	178	1	380	4.02	895	researched (Wikipedia Colt Canada C8 / British Army)	researched
+benelli_l128a1	Benelli Armi	L128A1 (Benelli M4)	Combat Shotgun	12 Gauge	18.53	470	0	0	69	28	408	researched (Wikipedia Benelli M4 / MOD)	researched
+accuracy_international_l115a3	Accuracy International	L115A3 AWM	Sniper Rifle	.338 Lapua Magnum	8.6	686	279	1	420	16.2	936	researched (Wikipedia AI AWM / British Army specs)	researched
+sig_sauer_l107a1	SIG Sauer	L107A1 (SIG P228)	Pistol	9×19mm Parabellum	9.0	99	250	1	250	8.04	350	researched (Wikipedia SIG P228 / MOD)	researched
+accuracy_international_l118a1_covert	Accuracy International	L118A1 Arctic Warfare Covert	Sniper Rifle	.338 Lapua Magnum	8.6	550	279	1	420	16.2	880	researched (AI Arctic Warfare Covert / Jane's)	researched
+saab_nlaw	Saab Bofors Dynamics	NLAW (MBT LAW)	Anti-Tank Launcher	150mm HEAT	150.0	1000	0	0	0	0	0	researched (Wikipedia NLAW / Saab Bofors)	researched
+heckler_koch_l134a1_gmg	Heckler & Koch	L134A1 (HK GMG)	Grenade Machine Gun	40×53mm SR	40.0	415	1220	1	240	230	241	researched (Wikipedia HK GMG / British Army)	researched
+kalashnikov_concern_ak_104	Kalashnikov Concern	AK-104	Assault Rifle	7.62×39mm	7.62	314	240	1	355	7.9	670	researched (Wikipedia AK-104 / Kalashnikov Concern)	researched
+kalashnikov_concern_an_94	Kalashnikov Concern (Izhmash)	AN-94 Nikonov	Assault Rifle	5.45×39mm	5.45	405	200	1	355	3.43	900	researched (Wikipedia AN-94 / Russian Army)	researched
+kalashnikov_concern_mp_443_grach	Izhevsk Mechanical Plant	MP-443 Grach (PYa)	Pistol	9×19mm Parabellum	9.0	112	250	1	300	8.0	450	researched (Wikipedia MP-443 Grach / Russian Army)	researched
+degtyaryov_rpd	Degtyaryov Plant	RPD	Light Machine Gun	7.62×39mm	7.62	520	240	1	355	7.9	735	researched (Wikipedia RPD / Soviet TM)	researched
+tula_dshk_1938	Tula Arms Plant	DShK 1938	Heavy Machine Gun	12.7×108mm	12.7	1070	381	1	360	48.3	850	researched (Wikipedia DShK / Soviet TM)	researched
+kbp_pp_19_01_vityaz	KBP / Kalashnikov Concern	PP-19-01 Vityaz-SN	Submachine Gun	9×19mm Parabellum	9.0	237	240	1	300	8.0	380	researched (Wikipedia PP-19-01 Vityaz / Russian)	researched
+degtyaryov_ksvk_12_7	Degtyarev Plant	KSVK 12.7 (ASVK)	Anti-Materiel Rifle	12.7×108mm	12.7	1000	381	1	360	48.3	860	researched (Wikipedia KSVK / Russian Army)	researched
+izhmash_saiga_12k	Kalashnikov Concern (Izhmash)	Saiga-12K	Shotgun	12 Gauge	18.53	430	0	0	69	28	400	researched (Wikipedia Saiga-12 / manufacturer)	researched
+heckler_koch_m27_iar	Heckler & Koch	M27 IAR	Infantry Automatic Rifle	5.56×45mm NATO	5.56	419	178	1	430	4.0	884	researched (Wikipedia M27 IAR / USMC)	researched
+sage_m14_ebr	Sage International	Mk 14 EBR	Designated Marksman Rifle	7.62×51mm NATO	7.62	457	305	1	427	9.5	853	researched (Wikipedia Mk 14 EBR / USSOCOM)	researched
+fn_herstal_mk48	FN Herstal	Mk 48 Mod 0	Light Weight Machine Gun	7.62×51mm NATO	7.62	502	305	1	427	9.5	853	researched (Wikipedia M249/Mk 48 / USSOCOM)	researched
+m141_smaw_bdm	Talley Defense Systems (Nammo Talley)	M141 BDM (SMAW-D)	Bunker Defeat Munition	83mm HEDM	83.0	760	0	0	0	0	0	researched (Wikipedia SMAW / US Army)	researched
+saco_defense_m60e3	Saco Defense	M60E3	General Purpose Machine Gun	7.62×51mm NATO	7.62	560	305	1	427	9.5	853	researched (Wikipedia M60 / US Army TM)	researched
+rsa_lee_enfield_no4_mk1	RSAF Enfield	No.4 Mk I	Bolt-Action Rifle	.303 British	7.7	640	254	2	365	11.3	744	researched (Wikipedia Lee-Enfield / WWII British)	researched
+hasag_panzerfaust_60	HASAG (Hugo Schneider AG)	Panzerfaust 60	Anti-Tank Launcher	149mm HEAT	50.0	1040	0	0	0	0	0	researched (Wikipedia Panzerfaust / German TM)	researched
+zeveta_rpg_75	Zeveta (Uhersky Brod)	RPG-75	Anti-Tank Launcher	68mm HEAT	68.0	890	0	0	0	0	0	researched (Wikipedia RPG-75 / Czechoslovak Army)	researched
+accuracy_international_as50	Accuracy International	AS50	Anti-Materiel Rifle	12.7×99mm NATO (.50 BMG)	12.7	692	381	1	379	42.8	860	researched (Wikipedia AI AS50 / Defence Review)	researched
