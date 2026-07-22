@@ -1141,3 +1141,63 @@ iof_1a_pistol	Indian Ordnance Factory	1A Pistol	semi-automatic pistol	9×19mm Pa
 iof_32_revolver	Indian Ordnance Factory	32 Revolver	revolver	.32 S&W Long		76.2	190	1			159	researched (en.wikipedia.org/wiki/Indian_Ordnance_Factories_.32_Revolver, ofbindia.gov.in)	estimated
 iof_22_revolver	Indian Ordnance Factory	22 Revolver	revolver	.22 LR	5.66	76.2	190	1	165	2.6	210	researched (en.wikipedia.org/wiki/IOF_.22_revolver, ofbindia.gov.in)	estimated
 iof_1a_smg	Indian Ordnance Factory	1A Smg	submachine gun	9×19mm Parabellum	9.01	196	250	1	250	8.0	372	researched (en.wikipedia.org/wiki/Sterling_submachine_gun, ofbindia.gov.in)	estimated
+famae_saf	FAMAE	Saf	blowback	9×19mm Parabellum	9.01	220	250	1	250	8.0	376	estimated (standard 9mm SMG rifling, caliber_ref twist 250mm)	estimated
+famae_mini_saf	FAMAE	Mini Saf	blowback	9×19mm Parabellum	9.01	180	250	1	250	8.0	370	estimated (compact variant, shorter barrel 180mm, standard 9mm rifling)	estimated
+famae_fd200	FAMAE	Fd200	gas-operated	5.56×45mm NATO	5.69	508	178	1	430	4.0	921	estimated (standard 5.56mm NATO rifling 1:7in, caliber_ref twist 178mm)	estimated
+famae_fd520	FAMAE	Fd520	gas-operated	5.56×45mm NATO	5.69	406	178	1	430	4.0	878	estimated (carbine variant, 406mm barrel, standard 5.56mm rifling)	estimated
+famae_sg542	FAMAE	Sg542	gas-operated	7.62×51mm NATO	7.82	420	279	1	415	9.5	785	estimated (standard 7.62mm NATO rifling 1:11in, caliber_ref twist 279mm)	estimated
+cobray_m11_9	Cobray	M11 9	blowback	9×19mm Parabellum	9.01	127	250	1	250	8.0	362	estimated (standard 9mm SMG rifling, 5in barrel, caliber_ref twist 250mm)	estimated
+cobray_m10_45	Cobray	M10 45	blowback	.45 ACP	11.48	127	406	1	145	15.0	259	estimated (standard .45 ACP rifling, caliber_ref twist 406mm)	estimated
+cobray_terminator	Cobray	Terminator	break-action	12 Gauge	18.5	76	0		65	28.4	391	estimated (12ga smoothbore derringer, 3in barrel)	estimated
+cobray_cm11	Cobray	Cm11	blowback	9×19mm Parabellum	9.01	127	250	1	250	8.0	362	estimated (semi-auto M-11/9 variant, standard 9mm rifling)	estimated
+cobray_lady_cocker	Cobray	Lady Cocker	break-action	.22 LR	5.66	64	406	1	165	2.6	207	estimated (.22 LR pocket derringer, standard .22 LR rifling)	estimated
+bond_arms_texas_defender	Bond Arms	Texas Defender	break-action	.45 Colt	11.48	76	508	1	145	16.2	225	estimated (derringer rifled for .45 Colt, caliber_ref twist 508mm)	estimated
+bond_arms_cowboy_defender	Bond Arms	Cowboy Defender	break-action	.45 Colt	11.48	64	508	1	145	16.2	223	estimated (shorter barrel derringer, .45 Colt rifling)	estimated
+bond_arms_snake_slayer	Bond Arms	Snake Slayer	break-action	.357 Magnum	9.07	89	356	1	345	8.1	410	estimated (derringer rifled for .357 Mag, caliber_ref twist 356mm)	estimated
+bond_arms_roughneck	Bond Arms	Roughneck	break-action	9×19mm Parabellum	9.01	76	0		250	8.0	354	estimated (9mm derringer smoothbore per Bond Arms pattern, 2-shot break-action)	estimated
+phoenix_hp22		Phoenix Hp22	blowback	.22 LR	5.66	61	406	1	165	2.6	206	estimated (standard .22 LR rifling, caliber_ref twist 406mm)	estimated
+phoenix_hp22_target		Phoenix Hp22 Target	blowback	.22 LR	5.66	95	406	1	165	2.6	216	estimated (target variant, longer barrel, standard .22 LR rifling)	estimated
+phoenix_hp25		Phoenix Hp25	blowback	.25 ACP	6.38	61	250	1	141	3.2	232	estimated (standard .25 ACP rifling, caliber_ref twist 250mm)	estimated
+hammerli_208	Hämmerli	208	semi-auto	.22 LR	5.66	153	406	1	165	2.6	234	estimated (WIKIPEDIA_HAMMERLI, HAMMERLI_ARMS_DE)	estimated
+hammerli_280	Hämmerli	280	semi-auto	.32 S&W Long		150	380	1				estimated (WIKIPEDIA_HAMMERLI, HAMMERLI_ARMS_DE)	estimated
+hammerli_sp20	Hämmerli	Sp20	semi-auto	.22 LR	5.66	150	406	1	165	2.6	233	estimated (WIKIPEDIA_HAMMERLI, HAMMERLI_ARMS_DE)	estimated
+hammerli_x_esse	Hämmerli	X Esse	semi-auto	.22 LR	5.66	122	406	1	165	2.6	224	estimated (WIKIPEDIA_HAMMERLI, HAMMERLI_ARMS_DE)	estimated
+hammerli_tac_r1	Hämmerli	Tac R1	semi-auto	.22 LR	5.66	406	406	1	165	2.6	309	estimated (WIKIPEDIA_HAMMERLI, HAMMERLI_ARMS_DE)	estimated
+sphinx_2000	Sphinx	2000	semi-auto	9×19mm Parabellum	9.01	114	250	1	250	8.0	360	researched (WIKIPEDIA_SPHINX_SYSTEMS)	researched
+sphinx_3000	Sphinx	3000	semi-auto	9×19mm Parabellum	9.01	114	250	1	250	8.0	360	researched (WIKIPEDIA_SPHINX_SYSTEMS)	researched
+sphinx_sdp_compact	Sphinx	Sdp Compact	semi-auto	9×19mm Parabellum	9.01	95	250	1	250	8.0	357	researched (WIKIPEDIA_SPHINX_SYSTEMS)	researched
+sphinx_sdp_full	Sphinx	Sdp Full	semi-auto	9×19mm Parabellum	9.01	114	250	1	250	8.0	360	researched (WIKIPEDIA_SPHINX_SYSTEMS)	researched
+sphinx_sa	Sphinx	Sa	semi-auto	9×19mm Parabellum	9.01	130	250	1	250	8.0	362	researched (WIKIPEDIA_SPHINX_SYSTEMS)	researched
+sti_staccato_p	STI	Staccato P	semi-auto	9×19mm Parabellum	9.01	112	406	1	250	8.0	359	researched (STACCATO_2011_OFFICIAL)	researched
+sti_staccato_c	STI	Staccato C	semi-auto	9×19mm Parabellum	9.01	102	406	1	250	8.0	358	researched (STACCATO_2011_OFFICIAL)	researched
+sti_staccato_xl	STI	Staccato Xl	semi-auto	9×19mm Parabellum	9.01	137	406	1	250	8.0	363	researched (STACCATO_2011_OFFICIAL)	researched
+sti_dvc	STI	Dvc	semi-auto	9×19mm Parabellum	9.01	127	406	1	250	8.0	362	researched (STACCATO_2011_OFFICIAL)	researched
+sti_edge	STI	Edge	semi-auto	.40 S&W	10.17	127	406	1	240	10.0	325	researched (STACCATO_2011_OFFICIAL)	researched
+sauer_202	J.P. Sauer & Sohn	202	bolt-action	.308 Win	7.82	610	305	1	415	9.5	858	researched (Wikipedia: Sauer 202, J.P. Sauer & Sohn official site)	researched
+sauer_303	J.P. Sauer & Sohn	303	semi-automatic	.308 Win	7.82	560	305	1	415	9.5	839	researched (Wikipedia: Sauer 303, J.P. Sauer & Sohn official site)	researched
+sauer_404	J.P. Sauer & Sohn	404	bolt-action	6.5 Creedmoor	6.71	560	203	1	415	9.0	830	researched (Wikipedia: Sauer 404, J.P. Sauer & Sohn official site)	researched
+sauer_100	J.P. Sauer & Sohn	100	bolt-action	.308 Win	7.82	560	305	1	415	9.5	839	researched (Wikipedia: Sauer 100, J.P. Sauer & Sohn official site)	researched
+miroku_mk70	Miroku	Mk70	over-under	12 Gauge	18.5	711	0		65	28.4	423	researched (Browning/Miroku official site, Gun Mart review)	researched
+miroku_3800	Miroku	3800	over-under	12 Gauge	18.5	762	0		65	28.4	425	researched (Browning/Miroku official site, Gun Mart review)	researched
+miroku_1873	Miroku	1873	lever-action	.357 Magnum	9.07	510	406	1	345	8.1	515	researched (Wikipedia: Winchester rifle, Miroku Corp., Browning official site)	researched
+miroku_1886	Miroku	1886	lever-action	.45-70 Government		560	508	1				researched (Wikipedia: Winchester Model 1886, Browning official site)	researched
+parker_hale_m85	Parker-Hale	M85	bolt-action	7.62×51mm NATO	7.82	622	305	1	415	9.5	862	researched (Wikipedia: Parker-Hale M85, Sniper Central, Rifleman.org.uk)	researched
+parker_hale_1200tx	Parker-Hale	1200Tx	bolt-action	7.62×51mm NATO	7.82	660	305	1	415	9.5	877	researched (Wikipedia: Parker-Hale, Parker-Hale catalogues)	researched
+parker_hale_model81	Parker-Hale	Model81	bolt-action	.308 Win	7.82	610	305	1	415	9.5	858	researched (Wikipedia: Parker-Hale, Parker-Hale catalogues)	researched
+parker_hale_1100	Parker-Hale	1100	bolt-action	.303 British	7.90	610	254	1	365	11.7		researched (Wikipedia: Parker-Hale, Parker-Hale catalogues)	researched
+wildey_survivor_5in	Wildey	Survivor 5In	gas-operated semi-automatic	.45 Win Mag		127	406	1			375	estimated	estimated
+wildey_survivor_6in	Wildey	Survivor 6In	gas-operated semi-automatic	.45 Win Mag		152	406	1			380	estimated	estimated
+wildey_survivor_8in	Wildey	Survivor 8In	gas-operated semi-automatic	.44 Auto Mag	10.90	203	406	1	345	15.6		estimated	estimated
+wildey_survivor_10in	Wildey	Survivor 10In	gas-operated semi-automatic	.357 Magnum	9.07	254	356	1	345	8.1	451	estimated	estimated
+wildey_survivor_12in	Wildey	Survivor 12In	gas-operated semi-automatic	.44 Remington Magnum		305	406	1			452	estimated	estimated
+pedersoli_1858_remington	Pedersoli	1858 Remington	single-action revolver	.45 Colt	11.48	203	406	1	145	16.2	251	estimated	estimated
+pedersoli_1873_trapdoor	Pedersoli	1873 Trapdoor	trapdoor falling-block	.45-70	11.48	828	559	1	180	19.9		estimated	estimated
+pedersoli_sharps	Pedersoli	Sharps	falling-block rifle	.45-70	11.48	762	457	1	180	19.9		estimated	estimated
+pedersoli_kodiak	Pedersoli	Kodiak	break-action double rifle	.45-70	11.48	610	457	1	180	19.9		estimated	estimated
+pedersoli_howdah	Pedersoli	Howdah	break-action pistol	20 Gauge	15.6	279	0		62	19.5		estimated	estimated
+uberti_1873_cattleman	Uberti	1873 Cattleman	single-action revolver	.45 Colt	11.48	120	406	1	145	16.2	234	estimated	estimated
+uberti_1873_cattleman_75	Uberti	1873 Cattleman 75	single-action revolver	.45 Colt	11.48	190	406	1	145	16.2	248	estimated	estimated
+uberti_1866_yellowboy	Uberti	1866 Yellowboy	lever-action rifle	.38 Special	9.06	508	406	1	240	10.2		estimated	estimated
+uberti_1873_winchester	Uberti	1873 Winchester	lever-action rifle	.357 Magnum	9.07	508	356	1	345	8.1	514	estimated	estimated
+uberti_1885_highwall	Uberti	1885 Highwall	falling-block single-shot	.45-70	11.48	762	457	1	180	19.9		estimated	estimated
+uberti_stallion	Uberti	Stallion	single-action revolver	.22 LR	5.66	120	356	1	165	2.6	224	estimated	estimated
