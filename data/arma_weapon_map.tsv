@@ -30,7 +30,6 @@ fn_f2000	fn_herstal_f2000	variant	Catalog alias
 p90	fn_herstal_p90	exact	Catalog primary key
 fn_p90	fn_herstal_p90	variant	Catalog alias
 aug	steyr_aug	exact	Catalog primary key
-steyr_aug	steyr_aug	variant	Catalog alias
 auga3	steyr_aug_a3	exact	Catalog primary key
 aug_a3	steyr_aug_a3	variant	Catalog alias
 x95	iwi_tavor_x95	exact	Catalog primary key
@@ -120,7 +119,6 @@ hk_mk23	heckler_koch_mk23	variant	Catalog alias
 p7	heckler_koch_p7	exact	Catalog primary key
 hk_p7	heckler_koch_p7	variant	Catalog alias
 m9	beretta_m9	exact	Catalog primary key
-beretta_m9	beretta_m9	variant	Catalog alias
 m9a1	beretta_m9	variant	Catalog alias
 m9a3	beretta_m9a3	exact	Catalog primary key
 fnx45	fn_herstal_fnx_45	exact	Catalog primary key
@@ -146,7 +144,6 @@ tp9	br_gger_thomet_mp9	variant	Catalog alias
 apc9	br_gger_thomet_apc9	exact	Catalog primary key
 apc_pro	br_gger_thomet_apc9	variant	Catalog alias
 pdr	magpul_pdr	exact	Catalog primary key
-magpul_pdr	magpul_pdr	variant	Catalog alias
 fort221	rpc_fort_fort_221	exact	Catalog primary key
 fort_221	rpc_fort_fort_221	variant	Catalog alias
 mac10	mac_mac_10	exact	Catalog primary key
@@ -163,9 +160,7 @@ m107	barrett_m82_m107	variant	Catalog alias
 barrett_m82	barrett_m82_m107	variant	Catalog alias
 barrett_m107	barrett_m82_m107	variant	Catalog alias
 m95	barrett_m95	exact	Catalog primary key
-barrett_m95	barrett_m95	variant	Catalog alias
 mrad	barrett_mrad	exact	Catalog primary key
-barrett_mrad	barrett_mrad	variant	Catalog alias
 m24	remington_m24	exact	Catalog primary key
 m40a5	remington_m40a5	exact	Catalog primary key
 m40	remington_m40a5	variant	Catalog alias
@@ -246,9 +241,6 @@ m72_law	nammo_m72_law	exact	Catalog primary key
 m72	nammo_m72_law	variant	Catalog alias
 m79	dynamit_nobel_m79_osa	exact	Catalog primary key
 osa	dynamit_nobel_m79_osa	variant	Catalog alias
-m14	m14	exact	Catalog primary key
-m60	m60	exact	Catalog primary key
-m1911	m1911	exact	Catalog primary key
 colt_1911	m1911	variant	Catalog alias
 r3f_famas_f1	giat_famas_f1	exact	R3F mod primary key
 r3f_famas_g2	giat_famas_g2	exact	R3F mod primary key
@@ -266,7 +258,6 @@ hgun_mk26_f	magnum_research_desert_eagle_mk_xix	exact	Arma 3 vanilla primary key
 hgun_pistol_01_f	makarov_pm	exact	Arma 3 vanilla primary key
 sgun_ksg_f	kel_tec_ksg	exact	Arma 3 vanilla primary key
 sgun_mp153_f	baikal_mp_153	exact	Arma 3 vanilla primary key
-hgun_pistol_heavy_01_f	fn_herstal_fnp_45_tactical	exact	Arma 3 vanilla primary key
 dmr_06_base	noreen_bad_news	exact	Arma 3 Marksmen DLC
 dmr_07_base	sig_sauer_cmr_76	exact	Arma 3 Marksmen DLC
 mmg_01_base	general_dynamics_lwmmg	exact	Arma 3 Marksmen DLC
@@ -306,7 +297,6 @@ ar18	AR-18	exact	ArmaLite AR-18 assault rifle, short-stroke piston, 5.56×45mm, 
 m16a1	M16A1	exact	US Army M16A1 with forward assist, 1:12" twist, 20" barrel, 5.56mm, chrome chamber
 m16a2	M16A2	exact	US Marine Corps M16A2, heavier barrel, 1:7" twist, 3-round burst, 5.56mm
 m16a4	M16A4	exact	US Marine Corps M16A4, flat-top upper with Picatinny rail, detachable carry handle, 5.56mm
-m4	M4/M4A1	exact	US M4/M4A1 carbine, 14.5" barrel, 1:7" twist, collapsible stock, 5.56mm
 m4a1_block2	M4A1 Block II	exact	M4A1 SOPMOD Block II, SOCOM-profile 14.5" CHF barrel, RIS II rail, 1:7" twist
 xm177e1	XM177E1	exact	Colt XM177E1 Commando (Model 609), 10" barrel, 4.25" moderator, 1:12" twist, USAF GAU-5/A
 xm177e2	XM177E2	exact	Colt XM177E2 Commando (Model 629), 11.5" barrel, chrome chamber, 1:12" twist
@@ -347,21 +337,11 @@ adp_pp1901	PP-19-01 Vityaz	exact	AK-derived 9mm SMG, blowback, 30-round box maga
 adp_pp2000	PP-2000	exact	Ultra-compact PDW/SMG, polymer frame, 44-round magazine option, 182mm barrel
 g3	g3a3	exact	G3A3 7.62mm NATO battle rifle, 450mm barrel, 305mm twist, 800 m/s muzzle velocity, fixed stock
 hk33	hk33a2	exact	HK33A2 5.56mm assault rifle, 390mm barrel, fixed stock, 950 m/s
-hk53	hk53	exact	HK53 compact 5.56mm, 211mm barrel, 750 m/s, MP5-derived handguard
-g36	g36	exact	G36 standard 5.56mm assault rifle, 480mm barrel, 998mm overall
-g36k	g36k	exact	G36K carbine 5.56mm, 320mm barrel, 860mm overall
-g36c	g36c	exact	G36C compact/commando 5.56mm, 228mm barrel, 720mm overall
 hk416	hk416_104	exact	HK416 D10RS 10.4in (264mm) barrel, 788 m/s, 6-groove 178mm RH twist
 hk417	hk417_12	exact	HK417 12in (305mm) barrel, 7.62mm NATO battle rifle
 mp5	mp5a2	exact	MP5A2 9mm submachine gun, 225mm barrel, fixed stock, 250mm twist
 ump	ump9	exact	UMP9 9mm submachine gun, 200mm barrel, polymer receiver
 usp	usp9	exact	USP9 9mm full-size pistol, 108mm barrel, polygonal rifling
-p30	p30	exact	P30 9mm semi-automatic pistol, 98mm barrel, polymer frame, interchangeable backstraps
-hk45	hk45	exact	HK45 .45 ACP pistol, 113mm barrel, 10-round magazine, polygonal rifling
-psg1	psg1	exact	PSG1 7.62mm precision semi-auto rifle, 650mm barrel, adjustable stock, 868 m/s
-mr556a1	mr556a1	exact	MR556A1 civilian HK416 variant, 16.5in (419mm) barrel, semi-auto only, 1 MOA
-vp9	vp9	exact	VP9 9mm striker-fired pistol, 104mm barrel, 15-round magazine, charging supports
-mp7	mp7	exact	MP7 PDW 4.6×30mm, 180mm barrel, 735 m/s, 950 rpm, folding stock
 p210	P210	exact	SIG Sauer P210, 9×19mm, 120mm barrel, 250mm RH twist, 8-round magazine
 p225	P225	exact	SIG Sauer P225/P6, 9×19mm, 91mm barrel, compact DA/SA, German police P6 variant
 p226	P226	exact	SIG Sauer P226, 9×19mm, 112mm barrel, 250mm RH twist, double-stack service pistol
@@ -379,17 +359,17 @@ p365xl	P365XL	exact	SIG Sauer P365XL, 9×19mm, 94mm barrel, extended slide, 12+1
 sp2022	SP2022	exact	SIG Sauer SP2022 (SIG Pro), polymer DA/SA, 9×19mm, 99mm barrel, French police contract
 mpx	MPX	exact	SIG Sauer MPX, 9×19mm, 203mm barrel, gas-operated rotating bolt, 850 RPM
 mpx_k	MPX-K	exact	SIG Sauer MPX-K compact, 9×19mm, 114mm barrel, compact PDW
-sg550	SG 550	exact	SIG Sauer SG 550 Stgw 90, 5.56×45mm, 528mm barrel, Swiss Army service rifle
+sg550	sg_550	normalized	SIG Sauer SG 550 Stgw 90, 5.56×45mm, 528mm barrel, Swiss Army service rifle
 sg551	SG 551	exact	SIG Sauer SG 551, 5.56×45mm, 363mm barrel, carbine variant, Swiss special forces
-sg553	SG 553	exact	SIG Sauer SG 553, 5.56×45mm, 226mm barrel, ultra-compact, improved SG 552 successor
+sg553	sg_553	normalized	SIG Sauer SG 553, 5.56×45mm, 226mm barrel, ultra-compact, improved SG 552 successor
 sig556	SIG 556	exact	SIG Sauer SIG 556, US-made semi-auto, 5.56×45mm, 406mm barrel, STANAG mags
-mcx_virtus_11	MCX Virtus 11.5"	exact	SIG Sauer MCX Virtus SBR, 5.56×45mm, 292mm barrel, 1:7 twist, short-stroke piston
-mcx_virtus_16	MCX Virtus 16"	exact	SIG Sauer MCX Virtus Rifle, 5.56×45mm, 406mm barrel, 1:7 twist, piston-driven
-mcx_rattler	MCX Rattler 5.5"	exact	SIG Sauer MCX Rattler PDW, .300 BLK, 140mm barrel, 1:5 twist, ultra-compact
-mcx_spear	MCX Spear / XM7	exact	SIG Sauer MCX Spear, .277 Fury 6.8×51mm, 330mm barrel, US Army NGSW winner
+mcx_virtus_11	sig_sauer_mcx	auto-fixed (fuzzy)	SIG Sauer MCX Virtus SBR, 5.56×45mm, 292mm barrel, 1:7 twist, short-stroke piston
+mcx_virtus_16	sig_sauer_mcx	auto-fixed (fuzzy)	SIG Sauer MCX Virtus Rifle, 5.56×45mm, 406mm barrel, 1:7 twist, piston-driven
+mcx_rattler	sig_sauer_mcx	auto-fixed (fuzzy)	SIG Sauer MCX Rattler PDW, .300 BLK, 140mm barrel, 1:5 twist, ultra-compact
+mcx_spear	sig_sauer_mcx	auto-fixed (fuzzy)	SIG Sauer MCX Spear, .277 Fury 6.8×51mm, 330mm barrel, US Army NGSW winner
 sig_cross	SIG Cross	exact	SIG Sauer Cross bolt-action, .308 Win, 406mm barrel, 1:8 twist, folding stock
 m400_tread	M400 Tread	exact	SIG Sauer M400 Tread, AR-15 pattern, 5.56×45mm, 406mm barrel, 1:8 twist
-sig_amt	SIG AMT (SG 510-4)	exact	SIG AMT / SG 510-4, 7.62×51mm, 505mm barrel, roller-delayed, Chilean/Bolivian military
+sig_amt	sig_sauer_sg_551	auto-fixed (fuzzy)	SIG AMT / SG 510-4, 7.62×51mm, 505mm barrel, roller-delayed, Chilean/Bolivian military
 sig_cross_magnum	SIG Cross Magnum	exact	SIG Sauer Cross Magnum bolt-action, .300 PRC, 610mm barrel, magnum action variant
 bhp_gp35	FN Hi-Power GP35	exact	FN Browning Hi-Power GP35 (P-35), 9×19mm, 118mm barrel
 bhp_hp_sfs	FN Hi-Power HP-SFS	exact	FN Browning Hi-Power HP-SFS with Safe Fast Shooting system, 9×19mm, 118mm barrel
@@ -414,58 +394,25 @@ fn509_compact	FN 509 Compact	exact	FN 509 Compact, 9×19mm, 94mm (3.7") barrel
 fn509_tactical	FN 509 Tactical	exact	FN 509 Tactical threaded barrel optics-ready, 9×19mm, 114mm (4.5") barrel
 fn509_mrd	FN 509 MRD	exact	FN 509 Midsize MRD optics-ready, 9×19mm, 102mm (4") barrel
 fn502	FN 502 Tactical	exact	FN 502 Tactical .22 LR, 117mm (4.6") barrel
-m2hb	M2HB QCB	exact	FN M2HB-QCB heavy machine gun, .50 BMG, 1143mm (45") barrel
-m240b	M240B GPMG	exact	FN M240B (MAG 58 derivative), 7.62×51mm, 551mm (21.7") barrel
+m240b	M240B	auto-fixed (fuzzy)	FN M240B (MAG 58 derivative), 7.62×51mm, 551mm (21.7") barrel
 m249_saw	M249 SAW	exact	FN M249 SAW (MINIMI), 5.56×45mm, 521mm (20.5") barrel
-mag58	FN MAG 58	exact	FN MAG 58 general purpose machine gun, 7.62×51mm, 630mm barrel
-glock_17	Glock 17	exact	Gen3-5 full-size 9mm, original Glock service pistol, standard-issue worldwide
+mag58	fn_herstal_mag_m240	auto-fixed (fuzzy)	FN MAG 58 general purpose machine gun, 7.62×51mm, 630mm barrel
+glock_17	glock_17	normalized	Gen3-5 full-size 9mm, original Glock service pistol, standard-issue worldwide
 glock_18	Glock 18	exact	Selective-fire full-auto machine pistol, restricted LE/mil only, G17 frame size
-glock_19	Glock 19	exact	Gen3-5 compact 9mm, most widely produced Glock model, ubiquitous CCW/duty pistol
+glock_19	glock_19	normalized	Gen3-5 compact 9mm, most widely produced Glock model, ubiquitous CCW/duty pistol
 glock_19x	Glock 19X	exact	Crossover with G17 full-size frame + G19 compact slide, coyote nPVD finish, GMB barrel
-glock_20	Glock 20	exact	Full-size 10mm Auto for hunting, backcountry defense, high velocity/power
+glock_20	glock_20	normalized	Full-size 10mm Auto for hunting, backcountry defense, high velocity/power
 glock_21	Glock 21	exact	Full-size .45 ACP, proven stopping power, 13-round double-stack capacity
-glock_22	Glock 22	exact	Standard .40 S&W LE service pistol, widely adopted by US law enforcement
-glock_26	Glock 26	exact	Subcompact 9mm baby Glock, backup/CCW, compatible with all 9mm Glock magazines
-glock_34	Glock 34	exact	Long-slide 9mm competition/tactical, extended barrel and sight radius, IPSC/USPSA popular
+glock_22	glock_22	normalized	Standard .40 S&W LE service pistol, widely adopted by US law enforcement
+glock_26	glock_26	normalized	Subcompact 9mm baby Glock, backup/CCW, compatible with all 9mm Glock magazines
+glock_34	glock_34	normalized	Long-slide 9mm competition/tactical, extended barrel and sight radius, IPSC/USPSA popular
 glock_35	Glock 35	exact	Long-slide .40 S&W competition/tactical, extended barrel, practical shooting use
 glock_41	Glock 41	exact	Long-slide .45 ACP competition/tactical MOS, narrow G34-width slide on G21 frame
-glock_42	Glock 42	exact	Slimline subcompact .380 ACP, smallest Glock overall, single-stack deep concealment
+glock_42	glock_42	normalized	Slimline subcompact .380 ACP, smallest Glock overall, single-stack deep concealment
 glock_43	Glock 43	exact	Slimline single-stack 9mm subcompact, minimum width for concealed carry
 glock_43x	Glock 43X	exact	Slimline 9mm compact with 10-round capacity, longer grip than G43, GMB barrel
 glock_44	Glock 44	exact	Compact .22 LR rimfire trainer, G19-sized frame, hybrid steel-polymer slide, blowback action
 glock_45	Glock 45	exact	Gen5 crossover with compact G19 slide on full-size G17 frame, 17-round capacity
-ber_92f_m9	ber_92f_m9	exact	9×19mm DA/SA full-size pistol, US military M9, 15rd mag
-ber_92fs	ber_92fs	exact	9×19mm DA/SA, commercial variant of 92F with enlarged hammer pin
-ber_92x	ber_92x	exact	9×19mm Vertec-frame, Xtreme-S trigger system, 4.7in barrel, 17rd
-ber_px4_full	ber_px4_full	exact	9×19mm rotating barrel full-size, 4in barrel, 17rd, NATO-certified
-ber_px4_compact	ber_px4_compact	exact	9×19mm rotating barrel compact, 3.27in barrel, 15rd
-ber_apx_full	ber_apx_full	exact	9×19mm striker-fired full-size, 4.25in barrel, 17rd, modular
-ber_apx_carry	ber_apx_carry	exact	9×19mm striker-fired compact carry, 3.5in barrel, 13rd
-ber_84_cheetah	ber_84_cheetah	exact	.380 ACP DA/SA compact, 13rd double-stack, 3.82in barrel
-ber_21a_bobcat	ber_21a_bobcat	exact	.25 ACP tip-up barrel pocket pistol, 7rd, DA only
-ber_3032_tomcat	ber_3032_tomcat	exact	.32 ACP tip-up barrel pocket pistol, 7rd, DA/SA
-ber_pico	ber_pico	exact	.380 ACP subcompact striker-fired pocket pistol, 6rd
-ber_cx4_storm	ber_cx4_storm	exact	9×19mm pistol-caliber carbine, 16.6in barrel, blowback, 15/20rd
-ber_arx160	ber_arx160	exact	5.56×45mm assault rifle, 16in barrel, gas piston, 30rd STANAG
-ber_arx100	ber_arx100	exact	5.56×45mm semi-auto civilian ARX160 variant, 16in barrel
-ber_bm59	ber_bm59	exact	7.62×51mm battle rifle, evolved from M1 Garand, 20rd magazine
-ber_686_sp	ber_686_sp	exact	12 Gauge O/U shotgun, Steelium barrels, 26/28/30in options
-ber_1301_tactical	ber_1301_tactical	exact	12 Gauge semi-auto tactical shotgun, 18.5in barrel, 1370 BAR proof
-ber_a400	ber_a400	exact	12 Gauge semi-auto shotgun, Kick-Off recoil reduction, 28in barrel
-ber_dt11	ber_dt11	exact	12 Gauge competition O/U, Steelium Pro barrels, 30/32in options
-ben_m1s90	ben_m1s90	exact	12 Gauge semi-auto, ARGO gas system, 18.5-26in barrel options
-ben_m2	ben_m2	exact	12 Gauge semi-auto, ComforTech stock, 24/26/28in barrel options
-ben_m4	ben_m4	exact	12 Gauge semi-auto, US M1014, 18.5in barrel, ARGO gas system
-ben_m3	ben_m3	exact	12 Gauge convertible pump/semi-auto, 19-24in barrel
-ben_nova	ben_nova	exact	12 Gauge pump-action, polymer monolith receiver, 24-28in barrel
-ben_supernova	ben_supernova	exact	12 Gauge pump-action, adjustable stock, 24-28in barrel
-ben_vinci	ben_vinci	exact	12 Gauge semi-auto, modular design, 24-28in barrel
-ben_ethos	ben_ethos	exact	12 Gauge semi-auto shotgun, 24-28in barrel, inertial-driven
-ben_lupo	ben_lupo	exact	Bolt-action hunting rifle, synthetic stock, detachable box magazine
-fra_spas12	fra_spas12	exact	12 Gauge hybrid pump/semi-auto shotgun, folding stock
-fra_spas15	fra_spas15	exact	12 Gauge selective-fire pump/semi-auto shotgun, detachable box magazine
-fra_affinity	fra_affinity	exact	12 Gauge semi-auto shotgun, inertial system, 26-28in barrel
-fra_instinct	fra_instinct	exact	12/20 Gauge O/U shotgun, 26-30in barrel, field/sporting models
 arma_cz75b	CZ_75_B	exact	9mm steel full-size da/sa
 arma_cz75bd	CZ_75_BD	exact	decocker variant of CZ 75 B
 arma_czp01	CZ_75_P01	exact	compact aluminum frame NATO-qualified
@@ -494,45 +441,6 @@ arma_czbren805	CZ_BREN_805	exact	predecessor to BREN 2
 arma_cz75auto	CZ_75_Automatic	exact	select-fire machine pistol variant
 arma_cz550	CZ_550	exact	mauser 98 pattern bolt action
 arma_czbrnozkk	CZ_BRNO_ZKK	exact	classic mauser hunting rifle
-aug_a1_508	aug_a1_508	exact	Steyr AUG A1 5.56×45mm 508mm barrel
-aug_a1_417	aug_a1_417	variant	Steyr AUG A1 5.56×45mm 417mm barrel
-aug_a3_m1	aug_a3_m1	exact	Steyr AUG A3 M1 5.56×45mm 416mm barrel
-aug_9mm	aug_9mm	variant	Steyr AUG 9mm Para conversion 420mm barrel
-aug_hbar	aug_hbar	variant	Steyr AUG HBAR 5.56×45mm 621mm heavy barrel
-aug_lmg	aug_lmg	variant	Steyr AUG LMG 5.56×45mm 621mm heavy barrel (LMG variant)
-aug_z	aug_z	variant	Steyr AUG Z 5.56×45mm semi-auto civilian variant
-ssg_04	ssg_04	exact	Steyr SSG 04 .308 Win 600mm barrel sniper rifle
-ssg_08	ssg_08	exact	Steyr SSG 08 .308 Win 600mm barrel sniper rifle
-steyr_monobloc	steyr_monobloc	exact	Steyr Monobloc .308 Win bolt-action rifle
-steyr_scout	steyr_scout	exact	Steyr Scout 5.56×45mm 476mm barrel
-m9_a1	m9_a1	exact	Steyr M9-A1 9×19mm pistol
-m40_a1	m40_a1	variant	Steyr M40-A1 .40 S&W pistol
-s9_a1	s9_a1	variant	Steyr S9-A1 9×19mm compact pistol
-c9_a1	c9_a1	variant	Steyr C9-A1 9×19mm subcompact pistol
-mpi_69	mpi_69	exact	Steyr MPi 69 9×19mm submachine gun
-tmp	tmp	exact	Steyr TMP 9×19mm tactical machine pistol
-spp	spp	variant	Steyr SPP 9×19mm semi-auto pistol (TMP civilian)
-hs_50	hs_50	exact	Steyr HS .50 12.7×99mm anti-materiel sniper rifle
-iws_2000	iws_2000	exact	Steyr IWS 2000 14.5mm anti-materiel rifle
-uzi_std	uzi_std	exact	IMI/IWI Uzi Standard 9×19mm submachine gun
-uzi_mini	uzi_mini	variant	IMI/IWI Mini Uzi 9×19mm compact submachine gun
-uzi_micro	uzi_micro	variant	IMI/IWI Micro Uzi 9×19mm ultra-compact submachine gun
-uzi_pro	uzi_pro	exact	IWI Uzi Pro 9×19mm improved submachine gun
-galil_arm	galil_arm	exact	IMI Galil ARM 5.56×45mm assault rifle
-galil_sar	galil_sar	variant	IMI Galil SAR 5.56×45mm short assault rifle
-galil_ace_22	galil_ace_22	exact	IWI Galil ACE 22 5.56×45mm assault rifle
-galil_ace_31	galil_ace_31	variant	IWI Galil ACE 31 7.62×39mm assault rifle
-galil_ace_32	galil_ace_32	variant	IWI Galil ACE 32 7.62×51mm battle rifle
-tavor_7	tavor_7	exact	IWI Tavor 7 7.62×51mm bullpup battle rifle
-tavor_ts12	tavor_ts12	exact	IWI Tavor TS12 12-gauge bullpup shotgun
-jericho_941	jericho_941	exact	IMI/IWI Jericho 941 9×19mm pistol
-jericho_enhanced	jericho_enhanced	variant	IWI Jericho Enhanced 9×19mm pistol
-masada_9	masada_9	exact	IWI Masada 9×19mm striker-fired pistol
-masada_slim	masada_slim	variant	IWI Masada Slim 9×19mm compact pistol
-negev_ng7	negev_ng7	exact	IWI Negev NG7 7.62×51mm light machine gun
-negev_ng5	negev_ng5	exact	IWI Negev NG5 5.56×45mm light machine gun
-carmel	carmel	exact	IWI Carmel 5.56×45mm assault rifle
-dan_338	dan_338	exact	IWI Dan .338 Lapua Magnum sniper rifle
 arma_key	mark_iv	exact	Ruger Mark IV Target .22 LR pistol
 arma_rem_700_308	rem_700_308	researched	Remington Model 700 short-action .308 Win, 4-round int. magazine, 24" barrel
 arma_rem_700_300wm	rem_700_300wm	researched	Remington Model 700 long-action .300 Win Mag, 4-round mag, 26" heavy barrel
@@ -561,64 +469,11 @@ arma_sav_110_6_5cm	sav_110_6_5cm	researched	Savage 110 6.5 Creedmoor, 26" barrel
 arma_sav_110_338lm	sav_110_338lm	researched	Savage 110 .338 Lapua Magnum, 30" barrel, 5-round mag, muzzle brake
 arma_sav_110_30_06	sav_110_30_06	researched	Savage 110 long-action .30-06 Springfield, 22" or 24" barrel
 arma_sav_axis_308	sav_axis_308	researched	Savage Axis budget bolt-action .308 Win, 22" button-rifled barrel, 4-round mag
-arma_sav_axisii_6_5cm	sav_axisii_6_5cm	researched	Savage Axis II 6.5 Creedmoor, AccuTrigger, 22" barrel, 4-round DBM
 arma_sav_mkii_22lr	sav_mkii_22lr	researched	Savage Mark II bolt-action .22 LR, AccuTrigger, 10-round mag, 21" barrel
 arma_sav_64_22lr	sav_64_22lr	researched	Savage Model 64 semi-auto .22 LR, straight blowback, 10-round box mag, 20.5" barrel
 arma_sav_93r17_17hmr	sav_93r17_17hmr	researched	Savage 93R17 bolt-action .17 HMR, AccuTrigger, 21" heavy barrel, 5-round mag
 arma_sav_220_20ga	sav_220_20ga	researched	Savage 220 bolt-action 20ga slug gun, 22" fully rifled barrel, AccuTrigger, 2-round mag
-arma_sav_stev320_12ga	sav_stev320_12ga	researched	Stevens 320 pump 12ga, dual slide-bars, rotary bolt, 5+1, synthetic stock
 arma_sav_99_308	sav_99_308	researched	Savage 99 lever-action .308 Win, unique rotary magazine, out of production
-browning_hi_power	browning_hi_power	direct	Research task b3_browning_winchester
-browning_bar_m1918	browning_bar_m1918	direct	Research task b3_browning_winchester
-browning_auto_5	browning_auto_5	direct	Research task b3_browning_winchester
-browning_m1919	browning_m1919	direct	Research task b3_browning_winchester
-browning_m2hb	browning_m2hb	direct	Research task b3_browning_winchester
-browning_blr	browning_blr	direct	Research task b3_browning_winchester
-browning_buck_mark	browning_buck_mark	direct	Research task b3_browning_winchester
-browning_x_bolt	browning_x_bolt	direct	Research task b3_browning_winchester
-browning_silver	browning_silver	direct	Research task b3_browning_winchester
-browning_leverage	browning_leverage	direct	Research task b3_browning_winchester
-browning_a_bolt	browning_a_bolt	direct	Research task b3_browning_winchester
-browning_citori	browning_citori	direct	Research task b3_browning_winchester
-browning_cynergy	browning_cynergy	direct	Research task b3_browning_winchester
-browning_maxus	browning_maxus	direct	Research task b3_browning_winchester
-browning_sweet_sixteen	browning_sweet_sixteen	direct	Research task b3_browning_winchester
-winchester_model_70_308	winchester_model_70_308	direct	Research task b3_browning_winchester
-winchester_model_70_300wm	winchester_model_70_300wm	direct	Research task b3_browning_winchester
-winchester_model_94	winchester_model_94	direct	Research task b3_browning_winchester
-winchester_model_12	winchester_model_12	direct	Research task b3_browning_winchester
-winchester_sxp	winchester_sxp	direct	Research task b3_browning_winchester
-winchester_model_1300	winchester_model_1300	direct	Research task b3_browning_winchester
-winchester_super_x	winchester_super_x	direct	Research task b3_browning_winchester
-winchester_wildcat	winchester_wildcat	direct	Research task b3_browning_winchester
-winchester_model_1887	winchester_model_1887	direct	Research task b3_browning_winchester
-winchester_model_1897	winchester_model_1897	direct	Research task b3_browning_winchester
-winchester_model_88	winchester_model_88	direct	Research task b3_browning_winchester
-winchester_model_100	winchester_model_100	direct	Research task b3_browning_winchester
-winchester_model_69	winchester_model_69	direct	Research task b3_browning_winchester
-winchester_model_52	winchester_model_52	direct	Research task b3_browning_winchester
-mossberg_500_12g	mossberg_500_12g	exact	Cruiser model, pistol grip
-mossberg_500_20g	mossberg_500_20g	exact	Cruiser model, pistol grip
-mossberg_500_tac	mossberg_500_tac	exact	Tactical model, 6-shot
-mossberg_hs410	mossberg_hs410	exact	Home Security model, .410 bore
-mossberg_500_atp	mossberg_500_atp	exact	All Terrain Pump, 12ga
-mossberg_590	mossberg_590	exact	20in barrel, military/police
-mossberg_590a1	mossberg_590a1	exact	Heavy barrel, MIL-SPEC
-mossberg_930	mossberg_930	exact	Semi-auto tactical
-mossberg_935	mossberg_935	exact	Semi-auto 3.5in magnum
-taurus_g2c	taurus_g2c	exact	Compact polymer 9mm
-taurus_g3c	taurus_g3c	exact	Updated compact polymer 9mm
-taurus_tx22	taurus_tx22	exact	.22 LR competition/training pistol
-taurus_judge	taurus_judge	exact	.45 Colt/.410 revolver
-taurus_raging_bull	taurus_raging_bull	exact	Large-frame magnum revolver
-taurus_pt92	taurus_pt92	exact	Beretta 92 clone, 9mm
-taurus_pt111	taurus_pt111	exact	Millennium G2, compact 9mm
-taurus_spectrum	taurus_spectrum	exact	Ultra-compact .380
-taurus_curve	taurus_curve	exact	Ergonomic curved .380
-taurus_tcp	taurus_tcp	exact	Ultra-compact .380 pocket pistol
-taurus_856	taurus_856	exact	6-shot .38 Special revolver
-taurus_605	taurus_605	exact	5-shot .357 Magnum snubnose
-taurus_pt1911	taurus_pt1911	exact	1911-pattern .45 ACP
 walther_pp	walther_pp_32acp	exact	Original police pistol 1929; 98mm barrel
 walther_ppk	walther_ppk_32acp	exact	Compact PPK; 83mm barrel; 1931
 walther_ppks	walther_ppks_380acp	exact	PPK/S US import; PP frame + PPK slide
@@ -628,7 +483,6 @@ walther_p99as	walther_p99as_9mm	exact	Anti-Stress trigger variant; 2004-2023
 walther_pps	walther_pps_9mm	exact	Slim concealed carry; 2007-present
 walther_ccp	walther_ccp_9mm	exact	Gas-delayed blowback; 2014-present; M2
 walther_pdp	walther_pdp_9mm	exact	Performance Duty Pistol; replaced PPQ; 2021-present
-walther_p22	walther_p22	exact	Rimfire trainer; 2002-present
 walther_q5sf	walther_q5sf_9mm	exact	PPQ-based competition model; 5" barrel
 walther_q4sf	walther_q4sf_9mm	exact	PPQ-based carry model; 4" barrel
 walther_sp22m2	walther_sp22_m2	exact	Sport/target pistol; 2008-2010
@@ -650,7 +504,6 @@ sa_m1a_scout_rfl	sa_m1a_scout	direct	M1A Scout Squad .308, 18in barrel, forward 
 sa_m1a_socom_rfl	sa_m1a_socom	direct	M1A SOCOM 16 .308, 16.25in barrel, muzzle brake
 sa_1911_a1_pst	sa_1911_a1	direct	1911 A1 .45 ACP, GI-spec, 5in barrel
 sa_1911_operator_pst	sa_1911_operator	direct	1911 Operator .45 ACP, picatinny rail, 5in barrel
-sa_1911_range_officer_pst	sa_1911_range_officer	direct	1911 Range Officer .45 ACP, target sights, 5in barrel
 sa_hellcat_pst	sa_hellcat	direct	Hellcat OSP 9mm micro-compact, 3in barrel, 11+1rd
 sa_hellcat_pro_pst	sa_hellcat_pro	direct	Hellcat Pro 9mm, 3.7in barrel, 15+1rd
 sa_xd9_pst	sa_xd9	direct	XD-9 Service Model, 4in barrel, 16+1rd
@@ -658,25 +511,17 @@ sa_xdm_525_pst	sa_xdm_525	direct	XD-M 5.25 Competition 9mm, 5.25in barrel
 sa_xds_9mm_pst	sa_xds	direct	XD-S 9mm single-stack, 3.3in barrel, 7+1rd
 sa_xde_9mm_pst	sa_xde	direct	XD-E 9mm DA/SA hammer-fired, 3.3in barrel
 sa_saint_rfl	sa_saint	direct	SAINT 5.56 AR-15 style, 16in barrel, 1:7 twist
-sa_saint_edge_308_rfl	sa_saint_edge_308	direct	SAINT Edge .308 AR-10 style, 16in barrel
 sa_ronin_45_pst	sa_ronin	direct	1911 Ronin .45 ACP, 5in barrel, two-tone
 sa_emp_9mm_pst	sa_emp	direct	EMP 9mm Enhanced Micro Pistol, 1911 compact, 3in barrel
 sa_911_380_pst	sa_911	direct	911 .380 ACP micro 1911-style, 2.7in barrel
 kimber_micro9_pst	kimber_micro9	direct	Micro 9 9mm micro 1911-style, 3.15in barrel
 kimber_micro_380_pst	kimber_micro_380	direct	Micro .380 ACP micro 1911-style, 2.7in barrel
 kimber_custom_ii_pst	kimber_custom_ii	direct	Custom II .45 ACP 1911, 5in barrel
-kimber_stainless_ii_pst	kimber_stainless_ii	direct	Stainless II .45 ACP 1911, brushed stainless, 5in barrel
 kimber_tle_rl_ii_pst	kimber_tle_rl_ii	direct	TLE/RL II .45 ACP 1911, rail, 5in barrel, LAPD SWAT
-kimber_pro_carry_hd_pst	kimber_pro_carry_hd	direct	Pro Carry HD .45 ACP 1911, 4in barrel, aluminum frame
-kimber_ultra_carry_ii_pst	kimber_ultra_carry_ii	direct	Ultra Carry II .45 ACP 1911, 3in barrel
 kimber_raptor_ii_pst	kimber_raptor_ii	direct	Raptor II .45 ACP 1911, scaled serrations, 5in barrel
 kimber_solo_9mm_pst	kimber_solo	direct	Solo 9mm polymer micro-compact DA/SA, 2.7in barrel
 kimber_k6s_dcr_rev	kimber_k6s_dcr	direct	K6s DCR .357 Mag snub-nose revolver, 2in barrel, DAO
-kimber_k6s_target_rev	kimber_k6s_target	direct	K6s Target .357 Mag revolver, 4in barrel
-kimber_evo_sp_9mm_pst	kimber_evo_sp	direct	EVO SP 9mm compact 1911-style, 3in barrel
-kimber_rapide_black_ice_pst	kimber_rapide_black_ice	direct	Rapide Black Ice .45 ACP 1911, 5in barrel
 kimber_warrior_pst	kimber_warrior	direct	Warrior .45 ACP 1911, 5in barrel, mil-spec
-kimber_desert_warrior_pst	kimber_desert_warrior	direct	Desert Warrior .45 ACP 1911, tan finish, 5in barrel
 weatherby_mkv_300wm	wby_mkv_300wm	researched	Mark V .300 Win Mag — 9-lug magnum action, 26" barrel standard, 1:10" RH twist
 weatherby_mkv_338lapua	wby_mkv_338lapua	researched	Mark V .338 Lapua — custom shop offering, heavy contour barrel
 weatherby_mkv_3006	wby_mkv_3006	researched	Mark V .30-06 — 6-lug standard action, 24" barrel
@@ -687,41 +532,8 @@ weatherby_vang_308	wby_vang_308	researched	Vanguard .308 Win — Howa 1500 actio
 weatherby_vang_65creed	wby_vang_65creed	researched	Vanguard 6.5 Creedmoor — Howa 1500 short action
 weatherby_vang_3006	wby_vang_3006	researched	Vanguard .30-06 — Howa 1500 long action
 weatherby_vang_300wm	wby_vang_300wm	researched	Vanguard .300 Win Mag — Howa 1500 long action magnum
-nri_type56	nri_type56	exact	Norinco Type 56 assault rifle (7.62×39mm) — milled/stamped receiver AK copy with spike bayonet
 nri_type56_1	nri_type56	derived	Type 56-1 underfolding stock variant (7.62×39mm) — bayonet removed
 nri_type56_2	nri_type56	derived	Type 56-2 side-folding stock variant (7.62×39mm) — introduced 1980
-nri_type81	nri_type81	exact	Norinco Type 81 assault rifle (7.62×39mm) — short-stroke piston, Chinese indigenous design
-nri_qbz95	nri_qbz95	exact	QBZ-95 / Type 95 bullpup assault rifle (5.8×42mm) — PLA standard service rifle 1997-present
-nri_qbz03	nri_qbz03	exact	QBZ-03 / Type 03 conventional-layout assault rifle (5.8×42mm) — folding stock
-nri_qbu88	nri_qbu88	exact	QBU-88 / Type 88 designated marksman rifle (5.8×42mm) — bullpup DMR
-nri_type79_smg	nri_type79_smg	exact	Type 79 submachine gun (7.62×25mm) — gas-operated closed-bolt SMG
-nri_type85_smg	nri_type85_smg	exact	Type 85 submachine gun (7.62×25mm) — blowback open-bolt SMG, replaced Type 79
-nri_type54	nri_type54	exact	Type 54 pistol / Tokarev TT-33 copy (7.62×25mm) — service pistol 1954-present
-nri_type64_pistol	nri_type64_pistol	exact	Type 64 pistol (7.62×17mm) — first indigenously designed Chinese pistol
-nri_type64_silenced	nri_type64_silenced	exact	Type 64 silenced pistol (7.65×17mm) — integrally suppressed, PLA special forces
-nri_cf98	nri_cf98	exact	CF98 / QSZ-92 export pistol (9×19mm) — Beretta 92-inspired rotating barrel lock
-nri_qsz92	nri_qsz92	exact	QSZ-92 / Type 92 pistol (5.8×21mm) — PLA service pistol
-nri_1911a1	nri_1911a1	exact	Norinco 1911A1 copy (.45 ACP) — Chinese clone of Colt M1911A1
-nri_sks	nri_sks	exact	Norinco Type 56 carbine / SKS copy (7.62×39mm) — semi-automatic carbine
-nri_type84	nri_type84	exact	Type 84 export AK (5.56×45mm) — Type 56 rechambered for NATO 5.56
-canik_tp9_sf	canik_tp9_sf	exact	Canik TP9 SF (9×19mm) — striker-fired duty pistol, Walther P99 derived
-canik_tp9_sfx	canik_tp9_sfx	derived	Canik TP9 SFx (9×19mm) — long-slide competition variant
-canik_tp9_elite	canik_tp9_elite	derived	Canik TP9 Elite (9×19mm) — compact/subcompact concealed carry
-canik_tp9_sa	canik_tp9_sa	derived	Canik TP9 SA (9×19mm) — single-action striker-fired with decocker
-canik_mete_sf	canik_mete_sf	exact	Canik Mete SF (9×19mm) — updated METE series compact
-canik_mete_sft	canik_mete_sft	derived	Canik Mete SFT (9×19mm) — full-size METE series
-canik_mete_mc9	canik_mete_mc9	exact	Canik Mete MC9 (9×19mm) — micro-compact METE, 12+1 capacity
-canik_rival	canik_rival	exact	Canik Rival (9×19mm) — competition pistol, optics-ready
-canik_rival_s	canik_rival_s	derived	Canik Rival-S (9×19mm) — steel-frame Rival for competition
-canik_elite_combat	canik_elite_combat	derived	Canik Elite Combat (9×19mm) — threaded barrel combat model
-canik_executive	canik_executive	derived	Canik Executive (9×19mm) — distributor-exclusive upgraded SFx
-canik_tp9_sfx_mete	canik_tp9_sfx_mete	derived	Canik TP9 SFx METE (9×19mm) — METE-upgraded SFx competition
-tur_sar_b6	tur_sar_b6	exact	SAR USA / Sarsilmaz B6 (9×19mm) — compact CZ-75 clone
-tur_sar9	tur_sar9	exact	SAR 9 (9×19mm) — Sarsilmaz modern striker-fired duty pistol
-tur_sar2000	tur_sar2000	exact	SAR 2000 (9×19mm) — CZ-75 based full-size service pistol
-tur_tisas_1911a1	tur_tisas_1911a1	exact	Tisas 1911A1 (.45 ACP) — Turkish M1911A1 clone
-tur_tisas_zigana	tur_tisas_zigana	exact	Tisas Zigana (9×19mm) — Turkish-patented double-stack pistol family
-tur_girsan_mc9	tur_girsan_mc9	exact	Girsan MC9 (9×19mm) — Beretta 92 clone, full-size service pistol
 weatherby_sa08_12ga	wby_sa08_12ga	researched	SA-08 12ga — semi-auto shotgun, Turkish-made by ATA Arms, now discontinued
 weatherby_sa459_12ga	wby_sa459_12ga	estimated	SA-459 12ga — tactical semi-auto shotgun, 18.5" barrel, picatinny rail
 weatherby_pa459_12ga	wby_pa459_12ga	estimated	PA-459 12ga — pump-action tactical shotgun, 18.5" barrel
@@ -729,1353 +541,72 @@ weatherby_element_12ga	wby_element_12ga	researched	Element 12ga — inertia semi
 weatherby_orion_12ga	wby_orion_12ga	researched	Orion 12ga — over/under boxlock shotgun
 weatherby_athena_12ga	wby_athena_12ga	estimated	Athena 12ga — premium over/under shotgun, grade IV/V walnut
 weatherby_firstlite_22lr	wby_firstlite_22lr	researched	First Lite .22 LR — bolt-action rimfire, 16.5" threaded barrel
-weatherby_backcountry_308	wby_backcountry_308	researched	Backcountry 2.0 .308 Win — carbon fiber stock, lightweight mountain rifle
 danwesson_715_357	dw_715_357	researched	Dan Wesson 715 .357 Mag — interchangeable barrel system, 6" barrel common
 danwesson_valor_45	dw_valor_45	researched	Dan Wesson Valor .45 ACP — government-size 1911, forged frame & slide
 danwesson_specialist_45	dw_specialist_45	researched	Dan Wesson Specialist .45 ACP — tactical 1911 with rail
 danwesson_bruin_45	dw_bruin_45	researched	Dan Wesson Bruin .45 ACP — long-slide 1911, 6" barrel
 danwesson_wraith_45	dw_wraith_45	estimated	Dan Wesson Wraith .45 ACP — 1911 with Vortex optic cut, threaded barrel
 danwesson_guardian_9mm	dw_guardian_9mm	researched	Dan Wesson Guardian 9mm — bobtail 1911, 4.25" barrel
-danwesson_guardian_38super	dw_guardian_38super	researched	Dan Wesson Guardian .38 Super — bobtail 1911
 danwesson_discretion_9mm	dw_discretion_9mm	researched	Dan Wesson Discretion 9mm — compact 1911, 4" barrel, bobtail
 danwesson_dwx_9mm	dw_dwx_9mm	researched	DWX 9mm — CZ/Dan Wesson collaboration, CZ-75 hybrid frame with 1911 trigger
-kahr_cm9	kahr_cm9	researched	Kahr CM9 — economy subcompact 9mm, polymer frame, 3" barrel
-kahr_pm9	kahr_pm9	researched	Kahr PM9 — premium subcompact 9mm, polymer frame, polygonal rifling
-kahr_cw9	kahr_cw9	researched	Kahr CW9 — economy midsize 9mm, polymer frame, 3.6" barrel
-kahr_p380	kahr_p380	researched	Kahr P380 — premium subcompact .380 ACP, polymer frame
-kahr_cw380	kahr_cw380	researched	Kahr CW380 — economy subcompact .380 ACP, polymer frame
-kahr_k9	kahr_k9	researched	Kahr K9 — original full-steel compact 9mm, 3.6" barrel
-kahr_t9	kahr_t9	researched	Kahr T9 — full-size steel-frame 9mm, 4" barrel, target sights
-kahr_mk9	kahr_mk9	researched	Kahr MK9 — subcompact steel-frame 9mm, 3" barrel
 highstandard_hdm_22lr	hs_hdm_22lr	researched	High Standard HDM .22 LR — OSS-issue suppressed pistol, WWII
-highstandard_supermatic_22lr	hs_supermatic_22lr	researched	High Standard Supermatic Citation — Olympic-grade target pistol
 highstandard_victor_22lr	hs_victor_22lr	researched	High Standard Victor — target pistol with barrel rib and micro-adj sights
-highstandard_derringer_22mag	hs_derringer_22mag	researched	High Standard Derringer .22 Mag — double-barrel break-action derringer
 iverjohnson_tp22	ij_tp22	estimated	Iver Johnson TP22 — pocket semi-auto, 2.5" barrel
 iverjohnson_tp25	ij_tp25	estimated	Iver Johnson TP25 — pocket semi-auto, 2.5" barrel
 iverjohnson_38sw_rev	ij_38sw_rev	estimated	Iver Johnson .38 S&W revolver — top-break Safety Automatic, 3" barrel
-autoord_thompson_m1_45	ao_thompson_m1_45	researched	Auto-Ordnance Thompson M1 .45 ACP — semi-automatic replica, closed-bolt
 autoord_1911c_45	ao_1911c_45	estimated	Auto-Ordnance 1911C .45 ACP — compact 1911, 4.25" barrel
 autoord_1911a1_45	ao_1911a1_45	researched	Auto-Ordnance 1911A1 .45 ACP — WW2-style mil-spec 1911
-amt_automag2_22wmr	amt_automag2_22wmr	researched	AMT Automag II .22 WMR — stainless steel semi-auto, 6" barrel
-amt_automag3_30carbine	amt_automag3_30carbine	researched	AMT Automag III .30 Carbine — stainless semi-auto
-amt_automag4_45winmag	amt_automag4_45winmag	researched	AMT Automag IV .45 Win Mag — stainless semi-auto
-amt_hardballer_45	amt_hardballer_45	researched	AMT Hardballer .45 ACP — all-stainless 1911, 5" barrel
-charterarms_undercover_38	charter_undercover_38	researched	Charter Arms Undercover .38 Spl — 5-shot snubnose revolver
-charterarms_bulldog_44spl	charter_bulldog_44spl	researched	Charter Arms Bulldog .44 Spl — 5-shot snubnose, 2.5" barrel
 charterarms_pitbull_9mm	charter_pitbull_9mm	researched	Charter Arms Pitbull 9mm — 5-shot revolver with moon-clip-free extraction
-tur_retay_mas	tur_retay_mas	exact	Retay Mas (12 Gauge) — Turkish semi-auto shotgun
-tur_armsan	tur_armsan	exact	Armsan shotgun (12 Gauge) — Turkish semi-auto/break-action shotgun
-tur_hatsan_escort	tur_hatsan_escort	exact	Hatsan Escort (12 Gauge) — Turkish semi-auto shotgun
-tur_stoeger	tur_stoeger	exact	Stoeger (12 Gauge) — Benelli-owned Turkish shotgun / pistol manufacturer
-m1_garand	m1_garand	exact	Catalog primary key (Batch 4)
-m1_carbine	m1_carbine	exact	Catalog primary key (Batch 4)
-thompson_m1a1	thompson_m1a1	exact	Catalog primary key (Batch 4)
-m3_grease_gun	m3_grease_gun	exact	Catalog primary key (Batch 4)
-mg34	mg34	exact	Catalog primary key (Batch 4)
-mg42	mg42	exact	Catalog primary key (Batch 4)
-mp40	mp40	exact	Catalog primary key (Batch 4)
-k98k	k98k	exact	Catalog primary key (Batch 4)
-fg42	fg42	exact	Catalog primary key (Batch 4)
-ppsh41	ppsh41	exact	Catalog primary key (Batch 4)
-mosin_nagant	mosin_nagant	exact	Catalog primary key (Batch 4)
-svt40	svt40	exact	Catalog primary key (Batch 4)
-dp27	dp27	exact	Catalog primary key (Batch 4)
-heckler_koch_hk416_10	heckler_koch_hk416_10	exact	Catalog primary key (Batch 4)
-heckler_koch_hk416_165	heckler_koch_hk416_165	exact	Catalog primary key (Batch 4)
-heckler_koch_hk417_13	heckler_koch_hk417_13	exact	Catalog primary key (Batch 4)
-heckler_koch_hk417_20	heckler_koch_hk417_20	exact	Catalog primary key (Batch 4)
-fn_herstal_scar_l_10	fn_herstal_scar_l_10	exact	Catalog primary key (Batch 4)
-fn_herstal_scar_l_18	fn_herstal_scar_l_18	exact	Catalog primary key (Batch 4)
-fn_herstal_scar_h_13	fn_herstal_scar_h_13	exact	Catalog primary key (Batch 4)
-fn_herstal_scar_h_20	fn_herstal_scar_h_20	exact	Catalog primary key (Batch 4)
-steyr_aug_16	steyr_aug_16	exact	Catalog primary key (Batch 4)
-degtyaryov_plant_rpk_16_lb	degtyaryov_plant_rpk_16_lb	exact	Catalog primary key (Batch 4)
-heckler_koch_hk416_20	heckler_koch_hk416_20	exact	Catalog primary key (Batch 4)
-fn_herstal_scar_l_cqc	fn_herstal_scar_l_cqc	exact	Catalog primary key (Batch 4)
-fn_herstal_scar_l_lb	fn_herstal_scar_l_lb	exact	Catalog primary key (Batch 4)
-fn_herstal_scar_h_cqc	fn_herstal_scar_h_cqc	exact	Catalog primary key (Batch 4)
-fn_herstal_scar_h_lb	fn_herstal_scar_h_lb	exact	Catalog primary key (Batch 4)
-barrett_m82_m107_cqc	barrett_m82_m107_cqc	exact	Catalog primary key (Batch 4)
-kalashnikov_concern_ak_12_k	kalashnikov_concern_ak_12_k	exact	Catalog primary key (Batch 4)
-degtyaryov_plant_rpk_16_short	degtyaryov_plant_rpk_16_short	exact	Catalog primary key (Batch 4)
-knight_s_armament_sr_25_20	knight_s_armament_sr_25_20	exact	Catalog primary key (Batch 4)
-knight_s_armament_sr_25_16	knight_s_armament_sr_25_16	exact	Catalog primary key (Batch 4)
-sako_trg_22_short	sako_trg_22_short	exact	Catalog primary key (Batch 4)
-sako_trg_42_short	sako_trg_42_short	exact	Catalog primary key (Batch 4)
-remington_m700_hvy	remington_m700_hvy	exact	Catalog primary key (Batch 4)
-fb_radom_msbs_grot	fb_radom_msbs_grot	exact	Catalog primary key (Batch 4)
-M4	M4	exact	Catalog primary key (Batch 4)
-g3a4	g3a4	exact	Catalog primary key (Batch 4)
-g3sg1	g3sg1	exact	Catalog primary key (Batch 4)
-g3ka4	g3ka4	exact	Catalog primary key (Batch 4)
-hk416_145	hk416_145	exact	Catalog primary key (Batch 4)
-hk416_165	hk416_165	exact	Catalog primary key (Batch 4)
-hk417_16	hk417_16	exact	Catalog primary key (Batch 4)
-hk417_20	hk417_20	exact	Catalog primary key (Batch 4)
-mp5a3	mp5a3	exact	Catalog primary key (Batch 4)
-ump40	ump40	exact	Catalog primary key (Batch 4)
-usp40	usp40	exact	Catalog primary key (Batch 4)
-usp45	usp45	exact	Catalog primary key (Batch 4)
-MCX Virtus	MCX Virtus	exact	Catalog primary key (Batch 4)
-MCX Rattler	MCX Rattler	exact	Catalog primary key (Batch 4)
-MCX Spear	MCX Spear	exact	Catalog primary key (Batch 4)
-SIG AMT	SIG AMT	exact	Catalog primary key (Batch 4)
-M2HB	M2HB	exact	Catalog primary key (Batch 4)
-M240B	M240B	exact	Catalog primary key (Batch 4)
-MAG 58	MAG 58	exact	Catalog primary key (Batch 4)
-sr22	sr22	exact	Catalog primary key (Batch 4)
-sr9	sr9	exact	Catalog primary key (Batch 4)
-sr9c	sr9c	exact	Catalog primary key (Batch 4)
-sr40	sr40	exact	Catalog primary key (Batch 4)
-sr45	sr45	exact	Catalog primary key (Batch 4)
-p89	p89	exact	Catalog primary key (Batch 4)
-p95	p95	exact	Catalog primary key (Batch 4)
-ruger_american_pistol_9mm	ruger_american_pistol_9mm	exact	Catalog primary key (Batch 4)
-ruger_american_pistol_45	ruger_american_pistol_45	exact	Catalog primary key (Batch 4)
-security_9	security_9	exact	Catalog primary key (Batch 4)
-lcp	lcp	exact	Catalog primary key (Batch 4)
-lcp_ii	lcp_ii	exact	Catalog primary key (Batch 4)
-lcp_max	lcp_max	exact	Catalog primary key (Batch 4)
-ec9s	ec9s	exact	Catalog primary key (Batch 4)
-lc9s	lc9s	exact	Catalog primary key (Batch 4)
-max_9	max_9	exact	Catalog primary key (Batch 4)
-gp100	gp100	exact	Catalog primary key (Batch 4)
-super_redhawk_44	super_redhawk_44	exact	Catalog primary key (Batch 4)
-super_redhawk_454	super_redhawk_454	exact	Catalog primary key (Batch 4)
-sp101	sp101	exact	Catalog primary key (Batch 4)
-lcr_38	lcr_38	exact	Catalog primary key (Batch 4)
-blackhawk	blackhawk	exact	Catalog primary key (Batch 4)
-vaquero	vaquero	exact	Catalog primary key (Batch 4)
-wrangler	wrangler	exact	Catalog primary key (Batch 4)
-ruger_1022	ruger_1022	exact	Catalog primary key (Batch 4)
-mini_14	mini_14	exact	Catalog primary key (Batch 4)
-mini_30	mini_30	exact	Catalog primary key (Batch 4)
-ruger_ar556	ruger_ar556	exact	Catalog primary key (Batch 4)
-ruger_american_308	ruger_american_308	exact	Catalog primary key (Batch 4)
-ruger_american_65	ruger_american_65	exact	Catalog primary key (Batch 4)
-ruger_american_22	ruger_american_22	exact	Catalog primary key (Batch 4)
-precision_rifle_308	precision_rifle_308	exact	Catalog primary key (Batch 4)
-precision_rifle_65	precision_rifle_65	exact	Catalog primary key (Batch 4)
-ranch_rifle	ranch_rifle	exact	Catalog primary key (Batch 4)
-gunsite_scout	gunsite_scout	exact	Catalog primary key (Batch 4)
-pc_carbine	pc_carbine	exact	Catalog primary key (Batch 4)
-pc_charger	pc_charger	exact	Catalog primary key (Batch 4)
-no_1	no_1	exact	Catalog primary key (Batch 4)
-m77_hawkeye	m77_hawkeye	exact	Catalog primary key (Batch 4)
-red_label	red_label	exact	Catalog primary key (Batch 4)
-gold_label	gold_label	exact	Catalog primary key (Batch 4)
-M&P9_M2_0	M&P9_M2_0	exact	Catalog primary key (Batch 4)
-M&P40	M&P40	exact	Catalog primary key (Batch 4)
-M&P45	M&P45	exact	Catalog primary key (Batch 4)
-M&P9_Compact	M&P9_Compact	exact	Catalog primary key (Batch 4)
-M&P9_Shield	M&P9_Shield	exact	Catalog primary key (Batch 4)
-Shield_Plus	Shield_Plus	exact	Catalog primary key (Batch 4)
-M&P9_Shield_EZ	M&P9_Shield_EZ	exact	Catalog primary key (Batch 4)
-M&P40_Shield_EZ	M&P40_Shield_EZ	exact	Catalog primary key (Batch 4)
-M&P_2_0_Compact	M&P_2_0_Compact	exact	Catalog primary key (Batch 4)
-M&P_2_0_Full	M&P_2_0_Full	exact	Catalog primary key (Batch 4)
-SD9_VE	SD9_VE	exact	Catalog primary key (Batch 4)
-SD40_VE	SD40_VE	exact	Catalog primary key (Batch 4)
-SW9	SW9	exact	Catalog primary key (Batch 4)
-SW40	SW40	exact	Catalog primary key (Batch 4)
-Bodyguard_380	Bodyguard_380	exact	Catalog primary key (Batch 4)
-Bodyguard_38	Bodyguard_38	exact	Catalog primary key (Batch 4)
-Model_29	Model_29	exact	Catalog primary key (Batch 4)
-Model_686	Model_686	exact	Catalog primary key (Batch 4)
-Model_19	Model_19	exact	Catalog primary key (Batch 4)
-Model_60	Model_60	exact	Catalog primary key (Batch 4)
-Model_36	Model_36	exact	Catalog primary key (Batch 4)
-Model_66	Model_66	exact	Catalog primary key (Batch 4)
-Model_640	Model_640	exact	Catalog primary key (Batch 4)
-Model_986	Model_986	exact	Catalog primary key (Batch 4)
-Governor	Governor	exact	Catalog primary key (Batch 4)
-M&P15	M&P15	exact	Catalog primary key (Batch 4)
-M&P15_22	M&P15_22	exact	Catalog primary key (Batch 4)
-M&P10	M&P10	exact	Catalog primary key (Batch 4)
-M&P15_Sport_II	M&P15_Sport_II	exact	Catalog primary key (Batch 4)
-Model_39	Model_39	exact	Catalog primary key (Batch 4)
-Model_59	Model_59	exact	Catalog primary key (Batch 4)
-Model_645	Model_645	exact	Catalog primary key (Batch 4)
-Model_1006	Model_1006	exact	Catalog primary key (Batch 4)
-Model_4506	Model_4506	exact	Catalog primary key (Batch 4)
-walther_ppk_380acp	walther_ppk_380acp	exact	Catalog primary key (Batch 4)
-mauser_hsc_380acp	mauser_hsc_380acp	exact	Catalog primary key (Batch 4)
-sako_trg_62	sako_trg_62	exact	Catalog primary key (Batch 4)
-sako_a7_308	sako_a7_308	exact	Catalog primary key (Batch 4)
-sako_a7_300wm	sako_a7_300wm	exact	Catalog primary key (Batch 4)
-tikka_t3x_lite_308	tikka_t3x_lite_308	exact	Catalog primary key (Batch 4)
-tikka_t3x_tact_308	tikka_t3x_tact_308	exact	Catalog primary key (Batch 4)
-tikka_t1x_mtr	tikka_t1x_mtr	exact	Catalog primary key (Batch 4)
-valmet_rk62	valmet_rk62	exact	Catalog primary key (Batch 4)
-valmet_rk71	valmet_rk71	exact	Catalog primary key (Batch 4)
-valmet_rk76	valmet_rk76	exact	Catalog primary key (Batch 4)
-valmet_m78_762	valmet_m78_762	exact	Catalog primary key (Batch 4)
-howa_1500_308	howa_1500_308	exact	Catalog primary key (Batch 4)
-howa_m1500_6_5cm	howa_m1500_6_5cm	exact	Catalog primary key (Batch 4)
-howa_type89	howa_type89	exact	Catalog primary key (Batch 4)
-howa_hogue_308	howa_hogue_308	exact	Catalog primary key (Batch 4)
-kac_sr15_mod2_115	kac_sr15_mod2_115	exact	Catalog primary key (Batch 4)
-kac_sr15_mod2_145	kac_sr15_mod2_145	exact	Catalog primary key (Batch 4)
-kac_sr15_mod2_16	kac_sr15_mod2_16	exact	Catalog primary key (Batch 4)
-kac_sr25_20	kac_sr25_20	exact	Catalog primary key (Batch 4)
-kac_sr25_ecc	kac_sr25_ecc	exact	Catalog primary key (Batch 4)
-kac_pdw	kac_pdw	exact	Catalog primary key (Batch 4)
-kac_sr16_cqb	kac_sr16_cqb	exact	Catalog primary key (Batch 4)
-lmt_mars_l	lmt_mars_l	exact	Catalog primary key (Batch 4)
-lmt_mars_h	lmt_mars_h	exact	Catalog primary key (Batch 4)
-lmt_cqb_mrp_556	lmt_cqb_mrp_556	exact	Catalog primary key (Batch 4)
-lmt_cqb_mrp_762	lmt_cqb_mrp_762	exact	Catalog primary key (Batch 4)
-lmt_lm308mws	lmt_lm308mws	exact	Catalog primary key (Batch 4)
-dd_ddm4_v7	dd_ddm4_v7	exact	Catalog primary key (Batch 4)
-dd_m4a1_ris2	dd_m4a1_ris2	exact	Catalog primary key (Batch 4)
-dd_ddm4_pdw	dd_ddm4_pdw	exact	Catalog primary key (Batch 4)
-dd_dd5_v4	dd_dd5_v4	exact	Catalog primary key (Batch 4)
-dd_dd5_v5	dd_dd5_v5	exact	Catalog primary key (Batch 4)
-dd_mk18	dd_mk18	exact	Catalog primary key (Batch 4)
-fb_radom_beryl	fb_radom_beryl	exact	Catalog primary key (Batch 4)
-fb_radom_mini_beryl	fb_radom_mini_beryl	exact	Catalog primary key (Batch 4)
-fb_radom_vis_100	fb_radom_vis_100	exact	Catalog primary key (Batch 4)
-fb_radom_oniks	fb_radom_oniks	exact	Catalog primary key (Batch 4)
-cugir_wasr_10	cugir_wasr_10	exact	Catalog primary key (Batch 4)
-cugir_draco	cugir_draco	exact	Catalog primary key (Batch 4)
-cugir_psl	cugir_psl	exact	Catalog primary key (Batch 4)
-cugir_pm_md_63	cugir_pm_md_63	exact	Catalog primary key (Batch 4)
-cugir_rh_10	cugir_rh_10	exact	Catalog primary key (Batch 4)
-arsenal_ar_m1	arsenal_ar_m1	exact	Catalog primary key (Batch 4)
-arsenal_ar_m4sf	arsenal_ar_m4sf	exact	Catalog primary key (Batch 4)
-arsenal_ar_m9	arsenal_ar_m9	exact	Catalog primary key (Batch 4)
-arsenal_sam7r	arsenal_sam7r	exact	Catalog primary key (Batch 4)
-arsenal_slr_95	arsenal_slr_95	exact	Catalog primary key (Batch 4)
-arsenal_ak47_circle10	arsenal_ak47_circle10	exact	Catalog primary key (Batch 4)
-kel_tec_ks7	kel_tec_ks7	exact	Catalog primary key (Batch 4)
-kel_tec_rdb	kel_tec_rdb	exact	Catalog primary key (Batch 4)
-kel_tec_rfb	kel_tec_rfb	exact	Catalog primary key (Batch 4)
-kel_tec_sub2000_9mm	kel_tec_sub2000_9mm	exact	Catalog primary key (Batch 4)
-kel_tec_cmr30	kel_tec_cmr30	exact	Catalog primary key (Batch 4)
-kel_tec_p50	kel_tec_p50	exact	Catalog primary key (Batch 4)
-kel_tec_su16	kel_tec_su16	exact	Catalog primary key (Batch 4)
-henry_big_boy_steel_357	henry_big_boy_steel_357	exact	Catalog primary key (Batch 4)
-henry_big_boy_x_357	henry_big_boy_x_357	exact	Catalog primary key (Batch 4)
-henry_golden_boy_22	henry_golden_boy_22	exact	Catalog primary key (Batch 4)
-henry_all_weather_357	henry_all_weather_357	exact	Catalog primary key (Batch 4)
-henry_long_ranger_223	henry_long_ranger_223	exact	Catalog primary key (Batch 4)
-henry_3030_classic	henry_3030_classic	exact	Catalog primary key (Batch 4)
-henry_single_shot_308	henry_single_shot_308	exact	Catalog primary key (Batch 4)
-hi_point_995_9mm	hi_point_995_9mm	exact	Catalog primary key (Batch 4)
-hi_point_1095_10mm	hi_point_1095_10mm	exact	Catalog primary key (Batch 4)
-hi_point_4595_45acp	hi_point_4595_45acp	exact	Catalog primary key (Batch 4)
-tc_encore_308	tc_encore_308	exact	Catalog primary key (Batch 4)
-tc_compass_308	tc_compass_308	exact	Catalog primary key (Batch 4)
-star_z70b	star_z70b	exact	Catalog primary key (Batch 4)
-star_z84	star_z84	exact	Catalog primary key (Batch 4)
-star_bm	star_bm	exact	Catalog primary key (Batch 4)
-star_pdri	star_pdri	exact	Catalog primary key (Batch 4)
-astra_a80	astra_a80	exact	Catalog primary key (Batch 4)
-astra_a90	astra_a90	exact	Catalog primary key (Batch 4)
-astra_a100	astra_a100	exact	Catalog primary key (Batch 4)
-astra_constable	astra_constable	exact	Catalog primary key (Batch 4)
-astra_falcon	astra_falcon	exact	Catalog primary key (Batch 4)
-llama_omni	llama_omni	exact	Catalog primary key (Batch 4)
-llama_ixa	llama_ixa	exact	Catalog primary key (Batch 4)
-llama_xv	llama_xv	exact	Catalog primary key (Batch 4)
-llama_comanche	llama_comanche	exact	Catalog primary key (Batch 4)
-llama_especial	llama_especial	exact	Catalog primary key (Batch 4)
-cetme_modelc	cetme_modelc	exact	Catalog primary key (Batch 4)
-cetme_modell	cetme_modell	exact	Catalog primary key (Batch 4)
-cetme_modellc	cetme_modellc	exact	Catalog primary key (Batch 4)
-cetme_ameli	cetme_ameli	exact	Catalog primary key (Batch 4)
-iwi_tavor_7	iwi_tavor_7	exact	Catalog primary key (Batch 4)
-iwi_tavor_ts12	iwi_tavor_ts12	exact	Catalog primary key (Batch 4)
-iwi_galil_ace_556	iwi_galil_ace_556	exact	Catalog primary key (Batch 4)
-iwi_galil_ace_762	iwi_galil_ace_762	exact	Catalog primary key (Batch 4)
-iwi_galil_ace_308	iwi_galil_ace_308	exact	Catalog primary key (Batch 4)
-iwi_galil_ace_gen2	iwi_galil_ace_gen2	exact	Catalog primary key (Batch 4)
-iwi_uzi_pro	iwi_uzi_pro	exact	Catalog primary key (Batch 4)
-iwi_negev_ng7	iwi_negev_ng7	exact	Catalog primary key (Batch 4)
-iwi_carmel	iwi_carmel	exact	Catalog primary key (Batch 4)
-bt_apc223	bt_apc223	exact	Catalog primary key (Batch 4)
-bt_apc308	bt_apc308	exact	Catalog primary key (Batch 4)
-bt_apc9	bt_apc9	exact	Catalog primary key (Batch 4)
-bt_apc300	bt_apc300	exact	Catalog primary key (Batch 4)
-bt_spr300	bt_spr300	exact	Catalog primary key (Batch 4)
-bt_ghm9	bt_ghm9	exact	Catalog primary key (Batch 4)
-bt_tp9	bt_tp9	exact	Catalog primary key (Batch 4)
-bt_mp9	bt_mp9	exact	Catalog primary key (Batch 4)
 RH_mateba	mateba_autorevolver	exact	Mateba Autorevolver 9×19mm, 152.4mm barrel, ACE3 extraction
 gm_mp2_base	sterling_l2a3	exact	Sterling L2A3 9×19mm, 250mm barrel, GM mod ACE3 extraction
 SPEX_Sten_Mk5	sten_mk5	exact	Sten Mk5 9×19mm, 196mm barrel, SPEX mod ACE3 extraction
-acr_762_bushmaster	acr_762_bushmaster	exact	Catalog primary key
-acr_bushmaster	acr_bushmaster	exact	Catalog primary key
-ak63_feg	ak63_feg	exact	Catalog primary key
-amd63_feg	amd63_feg	exact	Catalog primary key
-amd65_feg	amd65_feg	exact	Catalog primary key
-aug_a3	aug_a3	exact	Catalog primary key
-b9r_feg	b9r_feg	exact	Catalog primary key
-blaser_r8_pro_300wm	blaser_r8_pro_300wm	exact	Catalog primary key
-blaser_r8_pro_308	blaser_r8_pro_308	exact	Catalog primary key
-blaser_r8_pro_65creed	blaser_r8_pro_65creed	exact	Catalog primary key
-blaser_r93_lrs2_308	blaser_r93_lrs2_308	exact	Catalog primary key
-blaser_r93_t2_300wm	blaser_r93_t2_300wm	exact	Catalog primary key
-blaser_r93_t2_338lm	blaser_r93_t2_338lm	exact	Catalog primary key
-carbon_15_bushmaster	carbon_15_bushmaster	exact	Catalog primary key
-cp1_stkin	cp1_stkin	exact	Catalog primary key
-cr21_vektor	cr21_vektor	exact	Catalog primary key
-daewoo_k14	daewoo_k14	exact	Catalog primary key
-daewoo_k1a	daewoo_k1a	exact	Catalog primary key
-daewoo_k2	daewoo_k2	exact	Catalog primary key
-daewoo_k2c	daewoo_k2c	exact	Catalog primary key
-daewoo_k3	daewoo_k3	exact	Catalog primary key
-daewoo_k7	daewoo_k7	exact	Catalog primary key
-daewoo_usas_12	daewoo_usas_12	exact	Catalog primary key
-dsa_sa58_fal_21pbr	dsa_sa58_fal_21pbr	exact	Catalog primary key
-dsa_sa58_fal_carbine	dsa_sa58_fal_carbine	exact	Catalog primary key
-dsa_sa58_fal_para	dsa_sa58_fal_para	exact	Catalog primary key
-dsa_sa58_fal_std	dsa_sa58_fal_std	exact	Catalog primary key
-dsa_sa58_osw	dsa_sa58_osw	exact	Catalog primary key
-dsa_sa58_rpc	dsa_sa58_rpc	exact	Catalog primary key
-dsa_xm16a1	dsa_xm16a1	exact	Catalog primary key
-dsa_zm4	dsa_zm4	exact	Catalog primary key
-fix_q	fix_q	exact	Catalog primary key
-honey_badger_q	honey_badger_q	exact	Catalog primary key
-kgp9_feg	kgp9_feg	exact	Catalog primary key
-m4_type_bushmaster	m4_type_bushmaster	exact	Catalog primary key
-m6_survival_chiappa	m6_survival_chiappa	exact	Catalog primary key
-m9_chiappa	m9_chiappa	exact	Catalog primary key
-mke_g3	mke_g3	exact	Catalog primary key
-mke_g3a4	mke_g3a4	exact	Catalog primary key
-mke_knt_76	mke_knt_76	exact	Catalog primary key
-mke_mpt_55	mke_mpt_55	exact	Catalog primary key
-mke_mpt_76	mke_mpt_76	exact	Catalog primary key
-mke_mpt_76_k	mke_mpt_76_k	exact	Catalog primary key
-moe_bushmaster	moe_bushmaster	exact	Catalog primary key
-mp5sd	mp5sd	exact	Catalog primary key
-ngm81_feg	ngm81_feg	exact	Catalog primary key
-nri_type56_1	nri_type56_1	exact	Catalog primary key
-nri_type56_2	nri_type56_2	exact	Catalog primary key
-ntw145_vektor	ntw145_vektor	exact	Catalog primary key
-ntw20_vektor	ntw20_vektor	exact	Catalog primary key
-orc_bushmaster	orc_bushmaster	exact	Catalog primary key
-pa63_feg	pa63_feg	exact	Catalog primary key
-qrc_bushmaster	qrc_bushmaster	exact	Catalog primary key
-r4_vektor	r4_vektor	exact	Catalog primary key
-r5_vektor	r5_vektor	exact	Catalog primary key
-r61_feg	r61_feg	exact	Catalog primary key
-r6_vektor	r6_vektor	exact	Catalog primary key
-raccoon_q	raccoon_q	exact	Catalog primary key
-rhino_20ds_chiappa	rhino_20ds_chiappa	exact	Catalog primary key
-rhino_30ds_chiappa	rhino_30ds_chiappa	exact	Catalog primary key
-rhino_40ds_chiappa	rhino_40ds_chiappa	exact	Catalog primary key
-rhino_60ds_chiappa	rhino_60ds_chiappa	exact	Catalog primary key
-rob_m96_expeditionary	rob_m96_expeditionary	exact	Catalog primary key
-rob_m96_recon	rob_m96_recon	exact	Catalog primary key
-rob_xcr_l_762x39	rob_xcr_l_762x39	exact	Catalog primary key
-rob_xcr_l_micro	rob_xcr_l_micro	exact	Catalog primary key
-rob_xcr_l_std	rob_xcr_l_std	exact	Catalog primary key
-rob_xcr_m	rob_xcr_m	exact	Catalog primary key
-sar21_stkin	sar21_stkin	exact	Catalog primary key
-sar21a_stkin	sar21a_stkin	exact	Catalog primary key
-sar21gl_stkin	sar21gl_stkin	exact	Catalog primary key
-sar21mms_stkin	sar21mms_stkin	exact	Catalog primary key
-sar21p_stkin	sar21p_stkin	exact	Catalog primary key
-serbu_bfg50	serbu_bfg50	exact	Catalog primary key
-serbu_bfg50_carbine	serbu_bfg50_carbine	exact	Catalog primary key
-serbu_bfg50a	serbu_bfg50a	exact	Catalog primary key
-serbu_rn50	serbu_rn50	exact	Catalog primary key
-serbu_super_shorty	serbu_super_shorty	exact	Catalog primary key
-sp1_vektor	sp1_vektor	exact	Catalog primary key
-sp2_vektor	sp2_vektor	exact	Catalog primary key
-ss77_vektor	ss77_vektor	exact	Catalog primary key
-ssg_69	ssg_69	exact	Catalog primary key
-sugar_weasel_q	sugar_weasel_q	exact	Catalog primary key
-tanfoglio_force_99	tanfoglio_force_99	exact	Catalog primary key
-tanfoglio_limited_custom	tanfoglio_limited_custom	exact	Catalog primary key
-tanfoglio_witness_compact	tanfoglio_witness_compact	exact	Catalog primary key
-tanfoglio_witness_elite_gold	tanfoglio_witness_elite_gold	exact	Catalog primary key
-tanfoglio_witness_hunter	tanfoglio_witness_hunter	exact	Catalog primary key
-tanfoglio_witness_match	tanfoglio_witness_match	exact	Catalog primary key
-tanfoglio_witness_pavona	tanfoglio_witness_pavona	exact	Catalog primary key
-tanfoglio_witness_stock_ii	tanfoglio_witness_stock_ii	exact	Catalog primary key
-tavor_x95	tavor_x95	exact	Catalog primary key
-ultimax100mk3_stkin	ultimax100mk3_stkin	exact	Catalog primary key
-ultimax100mk5_stkin	ultimax100mk5_stkin	exact	Catalog primary key
-ump45	ump45	exact	Catalog primary key
-vector_10mm_kriss	vector_10mm_kriss	exact	Catalog primary key
-vector_9mm_kriss	vector_9mm_kriss	exact	Catalog primary key
-vector_crb_kriss	vector_crb_kriss	exact	Catalog primary key
-vector_gen2_kriss	vector_gen2_kriss	exact	Catalog primary key
-vector_sbr_kriss	vector_sbr_kriss	exact	Catalog primary key
-z88_vektor	z88_vektor	exact	Catalog primary key
-sg_550	sg_550	exact	Catalog primary key (Batch 6)
-sg_552	sg_552	exact	Catalog primary key (Batch 6)
-sg_553	sg_553	exact	Catalog primary key (Batch 6)
-sg_510	sg_510	exact	Catalog primary key (Batch 6)
-sg_510_stgw57	sg_510_stgw57	exact	Catalog primary key (Batch 6)
-alpine_tactical	alpine_tactical	exact	Catalog primary key (Batch 6)
-mannlicher_m1895	mannlicher_m1895	exact	Catalog primary key (Batch 6)
-mannlicher_schoenauer	mannlicher_schoenauer	exact	Catalog primary key (Batch 6)
-mannlicher_m1888	mannlicher_m1888	exact	Catalog primary key (Batch 6)
-mannlicher_m1890	mannlicher_m1890	exact	Catalog primary key (Batch 6)
-breda_m37	breda_m37	exact	Catalog primary key (Batch 6)
-breda_m30	breda_m30	exact	Catalog primary key (Batch 6)
-breda_xanthos	breda_xanthos	exact	Catalog primary key (Batch 6)
-breda_m1_field	breda_m1_field	exact	Catalog primary key (Batch 6)
-charter_mag_pug	charter_mag_pug	exact	Catalog primary key (Batch 6)
-charter_patriot	charter_patriot	exact	Catalog primary key (Batch 6)
-charter_off_duty	charter_off_duty	exact	Catalog primary key (Batch 6)
-charter_target_bulldog	charter_target_bulldog	exact	Catalog primary key (Batch 6)
-charter_boomer	charter_boomer	exact	Catalog primary key (Batch 6)
-charter_undercoverette	charter_undercoverette	exact	Catalog primary key (Batch 6)
-benelli_m2	benelli_m2	exact	Catalog primary key (Batch 6)
-benelli_m3	benelli_m3	exact	Catalog primary key (Batch 6)
-benelli_supernova	benelli_supernova	exact	Catalog primary key (Batch 6)
-benelli_nova	benelli_nova	exact	Catalog primary key (Batch 6)
-benelli_montefeltro	benelli_montefeltro	exact	Catalog primary key (Batch 6)
-benelli_vinci	benelli_vinci	exact	Catalog primary key (Batch 6)
-benelli_ethos	benelli_ethos	exact	Catalog primary key (Batch 6)
-benelli_raffaello	benelli_raffaello	exact	Catalog primary key (Batch 6)
-benelli_lupo	benelli_lupo	exact	Catalog primary key (Batch 6)
-benelli_mr1	benelli_mr1	exact	Catalog primary key (Batch 6)
-benelli_argo	benelli_argo	exact	Catalog primary key (Batch 6)
-benelli_828u	benelli_828u	exact	Catalog primary key (Batch 6)
-franchi_affinity	franchi_affinity	exact	Catalog primary key (Batch 6)
-franchi_instinct	franchi_instinct	exact	Catalog primary key (Batch 6)
-franchi_momentum	franchi_momentum	exact	Catalog primary key (Batch 6)
-franchi_horizon	franchi_horizon	exact	Catalog primary key (Batch 6)
-franchi_al48	franchi_al48	exact	Catalog primary key (Batch 6)
-franchi_falconet	franchi_falconet	exact	Catalog primary key (Batch 6)
-franchi_renaissance	franchi_renaissance	exact	Catalog primary key (Batch 6)
-beretta_92fs	beretta_92fs	exact	Catalog primary key (Batch 6)
-beretta_92x	beretta_92x	exact	Catalog primary key (Batch 6)
-beretta_px4_storm	beretta_px4_storm	exact	Catalog primary key (Batch 6)
-beretta_apx	beretta_apx	exact	Catalog primary key (Batch 6)
-beretta_21a_bobcat	beretta_21a_bobcat	exact	Catalog primary key (Batch 6)
-beretta_3032_tomcat	beretta_3032_tomcat	exact	Catalog primary key (Batch 6)
-beretta_87_cheetah	beretta_87_cheetah	exact	Catalog primary key (Batch 6)
-beretta_1301_tactical	beretta_1301_tactical	exact	Catalog primary key (Batch 6)
-beretta_686_silver_pigeon	beretta_686_silver_pigeon	exact	Catalog primary key (Batch 6)
-beretta_a400_xtreme_plus	beretta_a400_xtreme_plus	exact	Catalog primary key (Batch 6)
-beretta_cx4_storm	beretta_cx4_storm	exact	Catalog primary key (Batch 6)
-beretta_pmx	beretta_pmx	exact	Catalog primary key (Batch 6)
-beretta_m12	beretta_m12	exact	Catalog primary key (Batch 6)
-colt_single_action_army	colt_single_action_army	exact	Catalog primary key (Batch 6)
-colt_king_cobra	colt_king_cobra	exact	Catalog primary key (Batch 6)
-colt_officers_acp	colt_officers_acp	exact	Catalog primary key (Batch 6)
-colt_mustang	colt_mustang	exact	Catalog primary key (Batch 6)
-colt_woodsman	colt_woodsman	exact	Catalog primary key (Batch 6)
-colt_ar15a4	colt_ar15a4	exact	Catalog primary key (Batch 6)
-colt_new_service	colt_new_service	exact	Catalog primary key (Batch 6)
-remington_700p	remington_700p	exact	Catalog primary key (Batch 6)
-remington_700_sendero	remington_700_sendero	exact	Catalog primary key (Batch 6)
-remington_742	remington_742	exact	Catalog primary key (Batch 6)
-remington_xp_100	remington_xp_100	exact	Catalog primary key (Batch 6)
-remington_model_8	remington_model_8	exact	Catalog primary key (Batch 6)
-walther_ppks_22lr	walther_ppks_22lr	exact	Catalog primary key (Batch 6)
-walther_tph	walther_tph	exact	Catalog primary key (Batch 6)
-walther_p38	walther_p38	exact	Catalog primary key (Batch 6)
-walther_p1	walther_p1	exact	Catalog primary key (Batch 6)
-walther_ppq_m2_5in	walther_ppq_m2_5in	exact	Catalog primary key (Batch 6)
-walther_pdp_compact	walther_pdp_compact	exact	Catalog primary key (Batch 6)
-walther_pk380	walther_pk380	exact	Catalog primary key (Batch 6)
-walther_gsp	walther_gsp	exact	Catalog primary key (Batch 6)
-walther_creed	walther_creed	exact	Catalog primary key (Batch 6)
-fn_herstal_510	fn_herstal_510	exact	Catalog primary key (Batch 6)
-fn_herstal_545	fn_herstal_545	exact	Catalog primary key (Batch 6)
-fn_herstal_503	fn_herstal_503	exact	Catalog primary key (Batch 6)
-fn_herstal_ps90	fn_herstal_ps90	exact	Catalog primary key (Batch 6)
-fn_herstal_fs2000	fn_herstal_fs2000	exact	Catalog primary key (Batch 6)
-fn_herstal_model_1910	fn_herstal_model_1910	exact	Catalog primary key (Batch 6)
-fn_herstal_m1900	fn_herstal_m1900	exact	Catalog primary key (Batch 6)
-fn_herstal_trombone	fn_herstal_trombone	exact	Catalog primary key (Batch 6)
-heckler_koch_hk45ct	heckler_koch_hk45ct	exact	Catalog primary key (Batch 6)
-heckler_koch_p30l	heckler_koch_p30l	exact	Catalog primary key (Batch 6)
-heckler_koch_vp9l	heckler_koch_vp9l	exact	Catalog primary key (Batch 6)
-heckler_koch_vp40	heckler_koch_vp40	exact	Catalog primary key (Batch 6)
-heckler_koch_p2000	heckler_koch_p2000	exact	Catalog primary key (Batch 6)
-heckler_koch_p2000sk	heckler_koch_p2000sk	exact	Catalog primary key (Batch 6)
-heckler_koch_hk433	heckler_koch_hk433	exact	Catalog primary key (Batch 6)
-heckler_koch_sl8	heckler_koch_sl8	exact	Catalog primary key (Batch 6)
-heckler_koch_sl6	heckler_koch_sl6	exact	Catalog primary key (Batch 6)
-heckler_koch_hk91	heckler_koch_hk91	exact	Catalog primary key (Batch 6)
-iwi_masada	iwi_masada	exact	Catalog primary key (Batch 6)
-iwi_jericho_941	iwi_jericho_941	exact	Catalog primary key (Batch 6)
-iwi_jericho_enhanced	iwi_jericho_enhanced	exact	Catalog primary key (Batch 6)
-iwi_arad	iwi_arad	exact	Catalog primary key (Batch 6)
-iwi_dan	iwi_dan	exact	Catalog primary key (Batch 6)
-iwi_galil_mar	iwi_galil_mar	exact	Catalog primary key (Batch 6)
-iwi_galil_ace_545	iwi_galil_ace_545	exact	Catalog primary key (Batch 6)
-iwi_negev_commando	iwi_negev_commando	exact	Catalog primary key (Batch 6)
-imi_mini_uzi	imi_mini_uzi	exact	Catalog primary key (Batch 6)
-imi_micro_uzi	imi_micro_uzi	exact	Catalog primary key (Batch 6)
-taurus_gx4	taurus_gx4	exact	Catalog primary key (Batch 6)
-taurus_g3x	taurus_g3x	exact	Catalog primary key (Batch 6)
-taurus_th9	taurus_th9	exact	Catalog primary key (Batch 6)
-taurus_raging_hunter	taurus_raging_hunter	exact	Catalog primary key (Batch 6)
-webley_mk6	webley_mk6	exact	Catalog primary key (Batch 7)
-webley_mk4_38	webley_mk4_38	exact	Catalog primary key (Batch 7)
-webley_auto_455	webley_auto_455	exact	Catalog primary key (Batch 7)
-webley_32acp	webley_32acp	exact	Catalog primary key (Batch 7)
-webley_fosbery	webley_fosbery	exact	Catalog primary key (Batch 7)
-korth_combat	korth_combat	exact	Catalog primary key (Batch 7)
-korth_mongoose	korth_mongoose	exact	Catalog primary key (Batch 7)
-korth_nxr_357	korth_nxr_357	exact	Catalog primary key (Batch 7)
-korth_nxr_44	korth_nxr_44	exact	Catalog primary key (Batch 7)
-naa_22lr	naa_22lr	exact	Catalog primary key (Batch 7)
-naa_22wmr	naa_22wmr	exact	Catalog primary key (Batch 7)
-naa_pug	naa_pug	exact	Catalog primary key (Batch 7)
-naa_sidewinder	naa_sidewinder	exact	Catalog primary key (Batch 7)
-naa_earl	naa_earl	exact	Catalog primary key (Batch 7)
-american180	american180	exact	Catalog primary key (Batch 7)
-rohrbaugh_r9	rohrbaugh_r9	exact	Catalog primary key (Batch 7)
-rohrbaugh_r9s	rohrbaugh_r9s	exact	Catalog primary key (Batch 7)
-rohrbaugh_stealth	rohrbaugh_stealth	exact	Catalog primary key (Batch 7)
-mas_36	mas_36	exact	Catalog primary key (Batch 7)
-mas_38	mas_38	exact	Catalog primary key (Batch 7)
-mas_49	mas_49	exact	Catalog primary key (Batch 7)
-mas_4956	mas_4956	exact	Catalog primary key (Batch 7)
-mas_fr_f1	mas_fr_f1	exact	Catalog primary key (Batch 7)
-bersa_thunder_380	bersa_thunder_380	exact	Catalog primary key (Batch 7)
-bersa_thunder_9	bersa_thunder_9	exact	Catalog primary key (Batch 7)
-bersa_tpr9	bersa_tpr9	exact	Catalog primary key (Batch 7)
-bersa_bp9cc	bersa_bp9cc	exact	Catalog primary key (Batch 7)
-bersa_firestorm_22	bersa_firestorm_22	exact	Catalog primary key (Batch 7)
-luger_p08	luger_p08	exact	Catalog primary key (Batch 7)
-luger_artillery	luger_artillery	exact	Catalog primary key (Batch 7)
-luger_navy	luger_navy	exact	Catalog primary key (Batch 7)
-luger_swiss	luger_swiss	exact	Catalog primary key (Batch 7)
-nambu_type_14	nambu_type_14	exact	Catalog primary key (Batch 7)
-nambu_type_94	nambu_type_94	exact	Catalog primary key (Batch 7)
-nambu_type_100	nambu_type_100	exact	Catalog primary key (Batch 7)
-schmidt_rubin_k31	schmidt_rubin_k31	exact	Catalog primary key (Batch 7)
-schmidt_rubin_g1911	schmidt_rubin_g1911	exact	Catalog primary key (Batch 7)
-schmidt_rubin_m1889	schmidt_rubin_m1889	exact	Catalog primary key (Batch 7)
-para_p14_45	para_p14_45	exact	Catalog primary key (Batch 7)
-para_p16_40	para_p16_40	exact	Catalog primary key (Batch 7)
-para_p18_9	para_p18_9	exact	Catalog primary key (Batch 7)
-para_carry_12	para_carry_12	exact	Catalog primary key (Batch 7)
-para_lda_14_45	para_lda_14_45	exact	Catalog primary key (Batch 7)
-ithaca_m37	ithaca_m37	exact	Catalog primary key (Batch 7)
-ithaca_m37_ds	ithaca_m37_ds	exact	Catalog primary key (Batch 7)
-ithaca_m3a1	ithaca_m3a1	exact	Catalog primary key (Batch 7)
-tristar_c100	tristar_c100	exact	Catalog primary key (Batch 7)
-tristar_t120	tristar_t120	exact	Catalog primary key (Batch 7)
-tristar_compact	tristar_compact	exact	Catalog primary key (Batch 7)
-tristar_viper_g2	tristar_viper_g2	exact	Catalog primary key (Batch 7)
-mendoza_hm3	mendoza_hm3	exact	Catalog primary key (Batch 7)
-mendoza_c1934	mendoza_c1934	exact	Catalog primary key (Batch 7)
-mendoza_rm1	mendoza_rm1	exact	Catalog primary key (Batch 7)
-jatimatic_gg95	jatimatic_gg95	exact	Catalog primary key (Batch 7)
-sar_tur_9x	sar_tur_9x	exact	Catalog primary key (Batch 7)
-sar_tur_cm9	sar_tur_cm9	exact	Catalog primary key (Batch 7)
-sar_tur_b6c	sar_tur_b6c	exact	Catalog primary key (Batch 7)
-sar_tur_st9	sar_tur_st9	exact	Catalog primary key (Batch 7)
-sar_tur_2000sport	sar_tur_2000sport	exact	Catalog primary key (Batch 7)
-sar_tur_k12	sar_tur_k12	exact	Catalog primary key (Batch 7)
-sar_tur_940	sar_tur_940	exact	Catalog primary key (Batch 7)
-sar_tur_1911	sar_tur_1911	exact	Catalog primary key (Batch 7)
-snt_motiv_k5	snt_motiv_k5	exact	Catalog primary key (Batch 7)
-snt_motiv_k13	snt_motiv_k13	exact	Catalog primary key (Batch 7)
-snt_motiv_k15	snt_motiv_k15	exact	Catalog primary key (Batch 7)
-snt_motiv_k16	snt_motiv_k16	exact	Catalog primary key (Batch 7)
-snt_motiv_stsm21	snt_motiv_stsm21	exact	Catalog primary key (Batch 7)
-iof_insas_rifle	iof_insas_rifle	exact	Catalog primary key (Batch 7)
-iof_insas_lmg	iof_insas_lmg	exact	Catalog primary key (Batch 7)
-iof_1a1	iof_1a1	exact	Catalog primary key (Batch 7)
-iof_1a_pistol	iof_1a_pistol	exact	Catalog primary key (Batch 7)
-iof_32_revolver	iof_32_revolver	exact	Catalog primary key (Batch 7)
-iof_22_revolver	iof_22_revolver	exact	Catalog primary key (Batch 7)
-iof_1a_smg	iof_1a_smg	exact	Catalog primary key (Batch 7)
-famae_saf	famae_saf	exact	Catalog primary key (Batch 8)
-famae_mini_saf	famae_mini_saf	exact	Catalog primary key (Batch 8)
-famae_fd200	famae_fd200	exact	Catalog primary key (Batch 8)
-famae_fd520	famae_fd520	exact	Catalog primary key (Batch 8)
-famae_sg542	famae_sg542	exact	Catalog primary key (Batch 8)
-cobray_m11_9	cobray_m11_9	exact	Catalog primary key (Batch 8)
-cobray_m10_45	cobray_m10_45	exact	Catalog primary key (Batch 8)
-cobray_terminator	cobray_terminator	exact	Catalog primary key (Batch 8)
-cobray_cm11	cobray_cm11	exact	Catalog primary key (Batch 8)
-cobray_lady_cocker	cobray_lady_cocker	exact	Catalog primary key (Batch 8)
-bond_arms_texas_defender	bond_arms_texas_defender	exact	Catalog primary key (Batch 8)
-bond_arms_cowboy_defender	bond_arms_cowboy_defender	exact	Catalog primary key (Batch 8)
-bond_arms_snake_slayer	bond_arms_snake_slayer	exact	Catalog primary key (Batch 8)
-bond_arms_roughneck	bond_arms_roughneck	exact	Catalog primary key (Batch 8)
-phoenix_hp22	phoenix_hp22	exact	Catalog primary key (Batch 8)
-phoenix_hp22_target	phoenix_hp22_target	exact	Catalog primary key (Batch 8)
-phoenix_hp25	phoenix_hp25	exact	Catalog primary key (Batch 8)
-hammerli_208	hammerli_208	exact	Catalog primary key (Batch 8)
-hammerli_280	hammerli_280	exact	Catalog primary key (Batch 8)
-hammerli_sp20	hammerli_sp20	exact	Catalog primary key (Batch 8)
-hammerli_x_esse	hammerli_x_esse	exact	Catalog primary key (Batch 8)
-hammerli_tac_r1	hammerli_tac_r1	exact	Catalog primary key (Batch 8)
-sphinx_2000	sphinx_2000	exact	Catalog primary key (Batch 8)
-sphinx_3000	sphinx_3000	exact	Catalog primary key (Batch 8)
-sphinx_sdp_compact	sphinx_sdp_compact	exact	Catalog primary key (Batch 8)
-sphinx_sdp_full	sphinx_sdp_full	exact	Catalog primary key (Batch 8)
-sphinx_sa	sphinx_sa	exact	Catalog primary key (Batch 8)
-sti_staccato_p	sti_staccato_p	exact	Catalog primary key (Batch 8)
-sti_staccato_c	sti_staccato_c	exact	Catalog primary key (Batch 8)
-sti_staccato_xl	sti_staccato_xl	exact	Catalog primary key (Batch 8)
-sti_dvc	sti_dvc	exact	Catalog primary key (Batch 8)
-sti_edge	sti_edge	exact	Catalog primary key (Batch 8)
-sauer_202	sauer_202	exact	Catalog primary key (Batch 8)
-sauer_303	sauer_303	exact	Catalog primary key (Batch 8)
-sauer_404	sauer_404	exact	Catalog primary key (Batch 8)
-sauer_100	sauer_100	exact	Catalog primary key (Batch 8)
-miroku_mk70	miroku_mk70	exact	Catalog primary key (Batch 8)
-miroku_3800	miroku_3800	exact	Catalog primary key (Batch 8)
-miroku_1873	miroku_1873	exact	Catalog primary key (Batch 8)
-miroku_1886	miroku_1886	exact	Catalog primary key (Batch 8)
-parker_hale_m85	parker_hale_m85	exact	Catalog primary key (Batch 8)
-parker_hale_1200tx	parker_hale_1200tx	exact	Catalog primary key (Batch 8)
-parker_hale_model81	parker_hale_model81	exact	Catalog primary key (Batch 8)
-parker_hale_1100	parker_hale_1100	exact	Catalog primary key (Batch 8)
-wildey_survivor_5in	wildey_survivor_5in	exact	Catalog primary key (Batch 8)
-wildey_survivor_6in	wildey_survivor_6in	exact	Catalog primary key (Batch 8)
-wildey_survivor_8in	wildey_survivor_8in	exact	Catalog primary key (Batch 8)
-wildey_survivor_10in	wildey_survivor_10in	exact	Catalog primary key (Batch 8)
-wildey_survivor_12in	wildey_survivor_12in	exact	Catalog primary key (Batch 8)
-pedersoli_1858_remington	pedersoli_1858_remington	exact	Catalog primary key (Batch 8)
-pedersoli_1873_trapdoor	pedersoli_1873_trapdoor	exact	Catalog primary key (Batch 8)
-pedersoli_sharps	pedersoli_sharps	exact	Catalog primary key (Batch 8)
-pedersoli_kodiak	pedersoli_kodiak	exact	Catalog primary key (Batch 8)
-pedersoli_howdah	pedersoli_howdah	exact	Catalog primary key (Batch 8)
-uberti_1873_cattleman	uberti_1873_cattleman	exact	Catalog primary key (Batch 8)
-uberti_1873_cattleman_75	uberti_1873_cattleman_75	exact	Catalog primary key (Batch 8)
-uberti_1866_yellowboy	uberti_1866_yellowboy	exact	Catalog primary key (Batch 8)
-uberti_1873_winchester	uberti_1873_winchester	exact	Catalog primary key (Batch 8)
-uberti_1885_highwall	uberti_1885_highwall	exact	Catalog primary key (Batch 8)
-uberti_stallion	uberti_stallion	exact	Catalog primary key (Batch 8)
-glock_17	glock_17	exact	Catalog primary key (Batch 9)
-glock_19	glock_19	exact	Catalog primary key (Batch 9)
-glock_22	glock_22	exact	Catalog primary key (Batch 9)
-glock_23	glock_23	exact	Catalog primary key (Batch 9)
-glock_26	glock_26	exact	Catalog primary key (Batch 9)
-glock_34	glock_34	exact	Catalog primary key (Batch 9)
-glock_42	glock_42	exact	Catalog primary key (Batch 9)
-glock_20	glock_20	exact	Catalog primary key (Batch 9)
-magnum_research_de_50	magnum_research_de_50	exact	Catalog primary key (Batch 9)
-magnum_research_de_44	magnum_research_de_44	exact	Catalog primary key (Batch 9)
-magnum_research_de_357	magnum_research_de_357	exact	Catalog primary key (Batch 9)
-magnum_research_de_50_10in	magnum_research_de_50_10in	exact	Catalog primary key (Batch 9)
-magnum_research_mr_eagle	magnum_research_mr_eagle	exact	Catalog primary key (Batch 9)
-kahr_arms_cm9	kahr_arms_cm9	exact	Catalog primary key (Batch 9)
-kahr_arms_pm9	kahr_arms_pm9	exact	Catalog primary key (Batch 9)
-kahr_arms_cw9	kahr_arms_cw9	exact	Catalog primary key (Batch 9)
-kahr_arms_p380	kahr_arms_p380	exact	Catalog primary key (Batch 9)
-mossberg_500_28	mossberg_500_28	exact	Catalog primary key (Batch 9)
-mossberg_maverick_88	mossberg_maverick_88	exact	Catalog primary key (Batch 9)
-mossberg_mvp_223	mossberg_mvp_223	exact	Catalog primary key (Batch 9)
-mossberg_mvp_308	mossberg_mvp_308	exact	Catalog primary key (Batch 9)
-mossberg_464_3030	mossberg_464_3030	exact	Catalog primary key (Batch 9)
-mossberg_590a1_20	mossberg_590a1_20	exact	Catalog primary key (Batch 9)
-savage_42_22lr_410	savage_42_22lr_410	exact	Catalog primary key (Batch 9)
-savage_110_223	savage_110_223	exact	Catalog primary key (Batch 9)
-savage_10_308	savage_10_308	exact	Catalog primary key (Batch 9)
-savage_10_6_5cm	savage_10_6_5cm	exact	Catalog primary key (Batch 9)
-savage_axis_243	savage_axis_243	exact	Catalog primary key (Batch 9)
-savage_12_223	savage_12_223	exact	Catalog primary key (Batch 9)
-auto_ord_thompson_m1921	auto_ord_thompson_m1921	exact	Catalog primary key (Batch 9)
-auto_ord_thompson_m1928	auto_ord_thompson_m1928	exact	Catalog primary key (Batch 9)
-auto_ord_1911_9mm	auto_ord_1911_9mm	exact	Catalog primary key (Batch 9)
-auto_ord_1911a1_parkerized	auto_ord_1911a1_parkerized	exact	Catalog primary key (Batch 9)
-auto_ord_1911_commander	auto_ord_1911_commander	exact	Catalog primary key (Batch 9)
-auto_ord_thompson_m1928a1	auto_ord_thompson_m1928a1	exact	Catalog primary key (Batch 9)
-mauser_gew98	mauser_gew98	exact	Catalog primary key (Batch 9)
-mauser_hsc	mauser_hsc	exact	Catalog primary key (Batch 9)
-mauser_m1910	mauser_m1910	exact	Catalog primary key (Batch 9)
-mauser_m712	mauser_m712	exact	Catalog primary key (Batch 9)
-mauser_m18	mauser_m18	exact	Catalog primary key (Batch 9)
-canik_tp9_elite_sc	canik_tp9_elite_sc	exact	Catalog primary key (Batch 9)
-canik_tp9_da	canik_tp9_da	exact	Catalog primary key (Batch 9)
-canik_mete_sfx	canik_mete_sfx	exact	Catalog primary key (Batch 9)
-tisas_1911a1	tisas_1911a1	exact	Catalog primary key (Batch 9)
-tisas_1911_b45	tisas_1911_b45	exact	Catalog primary key (Batch 9)
-tisas_zigana_f	tisas_zigana_f	exact	Catalog primary key (Batch 9)
-barrett_m82a1	barrett_m82a1	exact	Catalog primary key (Batch 9)
-barrett_m107a1	barrett_m107a1	exact	Catalog primary key (Batch 9)
-barrett_m98b	barrett_m98b	exact	Catalog primary key (Batch 9)
-dan_wesson_715_4in	dan_wesson_715_4in	exact	Catalog primary key (Batch 9)
-dan_wesson_715_6in	dan_wesson_715_6in	exact	Catalog primary key (Batch 9)
-dan_wesson_715_8in	dan_wesson_715_8in	exact	Catalog primary key (Batch 9)
-dan_wesson_valor	dan_wesson_valor	exact	Catalog primary key (Batch 9)
-stoeger_str9	stoeger_str9	exact	Catalog primary key (Batch 9)
-stoeger_cougar_8000	stoeger_cougar_8000	exact	Catalog primary key (Batch 9)
-stoeger_coach_gun	stoeger_coach_gun	exact	Catalog primary key (Batch 9)
-girsan_mc28	girsan_mc28	exact	Catalog primary key (Batch 9)
-girsan_regard	girsan_regard	exact	Catalog primary key (Batch 9)
-girsan_mc1911	girsan_mc1911	exact	Catalog primary key (Batch 9)
-high_standard_supermatic_trophy	high_standard_supermatic_trophy	exact	Catalog primary key (Batch 10)
-high_standard_supermatic_tournament	high_standard_supermatic_tournament	exact	Catalog primary key (Batch 10)
-high_standard_sport_king	high_standard_sport_king	exact	Catalog primary key (Batch 10)
-high_standard_sentinel	high_standard_sentinel	exact	Catalog primary key (Batch 10)
-high_standard_double_nine	high_standard_double_nine	exact	Catalog primary key (Batch 10)
-chiappa_rhino_50ds	chiappa_rhino_50ds	exact	Catalog primary key (Batch 10)
-chiappa_1911_22	chiappa_1911_22	exact	Catalog primary key (Batch 10)
-chiappa_little_badger	chiappa_little_badger	exact	Catalog primary key (Batch 10)
-chiappa_m1_22	chiappa_m1_22	exact	Catalog primary key (Batch 10)
-chiappa_1892_lever	chiappa_1892_lever	exact	Catalog primary key (Batch 10)
-iver_johnson_safety_first	iver_johnson_safety_first	exact	Catalog primary key (Batch 10)
-iver_johnson_cadet_55a	iver_johnson_cadet_55a	exact	Catalog primary key (Batch 10)
-iver_johnson_champion	iver_johnson_champion	exact	Catalog primary key (Batch 10)
-iver_johnson_enforcer	iver_johnson_enforcer	exact	Catalog primary key (Batch 10)
-iver_johnson_trailsman_66	iver_johnson_trailsman_66	exact	Catalog primary key (Batch 10)
-bersa_thunder_40	bersa_thunder_40	exact	Catalog primary key (Batch 10)
-bersa_firestorm_380	bersa_firestorm_380	exact	Catalog primary key (Batch 10)
-tc_encore_30_06	tc_encore_30_06	exact	Catalog primary key (Batch 10)
-tc_contender_223	tc_contender_223	exact	Catalog primary key (Batch 10)
-tc_contender_357	tc_contender_357	exact	Catalog primary key (Batch 10)
-tc_encore_243	tc_encore_243	exact	Catalog primary key (Batch 10)
-howa_m1500_hogue_308	howa_m1500_hogue_308	exact	Catalog primary key (Batch 10)
-howa_m1500_varmint_223	howa_m1500_varmint_223	exact	Catalog primary key (Batch 10)
-howa_m1500_game_king_30_06	howa_m1500_game_king_30_06	exact	Catalog primary key (Batch 10)
-howa_type_89	howa_type_89	exact	Catalog primary key (Batch 10)
-howa_type_64	howa_type_64	exact	Catalog primary key (Batch 10)
-stevens_model_94	stevens_model_94	exact	Catalog primary key (Batch 10)
-stevens_model_311	stevens_model_311	exact	Catalog primary key (Batch 10)
-stevens_favorite	stevens_favorite	exact	Catalog primary key (Batch 10)
-stevens_model_87a	stevens_model_87a	exact	Catalog primary key (Batch 10)
-stevens_model_350	stevens_model_350	exact	Catalog primary key (Batch 10)
-hi_point_c9	hi_point_c9	exact	Catalog primary key (Batch 10)
-hi_point_cf380	hi_point_cf380	exact	Catalog primary key (Batch 10)
-hi_point_jcp40	hi_point_jcp40	exact	Catalog primary key (Batch 10)
-hi_point_jhp45	hi_point_jhp45	exact	Catalog primary key (Batch 10)
-hi_point_4095	hi_point_4095	exact	Catalog primary key (Batch 10)
-naa_mini_22_short	naa_mini_22_short	exact	Catalog primary key (Batch 10)
-naa_black_widow	naa_black_widow	exact	Catalog primary key (Batch 10)
-naa_ranger_ii	naa_ranger_ii	exact	Catalog primary key (Batch 10)
-naa_mini_master	naa_mini_master	exact	Catalog primary key (Batch 10)
-naa_guardian_32	naa_guardian_32	exact	Catalog primary key (Batch 10)
-korth_sport	korth_sport	exact	Catalog primary key (Batch 10)
-korth_target	korth_target	exact	Catalog primary key (Batch 10)
-korth_ranger	korth_ranger	exact	Catalog primary key (Batch 10)
-korth_nxs_357	korth_nxs_357	exact	Catalog primary key (Batch 10)
-korth_prs_9mm	korth_prs_9mm	exact	Catalog primary key (Batch 10)
-star_model_b	star_model_b	exact	Catalog primary key (Batch 10)
-star_model_pd	star_model_pd	exact	Catalog primary key (Batch 10)
-star_firestar_m45	star_firestar_m45	exact	Catalog primary key (Batch 10)
-star_megastar_10mm	star_megastar_10mm	exact	Catalog primary key (Batch 10)
-star_ultrastar	star_ultrastar	exact	Catalog primary key (Batch 10)
-mas_44	mas_44	exact	Catalog primary key (Batch 10)
-mas_50	mas_50	exact	Catalog primary key (Batch 10)
-mas_aa52	mas_aa52	exact	Catalog primary key (Batch 10)
-mas_36_cr39	mas_36_cr39	exact	Catalog primary key (Batch 10)
-mas_45	mas_45	exact	Catalog primary key (Batch 10)
-para_p12_45		P12-45	Para Ordnance	.45 ACP
-para_p13_45		P13-45	Para Ordnance	.45 ACP
-para_gi_expert		GI Expert	Para Ordnance	.45 ACP
-para_warthog		Warthog	Para Ordnance	.45 ACP
-para_hawg_9		Hawg 9	Para Ordnance	9×19mm Parabellum
-para_black_ops		Black Ops	Para Ordnance	.45 ACP
-para_tac_s		TAC-S	Para Ordnance	.45 ACP
-para_carry_9		Carry 9	Para Ordnance	9×19mm Parabellum
-ria_gi_standard_fs		GI Standard FS	Rock Island Armory	.45 ACP
-ria_tactical		Tactical	Rock Island Armory	.45 ACP
-ria_match		Match	Rock Island Armory	.45 ACP
-ria_compact		Compact	Rock Island Armory	.45 ACP
-ria_pro_match_ultra		Pro Match Ultra	Rock Island Armory	.45 ACP
-ria_ultra_fs		Ultra FS	Rock Island Armory	.45 ACP
-ria_rock_ultra		Rock Ultra	Rock Island Armory	.45 ACP
-ria_1911a1		1911-A1	Rock Island Armory	.45 ACP
-ria_m200		M200	Rock Island Armory	.38 Special
-ria_m206		M206	Rock Island Armory	.38 Special
-ria_mapp		MAPP	Rock Island Armory	9×19mm Parabellum
-rossi_model_92		Model 92	Rossi	.357 Magnum
-rossi_r92		R92	Rossi	.44 Magnum
-rossi_rm64		RM64	Rossi	.357 Magnum
-rossi_r851		R851	Rossi	.38 Special
-rossi_ranch_hand		Ranch Hand	Rossi	.45 Colt
-rossi_model_351		Model 351	Rossi	.38 Special
-rossi_model_461		Model 461	Rossi	.357 Magnum
-rossi_circuit_judge		Circuit Judge	Rossi	.410 bore
-rossi_brawler		Brawler	Rossi	.45 Colt
-hr_topper		Topper	H&R 1871	12 Gauge
-hr_model_949		Model 949	H&R 1871	.22 LR
-hr_model_999		Model 999 Sportsman	H&R 1871	.22 LR
-hr_handi_rifle		Handi-Rifle	H&R 1871	.45-70 Government
-hr_pardner		Pardner	H&R 1871	12 Gauge
-sccy_cpx1		CPX-1	SCCY Industries	9×19mm Parabellum
-sccy_cpx2		CPX-2	SCCY Industries	9×19mm Parabellum
-sccy_cpx3		CPX-3	SCCY Industries	.380 ACP
-sccy_dvg1		DVG-1	SCCY Industries	9×19mm Parabellum
-diamondback_db9		DB9	Diamondback Firearms	9×19mm Parabellum
-diamondback_db380		DB380	Diamondback Firearms	.380 ACP
-diamondback_db15		DB15	Diamondback Firearms	5.56×45mm NATO
-diamondback_db10		DB10	Diamondback Firearms	.308 Win
-diamondback_sidekick		Sidekick	Diamondback Firearms	.22 LR
-shadow_mr920		MR920	Shadow Systems	9×19mm Parabellum
-shadow_dr920		DR920	Shadow Systems	9×19mm Parabellum
-shadow_xr920		XR920	Shadow Systems	9×19mm Parabellum
-shadow_cr920		CR920	Shadow Systems	9×19mm Parabellum
-shadow_ss300		SS300	Shadow Systems	.300 BLK
-shadow_ss400		SS400	Shadow Systems	10mm Auto
-gsg_gsg5		GSG-5	German Sport Guns	.22 LR
-gsg_gsg522		GSG-522	German Sport Guns	.22 LR
-gsg_gsg9		GSG-9	German Sport Guns	.22 LR
-gsg_gsg1911		GSG-1911	German Sport Guns	.22 LR
-gsg_firefly		Firefly	German Sport Guns	.22 LR
-gsg_mp22		MP22	German Sport Guns	.22 LR
-gsg_stg44		STG-44 .22	German Sport Guns	.22 LR
-grand_power_stribog_sp9a1		Stribog SP9A1	Grand Power	9×19mm Parabellum
-grand_power_stribog_sp9a3		Stribog SP9A3	Grand Power	9×19mm Parabellum
-grand_power_k100		K100 X-Trim	Grand Power	9×19mm Parabellum
-grand_power_p1		P1	Grand Power	9×19mm Parabellum
-grand_power_p11		P11	Grand Power	9×19mm Parabellum
-grand_power_p40		P40	Grand Power	.40 S&W
-grand_power_stribog_sp45		Stribog SP45	Grand Power	.45 ACP
-cz_527_american		CZ 527 American	BRNO / CZ	.223 Remington
-cz_527_varmint		CZ 527 Varmint	BRNO / CZ	.223 Remington
-cz_550_american		CZ 550 American	BRNO / CZ	.30-06 Springfield
-cz_550_safari		CZ 550 Safari Magnum	BRNO / CZ	.375 Holland & Holland
-cz_557_american		CZ 557 American	BRNO / CZ	.308 Win
-cz_455_american		CZ 455 American	BRNO / CZ	.22 LR
-cz_455_varmint		CZ 455 Varmint	BRNO / CZ	.22 LR
-cz_512		CZ 512	BRNO / CZ	.22 LR
-baikal_mp_443_grach		MP-443 Grach (PYa)	Baikal	9×19mm Parabellum
-baikal_mp_446		MP-446 Viking	Baikal	9×19mm Parabellum
-baikal_ij_70		IJ-70	Baikal	.380 ACP
-baikal_mp_340		MP-340	Baikal	.38 Special
-baikal_mp_27		MP-27	Baikal	12 Gauge
-manurhin_mr73_gign		MR 73 GIGN	Manurhin	.357 Magnum
-manurhin_mr73_sport		MR 73 Sport	Manurhin	.357 Magnum
-manurhin_mr73_gendarmerie		MR 73 Gendarmerie	Manurhin	.357 Magnum
-manurhin_f1		F1	Manurhin	.357 Magnum
-krieghoff_k80		K-80	Krieghoff	12 Gauge
-krieghoff_k20		K-20	Krieghoff	20 Gauge
-krieghoff_semprio		Semprio	Krieghoff	12 Gauge
-krieghoff_drilling		Drilling	Krieghoff	12 Gauge / .30-06
-cassull_model_410		Cassull Model 410	Fausti / Cassull / Rizzini	.410 Bore
-fausti_dea_round		Fausti DEA Round	Fausti / Cassull / Rizzini	12 Gauge
-rizzini_rb		Rizzini RB/BR	Fausti / Cassull / Rizzini	12 Gauge
-rohrbaugh_r380		R380	Rohrbaugh	.380 ACP
-sw_sw1911_e_series		SW1911 E-Series	Smith & Wesson	.45 ACP
-sw_sw1911_pro_series		SW1911 Pro Series	Smith & Wesson	.45 ACP
-sw_model_627		Model 627	Smith & Wesson	.357 Magnum
-sw_model_629		Model 629	Smith & Wesson	.44 Magnum
-sw_model_442		Model 442	Smith & Wesson	.38 Special
-sw_model_642		Model 642	Smith & Wesson	.38 Special
-sw_mp12		M&P12	Smith & Wesson	12 Gauge
-sw_mp45_m2_0		M&P45 M2.0	Smith & Wesson	.45 ACP
-ruger_1022_takedown		10/22 Takedown	Sturm Ruger	.22 LR
-ruger_1022_tactical		10/22 Tactical	Sturm Ruger	.22 LR
-ruger_22_charger		22 Charger	Sturm Ruger	.22 LR
-ruger_redhawk_44		Redhawk	Sturm Ruger	.44 Magnum
-ruger_redhawk_357		Redhawk	Sturm Ruger	.357 Magnum
-ruger_lcr_357		LCR	Sturm Ruger	.357 Magnum
-ruger_lcr_9mm		LCR	Sturm Ruger	9×19mm Parabellum
-ruger_american_predator_308		American Rifle Predator	Sturm Ruger	.308 Win
-colt_gold_cup		Gold Cup 1911	Colt	.45 ACP
-colt_combat_commander		Combat Commander	Colt	.45 ACP
-colt_defender		Defender	Colt	.45 ACP
-colt_competition		Competition 1911	Colt	.45 ACP
-colt_cm901		CM901	Colt	7.62×51mm NATO
-ithaca_model_37_stakeout		Model 37 Stakeout	Ithaca	12 Gauge
-ithaca_model_37_defense		Model 37 Defense	Ithaca	12 Gauge
-ithaca_model_37_featherlight		Model 37 Featherlight	Ithaca	12 Gauge
-ithaca_model_51		Model 51	Ithaca	12 Gauge
-henry_big_boy_44		Big Boy .44 Mag	Henry	.44 Magnum
-henry_big_boy_45		Big Boy .45 Colt	Henry	.45 Colt
-henry_h001		H001 .22 LR	Henry	.22 LR
-henry_x_model_44		X Model .44 Mag	Henry	.44 Magnum
-henry_x_model_4570		X Model .45-70	Henry	.45-70 Government
-henry_homesteader		Homesteader 9mm	Henry	9×19mm Parabellum
-marlin_1894_45colt		Model 1894 .45 Colt	Marlin	.45 Colt
-marlin_1895_dark		Model 1895 Dark Series	Marlin	.45-70 Government
-marlin_336_dark		Model 336 Dark Series	Marlin	.30-30 Win
-marlin_70p_papoose		Model 70P Papoose	Marlin	.22 LR
-marlin_1894_csbl		Model 1894 CSBL	Marlin	.357 Magnum
-kimber_hunter_308		Hunter .308	Kimber	.308 Win
-kimber_solo_cdp		Solo CDP	Kimber	9×19mm Parabellum
-kimber_rapide_dawn		Rapide Dawn	Kimber	.45 ACP
-kimber_target_ii		Target II 1911	Kimber	.45 ACP
-beretta_px4_40		Px4 Storm	Beretta	.40 S&W
-beretta_px4_45		Px4 Storm	Beretta	.45 ACP
-beretta_px4_40_compact		Px4 Storm	Beretta	.40 S&W
-beretta_apx_compact		APX Compact	Beretta	9×19mm Parabellum
-beretta_92x_performance		92X Performance	Beretta	9×19mm Parabellum
-beretta_92xi		92XI	Beretta	9×19mm Parabellum
-beretta_92g_elite_ltt		92G Elite LTT	Beretta	9×19mm Parabellum
-beretta_1301_comp_pro		1301 Comp Pro	Beretta	12 Gauge
-beretta_686_silver_pigeon_iii_20		686 Silver Pigeon III	Beretta	20 Gauge
-sig_p320_xcarry		P320 XCarry	Sig Sauer	9×19mm Parabellum
-sig_p320_xfive_legion		P320 XFive Legion	Sig Sauer	9×19mm Parabellum
-sig_p365_xmacro		P365 XMacro	Sig Sauer	9×19mm Parabellum
-sig_p224		P224	Sig Sauer	9×19mm Parabellum
-sig_p938		P938	Sig Sauer	9×19mm Parabellum
-sig_p238		P238	Sig Sauer	.380 ACP
-sig_mcx_regulator		MCX-Regulator	Sig Sauer	5.56×45mm NATO
-sig_556xi		556XI	Sig Sauer	5.56×45mm NATO
-sig_mcx_spear_lt		MCX Spear LT	Sig Sauer	7.62×51mm NATO
-sig_p229_40		P229	Sig Sauer	.40 S&W
-walther_ppx		PPX	Walther	9×19mm Parabellum
-walther_pdp_pro_sd		PDP Pro SD	Walther	9×19mm Parabellum
-bt_apc45		APC45	B&T	.45 ACP
-bt_ghm45		GHM45	B&T	.45 ACP
-bt_spc9		SPC9	B&T	9×19mm Parabellum
-bt_tp380		TP380	B&T	.380 ACP
-bt_usw_a1		USW A1	B&T	9×19mm Parabellum
-bt_kh9		KH9	B&T	9×19mm Parabellum
-bt_apc9sd		APC9SD	B&T	9×19mm Parabellum
-benelli_sbe3		Super Black Eagle 3	Benelli	12 Gauge
-benelli_sbe3_20		Super Black Eagle 3	Benelli	20 Gauge
-benelli_lupo_3006		Lupo	Benelli	.30-06 Springfield
-franchi_veloce		Veloce	Franchi	12 Gauge
-franchi_affinity_h2o		Affinity H2O	Franchi	12 Gauge
-franchi_law12		Law-12	Franchi	12 Gauge
-franchi_pa8		PA-8	Franchi	12 Gauge
-franchi_horizon_3006		Horizon	Franchi	.30-06 Springfield
-breda_930		Breda 930	Breda	12 Gauge
-breda_b12i		Breda B12i	Breda	12 Gauge
-breda_930_20		Breda 930	Breda	20 Gauge
-bae_systems_l85a3	arma_bae_systems_l85a3	BAE_SYSTEMS_L85A3	L85A3	Heckler & Koch / Royal Ordnance
-bae_systems_l22a2	arma_bae_systems_l22a2	BAE_SYSTEMS_L22A2	L22A2	Heckler & Koch / Royal Ordnance
-bae_systems_l1a1_slr	arma_bae_systems_l1a1_slr	BAE_SYSTEMS_L1A1_SLR	L1A1 SLR	RSAF Enfield / BSA
-bae_systems_l7a2_gpmg	arma_bae_systems_l7a2_gpmg	BAE_SYSTEMS_L7A2_GPMG	L7A2 GPMG	FN Herstal / RSAF Enfield
-bae_systems_l110a1_minimi	arma_bae_systems_l110a1_minimi	BAE_SYSTEMS_L110A1_MINIMI	L110A1 Minimi	FN Herstal
-colt_canada_l119a1	arma_colt_canada_l119a1	COLT_CANADA_L119A1	L119A1 C8SFW	Colt Canada (Diemaco)
-benelli_l128a1	arma_benelli_l128a1	BENELLI_L128A1	L128A1 (Benelli M4)	Benelli Armi
-accuracy_international_l115a3	arma_accuracy_international_l115a3	ACCURACY_INTERNATIONAL_L115A3	L115A3 AWM	Accuracy International
-sig_sauer_l107a1	arma_sig_sauer_l107a1	SIG_SAUER_L107A1	L107A1 (SIG P228)	SIG Sauer
-accuracy_international_l118a1_covert	arma_accuracy_international_l118a1_covert	ACCURACY_INTERNATIONAL_L118A1_COVERT	L118A1 Arctic Warfare Covert	Accuracy International
-saab_nlaw	arma_saab_nlaw	SAAB_NLAW	NLAW (MBT LAW)	Saab Bofors Dynamics
-heckler_koch_l134a1_gmg	arma_heckler_koch_l134a1_gmg	HECKLER_KOCH_L134A1_GMG	L134A1 (HK GMG)	Heckler & Koch
-kalashnikov_concern_ak_104	arma_kalashnikov_concern_ak_104	KALASHNIKOV_CONCERN_AK_104	AK-104	Kalashnikov Concern
-kalashnikov_concern_an_94	arma_kalashnikov_concern_an_94	KALASHNIKOV_CONCERN_AN_94	AN-94 Nikonov	Kalashnikov Concern (Izhmash)
-kalashnikov_concern_mp_443_grach	arma_kalashnikov_concern_mp_443_grach	KALASHNIKOV_CONCERN_MP_443_GRACH	MP-443 Grach (PYa)	Izhevsk Mechanical Plant
-degtyaryov_rpd	arma_degtyaryov_rpd	DEGTYARYOV_RPD	RPD	Degtyaryov Plant
-tula_dshk_1938	arma_tula_dshk_1938	TULA_DSHK_1938	DShK 1938	Tula Arms Plant
-kbp_pp_19_01_vityaz	arma_kbp_pp_19_01_vityaz	KBP_PP_19_01_VITYAZ	PP-19-01 Vityaz-SN	KBP / Kalashnikov Concern
-degtyaryov_ksvk_12_7	arma_degtyaryov_ksvk_12_7	DEGTYARYOV_KSVK_12_7	KSVK 12.7 (ASVK)	Degtyarev Plant
-izhmash_saiga_12k	arma_izhmash_saiga_12k	IZHMASH_SAIGA_12K	Saiga-12K	Kalashnikov Concern (Izhmash)
-heckler_koch_m27_iar	arma_heckler_koch_m27_iar	HECKLER_KOCH_M27_IAR	M27 IAR	Heckler & Koch
-sage_m14_ebr	arma_sage_m14_ebr	SAGE_M14_EBR	Mk 14 EBR	Sage International
-fn_herstal_mk48	arma_fn_herstal_mk48	FN_HERSTAL_MK48	Mk 48 Mod 0	FN Herstal
-m141_smaw_bdm	arma_m141_smaw_bdm	M141_SMAW_BDM	M141 BDM (SMAW-D)	Talley Defense Systems (Nammo Talley)
-saco_defense_m60e3	arma_saco_defense_m60e3	SACO_DEFENSE_M60E3	M60E3	Saco Defense
-rsa_lee_enfield_no4_mk1	arma_rsa_lee_enfield_no4_mk1	RSA_LEE_ENFIELD_NO4_MK1	No.4 Mk I	RSAF Enfield
-hasag_panzerfaust_60	arma_hasag_panzerfaust_60	HASAG_PANZERFAUST_60	Panzerfaust 60	HASAG (Hugo Schneider AG)
-zeveta_rpg_75	arma_zeveta_rpg_75	ZEVETA_RPG_75	RPG-75	Zeveta (Uhersky Brod)
-accuracy_international_as50	arma_accuracy_international_as50	ACCURACY_INTERNATIONAL_AS50	AS50	Accuracy International
-zastava_arms_doo_m85	arma_zastava_arms_doo_m85	ZASTAVA_ARMS_DOO_M85	M85	Zastava Arms d.o.o.
-zastava_arms_doo_m90	arma_zastava_arms_doo_m90	ZASTAVA_ARMS_DOO_M90	M90	Zastava Arms d.o.o.
-zastava_arms_doo_m91	arma_zastava_arms_doo_m91	ZASTAVA_ARMS_DOO_M91	M91	Zastava Arms d.o.o.
-zastava_arms_doo_m93_black_arrow	arma_zastava_arms_doo_m93_black_arrow	ZASTAVA_ARMS_DOO_M93_BLACK_ARROW	M93 Black Arrow	Zastava Arms d.o.o.
-zastava_arms_doo_m07	arma_zastava_arms_doo_m07	ZASTAVA_ARMS_DOO_M07	M07	Zastava Arms d.o.o.
-zastava_arms_doo_m12	arma_zastava_arms_doo_m12	ZASTAVA_ARMS_DOO_M12	M12	Zastava Arms d.o.o.
-zastava_arms_doo_pap_m70	arma_zastava_arms_doo_pap_m70	ZASTAVA_ARMS_DOO_PAP_M70	PAP M70	Zastava Arms d.o.o.
-zastava_arms_doo_pap_m85	arma_zastava_arms_doo_pap_m85	ZASTAVA_ARMS_DOO_PAP_M85	PAP M85	Zastava Arms d.o.o.
-zastava_arms_doo_pap_m92	arma_zastava_arms_doo_pap_m92	ZASTAVA_ARMS_DOO_PAP_M92	PAP M92	Zastava Arms d.o.o.
-zastava_arms_doo_m21	arma_zastava_arms_doo_m21	ZASTAVA_ARMS_DOO_M21	M21	Zastava Arms d.o.o.
-zastava_arms_doo_m21a	arma_zastava_arms_doo_m21a	ZASTAVA_ARMS_DOO_M21A	M21A	Zastava Arms d.o.o.
-zastava_arms_doo_m20	arma_zastava_arms_doo_m20	ZASTAVA_ARMS_DOO_M20	M20	Zastava Arms d.o.o.
-fb_lucznik_radom_msbs_grot_c	arma_fb_lucznik_radom_msbs_grot_c	FB_LUCZNIK_RADOM_MSBS_GROT_C	MSBS Grot C	FB "Lucznik" Radom
-fb_lucznik_radom_msbs_grot_r	arma_fb_lucznik_radom_msbs_grot_r	FB_LUCZNIK_RADOM_MSBS_GROT_R	MSBS Grot R	FB "Lucznik" Radom
-fb_radom_beryl_762	arma_fb_radom_beryl_762	FB_RADOM_BERYL_762	Beryl 762	FB Radom
-fb_radom_p_83_wanad	arma_fb_radom_p_83_wanad	FB_RADOM_P_83_WANAD	P-83 Wanad	FB Radom
-fb_radom_p_64	arma_fb_radom_p_64	FB_RADOM_P_64	P-64	FB Radom
-fb_radom_pm_63_rak	arma_fb_radom_pm_63_rak	FB_RADOM_PM_63_RAK	PM-63 RAK	FB Radom
-fb_radom_pm_84p_glauberyt	arma_fb_radom_pm_84p_glauberyt	FB_RADOM_PM_84P_GLAUBERYT	PM-84P Glauberyt	FB Radom
-sig_sauer_ag_sg_552	arma_sig_sauer_ag_sg_552	SIG_SAUER_AG_SG_552	SG 552	SIG Sauer AG (Swiss)
-sig_sauer_ag_sg_556	arma_sig_sauer_ag_sg_556	SIG_SAUER_AG_SG_556	SG 556	SIG Sauer AG (Swiss)
-sig_sauer_ag_p220	arma_sig_sauer_ag_p220	SIG_SAUER_AG_P220	P220	SIG Sauer AG (Swiss)
-sig_sauer_ag_p225	arma_sig_sauer_ag_p225	SIG_SAUER_AG_P225	P225	SIG Sauer AG (Swiss)
-sig_sauer_ag_p228	arma_sig_sauer_ag_p228	SIG_SAUER_AG_P228	P228	SIG Sauer AG (Swiss)
-sig_sauer_ag_ssg_3000	arma_sig_sauer_ag_ssg_3000	SIG_SAUER_AG_SSG_3000	SSG 3000	SIG Sauer AG (Swiss)
-sig_sauer_ag_sg_553_r	arma_sig_sauer_ag_sg_553_r	SIG_SAUER_AG_SG_553_R	SG 553 R	SIG Sauer AG (Swiss)
-arsenal_ar_m9f	arma_arsenal_ar_m9f	ARSENAL_AR_M9F	AR-M9F	Arsenal
-arsenal_sam5	arma_arsenal_sam5	ARSENAL_SAM5	SAM5	Arsenal
-arsenal_sam5k	arma_arsenal_sam5k	ARSENAL_SAM5K	SAM5K	Arsenal
-arsenal_samr	arma_arsenal_samr	ARSENAL_SAMR	SAMR	Arsenal
-arsenal_slr_106f	arma_arsenal_slr_106f	ARSENAL_SLR_106F	SLR-106F	Arsenal
-arsenal_shipka	arma_arsenal_shipka	ARSENAL_SHIPKA	Shipka	Arsenal
-arsenal_sporter_5_56	arma_arsenal_sporter_5_56	ARSENAL_SPORTER_5_56	Sporter 5.56	Arsenal
-arsenal_sporter_7_62	arma_arsenal_sporter_7_62	ARSENAL_SPORTER_7_62	Sporter 7.62	Arsenal
-snt_motiv_k11	arma_snt_motiv_k11	SNT_MOTIV_K11	K11	SNT Motiv
-snt_motiv_k12	arma_snt_motiv_k12	SNT_MOTIV_K12	K12	SNT Motiv
-daewoo_dp_51	arma_daewoo_dp_51	DAEWOO_DP_51	DP-51	Daewoo
-daewoo_k2a	arma_daewoo_k2a	DAEWOO_K2A	K2A	Daewoo
-daewoo_k1a1	arma_daewoo_k1a1	DAEWOO_K1A1	K1A1	Daewoo
-daewoo_dp_380	arma_daewoo_dp_380	DAEWOO_DP_380	DP-380	Daewoo
-kel-tec_p_32	arma_kel-tec_p_32	KEL_TEC_P_32	P-32	Kel-Tec
-kel-tec_p_3at	arma_kel-tec_p_3at	KEL_TEC_P_3AT	P-3AT	Kel-Tec
-kel-tec_pf_9	arma_kel-tec_pf_9	KEL_TEC_PF_9	PF-9	Kel-Tec
-kel-tec_pmr_30	arma_kel-tec_pmr_30	KEL_TEC_PMR_30	PMR-30	Kel-Tec
-kel-tec_cp33	arma_kel-tec_cp33	KEL_TEC_CP33	CP33	Kel-Tec
-kel-tec_plr_16	arma_kel-tec_plr_16	KEL_TEC_PLR_16	PLR-16	Kel-Tec
-kel-tec_sub_2000_cqb	arma_kel-tec_sub_2000_cqb	KEL_TEC_SUB_2000_CQB	SUB-2000 CQB	Kel-Tec
-kel-tec_su_16c	arma_kel-tec_su_16c	KEL_TEC_SU_16C	SU-16C	Kel-Tec
-kel-tec_r50	arma_kel-tec_r50	KEL_TEC_R50	R50	Kel-Tec
-kel-tec_pr57	arma_kel-tec_pr57	KEL_TEC_PR57	PR57	Kel-Tec
-kel-tec_p15	arma_kel-tec_p15	KEL_TEC_P15	P15	Kel-Tec
-kel-tec_p17	arma_kel-tec_p17	KEL_TEC_P17	P17	Kel-Tec
-kel-tec_ksg_25	arma_kel-tec_ksg_25	KEL_TEC_KSG_25	KSG-25	Kel-Tec
-kel-tec_ksg_compact	arma_kel-tec_ksg_compact	KEL_TEC_KSG_COMPACT	KSG Compact	Kel-Tec
-kriss_usa_vector_crb_9mm	arma_kriss_usa_vector_crb_9mm	KRISS_USA_VECTOR_CRB_9MM	Vector CRB 9mm	KRISS USA
-kriss_usa_vector_sbr_9mm	arma_kriss_usa_vector_sbr_9mm	KRISS_USA_VECTOR_SBR_9MM	Vector SBR 9mm	KRISS USA
-kriss_usa_vector_sdp_45	arma_kriss_usa_vector_sdp_45	KRISS_USA_VECTOR_SDP_45	Vector SDP .45	KRISS USA
-kriss_usa_vector_sdp_9mm	arma_kriss_usa_vector_sdp_9mm	KRISS_USA_VECTOR_SDP_9MM	Vector SDP 9mm	KRISS USA
-kriss_usa_vector_22lr	arma_kriss_usa_vector_22lr	KRISS_USA_VECTOR_22LR	Vector .22LR	KRISS USA
-kriss_usa_vector_gen_3_45	arma_kriss_usa_vector_gen_3_45	KRISS_USA_VECTOR_GEN_3_45	Vector Gen 3 .45	KRISS USA
-kriss_usa_vector_gen_3_9mm	arma_kriss_usa_vector_gen_3_9mm	KRISS_USA_VECTOR_GEN_3_9MM	Vector Gen 3 9mm	KRISS USA
-kriss_usa_sphinx_sdp_compact	arma_kriss_usa_sphinx_sdp_compact	KRISS_USA_SPHINX_SDP_COMPACT	Sphinx SDP Compact	KRISS USA
-kriss_usa_sphinx_sdp_sub_compact	arma_kriss_usa_sphinx_sdp_sub_compact	KRISS_USA_SPHINX_SDP_SUB_COMPACT	Sphinx SDP Sub-Compact	KRISS USA
-magnum_research_bfr_45_70	arma_magnum_research_bfr_45_70	MAGNUM_RESEARCH_BFR_45_70	BFR .45-70	Magnum Research
-magnum_research_bfr_454_casull	arma_magnum_research_bfr_454_casull	MAGNUM_RESEARCH_BFR_454_CASULL	BFR .454 Casull	Magnum Research
-magnum_research_bfr_500_s&w	arma_magnum_research_bfr_500_s&w	MAGNUM_RESEARCH_BFR_500_S&W	BFR .500 S&W	Magnum Research
-magnum_research_bfr_44_mag	arma_magnum_research_bfr_44_mag	MAGNUM_RESEARCH_BFR_44_MAG	BFR .44 Mag	Magnum Research
-magnum_research_bfr_357_mag	arma_magnum_research_bfr_357_mag	MAGNUM_RESEARCH_BFR_357_MAG	BFR .357 Mag	Magnum Research
-magnum_research_micro_desert_eagle	arma_magnum_research_micro_desert_eagle	MAGNUM_RESEARCH_MICRO_DESERT_EAGLE	Micro Desert Eagle	Magnum Research
-magnum_research_baby_eagle_iii	arma_magnum_research_baby_eagle_iii	MAGNUM_RESEARCH_BABY_EAGLE_III	Baby Eagle III	Magnum Research
-magnum_research_baby_eagle_iii_45	arma_magnum_research_baby_eagle_iii_45	MAGNUM_RESEARCH_BABY_EAGLE_III_45	Baby Eagle III .45	Magnum Research
-magnum_research_desert_eagle_429_de	arma_magnum_research_desert_eagle_429_de	MAGNUM_RESEARCH_DESERT_EAGLE_429_DE	Desert Eagle .429 DE	Magnum Research
-magnum_research_mountain_eagle_308	arma_magnum_research_mountain_eagle_308	MAGNUM_RESEARCH_MOUNTAIN_EAGLE_308	Mountain Eagle .308	Magnum Research
-magnum_research_mountain_eagle_300_wm	arma_magnum_research_mountain_eagle_300_wm	MAGNUM_RESEARCH_MOUNTAIN_EAGLE_300_WM	Mountain Eagle .300 WM	Magnum Research
-magnum_research_lone_eagle_308	arma_magnum_research_lone_eagle_308	MAGNUM_RESEARCH_LONE_EAGLE_308	Lone Eagle .308	Magnum Research
-magnum_research_magnum_lite	arma_magnum_research_magnum_lite	MAGNUM_RESEARCH_MAGNUM_LITE	Magnum Lite	Magnum Research
-magnum_research_desert_eagle_1911	arma_magnum_research_desert_eagle_1911	MAGNUM_RESEARCH_DESERT_EAGLE_1911	Desert Eagle 1911	Magnum Research
-armalite_ar_180b	arma_armalite_ar_180b	ARMALITE_AR_180B	AR-180B	ArmaLite
-armalite_ar_10b	arma_armalite_ar_10b	ARMALITE_AR_10B	AR-10B	ArmaLite
-armalite_ar_10_super_sass	arma_armalite_ar_10_super_sass	ARMALITE_AR_10_SUPER_SASS	AR-10 Super SASS	ArmaLite
-armalite_m_15	arma_armalite_m_15	ARMALITE_M_15	M-15	ArmaLite
-armalite_ar_30	arma_armalite_ar_30	ARMALITE_AR_30	AR-30	ArmaLite
-armalite_ar_30a1	arma_armalite_ar_30a1	ARMALITE_AR_30A1	AR-30A1	ArmaLite
-armalite_ar_31	arma_armalite_ar_31	ARMALITE_AR_31	AR-31	ArmaLite
-armalite_ar_50	arma_armalite_ar_50	ARMALITE_AR_50	AR-50	ArmaLite
-armalite_ar_7	arma_armalite_ar_7	ARMALITE_AR_7	AR-7	ArmaLite
-armalite_ar_24	arma_armalite_ar_24	ARMALITE_AR_24	AR-24	ArmaLite
-bushmaster_ba_50	arma_bushmaster_ba_50	BUSHMASTER_BA_50	BA-50	Bushmaster
-bushmaster_m17s	arma_bushmaster_m17s	BUSHMASTER_M17S	M17S	Bushmaster
-bushmaster_dissipator	arma_bushmaster_dissipator	BUSHMASTER_DISSIPATOR	Dissipator	Bushmaster
-bushmaster__450_bushmaster	arma_bushmaster__450_bushmaster	BUSHMASTER__450_BUSHMASTER	.450 Bushmaster	Bushmaster
-bushmaster_bar_10	arma_bushmaster_bar_10	BUSHMASTER_BAR_10	BAR-10	Bushmaster
-bushmaster_arm_pistol	arma_bushmaster_arm_pistol	BUSHMASTER_ARM_PISTOL	Arm Pistol	Bushmaster
-bushmaster_xm_15_dmr	arma_bushmaster_xm_15_dmr	BUSHMASTER_XM_15_DMR	XM-15 DMR	Bushmaster
-bushmaster_xm_15_a3g	arma_bushmaster_xm_15_a3g	BUSHMASTER_XM_15_A3G	XM-15 A3G	Bushmaster
-bushmaster_xm_15_a4g	arma_bushmaster_xm_15_a4g	BUSHMASTER_XM_15_A4G	XM-15 A4G	Bushmaster
-tikka_t3x_compact_243_win	arma_tikka_t3x_compact_243_win	TIKKA_T3X_COMPACT_243_WIN	T3x Compact .243 Win	Tikka
-tikka_t3x_compact_7mm_08	arma_tikka_t3x_compact_7mm_08	TIKKA_T3X_COMPACT_7MM_08	T3x Compact 7mm-08	Tikka
-tikka_t3x_varmint_223	arma_tikka_t3x_varmint_223	TIKKA_T3X_VARMINT_223	T3x Varmint .223	Tikka
-tikka_t3x_varmint_6_5_cm	arma_tikka_t3x_varmint_6_5_cm	TIKKA_T3X_VARMINT_6_5_CM	T3x Varmint 6.5 CM	Tikka
-tikka_t3x_super_varmint	arma_tikka_t3x_super_varmint	TIKKA_T3X_SUPER_VARMINT	T3x Super Varmint	Tikka
-tikka_t3x_upr_308	arma_tikka_t3x_upr_308	TIKKA_T3X_UPR_308	T3x UPR .308	Tikka
-tikka_t3x_upr_6_5_cm	arma_tikka_t3x_upr_6_5_cm	TIKKA_T3X_UPR_6_5_CM	T3x UPR 6.5 CM	Tikka
-tikka_t3x_upr_300_wm	arma_tikka_t3x_upr_300_wm	TIKKA_T3X_UPR_300_WM	T3x UPR .300 WM	Tikka
-tikka_t3x_arctic	arma_tikka_t3x_arctic	TIKKA_T3X_ARCTIC	T3x Arctic	Tikka
-tikka_t3x_battue_30_06	arma_tikka_t3x_battue_30_06	TIKKA_T3X_BATTUE_30_06	T3x Battue .30-06	Tikka
-tikka_t3x_roughtech_30_06	arma_tikka_t3x_roughtech_30_06	TIKKA_T3X_ROUGHTECH_30_06	T3x Roughtech .30-06	Tikka
-tikka_t3x_game_308	arma_tikka_t3x_game_308	TIKKA_T3X_GAME_308	T3x Game .308	Tikka
-sako_s20_hunter_6_5_cm	arma_sako_s20_hunter_6_5_cm	SAKO_S20_HUNTER_6_5_CM	S20 Hunter 6.5 CM	Sako
-sako_s20_hunter_308	arma_sako_s20_hunter_308	SAKO_S20_HUNTER_308	S20 Hunter .308	Sako
-sako_s20_precision_6_5_cm	arma_sako_s20_precision_6_5_cm	SAKO_S20_PRECISION_6_5_CM	S20 Precision 6.5 CM	Sako
-sako_s20_precision_308	arma_sako_s20_precision_308	SAKO_S20_PRECISION_308	S20 Precision .308	Sako
-sako_85_finnlight_308	arma_sako_85_finnlight_308	SAKO_85_FINNLIGHT_308	85 Finnlight .308	Sako
-sako_85_finnlight_6_5_cm	arma_sako_85_finnlight_6_5_cm	SAKO_85_FINNLIGHT_6_5_CM	85 Finnlight 6.5 CM	Sako
-sako_85_black_308	arma_sako_85_black_308	SAKO_85_BLACK_308	85 Black .308	Sako
-sako_85_classic_270	arma_sako_85_classic_270	SAKO_85_CLASSIC_270	85 Classic .270	Sako
-sako_85_hunter_30_06	arma_sako_85_hunter_30_06	SAKO_85_HUNTER_30_06	85 Hunter .30-06	Sako
-sako_90_hunter_6_5_cm	arma_sako_90_hunter_6_5_cm	SAKO_90_HUNTER_6_5_CM	90 Hunter 6.5 CM	Sako
-sako_100_308	arma_sako_100_308	SAKO_100_308	100 .308	Sako
-sako_100_6_5_cm	arma_sako_100_6_5_cm	SAKO_100_6_5_CM	100 6.5 CM	Sako
-tristar_cobra_justice	arma_tristar_cobra_justice	TRISTAR_COBRA_JUSTICE	Cobra Justice	Tristar
-tristar_cobra_patriot	arma_tristar_cobra_patriot	TRISTAR_COBRA_PATRIOT	Cobra Patriot	Tristar
-tristar_t_140	arma_tristar_t_140	TRISTAR_T_140	T-140	Tristar
-tristar_tt_15	arma_tristar_tt_15	TRISTAR_TT_15	TT-15	Tristar
-tristar_trap	arma_tristar_trap	TRISTAR_TRAP	Trap	Tristar
-tristar_sporting	arma_tristar_sporting	TRISTAR_SPORTING	Sporting	Tristar
-stoeger_str_9mc	arma_stoeger_str_9mc	STOEGER_STR_9MC	STR-9MC	Stoeger
-stoeger_cougar_8000_40	arma_stoeger_cougar_8000_40	STOEGER_COUGAR_8000_40	Cougar 8000 .40	Stoeger
-stoeger_cougar_8000_45	arma_stoeger_cougar_8000_45	STOEGER_COUGAR_8000_45	Cougar 8000 .45	Stoeger
-stoeger_p_350	arma_stoeger_p_350	STOEGER_P_350	P-350	Stoeger
-stoeger_m3500	arma_stoeger_m3500	STOEGER_M3500	M3500	Stoeger
-stoeger_condor	arma_stoeger_condor	STOEGER_CONDOR	Condor	Stoeger
-girsan_mc_1911_commander	arma_girsan_mc_1911_commander	GIRSAN_MC_1911_COMMANDER	MC 1911 Commander	Girsan
-girsan_mc_14_tipat	arma_girsan_mc_14_tipat	GIRSAN_MC_14_TIPAT	MC 14 Tipat	Girsan
-girsan_yavuz_16	arma_girsan_yavuz_16	GIRSAN_YAVUZ_16	Yavuz 16	Girsan
-girsan_pi	arma_girsan_pi	GIRSAN_PI	PI	Girsan
-girsan_m9	arma_girsan_m9	GIRSAN_M9	M9	Girsan
-girsan_regard_40	arma_girsan_regard_40	GIRSAN_REGARD_40	Regard .40	Girsan
-hatsan_armsan_a620	arma_hatsan_armsan_a620	HATSAN_ARMSAN_A620	Armsan A620	Hatsan
-hatsan_armsan_a612	arma_hatsan_armsan_a612	HATSAN_ARMSAN_A612	Armsan A612	Hatsan
-hatsan_model_125	arma_hatsan_model_125	HATSAN_MODEL_125	Model 125	Hatsan
-hatsan_model_100	arma_hatsan_model_100	HATSAN_MODEL_100	Model 100	Hatsan
-hatsan_striker_12	arma_hatsan_striker_12	HATSAN_STRIKER_12	Striker 12	Hatsan
-derya_mk12	arma_derya_mk12	DERYA_MK12	MK12	Derya
-derya_820	arma_derya_820	DERYA_820	820	Derya
-derya_dy_9	arma_derya_dy_9	DERYA_DY_9	DY-9	Derya
-derya_dy_11	arma_derya_dy_11	DERYA_DY_11	DY-11	Derya
-derya_ds_9	arma_derya_ds_9	DERYA_DS_9	DS-9	Derya
-daniel_defense_ddm4_v7	arma_daniel_defense_ddm4_v7	DANIEL_DEFENSE_DDM4_V7	DDM4 V7	Daniel Defense
-daniel_defense_m4a1_riii	arma_daniel_defense_m4a1_riii	DANIEL_DEFENSE_M4A1_RIII	M4A1 RIII	Daniel Defense
-daniel_defense_dd5_v4	arma_daniel_defense_dd5_v4	DANIEL_DEFENSE_DD5_V4	DD5 V4	Daniel Defense
-daniel_defense_dd5_v5	arma_daniel_defense_dd5_v5	DANIEL_DEFENSE_DD5_V5	DD5 V5	Daniel Defense
-daniel_defense_ddm4_pdw	arma_daniel_defense_ddm4_pdw	DANIEL_DEFENSE_DDM4_PDW	DDM4 PDW	Daniel Defense
-daniel_defense_mk18	arma_daniel_defense_mk18	DANIEL_DEFENSE_MK18	MK18	Daniel Defense
-daniel_defense_mk18_riii	arma_daniel_defense_mk18_riii	DANIEL_DEFENSE_MK18_RIII	MK18 RIII	Daniel Defense
-daniel_defense_ddm4_v7_pro	arma_daniel_defense_ddm4_v7_pro	DANIEL_DEFENSE_DDM4_V7_PRO	DDM4 V7 PRO	Daniel Defense
-daniel_defense_m4a1	arma_daniel_defense_m4a1	DANIEL_DEFENSE_M4A1	M4A1	Daniel Defense
-daniel_defense_ddm4_v7_slw	arma_daniel_defense_ddm4_v7_slw	DANIEL_DEFENSE_DDM4_V7_SLW	DDM4 V7 SLW	Daniel Defense
-daniel_defense_spriii	arma_daniel_defense_spriii	DANIEL_DEFENSE_SPRIII	SPRIII	Daniel Defense
-daniel_defense_ddm4_v9	arma_daniel_defense_ddm4_v9	DANIEL_DEFENSE_DDM4_V9	DDM4 V9	Daniel Defense
-daniel_defense_ddm4_v7_k	arma_daniel_defense_ddm4_v7_k	DANIEL_DEFENSE_DDM4_V7_K	DDM4 V7 K	Daniel Defense
-daniel_defense_dd5_sbr	arma_daniel_defense_dd5_sbr	DANIEL_DEFENSE_DD5_SBR	DD5 SBR	Daniel Defense
-daniel_defense_ddm4_v1	arma_daniel_defense_ddm4_v1	DANIEL_DEFENSE_DDM4_V1	DDM4 V1	Daniel Defense
-daniel_defense_dd4_riii_s	arma_daniel_defense_dd4_riii_s	DANIEL_DEFENSE_DD4_RIII_S	DD4 RIII S	Daniel Defense
-daniel_defense_gl/ssc	arma_daniel_defense_gl/ssc	DANIEL_DEFENSE_GL/SSC	GL/SSC	Daniel Defense
-daniel_defense_mk12	arma_daniel_defense_mk12	DANIEL_DEFENSE_MK12	MK12	Daniel Defense
-noveske_rifleworks_n4_patriot	arma_noveske_rifleworks_n4_patriot	NOVESKE_RIFLEWORKS_N4_PATRIOT	N4 Patriot	Noveske Rifleworks
-noveske_rifleworks_n4_300_blk	arma_noveske_rifleworks_n4_300_blk	NOVESKE_RIFLEWORKS_N4_300_BLK	N4 300 BLK	Noveske Rifleworks
-noveske_rifleworks_gen_4	arma_noveske_rifleworks_gen_4	NOVESKE_RIFLEWORKS_GEN_4	Gen 4	Noveske Rifleworks
-noveske_rifleworks_ghetto_blaster	arma_noveske_rifleworks_ghetto_blaster	NOVESKE_RIFLEWORKS_GHETTO_BLASTER	Ghetto Blaster	Noveske Rifleworks
-noveske_rifleworks_chainsaw	arma_noveske_rifleworks_chainsaw	NOVESKE_RIFLEWORKS_CHAINSAW	Chainsaw	Noveske Rifleworks
-noveske_rifleworks_diplomat	arma_noveske_rifleworks_diplomat	NOVESKE_RIFLEWORKS_DIPLOMAT	Diplomat	Noveske Rifleworks
-noveske_rifleworks_space_invader	arma_noveske_rifleworks_space_invader	NOVESKE_RIFLEWORKS_SPACE_INVADER	Space Invader	Noveske Rifleworks
-noveske_rifleworks_vis	arma_noveske_rifleworks_vis	NOVESKE_RIFLEWORKS_VIS	VIS	Noveske Rifleworks
-noveske_rifleworks_noveske9_carbine	arma_noveske_rifleworks_noveske9_carbine	NOVESKE_RIFLEWORKS_NOVESKE9_CARBINE	Noveske9 Carbine	Noveske Rifleworks
-noveske_rifleworks_noveske9_pistol	arma_noveske_rifleworks_noveske9_pistol	NOVESKE_RIFLEWORKS_NOVESKE9_PISTOL	Noveske9 Pistol	Noveske Rifleworks
-lmt_defense_cqb_mrp	arma_lmt_defense_cqb_mrp	LMT_DEFENSE_CQB_MRP	CQB MRP	LMT Defense
-lmt_defense_lm308mws	arma_lmt_defense_lm308mws	LMT_DEFENSE_LM308MWS	LM308MWS	LMT Defense
-lmt_defense_l129a1	arma_lmt_defense_l129a1	LMT_DEFENSE_L129A1	L129A1	LMT Defense
-lmt_defense_mars_l	arma_lmt_defense_mars_l	LMT_DEFENSE_MARS_L	MARS-L	LMT Defense
-lmt_defense_mars_h_308	arma_lmt_defense_mars_h_308	LMT_DEFENSE_MARS_H_308	MARS-H .308	LMT Defense
-lmt_defense_mars_h_6_5_cm	arma_lmt_defense_mars_h_6_5_cm	LMT_DEFENSE_MARS_H_6_5_CM	MARS-H 6.5 CM	LMT Defense
-lmt_defense_mars_h_300_blk	arma_lmt_defense_mars_h_300_blk	LMT_DEFENSE_MARS_H_300_BLK	MARS-H 300 BLK	LMT Defense
-lmt_defense_defender_l	arma_lmt_defense_defender_l	LMT_DEFENSE_DEFENDER_L	Defender-L	LMT Defense
-lmt_defense_defender_h	arma_lmt_defense_defender_h	LMT_DEFENSE_DEFENDER_H	Defender-H	LMT Defense
-knights_armament_co_sr_15_e3	arma_knights_armament_co_sr_15_e3	KNIGHTS_ARMAMENT_CO_SR_15_E3	SR-15 E3	Knight's Armament Co
-knights_armament_co_sr_15_cqb	arma_knights_armament_co_sr_15_cqb	KNIGHTS_ARMAMENT_CO_SR_15_CQB	SR-15 CQB	Knight's Armament Co
-knights_armament_co_sr_15_cqb_sbr	arma_knights_armament_co_sr_15_cqb_sbr	KNIGHTS_ARMAMENT_CO_SR_15_CQB_SBR	SR-15 CQB SBR	Knight's Armament Co
-knights_armament_co_sr_25	arma_knights_armament_co_sr_25	KNIGHTS_ARMAMENT_CO_SR_25	SR-25	Knight's Armament Co
-knights_armament_co_sr_25_apc_6_5	arma_knights_armament_co_sr_25_apc_6_5	KNIGHTS_ARMAMENT_CO_SR_25_APC_6_5	SR-25 APC 6.5	Knight's Armament Co
-knights_armament_co_kac_pdw	arma_knights_armament_co_kac_pdw	KNIGHTS_ARMAMENT_CO_KAC_PDW	KAC PDW	Knight's Armament Co
-knights_armament_co_mk11_mod_0	arma_knights_armament_co_mk11_mod_0	KNIGHTS_ARMAMENT_CO_MK11_MOD_0	MK11 Mod 0	Knight's Armament Co
-knights_armament_co_m110	arma_knights_armament_co_m110	KNIGHTS_ARMAMENT_CO_M110	M110	Knight's Armament Co
-knights_armament_co_ks_1	arma_knights_armament_co_ks_1	KNIGHTS_ARMAMENT_CO_KS_1	KS-1	Knight's Armament Co
-lwrc_international_ic_spr	arma_lwrc_international_ic_spr	LWRC_INTERNATIONAL_IC_SPR	IC-SPR	LWRC International
-lwrc_international_ic_di	arma_lwrc_international_ic_di	LWRC_INTERNATIONAL_IC_DI	IC-DI	LWRC International
-lwrc_international_repr_7_62	arma_lwrc_international_repr_7_62	LWRC_INTERNATIONAL_REPR_7_62	REPR 7.62	LWRC International
-lwrc_international_repr_6_5	arma_lwrc_international_repr_6_5	LWRC_INTERNATIONAL_REPR_6_5	REPR 6.5	LWRC International
-lwrc_international_m6_ic	arma_lwrc_international_m6_ic	LWRC_INTERNATIONAL_M6_IC	M6 IC	LWRC International
-lwrc_international_smg_45	arma_lwrc_international_smg_45	LWRC_INTERNATIONAL_SMG_45	SMG-45	LWRC International
-lwrc_international_m6a2	arma_lwrc_international_m6a2	LWRC_INTERNATIONAL_M6A2	M6A2	LWRC International
-lwrc_international_m6a4	arma_lwrc_international_m6a4	LWRC_INTERNATIONAL_M6A4	M6A4	LWRC International
-radian_weapons_model_1	arma_radian_weapons_model_1	RADIAN_WEAPONS_MODEL_1	Model 1	Radian Weapons
-radian_weapons_model_1_carbine	arma_radian_weapons_model_1_carbine	RADIAN_WEAPONS_MODEL_1_CARBINE	Model 1 Carbine	Radian Weapons
-radian_weapons_radian_9	arma_radian_weapons_radian_9	RADIAN_WEAPONS_RADIAN_9	Radian 9	Radian Weapons
-lancer_systems_lch_5_56	arma_lancer_systems_lch_5_56	LANCER_SYSTEMS_LCH_5_56	LCH-5.56	Lancer Systems
-lancer_systems_lch_5_56_carbine	arma_lancer_systems_lch_5_56_carbine	LANCER_SYSTEMS_LCH_5_56_CARBINE	LCH-5.56 Carbine	Lancer Systems
-lancer_systems_lch_7_62	arma_lancer_systems_lch_7_62	LANCER_SYSTEMS_LCH_7_62	LCH-7.62	Lancer Systems
-lancer_systems_lch_7_62_6_5cm	arma_lancer_systems_lch_7_62_6_5cm	LANCER_SYSTEMS_LCH_7_62_6_5CM	LCH-7.62 6.5CM	Lancer Systems
-batch14_a_map_0001	batch14_a	smith_wesson_m_p9_m2_0_full_size_15_1_4_25_barrel_9mm_striker_fired	direct
-batch14_a_map_0002	batch14_a	smith_wesson_m_p9_shield_m2_0_7_1_or_8_1_3_1_barrel_slimline_9mm	direct
-batch14_a_map_0003	batch14_a	smith_wesson_m_p9_shield_plus_10_1_or_13_1_3_1_barrel_9mm_optics_ready	direct
-batch14_a_map_0004	batch14_a	smith_wesson_m_p9_shield_ez_8_1_3_7_barrel_9mm_ez_rack_slide	direct
-batch14_a_map_0005	batch14_a	smith_wesson_csx_alloy_frame_micro_9mm_sao_3_1_barrel	direct
-batch14_a_map_0006	batch14_a	smith_wesson_model_686_plus_7_shot_357_mag_4_barrel_stainless	direct
-batch14_a_map_0007	batch14_a	smith_wesson_model_29_6_44_mag_classic_blue	direct
-batch14_a_map_0008	batch14_a	smith_wesson_model_327_8_shot_trr8_357_mag_5_barrel_performance_center	direct
-batch14_a_map_0009	batch14_a	taurus_g2c_12_1_9mm_compact_3_2_barrel_striker_fired	direct
-batch14_a_map_0010	batch14_a	taurus_g3c_12_1_9mm_compact_3_2_barrel_upgraded_g2c	direct
-batch14_a_map_0011	batch14_a	taurus_gx4_11_1_9mm_micro_compact_3_06_barrel	direct
-batch14_a_map_0012	batch14_a	taurus_tx22_compact_13_1_22_lr_3_6_barrel_rimfire_pistol	direct
-batch14_a_map_0013	batch14_a	taurus_judge_magnum_6_shot_410_45_colt_3_barrel_da_revolver	direct
-batch14_a_map_0014	batch14_a	taurus_raging_hunter_44_mag_6_5_barrel_da_revolver_ported	direct
-batch14_a_map_0015	batch14_a	taurus_model_856_6_shot_38_spl_2_barrel_da_revolver_steel_frame	direct
-batch14_a_map_0016	batch14_a	remington_model_870_wingmaster_28_barrel_walnut_stock_12ga_classic_pump	direct
-batch14_a_map_0017	batch14_a	remington_model_870_express_18_5_barrel_synthetic_12ga_defense_pump	direct
-batch14_a_map_0018	batch14_a	remington_model_700_cdl_24_30_06_walnut_classic_bolt_action	direct
-batch14_a_map_0019	batch14_a	remington_model_700_sps_22_308_win_synthetic_stock_tactical_bolt	direct
-batch14_a_map_0020	batch14_a	remington_model_1100_28_12ga_semi_auto_field_grade_walnut	direct
-batch14_a_map_0021	batch14_a	remington_rp9_18_1_9mm_striker_fired_4_5_barrel	direct
-batch14_a_map_0022	batch14_a	winchester_model_70_featherweight_270_win_22_barrel_controlled_feed	direct
-batch14_a_map_0023	batch14_a	winchester_model_70_super_grade_30_06_24_barrel_walnut_classic	direct
-batch14_a_map_0024	batch14_a	winchester_model_94_carbine_20_30_30_lever_action_blued_saddle_ring	direct
-batch14_a_map_0025	batch14_a	winchester_sxp_defender_18_12ga_pump_action_synthetic_defense	direct
-batch14_a_map_0026	batch14_a	winchester_sxp_waterfowl_28_12ga_pump_camo_max_4_1	direct
-batch14_a_map_0027	batch14_a	browning_x_bolt_hunter_308_win_22_barrel_composite_stock	direct
-batch14_a_map_0028	batch14_a	browning_x_bolt_hell_s_canyon_speed_6_5_creedmoor_22_barrel_ceramic_coated	direct
-batch14_a_map_0029	batch14_a	browning_bar_mk3_safari_30_06_22_barrel_auto_loader_walnut	direct
-batch14_a_map_0030	batch14_a	browning_bps_28_12ga_pump_walnut_bottom_eject	direct
-batch14_a_map_0031	batch14_a	browning_citori_725_28_12ga_over_under_field_grade_adjustable_comb	direct
-batch14_a_map_0032	batch14_a	springfield_hellcat_rfp_11_1_380_acp_micro_2_7_barrel_red_fiber_optic	direct
-batch14_a_map_0033	batch14_a	springfield_xd_m_elite_3_8_22_1_9mm_compact_grip_interchangeable_backstraps	direct
-batch14_a_map_0034	batch14_a	springfield_xd_m_elite_4_5_22_1_9mm_full_size_adjustable_rear_sight	direct
-batch14_a_map_0035	batch14_a	springfield_model_2020_waypoint_308_win_22_bolt_action_carbon_fiber	direct
-batch14_a_map_0036	batch14_a	springfield_1911_emissary_5_45_acp_two_tone_commander_hammer	direct
-batch14_a_map_0037	batch14_a	springfield_1911_garrison_5_45_acp_stainless_parkerized_gi_style	direct
-batch14_b_map_0038	batch14_b	aero_precision_m4e1_enhanced_16_upper_m_lok_handguard_223_wylde_chamber	direct
-batch14_b_map_0039	batch14_b	aero_precision_m4e1_enhanced_14_5_upper_m_lok_handguard_223_wylde_chamber	direct
-batch14_b_map_0040	batch14_b	aero_precision_m5_16_308_ar_10_m_lok_handguard	direct
-batch14_b_map_0041	batch14_b	aero_precision_m5_20_308_ar_10_m_lok_handguard	direct
-batch14_b_map_0042	batch14_b	aero_precision_ac15_16_complete_rifle_5_56_nato	direct
-batch14_b_map_0043	batch14_b	aero_precision_ac16_18_complete_rifle_5_56_nato	direct
-batch14_b_map_0044	batch14_b	aero_precision_solus_18_bolt_action_308_5_round_aics	direct
-batch14_b_map_0045	batch14_b	aero_precision_solus_22_bolt_action_6_5_creedmoor_threaded	direct
-batch14_b_map_0046	batch14_b	bcm_bcm4_recce_16_16_lightweight_mlok_mid_length_gas	direct
-batch14_b_map_0047	batch14_b	bcm_bcm4_recce_14_14_5_pinned_welded_mid_length_gas	direct
-batch14_b_map_0048	batch14_b	bcm_bcm4_recce_18_18_rifle_length_gas_mcmr_handguard	direct
-batch14_b_map_0049	batch14_b	bcm_bcm4_m4_carbine_16_m4_profile_carbine_a2_flash_hider	direct
-batch14_b_map_0050	batch14_b	bcm_bcm4_sbr_11_5_mlok_upper_carbine_gas	direct
-batch14_b_map_0051	batch14_b	bcm_bcm4_mk2_recce_16_16_mk2_upper_enhanced_feed_ramps	direct
-batch14_b_map_0052	batch14_b	bcm_bcm_mk12_18_spr_profile_rifle_gas_mk12_clone	direct
-batch14_b_map_0053	batch14_b	bcm_bcm_bfh_16_16_hammer_forged_barrel_mlok	direct
-batch14_b_map_0054	batch14_b	bcm_bcm_bfh_14_5_14_5_hammer_forged_pinned_welded	direct
-batch14_b_map_0055	batch14_b	geissele_super_duty	direct
-batch14_b_map_0056	batch14_b	geissele_super_duty_2	direct
-batch14_b_map_0057	batch14_b	geissele_super_duty_3	direct
-batch14_b_map_0058	batch14_b	geissele_sentinel_14_5_lightweight_contour_carbon_handguard	direct
-batch14_b_map_0059	batch14_b	christensen_ca_10_20_308_battle_rifle_carbon_fiber_handguard	direct
-batch14_b_map_0060	batch14_b	christensen_ca_15_18_5_56_carbon_fiber_barrel_m_lok	direct
-batch14_b_map_0061	batch14_b	christensen_mhr_20_6_5_creedmoor_carbon_fiber_barrel_modern_hunting	direct
-batch14_b_map_0062	batch14_b	christensen_ridgeline_24_6_5_creedmoor_carbon_fiber_titanium_action	direct
-batch14_b_map_0063	batch14_b	christensen_ridgeline_26_300_win_mag_carbon_fiber_muzzle_brake	direct
-batch14_b_map_0064	batch14_b	christensen_traverse_22_6_5_creedmoor_folding_chassis_carbon_barrel	direct
-batch14_b_map_0065	batch14_b	christensen_mesa_fft_22_308_carbon_fiber_fft_stock	direct
-batch14_b_map_0066	batch14_b	christensen_summit_24_6_5_creedmoor_carbon_barrel_summit_stock	direct
-batch14_b_map_0067	batch14_b	savage_axis_stainless_22_stainless_243_win_synthetic_stock	direct
-batch14_b_map_0068	batch14_b	savage_axis_ii_xp_22_308_win_accutrigger_3_9x_scope	direct
-batch14_b_map_0069	batch14_b	savage_model_110_tactical_20_heavy_barrel_308_win_detachable_box_mag	direct
-batch14_b_map_0070	batch14_b	savage_model_110_scout_20_308_win_iron_sights_accutrigger	direct
-batch14_b_map_0071	batch14_b	savage_model_110_predator_22_6_5_creedmoor_suppressor_ready	direct
-batch14_b_map_0072	batch14_b	savage_model_110_storm_22_308_win_stainless_synthetic_stock	direct
-batch14_b_map_0073	batch14_b	savage_model_110_ultralite_24_6_5_creedmoor_carbon_fiber_wrap_proof_barrel	direct
-batch14_b_map_0074	batch14_b	savage_a17_22_17_hmr_semi_auto_heavy_barrel	direct
-batch14_b_map_0075	batch14_b	savage_b17_22_17_hmr_bolt_action_accutrigger	direct
-batch14_b_map_0076	batch14_b	bergara_bmr_18_22_lr_micro_mini_action_carbon_barrel	direct
-batch14_b_map_0077	batch14_b	bergara_bmp_24_6_5_creedmoor_heavy_palma_m5_dbm	direct
-batch14_b_map_0078	batch14_b	bergara_bmp_24_308_win_heavy_contour_m5_dbm	direct
-batch14_b_map_0079	batch14_b	bergara_hmr_22_6_5_creedmoor_hunting_precision_hybrid	direct
-batch14_b_map_0080	batch14_b	bergara_hmr_22_308_win_hunting_precision_hybrid	direct
-batch14_b_map_0081	batch14_b	bergara_hmr_pro_22_6_5_creedmoor_ss_barrel_ceramic_coated	direct
-batch14_b_map_0082	batch14_b	bergara_premier_lrp_26_6_5_creedmoor_heavy_palma_m5_dbm	direct
-batch14_b_map_0083	batch14_b	bergara_b_14r_trainer_22_22_lr_heavy_barrel_aics_pattern	direct
-batch14_b_map_0084	batch14_b	bergara_bxr_18_22_lr_semi_auto_aluminum_receiver	direct
-batch14_b_map_0085	batch14_b	cz_usa_bren_2_ms_11_9mm_conversion_folding_stock	direct
-batch14_b_map_0086	batch14_b	cz_usa_cz_600_range_24_6_5_creedmoor_heavy_barrel_chassis	direct
-batch14_b_map_0087	batch14_b	cz_usa_cz_600_scout_18_5_7_62x39_manners_stock_iron_sights	direct
-batch14_b_map_0088	batch14_b	cz_usa_cz_600_lux_22_308_win_walnut_stock_open_sights	direct
-batch14_b_map_0089	batch14_b	cz_usa_cz_600_ergo_22_6_5_creedmoor_ergonomic_stock	direct
-batch14_b_map_0090	batch14_b	cz_usa_cz_600_premium_24_8_300_win_mag_walnut_floorplate	direct
-batch14_b_map_0091	batch14_b	cz_usa_shadow_2_compact_9mm_compact_steel_frame_da_sa	direct
-batch14_b_map_0092	batch14_b	cz_usa_ts_2_racing_9mm_competition_single_action_optics_ready	direct
-batch14_c_map_0093	batch14_c	intratec_firearms_tec_9_full_auto_capable_original_32_round_mag	direct
-batch14_c_map_0094	batch14_c	intratec_firearms_tec_22_scorpion_22_lr_carbine_variant	direct
-batch14_c_map_0095	batch14_c	intratec_firearms_tec_38_38_special_blowback_semi_auto	direct
-batch14_c_map_0096	batch14_c	intratec_firearms_cat_9_protector_compact_9mm_3_barrel	direct
-batch14_c_map_0097	batch14_c	intratec_firearms_ab_10_dc_9_variant_with_10_round_mag_post_1994	direct
-batch14_c_map_0098	batch14_c	webley_scott_1911_45_acp_1911_pattern_semi_auto_5_barrel	direct
-batch14_c_map_0099	batch14_c	webley_scott_webley_nemesis_ultra_compact_32_acp_pocket_pistol_2	direct
-batch14_c_map_0100	batch14_c	webley_scott_webley_alecto_multi_pump_pneumatic_target_pistol	direct
-batch14_c_map_0101	batch14_c	webley_scott_webley_patriot_full_size_45_acp_1911_pattern_target_grade	direct
-batch14_c_map_0102	batch14_c	webley_scott_webley_hurricane_22_lr_target_pistol_semi_auto	direct
-batch14_c_map_0103	batch14_c	nambu_type_a_8mm_nambu_semi_auto_early_production_1902_1909	direct
-batch14_c_map_0104	batch14_c	nambu_type_26_9mm_revolver_break_open_1893_design	direct
-batch14_c_map_0105	batch14_c	mendoza_c_1934_43_380_acp_mexican_service_sidearm	direct
-batch14_c_map_0106	batch14_c	mendoza_model_75_compact_380_acp_pocket_pistol	direct
-batch14_c_map_0107	batch14_c	mendoza_model_505_22_lr_bolt_action_sporting_rifle	direct
-batch14_c_map_0108	batch14_c	sterling_l2a1_mk4_sterling_improved_l2a3_mag_catch_safety	direct
-batch14_c_map_0109	batch14_c	sterling_l34a1_suppressed_sterling_integral_suppressor	direct
-batch14_c_map_0110	batch14_c	sterling_sterling_pistol_semi_auto_pistol_version_of_l2a3_180mm_barrel	direct
-batch14_c_map_0111	batch14_c	sterling_sar_7_62_7_62mm_battle_rifle_self_loading_20_barrel	direct
-batch14_c_map_0112	batch14_c	sterling_patchett_mk1_prototype_smg_predecessor_to_sterling_wooden_stock	direct
-batch14_c_map_0113	batch14_c	beretta_92x_defense_dao_variant_for_law_enforcement_4_7_barrel	direct
-batch14_c_map_0114	batch14_c	beretta_92x_compact_compact_carry_variant_4_barrel	direct
-batch14_c_map_0115	batch14_c	beretta_92fs_brigadier_heavy_slide_variant_5_barrel_dovetail_front_sight	direct
-batch14_c_map_0116	batch14_c	beretta_92fs_inox_stainless_steel_92fs_satin_finish	direct
-batch14_c_map_0117	batch14_c	beretta_92a1_updated_92_with_picatinny_rail_removable_front_sight	direct
-batch14_c_map_0118	batch14_c	beretta_px4_storm_sd_special_duty_variant_40_s_w_with_accessory_rail	direct
-batch14_c_map_0119	batch14_c	beretta_apx_centurion_mid_size_apx_4_barrel_15_round	direct
-batch14_c_map_0120	batch14_c	beretta_apx_a1_strike_updated_striker_optics_ready_4_25_barrel	direct
-batch14_c_map_0121	batch14_c	beretta_cheetah_80_series_81_cheetah_32_acp_single_stack	direct
-batch14_c_map_0122	batch14_c	beretta_cheetah_81_series_81_cheetah_32_acp_blued_finish	direct
-batch14_c_map_0123	batch14_c	sig_sauer_p365_380_p365_platform_in_380_acp_3_1_barrel	direct
-batch14_c_map_0124	batch14_c	sig_sauer_p365_sas_sightless_anti_snag_variant_3_1_barrel	direct
-batch14_c_map_0125	batch14_c	sig_sauer_p320_axg_classic_aluminum_xgrip_frame_classic_slide_4_6_barrel	direct
-batch14_c_map_0126	batch14_c	sig_sauer_p320_axg_pro_axg_frame_with_optic_cut_threaded_barrel_4_8	direct
-batch14_c_map_0127	batch14_c	sig_sauer_p320_axg_legion_axg_frame_with_legion_trigger_tungsten_infused_grip	direct
-batch14_c_map_0128	batch14_c	sig_sauer_p226_legion_legion_sa_da_g10_grips_x_ray_sights_4_4_barrel	direct
-batch14_c_map_0129	batch14_c	sig_sauer_p226_mk25_navy_issue_corrosion_resistant_finish_4_4_barrel	direct
-batch14_c_map_0130	batch14_c	sig_sauer_p226_elite_beavertail_skeletonized_hammer_front_cocking_serrations	direct
-batch14_c_map_0131	batch14_c	sig_sauer_p229_legion_legion_sa_da_carry_g10_grips_3_9_barrel	direct
-batch14_c_map_0132	batch14_c	sig_sauer_p938_sas_sightless_anti_snag_micro_1911_3_barrel	direct
-batch14_c_map_0133	batch14_c	sig_sauer_p238_sport_sport_variant_extended_barrel_380_acp	direct
-batch14_c_map_0134	batch14_c	sig_sauer_sig716_g2_7_62mm_battle_rifle_16_barrel_keymod_handguard	direct
-batch14_c_map_0135	batch14_c	sig_sauer_m400_snakebite_bronze_cerakote_16_fluted_barrel_5_56mm	direct
-batch14_c_map_0136	batch14_c	colt_s_manufacturing_company_python_2020	direct
-batch14_c_map_0137	batch14_c	colt_s_manufacturing_company_python_2020_2	direct
-batch14_c_map_0138	batch14_c	colt_s_manufacturing_company_python_2020_3	direct
-batch14_c_map_0139	batch14_c	colt_s_manufacturing_company_anaconda_2021	direct
-batch14_c_map_0140	batch14_c	colt_s_manufacturing_company_anaconda_2021_2	direct
-batch14_c_map_0141	batch14_c	colt_s_manufacturing_company_king_cobra_target_6_vent_rib_target_barrel_adjustable_target_sights	direct
-batch14_c_map_0142	batch14_c	colt_s_manufacturing_company_cobra_2021_3_snubnose_6_round_38_special_dao	direct
-batch14_c_map_0143	batch14_c	colt_s_manufacturing_company_gold_cup_trophy_5_national_match_barrel_adjustable_trigger_wraparound_grips	direct
-batch14_c_map_0144	batch14_c	colt_s_manufacturing_company_gold_cup_national_match_5_barrel_target_sights_competition_trigger	direct
-batch14_c_map_0145	batch14_c	colt_s_manufacturing_company_lightweight_commander_4_25_barrel_aluminum_alloy_frame	direct
-batch14_c_map_0146	batch14_c	colt_s_manufacturing_company_defender_3_barrel_compact_carry_38_super_variant	direct
-batch14_d_map_0147	batch14_d	benelli_lupo_6_5_creedmoor_20_barrel	direct
-batch14_d_map_0148	batch14_d	benelli_lupo_300_winchester_magnum_24_barrel	direct
-batch14_d_map_0149	batch14_d	benelli_lupo_300_wsm_24_barrel	direct
-batch14_d_map_0150	batch14_d	benelli_lupo_243_winchester_22_barrel	direct
-batch14_d_map_0151	batch14_d	benelli_lupo_270_winchester_22_barrel	direct
-batch14_d_map_0152	batch14_d	benelli_sbe_3_28_barrel_max_7_camo	direct
-batch14_d_map_0153	batch14_d	benelli_sbe_3_26_barrel_be_s_t_coating	direct
-batch14_d_map_0154	batch14_d	benelli_sbe_3_nwtf_turkey_edition_26	direct
-batch14_d_map_0155	batch14_d	benelli_ethos_cordoba_28_sporting	direct
-batch14_d_map_0156	batch14_d	benelli_ethos_supersport_30	direct
-batch14_d_map_0157	batch14_d	benelli_m2_tactical_18_5_ghost_ring	direct
-batch14_d_map_0158	batch14_d	benelli_m2_field_28_comfortech_stock	direct
-batch14_d_map_0159	batch14_d	benelli_supernova_tactical_18_5_ghost_ring_sights	direct
-batch14_d_map_0160	batch14_d	benelli_raffaello_dellavo_28_walnut	direct
-batch14_d_map_0161	batch14_d	franchi_affinity_3_hunter_28_synthetic	direct
-batch14_d_map_0162	batch14_d	franchi_affinity_3_waterfowl_26_camo	direct
-batch14_d_map_0163	batch14_d	franchi_affinity_3_catalyst_26_compact	direct
-batch14_d_map_0164	batch14_d	franchi_instinct_sl_28_over_under	direct
-batch14_d_map_0165	batch14_d	franchi_instinct_sx_30_sporting_clays	direct
-batch14_d_map_0166	batch14_d	franchi_instinct_lx_28_deluxe_walnut	direct
-batch14_d_map_0167	batch14_d	franchi_inspire_bolt_action_308_22_barrel	direct
-batch14_d_map_0168	batch14_d	franchi_horizon_birdland_26_special_edition	direct
-batch14_d_map_0169	batch14_d	franchi_renegade_12ga_defense_18_5	direct
-batch14_d_map_0170	batch14_d	franchi_pa_7_pump_action_12ga_20	direct
-batch14_d_map_0171	batch14_d	henry_big_boy_steel	direct
-batch14_d_map_0172	batch14_d	henry_big_boy_side_gate	direct
-batch14_d_map_0173	batch14_d	henry_big_boy_side_gate_2	direct
-batch14_d_map_0174	batch14_d	henry_golden_boy_22_wmr_20_octagonal	direct
-batch14_d_map_0175	batch14_d	henry_golden_boy_17_hmr_20_octagonal	direct
-batch14_d_map_0176	batch14_d	henry_frontier_22_lr_20_threaded	direct
-batch14_d_map_0177	batch14_d	henry_frontier_22_wmr_20_threaded	direct
-batch14_d_map_0178	batch14_d	henry_long_ranger_308_winchester_20	direct
-batch14_d_map_0179	batch14_d	henry_long_ranger_6_5_creedmoor_20	direct
-batch14_d_map_0180	batch14_d	henry_x_model_357_magnum_17_4_black_synthetic	direct
-batch14_d_map_0181	batch14_d	henry_supreme_223_remington_20_lever_action	direct
-batch14_d_map_0182	batch14_d	henry_homesteader_40_s_w_16_5_semi_auto_carbine	direct
-batch14_d_map_0183	batch14_d	marlin_model_336_texan_20_30_30	direct
-batch14_d_map_0184	batch14_d	marlin_model_336_sporting_20_walnut_30_30	direct
-batch14_d_map_0185	batch14_d	marlin_model_336_csbl_stainless_16_5_30_30	direct
-batch14_d_map_0186	batch14_d	marlin_model_1894_sbl_stainless_44_mag_19	direct
-batch14_d_map_0187	batch14_d	marlin_model_1894_trapper_357_mag_16_5	direct
-batch14_d_map_0188	batch14_d	marlin_model_1894_cowboy_45_colt_24_octagonal	direct
-batch14_d_map_0189	batch14_d	marlin_model_1895_guide_18_5_stainless_45_70	direct
-batch14_d_map_0190	batch14_d	marlin_model_1895_trapper_16_5_45_70	direct
-batch14_d_map_0191	batch14_d	marlin_model_1895_gbl_22_blued_walnut_45_70	direct
-batch14_d_map_0192	batch14_d	marlin_model_60_ss_stainless_19_22_lr	direct
-batch14_d_map_0193	batch14_d	marlin_model_795_ss_stainless_18_22_lr	direct
-batch14_d_map_0194	batch14_d	ithaca_model_37_deerslayer_iii_24_rifled_barrel	direct
-batch14_d_map_0195	batch14_d	ithaca_model_37_supreme_28_walnut	direct
-batch14_d_map_0196	batch14_d	ithaca_model_37_trap_30_vent_rib	direct
-batch14_d_map_0197	batch14_d	ithaca_model_37_waterfowl_28_camo	direct
-batch14_d_map_0198	batch14_d	ithaca_model_37_ds_ps_police_special_18_5_parkerized	direct
-batch14_d_map_0199	batch14_d	ithaca_model_87_pump_12ga_28_field	direct
-batch14_d_map_0200	batch14_d	ithaca_model_72_saddlegun_lever_30_30_20	direct
-batch14_d_map_0201	batch14_d	breda_breda_930_tactical_18_5_synthetic	direct
-batch14_d_map_0202	batch14_d	breda_b12_12s_inertia_28	direct
-batch14_d_map_0203	batch14_d	breda_a1_semi_auto_28_field	direct
-batch14_d_map_0204	batch14_d	breda_a2_semi_auto_26_synthetic	direct
-batch14_d_map_0205	batch14_d	breda_breda_391_semi_auto_12ga_28	direct
-batch14_d_map_0206	batch14_d	breda_x_pert_12ga_semi_auto_28_field	direct
-batch14_d_map_0207	batch14_d	stoeger_str_9_combat_4_5_barrel_9mm_striker	direct
-batch14_d_map_0208	batch14_d	stoeger_p3000_defense_18_5_pump_action	direct
-batch14_d_map_0209	batch14_d	stoeger_p3000_waterfowl_28_camo	direct
-batch14_d_map_0210	batch14_d	stoeger_m3020_semi_auto_20ga_26	direct
-batch14_d_map_0211	batch14_d	stoeger_double_defense_over_under_12ga_20	direct
-batch14_d_map_0212	batch14_d	stoeger_condor_outback_26_matte_nickel	direct
+para_p12_45	para_p14_45	auto-fixed (fuzzy)	Para Ordnance	.45 ACP
+para_p13_45	para_p14_45	auto-fixed (fuzzy)	Para Ordnance	.45 ACP
+para_gi_expert	para_p14_45	auto-fixed (fuzzy)	Para Ordnance	.45 ACP
+para_warthog	para_p14_45	auto-fixed (fuzzy)	Para Ordnance	.45 ACP
+para_hawg_9	para_p14_45	auto-fixed (fuzzy)	Para Ordnance	9×19mm Parabellum
+para_black_ops	para_p14_45	auto-fixed (fuzzy)	Para Ordnance	.45 ACP
+para_tac_s	para_p14_45	auto-fixed (fuzzy)	Para Ordnance	.45 ACP
+para_carry_9	para_p14_45	auto-fixed (fuzzy)	Para Ordnance	9×19mm Parabellum
+ria_gi_standard_fs	ria_rock_ultra	auto-fixed (fuzzy)	Rock Island Armory	.45 ACP
+ria_tactical	ria_rock_ultra	auto-fixed (fuzzy)	Rock Island Armory	.45 ACP
+ria_match	ria_rock_ultra	auto-fixed (fuzzy)	Rock Island Armory	.45 ACP
+ria_compact	ria_rock_ultra	auto-fixed (fuzzy)	Rock Island Armory	.45 ACP
+ria_pro_match_ultra	ria_rock_ultra	auto-fixed (fuzzy)	Rock Island Armory	.45 ACP
+ria_ultra_fs	ria_rock_ultra	auto-fixed (fuzzy)	Rock Island Armory	.45 ACP
+ria_1911a1	ria_rock_ultra	auto-fixed (fuzzy)	Rock Island Armory	.45 ACP
+ria_m200	ria_rock_ultra	auto-fixed (fuzzy)	Rock Island Armory	.38 Special
+ria_m206	ria_rock_ultra	auto-fixed (fuzzy)	Rock Island Armory	.38 Special
+ria_mapp	ria_rock_ultra	auto-fixed (fuzzy)	Rock Island Armory	9×19mm Parabellum
+cz_527_american	CZ_BRNO_ZKK	auto-fixed (fuzzy)	BRNO / CZ	.223 Remington
+cz_527_varmint	CZ_BRNO_ZKK	auto-fixed (fuzzy)	BRNO / CZ	.223 Remington
+cz_550_american	CZ_BRNO_ZKK	auto-fixed (fuzzy)	BRNO / CZ	.30-06 Springfield
+cz_550_safari	CZ_BRNO_ZKK	auto-fixed (fuzzy)	BRNO / CZ	.375 Holland & Holland
+cz_557_american	CZ_BRNO_ZKK	auto-fixed (fuzzy)	BRNO / CZ	.308 Win
+cz_455_american	CZ_BRNO_ZKK	auto-fixed (fuzzy)	BRNO / CZ	.22 LR
+cz_455_varmint	CZ_BRNO_ZKK	auto-fixed (fuzzy)	BRNO / CZ	.22 LR
+cz_512	CZ_BRNO_ZKK	auto-fixed (fuzzy)	BRNO / CZ	.22 LR
+fausti_dea_round	cassull_model_410	auto-fixed (fuzzy)	Fausti / Cassull / Rizzini	12 Gauge
+rizzini_rb	cassull_model_410	auto-fixed (fuzzy)	Fausti / Cassull / Rizzini	12 Gauge
+sig_p320_xcarry	P210	auto-fixed (fuzzy)	Sig Sauer	9×19mm Parabellum
+sig_p365_xmacro	P210	auto-fixed (fuzzy)	Sig Sauer	9×19mm Parabellum
+sig_p224	P210	auto-fixed (fuzzy)	Sig Sauer	9×19mm Parabellum
+sig_p938	P210	auto-fixed (fuzzy)	Sig Sauer	9×19mm Parabellum
+sig_p238	P210	auto-fixed (fuzzy)	Sig Sauer	.380 ACP
+sig_mcx_regulator	P210	auto-fixed (fuzzy)	Sig Sauer	5.56×45mm NATO
+sig_556xi	P210	auto-fixed (fuzzy)	Sig Sauer	5.56×45mm NATO
+sig_mcx_spear_lt	P210	auto-fixed (fuzzy)	Sig Sauer	7.62×51mm NATO
+sig_p229_40	P210	auto-fixed (fuzzy)	Sig Sauer	.40 S&W
+breda_b12i	breda_930	auto-fixed (fuzzy)	Breda	12 Gauge
+breda_930_20	breda_930	auto-fixed (fuzzy)	Breda	20 Gauge
+tikka_t3x_upr_6_5_cm	tikka_t3x_varmint_6_5_cm	auto-fixed (fuzzy)	T3x UPR 6.5 CM	Tikka
+tikka_t3x_upr_300_wm	magnum_research_mountain_eagle_300_wm	auto-fixed (fuzzy)	T3x UPR .300 WM	Tikka
+tikka_t3x_game_308	tikka_t3x_upr_308	auto-fixed (fuzzy)	T3x Game .308	Tikka
+sako_s20_hunter_308	kimber_hunter_308	auto-fixed (fuzzy)	S20 Hunter .308	Sako
+sako_85_black_308	sako_85_finnlight_308	auto-fixed (fuzzy)	85 Black .308	Sako
+sako_100_6_5_cm	tikka_t3x_varmint_6_5_cm	auto-fixed (fuzzy)	100 6.5 CM	Sako
+hatsan_model_100	winchester_model_100	auto-fixed (fuzzy)	Model 100	Hatsan
+lmt_defense_cqb_mrp	lmt_cqb_mrp_556	auto-fixed (fuzzy)	CQB MRP	LMT Defense
 ace_wc_edc_x9_0	wc_edc_x9
 ace_wc_edc_x9s_1	wc_edc_x9s
 ace_wc_sfx9_2	wc_sfx9
@@ -2088,32 +619,16 @@ ace_wc_hunter_8	wc_hunter
 ace_wc_sentinel_9	wc_sentinel
 ace_wc_experior_10	wc_experior
 ace_wc_ar9_11	wc_ar9
-ace_wc_recon_tactical_12	wc_recon_tactical
-ace_wc_92g_brigadier_tactical_13	wc_92g_brigadier_tactical
 ace_zev_oz9_14	zev_oz9
-ace_zev_oz9_combat_15	zev_oz9_combat
 ace_zev_oz9_hyper_16	zev_oz9_hyper
-ace_zev_oz9_compact_17	zev_oz9_compact
-ace_zev_oz9_compact_x_18	zev_oz9_compact_x
 ace_zev_z365_19	zev_z365
 ace_zev_z365xl_20	zev_z365xl
 ace_zev_oz9_duty_21	zev_oz9_duty
 ace_zev_citadel_22	zev_citadel
-ace_rra_lar_15_standard_a2_23	rra_lar_15_standard_a2
-ace_rra_lar_15_entry_tactical_24	rra_lar_15_entry_tactical
-ace_rra_lar_15_operator_25	rra_lar_15_operator
-ace_rra_lar_15_elite_car_26	rra_lar_15_elite_car
-ace_rra_lar_15_national_match_27	rra_lar_15_national_match
 ace_rra_lar_8_28	rra_lar_8
-ace_rra_lar_8_operator_29	rra_lar_8_operator
 ace_rra_lar_9_30	rra_lar_9
 ace_rra_lar_45_31	rra_lar_45
 ace_rra_1911_gi_32	rra_1911_gi
-ace_rra_1911_compact_33	rra_1911_compact
-ace_ptr_ptr_91_a3s_34	ptr_ptr_91_a3s
-ace_ptr_ptr_91_a3r_35	ptr_ptr_91_a3r
-ace_ptr_ptr_91_kfr_36	ptr_ptr_91_kfr
-ace_ptr_ptr_91_gir_37	ptr_ptr_91_gir
 ace_ptr_ptr_32_38	ptr_ptr_32
 ace_ptr_ptr_9ct_39	ptr_ptr_9ct
 ace_ptr_ptr_9r_40	ptr_ptr_9r
@@ -2124,170 +639,34 @@ ace_jp_lrp_07_44	jp_lrp_07
 ace_jp_gmr_15_45	jp_gmr_15
 ace_jp_jp_5_46	jp_jp_5
 ace_std_mfg_dp_12_47	std_mfg_dp_12
-ace_std_mfg_s333_thunderstruck_48	std_mfg_s333_thunderstruck
-ace_std_mfg_1911_g_i_49	std_mfg_1911_g_i
-ace_std_mfg_1911_commander_50	std_mfg_1911_commander
-ace_std_mfg_1911_target_51	std_mfg_1911_target
 ace_troy_m7a1_52	troy_m7a1
 ace_troy_m7a1_cqb_53	troy_m7a1_cqb
 ace_troy_m7a1_pdw_54	troy_m7a1_pdw
-ace_troy_m14_sopmod_55	troy_m14_sopmod
 ace_troy_par_5_56_56	troy_par_5_56
 ace_troy_par_308_57	troy_par_308
 ace_colt_1991a1_58	colt_1991a1
-ace_colt_government_xse_59	colt_government_xse
-ace_colt_series_70_government_60	colt_series_70_government
-ace_colt_diamondback_61	colt_diamondback
-ace_colt_trooper_mk_iii_62	colt_trooper_mk_iii
-ace_colt_official_police_63	colt_official_police
-ace_colt_1903_pocket_hammerless_64	colt_1903_pocket_hammerless
 ace_colt_buntline_65	colt_buntline
-ace_ruger_security_9_compact_66	ruger_security_9_compact
-ace_ruger_super_blackhawk_67	ruger_super_blackhawk
-ace_ruger_single_six_68	ruger_single_six
-ace_ruger_american_ranch_69	ruger_american_ranch
-ace_ruger_mini_14_tactical_70	ruger_mini_14_tactical
 ace_ruger_sfar_71	ruger_sfar
-ace_ruger_lc_carbine_72	ruger_lc_carbine
 ace_ruger_57_73	ruger_57
 ace_smw_model_27_74	smw_model_27
 ace_smw_model_28_75	smw_model_28
 ace_smw_model_57_76	smw_model_57
 ace_smw_model_617_77	smw_model_617
-ace_smw_model_460_xvr_78	smw_model_460_xvr
 ace_smw_model_500_79	smw_model_500
 ace_smw_model_586_80	smw_model_586
-ace_smw_m&p_22_compact_81	smw_m&p_22_compact
 ace_taurus_g3_82	taurus_g3
 ace_taurus_gx4xl_83	taurus_gx4xl
-ace_taurus_tx22_competition_84	taurus_tx22_competition
-ace_taurus_tx22_compact_85	taurus_tx22_compact
-ace_taurus_model_66_86	taurus_model_66
-ace_taurus_model_692_87	taurus_model_692
-ace_taurus_judge_public_defender_88	taurus_judge_public_defender
-ace_taurus_raging_hunter_454_89	taurus_raging_hunter_454
 ace_taurus_pt140_90	taurus_pt140
 ace_taurus_th40_91	taurus_th40
-ace_mossberg_500_field_92	mossberg_500_field
-ace_mossberg_590_shockwave_93	mossberg_590_shockwave
-ace_mossberg_590_mariner_94	mossberg_590_mariner
-ace_mossberg_835_ulti_mag_95	mossberg_835_ulti_mag
-ace_mossberg_940_tactical_96	mossberg_940_tactical
-ace_mossberg_sa_20_97	mossberg_sa_20
-ace_mossberg_mc1sc_98	mossberg_mc1sc
 ace_mossberg_mc2c_99	mossberg_mc2c
-ace_remington_model_700_xhr_100	remington_model_700_xhr
-ace_remington_model_700_varmint_101	remington_model_700_varmint
-ace_remington_model_870_fieldmaster_102	remington_model_870_fieldmaster
-ace_remington_model_870_tactical_103	remington_model_870_tactical
-ace_remington_v3_field_104	remington_v3_field
-ace_remington_v3_tactical_105	remington_v3_tactical
-ace_remington_rp45_106	remington_rp45
-ace_remington_1911_r1_commander_107	remington_1911_r1_commander
-ace_sig_sauer_p227_108	sig_sauer_p227
-ace_sig_sauer_p322_109	sig_sauer_p322
-ace_sig_sauer_p365_x_macro_110	sig_sauer_p365_x_macro
-ace_sig_sauer_p320_x_carry_111	sig_sauer_p320_x_carry
-ace_sig_sauer_mcx_virtus_16_112	sig_sauer_mcx_virtus_16
-ace_sig_sauer_cross_prf_113	sig_sauer_cross_prf
-ace_arc_archimedes_114	arc_archimedes
-ace_arc_mausingfield_115	arc_mausingfield
-ace_arc_coup_de_grace_116	arc_coup_de_grace
-ace_arc_mausingfield_300wm_117	arc_mausingfield_300wm
-ace_arc_coup_de_grace_338_118	arc_coup_de_grace_338
-ace_ga_precision_gap_10_119	ga_precision_gap_10
-ace_ga_precision_gap_10_crusader_120	ga_precision_gap_10_crusader
-ace_ga_precision_tempest_121	ga_precision_tempest
-ace_ga_precision_gladius_122	ga_precision_gladius
-ace_ga_precision_psr_123	ga_precision_psr
-ace_surgeon_scalpel_124	surgeon_scalpel
-ace_surgeon_scalpel_long_125	surgeon_scalpel_long
-ace_surgeon_medium_action_126	surgeon_medium_action
 ace_bighorn_tl3_127	bighorn_tl3
-ace_bighorn_origin_128	bighorn_origin
-ace_bighorn_zermatt_arms_129	bighorn_zermatt_arms
-ace_defiance_deviant_130	defiance_deviant
-ace_defiance_anti_x_131	defiance_anti_x
-ace_defiance_ruckus_132	defiance_ruckus
-ace_defiance_tenacity_133	defiance_tenacity
-ace_mack_bros_edm_134	mack_bros_edm
-ace_mack_bros_maco_ss_135	mack_bros_maco_ss
-ace_stiller_tac_300_136	stiller_tac_300
-ace_stiller_tac_400_137	stiller_tac_400
-ace_stiller_viper_138	stiller_viper
-ace_stiller_predator_139	stiller_predator
-ace_beretta_1301_tactical_gen_2_140	beretta_1301_tactical_gen_2
-ace_beretta_1301_competition_141	beretta_1301_competition
-ace_beretta_a300_ultima_patrol_142	beretta_a300_ultima_patrol
-ace_beretta_a300_outlander_143	beretta_a300_outlander
-ace_beretta_a400_xcel_144	beretta_a400_xcel
-ace_beretta_80x_cheetah_145	beretta_80x_cheetah
-ace_beretta_92xi_squalo_146	beretta_92xi_squalo
-ace_beretta_92x_performance_fr_147	beretta_92x_performance_fr
-ace_beretta_apx_a1_carry_148	beretta_apx_a1_carry
-ace_beretta_apx_a1_compact_149	beretta_apx_a1_compact
-ace_beretta_687_silver_pigeon_iii_150	beretta_687_silver_pigeon_iii
-ace_beretta_687_silver_pigeon_v_151	beretta_687_silver_pigeon_v
 ace_beretta_dt11_152	beretta_dt11
-ace_sig_sauer_p238_hd_153	sig_sauer_p238_hd
-ace_sig_sauer_p238_nitron_154	sig_sauer_p238_nitron
-ace_sig_sauer_p938_sas_155	sig_sauer_p938_sas
-ace_sig_sauer_p938_extreme_156	sig_sauer_p938_extreme
-ace_sig_sauer_p320_x_five_legion_157	sig_sauer_p320_x_five_legion
-ace_sig_sauer_p320_x_carry_legion_158	sig_sauer_p320_x_carry_legion
-ace_sig_sauer_p320_axg_classic_159	sig_sauer_p320_axg_classic
-ace_sig_sauer_p365_x-macro_14_160	sig_sauer_p365_x-macro_14
-ace_sig_sauer_p365_axg_legion_161	sig_sauer_p365_axg_legion
-ace_sig_sauer_p226_x_five_162	sig_sauer_p226_x_five
-ace_sig_sauer_p226_x_six_163	sig_sauer_p226_x_six
-ace_sig_sauer_p226_legion_164	sig_sauer_p226_legion
-ace_sig_sauer_p229_elite_165	sig_sauer_p229_elite
-ace_sig_sauer_p229_scorpion_166	sig_sauer_p229_scorpion
-ace_sig_sauer_p229_legion_167	sig_sauer_p229_legion
-ace_sig_sauer_cross_168	sig_sauer_cross
-ace_sig_sauer_mcx_canebrake_169	sig_sauer_mcx_canebrake
-ace_sig_sauer_mcx_rattler_170	sig_sauer_mcx_rattler
-ace_sig_sauer_716i_tread_171	sig_sauer_716i_tread
-ace_sig_sauer_716_dmr_172	sig_sauer_716_dmr
-ace_walther_pdp_pro_sd_full_173	walther_pdp_pro_sd_full
-ace_walther_pdp_compact_4_174	walther_pdp_compact_4
-ace_walther_pps_m2_175	walther_pps_m2
-ace_walther_ppk_s_176	walther_ppk_s
-ace_walther_ccp_m2_177	walther_ccp_m2
-ace_walther_p22_ca_178	walther_p22_ca
-ace_walther_q4_sf_179	walther_q4_sf
-ace_walther_q5_sf_steel_frame_180	walther_q5_sf_steel_frame
 ace_feg_pa_38_181	feg_pa_38
 ace_feg_sfp_9_182	feg_sfp_9
 ace_feg_r_9_183	feg_r_9
 ace_feg_r_61_184	feg_r_61
 ace_feg_pmk_82_185	feg_pmk_82
-ace_amt_automag_ii_186	amt_automag_ii
-ace_amt_automag_iii_187	amt_automag_iii
-ace_amt_automag_iv_188	amt_automag_iv
-ace_amt_automag_v_189	amt_automag_v
 ace_amt_on_duty_190	amt_on_duty
-ace_amt_hardballer_longslide_191	amt_hardballer_longslide
-ace_amt_backup_380_192	amt_backup_380
-ace_amt_backup_45_193	amt_backup_45
-ace_cetme_model_a_194	cetme_model_a
-ace_cetme_model_b_195	cetme_model_b
-ace_cetme_model_c_196	cetme_model_c
-ace_cetme_model_l_197	cetme_model_l
-ace_cetme_model_lc_198	cetme_model_lc
-ace_mateba_model_6_unica_hunter_199	mateba_model_6_unica_hunter
-ace_mateba_model_6_unica_defense_200	mateba_model_6_unica_defense
-ace_mateba_grifone_carbine_201	mateba_grifone_carbine
-ace_mateba_grifone_short_202	mateba_grifone_short
-ace_eaa_vindicator_203	eaa_vindicator
-ace_eaa_bounty_hunter_saa_204	eaa_bounty_hunter_saa
-ace_eaa_witness_steel_full_size_205	eaa_witness_steel_full_size
-ace_eaa_witness_hunter_206	eaa_witness_hunter
-ace_eaa_witness_compact_207	eaa_witness_compact
-ace_eaa_witness_match_208	eaa_witness_match
-ace_molot_vepr_12_209	molot_vepr_12
-ace_molot_vepr_super_210	molot_vepr_super
-ace_molot_vepr_7_62x54r_211	molot_vepr_7_62x54r
 ace_molot_vepr_k_212	molot_vepr_k
 ace_molot_km_7_213	molot_km_7
 ace_molot_ko_44_214	molot_ko_44
