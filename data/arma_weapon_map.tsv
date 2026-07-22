@@ -250,7 +250,6 @@ m14	m14	exact	Catalog primary key
 m60	m60	exact	Catalog primary key
 m1911	m1911	exact	Catalog primary key
 colt_1911	m1911	variant	Catalog alias
-## R3F French mod weapons
 r3f_famas_f1	giat_famas_f1	exact	R3F mod primary key
 r3f_famas_g2	giat_famas_g2	exact	R3F mod primary key
 r3f_famas_felin	giat_famas_felin	exact	R3F mod primary key
@@ -263,7 +262,6 @@ r3f_hk_mp5a5	heckler_koch_mp5	exact	R3F mod primary key
 r3f_hk_mp5sd6	heckler_koch_mp5sd	exact	R3F mod primary key
 r3f_hk_mp5k	heckler_koch_mp5k	exact	R3F mod primary key
 r3f_hk_mp7a2	heckler_koch_mp7	exact	R3F mod primary key
-## Arma 3 vanilla weapons (DLC / base game)
 hgun_mk26_f	magnum_research_desert_eagle_mk_xix	exact	Arma 3 vanilla primary key
 hgun_pistol_01_f	makarov_pm	exact	Arma 3 vanilla primary key
 sgun_ksg_f	kel_tec_ksg	exact	Arma 3 vanilla primary key
@@ -274,7 +272,6 @@ dmr_07_base	sig_sauer_cmr_76	exact	Arma 3 Marksmen DLC
 mmg_01_base	general_dynamics_lwmmg	exact	Arma 3 Marksmen DLC
 mmg_02_base	heckler_koch_mg5	exact	Arma 3 Marksmen DLC
 arifle_arx_base_f	type_115	estimated	Arma 3 Apex DLC; Type 115 is fictional weapon, loosely inspired by QBZ-95-1 but in 6.5mm caseless
-## RH Pistols / SMG mod weapons
 RH_cz75	cz_75	exact	CZ 75 9×19mm full-size (120mm barrel)
 RH_tec9	tec_9	exact	Intratec TEC-DC9 9×19mm, standard 5" barrel
 RH_tt33	tt_33	exact	Tokarev TT-33 7.62×25mm
@@ -289,7 +286,6 @@ RH_usp	hk_usp	exact	HK USP 9×19mm full-size, 4.25" barrel
 RH_deagle	desert_eagle	exact	Desert Eagle Mark XIX .44 Magnum, 6" barrel
 RH_fnp45	fnp_45	exact	FNP-45 .45 ACP, 4.5" barrel
 RH_anaconda	colt_anaconda	exact	Colt Anaconda .44 Magnum, 6" barrel
-## RHS cold-war weapons
 rhs_weap_kar98k	mauser_kar98k	exact	Karabiner 98k bolt-action, 7.92×57mm Mauser
 rhs_weap_mp44	stg44	variant	StG 44 (MP44), maps to existing stg44 entry
 rhs_weap_savz58p	sa_vz_58p	exact	vz. 58 P (fixed stock), 7.62×39mm, 390mm barrel
@@ -809,8 +805,6 @@ sako_trg_22_short	sako_trg_22_short	exact	Catalog primary key (Batch 4)
 sako_trg_42_short	sako_trg_42_short	exact	Catalog primary key (Batch 4)
 remington_m700_hvy	remington_m700_hvy	exact	Catalog primary key (Batch 4)
 fb_radom_msbs_grot	fb_radom_msbs_grot	exact	Catalog primary key (Batch 4)
-## RH Pistols / SMG mod weapons	## RH Pistols / SMG mod weapons	exact	Catalog primary key (Batch 4)
-## RHS cold-war weapons	## RHS cold-war weapons	exact	Catalog primary key (Batch 4)
 M4	M4	exact	Catalog primary key (Batch 4)
 g3a4	g3a4	exact	Catalog primary key (Batch 4)
 g3sg1	g3sg1	exact	Catalog primary key (Batch 4)

@@ -112,7 +112,7 @@ cheytac_m200_intervention	CheyTac	M200 Intervention	Sniper Rifle	.408 CheyTac	10
 fn_herstal_minimi_m249	FN Herstal	Minimi (M249)	Light Machine Gun	5.56×45mm NATO	5.56	465	178	1	430	4.0	924	researched (NATO EPVAT/M855)	researched
 fn_herstal_mag_m240	FN Herstal	MAG (M240)	Light Machine Gun	7.62×51mm NATO	7.62	630	305	1	427	9.5	857	researched (SAAMI .308/M80)	researched
 heckler_koch_mg4	Heckler & Koch	MG4	Light Machine Gun	5.56×45mm NATO	5.56	482	178	1	430	4.0	932	researched (NATO EPVAT/M855)	researched
-heckler_koch_mg5	Heckler & Koch	MG5	Light Machine Gun	7.62×51mm NATO	7.62	550	305	1	427	9.5	837	researched (SAAMI .308/M80)	researched
+heckler_koch_mg5_lb	Heckler & Koch	MG5	Light Machine Gun	7.62×51mm NATO	7.62	550	305	1	427	9.5	837	researched (SAAMI .308/M80)	researched
 rheinmetall_mg3	Rheinmetall	MG3	Light Machine Gun	7.62×51mm NATO	7.62	565	305	1	427	9.5	841	researched (SAAMI .308/M80)	researched
 sig_mg_338	SIG	MG 338	Light Machine Gun	.338 Lapua Magnum	8.58	610	254	1	420	16.2	895	researched (CIP/250gr)	researched
 aai_corporation_m249_para	AAI Corporation	M249 Para	Light Machine Gun	5.56×45mm NATO	5.56	349	178	1	430	4.0	842	researched (NATO EPVAT/M855)	researched
@@ -135,16 +135,16 @@ dynamit_nobel_m79_osa	Dynamit Nobel	M79 Osa	Launcher	90mm	90.0	1910	0	0	0.0	0.0	
 m14	Springfield Armory	M14	Battle Rifle	7.62×51mm NATO	7.62	559	305	1	427	9.5	840	researched (US Army TM)	researched
 m60	Saco Defense	M60	General Purpose Machine Gun	7.62×51mm NATO	7.62	560	305	1	427	9.5	840	researched (US Army TM)	researched
 m1911	Colt	M1911A1	Pistol	.45 ACP	11.43	127	406	2	145	15.0	260	researched (US Army TM)	researched
-heckler_koch_hk416_10	Heckler & Koch	"HK416 (10.4"")"	Assault Rifle	5.56×45mm NATO	5.56	264.0	177.8	1	430			4.0		767	catalog	researched
-heckler_koch_hk416_165	Heckler & Koch	"HK416 (16.5"")"	Assault Rifle	5.56×45mm NATO	5.56	419.0	177.8	1	430			4.0		898	catalog	researched
-heckler_koch_hk417_13	Heckler & Koch	"HK417 (13"")"	Sniper Rifle	7.62×51mm NATO	7.62	330.2	280.0	1	427			9.5		730	catalog	researched
-heckler_koch_hk417_20	Heckler & Koch	"HK417 (20"")"	Sniper Rifle	7.62×51mm NATO	7.62	508.0	280.0	1	427			9.5		820	catalog	researched
-fn_herstal_scar_l_10	FN Herstal	SCAR-L CQC	Assault Rifle	5.56×45mm NATO	5.56	254.0	177.8	1	430			4.0		759	catalog	researched
-fn_herstal_scar_l_18	FN Herstal	SCAR-L LB	Assault Rifle	5.56×45mm NATO	5.56	457.0	177.8	1	430			4.0		920	catalog	researched
-fn_herstal_scar_h_13	FN Herstal	SCAR-H CQC	Sniper Rifle	7.62×51mm NATO	7.62	330.2	279.4	1	427			9.5		730	catalog	researched
-fn_herstal_scar_h_20	FN Herstal	SCAR-H LB	Sniper Rifle	7.62×51mm NATO	7.62	508.0	279.4	1	427			9.5		820	catalog	researched
-steyr_aug_16	Steyr	"AUG (16"")"	Assault Rifle	5.56×45mm NATO	5.56	417.0	228.6	1	430			4.0		897	catalog	researched
-degtyaryov_plant_rpk_16_lb	Degtyaryov Plant	RPK-16 (Long)	Light Machine Gun	5.45×39mm	5.45	550.0	200.0	1	355			3.4		890	catalog	researched
+heckler_koch_hk416_10	Heckler & Koch	HK416 (10.4")	Assault Rifle	5.56×45mm NATO	5.56	264.0	177.8	1	430	4.0	767	catalog	researched
+heckler_koch_hk416_165	Heckler & Koch	HK416 (16.5")	Assault Rifle	5.56×45mm NATO	5.56	419.0	177.8	1	430	4.0	898	catalog	researched
+heckler_koch_hk417_13	Heckler & Koch	HK417 (13")	Sniper Rifle	7.62×51mm NATO	7.62	330.2	280.0	1	427	9.5	730	catalog	researched
+heckler_koch_hk417_20	Heckler & Koch	HK417 (20")	Sniper Rifle	7.62×51mm NATO	7.62	508.0	280.0	1	427	9.5	820	catalog	researched
+fn_herstal_scar_l_10	FN Herstal	SCAR-L CQC	Assault Rifle	5.56×45mm NATO	5.56	254.0	177.8	1	430	4.0	759	catalog	researched
+fn_herstal_scar_l_18	FN Herstal	SCAR-L LB	Assault Rifle	5.56×45mm NATO	5.56	457.0	177.8	1	430	4.0	920	catalog	researched
+fn_herstal_scar_h_13	FN Herstal	SCAR-H CQC	Sniper Rifle	7.62×51mm NATO	7.62	330.2	279.4	1	427	9.5	730	catalog	researched
+fn_herstal_scar_h_20	FN Herstal	SCAR-H LB	Sniper Rifle	7.62×51mm NATO	7.62	508.0	279.4	1	427	9.5	820	catalog	researched
+steyr_aug_16	Steyr	AUG (16")	Assault Rifle	5.56×45mm NATO	5.56	417.0	228.6	1	430	4.0	897	catalog	researched
+degtyaryov_plant_rpk_16_lb	Degtyaryov Plant	RPK-16 (Long)	Light Machine Gun	5.45×39mm	5.45	550.0	200.0	1	355	3.4	890	catalog	researched
 heckler_koch_hk416_20	Heckler & Koch	HK416	"20"" barrel"	5.56×45mm NATO	5.56	508	178	1	430	4.0	940	researched (NATO EPVAT/M855)	researched
 fn_herstal_scar_l_cqc	FN Herstal	SCAR-L	"10"" CQC barrel"	5.56×45mm NATO	5.56	254	178	1	430	4.0	759	researched (NATO EPVAT/M855)	researched
 fn_herstal_scar_l_lb	FN Herstal	SCAR-L	"18"" LB barrel"	5.56×45mm NATO	5.56	457	178	1	430	4.0	920	researched (NATO EPVAT/M855)	researched
@@ -177,7 +177,6 @@ general_dynamics_lwmmg	General Dynamics	LWMMG	Medium Machine Gun	.338 Norma Magn
 heckler_koch_mg5	Heckler & Koch	MG5 (HK121)	General Purpose Machine Gun	7.62×51mm NATO	7.62	460	305	1	427	9.5	785	researched (H&K MG5 official specs)	researched
 fb_radom_msbs_grot	FB "Łucznik" Radom	MSBS Grot (Promet)	Assault Rifle	5.56×45mm NATO	5.56	406	203	1	430	4.0	890	estimated (Wikipedia / manufacturer)	estimated
 type_115	N/A (Bohemia Interactive)	Type 115	Assault Rifle	6.5mm Caseless	6.5	420	229	1	380	5.0	880	estimated (game original - fictional weapon loosely inspired by QBZ-95-1)	estimated
-## RH Pistols / SMG mod weapons
 cz_75	Česká zbrojovka	CZ 75	Handgun	9×19mm Parabellum	9.02	120	246	1	241	8.0	360	CZ OEM manual (mcarbo.com), SAAMI Z299.3, Wikipedia	researched
 tec_9	Intratec Firearms	TEC-DC9	Handgun	9×19mm Parabellum	9.02	127	250	1	241	8.0	370	Modern Firearms, Wikipedia, SAAMI Z299.3	researched
 tt_33	Tula Arms Plant	TT-33	Handgun	7.62×25mm Tokarev	7.85	116	240	1	250	5.5	420	Small Arms Survey, Wikipedia (7.62×25mm article), CIP	researched
@@ -185,14 +184,12 @@ vz_61_skorpion	Česká zbrojovka Uherský Brod	Sa vz. 61 Škorpion	Submachine Gu
 sw_659	Smith & Wesson	659	Handgun	9×19mm Parabellum	9.02	102	250	1	241	8.0	350	Genitron.com, Firearms Bulletin, SAAMI Z299.3	researched
 kimber_custom	Kimber America	Custom II	Handgun	.45 ACP	11.48	127	406	2	145	15.0	260	Kimber America official specs (kimberamerica.com), SAAMI	researched
 colt_python	Colt's Manufacturing Company	Python	Handgun	.357 Magnum	9.07	152	356	2	241	10.2	400	Colt OEM manual (lakelinellc.com), Shooting Times, SAAMI	researched
-mp5k	Heckler & Koch	MP5K	Submachine Gun	9×19mm Parabellum	9.02	115	250	1	241	8.0	300	HK USA official brochure (hk-usa.com), Wikipedia, SAAMI	researched
 ruger_mk_ii	Sturm, Ruger & Co.	Mark II	Handgun	.22 Long Rifle	5.66	121	406	1	165	2.6	319	Ruger OEM manual (ruger-docs), Optics Planet, SAAMI	researched
 browning_hi_power	FN Herstal	Hi-Power	Handgun	9×19mm Parabellum	9.02	118	254	1	241	8.0	335	Browning OEM manual, Wikipedia, SAAMI Z299.3	researched
 hk_usp	Heckler & Koch	USP	Handgun	9×19mm Parabellum	9.02	108	250	1	241	8.0	350	HK USA official specs (hk-usa.com), Small Arms Defense Journal, SAAMI	researched
 desert_eagle	Magnum Research (IMI)	Mark XIX Desert Eagle	Handgun	.44 Remington Magnum	10.90	152	457	1	248	15.6	450	Magnum Research official tech data (shopkahrfirearmsgroup.com), SAAMI	researched
 fnp_45	FN Herstal (FNH USA)	FNP-45	Handgun	.45 ACP	11.48	114	406	1	145	15.0	260	Modern Firearms, FNH USA, Wikipedia, SAAMI	researched
 colt_anaconda	Colt's Manufacturing Company	Anaconda	Handgun	.44 Remington Magnum	10.90	152	508	2	248	15.6	430	Shooting Times, Colt official catalog, SAAMI	researched
-## RHS cold-war weapons
 mauser_kar98k	Mauser Werke AG (contracted to multiple manufacturers)	Karabiner 98k	Bolt-Action Rifle	7.92×57mm Mauser s.S.	8.22	600	240	1	390	12.8	760	Dockery Armory, Wikipedia	Researched
 sa_vz_58p	Česká zbrojovka Uherský Brod	vz. 58 P (fixed stock)	Assault Rifle	7.62×39mm M43	7.85	390	240	1	355	8.0	705	Wikipedia	Researched
 sa_vz_58v	Česká zbrojovka Uherský Brod	vz. 58 V (folding stock)	Assault Rifle	7.62×39mm M43	7.85	390	240	1	355	8.0	705	Wikipedia	Researched
@@ -903,7 +900,7 @@ rhino_30ds_chiappa	Chiappa	30Ds Chiappa	DA/SA	.357 Magnum	9.07	76	483	1	345	8.1	
 rhino_40ds_chiappa	Chiappa	40Ds Chiappa	DA/SA	.357 Magnum	9.07	102	483	1	345	8.1	413	researched (Chiappa Firearms SKU 340.219 (1:19 Twist Rate), Wikipedia)	researched
 rhino_60ds_chiappa	Chiappa	60Ds Chiappa	DA/SA	.357 Magnum	9.07	152	483	1	345	8.1	426	researched (Chiappa Firearms SKU 340.221 (1:19 Twist Rate), Wikipedia)	researched
 m6_survival_chiappa	Chiappa	Survival Chiappa	break-action	.22 LR	5.66	470	406	1	165	2.6	329	researched (Chiappa Firearms SKU 500.188, Wikipedia (M6 Survival), shotgun barrel smoothbore)	estimated
-m9_chiappa	Chiappa		semi-auto	9×19mm	9.01	125	250	1	250	8.0	361	researched (Wikipedia (Chiappa M9 Beretta 92 clone), Beretta 92FS technical specifications)	estimated
+m9_chiappa	Chiappa	M9	semi-auto	9×19mm	9.01	125	250	1	250	8.0	361	researched (Wikipedia (Chiappa M9 Beretta 92 clone), Beretta 92FS technical specifications)	estimated
 acr_bushmaster	Bushmaster	Bushmaster	semi-auto	5.56×45mm	5.69	419	229	1	430	4.0	883	researched (Wikipedia (BREN/ACR), Athlon Outdoors Tactical Life, 1:9 standard twist)	researched
 acr_762_bushmaster	Bushmaster	762 Bushmaster	semi-auto	7.62×39mm	7.85	419	240	1	355	7.9	711	researched (Wikipedia (BREN/ACR), Templar Precision conversion aftermarket, caliber standard twist)	estimated
 m4_type_bushmaster	Bushmaster	Bushmaster	semi-auto	5.56×45mm	5.69	406	229	1	430	4.0	878	researched (Wikipedia (Bushmaster M4-type Carbine), Bushmaster XM-15 manual (1:9 rifling))	researched
@@ -911,9 +908,9 @@ qrc_bushmaster	Bushmaster	Bushmaster	semi-auto	5.56×45mm	5.69	292	203	1	430	4.0
 orc_bushmaster	Bushmaster	Bushmaster	semi-auto	5.56×45mm	5.69	406	203	1	430	4.0	878	researched (Wikipedia (Bushmaster XM-15: ORC/QRC same product line, 1:8 twist), barrel 406mm)	estimated
 carbon_15_bushmaster	Bushmaster	Bushmaster	semi-auto	5.56×45mm	5.69	406	229	1	430	4.0	878	researched (Wikipedia (Carbon 15 Type R21), Bushmaster XM-15 standard 1:9 twist)	researched
 moe_bushmaster	Bushmaster	Bushmaster	semi-auto	5.56×45mm	5.69	406	229	1	430	4.0	878	researched (Bushmaster XM-15 MOE (Magpul furniture variant), standard 1:9 twist)	estimated
-r4_vektor	Vektor		gas	5.56×45mm	5.69	460	305	1	430	4.0	901	researched (Wikipedia(en), Jane's Infantry Weapons 1997-98)	estimated
-r5_vektor	Vektor		gas	5.56×45mm	5.69	332	305	1	430	4.0	847	researched (Wikipedia(en), Jane's Infantry Weapons 1997-98)	estimated
-r6_vektor	Vektor		gas	5.56×45mm	5.69	280	305	1	430	4.0	825	researched (Wikipedia(en), Tilstra Small Arms For Urban Combat)	estimated
+r4_vektor	Vektor	R4	gas	5.56×45mm	5.69	460	305	1	430	4.0	901	researched (Wikipedia(en), Jane's Infantry Weapons 1997-98)	estimated
+r5_vektor	Vektor	R5	gas	5.56×45mm	5.69	332	305	1	430	4.0	847	researched (Wikipedia(en), Jane's Infantry Weapons 1997-98)	estimated
+r6_vektor	Vektor	R6	gas	5.56×45mm	5.69	280	305	1	430	4.0	825	researched (Wikipedia(en), Tilstra Small Arms For Urban Combat)	estimated
 cr21_vektor	Vektor	Vektor	gas	5.56×45mm	5.69	460	305	1	430	4.0	901	researched (Wikipedia(en), world.guns.ru)	estimated
 ss77_vektor	Vektor	Vektor	gas	7.62×51mm	7.82	550	279	1	415	9.5	835	researched (Wikipedia(en), defenceweb.co.za fact file)	estimated
 ntw20_vektor	Vektor	Vektor	bolt	20×82mm		1000	560	1			880	researched (Wikipedia(en), Denel Land Systems brochure)	estimated
@@ -930,12 +927,12 @@ r61_feg	FÉG	Feg	recoil	9×19mm	9.01	115	250	1	250	8.0	360	researched (modernfir
 b9r_feg	FÉG	Feg	blowback	9×19mm	9.01	190	250	1	250	8.0	371	researched (modernfirearms.net, FÉG documentation)	estimated
 kgp9_feg	FÉG	Feg	blowback	9×19mm	9.01	200	250	1	250	8.0	372	researched (Wikipedia(en), ARES monograph)	estimated
 sar21_stkin	ST Kinetics	Stkin	gas	5.56×45mm	5.69	508	203	1	430	4.0	921	researched (Wikipedia(en), ST Engineering brochure)	estimated
-sar21mms_stkin		Sar21Mms Stkin	gas	5.56×45mm	5.69	508	203	1	430	4.0	921	researched (Wikipedia(en), ST Engineering brochure)	estimated
-sar21gl_stkin		Sar21Gl Stkin	gas	5.56×45mm	5.69	508	203	1	430	4.0	921	researched (Wikipedia(en), ST Engineering brochure)	estimated
-sar21p_stkin		Sar21P Stkin	gas	5.56×45mm	5.69	360	203	1	430	4.0	859	researched (Wikipedia(en), Jane's Guns Recognition Guide)	estimated
-sar21a_stkin		Sar21A Stkin	gas	5.56×45mm	5.69	508	178	1	430	4.0	921	researched (Wikipedia(en), The Firearm Blog)	estimated
-ultimax100mk3_stkin		Ultimax100Mk3 Stkin	gas	5.56×45mm	5.69	508	203	1	430	4.0	921	researched (Wikipedia(en), STK brochure)	estimated
-ultimax100mk5_stkin		Ultimax100Mk5 Stkin	gas	5.56×45mm	5.69	330	203	1	430	4.0	846	researched (Wikipedia(en), Defense Review)	estimated
+sar21mms_stkin	ST Kinetics	Sar21Mms Stkin	gas	5.56×45mm	5.69	508	203	1	430	4.0	921	researched (Wikipedia(en), ST Engineering brochure)	estimated
+sar21gl_stkin	ST Kinetics	Sar21Gl Stkin	gas	5.56×45mm	5.69	508	203	1	430	4.0	921	researched (Wikipedia(en), ST Engineering brochure)	estimated
+sar21p_stkin	ST Kinetics	Sar21P Stkin	gas	5.56×45mm	5.69	360	203	1	430	4.0	859	researched (Wikipedia(en), Jane's Guns Recognition Guide)	estimated
+sar21a_stkin	ST Kinetics	Sar21A Stkin	gas	5.56×45mm	5.69	508	178	1	430	4.0	921	researched (Wikipedia(en), The Firearm Blog)	estimated
+ultimax100mk3_stkin	ST Kinetics	Ultimax100Mk3 Stkin	gas	5.56×45mm	5.69	508	203	1	430	4.0	921	researched (Wikipedia(en), STK brochure)	estimated
+ultimax100mk5_stkin	ST Kinetics	Ultimax100Mk5 Stkin	gas	5.56×45mm	5.69	330	203	1	430	4.0	846	researched (Wikipedia(en), Defense Review)	estimated
 cp1_stkin	ST Kinetics	Stkin	blowback	.22 LR	5.66	100	406	1	165	2.6	218	researched (ST Engineering small arms catalog, Internet references)	estimated
 dsa_sa58_fal_std	DSA	Sa58 Fal Std	gas	7.62×51mm	7.82	533	279	1	415	9.5	828	researched (DSArms.com product page, Wikipedia FN FAL, SAAMI 7.62×51mm)	estimated
 dsa_sa58_fal_carbine	DSA	Sa58 Fal Carbine	gas	7.62×51mm	7.82	406	279	1	415	9.5	780	researched (DSArms.com product listings, Wikipedia FN FAL variants)	estimated
@@ -1081,7 +1078,7 @@ naa_22wmr	NAA	22Wmr	revolver	.22 WMR	5.66	41	406	1	179	2.6	452	researched (Wikip
 naa_pug	NAA	Pug	revolver	.22 WMR	5.66	28	406	1	179	2.6	447	estimated (Wikipedia: North American Arms)	estimated
 naa_sidewinder	NAA	Sidewinder	revolver	.22 WMR	5.66	64	406	1	179	2.6	460	estimated (Wikipedia: North American Arms)	estimated
 naa_earl	NAA	Earl	revolver	.22 WMR	5.66	102	406	1	179	2.6	473	estimated (Wikipedia: North American Arms)	estimated
-american180		American180	submachine gun	.22 LR	5.66	356	406	1	165	2.6	294	researched (Wikipedia: American-180)	estimated
+american180	American Arms International	American180	submachine gun	.22 LR	5.66	356	406	1	165	2.6	294	researched (Wikipedia: American-180)	estimated
 rohrbaugh_r9	Rohrbaugh	R9	semi-automatic pistol	9×19mm Parabellum	9.01	74	254	1	250	8.0	354	researched (Wikipedia: Rohrbaugh R9)	estimated
 rohrbaugh_r9s	Rohrbaugh	R9S	semi-automatic pistol	9×19mm Parabellum	9.01	74	254	1	250	8.0	354	researched (Wikipedia: Rohrbaugh R9)	estimated
 rohrbaugh_stealth	Rohrbaugh	Stealth	semi-automatic pistol	9×19mm Parabellum	9.01	74	254	1	250	8.0	354	researched (Wikipedia: Rohrbaugh R9)	estimated
@@ -1105,11 +1102,11 @@ nambu_type_100	Nambu	Type 100	blowback	8×22mm Nambu		230	254	1			324	researched
 schmidt_rubin_k31	Schmidt-Rubin	K31	straight_pull_bolt	7.5×55mm Swiss		652	270	1			861	researched (Wikipedia)	estimated
 schmidt_rubin_g1911	Schmidt-Rubin	G1911	straight_pull_bolt	7.5×55mm Swiss		780	270	1			912	researched (Wikipedia)	estimated
 schmidt_rubin_m1889	Schmidt-Rubin	M1889	straight_pull_bolt	7.5×53.5mm Swiss		780	254	1			912	researched (Wikipedia)	estimated
-para_p14_45		Para P14 45	semi-automatic pistol	.45 ACP	11.48	127	406	1	145	15.0	259	researched (SAAMI .45 ACP 1911 chamber spec, Para-Ordnance product literature)	estimated
-para_p16_40		Para P16 40	semi-automatic pistol	.40 S&W	10.17	127	406	1	240	10.0	325	researched (SAAMI .40 S&W chamber spec, Para-Ordnance product literature)	estimated
-para_p18_9		Para P18 9	semi-automatic pistol	9×19mm Parabellum	9.01	127	250	1	250	8.0	362	researched (CIP 9×19mm Parabellum chamber spec, Para-Ordnance product literature)	estimated
-para_carry_12		Para Carry 12	semi-automatic pistol	.45 ACP	11.48	89	406	1	145	15.0	253	estimated (Para-Ordnance compact 1911 variant, barrel/twist consistent with standard .45 ACP 1911)	estimated
-para_lda_14_45		Para Lda 14 45	semi-automatic pistol	.45 ACP	11.48	127	406	1	145	15.0	259	estimated (Para-Ordnance LDA trigger variant of P14-45, barrel/twist same as standard 1911)	estimated
+para_p14_45	Para Ordnance	Para P14 45	semi-automatic pistol	.45 ACP	11.48	127	406	1	145	15.0	259	researched (SAAMI .45 ACP 1911 chamber spec, Para-Ordnance product literature)	estimated
+para_p16_40	Para Ordnance	Para P16 40	semi-automatic pistol	.40 S&W	10.17	127	406	1	240	10.0	325	researched (SAAMI .40 S&W chamber spec, Para-Ordnance product literature)	estimated
+para_p18_9	Para Ordnance	Para P18 9	semi-automatic pistol	9×19mm Parabellum	9.01	127	250	1	250	8.0	362	researched (CIP 9×19mm Parabellum chamber spec, Para-Ordnance product literature)	estimated
+para_carry_12	Para Ordnance	Para Carry 12	semi-automatic pistol	.45 ACP	11.48	89	406	1	145	15.0	253	estimated (Para-Ordnance compact 1911 variant, barrel/twist consistent with standard .45 ACP 1911)	estimated
+para_lda_14_45	Para Ordnance	Para Lda 14 45	semi-automatic pistol	.45 ACP	11.48	127	406	1	145	15.0	259	estimated (Para-Ordnance LDA trigger variant of P14-45, barrel/twist same as standard 1911)	estimated
 ithaca_m37	Ithaca	M37	pump shotgun	12 Gauge	18.5	470	0		65	28.4	410	researched (Ithaca Gun Co. catalog, NRA Firearms Sourcebook)	estimated
 ithaca_m37_ds	Ithaca	M37 Ds	pump shotgun	12 Gauge	18.5	510	0		65	28.4	412	researched (Ithaca Deerslayer product catalog)	estimated
 ithaca_m3a1	Ithaca	M3A1	submachine gun	.45 ACP	11.48	203	406	1	145	15.0	270	researched (US Army TM 9-1005-229-35/M3A1 Grease Gun, Ithaca wartime production)	estimated
@@ -1155,9 +1152,9 @@ bond_arms_texas_defender	Bond Arms	Texas Defender	break-action	.45 Colt	11.48	76
 bond_arms_cowboy_defender	Bond Arms	Cowboy Defender	break-action	.45 Colt	11.48	64	508	1	145	16.2	223	estimated (shorter barrel derringer, .45 Colt rifling)	estimated
 bond_arms_snake_slayer	Bond Arms	Snake Slayer	break-action	.357 Magnum	9.07	89	356	1	345	8.1	410	estimated (derringer rifled for .357 Mag, caliber_ref twist 356mm)	estimated
 bond_arms_roughneck	Bond Arms	Roughneck	break-action	9×19mm Parabellum	9.01	76	0		250	8.0	354	estimated (9mm derringer smoothbore per Bond Arms pattern, 2-shot break-action)	estimated
-phoenix_hp22		Phoenix Hp22	blowback	.22 LR	5.66	61	406	1	165	2.6	206	estimated (standard .22 LR rifling, caliber_ref twist 406mm)	estimated
-phoenix_hp22_target		Phoenix Hp22 Target	blowback	.22 LR	5.66	95	406	1	165	2.6	216	estimated (target variant, longer barrel, standard .22 LR rifling)	estimated
-phoenix_hp25		Phoenix Hp25	blowback	.25 ACP	6.38	61	250	1	141	3.2	232	estimated (standard .25 ACP rifling, caliber_ref twist 250mm)	estimated
+phoenix_hp22	Phoenix Arms	Phoenix Hp22	blowback	.22 LR	5.66	61	406	1	165	2.6	206	estimated (standard .22 LR rifling, caliber_ref twist 406mm)	estimated
+phoenix_hp22_target	Phoenix Arms	Phoenix Hp22 Target	blowback	.22 LR	5.66	95	406	1	165	2.6	216	estimated (target variant, longer barrel, standard .22 LR rifling)	estimated
+phoenix_hp25	Phoenix Arms	Phoenix Hp25	blowback	.25 ACP	6.38	61	250	1	141	3.2	232	estimated (standard .25 ACP rifling, caliber_ref twist 250mm)	estimated
 hammerli_208	Hämmerli	208	semi-auto	.22 LR	5.66	153	406	1	165	2.6	234	estimated (WIKIPEDIA_HAMMERLI, HAMMERLI_ARMS_DE)	estimated
 hammerli_280	Hämmerli	280	semi-auto	.32 S&W Long		150	380	1				estimated (WIKIPEDIA_HAMMERLI, HAMMERLI_ARMS_DE)	estimated
 hammerli_sp20	Hämmerli	Sp20	semi-auto	.22 LR	5.66	150	406	1	165	2.6	233	estimated (WIKIPEDIA_HAMMERLI, HAMMERLI_ARMS_DE)	estimated
