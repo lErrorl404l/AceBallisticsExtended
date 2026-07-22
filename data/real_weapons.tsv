@@ -1720,3 +1720,215 @@ lancer_systems_lch_5_56	Lancer Systems	LCH-5.56	Rifle	5.56×45mm NATO	5.56	406.4
 lancer_systems_lch_5_56_carbine	Lancer Systems	LCH-5.56 Carbine	Carbine	5.56×45mm NATO	5.56	368.3	177.8	1	430	4.02	870	researched (manufacturer specifications)	researched
 lancer_systems_lch_7_62	Lancer Systems	LCH-7.62	Rifle	7.62×51mm NATO	7.62	406.4	254.0	1	415	9.53	838	researched (manufacturer specifications)	researched
 lancer_systems_lch_7_62_6_5cm	Lancer Systems	LCH-7.62 6.5CM	Rifle	6.5 Creedmoor	6.5	508.0	203.2	1	415	9.07	817	researched (manufacturer specifications)	researched
+smith_wesson_m_p9_m2_0_full_size_15_1_4_25_barrel_9mm_striker_fired	Smith & Wesson	M&P9 M2.0 Full Size	15+1 4.25" barrel 9mm striker-fired	9×19mm Parabellum	9.01	108	250	1	235	8.0	352	researched	estimated
+smith_wesson_m_p9_shield_m2_0_7_1_or_8_1_3_1_barrel_slimline_9mm	Smith & Wesson	M&P9 Shield M2.0	7+1 or 8+1 3.1" barrel slimline 9mm	9×19mm Parabellum	9.01	79	250	1	235	8.0	310	researched	estimated
+smith_wesson_m_p9_shield_plus_10_1_or_13_1_3_1_barrel_9mm_optics_ready	Smith & Wesson	M&P9 Shield Plus	10+1 or 13+1 3.1" barrel 9mm optics-ready	9×19mm Parabellum	9.01	79	250	1	235	8.0	315	researched	estimated
+smith_wesson_m_p9_shield_ez_8_1_3_7_barrel_9mm_ez_rack_slide	Smith & Wesson	M&P9 Shield EZ	8+1 3.7" barrel 9mm ez-rack slide	9×19mm Parabellum	9.01	94	250	1	235	8.0	335	researched	estimated
+smith_wesson_csx_alloy_frame_micro_9mm_sao_3_1_barrel	Smith & Wesson	CSX	alloy frame micro 9mm SAO 3.1" barrel	9×19mm Parabellum	9.01	79	250	1	235	8.0	310	researched	estimated
+smith_wesson_model_686_plus_7_shot_357_mag_4_barrel_stainless	Smith & Wesson	Model 686 Plus	7-shot .357 Mag 4" barrel stainless	.357 Magnum	9.06	102	356	2	345	8.1	410	researched	estimated
+smith_wesson_model_29_6_44_mag_classic_blue	Smith & Wesson	Model 29	6" .44 Mag classic blue	.44 Remington Magnum	10.87	152	406	2	360	15.6	450	researched	estimated
+smith_wesson_model_327_8_shot_trr8_357_mag_5_barrel_performance_center	Smith & Wesson	Model 327	8-shot TRR8 .357 Mag 5" barrel performance center	.357 Magnum	9.06	127	356	2	345	8.1	420	researched	estimated
+taurus_g2c_12_1_9mm_compact_3_2_barrel_striker_fired	Taurus	G2C	12+1 9mm compact 3.2" barrel striker-fired	9×19mm Parabellum	9.01	81	250	1	235	8.0	315	researched	estimated
+taurus_g3c_12_1_9mm_compact_3_2_barrel_upgraded_g2c	Taurus	G3C	12+1 9mm compact 3.2" barrel upgraded G2C	9×19mm Parabellum	9.01	81	250	1	235	8.0	315	researched	estimated
+taurus_gx4_11_1_9mm_micro_compact_3_06_barrel	Taurus	GX4	11+1 9mm micro compact 3.06" barrel	9×19mm Parabellum	9.01	78	250	1	235	8.0	310	researched	estimated
+taurus_tx22_compact_13_1_22_lr_3_6_barrel_rimfire_pistol	Taurus	TX22 Compact	13+1 .22 LR 3.6" barrel rimfire pistol	.22 Long Rifle	5.66	91	406	1	165	2.6	290	researched	estimated
+taurus_judge_magnum_6_shot_410_45_colt_3_barrel_da_revolver	Taurus	Judge Magnum	6-shot .410/.45 Colt 3" barrel DA revolver	.410 Bore / .45 Colt	11.48	76	0	0	145	16.2	260	researched	estimated
+taurus_raging_hunter_44_mag_6_5_barrel_da_revolver_ported	Taurus	Raging Hunter	.44 Mag 6.5" barrel DA revolver ported	.44 Remington Magnum	10.87	165	406	2	360	15.6	455	researched	estimated
+taurus_model_856_6_shot_38_spl_2_barrel_da_revolver_steel_frame	Taurus	Model 856	6-shot .38 Spl 2" barrel DA revolver steel frame	.38 Special	9.06	51	381	2	240	10.2	220	researched	estimated
+remington_model_870_wingmaster_28_barrel_walnut_stock_12ga_classic_pump	Remington	Model 870 Wingmaster	28" barrel walnut stock 12ga classic pump	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+remington_model_870_express_18_5_barrel_synthetic_12ga_defense_pump	Remington	Model 870 Express	18.5" barrel synthetic 12ga defense pump	12 Gauge	18.5	470	0	0	0	28.0	480	researched	estimated
+remington_model_700_cdl_24_30_06_walnut_classic_bolt_action	Remington	Model 700 CDL	24" .30-06 walnut classic bolt-action	.30-06 Springfield	7.82	610	254	1	400	11.3	850	researched	estimated
+remington_model_700_sps_22_308_win_synthetic_stock_tactical_bolt	Remington	Model 700 SPS	22" .308 Win synthetic stock tactical bolt	.308 Winchester	7.62	559	254	1	427	10.9	840	researched	estimated
+remington_model_1100_28_12ga_semi_auto_field_grade_walnut	Remington	Model 1100	28" 12ga semi-auto field grade walnut	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+remington_rp9_18_1_9mm_striker_fired_4_5_barrel	Remington	RP9	18+1 9mm striker-fired 4.5" barrel	9×19mm Parabellum	9.01	114	250	1	235	8.0	355	researched	estimated
+winchester_model_70_featherweight_270_win_22_barrel_controlled_feed	Winchester	Model 70 Featherweight	.270 Win 22" barrel controlled feed	.270 Winchester	7.04	559	254	1	400	9.7	933	researched	estimated
+winchester_model_70_super_grade_30_06_24_barrel_walnut_classic	Winchester	Model 70 Super Grade	.30-06 24" barrel walnut classic	.30-06 Springfield	7.82	610	254	1	400	11.3	850	researched	estimated
+winchester_model_94_carbine_20_30_30_lever_action_blued_saddle_ring	Winchester	Model 94 Carbine	20" .30-30 lever action blued saddle ring	.30-30 Winchester	7.82	508	305	1	331	11.1	740	researched	estimated
+winchester_sxp_defender_18_12ga_pump_action_synthetic_defense	Winchester	SXP Defender	18" 12ga pump action synthetic defense	12 Gauge	18.5	457	0	0	0	28.0	480	researched	estimated
+winchester_sxp_waterfowl_28_12ga_pump_camo_max_4_1	Winchester	SXP Waterfowl	28" 12ga pump camo max 4+1	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+browning_x_bolt_hunter_308_win_22_barrel_composite_stock	Browning	X-Bolt Hunter	.308 Win 22" barrel composite stock	.308 Winchester	7.82	559	279	1	415	9.5	840	researched	estimated
+browning_x_bolt_hell_s_canyon_speed_6_5_creedmoor_22_barrel_ceramic_coated	Browning	X-Bolt Hell's Canyon Speed	6.5 Creedmoor 22" barrel ceramic coated	6.5 Creedmoor	6.71	559	203	1	415	9.0	820	researched	estimated
+browning_bar_mk3_safari_30_06_22_barrel_auto_loader_walnut	Browning	BAR Mk3 Safari	.30-06 22" barrel auto-loader walnut	.30-06 Springfield	7.82	559	254	1	400	11.3	850	researched	estimated
+browning_bps_28_12ga_pump_walnut_bottom_eject	Browning	BPS	28" 12ga pump walnut bottom-eject	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+browning_citori_725_28_12ga_over_under_field_grade_adjustable_comb	Browning	Citori 725	28" 12ga over-under field grade adjustable comb	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+springfield_hellcat_rfp_11_1_380_acp_micro_2_7_barrel_red_fiber_optic	Springfield Armory	Hellcat RFP	11+1 .380 ACP micro 2.7" barrel red fiber optic	.380 ACP	9.02	69	250	1	141	6.0	270	researched	estimated
+springfield_xd_m_elite_3_8_22_1_9mm_compact_grip_interchangeable_backstraps	Springfield Armory	XD-M Elite 3.8"	22+1 9mm compact grip interchangeable backstraps	9×19mm Parabellum	9.01	97	250	1	235	8.0	338	researched	estimated
+springfield_xd_m_elite_4_5_22_1_9mm_full_size_adjustable_rear_sight	Springfield Armory	XD-M Elite 4.5"	22+1 9mm full-size adjustable rear sight	9×19mm Parabellum	9.01	114	250	1	235	8.0	355	researched	estimated
+springfield_model_2020_waypoint_308_win_22_bolt_action_carbon_fiber	Springfield Armory	Model 2020 Waypoint	.308 Win 22" bolt action carbon fiber	.308 Winchester	7.62	559	254	1	427	9.5	845	researched	estimated
+springfield_1911_emissary_5_45_acp_two_tone_commander_hammer	Springfield Armory	1911 Emissary	5" .45 ACP two-tone commander hammer	.45 ACP	11.43	127	406	2	145	15.0	255	researched	estimated
+springfield_1911_garrison_5_45_acp_stainless_parkerized_gi_style	Springfield Armory	1911 Garrison	5" .45 ACP stainless parkerized GI-style	.45 ACP	11.43	127	406	2	145	15.0	255	researched	estimated
+aero_precision_m4e1_enhanced_16_upper_m_lok_handguard_223_wylde_chamber	Aero Precision	M4E1 Enhanced	16" upper M-LOK handguard .223 Wylde chamber	5.56×45mm NATO	5.56	406	178	1	430	4.0	890	researched	estimated
+aero_precision_m4e1_enhanced_14_5_upper_m_lok_handguard_223_wylde_chamber	Aero Precision	M4E1 Enhanced	14.5" upper M-LOK handguard .223 Wylde chamber	5.56×45mm NATO	5.56	368	178	1	430	4.0	860	researched	estimated
+aero_precision_m5_16_308_ar_10_m_lok_handguard	Aero Precision	M5	16" .308 AR-10 M-LOK handguard	.308 Winchester	7.62	406	254	1	427	9.5	775	researched	estimated
+aero_precision_m5_20_308_ar_10_m_lok_handguard	Aero Precision	M5	20" .308 AR-10 M-LOK handguard	.308 Winchester	7.62	508	254	1	427	9.5	820	researched	estimated
+aero_precision_ac15_16_complete_rifle_5_56_nato	Aero Precision	AC15	16" complete rifle 5.56 NATO	5.56×45mm NATO	5.56	406	178	1	430	4.0	890	researched	estimated
+aero_precision_ac16_18_complete_rifle_5_56_nato	Aero Precision	AC16	18" complete rifle 5.56 NATO	5.56×45mm NATO	5.56	457	178	1	430	4.0	920	researched	estimated
+aero_precision_solus_18_bolt_action_308_5_round_aics	Aero Precision	Solus	18" bolt action .308 5-round AICS	.308 Winchester	7.62	457	254	1	427	10.9	790	researched	estimated
+aero_precision_solus_22_bolt_action_6_5_creedmoor_threaded	Aero Precision	Solus	22" bolt action 6.5 Creedmoor threaded	6.5 Creedmoor	6.5	559	203	1	420	9.0	820	researched	estimated
+bcm_bcm4_recce_16_16_lightweight_mlok_mid_length_gas	BCM	BCM4 RECCE-16	16" lightweight MLOK mid-length gas	5.56×45mm NATO	5.56	406	178	1	430	4.0	890	researched	estimated
+bcm_bcm4_recce_14_14_5_pinned_welded_mid_length_gas	BCM	BCM4 RECCE-14	14.5" pinned/welded mid-length gas	5.56×45mm NATO	5.56	368	178	1	430	4.0	860	researched	estimated
+bcm_bcm4_recce_18_18_rifle_length_gas_mcmr_handguard	BCM	BCM4 RECCE-18	18" rifle-length gas MCMR handguard	5.56×45mm NATO	5.56	457	178	1	430	4.0	920	researched	estimated
+bcm_bcm4_m4_carbine_16_m4_profile_carbine_a2_flash_hider	BCM	BCM4 M4 Carbine	16" M4 profile carbine A2 flash hider	5.56×45mm NATO	5.56	406	178	1	430	4.0	890	researched	estimated
+bcm_bcm4_sbr_11_5_mlok_upper_carbine_gas	BCM	BCM4 SBR	11.5" MLOK upper carbine gas	5.56×45mm NATO	5.56	292	178	1	430	4.0	810	researched	estimated
+bcm_bcm4_mk2_recce_16_16_mk2_upper_enhanced_feed_ramps	BCM	BCM4 MK2 RECCE-16	16" MK2 upper enhanced feed ramps	5.56×45mm NATO	5.56	406	178	1	430	4.0	890	researched	estimated
+bcm_bcm_mk12_18_spr_profile_rifle_gas_mk12_clone	BCM	BCM MK12	18" SPR profile rifle gas MK12 clone	5.56×45mm NATO	5.56	457	178	1	430	5.0	880	researched	estimated
+bcm_bcm_bfh_16_16_hammer_forged_barrel_mlok	BCM	BCM BFH 16	16" hammer-forged barrel MLOK	5.56×45mm NATO	5.56	406	178	1	430	4.0	890	researched	estimated
+bcm_bcm_bfh_14_5_14_5_hammer_forged_pinned_welded	BCM	BCM BFH 14.5	14.5" hammer-forged pinned/welded	5.56×45mm NATO	5.56	368	178	1	430	4.0	860	researched	estimated
+geissele_super_duty	Geissele	Super Duty	11.5" SBR REBCG Super Compact stock	5.56×45mm NATO	5.56	292	178	1	430	4.0	810	researched	estimated
+geissele_super_duty_2	Geissele	Super Duty	14.5" pinned/welded SF-compatible muzzle	5.56×45mm NATO	5.56	368	178	1	430	4.0	860	researched	estimated
+geissele_super_duty_3	Geissele	Super Duty	16" complete rifle REBCG ACH charging handle	5.56×45mm NATO	5.56	406	178	1	430	4.0	890	researched	estimated
+geissele_sentinel_14_5_lightweight_contour_carbon_handguard	Geissele	Sentinel	14.5" lightweight contour carbon handguard	5.56×45mm NATO	5.56	368	178	1	430	4.0	860	researched	estimated
+christensen_ca_10_20_308_battle_rifle_carbon_fiber_handguard	Christensen Arms	CA-10	20" .308 battle rifle carbon fiber handguard	.308 Winchester	7.62	508	254	1	427	9.5	820	researched	estimated
+christensen_ca_15_18_5_56_carbon_fiber_barrel_m_lok	Christensen Arms	CA-15	18" 5.56 carbon fiber barrel M-LOK	5.56×45mm NATO	5.56	457	203	1	430	4.0	920	researched	estimated
+christensen_mhr_20_6_5_creedmoor_carbon_fiber_barrel_modern_hunting	Christensen Arms	MHR	20" 6.5 Creedmoor carbon fiber barrel modern hunting	6.5 Creedmoor	6.5	508	203	1	420	9.0	800	researched	estimated
+christensen_ridgeline_24_6_5_creedmoor_carbon_fiber_titanium_action	Christensen Arms	Ridgeline	24" 6.5 Creedmoor carbon fiber titanium action	6.5 Creedmoor	6.5	610	203	1	420	9.0	840	researched	estimated
+christensen_ridgeline_26_300_win_mag_carbon_fiber_muzzle_brake	Christensen Arms	Ridgeline	26" .300 Win Mag carbon fiber muzzle brake	.300 Winchester Magnum	7.62	660	254	1	420	12.3	930	researched	estimated
+christensen_traverse_22_6_5_creedmoor_folding_chassis_carbon_barrel	Christensen Arms	Traverse	22" 6.5 Creedmoor folding chassis carbon barrel	6.5 Creedmoor	6.5	559	203	1	420	9.0	820	researched	estimated
+christensen_mesa_fft_22_308_carbon_fiber_fft_stock	Christensen Arms	Mesa FFT	22" .308 carbon fiber FFT stock	.308 Winchester	7.62	559	254	1	427	10.9	820	researched	estimated
+christensen_summit_24_6_5_creedmoor_carbon_barrel_summit_stock	Christensen Arms	Summit	24" 6.5 Creedmoor carbon barrel Summit stock	6.5 Creedmoor	6.5	610	203	1	420	9.0	840	researched	estimated
+savage_axis_stainless_22_stainless_243_win_synthetic_stock	Savage Arms	Axis Stainless	22" stainless .243 Win synthetic stock	.243 Winchester	6.17	559	254	1	400	6.5	900	researched	estimated
+savage_axis_ii_xp_22_308_win_accutrigger_3_9x_scope	Savage Arms	Axis II XP	22" .308 Win AccuTrigger 3-9x scope	.308 Winchester	7.62	559	254	1	427	9.5	845	researched	estimated
+savage_model_110_tactical_20_heavy_barrel_308_win_detachable_box_mag	Savage Arms	Model 110 Tactical	20" heavy barrel .308 Win detachable box mag	.308 Winchester	7.62	508	254	1	427	10.9	800	researched	estimated
+savage_model_110_scout_20_308_win_iron_sights_accutrigger	Savage Arms	Model 110 Scout	20" .308 Win iron sights AccuTrigger	.308 Winchester	7.62	508	254	1	427	9.5	820	researched	estimated
+savage_model_110_predator_22_6_5_creedmoor_suppressor_ready	Savage Arms	Model 110 Predator	22" 6.5 Creedmoor suppressor-ready	6.5 Creedmoor	6.5	559	203	1	420	9.0	820	researched	estimated
+savage_model_110_storm_22_308_win_stainless_synthetic_stock	Savage Arms	Model 110 Storm	22" .308 Win stainless synthetic stock	.308 Winchester	7.62	559	254	1	427	9.5	845	researched	estimated
+savage_model_110_ultralite_24_6_5_creedmoor_carbon_fiber_wrap_proof_barrel	Savage Arms	Model 110 Ultralite	24" 6.5 Creedmoor carbon fiber wrap proof barrel	6.5 Creedmoor	6.5	610	203	1	420	9.0	840	researched	estimated
+savage_a17_22_17_hmr_semi_auto_heavy_barrel	Savage Arms	A17	22" .17 HMR semi-auto heavy barrel	.17 HMR	4.39	559	356	1	251	1.1	775	researched	estimated
+savage_b17_22_17_hmr_bolt_action_accutrigger	Savage Arms	B17	22" .17 HMR bolt-action AccuTrigger	.17 HMR	4.39	559	356	1	251	1.1	775	researched	estimated
+bergara_bmr_18_22_lr_micro_mini_action_carbon_barrel	Bergara	BMR	18" .22 LR micro/mini action carbon barrel	.22 Long Rifle	5.66	457	406	1	165	2.6	340	researched	estimated
+bergara_bmp_24_6_5_creedmoor_heavy_palma_m5_dbm	Bergara	BMP	24" 6.5 Creedmoor heavy Palma M5 DBM	6.5 Creedmoor	6.5	610	203	1	420	9.0	840	researched	estimated
+bergara_bmp_24_308_win_heavy_contour_m5_dbm	Bergara	BMP	24" .308 Win heavy contour M5 DBM	.308 Winchester	7.62	610	254	1	427	10.9	850	researched	estimated
+bergara_hmr_22_6_5_creedmoor_hunting_precision_hybrid	Bergara	HMR	22" 6.5 Creedmoor hunting/precision hybrid	6.5 Creedmoor	6.5	559	203	1	420	9.0	820	researched	estimated
+bergara_hmr_22_308_win_hunting_precision_hybrid	Bergara	HMR	22" .308 Win hunting/precision hybrid	.308 Winchester	7.62	559	254	1	427	10.9	820	researched	estimated
+bergara_hmr_pro_22_6_5_creedmoor_ss_barrel_ceramic_coated	Bergara	HMR Pro	22" 6.5 Creedmoor SS barrel ceramic coated	6.5 Creedmoor	6.5	559	203	1	420	9.0	820	researched	estimated
+bergara_premier_lrp_26_6_5_creedmoor_heavy_palma_m5_dbm	Bergara	Premier LRP	26" 6.5 Creedmoor heavy Palma M5 DBM	6.5 Creedmoor	6.5	660	203	1	420	9.0	855	researched	estimated
+bergara_b_14r_trainer_22_22_lr_heavy_barrel_aics_pattern	Bergara	B-14R Trainer	22" .22 LR heavy barrel AICS pattern	.22 Long Rifle	5.66	559	406	1	165	2.6	350	researched	estimated
+bergara_bxr_18_22_lr_semi_auto_aluminum_receiver	Bergara	BXR	18" .22 LR semi-auto aluminum receiver	.22 Long Rifle	5.66	457	406	1	165	2.6	340	researched	estimated
+cz_usa_bren_2_ms_11_9mm_conversion_folding_stock	CZ-USA	Bren 2 Ms	11" 9mm conversion folding stock	9×19mm Parabellum	9.01	280	250	1	235	8.0	400	researched	estimated
+cz_usa_cz_600_range_24_6_5_creedmoor_heavy_barrel_chassis	CZ-USA	CZ 600 Range	24" 6.5 Creedmoor heavy barrel chassis	6.5 Creedmoor	6.5	610	203	1	420	9.0	840	researched	estimated
+cz_usa_cz_600_scout_18_5_7_62x39_manners_stock_iron_sights	CZ-USA	CZ 600 Scout	18.5" 7.62x39 Manners stock iron sights	7.62×39mm	7.62	470	240	1	355	8.0	710	researched	estimated
+cz_usa_cz_600_lux_22_308_win_walnut_stock_open_sights	CZ-USA	CZ 600 Lux	22" .308 Win walnut stock open sights	.308 Winchester	7.62	559	279	1	427	9.5	845	researched	estimated
+cz_usa_cz_600_ergo_22_6_5_creedmoor_ergonomic_stock	CZ-USA	CZ 600 Ergo	22" 6.5 Creedmoor ergonomic stock	6.5 Creedmoor	6.5	559	203	1	420	9.0	820	researched	estimated
+cz_usa_cz_600_premium_24_8_300_win_mag_walnut_floorplate	CZ-USA	CZ 600 Premium	24.8" .300 Win Mag walnut floorplate	.300 Winchester Magnum	7.62	630	254	1	420	12.3	940	researched	estimated
+cz_usa_shadow_2_compact_9mm_compact_steel_frame_da_sa	CZ-USA	Shadow 2 Compact	9mm compact steel frame DA/SA	9×19mm Parabellum	9.01	95	250	1	235	8.0	340	researched	estimated
+cz_usa_ts_2_racing_9mm_competition_single_action_optics_ready	CZ-USA	TS 2 Racing	9mm competition single-action optics-ready	9×19mm Parabellum	9.01	127	250	1	235	8.0	370	researched	estimated
+intratec_firearms_tec_9_full_auto_capable_original_32_round_mag	Intratec Firearms	TEC-9	Full-auto capable original, 32-round mag	9×19mm Parabellum	9.01	127	250	1	235	8.0	370	researched	estimated
+intratec_firearms_tec_22_scorpion_22_lr_carbine_variant	Intratec Firearms	TEC-22	Scorpion .22 LR carbine variant	22 Long Rifle	5.66	127	406	1	165	2.6	380	researched	estimated
+intratec_firearms_tec_38_38_special_blowback_semi_auto	Intratec Firearms	TEC-38	.38 Special blowback semi-auto	.38 Special	9.06	127	381	1	240	10.2	260	researched	estimated
+intratec_firearms_cat_9_protector_compact_9mm_3_barrel	Intratec Firearms	CAT-9	Protector compact 9mm, 3" barrel	9×19mm Parabellum	9.01	76	250	1	235	8.0	310	researched	estimated
+intratec_firearms_ab_10_dc_9_variant_with_10_round_mag_post_1994	Intratec Firearms	AB-10	DC-9 variant with 10-round mag, post-1994	9×19mm Parabellum	9.01	114	250	1	235	8.0	355	researched	estimated
+webley_scott_1911_45_acp_1911_pattern_semi_auto_5_barrel	Webley & Scott	1911	.45 ACP 1911-pattern semi-auto 5" barrel	.45 ACP	11.43	127	406	1	145	15.0	255	researched	estimated
+webley_scott_webley_nemesis_ultra_compact_32_acp_pocket_pistol_2	Webley & Scott	Webley Nemesis	Ultra-compact .32 ACP pocket pistol 2"	.32 ACP	7.65	51	250	1	141	4.6	220	researched	estimated
+webley_scott_webley_alecto_multi_pump_pneumatic_target_pistol	Webley & Scott	Webley Alecto	Multi-pump pneumatic target pistol	.177	4.5	230	0	0	12	0.5	200	researched	estimated
+webley_scott_webley_patriot_full_size_45_acp_1911_pattern_target_grade	Webley & Scott	Webley Patriot	Full-size .45 ACP 1911 pattern target-grade	.45 ACP	11.43	127	406	1	145	15.0	255	researched	estimated
+webley_scott_webley_hurricane_22_lr_target_pistol_semi_auto	Webley & Scott	Webley Hurricane	 .22 LR target pistol semi-auto	.22 Long Rifle	5.66	152	406	1	165	2.6	260	researched	estimated
+nambu_type_a_8mm_nambu_semi_auto_early_production_1902_1909	Nambu	Type A	8mm Nambu semi-auto early production 1902-1909	8×22mm Nambu	8.15	120	254	1	200	6.8	305	researched	estimated
+nambu_type_26_9mm_revolver_break_open_1893_design	Nambu	Type 26	9mm revolver break-open 1893 design	9×22mm Japanese Revolver	9.09	120	250	1	170	9.7	180	researched	estimated
+mendoza_c_1934_43_380_acp_mexican_service_sidearm	Mendoza	C-1934/43	.380 ACP Mexican service sidearm	.380 ACP	9.02	97	250	1	141	6.0	299	researched	estimated
+mendoza_model_75_compact_380_acp_pocket_pistol	Mendoza	Model 75	Compact .380 ACP pocket pistol	.380 ACP	9.02	89	250	1	141	6.0	290	researched	estimated
+mendoza_model_505_22_lr_bolt_action_sporting_rifle	Mendoza	Model 505	 .22 LR bolt-action sporting rifle	.22 Long Rifle	5.66	559	406	1	165	2.6	380	researched	estimated
+sterling_l2a1_mk4_sterling_improved_l2a3_mag_catch_safety	Sterling Armaments Company	L2A1	Mk4 Sterling improved L2A3 mag catch safety	9×19mm Parabellum	9.01	250	254	1	235	8.0	395	researched	estimated
+sterling_l34a1_suppressed_sterling_integral_suppressor	Sterling Armaments Company	L34A1	Suppressed Sterling integral suppressor	9×19mm Parabellum	9.01	250	254	1	235	8.0	320	researched	estimated
+sterling_sterling_pistol_semi_auto_pistol_version_of_l2a3_180mm_barrel	Sterling Armaments Company	Sterling Pistol	Semi-auto pistol version of L2A3 180mm barrel	9×19mm Parabellum	9.01	180	254	1	235	8.0	370	researched	estimated
+sterling_sar_7_62_7_62mm_battle_rifle_self_loading_20_barrel	Sterling Armaments Company	SAR 7.62	7.62mm battle rifle self-loading 20" barrel	7.62×51mm NATO	7.82	508	279	1	415	9.5	790	researched	estimated
+sterling_patchett_mk1_prototype_smg_predecessor_to_sterling_wooden_stock	Sterling Armaments Company	Patchett Mk1	Prototype SMG predecessor to Sterling wooden stock	9×19mm Parabellum	9.01	198	254	1	235	8.0	380	researched	estimated
+beretta_92x_defense_dao_variant_for_law_enforcement_4_7_barrel	Beretta	92X Defense	DAO variant for law enforcement 4.7" barrel	9×19mm Parabellum	9.01	119	250	1	235	8.0	358	researched	estimated
+beretta_92x_compact_compact_carry_variant_4_barrel	Beretta	92X Compact	Compact carry variant 4" barrel	9×19mm Parabellum	9.01	102	250	1	235	8.0	345	researched	estimated
+beretta_92fs_brigadier_heavy_slide_variant_5_barrel_dovetail_front_sight	Beretta	92FS Brigadier	Heavy-slide variant 5" barrel dovetail front sight	9×19mm Parabellum	9.01	125	250	1	235	8.0	362	researched	estimated
+beretta_92fs_inox_stainless_steel_92fs_satin_finish	Beretta	92FS Inox	Stainless steel 92FS satin finish	9×19mm Parabellum	9.01	125	250	1	235	8.0	362	researched	estimated
+beretta_92a1_updated_92_with_picatinny_rail_removable_front_sight	Beretta	92A1	Updated 92 with Picatinny rail removable front sight	9×19mm Parabellum	9.01	125	250	1	235	8.0	362	researched	estimated
+beretta_px4_storm_sd_special_duty_variant_40_s_w_with_accessory_rail	Beretta	Px4 Storm SD	Special Duty variant .40 S&W with accessory rail	.40 S&W	10.17	102	250	1	240	10.0	344	researched	estimated
+beretta_apx_centurion_mid_size_apx_4_barrel_15_round	Beretta	APX Centurion	Mid-size APX 4" barrel 15-round	9×19mm Parabellum	9.01	102	250	1	235	8.0	345	researched	estimated
+beretta_apx_a1_strike_updated_striker_optics_ready_4_25_barrel	Beretta	APX A1 Strike	Updated striker optics-ready 4.25" barrel	9×19mm Parabellum	9.01	108	250	1	235	8.0	350	researched	estimated
+beretta_cheetah_80_series_81_cheetah_32_acp_single_stack	Beretta	Cheetah 80	Series 81 Cheetah .32 ACP single-stack	.32 ACP	7.65	97	250	1	141	4.6	259	researched	estimated
+beretta_cheetah_81_series_81_cheetah_32_acp_blued_finish	Beretta	Cheetah 81	Series 81 Cheetah .32 ACP blued finish	.32 ACP	7.65	97	250	1	141	4.6	259	researched	estimated
+sig_sauer_p365_380_p365_platform_in_380_acp_3_1_barrel	Sig Sauer	P365-380	P365 platform in .380 ACP 3.1" barrel	.380 ACP	9.02	78	250	1	141	6.0	280	researched	estimated
+sig_sauer_p365_sas_sightless_anti_snag_variant_3_1_barrel	Sig Sauer	P365 SAS	Sightless Anti-Snag variant 3.1" barrel	9×19mm Parabellum	9.01	78	250	1	235	8.0	310	researched	estimated
+sig_sauer_p320_axg_classic_aluminum_xgrip_frame_classic_slide_4_6_barrel	Sig Sauer	P320 AXG Classic	Aluminum XGrip frame classic slide 4.6" barrel	9×19mm Parabellum	9.01	117	250	1	235	8.0	356	researched	estimated
+sig_sauer_p320_axg_pro_axg_frame_with_optic_cut_threaded_barrel_4_8	Sig Sauer	P320 AXG Pro	AXG frame with optic cut threaded barrel 4.8"	9×19mm Parabellum	9.01	122	250	1	235	8.0	360	researched	estimated
+sig_sauer_p320_axg_legion_axg_frame_with_legion_trigger_tungsten_infused_grip	Sig Sauer	P320 AXG Legion	AXG frame with Legion trigger tungsten-infused grip	9×19mm Parabellum	9.01	117	250	1	235	8.0	356	researched	estimated
+sig_sauer_p226_legion_legion_sa_da_g10_grips_x_ray_sights_4_4_barrel	Sig Sauer	P226 Legion	Legion SA/DA G10 grips X-RAY sights 4.4" barrel	9×19mm Parabellum	9.01	112	250	1	235	8.0	352	researched	estimated
+sig_sauer_p226_mk25_navy_issue_corrosion_resistant_finish_4_4_barrel	Sig Sauer	P226 MK25	Navy-issue corrosion-resistant finish 4.4" barrel	9×19mm Parabellum	9.01	112	250	1	235	8.0	352	researched	estimated
+sig_sauer_p226_elite_beavertail_skeletonized_hammer_front_cocking_serrations	Sig Sauer	P226 Elite	Beavertail skeletonized hammer front cocking serrations	9×19mm Parabellum	9.01	112	250	1	235	8.0	352	researched	estimated
+sig_sauer_p229_legion_legion_sa_da_carry_g10_grips_3_9_barrel	Sig Sauer	P229 Legion	Legion SA/DA carry G10 grips 3.9" barrel	9×19mm Parabellum	9.01	99	250	1	235	8.0	340	researched	estimated
+sig_sauer_p938_sas_sightless_anti_snag_micro_1911_3_barrel	Sig Sauer	P938 SAS	Sightless Anti-Snag micro 1911 3" barrel	9×19mm Parabellum	9.01	76	250	1	235	8.0	305	researched	estimated
+sig_sauer_p238_sport_sport_variant_extended_barrel_380_acp	Sig Sauer	P238 Sport	Sport variant extended barrel .380 ACP	.380 ACP	9.02	76	250	1	141	6.0	290	researched	estimated
+sig_sauer_sig716_g2_7_62mm_battle_rifle_16_barrel_keymod_handguard	Sig Sauer	SIG716 G2	7.62mm battle rifle 16" barrel keymod handguard	7.62×51mm NATO	7.82	406	279	1	415	9.5	780	researched	estimated
+sig_sauer_m400_snakebite_bronze_cerakote_16_fluted_barrel_5_56mm	Sig Sauer	M400 Snakebite	Bronze Cerakote 16" fluted barrel 5.56mm	5.56×45mm NATO	5.56	406	178	1	430	4.0	890	researched	estimated
+colt_s_manufacturing_company_python_2020	Colt's Manufacturing Company	Python 2020	6" vent-rib barrel new production stainless improved trigger	.357 Magnum	9.06	152	305	2	310	10.2	440	researched	estimated
+colt_s_manufacturing_company_python_2020_2	Colt's Manufacturing Company	Python 2020	4" vent-rib barrel carry-grade Python	.357 Magnum	9.06	102	305	2	310	10.2	410	researched	estimated
+colt_s_manufacturing_company_python_2020_3	Colt's Manufacturing Company	Python 2020	3" vent-rib barrel snubnose Python	.357 Magnum	9.06	76	305	2	310	10.2	380	researched	estimated
+colt_s_manufacturing_company_anaconda_2021	Colt's Manufacturing Company	Anaconda 2021	6" full-underlug barrel new production	.44 Remington Magnum	10.87	152	406	2	360	15.6	450	researched	estimated
+colt_s_manufacturing_company_anaconda_2021_2	Colt's Manufacturing Company	Anaconda 2021	8" full-underlug barrel hunting variant	.44 Remington Magnum	10.87	203	406	2	360	15.6	480	researched	estimated
+colt_s_manufacturing_company_king_cobra_target_6_vent_rib_target_barrel_adjustable_target_sights	Colt's Manufacturing Company	King Cobra Target	6" vent-rib target barrel adjustable target sights	.357 Magnum	9.06	152	305	2	310	10.2	440	researched	estimated
+colt_s_manufacturing_company_cobra_2021_3_snubnose_6_round_38_special_dao	Colt's Manufacturing Company	Cobra 2021	3" snubnose 6-round .38 Special DAO	.38 Special	9.06	76	381	2	240	10.2	230	researched	estimated
+colt_s_manufacturing_company_gold_cup_trophy_5_national_match_barrel_adjustable_trigger_wraparound_grips	Colt's Manufacturing Company	Gold Cup Trophy	5" National Match barrel adjustable trigger wraparound grips	.45 ACP	11.43	127	406	2	145	15.0	255	researched	estimated
+colt_s_manufacturing_company_gold_cup_national_match_5_barrel_target_sights_competition_trigger	Colt's Manufacturing Company	Gold Cup National Match	5" barrel target sights competition trigger	.45 ACP	11.43	127	406	2	145	15.0	255	researched	estimated
+colt_s_manufacturing_company_lightweight_commander_4_25_barrel_aluminum_alloy_frame	Colt's Manufacturing Company	Lightweight Commander	4.25" barrel aluminum alloy frame	.45 ACP	11.43	108	406	2	145	15.0	248	researched	estimated
+colt_s_manufacturing_company_defender_3_barrel_compact_carry_38_super_variant	Colt's Manufacturing Company	Defender	3" barrel compact carry .38 Super variant	.38 Super	9.06	76	406	2	260	8.1	360	researched	estimated
+benelli_lupo_6_5_creedmoor_20_barrel	Benelli	Lupo	6.5 Creedmoor 20" barrel	6.5 Creedmoor	6.5	510	203	1	415	9.0	880	researched	estimated
+benelli_lupo_300_winchester_magnum_24_barrel	Benelli	Lupo	.300 Winchester Magnum 24" barrel	.300 Winchester Magnum	7.62	610	254	1	413	11.7	988	researched	estimated
+benelli_lupo_300_wsm_24_barrel	Benelli	Lupo	.300 WSM 24" barrel	.300 Winchester Short Magnum	7.62	610	254	1	448	11.7	1006	researched	estimated
+benelli_lupo_243_winchester_22_barrel	Benelli	Lupo	.243 Winchester 22" barrel	.243 Winchester	6.17	560	254	1	400	6.5	960	researched	estimated
+benelli_lupo_270_winchester_22_barrel	Benelli	Lupo	.270 Winchester 22" barrel	.270 Winchester	7.04	560	254	1	400	9.7	933	researched	estimated
+benelli_sbe_3_28_barrel_max_7_camo	Benelli	SBE 3	28" barrel Max-7 camo	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+benelli_sbe_3_26_barrel_be_s_t_coating	Benelli	SBE 3	26" barrel BE.S.T. coating	12 Gauge	18.5	660	0	0	0	28.0	480	researched	estimated
+benelli_sbe_3_nwtf_turkey_edition_26	Benelli	SBE 3	NWTF Turkey edition 26"	12 Gauge	18.5	660	0	0	0	28.0	480	researched	estimated
+benelli_ethos_cordoba_28_sporting	Benelli	Ethos	Cordoba 28" Sporting	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+benelli_ethos_supersport_30	Benelli	Ethos	Supersport 30"	12 Gauge	18.5	762	0	0	0	28.0	480	researched	estimated
+benelli_m2_tactical_18_5_ghost_ring	Benelli	M2	Tactical 18.5" ghost ring	12 Gauge	18.5	470	0	0	0	28.0	480	researched	estimated
+benelli_m2_field_28_comfortech_stock	Benelli	M2	Field 28" Comfortech stock	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+benelli_supernova_tactical_18_5_ghost_ring_sights	Benelli	Supernova	Tactical 18.5" ghost ring sights	12 Gauge	18.5	470	0	0	0	28.0	480	researched	estimated
+benelli_raffaello_dellavo_28_walnut	Benelli	Raffaello	Dellavo 28" walnut	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+franchi_affinity_3_hunter_28_synthetic	Franchi	Affinity 3	Hunter 28" synthetic	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+franchi_affinity_3_waterfowl_26_camo	Franchi	Affinity 3	Waterfowl 26" camo	12 Gauge	18.5	660	0	0	0	28.0	480	researched	estimated
+franchi_affinity_3_catalyst_26_compact	Franchi	Affinity 3	Catalyst 26" compact	20 Gauge	15.6	660	0	0	0	21.1	450	researched	estimated
+franchi_instinct_sl_28_over_under	Franchi	Instinct SL	28" over-under	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+franchi_instinct_sx_30_sporting_clays	Franchi	Instinct SX	30" sporting clays	12 Gauge	18.5	762	0	0	0	28.0	480	researched	estimated
+franchi_instinct_lx_28_deluxe_walnut	Franchi	Instinct LX	28" deluxe walnut	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+franchi_inspire_bolt_action_308_22_barrel	Franchi	Inspire	bolt-action .308 22" barrel	.308 Winchester	7.82	559	279	1	415	9.5	838	researched	estimated
+franchi_horizon_birdland_26_special_edition	Franchi	Horizon	Birdland 26" special edition	12 Gauge	18.5	660	0	0	0	28.0	480	researched	estimated
+franchi_renegade_12ga_defense_18_5	Franchi	Renegade	12ga defense 18.5"	12 Gauge	18.5	470	0	0	0	28.0	480	researched	estimated
+franchi_pa_7_pump_action_12ga_20	Franchi	PA-7	pump-action 12ga 20"	12 Gauge	18.5	508	0	0	0	28.0	480	researched	estimated
+henry_big_boy_steel	Henry	Big Boy Steel	.44 Magnum 20" octagonal	.44 Magnum	10.9	508	508	1	360	15.6	460	researched	estimated
+henry_big_boy_side_gate	Henry	Big Boy Side Gate	.357 Magnum 20" octagonal	.357 Magnum	9.07	508	406	1	345	8.1	514	researched	estimated
+henry_big_boy_side_gate_2	Henry	Big Boy Side Gate	.45 Colt 20" octagonal	.45 Colt	11.48	508	508	1	145	16.2	260	researched	estimated
+henry_golden_boy_22_wmr_20_octagonal	Henry	Golden Boy	.22 WMR 20" octagonal	.22 Winchester Magnum	5.66	508	406	1	179	2.6	475	researched	estimated
+henry_golden_boy_17_hmr_20_octagonal	Henry	Golden Boy	.17 HMR 20" octagonal	.17 HMR	4.37	508	229	1	255	1.1	775	researched	estimated
+henry_frontier_22_lr_20_threaded	Henry	Frontier	.22 LR 20" threaded	.22 Long Rifle	5.66	508	406	1	165	2.6	340	researched	estimated
+henry_frontier_22_wmr_20_threaded	Henry	Frontier	.22 WMR 20" threaded	.22 Winchester Magnum	5.66	508	406	1	179	2.6	475	researched	estimated
+henry_long_ranger_308_winchester_20	Henry	Long Ranger	.308 Winchester 20"	.308 Winchester	7.82	508	279	1	415	9.5	838	researched	estimated
+henry_long_ranger_6_5_creedmoor_20	Henry	Long Ranger	6.5 Creedmoor 20"	6.5 Creedmoor	6.71	508	203	1	415	9.0	880	researched	estimated
+henry_x_model_357_magnum_17_4_black_synthetic	Henry	X Model	.357 Magnum 17.4" black synthetic	.357 Magnum	9.07	442	406	1	345	8.1	498	researched	estimated
+henry_supreme_223_remington_20_lever_action	Henry	Supreme	.223 Remington 20" lever-action	.223 Remington	5.69	508	203	1	379	4.0	880	researched	estimated
+henry_homesteader_40_s_w_16_5_semi_auto_carbine	Henry	Homesteader	.40 S&W 16.5" semi-auto carbine	.40 S&W	10.17	419	406	1	240	10.0	343	researched	estimated
+marlin_model_336_texan_20_30_30	Marlin	Model 336	Texan 20" .30-30	.30-30 Winchester	7.82	508	305	1	331	11.1	740	researched	estimated
+marlin_model_336_sporting_20_walnut_30_30	Marlin	Model 336	Sporting 20" walnut .30-30	.30-30 Winchester	7.82	508	305	1	331	11.1	740	researched	estimated
+marlin_model_336_csbl_stainless_16_5_30_30	Marlin	Model 336	CSBL stainless 16.5" .30-30	.30-30 Winchester	7.82	419	305	1	331	11.1	720	researched	estimated
+marlin_model_1894_sbl_stainless_44_mag_19	Marlin	Model 1894	SBL stainless .44 Mag 19"	.44 Magnum	10.9	483	508	1	360	15.6	455	researched	estimated
+marlin_model_1894_trapper_357_mag_16_5	Marlin	Model 1894	Trapper .357 Mag 16.5"	.357 Magnum	9.07	419	476	1	345	8.1	480	researched	estimated
+marlin_model_1894_cowboy_45_colt_24_octagonal	Marlin	Model 1894	Cowboy .45 Colt 24" octagonal	.45 Colt	11.48	610	508	1	145	16.2	270	researched	estimated
+marlin_model_1895_guide_18_5_stainless_45_70	Marlin	Model 1895	Guide 18.5" stainless .45-70	.45-70 Government	11.48	470	508	1	180	19.9	680	researched	estimated
+marlin_model_1895_trapper_16_5_45_70	Marlin	Model 1895	Trapper 16.5" .45-70	.45-70 Government	11.48	419	508	1	180	19.9	660	researched	estimated
+marlin_model_1895_gbl_22_blued_walnut_45_70	Marlin	Model 1895	GBL 22" blued walnut .45-70	.45-70 Government	11.48	559	508	1	180	19.9	710	researched	estimated
+marlin_model_60_ss_stainless_19_22_lr	Marlin	Model 60	SS stainless 19" .22 LR	.22 Long Rifle	5.66	483	406	1	165	2.6	370	researched	estimated
+marlin_model_795_ss_stainless_18_22_lr	Marlin	Model 795	SS stainless 18" .22 LR	.22 Long Rifle	5.66	457	406	1	165	2.6	365	researched	estimated
+ithaca_model_37_deerslayer_iii_24_rifled_barrel	Ithaca	Model 37	Deerslayer III 24" rifled barrel	12 Gauge	18.5	610	0	0	0	28.0	480	researched	estimated
+ithaca_model_37_supreme_28_walnut	Ithaca	Model 37	Supreme 28" walnut	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+ithaca_model_37_trap_30_vent_rib	Ithaca	Model 37	Trap 30" vent-rib	12 Gauge	18.5	762	0	0	0	28.0	480	researched	estimated
+ithaca_model_37_waterfowl_28_camo	Ithaca	Model 37	Waterfowl 28" camo	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+ithaca_model_37_ds_ps_police_special_18_5_parkerized	Ithaca	Model 37 DS PS	Police Special 18.5" parkerized	12 Gauge	18.5	470	0	0	0	28.0	480	researched	estimated
+ithaca_model_87_pump_12ga_28_field	Ithaca	Model 87	pump 12ga 28" field	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+ithaca_model_72_saddlegun_lever_30_30_20	Ithaca	Model 72	Saddlegun lever .30-30 20"	.30-30 Winchester	7.82	508	305	1	331	11.1	740	researched	estimated
+breda_breda_930_tactical_18_5_synthetic	Breda	Breda 930	Tactical 18.5" synthetic	12 Gauge	18.5	470	0	0	0	28.0	480	researched	estimated
+breda_b12_12s_inertia_28	Breda	B12	12S inertia 28"	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+breda_a1_semi_auto_28_field	Breda	A1	semi-auto 28" field	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+breda_a2_semi_auto_26_synthetic	Breda	A2	semi-auto 26" synthetic	12 Gauge	18.5	660	0	0	0	28.0	480	researched	estimated
+breda_breda_391_semi_auto_12ga_28	Breda	Breda 391	semi-auto 12ga 28"	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+breda_x_pert_12ga_semi_auto_28_field	Breda	X-pert	12ga semi-auto 28" field	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+stoeger_str_9_combat_4_5_barrel_9mm_striker	Stoeger	STR-9 Combat	4.5" barrel 9mm striker	.9×19mm Parabellum	9.01	114	250	1	250	8.0	360	researched	estimated
+stoeger_p3000_defense_18_5_pump_action	Stoeger	P3000	Defense 18.5" pump action	12 Gauge	18.5	470	0	0	0	28.0	480	researched	estimated
+stoeger_p3000_waterfowl_28_camo	Stoeger	P3000	Waterfowl 28" camo	12 Gauge	18.5	711	0	0	0	28.0	480	researched	estimated
+stoeger_m3020_semi_auto_20ga_26	Stoeger	M3020	semi-auto 20ga 26"	20 Gauge	15.6	660	0	0	0	21.1	450	researched	estimated
+stoeger_double_defense_over_under_12ga_20	Stoeger	Double Defense	over-under 12ga 20"	12 Gauge	18.5	508	0	0	0	28.0	480	researched	estimated
+stoeger_condor_outback_26_matte_nickel	Stoeger	Condor	Outback 26" matte nickel	12 Gauge	18.5	660	0	0	0	28.0	480	researched	estimated
