@@ -250,3 +250,761 @@ m14	m14	exact	Catalog primary key
 m60	m60	exact	Catalog primary key
 m1911	m1911	exact	Catalog primary key
 colt_1911	m1911	variant	Catalog alias
+## R3F French mod weapons
+r3f_famas_f1	giat_famas_f1	exact	R3F mod primary key
+r3f_famas_g2	giat_famas_g2	exact	R3F mod primary key
+r3f_famas_felin	giat_famas_felin	exact	R3F mod primary key
+r3f_famas_surb	giat_famas_commando	exact	R3F mod primary key
+r3f_frf2	giat_fr_f2	exact	R3F mod primary key
+r3f_sig551	sig_sauer_sg_551	exact	R3F mod primary key
+r3f_pamas	giat_pamas_g1	exact	R3F mod primary key
+r3f_giat_mr73	manurhin_mr_73	exact	R3F mod primary key
+r3f_hk_mp5a5	heckler_koch_mp5	exact	R3F mod primary key
+r3f_hk_mp5sd6	heckler_koch_mp5sd	exact	R3F mod primary key
+r3f_hk_mp5k	heckler_koch_mp5k	exact	R3F mod primary key
+r3f_hk_mp7a2	heckler_koch_mp7	exact	R3F mod primary key
+## Arma 3 vanilla weapons (DLC / base game)
+hgun_mk26_f	magnum_research_desert_eagle_mk_xix	exact	Arma 3 vanilla primary key
+hgun_pistol_01_f	makarov_pm	exact	Arma 3 vanilla primary key
+sgun_ksg_f	kel_tec_ksg	exact	Arma 3 vanilla primary key
+sgun_mp153_f	baikal_mp_153	exact	Arma 3 vanilla primary key
+hgun_pistol_heavy_01_f	fn_herstal_fnp_45_tactical	exact	Arma 3 vanilla primary key
+dmr_06_base	noreen_bad_news	exact	Arma 3 Marksmen DLC
+dmr_07_base	sig_sauer_cmr_76	exact	Arma 3 Marksmen DLC
+mmg_01_base	general_dynamics_lwmmg	exact	Arma 3 Marksmen DLC
+mmg_02_base	heckler_koch_mg5	exact	Arma 3 Marksmen DLC
+arifle_arx_base_f	type_115	estimated	Arma 3 Apex DLC; Type 115 is fictional weapon, loosely inspired by QBZ-95-1 but in 6.5mm caseless
+## RH Pistols / SMG mod weapons
+RH_cz75	cz_75	exact	CZ 75 9×19mm full-size (120mm barrel)
+RH_tec9	tec_9	exact	Intratec TEC-DC9 9×19mm, standard 5" barrel
+RH_tt33	tt_33	exact	Tokarev TT-33 7.62×25mm
+RH_vz61	vz_61_skorpion	exact	Škorpion vz. 61 .32 ACP, 115mm barrel
+RH_sw659	sw_659	exact	S&W 659 9×19mm stainless, 4" barrel
+RH_kimber	kimber_custom	exact	Kimber Custom II 1911 .45 ACP, 5" barrel
+RH_python	colt_python	exact	Colt Python .357 Magnum, 6" barrel
+RH_mp5k	mp5k	exact	HK MP5K 9×19mm, 115mm barrel
+RH_mk2	ruger_mk_ii	exact	Ruger Mark II .22 LR, 4.75" barrel
+RH_browning	browning_hi_power	exact	Browning Hi-Power 9×19mm, 118mm barrel
+RH_usp	hk_usp	exact	HK USP 9×19mm full-size, 4.25" barrel
+RH_deagle	desert_eagle	exact	Desert Eagle Mark XIX .44 Magnum, 6" barrel
+RH_fnp45	fnp_45	exact	FNP-45 .45 ACP, 4.5" barrel
+RH_anaconda	colt_anaconda	exact	Colt Anaconda .44 Magnum, 6" barrel
+## RHS cold-war weapons
+rhs_weap_kar98k	mauser_kar98k	exact	Karabiner 98k bolt-action, 7.92×57mm Mauser
+rhs_weap_mp44	stg44	variant	StG 44 (MP44), maps to existing stg44 entry
+rhs_weap_savz58p	sa_vz_58p	exact	vz. 58 P (fixed stock), 7.62×39mm, 390mm barrel
+rhs_weap_savz58v	sa_vz_58v	exact	vz. 58 V (folding stock), same core specs
+rhs_weap_vhsd2	hs_vhs_d2	exact	VHS-D2 bullpup DMR, 5.56mm, 500mm barrel
+rhs_weap_vhsk2	hs_vhs_k2	exact	VHS-K2 bullpup assault rifle, 5.56mm, 410mm barrel
+rhs_weap_t5000	orsis_t5000	exact	ORSIS T-5000 bolt-action sniper, .308 Win
+rhs_weap_cz99	zastava_cz99	exact	Zastava CZ 99 9×19mm pistol
+rhs_weap_m76	zastava_m76	exact	Zastava M76 7.92mm DMR
+rhs_weap_m84	zastava_m84	exact	Zastava M84 7.62×54R GPMG (PKM clone)
+rhs_weap_m92	zastava_m92	exact	Zastava M92 7.62×39mm carbine
+rhs_weap_m70ab2	zastava_m70	exact	Zastava M70AB2 7.62×39mm AK-pattern
+rhs_weap_makarov_pm	makarov_pm	exact	Makarov PM 9×18mm pistol
+rhs_weap_svd	dragunov_svd	exact	Dragunov SVD 7.62×54R DMR
+ar10	AR-10	exact	ArmaLite AR-10 battle rifle, 7.62×51mm NATO, 508mm barrel, direct impingement gas system, designed by Eugene Stoner 1956
+ar15_armalite	AR-15	exact	Original ArmaLite AR-15 prototype, .223 Remington, 20" barrel, 1:14" twist, scaled-down AR-10
+ar18	AR-18	exact	ArmaLite AR-18 assault rifle, short-stroke piston, 5.56×45mm, 464mm barrel, designed 1963
+m16a1	M16A1	exact	US Army M16A1 with forward assist, 1:12" twist, 20" barrel, 5.56mm, chrome chamber
+m16a2	M16A2	exact	US Marine Corps M16A2, heavier barrel, 1:7" twist, 3-round burst, 5.56mm
+m16a4	M16A4	exact	US Marine Corps M16A4, flat-top upper with Picatinny rail, detachable carry handle, 5.56mm
+m4	M4/M4A1	exact	US M4/M4A1 carbine, 14.5" barrel, 1:7" twist, collapsible stock, 5.56mm
+m4a1_block2	M4A1 Block II	exact	M4A1 SOPMOD Block II, SOCOM-profile 14.5" CHF barrel, RIS II rail, 1:7" twist
+xm177e1	XM177E1	exact	Colt XM177E1 Commando (Model 609), 10" barrel, 4.25" moderator, 1:12" twist, USAF GAU-5/A
+xm177e2	XM177E2	exact	Colt XM177E2 Commando (Model 629), 11.5" barrel, chrome chamber, 1:12" twist
+model723	Model 723	exact	Colt Model 723 Delta carbine, 14.5" barrel, A1 upper, 1:7" twist, full-auto
+model733	Model 733	exact	Colt Model 733 M16A2 Commando, 11.5" barrel, A2 upper, 1:7" twist, full-auto
+c7a1	C7A1	exact	Colt Canada C7A1 (C7FT) flat-top, 510mm barrel, 1:7" twist, Elcan C79 3.4x optic, 5.56mm
+c7a2	C7A2	exact	Colt Canada C7A2 upgraded, 4-position collapsible stock, green furniture, 510mm barrel
+c8	C8	exact	Colt Canada C8 carbine, 370mm barrel, collapsible stock, thin profile barrel, 5.56mm
+c8_sfw	C8 SFW	exact	Colt Canada C8 SFW (Special Forces Weapon), 410mm heavy barrel, 3-position stock, 5.56mm
+m1911a1	M1911A1	exact	US M1911A1 .45 ACP pistol, 5" barrel, 7-round magazine, single-action, short recoil
+delta_elite	Delta Elite	exact	Colt Delta Elite 10mm Auto, government frame, 5" National Match barrel, 1:16" LH twist
+python	Python	exact	Colt Python .357 Magnum revolver, 6" vent-rib barrel, 1:14" LH twist, 6-round cylinder
+anaconda	Anaconda	exact	Colt Anaconda .44 Magnum revolver, 6" full-underlug barrel, 1:20" LH twist, 6-round
+detective_special	Detective Special	exact	Colt Detective Special snubnose .38 Special revolver, 2" barrel, 6-round cylinder, 1927
+colt_9mm_smg	Colt 9mm SMG	exact	Colt Model 635 9mm SMG, blowback, 10.5" barrel, 32-round magazine, closed bolt
+adp_ak47_t3	AK-47 Type 3	exact	Lightened milled receiver AK (1955-1959), fixed wooden stock, lighter than Type 2
+adp_aks47	AKS-47	exact	Underfolding metal stock variant of AK-47 Type 3, same barrel and action
+adp_akm	AKM	exact	Modernized stamped receiver (1959), slant compensator, lighter than AK-47
+adp_akms	AKMS	exact	AKM with underfolding metal stock, otherwise identical
+adp_ak74	AK-74	exact	First 5.45mm Kalashnikov (1974), muzzle brake, laminated wood furniture
+adp_aks74	AKS-74	exact	AK-74 with side-folding metal stock, otherwise identical
+adp_aks74u	AKS-74U	exact	Compact carbine with 210mm barrel, booster/flash hider, flip-up rear sight
+adp_ak74m	AK-74M	exact	Modernized 1991, side-folding polymer stock, scope rail standard, base for AK-100 series
+adp_ak101	AK-101	exact	Export 5.56mm NATO AK-100 series, full-length 415mm barrel
+adp_ak103	AK-103	exact	Export 7.62mm AK-100 series, replaces AKM with modern polymer furniture
+adp_ak105	AK-105	exact	Compact 5.45mm AK-100 carbine, 314mm barrel, full-length gas system
+adp_ak12	AK-12	exact	Ratnik program 5.45mm (2018), Picatinny top cover, adjustable stock, 2-round burst
+adp_ak15	AK-15	exact	7.62mm Ratnik variant of AK-12, same chassis and furniture
+adp_rpk	RPK	exact	Squad automatic 7.62mm, longer 590mm heavy barrel, bipod, 40/75-round magazines
+adp_rpk74	RPK-74	exact	5.45mm squad automatic, 590mm barrel, 45-round magazine, bipod
+adp_pkm	PKM	exact	Modernized 7.62×54mmR GPMG, lighter than PK, non-fluted barrel, Stepanov tripod
+adp_pkp	PKP Pecheneg	exact	Fixed forced-air cooled barrel, jacket with cooling grooves, no field barrel change
+adp_svd	SVD	exact	Semi-auto designated marksman rifle, 620mm barrel, 4x PSO-1 scope, 10-round magazine
+adp_svds	SVDS	exact	Folding-stock paratrooper variant, shorter 565mm barrel, separate pistol grip
+adp_saiga12	Saiga-12	exact	AK-based semi-auto shotgun, gas regulator for standard/magnum loads, detachable box magazine
+adp_mp443	MP-443 Grach	exact	Standard Russian service pistol since 2003, 17+1 9x19mm, steel frame, Browning lock
+adp_pp1901	PP-19-01 Vityaz	exact	AK-derived 9mm SMG, blowback, 30-round box magazine, Picatinny top rail
+adp_pp2000	PP-2000	exact	Ultra-compact PDW/SMG, polymer frame, 44-round magazine option, 182mm barrel
+g3	g3a3	exact	G3A3 7.62mm NATO battle rifle, 450mm barrel, 305mm twist, 800 m/s muzzle velocity, fixed stock
+hk33	hk33a2	exact	HK33A2 5.56mm assault rifle, 390mm barrel, fixed stock, 950 m/s
+hk53	hk53	exact	HK53 compact 5.56mm, 211mm barrel, 750 m/s, MP5-derived handguard
+g36	g36	exact	G36 standard 5.56mm assault rifle, 480mm barrel, 998mm overall
+g36k	g36k	exact	G36K carbine 5.56mm, 320mm barrel, 860mm overall
+g36c	g36c	exact	G36C compact/commando 5.56mm, 228mm barrel, 720mm overall
+hk416	hk416_104	exact	HK416 D10RS 10.4in (264mm) barrel, 788 m/s, 6-groove 178mm RH twist
+hk417	hk417_12	exact	HK417 12in (305mm) barrel, 7.62mm NATO battle rifle
+mp5	mp5a2	exact	MP5A2 9mm submachine gun, 225mm barrel, fixed stock, 250mm twist
+ump	ump9	exact	UMP9 9mm submachine gun, 200mm barrel, polymer receiver
+usp	usp9	exact	USP9 9mm full-size pistol, 108mm barrel, polygonal rifling
+p30	p30	exact	P30 9mm semi-automatic pistol, 98mm barrel, polymer frame, interchangeable backstraps
+hk45	hk45	exact	HK45 .45 ACP pistol, 113mm barrel, 10-round magazine, polygonal rifling
+psg1	psg1	exact	PSG1 7.62mm precision semi-auto rifle, 650mm barrel, adjustable stock, 868 m/s
+mr556a1	mr556a1	exact	MR556A1 civilian HK416 variant, 16.5in (419mm) barrel, semi-auto only, 1 MOA
+vp9	vp9	exact	VP9 9mm striker-fired pistol, 104mm barrel, 15-round magazine, charging supports
+mp7	mp7	exact	MP7 PDW 4.6×30mm, 180mm barrel, 735 m/s, 950 rpm, folding stock
+p210	P210	exact	SIG Sauer P210, 9×19mm, 120mm barrel, 250mm RH twist, 8-round magazine
+p225	P225	exact	SIG Sauer P225/P6, 9×19mm, 91mm barrel, compact DA/SA, German police P6 variant
+p226	P226	exact	SIG Sauer P226, 9×19mm, 112mm barrel, 250mm RH twist, double-stack service pistol
+p226_navy	P226 Navy	exact	SIG Sauer P226 Navy, 9×19mm, 112mm barrel, saltwater-resistant coated internals, NAVY rollmark
+p229	P229	exact	SIG Sauer P229, 9×19mm/.40 S&W/.357 SIG, 99mm barrel, milled stainless slide
+p239	P239	exact	SIG Sauer P239, 9×19mm/.40 S&W/.357 SIG, 91mm barrel, single-stack compact
+p250	P250	exact	SIG Sauer P250, modular DAO, 9×19mm Full Size 120mm barrel, 17-round magazine
+p320c	P320 Compact	exact	SIG Sauer P320 Compact, 9×19mm, 99mm barrel, 15-round, striker-fired modular
+p320f	P320 Full	exact	SIG Sauer P320 Full-Size, 9×19mm, 119mm barrel, 17-round, striker-fired
+p320_x5	P320 X-Five	exact	SIG Sauer P320 X-Five, 9×19mm, 127mm barrel, competition variant, 5" barrel
+m17	M17	exact	SIG Sauer M17, US Army Modular Handgun System, 9mm NATO, 119mm barrel, coyote PVD
+m18	M18	exact	SIG Sauer M18, US Military compact MHS, 9mm NATO, 99mm barrel, carry-size
+p365	P365	exact	SIG Sauer P365, micro-compact 9×19mm, 78mm barrel, 10+1 capacity
+p365xl	P365XL	exact	SIG Sauer P365XL, 9×19mm, 94mm barrel, extended slide, 12+1 capacity
+sp2022	SP2022	exact	SIG Sauer SP2022 (SIG Pro), polymer DA/SA, 9×19mm, 99mm barrel, French police contract
+mpx	MPX	exact	SIG Sauer MPX, 9×19mm, 203mm barrel, gas-operated rotating bolt, 850 RPM
+mpx_k	MPX-K	exact	SIG Sauer MPX-K compact, 9×19mm, 114mm barrel, compact PDW
+sg550	SG 550	exact	SIG Sauer SG 550 Stgw 90, 5.56×45mm, 528mm barrel, Swiss Army service rifle
+sg551	SG 551	exact	SIG Sauer SG 551, 5.56×45mm, 363mm barrel, carbine variant, Swiss special forces
+sg553	SG 553	exact	SIG Sauer SG 553, 5.56×45mm, 226mm barrel, ultra-compact, improved SG 552 successor
+sig556	SIG 556	exact	SIG Sauer SIG 556, US-made semi-auto, 5.56×45mm, 406mm barrel, STANAG mags
+mcx_virtus_11	MCX Virtus 11.5"	exact	SIG Sauer MCX Virtus SBR, 5.56×45mm, 292mm barrel, 1:7 twist, short-stroke piston
+mcx_virtus_16	MCX Virtus 16"	exact	SIG Sauer MCX Virtus Rifle, 5.56×45mm, 406mm barrel, 1:7 twist, piston-driven
+mcx_rattler	MCX Rattler 5.5"	exact	SIG Sauer MCX Rattler PDW, .300 BLK, 140mm barrel, 1:5 twist, ultra-compact
+mcx_spear	MCX Spear / XM7	exact	SIG Sauer MCX Spear, .277 Fury 6.8×51mm, 330mm barrel, US Army NGSW winner
+sig_cross	SIG Cross	exact	SIG Sauer Cross bolt-action, .308 Win, 406mm barrel, 1:8 twist, folding stock
+m400_tread	M400 Tread	exact	SIG Sauer M400 Tread, AR-15 pattern, 5.56×45mm, 406mm barrel, 1:8 twist
+sig_amt	SIG AMT (SG 510-4)	exact	SIG AMT / SG 510-4, 7.62×51mm, 505mm barrel, roller-delayed, Chilean/Bolivian military
+sig_cross_magnum	SIG Cross Magnum	exact	SIG Sauer Cross Magnum bolt-action, .300 PRC, 610mm barrel, magnum action variant
+bhp_gp35	FN Hi-Power GP35	exact	FN Browning Hi-Power GP35 (P-35), 9×19mm, 118mm barrel
+bhp_hp_sfs	FN Hi-Power HP-SFS	exact	FN Browning Hi-Power HP-SFS with Safe Fast Shooting system, 9×19mm, 118mm barrel
+fal_5000	FN FAL 50.00	exact	FN FAL 50.00 standard battle rifle, 7.62×51mm, 533mm barrel
+fal_5061	FN FAL 50.61	exact	FN FAL 50.61 para folding stock, 7.62×51mm, 533mm barrel
+fal_5063	FN FAL 50.63	exact	FN FAL 50.63 para short barrel, 7.62×51mm, 436mm barrel
+fnc_std	FN FNC Standard	exact	FN FNC Standard Model 2000, 5.56×45mm, 449mm barrel, 1:7 twist
+fnc_para	FN FNC Para	exact	FN FNC Para (Short Model 7000), 5.56×45mm, 363mm barrel
+scar_l_cqc	FN SCAR-L Mk16 CQC	exact	FN SCAR-L Mk16 CQC (Close Quarters Combat), 5.56×45mm, 254mm barrel
+scar_l_std	FN SCAR-L Mk16 Std	exact	FN SCAR-L Mk16 Standard, 5.56×45mm, 368mm (14.5") barrel
+scar_h_cqc	FN SCAR-H Mk17 CQC	exact	FN SCAR-H Mk17 CQC, 7.62×51mm, 330mm (13") barrel
+scar_h_std	FN SCAR-H Mk17 Std	exact	FN SCAR-H Mk17 Standard, 7.62×51mm, 406mm (16") barrel
+scar_sc	FN SCAR-SC	exact	FN SCAR-SC subcompact carbine, 5.56×45mm, 191mm (7.5") barrel
+f2000	FN F2000	exact	FN F2000 bullpup assault rifle, 5.56×45mm, 400mm barrel
+p90_tr	FN P90 TR	exact	FN P90 TR (Triple Rail), 5.7×28mm, 264mm barrel
+fiveseven_usg	FN Five-seveN USG	exact	FN Five-seveN USG, 5.7×28mm, 122mm barrel
+fiveseven_mrd	FN Five-seveN MRD	exact	FN Five-seveN Mk3 MRD optics-ready, 5.7×28mm, 122mm barrel
+fnx45	FN FNX-45	exact	FN FNX-45 standard, .45 ACP, 114mm (4.5") barrel
+fnx45_tac	FN FNX-45 Tactical	exact	FN FNX-45 Tactical optics-ready threaded barrel, .45 ACP, 135mm (5.3") barrel
+fn509	FN 509	exact	FN 509 standard, 9×19mm, 102mm (4") barrel
+fn509_compact	FN 509 Compact	exact	FN 509 Compact, 9×19mm, 94mm (3.7") barrel
+fn509_tactical	FN 509 Tactical	exact	FN 509 Tactical threaded barrel optics-ready, 9×19mm, 114mm (4.5") barrel
+fn509_mrd	FN 509 MRD	exact	FN 509 Midsize MRD optics-ready, 9×19mm, 102mm (4") barrel
+fn502	FN 502 Tactical	exact	FN 502 Tactical .22 LR, 117mm (4.6") barrel
+m2hb	M2HB QCB	exact	FN M2HB-QCB heavy machine gun, .50 BMG, 1143mm (45") barrel
+m240b	M240B GPMG	exact	FN M240B (MAG 58 derivative), 7.62×51mm, 551mm (21.7") barrel
+m249_saw	M249 SAW	exact	FN M249 SAW (MINIMI), 5.56×45mm, 521mm (20.5") barrel
+mag58	FN MAG 58	exact	FN MAG 58 general purpose machine gun, 7.62×51mm, 630mm barrel
+glock_17	Glock 17	exact	Gen3-5 full-size 9mm, original Glock service pistol, standard-issue worldwide
+glock_18	Glock 18	exact	Selective-fire full-auto machine pistol, restricted LE/mil only, G17 frame size
+glock_19	Glock 19	exact	Gen3-5 compact 9mm, most widely produced Glock model, ubiquitous CCW/duty pistol
+glock_19x	Glock 19X	exact	Crossover with G17 full-size frame + G19 compact slide, coyote nPVD finish, GMB barrel
+glock_20	Glock 20	exact	Full-size 10mm Auto for hunting, backcountry defense, high velocity/power
+glock_21	Glock 21	exact	Full-size .45 ACP, proven stopping power, 13-round double-stack capacity
+glock_22	Glock 22	exact	Standard .40 S&W LE service pistol, widely adopted by US law enforcement
+glock_26	Glock 26	exact	Subcompact 9mm baby Glock, backup/CCW, compatible with all 9mm Glock magazines
+glock_34	Glock 34	exact	Long-slide 9mm competition/tactical, extended barrel and sight radius, IPSC/USPSA popular
+glock_35	Glock 35	exact	Long-slide .40 S&W competition/tactical, extended barrel, practical shooting use
+glock_41	Glock 41	exact	Long-slide .45 ACP competition/tactical MOS, narrow G34-width slide on G21 frame
+glock_42	Glock 42	exact	Slimline subcompact .380 ACP, smallest Glock overall, single-stack deep concealment
+glock_43	Glock 43	exact	Slimline single-stack 9mm subcompact, minimum width for concealed carry
+glock_43x	Glock 43X	exact	Slimline 9mm compact with 10-round capacity, longer grip than G43, GMB barrel
+glock_44	Glock 44	exact	Compact .22 LR rimfire trainer, G19-sized frame, hybrid steel-polymer slide, blowback action
+glock_45	Glock 45	exact	Gen5 crossover with compact G19 slide on full-size G17 frame, 17-round capacity
+ber_92f_m9	ber_92f_m9	exact	9×19mm DA/SA full-size pistol, US military M9, 15rd mag
+ber_92fs	ber_92fs	exact	9×19mm DA/SA, commercial variant of 92F with enlarged hammer pin
+ber_92x	ber_92x	exact	9×19mm Vertec-frame, Xtreme-S trigger system, 4.7in barrel, 17rd
+ber_px4_full	ber_px4_full	exact	9×19mm rotating barrel full-size, 4in barrel, 17rd, NATO-certified
+ber_px4_compact	ber_px4_compact	exact	9×19mm rotating barrel compact, 3.27in barrel, 15rd
+ber_apx_full	ber_apx_full	exact	9×19mm striker-fired full-size, 4.25in barrel, 17rd, modular
+ber_apx_carry	ber_apx_carry	exact	9×19mm striker-fired compact carry, 3.5in barrel, 13rd
+ber_84_cheetah	ber_84_cheetah	exact	.380 ACP DA/SA compact, 13rd double-stack, 3.82in barrel
+ber_21a_bobcat	ber_21a_bobcat	exact	.25 ACP tip-up barrel pocket pistol, 7rd, DA only
+ber_3032_tomcat	ber_3032_tomcat	exact	.32 ACP tip-up barrel pocket pistol, 7rd, DA/SA
+ber_pico	ber_pico	exact	.380 ACP subcompact striker-fired pocket pistol, 6rd
+ber_cx4_storm	ber_cx4_storm	exact	9×19mm pistol-caliber carbine, 16.6in barrel, blowback, 15/20rd
+ber_arx160	ber_arx160	exact	5.56×45mm assault rifle, 16in barrel, gas piston, 30rd STANAG
+ber_arx100	ber_arx100	exact	5.56×45mm semi-auto civilian ARX160 variant, 16in barrel
+ber_bm59	ber_bm59	exact	7.62×51mm battle rifle, evolved from M1 Garand, 20rd magazine
+ber_686_sp	ber_686_sp	exact	12 Gauge O/U shotgun, Steelium barrels, 26/28/30in options
+ber_1301_tactical	ber_1301_tactical	exact	12 Gauge semi-auto tactical shotgun, 18.5in barrel, 1370 BAR proof
+ber_a400	ber_a400	exact	12 Gauge semi-auto shotgun, Kick-Off recoil reduction, 28in barrel
+ber_dt11	ber_dt11	exact	12 Gauge competition O/U, Steelium Pro barrels, 30/32in options
+ben_m1s90	ben_m1s90	exact	12 Gauge semi-auto, ARGO gas system, 18.5-26in barrel options
+ben_m2	ben_m2	exact	12 Gauge semi-auto, ComforTech stock, 24/26/28in barrel options
+ben_m4	ben_m4	exact	12 Gauge semi-auto, US M1014, 18.5in barrel, ARGO gas system
+ben_m3	ben_m3	exact	12 Gauge convertible pump/semi-auto, 19-24in barrel
+ben_nova	ben_nova	exact	12 Gauge pump-action, polymer monolith receiver, 24-28in barrel
+ben_supernova	ben_supernova	exact	12 Gauge pump-action, adjustable stock, 24-28in barrel
+ben_vinci	ben_vinci	exact	12 Gauge semi-auto, modular design, 24-28in barrel
+ben_ethos	ben_ethos	exact	12 Gauge semi-auto shotgun, 24-28in barrel, inertial-driven
+ben_lupo	ben_lupo	exact	Bolt-action hunting rifle, synthetic stock, detachable box magazine
+fra_spas12	fra_spas12	exact	12 Gauge hybrid pump/semi-auto shotgun, folding stock
+fra_spas15	fra_spas15	exact	12 Gauge selective-fire pump/semi-auto shotgun, detachable box magazine
+fra_affinity	fra_affinity	exact	12 Gauge semi-auto shotgun, inertial system, 26-28in barrel
+fra_instinct	fra_instinct	exact	12/20 Gauge O/U shotgun, 26-30in barrel, field/sporting models
+arma_cz75b	CZ_75_B	exact	9mm steel full-size da/sa
+arma_cz75bd	CZ_75_BD	exact	decocker variant of CZ 75 B
+arma_czp01	CZ_75_P01	exact	compact aluminum frame NATO-qualified
+arma_czsp01	CZ_75_SP01	exact	full-size rail dust cover
+arma_czshadow2	CZ_75_Shadow_2	exact	competition pistol sa/da
+arma_cz85	CZ_85	exact	ambidextrous cz 75 variant
+arma_cz97b	CZ_97_B	exact	.45 acp big-bore brother
+arma_czp07	CZ_P07	exact	compact polymer omega trigger
+arma_czp09	CZ_P09	exact	full-size polymer omega trigger
+arma_czp10c	CZ_P10_C	exact	compact striker-fired
+arma_czp10f	CZ_P10_F	exact	full-size striker-fired
+arma_czp10s	CZ_P10_S	exact	subcompact striker-fired
+arma_cz83	CZ_83	exact	blowback compact .380
+arma_cz2075rami	CZ_2075_RAMI	exact	subcompact cz75 derivative
+arma_czbren2_556	CZ_BREN_2_556	exact	5.56mm select-fire rifle
+arma_czbren2_762	CZ_BREN_2_762	exact	7.62x39mm select-fire rifle
+arma_czbren2ms	CZ_BREN_2_Ms	exact	semi-auto civilian variant
+arma_czscorpionevo3s1	CZ_Scorpion_Evo3_S1	exact	9mm semi-auto pcc
+arma_czvz61	CZ_SKORPION_vz61	exact	.32 acp machine pistol
+arma_cz457	CZ_457	exact	bolt-action .22 lr rifle
+arma_cz527	CZ_527	exact	mini-mauser bolt action 7.62x39
+arma_cz557	CZ_557	exact	controlled-feed bolt action .308
+arma_cz600trail	CZ_600_Trail	exact	compact folding-stock bolt action
+arma_cz600alpha	CZ_600_Alpha	exact	durable polymer stock bolt action
+arma_czbren805	CZ_BREN_805	exact	predecessor to BREN 2
+arma_cz75auto	CZ_75_Automatic	exact	select-fire machine pistol variant
+arma_cz550	CZ_550	exact	mauser 98 pattern bolt action
+arma_czbrnozkk	CZ_BRNO_ZKK	exact	classic mauser hunting rifle
+aug_a1_508	aug_a1_508	exact	Steyr AUG A1 5.56×45mm 508mm barrel
+aug_a1_417	aug_a1_417	variant	Steyr AUG A1 5.56×45mm 417mm barrel
+aug_a3_m1	aug_a3_m1	exact	Steyr AUG A3 M1 5.56×45mm 416mm barrel
+aug_9mm	aug_9mm	variant	Steyr AUG 9mm Para conversion 420mm barrel
+aug_hbar	aug_hbar	variant	Steyr AUG HBAR 5.56×45mm 621mm heavy barrel
+aug_lmg	aug_lmg	variant	Steyr AUG LMG 5.56×45mm 621mm heavy barrel (LMG variant)
+aug_z	aug_z	variant	Steyr AUG Z 5.56×45mm semi-auto civilian variant
+ssg_04	ssg_04	exact	Steyr SSG 04 .308 Win 600mm barrel sniper rifle
+ssg_08	ssg_08	exact	Steyr SSG 08 .308 Win 600mm barrel sniper rifle
+steyr_monobloc	steyr_monobloc	exact	Steyr Monobloc .308 Win bolt-action rifle
+steyr_scout	steyr_scout	exact	Steyr Scout 5.56×45mm 476mm barrel
+m9_a1	m9_a1	exact	Steyr M9-A1 9×19mm pistol
+m40_a1	m40_a1	variant	Steyr M40-A1 .40 S&W pistol
+s9_a1	s9_a1	variant	Steyr S9-A1 9×19mm compact pistol
+c9_a1	c9_a1	variant	Steyr C9-A1 9×19mm subcompact pistol
+mpi_69	mpi_69	exact	Steyr MPi 69 9×19mm submachine gun
+tmp	tmp	exact	Steyr TMP 9×19mm tactical machine pistol
+spp	spp	variant	Steyr SPP 9×19mm semi-auto pistol (TMP civilian)
+hs_50	hs_50	exact	Steyr HS .50 12.7×99mm anti-materiel sniper rifle
+iws_2000	iws_2000	exact	Steyr IWS 2000 14.5mm anti-materiel rifle
+uzi_std	uzi_std	exact	IMI/IWI Uzi Standard 9×19mm submachine gun
+uzi_mini	uzi_mini	variant	IMI/IWI Mini Uzi 9×19mm compact submachine gun
+uzi_micro	uzi_micro	variant	IMI/IWI Micro Uzi 9×19mm ultra-compact submachine gun
+uzi_pro	uzi_pro	exact	IWI Uzi Pro 9×19mm improved submachine gun
+galil_arm	galil_arm	exact	IMI Galil ARM 5.56×45mm assault rifle
+galil_sar	galil_sar	variant	IMI Galil SAR 5.56×45mm short assault rifle
+galil_ace_22	galil_ace_22	exact	IWI Galil ACE 22 5.56×45mm assault rifle
+galil_ace_31	galil_ace_31	variant	IWI Galil ACE 31 7.62×39mm assault rifle
+galil_ace_32	galil_ace_32	variant	IWI Galil ACE 32 7.62×51mm battle rifle
+tavor_7	tavor_7	exact	IWI Tavor 7 7.62×51mm bullpup battle rifle
+tavor_ts12	tavor_ts12	exact	IWI Tavor TS12 12-gauge bullpup shotgun
+jericho_941	jericho_941	exact	IMI/IWI Jericho 941 9×19mm pistol
+jericho_enhanced	jericho_enhanced	variant	IWI Jericho Enhanced 9×19mm pistol
+masada_9	masada_9	exact	IWI Masada 9×19mm striker-fired pistol
+masada_slim	masada_slim	variant	IWI Masada Slim 9×19mm compact pistol
+negev_ng7	negev_ng7	exact	IWI Negev NG7 7.62×51mm light machine gun
+negev_ng5	negev_ng5	exact	IWI Negev NG5 5.56×45mm light machine gun
+carmel	carmel	exact	IWI Carmel 5.56×45mm assault rifle
+dan_338	dan_338	exact	IWI Dan .338 Lapua Magnum sniper rifle
+arma_key	mark_iv	exact	Ruger Mark IV Target .22 LR pistol
+arma_rem_700_308	rem_700_308	researched	Remington Model 700 short-action .308 Win, 4-round int. magazine, 24" barrel
+arma_rem_700_300wm	rem_700_300wm	researched	Remington Model 700 long-action .300 Win Mag, 4-round mag, 26" heavy barrel
+arma_rem_700_30_06	rem_700_30_06	researched	Remington Model 700 long-action .30-06 Springfield, 4-round internal magazine
+arma_rem_700_6_5cm	rem_700_6_5cm	researched	Remington Model 700 short-action 6.5 Creedmoor, 24" carbon or stainless barrel
+arma_rem_700_338lm	rem_700_338lm	researched	Remington 700P .338 Lapua, HS Precision stock, 26" heavy barrel, 5-round DBM
+arma_rem_870_12ga	rem_870_12ga	researched	Remington 870 12ga pump, 11M+ built, Wingmaster/Express, dual action bars
+arma_rem_870_20ga	rem_870_20ga	researched	Remington 870 20ga pump on scaled LW receiver, 2.75" and 3" chambers
+arma_rem_1100_12ga	rem_1100_12ga	researched	Remington 1100 gas semi-auto 12ga, 1963 intro, 4M+ built, low recoil
+arma_rem_1187_12ga	rem_1187_12ga	researched	Remington 11-87 gas semi-auto 12ga, self-clearing gas system, 2.75/3"
+arma_rem_r1_1911	rem_r1_1911	researched	Remington 1911 R1 .45 ACP, 7+1 magazine, John Browning design
+arma_rem_597_22lr	rem_597_22lr	researched	Remington 597 semi-auto .22 LR, 10-round detachable mag, synthetic stock
+arma_rem_7600_308	rem_7600_308	researched	Remington 7600 pump-action .308 Win, 4-round mag, police version available
+arma_rem_552_22lr	rem_552_22lr	researched	Remington 552 Speedmaster semi-auto .22 LR, 20-round tube magazine
+arma_mar_336_3030	mar_336_3030	researched	Marlin 336 lever-action .30-30, 6+1 tube, Micro-Groove rifling, walnut stock
+arma_mar_336_35rem	mar_336_35rem	researched	Marlin 336 lever-action .35 Rem, discontinued chambering, 20" barrel
+arma_mar_1895_4570	mar_1895_4570	researched	Marlin 1895 lever-action .45-70, 6+1 tube, stainless SBL or blued Guide Gun
+arma_mar_1894_357	mar_1894_357	researched	Marlin 1894 lever-action .357 Mag, 9+1, 18.63" barrel, Classic or Guide Gun
+arma_mar_1894_44	mar_1894_44	researched	Marlin 1894 lever-action .44 Rem Mag, 10+1, 20.25" barrel, checkered walnut
+arma_mar_60_22lr	mar_60_22lr	researched	Marlin Model 60 semi-auto .22 LR, tube-fed, 14+1, 11M+ produced since 1954
+arma_mar_795_22lr	mar_795_22lr	researched	Marlin 795 semi-auto .22 LR, 10-round detachable box mag, lightweight 3.5lb
+arma_mar_39a_22lr	mar_39a_22lr	researched	Marlin 39A Golden lever-action .22 LR, 21" barrel, 26-round tube, since 1939
+arma_sav_110_308	sav_110_308	researched	Savage 110 bolt-action .308 Win, AccuTrigger, 4-round DBM, 26" barrel
+arma_sav_110_300wm	sav_110_300wm	researched	Savage 110 Magnum .300 Win Mag, 30" barrel, 5-round mag, MDT chassis
+arma_sav_110_6_5cm	sav_110_6_5cm	researched	Savage 110 6.5 Creedmoor, 26" barrel, 10-round AICS mag, AccuTrigger
+arma_sav_110_338lm	sav_110_338lm	researched	Savage 110 .338 Lapua Magnum, 30" barrel, 5-round mag, muzzle brake
+arma_sav_110_30_06	sav_110_30_06	researched	Savage 110 long-action .30-06 Springfield, 22" or 24" barrel
+arma_sav_axis_308	sav_axis_308	researched	Savage Axis budget bolt-action .308 Win, 22" button-rifled barrel, 4-round mag
+arma_sav_axisii_6_5cm	sav_axisii_6_5cm	researched	Savage Axis II 6.5 Creedmoor, AccuTrigger, 22" barrel, 4-round DBM
+arma_sav_mkii_22lr	sav_mkii_22lr	researched	Savage Mark II bolt-action .22 LR, AccuTrigger, 10-round mag, 21" barrel
+arma_sav_64_22lr	sav_64_22lr	researched	Savage Model 64 semi-auto .22 LR, straight blowback, 10-round box mag, 20.5" barrel
+arma_sav_93r17_17hmr	sav_93r17_17hmr	researched	Savage 93R17 bolt-action .17 HMR, AccuTrigger, 21" heavy barrel, 5-round mag
+arma_sav_220_20ga	sav_220_20ga	researched	Savage 220 bolt-action 20ga slug gun, 22" fully rifled barrel, AccuTrigger, 2-round mag
+arma_sav_stev320_12ga	sav_stev320_12ga	researched	Stevens 320 pump 12ga, dual slide-bars, rotary bolt, 5+1, synthetic stock
+arma_sav_99_308	sav_99_308	researched	Savage 99 lever-action .308 Win, unique rotary magazine, out of production
+browning_hi_power	browning_hi_power	direct	Research task b3_browning_winchester
+browning_bar_m1918	browning_bar_m1918	direct	Research task b3_browning_winchester
+browning_auto_5	browning_auto_5	direct	Research task b3_browning_winchester
+browning_m1919	browning_m1919	direct	Research task b3_browning_winchester
+browning_m2hb	browning_m2hb	direct	Research task b3_browning_winchester
+browning_blr	browning_blr	direct	Research task b3_browning_winchester
+browning_buck_mark	browning_buck_mark	direct	Research task b3_browning_winchester
+browning_x_bolt	browning_x_bolt	direct	Research task b3_browning_winchester
+browning_silver	browning_silver	direct	Research task b3_browning_winchester
+browning_leverage	browning_leverage	direct	Research task b3_browning_winchester
+browning_a_bolt	browning_a_bolt	direct	Research task b3_browning_winchester
+browning_citori	browning_citori	direct	Research task b3_browning_winchester
+browning_cynergy	browning_cynergy	direct	Research task b3_browning_winchester
+browning_maxus	browning_maxus	direct	Research task b3_browning_winchester
+browning_sweet_sixteen	browning_sweet_sixteen	direct	Research task b3_browning_winchester
+winchester_model_70_308	winchester_model_70_308	direct	Research task b3_browning_winchester
+winchester_model_70_300wm	winchester_model_70_300wm	direct	Research task b3_browning_winchester
+winchester_model_94	winchester_model_94	direct	Research task b3_browning_winchester
+winchester_model_12	winchester_model_12	direct	Research task b3_browning_winchester
+winchester_sxp	winchester_sxp	direct	Research task b3_browning_winchester
+winchester_model_1300	winchester_model_1300	direct	Research task b3_browning_winchester
+winchester_super_x	winchester_super_x	direct	Research task b3_browning_winchester
+winchester_wildcat	winchester_wildcat	direct	Research task b3_browning_winchester
+winchester_model_1887	winchester_model_1887	direct	Research task b3_browning_winchester
+winchester_model_1897	winchester_model_1897	direct	Research task b3_browning_winchester
+winchester_model_88	winchester_model_88	direct	Research task b3_browning_winchester
+winchester_model_100	winchester_model_100	direct	Research task b3_browning_winchester
+winchester_model_69	winchester_model_69	direct	Research task b3_browning_winchester
+winchester_model_52	winchester_model_52	direct	Research task b3_browning_winchester
+mossberg_500_12g	mossberg_500_12g	exact	Cruiser model, pistol grip
+mossberg_500_20g	mossberg_500_20g	exact	Cruiser model, pistol grip
+mossberg_500_tac	mossberg_500_tac	exact	Tactical model, 6-shot
+mossberg_hs410	mossberg_hs410	exact	Home Security model, .410 bore
+mossberg_500_atp	mossberg_500_atp	exact	All Terrain Pump, 12ga
+mossberg_590	mossberg_590	exact	20in barrel, military/police
+mossberg_590a1	mossberg_590a1	exact	Heavy barrel, MIL-SPEC
+mossberg_930	mossberg_930	exact	Semi-auto tactical
+mossberg_935	mossberg_935	exact	Semi-auto 3.5in magnum
+taurus_g2c	taurus_g2c	exact	Compact polymer 9mm
+taurus_g3c	taurus_g3c	exact	Updated compact polymer 9mm
+taurus_tx22	taurus_tx22	exact	.22 LR competition/training pistol
+taurus_judge	taurus_judge	exact	.45 Colt/.410 revolver
+taurus_raging_bull	taurus_raging_bull	exact	Large-frame magnum revolver
+taurus_pt92	taurus_pt92	exact	Beretta 92 clone, 9mm
+taurus_pt111	taurus_pt111	exact	Millennium G2, compact 9mm
+taurus_spectrum	taurus_spectrum	exact	Ultra-compact .380
+taurus_curve	taurus_curve	exact	Ergonomic curved .380
+taurus_tcp	taurus_tcp	exact	Ultra-compact .380 pocket pistol
+taurus_856	taurus_856	exact	6-shot .38 Special revolver
+taurus_605	taurus_605	exact	5-shot .357 Magnum snubnose
+taurus_pt1911	taurus_pt1911	exact	1911-pattern .45 ACP
+walther_pp	walther_pp_32acp	exact	Original police pistol 1929; 98mm barrel
+walther_ppk	walther_ppk_32acp	exact	Compact PPK; 83mm barrel; 1931
+walther_ppks	walther_ppks_380acp	exact	PPK/S US import; PP frame + PPK slide
+walther_ppq	walther_ppq_9mm	exact	Striker-fired; M1/M2 variants; 2011-2023
+walther_p99	walther_p99_9mm	exact	First gen striker-fired; 1997-2023
+walther_p99as	walther_p99as_9mm	exact	Anti-Stress trigger variant; 2004-2023
+walther_pps	walther_pps_9mm	exact	Slim concealed carry; 2007-present
+walther_ccp	walther_ccp_9mm	exact	Gas-delayed blowback; 2014-present; M2
+walther_pdp	walther_pdp_9mm	exact	Performance Duty Pistol; replaced PPQ; 2021-present
+walther_p22	walther_p22	exact	Rimfire trainer; 2002-present
+walther_q5sf	walther_q5sf_9mm	exact	PPQ-based competition model; 5" barrel
+walther_q4sf	walther_q4sf_9mm	exact	PPQ-based carry model; 4" barrel
+walther_sp22m2	walther_sp22_m2	exact	Sport/target pistol; 2008-2010
+walther_ccpm2	walther_ccpm2_380acp	exact	CCP M2 in .380 ACP; 2020-present
+walther_pdpf	walther_pdpf_9mm	exact	PDP F-Series for smaller hands; 2022-present
+mauser_m1910	mauser_m1910_25acp	exact	Pocket pistol; 1910-1914 production
+mauser_m1914	mauser_m1914_32acp	exact	Improved M1910 in .32 ACP; 1914-1934
+mauser_m1934	mauser_m1934_32acp	exact	Streamlined M1914 update; 1934-1940
+mauser_hsc	mauser_hsc_32acp	exact	Double-action; WWII service; 1940-1977
+mauser_wtp1	mauser_wtp1_25acp	exact	Vest pocket pistol; 1921-1939
+mauser_wtp2	mauser_wtp2_25acp	exact	Improved WTP; 1939-1941
+mauser_m1918	mauser_m1918_tankgewehr	exact	WWI anti-tank rifle; 39" barrel
+mauser_mg213	mauser_mg213_20mm	exact	WWII revolver cannon; basis for ADEN/DEFA/M39
+mauser_bk27	mauser_bk27_27mm	exact	Modern revolver cannon; Tornado/Typhoon/Gripen
+sa_m1_garand_rfl	sa_m1_garand	direct	M1 Garand .30-06 semi-auto rifle, 8rd en-bloc clip
+sa_m1a_standard_rfl	sa_m1a_standard	direct	M1A Standard Issue .308 semi-auto, 22in barrel
+sa_m1a_loaded_rfl	sa_m1a_loaded	direct	M1A Loaded .308, National Match barrel 22in 1:11 RH
+sa_m1a_scout_rfl	sa_m1a_scout	direct	M1A Scout Squad .308, 18in barrel, forward scope mount
+sa_m1a_socom_rfl	sa_m1a_socom	direct	M1A SOCOM 16 .308, 16.25in barrel, muzzle brake
+sa_1911_a1_pst	sa_1911_a1	direct	1911 A1 .45 ACP, GI-spec, 5in barrel
+sa_1911_operator_pst	sa_1911_operator	direct	1911 Operator .45 ACP, picatinny rail, 5in barrel
+sa_1911_range_officer_pst	sa_1911_range_officer	direct	1911 Range Officer .45 ACP, target sights, 5in barrel
+sa_hellcat_pst	sa_hellcat	direct	Hellcat OSP 9mm micro-compact, 3in barrel, 11+1rd
+sa_hellcat_pro_pst	sa_hellcat_pro	direct	Hellcat Pro 9mm, 3.7in barrel, 15+1rd
+sa_xd9_pst	sa_xd9	direct	XD-9 Service Model, 4in barrel, 16+1rd
+sa_xdm_525_pst	sa_xdm_525	direct	XD-M 5.25 Competition 9mm, 5.25in barrel
+sa_xds_9mm_pst	sa_xds	direct	XD-S 9mm single-stack, 3.3in barrel, 7+1rd
+sa_xde_9mm_pst	sa_xde	direct	XD-E 9mm DA/SA hammer-fired, 3.3in barrel
+sa_saint_rfl	sa_saint	direct	SAINT 5.56 AR-15 style, 16in barrel, 1:7 twist
+sa_saint_edge_308_rfl	sa_saint_edge_308	direct	SAINT Edge .308 AR-10 style, 16in barrel
+sa_ronin_45_pst	sa_ronin	direct	1911 Ronin .45 ACP, 5in barrel, two-tone
+sa_emp_9mm_pst	sa_emp	direct	EMP 9mm Enhanced Micro Pistol, 1911 compact, 3in barrel
+sa_911_380_pst	sa_911	direct	911 .380 ACP micro 1911-style, 2.7in barrel
+kimber_micro9_pst	kimber_micro9	direct	Micro 9 9mm micro 1911-style, 3.15in barrel
+kimber_micro_380_pst	kimber_micro_380	direct	Micro .380 ACP micro 1911-style, 2.7in barrel
+kimber_custom_ii_pst	kimber_custom_ii	direct	Custom II .45 ACP 1911, 5in barrel
+kimber_stainless_ii_pst	kimber_stainless_ii	direct	Stainless II .45 ACP 1911, brushed stainless, 5in barrel
+kimber_tle_rl_ii_pst	kimber_tle_rl_ii	direct	TLE/RL II .45 ACP 1911, rail, 5in barrel, LAPD SWAT
+kimber_pro_carry_hd_pst	kimber_pro_carry_hd	direct	Pro Carry HD .45 ACP 1911, 4in barrel, aluminum frame
+kimber_ultra_carry_ii_pst	kimber_ultra_carry_ii	direct	Ultra Carry II .45 ACP 1911, 3in barrel
+kimber_raptor_ii_pst	kimber_raptor_ii	direct	Raptor II .45 ACP 1911, scaled serrations, 5in barrel
+kimber_solo_9mm_pst	kimber_solo	direct	Solo 9mm polymer micro-compact DA/SA, 2.7in barrel
+kimber_k6s_dcr_rev	kimber_k6s_dcr	direct	K6s DCR .357 Mag snub-nose revolver, 2in barrel, DAO
+kimber_k6s_target_rev	kimber_k6s_target	direct	K6s Target .357 Mag revolver, 4in barrel
+kimber_evo_sp_9mm_pst	kimber_evo_sp	direct	EVO SP 9mm compact 1911-style, 3in barrel
+kimber_rapide_black_ice_pst	kimber_rapide_black_ice	direct	Rapide Black Ice .45 ACP 1911, 5in barrel
+kimber_warrior_pst	kimber_warrior	direct	Warrior .45 ACP 1911, 5in barrel, mil-spec
+kimber_desert_warrior_pst	kimber_desert_warrior	direct	Desert Warrior .45 ACP 1911, tan finish, 5in barrel
+weatherby_mkv_300wm	wby_mkv_300wm	researched	Mark V .300 Win Mag — 9-lug magnum action, 26" barrel standard, 1:10" RH twist
+weatherby_mkv_338lapua	wby_mkv_338lapua	researched	Mark V .338 Lapua — custom shop offering, heavy contour barrel
+weatherby_mkv_3006	wby_mkv_3006	researched	Mark V .30-06 — 6-lug standard action, 24" barrel
+weatherby_mkv_65creed	wby_mkv_65creed	researched	Mark V 6.5 Creedmoor — 6-lug standard short action
+weatherby_mkv_257wby	wby_mkv_257wby	researched	Mark V .257 Wby Mag — original 9-lug magnum, 26" barrel, 1:10" twist
+weatherby_mkv_460wby	wby_mkv_460wby	researched	Mark V .460 Wby Mag — 9-lug magnum, 26" barrel, 1:16" twist, 4-port Accubrake
+weatherby_vang_308	wby_vang_308	researched	Vanguard .308 Win — Howa 1500 action, 22" or 24" barrel
+weatherby_vang_65creed	wby_vang_65creed	researched	Vanguard 6.5 Creedmoor — Howa 1500 short action
+weatherby_vang_3006	wby_vang_3006	researched	Vanguard .30-06 — Howa 1500 long action
+weatherby_vang_300wm	wby_vang_300wm	researched	Vanguard .300 Win Mag — Howa 1500 long action magnum
+nri_type56	nri_type56	exact	Norinco Type 56 assault rifle (7.62×39mm) — milled/stamped receiver AK copy with spike bayonet
+nri_type56_1	nri_type56	derived	Type 56-1 underfolding stock variant (7.62×39mm) — bayonet removed
+nri_type56_2	nri_type56	derived	Type 56-2 side-folding stock variant (7.62×39mm) — introduced 1980
+nri_type81	nri_type81	exact	Norinco Type 81 assault rifle (7.62×39mm) — short-stroke piston, Chinese indigenous design
+nri_qbz95	nri_qbz95	exact	QBZ-95 / Type 95 bullpup assault rifle (5.8×42mm) — PLA standard service rifle 1997-present
+nri_qbz03	nri_qbz03	exact	QBZ-03 / Type 03 conventional-layout assault rifle (5.8×42mm) — folding stock
+nri_qbu88	nri_qbu88	exact	QBU-88 / Type 88 designated marksman rifle (5.8×42mm) — bullpup DMR
+nri_type79_smg	nri_type79_smg	exact	Type 79 submachine gun (7.62×25mm) — gas-operated closed-bolt SMG
+nri_type85_smg	nri_type85_smg	exact	Type 85 submachine gun (7.62×25mm) — blowback open-bolt SMG, replaced Type 79
+nri_type54	nri_type54	exact	Type 54 pistol / Tokarev TT-33 copy (7.62×25mm) — service pistol 1954-present
+nri_type64_pistol	nri_type64_pistol	exact	Type 64 pistol (7.62×17mm) — first indigenously designed Chinese pistol
+nri_type64_silenced	nri_type64_silenced	exact	Type 64 silenced pistol (7.65×17mm) — integrally suppressed, PLA special forces
+nri_cf98	nri_cf98	exact	CF98 / QSZ-92 export pistol (9×19mm) — Beretta 92-inspired rotating barrel lock
+nri_qsz92	nri_qsz92	exact	QSZ-92 / Type 92 pistol (5.8×21mm) — PLA service pistol
+nri_1911a1	nri_1911a1	exact	Norinco 1911A1 copy (.45 ACP) — Chinese clone of Colt M1911A1
+nri_sks	nri_sks	exact	Norinco Type 56 carbine / SKS copy (7.62×39mm) — semi-automatic carbine
+nri_type84	nri_type84	exact	Type 84 export AK (5.56×45mm) — Type 56 rechambered for NATO 5.56
+canik_tp9_sf	canik_tp9_sf	exact	Canik TP9 SF (9×19mm) — striker-fired duty pistol, Walther P99 derived
+canik_tp9_sfx	canik_tp9_sfx	derived	Canik TP9 SFx (9×19mm) — long-slide competition variant
+canik_tp9_elite	canik_tp9_elite	derived	Canik TP9 Elite (9×19mm) — compact/subcompact concealed carry
+canik_tp9_sa	canik_tp9_sa	derived	Canik TP9 SA (9×19mm) — single-action striker-fired with decocker
+canik_mete_sf	canik_mete_sf	exact	Canik Mete SF (9×19mm) — updated METE series compact
+canik_mete_sft	canik_mete_sft	derived	Canik Mete SFT (9×19mm) — full-size METE series
+canik_mete_mc9	canik_mete_mc9	exact	Canik Mete MC9 (9×19mm) — micro-compact METE, 12+1 capacity
+canik_rival	canik_rival	exact	Canik Rival (9×19mm) — competition pistol, optics-ready
+canik_rival_s	canik_rival_s	derived	Canik Rival-S (9×19mm) — steel-frame Rival for competition
+canik_elite_combat	canik_elite_combat	derived	Canik Elite Combat (9×19mm) — threaded barrel combat model
+canik_executive	canik_executive	derived	Canik Executive (9×19mm) — distributor-exclusive upgraded SFx
+canik_tp9_sfx_mete	canik_tp9_sfx_mete	derived	Canik TP9 SFx METE (9×19mm) — METE-upgraded SFx competition
+tur_sar_b6	tur_sar_b6	exact	SAR USA / Sarsilmaz B6 (9×19mm) — compact CZ-75 clone
+tur_sar9	tur_sar9	exact	SAR 9 (9×19mm) — Sarsilmaz modern striker-fired duty pistol
+tur_sar2000	tur_sar2000	exact	SAR 2000 (9×19mm) — CZ-75 based full-size service pistol
+tur_tisas_1911a1	tur_tisas_1911a1	exact	Tisas 1911A1 (.45 ACP) — Turkish M1911A1 clone
+tur_tisas_zigana	tur_tisas_zigana	exact	Tisas Zigana (9×19mm) — Turkish-patented double-stack pistol family
+tur_girsan_mc9	tur_girsan_mc9	exact	Girsan MC9 (9×19mm) — Beretta 92 clone, full-size service pistol
+weatherby_sa08_12ga	wby_sa08_12ga	researched	SA-08 12ga — semi-auto shotgun, Turkish-made by ATA Arms, now discontinued
+weatherby_sa459_12ga	wby_sa459_12ga	estimated	SA-459 12ga — tactical semi-auto shotgun, 18.5" barrel, picatinny rail
+weatherby_pa459_12ga	wby_pa459_12ga	estimated	PA-459 12ga — pump-action tactical shotgun, 18.5" barrel
+weatherby_element_12ga	wby_element_12ga	researched	Element 12ga — inertia semi-auto shotgun
+weatherby_orion_12ga	wby_orion_12ga	researched	Orion 12ga — over/under boxlock shotgun
+weatherby_athena_12ga	wby_athena_12ga	estimated	Athena 12ga — premium over/under shotgun, grade IV/V walnut
+weatherby_firstlite_22lr	wby_firstlite_22lr	researched	First Lite .22 LR — bolt-action rimfire, 16.5" threaded barrel
+weatherby_backcountry_308	wby_backcountry_308	researched	Backcountry 2.0 .308 Win — carbon fiber stock, lightweight mountain rifle
+danwesson_715_357	dw_715_357	researched	Dan Wesson 715 .357 Mag — interchangeable barrel system, 6" barrel common
+danwesson_valor_45	dw_valor_45	researched	Dan Wesson Valor .45 ACP — government-size 1911, forged frame & slide
+danwesson_specialist_45	dw_specialist_45	researched	Dan Wesson Specialist .45 ACP — tactical 1911 with rail
+danwesson_bruin_45	dw_bruin_45	researched	Dan Wesson Bruin .45 ACP — long-slide 1911, 6" barrel
+danwesson_wraith_45	dw_wraith_45	estimated	Dan Wesson Wraith .45 ACP — 1911 with Vortex optic cut, threaded barrel
+danwesson_guardian_9mm	dw_guardian_9mm	researched	Dan Wesson Guardian 9mm — bobtail 1911, 4.25" barrel
+danwesson_guardian_38super	dw_guardian_38super	researched	Dan Wesson Guardian .38 Super — bobtail 1911
+danwesson_discretion_9mm	dw_discretion_9mm	researched	Dan Wesson Discretion 9mm — compact 1911, 4" barrel, bobtail
+danwesson_dwx_9mm	dw_dwx_9mm	researched	DWX 9mm — CZ/Dan Wesson collaboration, CZ-75 hybrid frame with 1911 trigger
+kahr_cm9	kahr_cm9	researched	Kahr CM9 — economy subcompact 9mm, polymer frame, 3" barrel
+kahr_pm9	kahr_pm9	researched	Kahr PM9 — premium subcompact 9mm, polymer frame, polygonal rifling
+kahr_cw9	kahr_cw9	researched	Kahr CW9 — economy midsize 9mm, polymer frame, 3.6" barrel
+kahr_p380	kahr_p380	researched	Kahr P380 — premium subcompact .380 ACP, polymer frame
+kahr_cw380	kahr_cw380	researched	Kahr CW380 — economy subcompact .380 ACP, polymer frame
+kahr_k9	kahr_k9	researched	Kahr K9 — original full-steel compact 9mm, 3.6" barrel
+kahr_t9	kahr_t9	researched	Kahr T9 — full-size steel-frame 9mm, 4" barrel, target sights
+kahr_mk9	kahr_mk9	researched	Kahr MK9 — subcompact steel-frame 9mm, 3" barrel
+highstandard_hdm_22lr	hs_hdm_22lr	researched	High Standard HDM .22 LR — OSS-issue suppressed pistol, WWII
+highstandard_supermatic_22lr	hs_supermatic_22lr	researched	High Standard Supermatic Citation — Olympic-grade target pistol
+highstandard_victor_22lr	hs_victor_22lr	researched	High Standard Victor — target pistol with barrel rib and micro-adj sights
+highstandard_derringer_22mag	hs_derringer_22mag	researched	High Standard Derringer .22 Mag — double-barrel break-action derringer
+iverjohnson_tp22	ij_tp22	estimated	Iver Johnson TP22 — pocket semi-auto, 2.5" barrel
+iverjohnson_tp25	ij_tp25	estimated	Iver Johnson TP25 — pocket semi-auto, 2.5" barrel
+iverjohnson_38sw_rev	ij_38sw_rev	estimated	Iver Johnson .38 S&W revolver — top-break Safety Automatic, 3" barrel
+autoord_thompson_m1_45	ao_thompson_m1_45	researched	Auto-Ordnance Thompson M1 .45 ACP — semi-automatic replica, closed-bolt
+autoord_1911c_45	ao_1911c_45	estimated	Auto-Ordnance 1911C .45 ACP — compact 1911, 4.25" barrel
+autoord_1911a1_45	ao_1911a1_45	researched	Auto-Ordnance 1911A1 .45 ACP — WW2-style mil-spec 1911
+amt_automag2_22wmr	amt_automag2_22wmr	researched	AMT Automag II .22 WMR — stainless steel semi-auto, 6" barrel
+amt_automag3_30carbine	amt_automag3_30carbine	researched	AMT Automag III .30 Carbine — stainless semi-auto
+amt_automag4_45winmag	amt_automag4_45winmag	researched	AMT Automag IV .45 Win Mag — stainless semi-auto
+amt_hardballer_45	amt_hardballer_45	researched	AMT Hardballer .45 ACP — all-stainless 1911, 5" barrel
+charterarms_undercover_38	charter_undercover_38	researched	Charter Arms Undercover .38 Spl — 5-shot snubnose revolver
+charterarms_bulldog_44spl	charter_bulldog_44spl	researched	Charter Arms Bulldog .44 Spl — 5-shot snubnose, 2.5" barrel
+charterarms_pitbull_9mm	charter_pitbull_9mm	researched	Charter Arms Pitbull 9mm — 5-shot revolver with moon-clip-free extraction
+tur_retay_mas	tur_retay_mas	exact	Retay Mas (12 Gauge) — Turkish semi-auto shotgun
+tur_armsan	tur_armsan	exact	Armsan shotgun (12 Gauge) — Turkish semi-auto/break-action shotgun
+tur_hatsan_escort	tur_hatsan_escort	exact	Hatsan Escort (12 Gauge) — Turkish semi-auto shotgun
+tur_stoeger	tur_stoeger	exact	Stoeger (12 Gauge) — Benelli-owned Turkish shotgun / pistol manufacturer
+m1_garand	m1_garand	exact	Catalog primary key (Batch 4)
+m1_carbine	m1_carbine	exact	Catalog primary key (Batch 4)
+thompson_m1a1	thompson_m1a1	exact	Catalog primary key (Batch 4)
+m3_grease_gun	m3_grease_gun	exact	Catalog primary key (Batch 4)
+mg34	mg34	exact	Catalog primary key (Batch 4)
+mg42	mg42	exact	Catalog primary key (Batch 4)
+mp40	mp40	exact	Catalog primary key (Batch 4)
+k98k	k98k	exact	Catalog primary key (Batch 4)
+fg42	fg42	exact	Catalog primary key (Batch 4)
+ppsh41	ppsh41	exact	Catalog primary key (Batch 4)
+mosin_nagant	mosin_nagant	exact	Catalog primary key (Batch 4)
+svt40	svt40	exact	Catalog primary key (Batch 4)
+dp27	dp27	exact	Catalog primary key (Batch 4)
+heckler_koch_hk416_10	heckler_koch_hk416_10	exact	Catalog primary key (Batch 4)
+heckler_koch_hk416_165	heckler_koch_hk416_165	exact	Catalog primary key (Batch 4)
+heckler_koch_hk417_13	heckler_koch_hk417_13	exact	Catalog primary key (Batch 4)
+heckler_koch_hk417_20	heckler_koch_hk417_20	exact	Catalog primary key (Batch 4)
+fn_herstal_scar_l_10	fn_herstal_scar_l_10	exact	Catalog primary key (Batch 4)
+fn_herstal_scar_l_18	fn_herstal_scar_l_18	exact	Catalog primary key (Batch 4)
+fn_herstal_scar_h_13	fn_herstal_scar_h_13	exact	Catalog primary key (Batch 4)
+fn_herstal_scar_h_20	fn_herstal_scar_h_20	exact	Catalog primary key (Batch 4)
+steyr_aug_16	steyr_aug_16	exact	Catalog primary key (Batch 4)
+degtyaryov_plant_rpk_16_lb	degtyaryov_plant_rpk_16_lb	exact	Catalog primary key (Batch 4)
+heckler_koch_hk416_20	heckler_koch_hk416_20	exact	Catalog primary key (Batch 4)
+fn_herstal_scar_l_cqc	fn_herstal_scar_l_cqc	exact	Catalog primary key (Batch 4)
+fn_herstal_scar_l_lb	fn_herstal_scar_l_lb	exact	Catalog primary key (Batch 4)
+fn_herstal_scar_h_cqc	fn_herstal_scar_h_cqc	exact	Catalog primary key (Batch 4)
+fn_herstal_scar_h_lb	fn_herstal_scar_h_lb	exact	Catalog primary key (Batch 4)
+barrett_m82_m107_cqc	barrett_m82_m107_cqc	exact	Catalog primary key (Batch 4)
+kalashnikov_concern_ak_12_k	kalashnikov_concern_ak_12_k	exact	Catalog primary key (Batch 4)
+degtyaryov_plant_rpk_16_short	degtyaryov_plant_rpk_16_short	exact	Catalog primary key (Batch 4)
+knight_s_armament_sr_25_20	knight_s_armament_sr_25_20	exact	Catalog primary key (Batch 4)
+knight_s_armament_sr_25_16	knight_s_armament_sr_25_16	exact	Catalog primary key (Batch 4)
+sako_trg_22_short	sako_trg_22_short	exact	Catalog primary key (Batch 4)
+sako_trg_42_short	sako_trg_42_short	exact	Catalog primary key (Batch 4)
+remington_m700_hvy	remington_m700_hvy	exact	Catalog primary key (Batch 4)
+fb_radom_msbs_grot	fb_radom_msbs_grot	exact	Catalog primary key (Batch 4)
+## RH Pistols / SMG mod weapons	## RH Pistols / SMG mod weapons	exact	Catalog primary key (Batch 4)
+## RHS cold-war weapons	## RHS cold-war weapons	exact	Catalog primary key (Batch 4)
+M4	M4	exact	Catalog primary key (Batch 4)
+g3a4	g3a4	exact	Catalog primary key (Batch 4)
+g3sg1	g3sg1	exact	Catalog primary key (Batch 4)
+g3ka4	g3ka4	exact	Catalog primary key (Batch 4)
+hk416_145	hk416_145	exact	Catalog primary key (Batch 4)
+hk416_165	hk416_165	exact	Catalog primary key (Batch 4)
+hk417_16	hk417_16	exact	Catalog primary key (Batch 4)
+hk417_20	hk417_20	exact	Catalog primary key (Batch 4)
+mp5a3	mp5a3	exact	Catalog primary key (Batch 4)
+ump40	ump40	exact	Catalog primary key (Batch 4)
+usp40	usp40	exact	Catalog primary key (Batch 4)
+usp45	usp45	exact	Catalog primary key (Batch 4)
+MCX Virtus	MCX Virtus	exact	Catalog primary key (Batch 4)
+MCX Rattler	MCX Rattler	exact	Catalog primary key (Batch 4)
+MCX Spear	MCX Spear	exact	Catalog primary key (Batch 4)
+SIG AMT	SIG AMT	exact	Catalog primary key (Batch 4)
+M2HB	M2HB	exact	Catalog primary key (Batch 4)
+M240B	M240B	exact	Catalog primary key (Batch 4)
+MAG 58	MAG 58	exact	Catalog primary key (Batch 4)
+sr22	sr22	exact	Catalog primary key (Batch 4)
+sr9	sr9	exact	Catalog primary key (Batch 4)
+sr9c	sr9c	exact	Catalog primary key (Batch 4)
+sr40	sr40	exact	Catalog primary key (Batch 4)
+sr45	sr45	exact	Catalog primary key (Batch 4)
+p89	p89	exact	Catalog primary key (Batch 4)
+p95	p95	exact	Catalog primary key (Batch 4)
+ruger_american_pistol_9mm	ruger_american_pistol_9mm	exact	Catalog primary key (Batch 4)
+ruger_american_pistol_45	ruger_american_pistol_45	exact	Catalog primary key (Batch 4)
+security_9	security_9	exact	Catalog primary key (Batch 4)
+lcp	lcp	exact	Catalog primary key (Batch 4)
+lcp_ii	lcp_ii	exact	Catalog primary key (Batch 4)
+lcp_max	lcp_max	exact	Catalog primary key (Batch 4)
+ec9s	ec9s	exact	Catalog primary key (Batch 4)
+lc9s	lc9s	exact	Catalog primary key (Batch 4)
+max_9	max_9	exact	Catalog primary key (Batch 4)
+gp100	gp100	exact	Catalog primary key (Batch 4)
+super_redhawk_44	super_redhawk_44	exact	Catalog primary key (Batch 4)
+super_redhawk_454	super_redhawk_454	exact	Catalog primary key (Batch 4)
+sp101	sp101	exact	Catalog primary key (Batch 4)
+lcr_38	lcr_38	exact	Catalog primary key (Batch 4)
+blackhawk	blackhawk	exact	Catalog primary key (Batch 4)
+vaquero	vaquero	exact	Catalog primary key (Batch 4)
+wrangler	wrangler	exact	Catalog primary key (Batch 4)
+ruger_1022	ruger_1022	exact	Catalog primary key (Batch 4)
+mini_14	mini_14	exact	Catalog primary key (Batch 4)
+mini_30	mini_30	exact	Catalog primary key (Batch 4)
+ruger_ar556	ruger_ar556	exact	Catalog primary key (Batch 4)
+ruger_american_308	ruger_american_308	exact	Catalog primary key (Batch 4)
+ruger_american_65	ruger_american_65	exact	Catalog primary key (Batch 4)
+ruger_american_22	ruger_american_22	exact	Catalog primary key (Batch 4)
+precision_rifle_308	precision_rifle_308	exact	Catalog primary key (Batch 4)
+precision_rifle_65	precision_rifle_65	exact	Catalog primary key (Batch 4)
+ranch_rifle	ranch_rifle	exact	Catalog primary key (Batch 4)
+gunsite_scout	gunsite_scout	exact	Catalog primary key (Batch 4)
+pc_carbine	pc_carbine	exact	Catalog primary key (Batch 4)
+pc_charger	pc_charger	exact	Catalog primary key (Batch 4)
+no_1	no_1	exact	Catalog primary key (Batch 4)
+m77_hawkeye	m77_hawkeye	exact	Catalog primary key (Batch 4)
+red_label	red_label	exact	Catalog primary key (Batch 4)
+gold_label	gold_label	exact	Catalog primary key (Batch 4)
+M&P9_M2_0	M&P9_M2_0	exact	Catalog primary key (Batch 4)
+M&P40	M&P40	exact	Catalog primary key (Batch 4)
+M&P45	M&P45	exact	Catalog primary key (Batch 4)
+M&P9_Compact	M&P9_Compact	exact	Catalog primary key (Batch 4)
+M&P9_Shield	M&P9_Shield	exact	Catalog primary key (Batch 4)
+Shield_Plus	Shield_Plus	exact	Catalog primary key (Batch 4)
+M&P9_Shield_EZ	M&P9_Shield_EZ	exact	Catalog primary key (Batch 4)
+M&P40_Shield_EZ	M&P40_Shield_EZ	exact	Catalog primary key (Batch 4)
+M&P_2_0_Compact	M&P_2_0_Compact	exact	Catalog primary key (Batch 4)
+M&P_2_0_Full	M&P_2_0_Full	exact	Catalog primary key (Batch 4)
+SD9_VE	SD9_VE	exact	Catalog primary key (Batch 4)
+SD40_VE	SD40_VE	exact	Catalog primary key (Batch 4)
+SW9	SW9	exact	Catalog primary key (Batch 4)
+SW40	SW40	exact	Catalog primary key (Batch 4)
+Bodyguard_380	Bodyguard_380	exact	Catalog primary key (Batch 4)
+Bodyguard_38	Bodyguard_38	exact	Catalog primary key (Batch 4)
+Model_29	Model_29	exact	Catalog primary key (Batch 4)
+Model_686	Model_686	exact	Catalog primary key (Batch 4)
+Model_19	Model_19	exact	Catalog primary key (Batch 4)
+Model_60	Model_60	exact	Catalog primary key (Batch 4)
+Model_36	Model_36	exact	Catalog primary key (Batch 4)
+Model_66	Model_66	exact	Catalog primary key (Batch 4)
+Model_640	Model_640	exact	Catalog primary key (Batch 4)
+Model_986	Model_986	exact	Catalog primary key (Batch 4)
+Governor	Governor	exact	Catalog primary key (Batch 4)
+M&P15	M&P15	exact	Catalog primary key (Batch 4)
+M&P15_22	M&P15_22	exact	Catalog primary key (Batch 4)
+M&P10	M&P10	exact	Catalog primary key (Batch 4)
+M&P15_Sport_II	M&P15_Sport_II	exact	Catalog primary key (Batch 4)
+Model_39	Model_39	exact	Catalog primary key (Batch 4)
+Model_59	Model_59	exact	Catalog primary key (Batch 4)
+Model_645	Model_645	exact	Catalog primary key (Batch 4)
+Model_1006	Model_1006	exact	Catalog primary key (Batch 4)
+Model_4506	Model_4506	exact	Catalog primary key (Batch 4)
+walther_ppk_380acp	walther_ppk_380acp	exact	Catalog primary key (Batch 4)
+mauser_hsc_380acp	mauser_hsc_380acp	exact	Catalog primary key (Batch 4)
+sako_trg_62	sako_trg_62	exact	Catalog primary key (Batch 4)
+sako_a7_308	sako_a7_308	exact	Catalog primary key (Batch 4)
+sako_a7_300wm	sako_a7_300wm	exact	Catalog primary key (Batch 4)
+tikka_t3x_lite_308	tikka_t3x_lite_308	exact	Catalog primary key (Batch 4)
+tikka_t3x_tact_308	tikka_t3x_tact_308	exact	Catalog primary key (Batch 4)
+tikka_t1x_mtr	tikka_t1x_mtr	exact	Catalog primary key (Batch 4)
+valmet_rk62	valmet_rk62	exact	Catalog primary key (Batch 4)
+valmet_rk71	valmet_rk71	exact	Catalog primary key (Batch 4)
+valmet_rk76	valmet_rk76	exact	Catalog primary key (Batch 4)
+valmet_m78_762	valmet_m78_762	exact	Catalog primary key (Batch 4)
+howa_1500_308	howa_1500_308	exact	Catalog primary key (Batch 4)
+howa_m1500_6_5cm	howa_m1500_6_5cm	exact	Catalog primary key (Batch 4)
+howa_type89	howa_type89	exact	Catalog primary key (Batch 4)
+howa_hogue_308	howa_hogue_308	exact	Catalog primary key (Batch 4)
+kac_sr15_mod2_115	kac_sr15_mod2_115	exact	Catalog primary key (Batch 4)
+kac_sr15_mod2_145	kac_sr15_mod2_145	exact	Catalog primary key (Batch 4)
+kac_sr15_mod2_16	kac_sr15_mod2_16	exact	Catalog primary key (Batch 4)
+kac_sr25_20	kac_sr25_20	exact	Catalog primary key (Batch 4)
+kac_sr25_ecc	kac_sr25_ecc	exact	Catalog primary key (Batch 4)
+kac_pdw	kac_pdw	exact	Catalog primary key (Batch 4)
+kac_sr16_cqb	kac_sr16_cqb	exact	Catalog primary key (Batch 4)
+lmt_mars_l	lmt_mars_l	exact	Catalog primary key (Batch 4)
+lmt_mars_h	lmt_mars_h	exact	Catalog primary key (Batch 4)
+lmt_cqb_mrp_556	lmt_cqb_mrp_556	exact	Catalog primary key (Batch 4)
+lmt_cqb_mrp_762	lmt_cqb_mrp_762	exact	Catalog primary key (Batch 4)
+lmt_lm308mws	lmt_lm308mws	exact	Catalog primary key (Batch 4)
+dd_ddm4_v7	dd_ddm4_v7	exact	Catalog primary key (Batch 4)
+dd_m4a1_ris2	dd_m4a1_ris2	exact	Catalog primary key (Batch 4)
+dd_ddm4_pdw	dd_ddm4_pdw	exact	Catalog primary key (Batch 4)
+dd_dd5_v4	dd_dd5_v4	exact	Catalog primary key (Batch 4)
+dd_dd5_v5	dd_dd5_v5	exact	Catalog primary key (Batch 4)
+dd_mk18	dd_mk18	exact	Catalog primary key (Batch 4)
+fb_radom_beryl	fb_radom_beryl	exact	Catalog primary key (Batch 4)
+fb_radom_mini_beryl	fb_radom_mini_beryl	exact	Catalog primary key (Batch 4)
+fb_radom_vis_100	fb_radom_vis_100	exact	Catalog primary key (Batch 4)
+fb_radom_oniks	fb_radom_oniks	exact	Catalog primary key (Batch 4)
+cugir_wasr_10	cugir_wasr_10	exact	Catalog primary key (Batch 4)
+cugir_draco	cugir_draco	exact	Catalog primary key (Batch 4)
+cugir_psl	cugir_psl	exact	Catalog primary key (Batch 4)
+cugir_pm_md_63	cugir_pm_md_63	exact	Catalog primary key (Batch 4)
+cugir_rh_10	cugir_rh_10	exact	Catalog primary key (Batch 4)
+arsenal_ar_m1	arsenal_ar_m1	exact	Catalog primary key (Batch 4)
+arsenal_ar_m4sf	arsenal_ar_m4sf	exact	Catalog primary key (Batch 4)
+arsenal_ar_m9	arsenal_ar_m9	exact	Catalog primary key (Batch 4)
+arsenal_sam7r	arsenal_sam7r	exact	Catalog primary key (Batch 4)
+arsenal_slr_95	arsenal_slr_95	exact	Catalog primary key (Batch 4)
+arsenal_ak47_circle10	arsenal_ak47_circle10	exact	Catalog primary key (Batch 4)
+kel_tec_ks7	kel_tec_ks7	exact	Catalog primary key (Batch 4)
+kel_tec_rdb	kel_tec_rdb	exact	Catalog primary key (Batch 4)
+kel_tec_rfb	kel_tec_rfb	exact	Catalog primary key (Batch 4)
+kel_tec_sub2000_9mm	kel_tec_sub2000_9mm	exact	Catalog primary key (Batch 4)
+kel_tec_cmr30	kel_tec_cmr30	exact	Catalog primary key (Batch 4)
+kel_tec_p50	kel_tec_p50	exact	Catalog primary key (Batch 4)
+kel_tec_su16	kel_tec_su16	exact	Catalog primary key (Batch 4)
+henry_big_boy_steel_357	henry_big_boy_steel_357	exact	Catalog primary key (Batch 4)
+henry_big_boy_x_357	henry_big_boy_x_357	exact	Catalog primary key (Batch 4)
+henry_golden_boy_22	henry_golden_boy_22	exact	Catalog primary key (Batch 4)
+henry_all_weather_357	henry_all_weather_357	exact	Catalog primary key (Batch 4)
+henry_long_ranger_223	henry_long_ranger_223	exact	Catalog primary key (Batch 4)
+henry_3030_classic	henry_3030_classic	exact	Catalog primary key (Batch 4)
+henry_single_shot_308	henry_single_shot_308	exact	Catalog primary key (Batch 4)
+hi_point_995_9mm	hi_point_995_9mm	exact	Catalog primary key (Batch 4)
+hi_point_1095_10mm	hi_point_1095_10mm	exact	Catalog primary key (Batch 4)
+hi_point_4595_45acp	hi_point_4595_45acp	exact	Catalog primary key (Batch 4)
+tc_encore_308	tc_encore_308	exact	Catalog primary key (Batch 4)
+tc_compass_308	tc_compass_308	exact	Catalog primary key (Batch 4)
+star_z70b	star_z70b	exact	Catalog primary key (Batch 4)
+star_z84	star_z84	exact	Catalog primary key (Batch 4)
+star_bm	star_bm	exact	Catalog primary key (Batch 4)
+star_pdri	star_pdri	exact	Catalog primary key (Batch 4)
+astra_a80	astra_a80	exact	Catalog primary key (Batch 4)
+astra_a90	astra_a90	exact	Catalog primary key (Batch 4)
+astra_a100	astra_a100	exact	Catalog primary key (Batch 4)
+astra_constable	astra_constable	exact	Catalog primary key (Batch 4)
+astra_falcon	astra_falcon	exact	Catalog primary key (Batch 4)
+llama_omni	llama_omni	exact	Catalog primary key (Batch 4)
+llama_ixa	llama_ixa	exact	Catalog primary key (Batch 4)
+llama_xv	llama_xv	exact	Catalog primary key (Batch 4)
+llama_comanche	llama_comanche	exact	Catalog primary key (Batch 4)
+llama_especial	llama_especial	exact	Catalog primary key (Batch 4)
+cetme_modelc	cetme_modelc	exact	Catalog primary key (Batch 4)
+cetme_modell	cetme_modell	exact	Catalog primary key (Batch 4)
+cetme_modellc	cetme_modellc	exact	Catalog primary key (Batch 4)
+cetme_ameli	cetme_ameli	exact	Catalog primary key (Batch 4)
+iwi_tavor_7	iwi_tavor_7	exact	Catalog primary key (Batch 4)
+iwi_tavor_ts12	iwi_tavor_ts12	exact	Catalog primary key (Batch 4)
+iwi_galil_ace_556	iwi_galil_ace_556	exact	Catalog primary key (Batch 4)
+iwi_galil_ace_762	iwi_galil_ace_762	exact	Catalog primary key (Batch 4)
+iwi_galil_ace_308	iwi_galil_ace_308	exact	Catalog primary key (Batch 4)
+iwi_galil_ace_gen2	iwi_galil_ace_gen2	exact	Catalog primary key (Batch 4)
+iwi_uzi_pro	iwi_uzi_pro	exact	Catalog primary key (Batch 4)
+iwi_negev_ng7	iwi_negev_ng7	exact	Catalog primary key (Batch 4)
+iwi_carmel	iwi_carmel	exact	Catalog primary key (Batch 4)
+bt_apc223	bt_apc223	exact	Catalog primary key (Batch 4)
+bt_apc308	bt_apc308	exact	Catalog primary key (Batch 4)
+bt_apc9	bt_apc9	exact	Catalog primary key (Batch 4)
+bt_apc300	bt_apc300	exact	Catalog primary key (Batch 4)
+bt_spr300	bt_spr300	exact	Catalog primary key (Batch 4)
+bt_ghm9	bt_ghm9	exact	Catalog primary key (Batch 4)
+bt_tp9	bt_tp9	exact	Catalog primary key (Batch 4)
+bt_mp9	bt_mp9	exact	Catalog primary key (Batch 4)
