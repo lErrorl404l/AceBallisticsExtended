@@ -1260,3 +1260,59 @@ stoeger_coach_gun	Stoeger	Coach Gun	break-action	12 Gauge	18.5	508	0		65	28.4	41
 girsan_mc28	Girsan	Mc28	short-recoil	9×19mm Parabellum	9.01	127	250	1	250	8.0	362	estimated	estimated
 girsan_regard	Girsan	Regard	short-recoil	9×19mm Parabellum	9.01	125	250	1	250	8.0	361	estimated	estimated
 girsan_mc1911	Girsan	Mc1911	short-recoil	.45 ACP	11.48	127	406	1	145	15.0	259	estimated	estimated
+high_standard_supermatic_trophy	High Standard	Supermatic Trophy	blowback	.22 LR	5.66	140	406	1	165	2.6	230	estimated (standard .22 LR target pistol twist 1:16in)	estimated
+high_standard_supermatic_tournament	High Standard	Supermatic Tournament	blowback	.22 LR	5.66	171	406	1	165	2.6	239	estimated (standard .22 LR target pistol twist 1:16in)	estimated
+high_standard_sport_king	High Standard	Sport King	blowback	.22 LR	5.66	114	406	1	165	2.6	222	estimated (High Standard product line, standard .22 LR twist)	estimated
+high_standard_sentinel	High Standard	Sentinel	Double-action revolver	.22 LR	5.66	102	406	1	165	2.6	218	estimated (High Standard Sentinel, standard .22 LR revolver twist)	estimated
+high_standard_double_nine	High Standard	Double Nine	Single-action revolver	.22 LR	5.66	140	406	1	165	2.6	230	estimated (High Standard Double-Nine, standard .22 LR revolver twist)	estimated
+chiappa_rhino_50ds	Chiappa	Rhino 50Ds	Double-action/single-action revolver	.357 Magnum	9.07	127	483	1	345	8.1	419	researched (Chiappa Firearms, Rhino revolver product line)	researched
+chiappa_1911_22	Chiappa	1911 22	blowback	.22 LR	5.66	127	406	1	165	2.6	226	researched (Chiappa Firearms catalog)	researched
+chiappa_little_badger	Chiappa	Little Badger	break-action	.22 LR	5.66	419	406	1	165	2.6	313	researched (Wikipedia, American Rifleman)	researched
+chiappa_m1_22	Chiappa	M1 22	blowback	.22 LR	5.66	457	406	1	165	2.6	325	estimated (Chiappa product line, standard .22 LR carbine twist)	estimated
+chiappa_1892_lever	Chiappa	1892 Lever	lever-action	.357 Magnum	9.07	508	483	1	345	8.1	514	estimated (Chiappa lever-action rifle, standard .357 twist)	estimated
+iver_johnson_safety_first	Iver Johnson	Safety First	Double-action top-break revolver	.32 S&W		76	381	1				estimated (Iver Johnson historical product line)	estimated
+iver_johnson_cadet_55a	Iver Johnson	Cadet 55A	Double-action swing-out revolver	.22 LR	5.66	102	406	1	165	2.6	218	estimated (Iver Johnson Cadet 55-A, standard .22 LR revolver twist)	estimated
+iver_johnson_champion	Iver Johnson	Champion	break-action	12 Gauge	18.5	711	0	1	65	28.4	423	estimated (Iver Johnson Champion shotgun, smoothbore)	estimated
+iver_johnson_enforcer	Iver Johnson	Enforcer	gas-operated	.30 Carbine	7.62	241	508	1	276	7.1	582	researched (Wikipedia: Iver Johnson Enforcer)	researched
+iver_johnson_trailsman_66	Iver Johnson	Trailsman 66	Double-action swing-out revolver	.22 LR	5.66	140	406	1	165	2.6	230	estimated (Iver Johnson Trailsman product line)	estimated
+bersa_thunder_40	Bersa	Thunder 40	recoil-operated	.40 S&W	10.17	99	254	1	240	10.0	320	estimated (Bersa Thunder series, standard .40 S&W twist)	estimated
+bersa_firestorm_380	Bersa	Firestorm 380	blowback	.380 ACP	9.02	89	254	1	141	6.0	283	estimated (Bersa Firestorm, same platform as Thunder 380)	estimated
+tc_encore_30_06	Thompson-Center	Encore 30 06	break-action	.30-06 Springfield		559	254	1				estimated (TC Encore product line, standard .30-06 1:10in twist)	estimated
+tc_contender_223	Thompson-Center	Contender 223	break-action	.223 Rem	5.69	254	305	1	379	4.0	778	estimated (TC Contender G1, standard .223 Rem 1:12in twist)	estimated
+tc_contender_357	Thompson-Center	Contender 357	break-action	.357 Magnum	9.07	267	483	1	345	8.1	454	estimated (TC Contender G2, standard .357 Mag twist)	estimated
+tc_encore_243	Thompson-Center	Encore 243	break-action	.243 Win	6.17	559	254	1	400	6.5		estimated (TC Encore product line, standard .243 Win 1:10in twist)	estimated
+howa_m1500_hogue_308	Howa	M1500 Hogue 308	bolt-action	7.62×51mm NATO	7.82	508	305	1	415	9.5	819	estimated (Howa M1500 product line, standard 1:12in twist)	estimated
+howa_m1500_varmint_223	Howa	M1500 Varmint 223	bolt-action	.223 Rem	5.69	610	305	1	379	4.0	921	estimated (Howa M1500 Varmint, standard .223 1:12in twist)	estimated
+howa_m1500_game_king_30_06	Howa	M1500 Game King 30 06	bolt-action	.30-06 Springfield		559	254	1				estimated (Howa M1500 Game King, standard .30-06 1:10in twist)	estimated
+howa_type_89	Howa	Type 89	gas-operated	5.56×45mm NATO	5.69	508	178	1	430	4.0	921	estimated (Howa Type 89, standard 5.56 1:7in twist)	estimated
+howa_type_64	Howa	Type 64	gas-operated	7.62×51mm NATO	7.82	450	305	1	415	9.5	797	estimated (Howa Type 64, standard 7.62 1:12in twist)	estimated
+stevens_model_94	Stevens	Model 94	break-action	12 Gauge	18.5	711	0	1	65	28.4	423	estimated (Stevens Model 94, smoothbore shotgun)	estimated
+stevens_model_311	Stevens	Model 311	break-action side-by-side	12 Gauge	18.5	711	0	1	65	28.4	423	estimated (Stevens Model 311, smoothbore shotgun)	estimated
+stevens_favorite	Stevens	Favorite	falling-block	.22 LR	5.66	559	406	1	165	2.6	355	estimated (Stevens Favorite, standard .22 LR 1:16in twist)	estimated
+stevens_model_87a	Stevens	Model 87A	blowback	.22 LR	5.66	610	406	1	165	2.6	371	researched (Wikipedia: Stevens Model 87A)	researched
+stevens_model_350	Stevens	Model 350	gas-operated	12 Gauge	18.5	711	0	1	65	28.4	423	estimated (Stevens/Savage product line, smoothbore)	estimated
+hi_point_c9	Hi-Point	C9	blowback	9×19mm Parabellum	9.01	89	254	1	250	8.0	356	researched (Wikipedia: Hi-Point C-9)	researched
+hi_point_cf380	Hi-Point	Cf380	blowback	.380 ACP	9.02	89	254	1	141	6.0	283	researched (Wikipedia: Hi-Point)	researched
+hi_point_jcp40	Hi-Point	Jcp40	blowback	.40 S&W	10.17	89	254	1	240	10.0	318	estimated (Hi-Point product line, standard .40 S&W twist)	estimated
+hi_point_jhp45	Hi-Point	Jhp45	blowback	.45 ACP	11.48	102	406	1	145	15.0	255	estimated (Hi-Point product line, standard .45 ACP 1:16in twist)	estimated
+hi_point_4095	Hi-Point	4095	blowback	.40 S&W	10.17	444	254	1	240	10.0	389	researched (Hi-Point carbine series)	researched
+naa_mini_22_short	NAA	Mini 22 Short	Single-action revolver	.22 Short		41	406	1				estimated (NAA Mini product line)	estimated
+naa_black_widow	NAA	Black Widow	Single-action revolver	.22 WMR	5.66	51	406	1	179	2.6	455	researched (NAA Black Widow product info)	researched
+naa_ranger_ii	NAA	Ranger Ii	Single-action top-break revolver	.22 WMR	5.66	63.5	305	1	179	2.6	459	researched (American Rifleman: Tested NAA Ranger II)	researched
+naa_mini_master	NAA	Mini Master	Single-action revolver	.22 LR	5.66	102	406	1	165	2.6	218	estimated (NAA Mini Master product line)	estimated
+naa_guardian_32	NAA	Guardian 32	blowback	.32 ACP	7.65	64	254	1	141	4.6	260	estimated (NAA Guardian, standard .32 ACP twist)	estimated
+korth_sport	Korth	Sport	Double-action revolver	.357 Magnum	9.07	152	476	1	345	8.1	426	estimated (Korth product line, Korth .357 twist 476mm)	estimated
+korth_target	Korth	Target	Double-action revolver	.357 Magnum	9.07	152	476	1	345	8.1	426	estimated (Korth product line, Korth .357 twist 476mm)	estimated
+korth_ranger	Korth	Ranger	Double-action revolver	.357 Magnum	9.07	102	476	1	345	8.1	413	estimated (Korth product line, Korth .357 twist 476mm)	estimated
+korth_nxs_357	Korth	Nxs 357	Double-action revolver	.357 Magnum	9.07	152	476	1	345	8.1	426	estimated (Korth NXS product line, Korth .357 twist 476mm)	estimated
+korth_prs_9mm	Korth	Prs 9Mm	recoil-operated	9×19mm Parabellum	9.01	108	254	1	250	8.0	359	estimated (Korth PRS product line, standard 9mm twist)	estimated
+star_model_b	Star	Model B	recoil-operated	9×19mm Parabellum	9.01	122	254	1	250	8.0	361	researched (Wikipedia: Star Model B)	researched
+star_model_pd	Star	Model Pd	recoil-operated	.45 ACP	11.48	100	406	1	145	15.0	255	estimated (Star Model PD, standard .45 ACP 1:16in twist)	estimated
+star_firestar_m45	Star	Firestar M45	recoil-operated	.45 ACP	11.48	89	406	1	145	15.0	253	estimated (Star Firestar product line, standard .45 ACP twist)	estimated
+star_megastar_10mm	Star	Megastar 10Mm	recoil-operated	10mm Auto	10.17	117	406	1	310	10.0	351	estimated (Star Megastar, standard 10mm/1:16in twist)	estimated
+star_ultrastar	Star	Ultrastar	recoil-operated	9×19mm Parabellum	9.01	86	254	1	250	8.0	355	estimated (Star Ultrastar, standard 9mm twist)	estimated
+mas_44	MAS	44	gas-operated	7.5×54mm French		580	254	1				researched (Wikipedia: MAS-44)	researched
+mas_50	MAS	50	recoil-operated	9×19mm Parabellum	9.01	111	254	1	250	8.0	359	researched (Wikipedia: MAC 50)	researched
+mas_aa52	MAS	Aa52	lever-delayed blowback	7.5×54mm French		600	254	1				researched (Wikipedia: AA-52)	researched
+mas_36_cr39	MAS	36 Cr39	bolt-action	7.5×54mm French		490	254	1				estimated (MAS 36 CR 39 variant, standard MAS 7.5mm twist)	estimated
+mas_45	MAS	45	bolt-action	.22 LR	5.66	580	406	1	165	2.6	362	estimated (MAS 45 training rifle, standard .22 LR 1:16in twist)	estimated
