@@ -2,7 +2,18 @@
 # Blocks CI on license violations, known CVEs, and duplicate dependencies
 
 [advisories]
-ignore = []
+ignore = [
+    # lopdf — stack overflow via deeply nested PDF objects.
+    # Blocked by printpdf which requires lopdf < 0.40.
+    # Fix is in lopdf >= 0.42.0, waiting for printpdf to bump.
+    "RUSTSEC-2026-0187",
+    # proc-macro-error — unmaintained, no safe upgrade available.
+    # Transitive via ouroboros → allsorts-azul → printpdf → ballistics-engine (dev).
+    "RUSTSEC-2024-0370",
+    # ttf-parser — unmaintained, no safe upgrade available.
+    # Two versions: 0.20.0 via plotters, 0.25.1 via lopdf→printpdf.
+    "RUSTSEC-2026-0192",
+]
 
 [bans]
 multiple-versions = "deny"
@@ -15,6 +26,10 @@ skip = [
     { name = "r-efi" },
     # syn 2.x (phf_macros, wasm-bindgen, unicode deps) vs 3.x (serde_derive, thiserror)
     { name = "syn" },
+    # rand_core 0.6.x via phf_generator→rand, 0.10.x via ballistics-engine→rand
+    { name = "rand_core" },
+    # windows-sys 0.52.x via ring, 0.61.x via clap/rustix/tokio etc.
+    { name = "windows-sys" },
 ]
 
 [sources]
