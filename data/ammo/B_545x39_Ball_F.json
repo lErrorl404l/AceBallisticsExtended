@@ -1,0 +1,8 @@
+{
+  "class": "B_545x39_Ball_F",
+  "caliber_mm": 5.6,
+  "projectile_mass_g": 3.43,
+  "cdm_id": "g7",
+  "ballistic_coefficient": 0.168,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

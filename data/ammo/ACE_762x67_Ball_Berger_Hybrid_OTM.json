@@ -1,0 +1,8 @@
+{
+  "class": "ACE_762x67_Ball_Berger_Hybrid_OTM",
+  "caliber_mm": 7.823,
+  "projectile_mass_g": 14.904,
+  "cdm_id": "g7",
+  "ballistic_coefficient": 0.368,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

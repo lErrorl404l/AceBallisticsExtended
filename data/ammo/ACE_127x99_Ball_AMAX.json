@@ -1,0 +1,8 @@
+{
+  "class": "ACE_127x99_Ball_AMAX",
+  "caliber_mm": 12.954,
+  "projectile_mass_g": 48.6,
+  "cdm_id": "g1",
+  "ballistic_coefficient": 1.05,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

@@ -1,0 +1,8 @@
+{
+  "class": "ACE_762x51_Ball_Mk319_Mod_0",
+  "caliber_mm": 7.823,
+  "projectile_mass_g": 8.424,
+  "cdm_id": "g1",
+  "ballistic_coefficient": 0.377,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

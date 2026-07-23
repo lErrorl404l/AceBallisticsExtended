@@ -1,0 +1,13 @@
+{
+  "class": "arifle_TRG21_F",
+  "caliber_mm": 5.56,
+  "barrel_length_mm": 459.7,
+  "rifling_twist_mm": 177.8,
+  "chamber_pressure_mpa": 380,
+  "cdm_id": "gg1",
+  "projectile_mass_g": 3.43,
+  "muzzle_velocity_ms": 895.3,
+  "zero_range_m": 100,
+  "effective_range_m": 800,
+  "notes": "Extracted from ACE3 ace_ballistics via caliber_mm"
+}

@@ -1,0 +1,8 @@
+{
+  "class": "B_12Gauge_Slug",
+  "caliber_mm": 17.5,
+  "projectile_mass_g": 28.35,
+  "cdm_id": "g1",
+  "ballistic_coefficient": 0.11,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

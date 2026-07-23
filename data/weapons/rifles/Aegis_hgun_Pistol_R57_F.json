@@ -1,0 +1,13 @@
+{
+  "class": "Aegis_hgun_Pistol_R57_F",
+  "caliber_mm": 5.7,
+  "barrel_length_mm": 125.5,
+  "rifling_twist_mm": 228.6,
+  "chamber_pressure_mpa": 380,
+  "cdm_id": "gg1",
+  "projectile_mass_g": 4.02,
+  "muzzle_velocity_ms": 723.0,
+  "zero_range_m": 100,
+  "effective_range_m": 800,
+  "notes": "Extracted from ACE3 compat_compat_aegis via caliber_mm"
+}

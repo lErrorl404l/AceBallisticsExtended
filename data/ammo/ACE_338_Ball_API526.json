@@ -1,0 +1,8 @@
+{
+  "class": "ACE_338_Ball_API526",
+  "caliber_mm": 8.585,
+  "projectile_mass_g": 16.3941242,
+  "cdm_id": "g7",
+  "ballistic_coefficient": 0.29,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

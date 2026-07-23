@@ -1,0 +1,13 @@
+{
+  "class": "srifle_DMR_03_F",
+  "caliber_mm": 7.823,
+  "barrel_length_mm": 508.0,
+  "rifling_twist_mm": 254.0,
+  "chamber_pressure_mpa": 415,
+  "cdm_id": "g7",
+  "projectile_mass_g": 12.96,
+  "muzzle_velocity_ms": 322.2,
+  "zero_range_m": 100,
+  "effective_range_m": 800,
+  "notes": "Extracted from ACE3 ace_ballistics. Caliber/BC from CfgAmmo::ACE_762x51_Ball_Subsonic. Chamber pressure estimated by caliber type."
+}

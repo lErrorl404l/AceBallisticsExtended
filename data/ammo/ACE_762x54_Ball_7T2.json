@@ -1,0 +1,8 @@
+{
+  "class": "ACE_762x54_Ball_7T2",
+  "caliber_mm": 7.925,
+  "projectile_mass_g": 9.6552,
+  "cdm_id": "g1",
+  "ballistic_coefficient": 0.395,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

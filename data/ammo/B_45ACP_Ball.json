@@ -1,0 +1,8 @@
+{
+  "class": "B_45ACP_Ball",
+  "caliber_mm": 11.481,
+  "projectile_mass_g": 14.904,
+  "cdm_id": "g1",
+  "ballistic_coefficient": 0.195,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

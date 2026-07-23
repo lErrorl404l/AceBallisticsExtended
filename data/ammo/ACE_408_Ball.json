@@ -1,0 +1,8 @@
+{
+  "class": "ACE_408_Ball",
+  "caliber_mm": 10.363,
+  "projectile_mass_g": 19.7637,
+  "cdm_id": "g7",
+  "ballistic_coefficient": 0.279,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

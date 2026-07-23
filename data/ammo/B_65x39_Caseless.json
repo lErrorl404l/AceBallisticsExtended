@@ -1,0 +1,8 @@
+{
+  "class": "B_65x39_Caseless",
+  "caliber_mm": 6.706,
+  "projectile_mass_g": 7.9704,
+  "cdm_id": "g7",
+  "ballistic_coefficient": 0.263,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

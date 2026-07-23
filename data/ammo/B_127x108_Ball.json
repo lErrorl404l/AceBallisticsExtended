@@ -1,0 +1,8 @@
+{
+  "class": "B_127x108_Ball",
+  "caliber_mm": 12.979,
+  "projectile_mass_g": 48.276,
+  "cdm_id": "g1",
+  "ballistic_coefficient": 0.63,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

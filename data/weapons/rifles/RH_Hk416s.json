@@ -1,0 +1,13 @@
+{
+  "class": "RH_Hk416s",
+  "caliber_mm": 5.56,
+  "barrel_length_mm": 264.2,
+  "rifling_twist_mm": 177.8,
+  "chamber_pressure_mpa": 380,
+  "cdm_id": "gg7",
+  "projectile_mass_g": 3.43,
+  "muzzle_velocity_ms": 797.7,
+  "zero_range_m": 100,
+  "effective_range_m": 800,
+  "notes": "Extracted from ACE3 compat_compat_rh_m4 via caliber_mm"
+}

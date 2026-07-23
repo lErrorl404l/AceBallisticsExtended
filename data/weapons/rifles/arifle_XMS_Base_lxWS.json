@@ -1,0 +1,13 @@
+{
+  "class": "arifle_XMS_Base_lxWS",
+  "caliber_mm": 5.56,
+  "barrel_length_mm": 406.4,
+  "rifling_twist_mm": 178.0,
+  "chamber_pressure_mpa": 380,
+  "cdm_id": "gg1",
+  "projectile_mass_g": 3.43,
+  "muzzle_velocity_ms": 887.3,
+  "zero_range_m": 100,
+  "effective_range_m": 800,
+  "notes": "Extracted from ACE3 compat_compat_ws via caliber_mm"
+}

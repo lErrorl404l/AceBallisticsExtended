@@ -1,0 +1,13 @@
+{
+  "class": "R3F_M107",
+  "caliber_mm": 12.954,
+  "barrel_length_mm": 736.6,
+  "rifling_twist_mm": 381.0,
+  "chamber_pressure_mpa": 350,
+  "cdm_id": "gg1",
+  "projectile_mass_g": 48.2,
+  "muzzle_velocity_ms": 296.0,
+  "zero_range_m": 100,
+  "effective_range_m": 800,
+  "notes": "Extracted from ACE3 compat_compat_r3f via caliber_mm"
+}

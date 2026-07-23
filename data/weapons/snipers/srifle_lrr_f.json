@@ -1,0 +1,13 @@
+{
+  "class": "srifle_LRR_F",
+  "caliber_mm": 10.363,
+  "barrel_length_mm": 736.6,
+  "rifling_twist_mm": 330.2,
+  "chamber_pressure_mpa": 250,
+  "cdm_id": "g7",
+  "projectile_mass_g": 19.76,
+  "muzzle_velocity_ms": 1067.0,
+  "zero_range_m": 100,
+  "effective_range_m": 800,
+  "notes": "Extracted from ACE3 ace_ballistics. Caliber/BC from CfgAmmo::ACE_408_Ball. Chamber pressure estimated by caliber type."
+}

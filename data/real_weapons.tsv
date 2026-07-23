@@ -2227,3 +2227,69 @@ lone_lone_star_10_ar-10_dmr_18_barrel	Lone Star Ordnance	Lone Star 10	AR-10 DMR,
 lone_lone_star_10_ar-10_spr_20_barrel	Lone Star Ordnance	Lone Star 10	AR-10 SPR, 20" barrel, .308 Win	7.62×51mm NATO	7.62	508	254	1	427	11.3	820	estimated (reasonable default)	estimated
 lone_lone_star_10_ar-10_dmr_22_barrel	Lone Star Ordnance	Lone Star 10	AR-10 DMR, 22" barrel, 6.5 Creedmoor	6.5 Creedmoor	6.71	559	203	1	415	9.1	860	estimated (reasonable default)	estimated
 lone_mk_12_spr_ar-15_spr_18_barrel	Lone Star Ordnance	Mk 12 SPR	AR-15 SPR, 18" barrel, 5.56mm	5.56×45mm NATO	5.56	457	178	1	430	4.0	920	estimated (reasonable default)	estimated
+proof_elevation_mtr_65_creedmoor	Proof Research	Elevation MTR	6.5 Creedmoor	6.5 Creedmoor	6.71	610	191	1	427	9.0	820	Manufacturer specifications	researched
+proof_elevation_mtr_223_remington	Proof Research	Elevation MTR	.223 Remington	.223 Remington	5.56	419	203	1	430	4.0	950	Manufacturer specifications	researched
+proof_elevation_mtr_308_winchester	Proof Research	Elevation MTR	.308 Winchester	.308 Winchester	7.82	508	254	1	415	10.9	780	Manufacturer specifications	researched
+proof_glacier_steel_65_prc	Proof Research	Glacier Steel	6.5 PRC	6.5 PRC	6.71	559	203	1	467	9.0	900	Manufacturer specifications	researched
+proof_transition_65_creedmoor	Proof Research	Transition	6.5 Creedmoor	6.5 Creedmoor	6.71	559	203	1	427	9.0	820	Manufacturer specifications	researched
+fierce_ct_rival_xp_65_creedmoor	Fierce Firearms	CT Rival XP	6.5 Creedmoor	6.5 Creedmoor	6.71	508	203	1	427	9.0	820	Manufacturer specifications	researched
+fierce_carbon_fury_65_prc	Fierce Firearms	Carbon Fury	6.5 PRC	6.5 PRC	6.71	610	203	1	467	9.0	900	Manufacturer specifications	researched
+fierce_carbon_fury_300_prc	Fierce Firearms	Carbon Fury	.300 PRC	.300 PRC	7.82	610	229	1	467	13.0	880	Manufacturer specifications	researched
+fierce_edge_65_creedmoor	Fierce Firearms	Edge	6.5 Creedmoor	6.5 Creedmoor	6.71	610	203	1	427	9.0	820	Manufacturer specifications	researched
+fierce_strike_308_winchester	Fierce Firearms	Strike	.308 Winchester	.308 Winchester	7.82	559	254	1	415	10.9	780	Manufacturer specifications	researched
+gunwerks_clymr_65_creedmoor	Gunwerks	ClymR	6.5 Creedmoor	6.5 Creedmoor	6.71	508	203	1	427	9.0	820	Manufacturer specifications	researched
+gunwerks_magnus_lr_300_prc	Gunwerks	Magnus LR	.300 PRC	.300 PRC	7.82	559	229	1	467	13.0	880	Manufacturer specifications	researched
+gunwerks_nexus_7mm_prc	Gunwerks	Nexus	7mm PRC	7mm PRC	7.21	559	216	1	467	11.3	910	Manufacturer specifications	researched
+cadex_cdx-lite_tremor_65_creedmoor	Cadex Defense	CDX-Lite Tremor	6.5 Creedmoor	6.5 Creedmoor	6.71	610	203	1	427	9.0	820	Manufacturer specifications	researched
+cadex_cdx-lite_tremor_308_winchester	Cadex Defense	CDX-Lite Tremor	.308 Winchester	.308 Winchester	7.82	610	254	1	415	10.9	780	Manufacturer specifications	researched
+cadex_cdx-lite_tremor_338_lapua	Cadex Defense	CDX-Lite Tremor	.338 Lapua	.338 Lapua Magnum	8.58	686	241	1	480	16.2	880	Manufacturer specifications	researched
+cadex_cdx-mc_kraken_300_prc	Cadex Defense	CDX-MC Kraken	.300 PRC	.300 PRC	7.82	660	203	1	467	13.0	880	Manufacturer specifications	researched
+cadex_cdx-r7_crbn_65_creedmoor	Cadex Defense	CDX-R7 CRBN	6.5 Creedmoor	6.5 Creedmoor	6.71	610	203	1	427	9.0	820	Manufacturer specifications	researched
+cadex_cdx-40_shadow_375_cheytac	Cadex Defense	CDX-40 Shadow	.375 CheyTac	.375 CheyTac	9.53	813	178	1	480	19.4	900	Manufacturer specifications	researched
+masterpiece_ba_pmr_pro_65_creedmoor	MasterPiece Arms	BA PMR Pro	6.5 Creedmoor	6.5 Creedmoor	6.71	660	203	1	427	9.0	820	Manufacturer specifications	researched
+masterpiece_ba_comp_pro_65_creedmoor	MasterPiece Arms	BA Comp Pro	6.5 Creedmoor	6.5 Creedmoor	6.71	660	203	1	427	9.0	820	Manufacturer specifications	researched
+ai_ax50_50_bmg	Accuracy International	AX50	.50 BMG	.50 BMG	12.95	686	381	1	450	42.8	860	Manufacturer specifications	researched
+ai_ax308_308_winchester	Accuracy International	AX308	.308 Winchester	.308 Winchester	7.82	610	305	1	415	10.9	780	Manufacturer specifications	researched
+ai_ae_mk_iii_308_winchester	Accuracy International	AE Mk III	.308 Winchester	.308 Winchester	7.82	610	305	1	415	10.9	780	Manufacturer specifications	researched
+ai_aws_308_subso_winchester	Accuracy International	AWS	.308 Winchester subsonic	.308 Winchester	7.82	406	229	1	415	10.9	320	Manufacturer specifications	researched
+mcmillan_tac-300_300_magnu_winchester	McMillan	TAC-300	.300 Winchester Magnum	.300 Winchester Magnum	7.82	660	254	1	448	11.7	880	Manufacturer specifications	researched
+mcmillan_tac-308_308_winchester	McMillan	TAC-308	.308 Winchester	.308 Winchester	7.82	508	254	1	415	10.9	780	Manufacturer specifications	researched
+mcmillan_tac-338_338_lapua_magnum	McMillan	TAC-338	.338 Lapua Magnum	.338 Lapua Magnum	8.58	686	237	1	480	16.2	880	Manufacturer specifications	researched
+mcmillan_tac-50_50_bmg	McMillan	TAC-50	.50 BMG	.50 BMG	12.95	737	381	1	450	42.8	860	Manufacturer specifications	researched
+sig_cross_308_winchester	SIG Sauer	CROSS	.308 Winchester	.308 Winchester	7.82	419	254	1	415	10.9	780	Manufacturer specifications	researched
+sig_cross_prs_65_creedmoor	SIG Sauer	CROSS PRS	6.5 Creedmoor	6.5 Creedmoor	6.71	610	203	1	427	9.0	820	Manufacturer specifications	researched
+sig_cross_magnum_300_magnu_winchester	SIG Sauer	CROSS Magnum	.300 Winchester Magnum	.300 Winchester Magnum	7.82	610	229	1	448	11.7	880	Manufacturer specifications	researched
+sig_cross_magnum_300_prc	SIG Sauer	CROSS Magnum	.300 PRC	.300 PRC	7.82	610	229	1	467	13.0	880	Manufacturer specifications	researched
+desert_srs-a1_308_winchester	Desert Tech	SRS-A1	.308 Winchester	.308 Winchester	7.82	559	279	1	415	10.9	780	Manufacturer specifications	researched
+desert_srs-a1_65_creedmoor	Desert Tech	SRS-A1	6.5 Creedmoor	6.5 Creedmoor	6.71	660	203	1	427	9.0	820	Manufacturer specifications	researched
+desert_srs-a1_338_lapua_magnum	Desert Tech	SRS-A1	.338 Lapua Magnum	.338 Lapua Magnum	8.58	660	254	1	480	16.2	880	Manufacturer specifications	researched
+desert_hti_50_bmg	Desert Tech	HTI	.50 BMG	.50 BMG	12.95	737	381	1	450	42.8	860	Manufacturer specifications	researched
+desert_mdr-x_308_winchester	Desert Tech	MDR-X	.308 Winchester	.308 Winchester	7.82	508	254	1	415	10.9	780	Manufacturer specifications	researched
+desert_mdr-x_223_wylde	Desert Tech	MDR-X	.223 Wylde	.223 Wylde	5.56	508	203	1	430	4.1	950	Manufacturer specifications	researched
+christensen_mhr_65_creedmoor	Christensen Arms	MHR	6.5 Creedmoor	6.5 Creedmoor	6.71	559	203	1	427	9.0	820	Manufacturer specifications	researched
+christensen_traverse_65_prc	Christensen Arms	Traverse	6.5 PRC	6.5 PRC	6.71	610	203	1	467	9.0	900	Manufacturer specifications	researched
+christensen_ridgeline_fft_65_creedmoor	Christensen Arms	Ridgeline FFT	6.5 Creedmoor	6.5 Creedmoor	6.71	508	203	1	427	9.0	820	Manufacturer specifications	researched
+springfield_m1a_loaded	Springfield Armory	M1A	Loaded	.308 Winchester	7.82	559	279	1	415	10.9	780	Manufacturer specifications	researched
+springfield_m1a_scout_squad	Springfield Armory	M1A	Scout Squad	.308 Winchester	7.82	457	279	1	415	10.9	780	Manufacturer specifications	researched
+springfield_m1a_16_socom	Springfield Armory	M1A	SOCOM 16	.308 Winchester	7.82	413	279	1	415	10.9	760	Manufacturer specifications	researched
+springfield_sa-35_9mm	Springfield Armory	SA-35	9mm	9×19mm Parabellum	9.01	119	254	1	241	8.0	360	Manufacturer specifications	researched
+springfield_saint_edge_556_nato	Springfield Armory	SAINT Edge	5.56 NATO	5.56×45mm NATO	5.56	406	203	1	430	4.1	950	Manufacturer specifications	researched
+ruger_10/22_takedown_22_lr	Ruger	10/22 Takedown	.22 LR	.22 Long Rifle	5.59	470	406	1	145	2.6	370	Manufacturer specifications	researched
+ruger_10/22_competition_22_lr	Ruger	10/22 Competition	.22 LR	.22 Long Rifle	5.59	410	406	1	145	2.6	370	Manufacturer specifications	researched
+ruger_lcp_max_380_auto	Ruger	LCP MAX	.380 Auto	.380 Automatic	9.02	71	406	1	183	6.2	290	Manufacturer specifications	researched
+ruger_max-9_9mm	Ruger	MAX-9	9mm	9×19mm Parabellum	9.01	81	254	1	241	8.0	360	Manufacturer specifications	researched
+ruger_security-380_380_auto	Ruger	Security-380	.380 Auto	.380 Automatic	9.02	86	254	1	183	6.2	290	Manufacturer specifications	researched
+ruger_american_ranch_556_nato	Ruger	American Ranch	5.56 NATO	5.56×45mm NATO	5.56	406	254	1	430	4.1	950	Manufacturer specifications	researched
+ruger_gunsite_scout_308_winchester	Ruger	Gunsite Scout	.308 Winchester	.308 Winchester	7.82	457	254	1	415	10.9	780	Manufacturer specifications	researched
+savage_110_scout_v2_556_nato	Savage	110 Scout V2	5.56 NATO	5.56×45mm NATO	5.56	419	254	1	430	4.1	950	Manufacturer specifications	researched
+savage_110_timberline_65_creedmoor	Savage	110 Timberline	6.5 Creedmoor	6.5 Creedmoor	6.71	559	203	1	427	9.0	820	Manufacturer specifications	researched
+savage_110_trail_hunter_308_winchester	Savage	110 Trail Hunter	.308 Winchester	.308 Winchester	7.82	559	254	1	415	10.9	780	Manufacturer specifications	researched
+savage_110_ultralite_65_prc	Savage	110 Ultralite	6.5 PRC	6.5 PRC	6.71	610	203	1	467	9.0	900	Manufacturer specifications	researched
+savage_impulse_core_hunter_pro_22_creedmoor	Savage	Impulse Core Hunter Pro	22 Creedmoor	22 Creedmoor	5.7	508	203	1	427	4.9	1050	Manufacturer specifications	researched
+falkor_petra_300_magnu_winchester	Falkor Defense	Petra	.300 Winchester Magnum	.300 Winchester Magnum	7.82	559	229	1	448	11.7	880	Manufacturer specifications	researched
+lmt_mars-h_762_nato	LMT Defense	MARS-H	7.62 NATO	7.62×51mm NATO	7.82	406	254	1	415	10.9	780	Manufacturer specifications	researched
+lmt_l129a1_762_nato	LMT Defense	L129A1	7.62 NATO	7.62×51mm NATO	7.82	406	254	1	415	10.9	780	Manufacturer specifications	researched
+jp_lrp-07_308_winchester	JP Enterprises	LRP-07	.308 Winchester	.308 Winchester	7.82	559	286	1	415	10.9	780	Manufacturer specifications	researched
+jp_scr-11_223_remington	JP Enterprises	SCR-11	.223 Remington	.223 Remington	5.56	508	203	1	430	4.1	950	Manufacturer specifications	researched
+jp_jp-5_9mm	JP Enterprises	JP-5	9mm	9×19mm Parabellum	9.01	406	254	1	241	8.0	360	Manufacturer specifications	researched
+kuiu_singular_65_prc	KUIU	Singular	6.5 PRC	6.5 PRC	6.71	559	203	1	467	9.0	900	Manufacturer specifications	researched

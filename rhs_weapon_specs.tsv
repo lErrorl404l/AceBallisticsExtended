@@ -1,0 +1,42 @@
+=== rhs_weap_kar98k ===
+rhs_weap_kar98k	mauser_kar98k	exact	Bolt-action rifle, 7.92x57mm Mauser
+mauser_kar98k	Mauser Werke AG (contracted to multiple manufacturers)	Karabiner 98k	Bolt-Action Rifle	7.92x57mm Mauser s.S.	8.22	600	240	1	390	12.8	760	Dockery Armory, Wikipedia	Researched
+=== rhs_weap_mp44 ===
+rhs_weap_mp44	stg_44	exact	Select-fire assault rifle, 7.92x33mm Kurz
+stg_44	C. G. Haenel / Sauer & Sohn / Steyr-Daimler-Puch	Sturmgewehr 44 (MP44)	Assault Rifle	7.92x33mm Kurz	8.22	419	240	1	340	8.1	685	Wikipedia, CIP	Researched
+=== rhs_weap_savz58p ===
+rhs_weap_savz58p	sa_vz_58	exact	Fixed stock variant (Pěchotní)
+sa_vz_58	Česká zbrojovka Uherský Brod	vz. 58 P	Assault Rifle	7.62x39mm M43	7.85	390	240	1	355	8.0	705	Wikipedia	Researched
+=== rhs_weap_savz58v ===
+rhs_weap_savz58v	sa_vz_58	exact	Folding stock variant (Výsadkový); same core specs
+sa_vz_58	Česká zbrojovka Uherský Brod	vz. 58 V	Assault Rifle	7.62x39mm M43	7.85	390	240	1	355	8.0	705	Wikipedia	Researched
+=== rhs_weap_vhsd2 ===
+rhs_weap_vhsd2	hs_vhs_d2	exact	Bullpup DMR variant with 500mm barrel
+hs_vhs_d2	HS Produkt d.o.o.	VHS-D2	Assault Rifle (Bullpup)	5.56x45mm NATO SS109	5.69	500	178	1	380	4.0	930	HS Produkt official site (web.archive.org)	Researched
+=== rhs_weap_vhsk2 ===
+rhs_weap_vhsk2	hs_vhs_k2	exact	Bullpup standard variant with 410mm barrel
+hs_vhs_k2	HS Produkt d.o.o.	VHS-K2	Assault Rifle (Bullpup)	5.56x45mm NATO SS109	5.69	410	178	1	380	4.0	900	HS Produkt official site	Researched
+=== rhs_weap_t5000 ===
+rhs_weap_t5000	orsis_t5000	exact	Bolt-action precision sniper rifle
+orsis_t5000	ORSIS (Promtekhnologiya)	T-5000	Sniper Rifle (Bolt-Action)	7.62x51mm NATO (.308 Win)	7.82	660	279	1	415	10.9	800	ORSIS/Rostec official (roe.ru), ORSIS spec sheet	Researched
+=== rhs_weap_cz99 ===
+rhs_weap_cz99	zastava_cz99	exact	Semi-automatic pistol
+zastava_cz99	Zastava Arms d.o.o.	CZ 99	Semi-Automatic Pistol	9x19mm Parabellum	9.01	108	250	1	250	8.0	355	Zastava Arms official manual PDF	Researched
+=== rhs_weap_m76 ===
+rhs_weap_m76	zastava_m76	exact	Kalashnikov-pattern DMR
+zastava_m76	Zastava Arms d.o.o.	M76	Designated Marksman Rifle	7.92x57mm Mauser	8.22	550	240	1	390	12.8	730	Small Arms Survey, Wikipedia	Researched
+=== rhs_weap_m84 ===
+rhs_weap_m84	zastava_m84	exact	PKM-derived general-purpose machine gun
+zastava_m84	Zastava Arms d.o.o.	M84	General-Purpose Machine Gun	7.62x54mmR	7.92	658	240	1	390	9.6	825	Wikipedia, Zastava Arms, Small Arms Survey	Researched
+=== rhs_weap_m92 ===
+rhs_weap_m92	zastava_m92	exact	Short-barreled carbine with folding stock
+zastava_m92	Zastava Arms d.o.o.	M92	Carbine	7.62x39mm M67	7.85	254	240	1	355	8.0	678	Zastava military catalogue 2013, Wikipedia	Researched
+=== rhs_weap_m70ab2 ===
+rhs_weap_m70ab2	zastava_m70	exact	Underfolding stock AK-pattern assault rifle
+zastava_m70	Zastava Arms d.o.o.	M70AB2	Assault Rifle	7.62x39mm M67	7.85	415	240	1	355	8.0	720	Weaponsystems.net, Wikipedia, Armatec	Researched
+=== rhs_weap_makarov_pm ===
+rhs_weap_makarov_pm	makarov_pm	exact	Soviet service pistol
+makarov_pm	Kalashnikov Concern (Izhevsk Mechanical Plant)	Makarov PM (Pistolet Makarova)	Semi-Automatic Pistol	9x18mm Makarov (9x18mm PM)	9.27	93.5	260	1	180	6.1	315	Wikipedia, Makarov.com, Modern Firearms	Researched
+=== rhs_weap_svd ===
+rhs_weap_svd	dragunov_svd	exact	Standard-issue Soviet/Russian DMR
+dragunov_svd	Kalashnikov Concern (Izhevsk Machine-Building Plant)	SVD (Snayperskaya Vintovka Dragunova)	Designated Marksman Rifle	7.62x54mmR	7.92	620	240	1	390	9.6	830	Small Arms Survey, FSVT, Wikipedia	Researched

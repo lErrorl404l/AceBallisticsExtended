@@ -1,0 +1,8 @@
+{
+  "class": "ACE_556x45_Ball_Mk262",
+  "caliber_mm": 5.69,
+  "projectile_mass_g": 4.9896,
+  "cdm_id": "g1",
+  "ballistic_coefficient": 0.361,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

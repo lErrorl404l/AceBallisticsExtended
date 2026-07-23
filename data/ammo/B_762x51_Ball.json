@@ -1,0 +1,8 @@
+{
+  "class": "B_762x51_Ball",
+  "caliber_mm": 7.823,
+  "projectile_mass_g": 9.4608,
+  "cdm_id": "g7",
+  "ballistic_coefficient": 0.2,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

@@ -1,0 +1,8 @@
+{
+  "class": "ACE_127x99_API",
+  "caliber_mm": 12.954,
+  "projectile_mass_g": 41.9904,
+  "cdm_id": "g1",
+  "ballistic_coefficient": 0.67,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

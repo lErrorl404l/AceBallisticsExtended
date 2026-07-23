@@ -1,0 +1,13 @@
+{
+  "class": "arifle_Katiba_GL_F",
+  "caliber_mm": 6.5,
+  "barrel_length_mm": 508.0,
+  "rifling_twist_mm": 203.2,
+  "chamber_pressure_mpa": 380,
+  "cdm_id": "gg7",
+  "projectile_mass_g": 9.4,
+  "muzzle_velocity_ms": 800.0,
+  "zero_range_m": 100,
+  "effective_range_m": 800,
+  "notes": "Extracted from ACE3 ace_ballistics"
+}

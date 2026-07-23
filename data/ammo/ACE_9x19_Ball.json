@@ -1,0 +1,8 @@
+{
+  "class": "ACE_9x19_Ball",
+  "caliber_mm": 9.017,
+  "projectile_mass_g": 8.0352,
+  "cdm_id": "g1",
+  "ballistic_coefficient": 0.165,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

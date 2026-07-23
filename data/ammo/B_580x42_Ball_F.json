@@ -1,0 +1,8 @@
+{
+  "class": "B_580x42_Ball_F",
+  "caliber_mm": 6.0,
+  "projectile_mass_g": 4.15,
+  "cdm_id": "g7",
+  "ballistic_coefficient": 0.156,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

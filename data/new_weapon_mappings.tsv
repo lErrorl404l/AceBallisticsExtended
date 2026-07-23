@@ -1,0 +1,190 @@
+## New arma_weapon_map.tsv entries for unmapped weapon JSON classes in data/weapons/
+## Only real-world weapons mapped — fictional ARMA 3 weapons (MX, Katiba, TRG, Mk20,
+## SPAR, CTAR, SDAR, etc.) intentionally skipped.
+## arma_key	weapon_id	match_type	notes
+Aegis_MMG_FNMAG_240_F	fn_herstal_mag_m240	exact	M240 7.62mm GPMG
+Aegis_MMG_FNMAG_Base	fn_herstal_mag_m240	exact	FN MAG 58 7.62mm GPMG
+Aegis_arifle_M16A4_base_F	colt_m16a4	exact	M16A4 5.56mm 20" barrel
+Aegis_hgun_Pistol_R57_F	fn_herstal_five_seven	exact	Five-seveN 5.7×28mm pistol
+DMR_06_base_F	noreen_bad_news	exact	Noreen Bad News .50 cal Marksmen DLC
+DMR_07_base_F	sig_sauer_cmr_76	exact	SIG Sauer CMR-76 .300 Win Marksmen DLC
+HMG_M2	browning_m2hb	exact	M2HB .50 cal HMG
+MMG_01_hex_F	general_dynamics_lwmmg	exact	LWMMG .338 Norma Mag Marksmen DLC
+MMG_02_camo_F	heckler_koch_mg5	exact	HK MG5 7.62mm Marksmen DLC
+R3F_FN_MAG58	fn_herstal_mag_m240	exact	FN MAG 58 7.62mm GPMG
+R3F_G17	glock_glock_17	exact	Glock 17 9×19mm
+R3F_HK416M	heckler_koch_hk416	exact	HK416 M 5.56mm 14.5" barrel
+R3F_HK416S_HG	heckler_koch_hk416	variant	HK416 S HG 5.56mm 11" barrel
+R3F_HK417L	heckler_koch_hk417	variant	HK417 L 7.62mm 20" barrel
+R3F_HK417M	heckler_koch_hk417	exact	HK417 M 7.62mm 16" barrel
+R3F_HK417S_HG	heckler_koch_hk417	variant	HK417 S HG 7.62mm 12" barrel
+R3F_HKUSP	heckler_koch_usp	exact	HK USP 9×19mm
+R3F_M107	barrett_m82_m107	exact	M107 .50 cal
+R3F_M4S90	benelli_m1014	exact	M4 Super 90 12ga shotgun
+R3F_MP5A5	heckler_koch_mp5	variant	MP5A5 9×19mm
+R3F_MP5SD	heckler_koch_mp5sd	exact	MP5SD 9×19mm suppressed
+R3F_Minimi	fn_herstal_minimi_m249	exact	Minimi 5.56mm
+R3F_Minimi_762	fn_herstal_mag_m240	variant	Minimi 7.62mm Mk 3
+R3F_PGM_Hecate_II	pgm_h_cate_ii	exact	PGM Hécate II .50 cal
+R3F_SCAR_H_CAM_base	fn_herstal_scar_h	exact	SCAR-H CAM 7.62mm
+R3F_SCAR_H_PR_20cps_base	fn_herstal_scar_h	variant	SCAR-H PR 7.62mm 20" barrel
+R3F_SCAR_H_PR_20cps_recup_base	fn_herstal_scar_h	variant	SCAR-H PR 20" barrel recoverable
+R3F_SCAR_L_CAM_base	fn_herstal_scar_l	exact	SCAR-L CQC 5.56mm 14.5" barrel
+R3F_SCAR_L_CQC_CAM	fn_herstal_scar_l_10	exact	SCAR-L CQC 5.56mm 10" barrel
+R3F_SCAR_L_CQC_LG_CAM	fn_herstal_scar_l	variant	SCAR-L CQC LG 5.56mm 10" barrel
+R3F_TAC50	mcmillan_tac_50	exact	McMillan TAC-50 .50 cal
+RH_Hk416	heckler_koch_hk416	exact	HK416 14.5" barrel 5.56mm
+RH_Hk416c	heckler_koch_hk416	variant	HK416C compact 9" barrel
+RH_Hk416s	heckler_koch_hk416_10	exact	HK416S short 10.4" barrel
+RH_M16A2	m16a2	exact	M16A2 5.56mm 20" barrel 1:7 twist
+RH_M16A3	m16a1	variant	M16A3 5.56mm 20" barrel full-auto A1 variant
+RH_M16A4	colt_m16a4	exact	M16A4 5.56mm 20" barrel flat-top
+RH_M16A4_m	colt_m16a4	variant	M16A4 MWS 5.56mm with RIS
+RH_M16A6	colt_m16a4	variant	M16A6 5.56mm 20" barrel USMC
+RH_M16a1	m16a1	exact	M16A1 5.56mm 20" barrel 1:12 twist
+RH_M27IAR	heckler_koch_hk416	estimated	M27 IAR 5.56mm 16.5" barrel
+RH_M4A1_ris	colt_m4a1	variant	M4A1 RIS 14.5" barrel
+RH_M4A6	colt_m4a1	variant	M4A6 carbine with rail system
+RH_M4_ris	colt_m4a1	variant	M4 RIS 14.5" barrel with rail
+RH_M4m	colt_m4a1	variant	M4M 10.5" barrel CQBR
+RH_M4sbr	colt_m4a1	variant	M4 SBR 10.5" barrel short barrel
+RH_Mk11	knight_s_armament_mk_11	exact	Mk 11 Mod 0 7.62mm 20" barrel
+RH_Mk12mod1	colt_m4a1	variant	Mk 12 Mod 1 SPR 5.56mm 18" barrel
+RH_PDW	magpul_pdr	variant	PDW 9mm 10" barrel Magpul PDR variant
+RH_SAMR	m14	variant	SAM-R 7.62mm 20" barrel M14 derivative
+RH_SR25EC	knight_s_armament_sr_25	variant	SR-25 ECC 7.62mm 20" barrel
+RH_ar10	AR-10	exact	AR-10 7.62mm
+RH_bull	magnum_research_desert_eagle_mk_xix	exact	Desert Eagle .50 AE Mark XIX
+RH_fn57	fn_herstal_five_seven	exact	FN Five-seveN 5.7×28mm
+RH_g17	glock_glock_17	exact	Glock 17 9×19mm
+RH_g18	glock_glock_18	exact	Glock 18 9×19mm selective fire
+RH_g19	glock_glock_19	exact	Glock 19 9×19mm compact
+RH_gsh18	gsh_18	estimated	GSh-18 9×19mm pistol
+RH_hb	colt_m4a1	estimated	HB 5.56mm 6" barrel M4 based PDW
+RH_hb_b	colt_m4a1	estimated	HB black 5.56mm 6" barrel
+RH_m110	knight_s_armament_m110	exact	M110 7.62mm 20" barrel
+RH_m1911	m1911	exact	M1911 .45 ACP
+RH_m4	colt_m4a1	exact	M4 carbine 14.5" barrel
+RH_m9	beretta_m9	exact	M9 9×19mm
+RH_mak	makarov_pm	exact	Makarov PM 9×18mm
+RH_mp412	mp_412_rex	estimated	MP-412 REX .357 Magnum revolver
+RH_muzi	imi_uzi	variant	Micro Uzi 9×19mm
+RH_p226	sig_sauer_p226	exact	P226 9×19mm
+RH_sbr9	colt_m4a1	estimated	SBR-9 9mm 9" barrel AR-15 9mm conversion
+RH_ttracker	tti_pit_viper	estimated	TTI Tracker 9×19mm
+RH_uspm	heckler_koch_usp	variant	HK USP .45 ACP
+RH_vp70	vp70	estimated	HK VP70 9×19mm
+SPEX_Sten_Mk5	sten_mk5	exact	Sten Mk5 9×19mm SMG
+arifle_AK12U_base_F	kalashnikov_concern_ak_12	variant	Vanilla AK-12U 5.45mm 314mm barrel
+arifle_AK12_base_F	kalashnikov_concern_ak_12	exact	Vanilla AK-12 5.45mm 415mm barrel
+arifle_AKM_base_F	kalashnikov_concern_akm	exact	Vanilla AKM 7.62mm 415mm barrel
+arifle_MSBS65_Mark_base_F	fb_radom_msbs_grot	variant	MSBS Grot standard 5.56mm 20" barrel
+arifle_MSBS65_base_F	fb_radom_msbs_grot	exact	MSBS Grot 5.56mm 16" barrel
+arifle_SLR_Para_lxWS	fn_herstal_fal	variant	L1A1 SLR Para 7.62mm 10.5" barrel Western Sahara
+arifle_SLR_lxWS	fn_herstal_fal	variant	L1A1 SLR 7.62mm 21" barrel Western Sahara
+gm_ak47_base	kalashnikov_concern_ak_47	exact	AK-47 7.62×39mm 415mm barrel
+gm_ak74_base	kalashnikov_concern_ak_74	exact	AK-74 5.45×39mm 415mm barrel
+gm_aks74nk_base	kalashnikov_concern_ak_74m	variant	AKS-74NK 5.45×39mm 317mm barrel
+gm_g11k2_base	g11	estimated	G11K2 4.73×33mm caseless
+gm_g36_base	heckler_koch_g36	exact	G36 5.56mm 480mm barrel
+gm_g3_base	g3a3	exact	G3 7.62mm 17.7" barrel
+gm_g3ka4_base	g3a3	variant	G3KA4 7.62mm 12.4" barrel collapsible stock
+gm_hk33_base	hk33a2	exact	HK33A2 5.56mm 15.35" barrel
+gm_hk33k_base	hk33a2	variant	HK33K 5.56mm 13.1" barrel carbine
+gm_hk512_base	hk_512	estimated	HK512 12ga semi-auto shotgun
+gm_hk53_base	heckler_koch_hk53	exact	HK53 5.56mm 8.3" barrel
+gm_m16_base	colt_m16a4	variant	M16A1 5.56mm 20" barrel
+gm_mg3_base	rheinmetall_mg3	exact	MG3 7.62mm 22.2" barrel
+gm_mp5_base	heckler_koch_mp5	exact	MP5 9×19mm 225mm barrel
+gm_mp5sd_base	heckler_koch_mp5sd	exact	MP5SD 9×19mm 146mm barrel suppressed
+gm_mpikms72k_base	kalashnikov_concern_ak_74m	variant	MPi-KMS-72 7.62mm folding stock East German AK
+gm_msg90_base	heckler_koch_msg90	exact	MSG90 7.62mm 23.6" barrel
+gm_p1_base	p1_walther	estimated	Walther P1/P38 9×19mm
+gm_p210_base	p210	estimated	SIG P210 9×19mm
+gm_pkm_base	kalashnikov_concern_pkm	exact	PKM 7.62×54mmR
+gm_pm63_base	makarov_pm	variant	PM-63 RAK 9×18mm SMG
+gm_pm_base	makarov_pm	exact	Makarov PM 9×18mm
+gm_psg1_base	heckler_koch_psg1	exact	PSG1 7.62mm 25.6" barrel
+gm_rpk74_base	kalashnikov_concern_rpk_74	exact	RPK-74 5.45×39mm 590mm barrel
+gm_rpk_base	kalashnikov_concern_rpk_74	variant	RPK 7.62×39mm 590mm barrel
+gm_sg542_base	sg_542	estimated	SIG SG 542 7.62×51mm 18.3" barrel
+gm_sg550_base	sg550	estimated	SIG SG 550 5.56mm 20.8" barrel
+gm_sg551_base	sg551	estimated	SIG SG 551 5.56mm 14.3" barrel
+gm_svd_base	izhmash_svd_dragunov	exact	SVD Dragunov 7.62×54mmR
+hgun_G17_F	glock_glock_17	exact	Glock 17 9×19mm Aegis
+hgun_P07_F	cz_75	variant	CZ P-07 9×19mm compact
+rhs_weap_M107_Base_F	barrett_m82_m107	exact	M107 .50 cal 29" barrel
+rhs_weap_M1garand_Base_F	m1_garand	exact	M1 Garand .30-06 24" barrel
+rhs_weap_M590_5RD	mossberg_m590	variant	Mossberg 590 5-shot 18.5" barrel
+rhs_weap_M590_8RD	mossberg_m590	variant	Mossberg 590 8-shot 20" barrel
+rhs_weap_MP44_base	stg44	variant	StG 44 7.92×33mm 16.5" barrel
+rhs_weap_SCAR_H_CQC_Base	fn_herstal_scar_h_13	exact	SCAR-H CQC 13" barrel
+rhs_weap_SCAR_H_LB_Base	fn_herstal_scar_h_20	exact	SCAR-H LB 20" barrel
+rhs_weap_SCAR_H_STD_Base	fn_herstal_scar_h	exact	SCAR-H STD 16" barrel
+rhs_weap_XM2010_Base_F	remington_m2010	exact	XM2010 ESR 24" barrel
+rhs_weap_ak104	kalashnikov_concern_ak_103	variant	AK-104 7.62x39mm carbine 315mm barrel
+rhs_weap_ak105	kalashnikov_concern_ak_105	exact	AK-105 5.45x39mm carbine 315mm barrel
+rhs_weap_ak74m	kalashnikov_concern_ak_74m	exact	AK-74M 5.45x39mm 415mm barrel
+rhs_weap_akm	kalashnikov_concern_akm	exact	AKM 7.62x39mm 415mm barrel
+rhs_weap_aks74u	kalashnikov_concern_ak_74m	variant	AKS-74U 5.45x39mm 210mm barrel
+rhs_weap_asval	tskib_soo_as_val	exact	AS Val 9×39mm integrated suppressor
+rhs_weap_g36c	heckler_koch_g36	variant	G36C 5.56mm 9" barrel
+rhs_weap_g36kv	heckler_koch_g36	variant	G36KV 5.56mm 12.5" barrel
+rhs_weap_hk416d10	heckler_koch_hk416_10	exact	HK416 D10RS 10.4" barrel
+rhs_weap_hk416d145	heckler_koch_hk416	exact	HK416 D14.5RS 14.5" barrel
+rhs_weap_l1a1_base	fn_herstal_fal	variant	L1A1 SLR FN FAL pattern 21.8" barrel
+rhs_weap_m14	m14	exact	M14 rifle 22" barrel
+rhs_weap_m14_socom_base	m14	variant	M14 SOCOM 16.25" barrel
+rhs_weap_m14ebrri	m14	variant	M14 EBR
+rhs_weap_m16a4	colt_m16a4	exact	M16A4 rifle 20" barrel
+rhs_weap_m21_base	zastava_m70	variant	Zastava M21 5.56mm M70 variant
+rhs_weap_m21a	zastava_m70	variant	Zastava M21A 5.56mm
+rhs_weap_m21a_pr	zastava_m70	variant	Zastava M21A with rail
+rhs_weap_m21a_pr_pbg40	zastava_m70	variant	Zastava M21A with PBG-40 GL
+rhs_weap_m21s	zastava_m70	variant	Zastava M21S short barrel
+rhs_weap_m21s_pr	zastava_m70	variant	Zastava M21S with rail
+rhs_weap_m240_base	fn_herstal_mag_m240	exact	M240 GPMG 24.8" barrel
+rhs_weap_m249	fn_herstal_minimi_m249	exact	M249 SAW 18.3" barrel
+rhs_weap_m249_pip	fn_herstal_minimi_m249	variant	M249 PIP SAW
+rhs_weap_m249_pip_L	fn_herstal_minimi_m249	variant	M249 PIP long barrel
+rhs_weap_m249_pip_S	aai_corporation_m249_para	exact	M249 PIP short barrel/para
+rhs_weap_m24sws	remington_m24	exact	M24 SWS 24" barrel
+rhs_weap_m27iar	heckler_koch_hk416	estimated	M27 IAR 16.5" barrel HK416-based
+rhs_weap_m38	mosin_nagant	variant	Mosin-Nagant M38 carbine
+rhs_weap_m3a1_base	m3_grease_gun	exact	M3 Grease Gun .45 ACP 8" barrel
+rhs_weap_m40a5	remington_m40a5	exact	M40A5 25" barrel
+rhs_weap_m4_Base	colt_m4a1	exact	M4A1 carbine 14.5" barrel
+rhs_weap_m70_base	zastava_m70	exact	Zastava M70 7.62mm AK-pattern
+rhs_weap_mg42_base	mg42	exact	MG42 7.92mm 21" barrel
+rhs_weap_mk18	colt_m4a1	estimated	Mk18 Mod 0 CQBR 10.3" barrel
+rhs_weap_mosin_sbr	mosin_nagant	variant	Mosin-Nagant sawed-off carbine
+rhs_weap_pkm	kalashnikov_concern_pkm	exact	PKM 7.62×54mmR GPMG
+rhs_weap_pkp	kalashnikov_concern_pkp_pecheneg	exact	PKP Pecheneg 7.62×54mmR
+rhs_weap_pya	mp_443_grach	estimated	MP-443 Grach 9×19mm pistol
+rhs_weap_rpk74_base	kalashnikov_concern_rpk_74	exact	RPK-74 5.45x39mm 590mm barrel
+rhs_weap_savz58_base	sa_vz_58p	estimated	Sa vz. 58 base 7.62x39mm 390mm barrel
+rhs_weap_sr25	knight_s_armament_sr_25	exact	SR-25 24" barrel
+rhs_weap_sr25_ec	knight_s_armament_sr_25	exact	SR-25 ECC 20" barrel
+rhs_weap_sr25_ec_d	knight_s_armament_sr_25	exact	SR-25 ECC desert 20" barrel
+rhs_weap_sr25_ec_wd	knight_s_armament_sr_25	exact	SR-25 ECC woodland 20" barrel
+rhs_weap_stgw57	sig_sauer_sg_550	estimated	SIG SG 510 / Stgw 57 7.5x55mm
+rhs_weap_svds	izhmash_svds	exact	SVDS 7.62×54mmR folding stock
+rhs_weap_vhsd2_bg	hs_vhs_d2	variant	VHS-D2 BG 5.56mm 500mm barrel
+rhs_weap_vhsd2_ct15x	hs_vhs_d2	variant	VHS-D2 CT15X 5.56mm 500mm barrel
+rhsusf_weap_MP7A1_base_f	heckler_koch_mp7	exact	MP7A1 PDW 4.6×30mm
+rhsusf_weap_glock17g4	glock_glock_17	exact	Glock 17 Gen4 9×19mm
+rhsusf_weap_m1911a1	m1911	exact	M1911A1 .45 ACP
+rhsusf_weap_m9	beretta_m9	exact	M9/Beretta 92F 9×19mm pistol
+sgun_M4_F	benelli_m1014	exact	Benelli M4 Super 90 12ga
+sgun_Mp153_black_F	baikal_mp_153	variant	Baikal MP-153 12ga black furniture
+sgun_Mp153_classic_F	baikal_mp_153	variant	Baikal MP-153 12ga classic furniture
+srifle_DMR_01_F	zastava_m76	estimated	Rahim DMR 7.62mm 24" barrel Zastava M91 based
+srifle_DMR_02_F	accuracy_internation_ax50	estimated	MAR-10 .338 Lapua 20" barrel
+srifle_DMR_03_F	m14	estimated	Mk-I EBR 7.62mm 20" barrel M14 EBR
+srifle_DMR_04_F	vss_vintorez	estimated	ASP-1 Kir 12.7mm 17.7" barrel VSSK Vychlop inspired
+srifle_DMR_05_blk_F	accuracy_internation_ax50	estimated	Cyrus 9.3mm 24.4" barrel
+srifle_EBR_F	m14	variant	Mk18 ABR 7.62mm 18" barrel M14 EBR carbine
+srifle_GM6_F	gepard_gm6_lynx	estimated	GM6 Lynx 12.7mm 28.7" barrel
+
+# Total mapped: 183
+# Fictional skipped: 44

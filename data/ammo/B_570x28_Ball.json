@@ -1,0 +1,8 @@
+{
+  "class": "B_570x28_Ball",
+  "caliber_mm": 5.7,
+  "projectile_mass_g": 2.0,
+  "cdm_id": "g7",
+  "ballistic_coefficient": 0.084,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

@@ -1,0 +1,8 @@
+{
+  "class": "ACE_762x67_Ball_Mk248_Mod_1",
+  "caliber_mm": 7.823,
+  "projectile_mass_g": 14.256,
+  "cdm_id": "g7",
+  "ballistic_coefficient": 0.31,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

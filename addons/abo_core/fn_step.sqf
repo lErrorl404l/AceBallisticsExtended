@@ -4,6 +4,44 @@ private _extension = missionNamespace getVariable ["ABE_extension", "abe_ballist
 private _tracked = GVAR(trackedBullets);
 private _toRemove = [];
 
+// Sync game weather to extension environment (every 30s, lazy)
+if (isNil {GVAR(lastWeatherSync)} || {diag_tickTime - GVAR(lastWeatherSync) > 30.0}) then {
+    GVAR(lastWeatherSync) = diag_tickTime;
+    private _temp = 15.0;
+    private _humidity = 50.0;
+    private _windSpd = vectorMagnitude wind;
+    private _windDir = windDir;
+    private _gust = 0.0;
+    private _rain = overcast;
+    private _alt = getTerrainHeightASL (getPos player) select 2;
+    private _press = 1013.25;
+    private _cloudBase = 500;
+    if (GVAR(ace3Overridden)) then {
+        _temp = ([_alt max 0] call ace_weather_fnc_calculateTemperature) param [0, 15.0];
+        _humidity = ace_weather_currentHumidity;
+        _gust = ace_weather_currentGusts;
+        _press = ace_weather_currentPressure;
+    };
+    _extension callExtension [
+        "weather",
+        [
+            (_temp - 15.0) max -30 min 30,  // delta_temp_c
+            _humidity,                        // humidity_pct
+            ((_press / 1013.25) - 1.0) * 100, // delta_pressure_pct
+            _windSpd,                         // wind_speed_ms
+            _windDir,                         // wind_direction_deg
+            _gust / 20,                       // gust_intensity (normalized)
+            _rain * 50,                       // rain_mm_per_hour
+            0,                                // is_snowfall
+            0.15,                             // powder_temp_sensitivity
+            _temp,                            // ambient_temp_c
+            _cloudBase                        // cloud_base_m
+        ]
+    ];
+    diag_log format ["[ABE] Weather synced: T=%1 hum=%2 wind=%3/%4 rain=%5",
+        _temp, _humidity, _windSpd, _windDir, _rain];
+};
+
 // ACE3 compat: purge ABE-tracked bullets from ACE3's tracking hashmap
 // ACE3's ace_advanced_ballistics_fnc_handleFirePFH iterates
 // ace_advanced_ballistics_allBullets each frame and applies native

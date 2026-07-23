@@ -1,0 +1,8 @@
+{
+  "class": "ACE_580x42_DBP88_Ball",
+  "caliber_mm": 5.56,
+  "projectile_mass_g": 5.0,
+  "cdm_id": "g7",
+  "ballistic_coefficient": 0.21,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

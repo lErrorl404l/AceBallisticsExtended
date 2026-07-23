@@ -1,0 +1,13 @@
+{
+  "class": "sgun_KSG_F",
+  "caliber_mm": 18.53,
+  "barrel_length_mm": 470.0,
+  "rifling_twist_mm": 188.0,
+  "chamber_pressure_mpa": 350,
+  "cdm_id": "gg1",
+  "projectile_mass_g": 32.4,
+  "muzzle_velocity_ms": 800.0,
+  "zero_range_m": 100,
+  "effective_range_m": 800,
+  "notes": "Extracted from ACE3 compat_compat_aegis"
+}

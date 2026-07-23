@@ -1,0 +1,13 @@
+{
+  "class": "rhs_weap_m40a5",
+  "caliber_mm": 5.56,
+  "barrel_length_mm": 635.0,
+  "rifling_twist_mm": 304.8,
+  "chamber_pressure_mpa": 380,
+  "cdm_id": "gg1",
+  "projectile_mass_g": 3.43,
+  "muzzle_velocity_ms": 900.0,
+  "zero_range_m": 100,
+  "effective_range_m": 800,
+  "notes": "Extracted from ACE3 compat_compat_rhs_usf3 via caliber_mm"
+}

@@ -1,0 +1,13 @@
+{
+  "class": "gm_pm63_base",
+  "caliber_mm": 9.0,
+  "barrel_length_mm": 152.4,
+  "rifling_twist_mm": 254.0,
+  "chamber_pressure_mpa": 250,
+  "cdm_id": "gg1",
+  "projectile_mass_g": 7.45,
+  "muzzle_velocity_ms": 423.8,
+  "zero_range_m": 100,
+  "effective_range_m": 800,
+  "notes": "Extracted from ACE3 compat_compat_gm via caliber_mm"
+}

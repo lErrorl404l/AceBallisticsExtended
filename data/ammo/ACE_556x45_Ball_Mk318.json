@@ -1,0 +1,8 @@
+{
+  "class": "ACE_556x45_Ball_Mk318",
+  "caliber_mm": 5.69,
+  "projectile_mass_g": 4.0176,
+  "cdm_id": "g1",
+  "ballistic_coefficient": 0.307,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

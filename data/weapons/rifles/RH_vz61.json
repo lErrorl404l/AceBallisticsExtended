@@ -1,0 +1,13 @@
+{
+  "class": "RH_vz61",
+  "caliber_mm": 7.65,
+  "barrel_length_mm": 114.3,
+  "rifling_twist_mm": 406.4,
+  "chamber_pressure_mpa": 250,
+  "cdm_id": "gg1",
+  "projectile_mass_g": 6.3,
+  "muzzle_velocity_ms": 800.0,
+  "zero_range_m": 100,
+  "effective_range_m": 800,
+  "notes": "Extracted from ACE3 compat_compat_rh_de"
+}

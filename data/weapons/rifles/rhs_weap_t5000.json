@@ -1,0 +1,13 @@
+{
+  "class": "rhs_weap_t5000",
+  "caliber_mm": 8.585,
+  "barrel_length_mm": 698.5,
+  "rifling_twist_mm": 254.0,
+  "chamber_pressure_mpa": 250,
+  "cdm_id": "gg7",
+  "projectile_mass_g": 16.2,
+  "muzzle_velocity_ms": 922.5,
+  "zero_range_m": 100,
+  "effective_range_m": 800,
+  "notes": "Extracted from ACE3 compat_compat_rhs_afrf3 via caliber_mm"
+}

@@ -1,0 +1,8 @@
+{
+  "class": "B_127x54_Ball",
+  "caliber_mm": 13.01,
+  "projectile_mass_g": 48.2,
+  "cdm_id": "g1",
+  "ballistic_coefficient": 0.519,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

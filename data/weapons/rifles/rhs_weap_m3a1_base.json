@@ -1,0 +1,13 @@
+{
+  "class": "rhs_weap_m3a1_base",
+  "caliber_mm": 11.43,
+  "barrel_length_mm": 203.2,
+  "rifling_twist_mm": 406.0,
+  "chamber_pressure_mpa": 400,
+  "cdm_id": "gg1",
+  "projectile_mass_g": 20.7,
+  "muzzle_velocity_ms": 800.0,
+  "zero_range_m": 100,
+  "effective_range_m": 800,
+  "notes": "Extracted from ACE3 compat_compat_rhs_gref3"
+}

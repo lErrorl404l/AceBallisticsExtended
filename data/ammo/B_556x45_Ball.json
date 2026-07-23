@@ -1,0 +1,8 @@
+{
+  "class": "B_556x45_Ball",
+  "caliber_mm": 5.69,
+  "projectile_mass_g": 4.0176,
+  "cdm_id": "g7",
+  "ballistic_coefficient": 0.151,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}

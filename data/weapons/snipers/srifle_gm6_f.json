@@ -1,0 +1,13 @@
+{
+  "class": "srifle_GM6_F",
+  "caliber_mm": 12.954,
+  "barrel_length_mm": 730.0,
+  "rifling_twist_mm": 381.0,
+  "chamber_pressure_mpa": 350,
+  "cdm_id": "g1",
+  "projectile_mass_g": 41.93,
+  "muzzle_velocity_ms": 900.0,
+  "zero_range_m": 100,
+  "effective_range_m": 800,
+  "notes": "Extracted from ACE3 ace_ballistics. Caliber/BC from CfgAmmo::B_127x99_Ball. Chamber pressure estimated by caliber type."
+}

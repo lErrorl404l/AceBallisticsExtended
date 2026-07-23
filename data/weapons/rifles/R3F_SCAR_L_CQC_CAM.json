@@ -1,0 +1,13 @@
+{
+  "class": "R3F_SCAR_L_CQC_CAM",
+  "caliber_mm": 5.56,
+  "barrel_length_mm": 254.0,
+  "rifling_twist_mm": 101.6,
+  "chamber_pressure_mpa": 380,
+  "cdm_id": "gg1",
+  "projectile_mass_g": 3.43,
+  "muzzle_velocity_ms": 787.4,
+  "zero_range_m": 100,
+  "effective_range_m": 800,
+  "notes": "Extracted from ACE3 compat_compat_r3f via caliber_mm"
+}

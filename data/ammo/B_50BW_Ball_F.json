@@ -1,0 +1,8 @@
+{
+  "class": "B_50BW_Ball_F",
+  "caliber_mm": 12.7,
+  "projectile_mass_g": 21.64,
+  "cdm_id": "g1",
+  "ballistic_coefficient": 0.21,
+  "notes": "Extracted from ACE3 ace_ballistics CfgAmmo.hpp"
+}
