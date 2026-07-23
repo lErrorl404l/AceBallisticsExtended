@@ -3,6 +3,6 @@ name = "abe-validation"
 version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = [
-    "ballistics-engine>=0.25.0",
+    "ballistics-engine>=0.17.0",
     "py-ballisticcalc>=2.2.10",
 ]
