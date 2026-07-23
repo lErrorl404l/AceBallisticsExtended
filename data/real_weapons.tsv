@@ -2199,3 +2199,31 @@ tristar_kama_9_clone_compact_cz	Tristar	Kama	9mm Compact CZ Clone	9×19mm Parabe
 bryco_model_59_9_full_size	Bryco Arms	Model 59	9mm Full Size	9×19mm Parabellum	9.01	102	254	1	235	8.0	355	Manufacturer specifications	researched
 bryco_model_38_380	Bryco Arms	Model 38	.380 ACP	.380 ACP	9.0	76	406	1	130	6.0	284	Manufacturer specifications	researched
 bryco_model_48_380_compact	Bryco Arms	Model 48	.380 ACP Compact	.380 ACP	9.0	89	406	1	130	6.0	284	Manufacturer specifications	researched
+spencer_1860_carbine_civil_war_carbine_20	Spencer	1860 Carbine	Civil War carbine, 20" barrel	.56-56 Spencer	14.1	508	914	1	140	22.7	366	estimated (historical reference)	estimated
+spencer_1860_rifle_civil_war_rifle_30_b	Spencer	1860 Rifle	Civil War rifle, 30" barrel	.56-56 Spencer	14.1	762	914	1	140	24.0	396	estimated (historical reference)	estimated
+kelbly_panda_target_action_26_bar	Kelbly	Panda	Target action, 26" barrel, 6mm BR	6mm BR	6.17	660	203	1	340	6.8	915	estimated (reasonable default)	estimated
+kelbly_panda_target_action_26_bar	Kelbly	Panda	Target action, 26" barrel, 6mm Creedmoor	6mm Creedmoor	6.17	660	203	1	410	7.5	960	estimated (reasonable default)	estimated
+kelbly_panda_target_action_26_bar	Kelbly	Panda	Target action, 26" barrel, 6.5 Creedmoor	6.5 Creedmoor	6.71	660	203	1	415	9.1	870	estimated (reasonable default)	estimated
+kelbly_panda_target_action_22_bar	Kelbly	Panda	Target action, 22" barrel, .308 Winchester	.308 Winchester	7.82	559	254	1	415	11.3	800	estimated (reasonable default)	estimated
+kelbly_atlas_long_action_26_barre	Kelbly	Atlas	Long action, 26" barrel, 6.5 Creedmoor	6.5 Creedmoor	6.71	660	203	1	415	9.5	880	estimated (reasonable default)	estimated
+kelbly_atlas_long_action_26_barre	Kelbly	Atlas	Long action, 26" barrel, 6.5 PRC	6.5 PRC	6.71	660	203	1	415	9.1	915	estimated (reasonable default)	estimated
+kelbly_atlas_long_action_24_barre	Kelbly	Atlas	Long action, 24" barrel, .300 WSM	.300 Winchester Short Magnum	7.82	610	254	1	410	11.7	920	estimated (reasonable default)	estimated
+kelbly_atlas_long_action_26_barre	Kelbly	Atlas	Long action, 26" barrel, 7mm Rem Mag	7mm Remington Magnum	7.21	660	241	1	410	10.4	920	estimated (reasonable default)	estimated
+kelbly_atlas_long_action_26_barre	Kelbly	Atlas	Long action, 26" barrel, .300 PRC	.300 Precision Rifle Cartridge	7.82	660	229	1	410	13.7	880	estimated (reasonable default)	estimated
+kelbly_nanook_magnum_action_27_bar	Kelbly	Nanook	Magnum action, 27" barrel, .300 PRC	.300 Precision Rifle Cartridge	7.82	686	229	1	410	14.6	895	estimated (reasonable default)	estimated
+kelbly_nanook_magnum_action_27_bar	Kelbly	Nanook	Magnum action, 27" barrel, .338 Lapua	.338 Lapua Magnum	8.58	686	240	1	420	16.2	900	estimated (reasonable default)	estimated
+kelbly_nanook_magnum_action_27_bar	Kelbly	Nanook	Magnum action, 27" barrel, .300 Norma Mag	.300 Norma Magnum	7.82	686	229	1	420	14.9	875	estimated (reasonable default)	estimated
+kelbly_nanook_magnum_action_29_bar	Kelbly	Nanook	Magnum action, 29" barrel, .375 CheyTac	.375 CheyTac	9.53	737	254	1	440	22.7	990	estimated (reasonable default)	estimated
+lone_lone_star_15_ar-15_carbine_16_bar	Lone Star Ordnance	Lone Star 15	AR-15 carbine, 16" barrel, 5.56mm	5.56×45mm NATO	5.56	406	178	1	430	4.0	890	estimated (reasonable default)	estimated
+lone_lone_star_15_dmr_ar-15_dmr_18_barrel	Lone Star Ordnance	Lone Star 15 DMR	AR-15 DMR, 18" barrel, 5.56mm	5.56×45mm NATO	5.56	457	178	1	430	4.0	920	estimated (reasonable default)	estimated
+lone_lone_star_15_spr_ar-15_spr_20_barrel	Lone Star Ordnance	Lone Star 15 SPR	AR-15 SPR, 20" barrel, 5.56mm	5.56×45mm NATO	5.56	508	178	1	430	4.0	940	estimated (reasonable default)	estimated
+lone_lone_star_15_cqb_ar-15_pistol_105_bar	Lone Star Ordnance	Lone Star 15 CQB	AR-15 pistol, 10.5" barrel, 5.56mm	5.56×45mm NATO	5.56	267	178	1	430	4.0	770	estimated (reasonable default)	estimated
+lone_lone_star_15_ar-15_carbine_16_bar	Lone Star Ordnance	Lone Star 15	AR-15 carbine, 16" barrel, .300 BLK	.300 AAC Blackout	7.82	406	178	1	345	14.3	600	estimated (reasonable default)	estimated
+lone_lone_star_15_cqb_ar-15_pistol_105_bar	Lone Star Ordnance	Lone Star 15 CQB	AR-15 pistol, 10.5" barrel, .300 BLK	.300 AAC Blackout	7.82	267	178	1	345	14.3	530	estimated (reasonable default)	estimated
+lone_lone_star_15_ar-15_carbine_18_bar	Lone Star Ordnance	Lone Star 15	AR-15 carbine, 18" barrel, 6.5 Grendel	6.5mm Grendel	6.71	457	203	1	380	9.0	840	estimated (reasonable default)	estimated
+lone_lone_star_15_ar-15_carbine_18_bar	Lone Star Ordnance	Lone Star 15	AR-15 carbine, 18" barrel, 6mm ARC	6mm ARC	6.17	457	203	1	410	7.5	880	estimated (reasonable default)	estimated
+lone_lone_star_10_ar-10_carbine_16_bar	Lone Star Ordnance	Lone Star 10	AR-10 carbine, 16" barrel, .308 Win	7.62×51mm NATO	7.62	406	254	1	427	10.9	780	estimated (reasonable default)	estimated
+lone_lone_star_10_ar-10_dmr_18_barrel	Lone Star Ordnance	Lone Star 10	AR-10 DMR, 18" barrel, .308 Win	7.62×51mm NATO	7.62	457	254	1	427	11.3	800	estimated (reasonable default)	estimated
+lone_lone_star_10_ar-10_spr_20_barrel	Lone Star Ordnance	Lone Star 10	AR-10 SPR, 20" barrel, .308 Win	7.62×51mm NATO	7.62	508	254	1	427	11.3	820	estimated (reasonable default)	estimated
+lone_lone_star_10_ar-10_dmr_22_barrel	Lone Star Ordnance	Lone Star 10	AR-10 DMR, 22" barrel, 6.5 Creedmoor	6.5 Creedmoor	6.71	559	203	1	415	9.1	860	estimated (reasonable default)	estimated
+lone_mk_12_spr_ar-15_spr_18_barrel	Lone Star Ordnance	Mk 12 SPR	AR-15 SPR, 18" barrel, 5.56mm	5.56×45mm NATO	5.56	457	178	1	430	4.0	920	estimated (reasonable default)	estimated

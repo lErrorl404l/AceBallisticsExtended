@@ -45,7 +45,7 @@ pub use systems::{
 use std::ffi::{CStr, CString};
 use std::fmt::Write;
 use std::os::raw::c_char;
-use std::sync::OnceLock;
+use std::sync::{Mutex, OnceLock};
 
 // ── Version contract ──────────────────────────────────────────────────────────
 
@@ -71,6 +71,15 @@ struct AbeState {
 }
 
 static STATE: OnceLock<AbeState> = OnceLock::new();
+
+/// Global environment parameters.  Set via the `"weather"` command from SQF.
+/// When set, `handle_step` / `abe_step` use the full environment model
+/// (non-ISA atmosphere, wind profile, turbulence, precipitation) instead
+/// of the flat per-step parameters.
+///
+/// Wrapped in a `Mutex` so the state can be updated (weather) or cleared
+/// (env_reset) at runtime without reinitializing the extension.
+static ENV: Mutex<Option<atmosphere::EnvironmentParams>> = Mutex::new(None);
 
 fn get_state() -> &'static AbeState {
     STATE.get_or_init(|| AbeState {
@@ -243,35 +252,61 @@ fn handle_step(args: &[&str]) -> String {
     let _ = mass_g;
     let _ = caliber_mm;
 
-    let speed = (vel_x.powi(2) + vel_y.powi(2) + vel_z.powi(2)).sqrt();
+    // If environment is set, use it for density and wind instead of flat params
+    let env_guard = ENV.lock().ok();
+    let env = env_guard.as_ref().and_then(|g| g.as_ref());
+
+    // Wind: from environment profile, or fall back to per-step parameters
+    let (wfx, wfy, wfz) = if let Some(e) = env {
+        atmosphere::env_wind_components(altitude_m, e)
+    } else {
+        let wind_factor = atmosphere::wind_shear_factor(altitude_m);
+        (
+            wind_x * wind_factor,
+            wind_y * wind_factor,
+            wind_z * wind_factor,
+        )
+    };
+    let rel_vx = vel_x - wfx;
+    let rel_vy = vel_y - wfy;
+    let rel_vz = vel_z - wfz;
+    let rel_speed = (rel_vx.powi(2) + rel_vy.powi(2) + rel_vz.powi(2)).sqrt();
+
     let sos = exterior::speed_of_sound(temp_c);
-    let mach = if speed > 0.0 { speed / sos } else { 0.0 };
+    let mach = if rel_speed > 0.0 {
+        rel_speed / sos
+    } else {
+        0.0
+    };
     let cd = drag::get_cd(cdm_id, mach)
         * drag::boat_tail_drag_factor(boat_tail_angle, boat_tail_length, mach);
 
-    let air_density = if altitude_m > 0.0 && (temp_c - 15.0).abs() < 0.1 {
+    let air_density = if let Some(e) = env {
+        atmosphere::env_density(altitude_m, e)
+    } else if altitude_m > 0.0 && (temp_c - 15.0).abs() < 0.1 {
         atmosphere::density_from_altitude(altitude_m, temp_c)
     } else {
         density
     };
 
     // BC-based drag: a = 0.5 * ρ * v² * Cd / (BC * K)
-    // K converts from BC in lb/in² to SI (kg/m²) and includes the π/4
-    // cross-sectional area factor from a = 0.5·ρ·v²·Cd·(π·d²/4)/(BC_SI·m):
-    //   K = (kg/lb) / (m/in)² * (4/π) = 0.453592 / 0.0254² * 4/π ≈ 895.3
+    // K = 0.453592 / 0.0254² * 4/π ≈ 895.3
     const BC_CONV: f64 = 0.453592 / (0.0254 * 0.0254) * (4.0 / std::f64::consts::PI);
     let bc_metric = bc * BC_CONV;
-    let drag_decel = if speed > 0.001 && bc_metric > 0.001 {
-        0.5 * air_density * speed * speed * cd / bc_metric
+    let drag_decel = if rel_speed > 0.001 && bc_metric > 0.001 {
+        0.5 * air_density * rel_speed * rel_speed * cd / bc_metric
     } else {
         0.0
     };
 
-    let wind_factor = atmosphere::wind_shear_factor(altitude_m);
-    let vx = vel_x - drag_decel * (vel_x / speed.max(0.001)) * dt_s - wind_x * wind_factor;
-    let vy = vel_y - drag_decel * (vel_y / speed.max(0.001)) * dt_s - wind_y * wind_factor;
-    let vz = vel_z - drag_decel * (vel_z / speed.max(0.001)) * dt_s + atmosphere::GRAVITY * dt_s
-        - wind_z * wind_factor;
+    // Drag direction is opposite to relative velocity; no separate wind term
+    let rs = rel_speed.max(0.001);
+    let ax = -drag_decel * (rel_vx / rs);
+    let ay = -drag_decel * (rel_vy / rs);
+    let az = -drag_decel * (rel_vz / rs);
+    let vx = vel_x + ax * dt_s;
+    let vy = vel_y + ay * dt_s;
+    let vz = vel_z + az * dt_s + atmosphere::GRAVITY * dt_s;
 
     let new_speed = (vx.powi(2) + vy.powi(2) + vz.powi(2)).sqrt();
     let new_mach = if new_speed > 0.0 {
@@ -437,6 +472,65 @@ fn handle_wound(args: &[&str]) -> String {
         fmt_f64(result.energy_deposited_j),
         fmt_f64(if result.yawed { 1.0 } else { 0.0 }),
     )
+}
+
+fn handle_weather(args: &[&str]) -> String {
+    if !get_state().initialized {
+        return "-1".into();
+    }
+
+    // Expect 11 positional args:
+    // [0] delta_temp_c: temperature offset from ISA (°C)
+    // [1] humidity_pct: relative humidity (0-100 %)
+    // [2] delta_pressure_pct: pressure offset from ISA (%)
+    // [3] wind_speed_ms: wind speed at reference height (m/s)
+    // [4] wind_direction_deg: wind FROM direction (meteorological, 0=from north)
+    // [5] gust_intensity: turbulence intensity (0.0=calm, 1.0=severe)
+    // [6] rain_mm_per_hour: rainfall intensity (mm/hr, 0=none)
+    // [7] is_snowfall: 1 for snow, 0 for rain
+    // [8] powder_temp_sensitivity: % MV change per °C deviation from 21°C
+    // [9] ambient_temp_c: ambient temperature for precipitation phase
+    // [10] cloud_base_m: cloud base altitude (m) for precipitation model
+
+    let set = |i: usize| -> f64 { args.get(i).and_then(|s| s.parse().ok()).unwrap_or(0.0) };
+
+    let params = atmosphere::EnvironmentParams {
+        non_isa: atmosphere::NonIsaAtmosphere {
+            delta_temp_c: set(0),
+            humidity_pct: set(1).clamp(0.0, 100.0),
+            delta_pressure_pct: set(2),
+        },
+        wind: atmosphere::WindProfile {
+            surface_wind_ms: set(3).abs(),
+            wind_direction_deg: set(4),
+            profile_exponent: atmosphere::POWER_LAW_EXPONENT_OPEN,
+            reference_height_m: 10.0,
+        },
+        turbulence: atmosphere::TurbulenceParams {
+            intensity: set(5).clamp(0.0, 1.0),
+            scale_length_m: 100.0,
+            gust_amplitude_ms: set(3).abs() * 0.15,
+        },
+        precipitation: atmosphere::PrecipitationParams {
+            rain_rate_mm_per_hour: set(6).max(0.0),
+            is_snowfall: set(7) > 0.5,
+            cloud_base_altitude_m: set(10).max(0.0),
+            temperature_c: set(9),
+        },
+        powder_temp_sensitivity: set(8).clamp(0.0, 1.0),
+    };
+
+    *ENV.lock().unwrap() = Some(params);
+    "1".into()
+}
+
+fn handle_env_reset() -> String {
+    if !get_state().initialized {
+        return "-1".into();
+    }
+    // Clear ENV — step will fall back to per-step parameters
+    *ENV.lock().unwrap() = None;
+    "1".into()
 }
 
 fn handle_zeroing(args: &[&str]) -> String {
@@ -743,6 +837,8 @@ pub unsafe extern "C" fn RVExtensionArgs(
         "resolve_weapon" => handle_resolve_weapon(&parsed),
         "resolve_clothing" => handle_resolve_clothing(&parsed),
         "register_override" => handle_register_override(&parsed),
+        "weather" => handle_weather(&parsed),
+        "env_reset" => handle_env_reset(),
         other => format!("unknown: {}", other),
     };
 
@@ -1063,14 +1159,28 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
         Err(_) => "g7",
     };
 
-    // ponytail: compute speed once — was duplicated for Mach and drag
-    let speed = (params.vel_x.powi(2) + params.vel_y.powi(2) + params.vel_z.powi(2)).sqrt();
+    // Wind couples through relative velocity in the drag equation.
+    // Wind factor scales the wind speed at the projectile's altitude
+    // (log-law shear profile). This is a SCALING FACTOR only — the wind
+    // itself enters the drag calculation via the RELATIVE velocity.
+    let wind_factor = atmosphere::wind_shear_factor(params.altitude_m);
+    let wf_x = params.wind_x * wind_factor;
+    let wf_y = params.wind_y * wind_factor;
+    let wf_z = params.wind_z * wind_factor;
 
-    // Cache speed of sound: temp_c is constant per step, used for both current and new Mach
+    // Relative velocity: projectile velocity minus wind velocity
+    let rel_vx = params.vel_x - wf_x;
+    let rel_vy = params.vel_y - wf_y;
+    let rel_vz = params.vel_z - wf_z;
+    let rel_speed = (rel_vx.powi(2) + rel_vy.powi(2) + rel_vz.powi(2)).sqrt();
+
+    // Speed of sound and Mach from RELATIVE velocity (wind changes airspeed)
     let sos = exterior::speed_of_sound(params.temp_c);
-
-    // Get drag coefficient at current Mach
-    let mach = if speed > 0.0 { speed / sos } else { 0.0 };
+    let mach = if rel_speed > 0.0 {
+        rel_speed / sos
+    } else {
+        0.0
+    };
 
     let cd = drag::get_cd(cdm_str, mach);
 
@@ -1087,11 +1197,14 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
     // BC varies with Mach — interpolate through transonic region
     let effective_bc = drag::bc_at_mach(params.bc, mach, cdm_str);
     let bc_metric = effective_bc * BC_CONV;
-    let mut drag_decel = if speed > 0.001 && bc_metric > 0.001 {
-        0.5 * density * speed * speed * cd / bc_metric
+    let mut drag_decel = if rel_speed > 0.001 && bc_metric > 0.001 {
+        0.5 * density * rel_speed * rel_speed * cd / bc_metric
     } else {
         0.0
     };
+
+    // Absolute velocity (not relative to wind) for gyroscopic/yaw calculations
+    let abs_speed = (params.vel_x.powi(2) + params.vel_y.powi(2) + params.vel_z.powi(2)).sqrt();
 
     // ── 4-DOF yaw-of-repose induced drag ──────────────────────────────────────
     // Gate: only apply yaw-induced drag when gyroscopically stable (Sg ≥ 1.0).
@@ -1104,11 +1217,11 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
     const REF_SPEED: f64 = 930.0;
     const REF_DENSITY: f64 = 1.225;
 
-    let sg = if params.mass_g > 0.0 && speed > 0.0 {
+    let sg = if params.mass_g > 0.0 && abs_speed > 0.0 {
         REF_SG
             * (params.caliber_mm / REF_CAL).powi(2)
             * (REF_MASS / params.mass_g)
-            * (REF_SPEED / speed)
+            * (REF_SPEED / abs_speed)
             * (REF_DENSITY / density.max(0.01))
     } else {
         0.0
@@ -1118,9 +1231,9 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
 
     // Yaw of repose (radians) — simplified Miller yaw-of-repose model.
     // δ_repose ∝ sin(θ) / (Sg · v) where θ = trajectory angle from horizontal.
-    let yaw_repose = if sg > 0.1 && speed > 0.0 {
-        let sin_theta = (params.vel_z.abs() / speed).min(1.0);
-        sin_theta * (params.caliber_mm / speed) * 20.0 / sg
+    let yaw_repose = if sg > 0.1 && abs_speed > 0.0 {
+        let sin_theta = (params.vel_z.abs() / abs_speed).min(1.0);
+        sin_theta * (params.caliber_mm / abs_speed) * 20.0 / sg
     } else {
         0.0
     };
@@ -1139,13 +1252,13 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
 
     // ── Magnus force (lateral drift from spin) ─────────────────────────────────
     // Magnus acceleration acts on the y-z plane perpendicular to the spin axis.
-    let (mag_y, mag_z) = if params.twist_rate_m > 0.0 && speed > 10.0 && params.mass_g > 0.0 {
-        let spin_rate = 2.0 * std::f64::consts::PI * speed / params.twist_rate_m;
+    let (mag_y, mag_z) = if params.twist_rate_m > 0.0 && abs_speed > 10.0 && params.mass_g > 0.0 {
+        let spin_rate = 2.0 * std::f64::consts::PI * abs_speed / params.twist_rate_m;
         let mass_kg = params.mass_g / 1000.0;
         let caliber_m = params.caliber_mm / 1000.0;
         dof::magnus_acceleration(
             density,
-            speed,
+            rel_speed,
             caliber_m,
             mass_kg,
             spin_rate,
@@ -1156,21 +1269,18 @@ pub extern "C" fn abe_step(params: &StepParams, result: &mut BulletState) -> i32
         (0.0, 0.0)
     };
 
-    // Guard against division by zero: speed must never be 0.0 in the velocity update.
-    // f64::MIN_POSITIVE is the smallest representable positive normal (~2.2e-308).
-    let ss = speed.max(f64::MIN_POSITIVE);
-    let vx = params.vel_x - drag_decel * (params.vel_x / ss) * params.dt_s;
-    let vy = params.vel_y - drag_decel * (params.vel_y / ss) * params.dt_s + mag_y * params.dt_s;
-    let vz = params.vel_z - drag_decel * (params.vel_z / ss) * params.dt_s + mag_z * params.dt_s;
+    // Drag acts in the direction opposite to RELATIVE velocity.
+    // Wind is already embedded in rel_v → no separate wind term in velocity update.
+    let rs = rel_speed.max(f64::MIN_POSITIVE);
+    let ax = -drag_decel * (rel_vx / rs);
+    let ay = -drag_decel * (rel_vy / rs);
+    let az = -drag_decel * (rel_vz / rs);
 
-    // Gravity
-    let vz = vz + atmosphere::GRAVITY * params.dt_s;
-
-    // Wind (relative velocity) with altitude-based wind shear
-    let wind_factor = atmosphere::wind_shear_factor(params.altitude_m);
-    let vx = vx - params.wind_x * wind_factor;
-    let vy = vy - params.wind_y * wind_factor;
-    let vz = vz - params.wind_z * wind_factor;
+    // Update velocity (inertial frame): v_new = v_old + a_drag * dt + other forces
+    let vx = params.vel_x + ax * params.dt_s;
+    let vy = params.vel_y + ay * params.dt_s + mag_y * params.dt_s;
+    let vz =
+        params.vel_z + az * params.dt_s + mag_z * params.dt_s + atmosphere::GRAVITY * params.dt_s;
 
     // Position update
     let new_speed = (vx.powi(2) + vy.powi(2) + vz.powi(2)).sqrt();
@@ -1371,7 +1481,11 @@ pub extern "C" fn abe_impact(params: &ImpactParams, result: &mut ImpactResult) -
 /// Safe to call before `abe_init` (will return 0).
 #[unsafe(no_mangle)]
 pub extern "C" fn abe_health() -> i32 {
-    if get_state().initialized { 1 } else { 0 }
+    if get_state().initialized {
+        1
+    } else {
+        0
+    }
 }
 
 // ── IRL Weapon/Ammo Resolution C ABI ──────────────────────────────────────────

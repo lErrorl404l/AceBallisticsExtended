@@ -5,7 +5,7 @@
 // Override mechanism: SQF calls abe_register_override() at init to store
 // mod-provided or ACE3 values above these built-in IRL specs.
 
-use crate::generated::{I4L_ARMOR_PLATES, I4L_MATERIALS, IR_CLOTHING, IRL_AMMO, IRL_WEAPONS};
+use crate::generated::{I4L_ARMOR_PLATES, I4L_MATERIALS, IRL_AMMO, IRL_WEAPONS, IR_CLOTHING};
 use std::collections::HashMap;
 use std::sync::{Mutex, OnceLock};
 

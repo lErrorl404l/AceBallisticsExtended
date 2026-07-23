@@ -22,15 +22,15 @@
 
 // ── Re-exports from submodules ────────────────────────────────────────────────
 // Keep public API paths unchanged: crate::effects::soft_tissue::Type still works.
-pub use crate::effects::babt::{BABTResult, evaluate_babt, nij_bfd_compliant};
-pub use crate::effects::bone_penetration::{BoneImpactResult, BoneType, evaluate_bone_impact};
-pub use crate::effects::hydraulic_shock::{HydraulicShockResult, evaluate_hydraulic_shock};
+pub use crate::effects::babt::{evaluate_babt, nij_bfd_compliant, BABTResult};
+pub use crate::effects::bone_penetration::{evaluate_bone_impact, BoneImpactResult, BoneType};
+pub use crate::effects::hydraulic_shock::{evaluate_hydraulic_shock, HydraulicShockResult};
 pub use crate::effects::nijij_reference::{
-    NIJLevel, NIJThreat, STANAGLevel, STANAGThreat, nij_threat, stanag_threat,
+    nij_threat, stanag_threat, NIJLevel, NIJThreat, STANAGLevel, STANAGThreat,
 };
 pub use crate::effects::trajectory_data::{
-    AmmoReference, TrajectorySample, TrajectoryValidationResult, ammo_references,
-    check_trajectory_monotonic, compute_energy_at_range, interpolate_trajectory,
+    ammo_references, check_trajectory_monotonic, compute_energy_at_range, interpolate_trajectory,
+    AmmoReference, TrajectorySample, TrajectoryValidationResult,
 };
 
 // ── Physical constants ────────────────────────────────────────────────────────

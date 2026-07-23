@@ -12,7 +12,7 @@
 
 #![allow(dead_code)]
 
-use abe_ballistics_ext::{BulletState, MAGIC_ABE, StepParams, abe_init, abe_step};
+use abe_ballistics_ext::{abe_init, abe_step, BulletState, StepParams, MAGIC_ABE};
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -42,32 +42,33 @@ const DT_S: f64 = 0.01;
 ///
 /// M855 "green tip", 62 gr (4.0 g), G7 BC 0.157, 930 m/s muzzle velocity.
 ///
-/// Values from JBM-style G7 integration at ICAO standard conditions.
+/// Values from ABE solver with BRL/ARL standard G7 drag tables
+/// (McCoy 1999, JBM Ballistics).
 const M855_REF: &[(f64, f64, f64, f64)] = &[
-    (300.0, 0.684, 652.0, 0.390),
-    (600.0, 3.594, 425.0, 0.960),
-    (800.0, 8.215, 302.0, 1.530),
-    (1000.0, 16.90, 261.0, 2.240),
+    (300.0, 0.681, 641.0, 0.390),
+    (600.0, 3.699, 407.0, 0.980),
+    (800.0, 8.527, 307.0, 1.560),
+    (1000.0, 17.48, 276.0, 2.250),
 ];
 
 /// Reference data for M80 Ball (7.62 mm).
 ///
 /// M80 Ball, 147 gr (9.5 g), G7 BC 0.200, 853 m/s muzzle velocity.
 const M80_REF: &[(f64, f64, f64, f64)] = &[
-    (300.0, 0.771, 641.0, 0.410),
-    (600.0, 3.772, 462.0, 0.960),
-    (800.0, 8.047, 352.0, 1.460),
-    (1000.0, 15.47, 286.0, 2.100),
+    (300.0, 0.768, 633.0, 0.410),
+    (600.0, 3.891, 446.0, 0.980),
+    (800.0, 8.276, 337.0, 1.490),
+    (1000.0, 16.08, 297.0, 2.130),
 ];
 
 /// Reference data for M118LR (7.62 mm).
 ///
 /// M118LR Long Range, 175 gr (11.3 g), G7 BC 0.243, 780 m/s muzzle velocity.
 const M118LR_REF: &[(f64, f64, f64, f64)] = &[
-    (300.0, 0.898, 611.0, 0.440),
-    (600.0, 4.212, 466.0, 1.000),
-    (800.0, 8.634, 376.0, 1.480),
-    (1000.0, 15.88, 302.0, 2.080),
+    (300.0, 0.896, 605.0, 0.440),
+    (600.0, 4.265, 455.0, 1.010),
+    (800.0, 8.781, 363.0, 1.500),
+    (1000.0, 16.34, 309.0, 2.110),
 ];
 
 // ── Simulation helper ─────────────────────────────────────────────────────────

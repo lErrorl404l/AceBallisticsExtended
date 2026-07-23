@@ -8,7 +8,7 @@
 //   - ISO 2533:1975
 //   - MIL-STD-210C
 
-#![allow(dead_code)] // ponytail: non-ISA, humidity, precipitation, and wind models are forward-looking
+// Environment module now fully wired — no dead code annotation needed.
 
 pub const GRAVITY: f64 = 9.80665; // m/s²
 pub const R_SPECIFIC: f64 = 287.058; // J/(kg·K) - specific gas constant for air
@@ -120,8 +120,8 @@ pub fn density_from_altitude(altitude_m: f64, temp_c: f64) -> f64 {
 
 // ── Non-ISA Atmosphere ─────────────────────────────────────────────────────────
 
-#[allow(dead_code)] // ponytail: non-ISA atmosphere model, wire when weather system is integrated
 /// Non-ISA atmosphere parameters representing deviations from the standard model.
+#[derive(Debug, Clone, Copy)]
 pub struct NonIsaAtmosphere {
     /// Temperature offset from ISA at any altitude (°C). Positive = warmer.
     pub delta_temp_c: f64,
@@ -131,8 +131,8 @@ pub struct NonIsaAtmosphere {
     pub humidity_pct: f64,
 }
 
-#[allow(dead_code)] // ponytail: gust/turbulence, wire when wind variation is needed
 /// Turbulence parameters for gust and eddy modeling.
+#[derive(Debug, Clone)]
 pub struct TurbulenceParams {
     /// Turbulence intensity (0.0 = calm, 1.0 = severe).
     pub intensity: f64,
@@ -142,10 +142,10 @@ pub struct TurbulenceParams {
     pub gust_amplitude_ms: f64,
 }
 
-#[allow(dead_code)] // ponytail: wind profile model, wire when altitude-varying wind needed
 /// Wind profile defined by a power-law model.
 ///
 /// U(z) = U_ref * (z / z_ref)^α
+#[derive(Debug, Clone)]
 pub struct WindProfile {
     /// Wind speed at reference height (m/s).
     pub surface_wind_ms: f64,
@@ -157,7 +157,6 @@ pub struct WindProfile {
     pub reference_height_m: f64,
 }
 
-#[allow(dead_code)] // ponytail: combined weather state, wire when full weather ingestion is ready
 /// Combined weather state at a given altitude.
 pub struct WeatherState {
     /// Altitude (m).
@@ -178,7 +177,6 @@ pub struct WeatherState {
 
 // ── Humidity Correction Functions ──────────────────────────────────────────────
 
-#[allow(dead_code)] // ponytail: humidity correction, wire when weather data is available
 /// Compute air density corrected for water vapour (kg/m³).
 ///
 /// Moist air is lighter than dry air at the same temperature and pressure
@@ -264,7 +262,6 @@ const MAGNUS_B: f64 = 243.04;
 /// Saturation vapour pressure (Pa) via the improved Magnus formula.
 ///
 /// Reference: Alduchov & Eskridge (1996), J. Appl. Meteor.
-#[allow(dead_code)] // ponytail: used by humidity correction, dead when humidity not wired
 fn saturation_vapor_pressure(temp_c: f64) -> f64 {
     610.94 * ((MAGNUS_A * temp_c) / (temp_c + MAGNUS_B)).exp()
 }
@@ -372,6 +369,7 @@ pub enum CaliberClass {
 ///   - Slight density change from airborne water (negligible below
 ///     cloud base — the virtual-temperature correction already
 ///     handles water vapour)
+#[derive(Debug, Clone)]
 pub struct PrecipitationParams {
     /// Rainfall intensity (mm/hour).  Range: 0–150 mm/hr.
     ///
@@ -511,6 +509,125 @@ pub fn rain_drift_velocity(
     }
     let vt = rain_drop_terminal_velocity(rain_params);
     crosswind_speed_ms * (vt / bullet_velocity_ms) * 0.01
+}
+
+// ── EnvironmentParams — unified environment bundle ─────────────────────────────
+
+/// Bundles all environment parameters for the trajectory solver.
+///
+/// When set via `OnceLock` in the extension state, `handle_step` and
+/// `abe_step` use this to compute density (with non-ISA, humidity),
+/// wind (profile + turbulence), and precipitation drag modifiers
+/// instead of relying on flat per-step parameters.
+///
+/// # Default
+/// `EnvironmentParams::default()` returns ICAO standard atmosphere,
+/// calm wind, dry, no precipitation.
+#[derive(Debug, Clone)]
+pub struct EnvironmentParams {
+    /// Non-ISA atmosphere offsets (temperature, pressure, humidity).
+    pub non_isa: NonIsaAtmosphere,
+    /// Wind profile (speed, direction, power-law exponent).
+    pub wind: WindProfile,
+    /// Turbulence / gust parameters.
+    pub turbulence: TurbulenceParams,
+    /// Precipitation (rain/snow) parameters.
+    pub precipitation: PrecipitationParams,
+    /// Powder temperature sensitivity (% change in MV per °C from 21 °C).
+    pub powder_temp_sensitivity: f64,
+}
+
+impl Default for EnvironmentParams {
+    fn default() -> Self {
+        Self {
+            non_isa: NonIsaAtmosphere {
+                delta_temp_c: 0.0,
+                delta_pressure_pct: 0.0,
+                humidity_pct: 0.0,
+            },
+            wind: WindProfile {
+                surface_wind_ms: 0.0,
+                wind_direction_deg: 0.0,
+                profile_exponent: POWER_LAW_EXPONENT_OPEN,
+                reference_height_m: 10.0,
+            },
+            turbulence: TurbulenceParams {
+                intensity: 0.0,
+                scale_length_m: 100.0,
+                gust_amplitude_ms: 0.0,
+            },
+            precipitation: PrecipitationParams {
+                rain_rate_mm_per_hour: 0.0,
+                is_snowfall: false,
+                cloud_base_altitude_m: 1000.0,
+                temperature_c: 15.0,
+            },
+            powder_temp_sensitivity: 0.0,
+        }
+    }
+}
+
+/// Compute air density from environment params at a given altitude (kg/m³).
+///
+/// Uses the non-ISA atmosphere model with temperature offset, pressure
+/// offset, and humidity correction.  Falls back to standard ISA density
+/// when the environment is zero-offset (the non-ISA functions naturally
+/// return standard ISA values for zero offsets).
+pub fn env_density(altitude_m: f64, env: &EnvironmentParams) -> f64 {
+    density_non_isa(altitude_m, &env.non_isa)
+}
+
+/// Compute wind components at projectile altitude from environment params.
+///
+/// Returns (wind_x, wind_y, wind_z) in the ARMA 3 coordinate frame:
+///   +x = forward (downrange), +y = right, +z = down.
+///
+/// The wind direction convention: direction the wind comes FROM
+/// (meteorological convention), in degrees from north:
+///   0° = from north (+y), 90° = from east (-x), 180° = from south (-y),
+///   270° = from west (+x).
+///
+/// ARMA 3 convention: +x is north, +y is east.
+/// With ARMA 3's typical firing direction being +x:
+///   Crosswind component (y): wind_speed * sin(direction_rad)
+///   Head/tail component (x): wind_speed * cos(direction_rad)
+///   Vertical (z): typically 0 for surface wind
+pub fn env_wind_components(altitude_m: f64, env: &EnvironmentParams) -> (f64, f64, f64) {
+    let wind_speed = wind_velocity(&env.wind, altitude_m);
+    let gust = gust_velocity(&env.turbulence);
+
+    // Include gust as additive to wind speed (deterministic, same direction)
+    let total_speed = wind_speed + gust;
+
+    if total_speed.abs() < 1e-9 {
+        return (0.0, 0.0, 0.0);
+    }
+
+    // Convert direction from meteorological (from-north) to ARMA 3 components
+    // +x = north, +y = east, +z = down
+    let dir_rad = env.wind.wind_direction_deg.to_radians();
+    let wx = total_speed * dir_rad.cos(); // north-south component
+    let wy = total_speed * dir_rad.sin(); // east-west component
+
+    (wx, wy, 0.0)
+}
+
+/// Apply precipitation BC adjustment for the trajectory solver.
+///
+/// Returns the effective BC after rain/snow drag penalty.
+/// When no precipitation or negligible rain, returns the input BC unchanged.
+pub fn env_precipitation_bc(bc: f64, caliber_mm: f64, env: &EnvironmentParams) -> f64 {
+    if env.precipitation.rain_rate_mm_per_hour <= 0.0 {
+        return bc;
+    }
+
+    let caliber = if caliber_mm >= 7.0 {
+        CaliberClass::Rifle
+    } else {
+        CaliberClass::Pistol
+    };
+
+    precipitation_unadjusted_bc(&env.precipitation, bc, caliber)
 }
 
 // ── Tests ─────────────────────────────────────────────────────────────────────
