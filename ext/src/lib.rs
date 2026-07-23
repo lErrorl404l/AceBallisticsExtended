@@ -533,6 +533,42 @@ fn handle_env_reset() -> String {
     "1".into()
 }
 
+fn handle_env_query() -> String {
+    if !get_state().initialized {
+        return "-1".into();
+    }
+    let guard = ENV.lock().unwrap();
+    match guard.as_ref() {
+        None => "none".into(),
+        Some(e) => {
+            format!(
+                "[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]",
+                fmt_f64(e.non_isa.delta_temp_c),
+                fmt_f64(e.non_isa.humidity_pct),
+                fmt_f64(e.non_isa.delta_pressure_pct),
+                fmt_f64(e.wind.surface_wind_ms),
+                fmt_f64(e.wind.wind_direction_deg),
+                fmt_f64(e.wind.profile_exponent),
+                fmt_f64(e.wind.reference_height_m),
+                fmt_f64(e.turbulence.intensity),
+                fmt_f64(e.turbulence.scale_length_m),
+                fmt_f64(e.turbulence.gust_amplitude_ms),
+                fmt_f64(e.precipitation.rain_rate_mm_per_hour),
+                if e.precipitation.is_snowfall {
+                    "1"
+                } else {
+                    "0"
+                },
+                fmt_f64(e.precipitation.cloud_base_altitude_m),
+                fmt_f64(e.precipitation.temperature_c),
+                fmt_f64(e.powder_temp_sensitivity),
+                "ABE EnvironmentParams",
+                "live",
+            )
+        },
+    }
+}
+
 fn handle_zeroing(args: &[&str]) -> String {
     if !get_state().initialized {
         return "-1".into();
@@ -837,6 +873,7 @@ pub unsafe extern "C" fn RVExtensionArgs(
         "resolve_weapon" => handle_resolve_weapon(&parsed),
         "resolve_clothing" => handle_resolve_clothing(&parsed),
         "register_override" => handle_register_override(&parsed),
+        "env_query" => handle_env_query(),
         "weather" => handle_weather(&parsed),
         "env_reset" => handle_env_reset(),
         other => format!("unknown: {}", other),

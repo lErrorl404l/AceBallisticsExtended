@@ -188,13 +188,14 @@ proptest! {
 
     #[test]
     fn cd_decreases_after_transonic_peak(
-        peak_mach in (0.95f64..1.05),
         supersonic_mach in (1.6f64..4.0),
     ) {
-        let cd_peak = get_cd("g7", peak_mach);
+        // With full BRL tables, the G7 transonic peak is at M≈1.05 (Cd≈0.404).
+        // Cd at M=1.05 is the peak; Cd at M>1.6 should be strictly lower.
+        let cd_peak = get_cd("g7", 1.05);
         let cd_sup = get_cd("g7", supersonic_mach);
         prop_assert!(cd_sup < cd_peak,
-            "Cd should drop after transonic peak: M={peak_mach:.2} Cd={cd_peak:.4} \
+            "Cd should drop after transonic peak: M=1.05 Cd={cd_peak:.4} \
              vs M={supersonic_mach:.1} Cd={cd_sup:.4}");
     }
 

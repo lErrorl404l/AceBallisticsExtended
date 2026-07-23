@@ -12,7 +12,7 @@
 
 #![allow(dead_code)]
 
-use abe_ballistics_ext::{BulletState, MAGIC_ABE, StepParams, abe_init, abe_step};
+use abe_ballistics_ext::{abe_init, abe_step, BulletState, StepParams, MAGIC_ABE};
 
 const ABE_API_VERSION: u32 = 1;
 
@@ -731,25 +731,26 @@ fn extreme_crosswind() {
         y_calm,
     );
 
-    // ABE step applies wind as a direct velocity subtraction: `vy -= wind_y * wind_factor`.
-    // A positive wind_y pushes the bullet in the -y direction → negative y-drift.
-    // This is correct: wind_y = air velocity toward +y, so bullet slows in +y.
+    // Drag acts on the bullet's velocity RELATIVE to the moving air.
+    // A +20 m/s crosswind (air moving in +y direction) means the bullet
+    // experiences relative wind in -y → drag force in +y → bullet drifts +y.
+    // This is correct physical wind coupling via the drag equation.
     assert!(
-        y_wind < -1.0,
-        "wind: +20 wind_y y-drift = {:.2} m (expect < -1 m, got positive means wrong sign)",
+        y_wind > 1.0,
+        "wind: +20 wind_y y-drift = {:.2} m (expect > 1 m, same direction as wind)",
         y_wind,
     );
 
-    // -20 wind_y → positive y-drift (opposite direction)
+    // -20 wind_y → negative y-drift (same direction as wind)
     assert!(
-        y_wind_neg > 1.0,
-        "wind: -20 wind_y y-drift = {:.2} m (expect > 1 m, got negative means wrong sign)",
+        y_wind_neg < -1.0,
+        "wind: -20 wind_y y-drift = {:.2} m (expect < -1 m, same direction as wind)",
         y_wind_neg,
     );
 
-    // Crosswind drift should be OPPOSITE sign to wind parameter
+    // Crosswind drift should be SAME sign as wind parameter
     assert!(
-        y_wind < 0.0 && y_wind_neg > 0.0,
+        y_wind > 0.0 && y_wind_neg < 0.0,
         "wind: direction check: +wind={y_wind:.2}, -wind={y_wind_neg:.2}",
     );
 
