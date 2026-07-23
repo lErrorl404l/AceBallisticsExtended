@@ -30,11 +30,11 @@ jobs:
             os: windows-latest
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659 # v1.17.0
         with:
           targets: ${{ matrix.target }}
-      - uses: Swatinem/rust-cache@v2
+      - uses: Swatinem/rust-cache@23869a5bd66c73db3c0ac40331f3206eb23791dc # v2.9.1
         with:
           workspaces: ${{ env.EXT_SRC }}
           key: ${{ matrix.target }}
@@ -45,7 +45,7 @@ jobs:
       - run: cargo test --all-features
         working-directory: ${{ env.EXT_SRC }}
         if: matrix.os == 'windows-latest'
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: abe_ext_${{ matrix.target }}
           path: ${{ env.EXT_SRC }}/target/${{ matrix.target }}/release/abe_ballistics_ext${{ matrix.ext }}
@@ -55,24 +55,24 @@ jobs:
     needs: [build]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - run: curl -sSf https://hemtt.dev/install.sh | sh
       - run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: Download Linux ext
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: abe_ext_x86_64-unknown-linux-gnu
           path: ext/
 
       - name: Download Windows ext (mingw)
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: abe_ext_x86_64-pc-windows-gnu
           path: ext/
 
       - name: Download Windows ext (msvc)
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: abe_ext_x86_64-pc-windows-msvc
           path: ext/
@@ -84,7 +84,7 @@ jobs:
           mkdir -p dist
           (cd .hemttout/build && zip -r ../../dist/abe-${{ github.ref_name }}.zip .)
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: abe-mod-${{ github.ref_name }}
           path: dist/abe-${{ github.ref_name }}.zip
@@ -96,7 +96,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: abe-mod-${{ github.ref_name }}
           path: release/
@@ -111,7 +111,7 @@ jobs:
             echo "prerelease=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@fe965f7af51af5f2602596916f38a38df2e33de0 # v3.0.2
         with:
           name: ABE ${{ github.ref_name }}
           files: release/*
@@ -124,7 +124,7 @@ jobs:
     needs: [package]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: abe-mod-${{ github.ref_name }}
           path: release/
