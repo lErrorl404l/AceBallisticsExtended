@@ -1,0 +1,2201 @@
+row	weapon_id	manufacturer	model	cartridge	grade	severity	issues
+2	m1_garand	Springfield Armory	M1 Garand	.30-06 Springfield	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.9]
+3	m1_carbine	Winchester	M1 Carbine	.30 Carbine	?	7	unknown cartridge: .30 Carbine
+4	thompson_m1a1	Auto-Ordnance	Thompson M1A1	.45 ACP	A	0	
+5	m3_grease_gun	General Motors	M3 Grease Gun	.45 ACP	A	0	
+6	mg34	Mauser	MG34	7.92×57mm Mauser	A	1	caliber_mm=7.92 slightly outside ref [8.0,8.3]
+7	mg42	Mauser	MG42	7.92×57mm Mauser	A	1	caliber_mm=7.92 slightly outside ref [8.0,8.3]
+8	mp40	Erma Werke	MP40	9×19mm Parabellum	A	0	
+9	stg44	C.G. Haenel	StG 44	7.92×33mm Kurz	?	7	unknown cartridge: 7.92×33mm Kurz
+10	k98k	Mauser	Kar98k	7.92×57mm Mauser	A	1	caliber_mm=7.92 slightly outside ref [8.0,8.3]
+11	fg42	Rheinmetall	FG 42	7.92×57mm Mauser	A	1	caliber_mm=7.92 slightly outside ref [8.0,8.3]
+12	ppsh41	Degtyaryov	PPSh-41	7.62×25mm Tokarev	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.95]
+13	mosin_nagant	Izhevsk	Mosin-Nagant M91/30	7.62×54mmR	A	1	caliber_mm=7.62 slightly outside ref [7.78,8.0]
+14	svt40	Izhevsk	SVT-40	7.62×54mmR	A	1	caliber_mm=7.62 slightly outside ref [7.78,8.0]
+15	dp27	Degtyaryov	DP-27	7.62×54mmR	A	1	caliber_mm=7.62 slightly outside ref [7.78,8.0]
+16	colt_m4a1	Colt	M4A1	5.56×45mm NATO	A	0	
+17	colt_m4a1_block_ii	Colt	M4A1 Block II	5.56×45mm NATO	A	0	
+18	colt_m16a4	Colt	M16A4	5.56×45mm NATO	A	0	
+19	heckler_koch_hk416	Heckler & Koch	HK416	5.56×45mm NATO	A	0	
+20	heckler_koch_hk416a5	Heckler & Koch	HK416A5	5.56×45mm NATO	A	0	
+21	heckler_koch_hk417	Heckler & Koch	HK417	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+22	heckler_koch_g36	Heckler & Koch	G36	5.56×45mm NATO	A	0	
+23	heckler_koch_g36a2	Heckler & Koch	G36A2	5.56×45mm NATO	A	0	
+24	heckler_koch_g3	Heckler & Koch	G3	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+25	heckler_koch_hk33	Heckler & Koch	HK33	5.56×45mm NATO	A	0	
+26	heckler_koch_hk53	Heckler & Koch	HK53	5.56×45mm NATO	A	0	
+27	fn_herstal_scar_l	FN Herstal	SCAR-L	5.56×45mm NATO	A	0	
+28	fn_herstal_scar_h	FN Herstal	SCAR-H	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+29	fn_herstal_fal	FN Herstal	FAL	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+30	fn_herstal_f2000	FN Herstal	F2000	5.56×45mm NATO	A	0	
+31	fn_herstal_p90	FN Herstal	P90	5.7×28mm	A	0	
+32	steyr_aug	Steyr	AUG	5.56×45mm NATO	A	0	
+33	steyr_aug_a3	Steyr	AUG A3	5.56×45mm NATO	A	0	
+34	iwi_tavor_x95	IWI	Tavor X95	5.56×45mm NATO	A	0	
+35	iwi_galil_ace	IWI	Galil ACE	5.56×45mm NATO	A	0	
+36	iwi_negev	IWI	Negev	5.56×45mm NATO	A	0	
+37	imi_uzi	IMI	Uzi	9×19mm Parabellum	A	0	
+38	bae_systems_l85a2	BAE Systems	L85A2	5.56×45mm NATO	A	0	
+39	bae_systems_l86a2_lsw	BAE Systems	L86A2 LSW	5.56×45mm NATO	A	0	
+40	accuracy_internation_awm	Accuracy International	AWM	.338 Lapua Magnum	A	0	
+41	accuracy_internation_aw	Accuracy International	AW	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+42	accuracy_internation_ax50	Accuracy International	AX50	12.7×99mm NATO (.50 BMG)	A	0	
+43	lewis_machine_tool_l129a1	Lewis Machine & Tool	L129A1	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+44	kalashnikov_concern_ak_74m	Kalashnikov Concern	AK-74M	5.45×39mm	A	1	caliber_mm=5.45 slightly outside ref [5.55,5.75]
+45	kalashnikov_concern_ak_74	Kalashnikov Concern	AK-74	5.45×39mm	A	1	caliber_mm=5.45 slightly outside ref [5.55,5.75]
+46	kalashnikov_concern_ak_47	Kalashnikov Concern	AK-47	7.62×39mm	A	1	caliber_mm=7.62 slightly outside ref [7.8,8.0]
+47	kalashnikov_concern_akm	Kalashnikov Concern	AKM	7.62×39mm	A	1	caliber_mm=7.62 slightly outside ref [7.8,8.0]
+48	kalashnikov_concern_ak_103	Kalashnikov Concern	AK-103	7.62×39mm	A	1	caliber_mm=7.62 slightly outside ref [7.8,8.0]
+49	kalashnikov_concern_ak_105	Kalashnikov Concern	AK-105	5.45×39mm	A	1	caliber_mm=5.45 slightly outside ref [5.55,5.75]
+50	kalashnikov_concern_ak_12	Kalashnikov Concern	AK-12	5.45×39mm	A	1	caliber_mm=5.45 slightly outside ref [5.55,5.75]
+51	kalashnikov_concern_rpk_74	Kalashnikov Concern	RPK-74	5.45×39mm	A	1	caliber_mm=5.45 slightly outside ref [5.55,5.75]
+52	kalashnikov_concern_pkm	Kalashnikov Concern	PKM	7.62×54mmR	A	1	caliber_mm=7.62 slightly outside ref [7.78,8.0]
+53	kalashnikov_concern_pkp_pecheneg	Kalashnikov Concern	PKP Pecheneg	7.62×54mmR	A	1	caliber_mm=7.62 slightly outside ref [7.78,8.0]
+54	tula_arms_plant_sv_98	Tula Arms Plant	SV-98	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+55	degtyaryov_plant_rpk_16	Degtyaryov Plant	RPK-16	5.45×39mm	A	1	caliber_mm=5.45 slightly outside ref [5.55,5.75]
+56	izhmash_svd_dragunov	Izhmash	SVD Dragunov	7.62×54mmR	A	1	caliber_mm=7.62 slightly outside ref [7.78,8.0]
+57	izhmash_svds	Izhmash	SVDS	7.62×54mmR	A	1	caliber_mm=7.62 slightly outside ref [7.78,8.0]
+58	tskib_soo_vss_vintorez	TsKIB SOO	VSS Vintorez	9×39mm	A	0	
+59	tskib_soo_as_val	TsKIB SOO	AS Val	9×39mm	A	0	
+60	kbp_pp_19_bizon	KBP	PP-19 Bizon	9×19mm Parabellum	A	0	
+61	zavod_imeni_degtyary_rpk_74m	Zavod imeni Degtyaryova	RPK-74M	5.45×39mm	A	1	caliber_mm=5.45 slightly outside ref [5.55,5.75]
+62	glock_glock_17	Glock	Glock 17	9×19mm Parabellum	A	0	
+63	glock_glock_18	Glock	Glock 18	9×19mm Parabellum	A	0	
+64	glock_glock_19	Glock	Glock 19	9×19mm Parabellum	A	0	
+65	sig_sauer_p226	Sig Sauer	P226	9×19mm Parabellum	A	0	
+66	sig_sauer_p320	Sig Sauer	P320	9×19mm Parabellum	A	0	
+67	sig_sauer_p229	Sig Sauer	P229	9×19mm Parabellum	A	0	
+68	sig_sauer_p220	Sig Sauer	P220	.45 ACP	A	0	
+69	sig_sauer_mcx	Sig Sauer	MCX	5.56×45mm NATO	A	0	
+70	heckler_koch_usp	Heckler & Koch	USP	9×19mm Parabellum	A	0	
+71	heckler_koch_mk23	Heckler & Koch	Mk23	.45 ACP	A	0	
+72	heckler_koch_p7	Heckler & Koch	P7	9×19mm Parabellum	A	0	
+73	beretta_m9	Beretta	M9	9×19mm Parabellum	A	0	
+74	beretta_m9a3	Beretta	M9A3	9×19mm Parabellum	A	0	
+75	fn_herstal_fnx_45	FN Herstal	FNX-45	.45 ACP	A	0	
+76	fn_herstal_five_seven	FN Herstal	Five-seveN	5.7×28mm	A	0	
+77	smith_wesson_m_p	Smith & Wesson	M&P	9×19mm Parabellum	A	0	
+78	heckler_koch_mp5	Heckler & Koch	MP5	9×19mm Parabellum	A	0	
+79	heckler_koch_mp7	Heckler & Koch	MP7	4.6×30mm	A	0	
+80	heckler_koch_ump_45	Heckler & Koch	UMP-45	.45 ACP	A	0	
+81	heckler_koch_mp5k	Heckler & Koch	MP5K	9×19mm Parabellum	A	0	
+82	heckler_koch_mp5sd	Heckler & Koch	MP5SD	9×19mm Parabellum	A	0	
+83	br_gger_thomet_mp9	Brügger & Thomet	MP9	9×19mm Parabellum	A	0	
+84	br_gger_thomet_apc9	Brügger & Thomet	APC9	9×19mm Parabellum	A	0	
+85	magpul_pdr	MAGPUL	PDR	5.56×45mm NATO	A	0	
+86	rpc_fort_fort_221	RPC Fort	Fort-221	9×19mm Parabellum	A	0	
+87	mac_mac_10	MAC	MAC-10	.45 ACP	A	0	
+88	mac_mac_11	MAC	MAC-11	9×19mm Parabellum	A	0	
+89	remington_m870	Remington	M870	12 Gauge	A	0	
+90	benelli_m1014	Benelli	M1014	12 Gauge	A	0	
+91	franchi_spas_12	Franchi	SPAS-12	12 Gauge	A	0	
+92	mossberg_m590	Mossberg	M590	12 Gauge	A	0	
+93	barrett_m82_m107	Barrett	M82 (M107)	12.7×99mm NATO (.50 BMG)	A	0	
+94	barrett_m95	Barrett	M95	12.7×99mm NATO (.50 BMG)	A	0	
+95	barrett_mrad	Barrett	MRAD	.338 Lapua Magnum	A	0	
+96	remington_m24	Remington	M24	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+97	remington_m40a5	Remington	M40A5	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+98	remington_m2010	Remington	M2010	.300 Winchester Magnum	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.9]
+99	remington_m700	Remington	M700	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+100	mcmillan_tac_50	McMillan	TAC-50	12.7×99mm NATO (.50 BMG)	A	0	
+101	steyr_ssg_69	Steyr	SSG 69	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+102	knight_s_armament_m110	Knight's Armament	M110	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+103	knight_s_armament_sr_25	Knight's Armament	SR-25	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+104	knight_s_armament_mk_11	Knight's Armament	Mk 11	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+105	sako_trg_22	Sako	TRG-22	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+106	sako_trg_42	Sako	TRG-42	.338 Lapua Magnum	A	0	
+107	pgm_h_cate_ii	PGM	Hécate II	12.7×99mm NATO (.50 BMG)	A	0	
+108	heckler_koch_msg90	Heckler & Koch	MSG90	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+109	heckler_koch_psg1	Heckler & Koch	PSG1	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+110	desert_tactical_srs_stealth_recon_scout	Desert Tactical	SRS (Stealth Recon Scout)	.338 Lapua Magnum	A	0	
+111	cheytac_m200_intervention	CheyTac	M200 Intervention	.408 CheyTac	A	0	
+112	fn_herstal_minimi_m249	FN Herstal	Minimi (M249)	5.56×45mm NATO	A	0	
+113	fn_herstal_mag_m240	FN Herstal	MAG (M240)	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+114	heckler_koch_mg4	Heckler & Koch	MG4	5.56×45mm NATO	A	0	
+115	heckler_koch_mg5_lb	Heckler & Koch	MG5	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+116	rheinmetall_mg3	Rheinmetall	MG3	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+117	sig_mg_338	SIG	MG 338	.338 Lapua Magnum	A	0	
+118	aai_corporation_m249_para	AAI Corporation	M249 Para	5.56×45mm NATO	A	0	
+119	russian_federation_nsv_utes	Russian Federation	NSV 'Utes'	12.7×108mm	A	0	
+120	russian_federation_kord	Russian Federation	KORD	12.7×108mm	A	0	
+121	browning_m2hb	Browning	M2HB	12.7×99mm NATO (.50 BMG)	A	0	
+122	saab_bofors_dynamics_carl_gustaf_m3	Saab Bofors Dynamics	Carl Gustaf M3	84mm	?	7	unknown cartridge: 84mm
+123	saab_bofors_dynamics_carl_gustaf_m4	Saab Bofors Dynamics	Carl Gustaf M4	84mm	?	7	unknown cartridge: 84mm
+124	rpg_concern_rpg_7	RPG Concern	RPG-7	40mm	?	7	unknown cartridge: 40mm
+125	rpg_concern_rpg_18	RPG Concern	RPG-18	64mm	?	7	unknown cartridge: 64mm
+126	rpg_concern_rpg_26	RPG Concern	RPG-26	72.5mm	?	7	unknown cartridge: 72.5mm
+127	rpg_concern_rpg_32	RPG Concern	RPG-32	105mm	?	7	unknown cartridge: 105mm
+128	rgs_rpo_a_shmel	RGS	RPO-A Shmel	93mm	?	7	unknown cartridge: 93mm
+129	tula_kbp_9k32_strela_2	Tula KBP	9K32 Strela-2	72mm	?	7	unknown cartridge: 72mm
+130	mbda_fim_92_stinger	MBDA	FIM-92 Stinger	70mm	?	7	unknown cartridge: 70mm
+131	raytheon_fgm_148_javelin	Raytheon	FGM-148 Javelin	127mm	?	7	unknown cartridge: 127mm
+132	raytheon_m136_at4	Raytheon	M136 AT4	84mm	?	7	unknown cartridge: 84mm
+133	nammo_m72_law	Nammo	M72 LAW	66mm	?	7	unknown cartridge: 66mm
+134	dynamit_nobel_m79_osa	Dynamit Nobel	M79 Osa	90mm	?	7	unknown cartridge: 90mm
+135	m14	Springfield Armory	M14	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+136	m60	Saco Defense	M60	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+137	m1911	Colt	M1911A1	.45 ACP	A	0	
+138	heckler_koch_hk416_10	Heckler & Koch	"HK416 (10.4"")"	5.56×45mm NATO	A	0	
+139	heckler_koch_hk416_165	Heckler & Koch	"HK416 (16.5"")"	5.56×45mm NATO	A	0	
+140	heckler_koch_hk417_13	Heckler & Koch	"HK417 (13"")"	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+141	heckler_koch_hk417_20	Heckler & Koch	"HK417 (20"")"	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+142	fn_herstal_scar_l_10	FN Herstal	SCAR-L CQC	5.56×45mm NATO	A	0	
+143	fn_herstal_scar_l_18	FN Herstal	SCAR-L LB	5.56×45mm NATO	A	0	
+144	fn_herstal_scar_h_13	FN Herstal	SCAR-H CQC	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+145	fn_herstal_scar_h_20	FN Herstal	SCAR-H LB	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+146	steyr_aug_16	Steyr	"AUG (16"")"	5.56×45mm NATO	A	0	
+147	degtyaryov_plant_rpk_16_lb	Degtyaryov Plant	RPK-16 (Long)	5.45×39mm	A	1	caliber_mm=5.45 slightly outside ref [5.55,5.75]
+148	heckler_koch_hk416_20	Heckler & Koch	HK416	5.56×45mm NATO	A	0	
+149	fn_herstal_scar_l_cqc	FN Herstal	SCAR-L	5.56×45mm NATO	A	0	
+150	fn_herstal_scar_l_lb	FN Herstal	SCAR-L	5.56×45mm NATO	A	0	
+151	fn_herstal_scar_h_cqc	FN Herstal	SCAR-H	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+152	fn_herstal_scar_h_lb	FN Herstal	SCAR-H	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+153	barrett_m82_m107_cqc	Barrett	M82 (M107)	12.7×99mm NATO (.50 BMG)	A	0	
+154	kalashnikov_concern_ak_12_k	Kalashnikov Concern	AK-12	5.45×39mm	A	1	caliber_mm=5.45 slightly outside ref [5.55,5.75]
+155	degtyaryov_plant_rpk_16_short	Degtyaryov Plant	RPK-16	5.45×39mm	A	1	caliber_mm=5.45 slightly outside ref [5.55,5.75]
+156	knight_s_armament_sr_25_20	Knight's Armament	SR-25	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+157	knight_s_armament_sr_25_16	Knight's Armament	SR-25	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+158	sako_trg_22_short	Sako	TRG-22	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+159	sako_trg_42_short	Sako	TRG-42	.338 Lapua Magnum	A	0	
+160	remington_m700_hvy	Remington	M700	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+161	giat_famas_f1	GIAT Industries	FAMAS F1	5.56×45mm NATO	A	0	
+162	giat_famas_g2	GIAT Industries	FAMAS G2	5.56×45mm NATO	A	0	
+163	giat_famas_felin	GIAT Industries	FAMAS Felin	5.56×45mm NATO	A	0	
+164	giat_famas_commando	GIAT Industries	FAMAS Commando	5.56×45mm NATO	A	0	
+165	giat_fr_f2	GIAT Industries	FR F2	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+166	sig_sauer_sg_551	SIG Sauer AG	SG 551	5.56×45mm NATO	A	0	
+167	giat_pamas_g1	GIAT Industries	PAMAS G1	9×19mm Parabellum	A	0	
+168	manurhin_mr_73	Manurhin (Chapuis Armes)	MR 73	.357 Magnum	A	0	
+169	magnum_research_desert_eagle_mk_xix	Magnum Research / IWI	Desert Eagle Mark XIX	.50 Action Express	A	0	
+170	makarov_pm	Kalashnikov Concern (Izhevsk)	Makarov PM	9×18mm Makarov	A	0	
+171	kel_tec_ksg	Kel-Tec CNC Industries	KSG	12 Gauge	A	0	
+172	baikal_mp_153	Kalashnikov Concern (Baikal)	MP-153	12 Gauge	A	0	
+173	fn_herstal_fnp_45_tactical	FN Herstal	FNP-45 Tactical	.45 ACP	A	0	
+174	noreen_bad_news	Noreen Firearms	Bad News	.338 Lapua Magnum	A	0	
+175	sig_sauer_cmr_76	SIG Sauer	CMR-76 (SIG 716 DMR inspired)	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+176	general_dynamics_lwmmg	General Dynamics	LWMMG	.338 Norma Magnum	?	7	unknown cartridge: .338 Norma Magnum
+177	heckler_koch_mg5	Heckler & Koch	MG5 (HK121)	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+178	fb_radom_msbs_grot	"FB ""Łucznik"" Radom"	MSBS Grot (Promet)	5.56×45mm NATO	A	0	
+179	type_115	N/A (Bohemia Interactive)	Type 115	6.5mm Caseless	?	7	unknown cartridge: 6.5mm Caseless
+180	cz_75	Česká zbrojovka	CZ 75	9×19mm Parabellum	A	0	
+181	tec_9	Intratec Firearms	TEC-DC9	9×19mm Parabellum	A	0	
+182	tt_33	Tula Arms Plant	TT-33	7.62×25mm Tokarev	A	0	
+183	vz_61_skorpion	Česká zbrojovka Uherský Brod	Sa vz. 61 Škorpion	7.65×17mm Browning (.32 ACP)	A	1	caliber_mm=7.94 slightly outside ref [7.6,7.7]
+184	sw_659	Smith & Wesson	659	9×19mm Parabellum	A	0	
+185	kimber_custom	Kimber America	Custom II	.45 ACP	A	0	
+186	colt_python	Colt's Manufacturing Company	Python	.357 Magnum	A	0	
+187	ruger_mk_ii	Sturm, Ruger & Co.	Mark II	.22 Long Rifle	A	0	
+188	browning_hi_power	FN Herstal	Hi-Power	9×19mm Parabellum	A	0	
+189	hk_usp	Heckler & Koch	USP	9×19mm Parabellum	A	0	
+190	desert_eagle	Magnum Research (IMI)	Mark XIX Desert Eagle	.44 Remington Magnum	?	7	unknown cartridge: .44 Remington Magnum
+191	fnp_45	FN Herstal (FNH USA)	FNP-45	.45 ACP	A	0	
+192	colt_anaconda	Colt's Manufacturing Company	Anaconda	.44 Remington Magnum	?	7	unknown cartridge: .44 Remington Magnum
+193	mauser_kar98k	Mauser Werke AG (contracted to multiple manufacturers)	Karabiner 98k	7.92×57mm Mauser s.S.	A	0	
+194	sa_vz_58p	Česká zbrojovka Uherský Brod	vz. 58 P (fixed stock)	7.62×39mm M43	A	0	
+195	sa_vz_58v	Česká zbrojovka Uherský Brod	vz. 58 V (folding stock)	7.62×39mm M43	A	0	
+196	hs_vhs_d2	HS Produkt d.o.o.	VHS-D2 (Long barrel)	5.56×45mm NATO SS109	A	0	
+197	hs_vhs_k2	HS Produkt d.o.o.	VHS-K2 (Standard)	5.56×45mm NATO SS109	A	0	
+198	orsis_t5000	ORSIS (Promtekhnologiya)	T-5000	7.62×51mm NATO (.308 Win)	A	0	
+199	zastava_cz99	Zastava Arms d.o.o.	CZ 99	9×19mm Parabellum	A	0	
+200	zastava_m76	Zastava Arms d.o.o.	M76	7.92×57mm Mauser	A	0	
+201	zastava_m84	Zastava Arms d.o.o.	M84	7.62×54mmR	A	0	
+202	zastava_m92	Zastava Arms d.o.o.	M92	7.62×39mm M67	A	0	
+203	zastava_m70	Zastava Arms d.o.o.	M70AB2	7.62×39mm M67	A	0	
+204	dragunov_svd	Kalashnikov Concern (Izhevsk Machine-Building Plant)	SVD (Snayperskaya Vintovka Dragunova)	7.62×54mmR	A	0	
+205	AR-10	ArmaLite	AR-10	7.62×51mm NATO	A	0	
+206	AR-15	ArmaLite	AR-15	5.56×45mm NATO	A	0	
+207	AR-18	ArmaLite	AR-18	5.56×45mm NATO	A	0	
+208	M16A1	Colt's Manufacturing Co.	M16A1	5.56×45mm NATO	A	0	
+209	M16A2	Colt's Manufacturing Co.	M16A2	5.56×45mm NATO	A	0	
+210	M16A4	Colt's Manufacturing Co.	M16A4	5.56×45mm NATO	A	0	
+211	M4	Colt's Manufacturing Co.	M4	5.56×45mm NATO	A	0	
+212	M4A1 Block II	Colt's Manufacturing Co.	M4A1	5.56×45mm NATO	A	0	
+213	XM177E1	Colt's Manufacturing Co.	XM177E1	5.56×45mm NATO	A	0	
+214	XM177E2	Colt's Manufacturing Co.	XM177E2	5.56×45mm NATO	A	0	
+215	Model 723	Colt's Manufacturing Co.	723	5.56×45mm NATO	A	0	
+216	Model 733	Colt's Manufacturing Co.	733	5.56×45mm NATO	A	0	
+217	C7A1	Colt Canada (Diemaco)	C7A1	5.56×45mm NATO	A	0	
+218	C7A2	Colt Canada (Diemaco)	C7A2	5.56×45mm NATO	A	0	
+219	C8	Colt Canada (Diemaco)	C8	5.56×45mm NATO	A	0	
+220	C8 SFW	Colt Canada (Diemaco)	C8	5.56×45mm NATO	A	0	
+221	M1911A1	Colt's Manufacturing Co.	M1911A1	.45 ACP	A	0	
+222	Delta Elite	Colt's Manufacturing Co.	Delta Elite	10mm Auto	A	0	
+223	Python	Colt's Manufacturing Co.	Python	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+224	Anaconda	Colt's Manufacturing Co.	Anaconda	.44 Magnum	A	1	pressure=360.0 deviates 45% from typical 248
+225	Detective Special	Colt's Manufacturing Co.	Detective Special	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+226	Colt 9mm SMG	Colt's Manufacturing Co.	635	9×19mm Parabellum	A	0	
+227	AK-47 Type 3	Kalashnikov Concern	AK-47 Type 3	7.62×39mm	A	0	
+228	AKS-47	Kalashnikov Concern	AKS-47	7.62×39mm	A	0	
+229	AKM	Kalashnikov Concern	AKM	7.62×39mm	A	0	
+230	AKMS	Kalashnikov Concern	AKMS	7.62×39mm	A	0	
+231	AK-74	Kalashnikov Concern	AK-74	5.45×39mm	A	0	
+232	AKS-74	Kalashnikov Concern	AKS-74	5.45×39mm	A	0	
+233	AKS-74U	Kalashnikov Concern	AKS-74U	5.45×39mm	A	0	
+234	AK-74M	Kalashnikov Concern	AK-74M	5.45×39mm	A	0	
+235	AK-101	Kalashnikov Concern	AK-101	5.56×45mm NATO	A	0	
+236	AK-103	Kalashnikov Concern	AK-103	7.62×39mm	A	0	
+237	AK-105	Kalashnikov Concern	AK-105	5.45×39mm	A	0	
+238	AK-12	Kalashnikov Concern	AK-12	5.45×39mm	A	0	
+239	AK-15	Kalashnikov Concern	AK-15	7.62×39mm	A	0	
+240	RPK	Molot (Vyatskiye Polyany)	RPK	7.62×39mm	A	0	
+241	RPK-74	Molot (Vyatskiye Polyany)	RPK-74	5.45×39mm	A	0	
+242	PKM	Degtyaryov Plant	PKM	7.62×54mmR	A	0	
+243	PKP Pecheneg	TsNIITochMash / Degtyaryov Plant	PKP Pecheneg	7.62×54mmR	A	0	
+244	SVD	Kalashnikov Concern	SVD	7.62×54mmR	A	0	
+245	SVDS	Kalashnikov Concern	SVDS	7.62×54mmR	A	0	
+246	Saiga-12	Kalashnikov Concern	Saiga-12	12 Gauge	C	2	twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+247	MP-443 Grach	Kalashnikov Concern	MP-443 Grach	9×19mm	A	0	
+248	PP-19-01 Vityaz	Kalashnikov Concern	PP-19-01 Vityaz	9×19mm	A	0	
+249	PP-2000	KBP Instrument Design Bureau	PP-2000	9×19mm	A	0	
+250	g3a3	Heckler & Koch GmbH	G3A3	7.62×51mm NATO	A	0	
+251	g3a4	Heckler & Koch GmbH	G3A4	7.62×51mm NATO	A	0	
+252	g3sg1	Heckler & Koch GmbH	G3SG/1	7.62×51mm NATO	A	0	
+253	g3ka4	Heckler & Koch GmbH	G3KA4	7.62×51mm NATO	A	0	
+254	hk33a2	Heckler & Koch GmbH	HK33A2	5.56×45mm NATO	A	0	
+255	hk53	Heckler & Koch GmbH	HK53	5.56×45mm NATO	A	0	
+256	g36	Heckler & Koch GmbH	G36	5.56×45mm NATO	A	0	
+257	g36k	Heckler & Koch GmbH	G36K	5.56×45mm NATO	A	0	
+258	g36c	Heckler & Koch GmbH	G36C	5.56×45mm NATO	A	0	
+259	hk416_104	Heckler & Koch GmbH	HK416	5.56×45mm NATO	A	0	
+260	hk416_145	Heckler & Koch GmbH	HK416	5.56×45mm NATO	A	0	
+261	hk416_165	Heckler & Koch GmbH	HK416	5.56×45mm NATO	A	0	
+262	hk417_12	Heckler & Koch GmbH	HK417	7.62×51mm NATO	A	0	
+263	hk417_16	Heckler & Koch GmbH	HK417	7.62×51mm NATO	A	0	
+264	hk417_20	Heckler & Koch GmbH	HK417	7.62×51mm NATO	A	0	
+265	mp5a2	Heckler & Koch GmbH	MP5A2	9×19mm	A	0	
+266	mp5a3	Heckler & Koch GmbH	MP5A3	9×19mm	A	0	
+267	mp5k	Heckler & Koch GmbH	MP5K	9×19mm	A	0	
+268	mp5sd	Heckler & Koch GmbH	MP5SD	9×19mm	A	0	
+269	ump9	Heckler & Koch GmbH	UMP9	9×19mm	A	0	
+270	ump40	Heckler & Koch GmbH	UMP40	.40 S&W	A	0	
+271	ump45	Heckler & Koch GmbH	UMP45	.45 ACP	A	0	
+272	usp9	Heckler & Koch GmbH	USP	9×19mm	A	0	
+273	usp40	Heckler & Koch GmbH	USP	.40 S&W	A	0	
+274	usp45	Heckler & Koch GmbH	USP	.45 ACP	A	0	
+275	p30	Heckler & Koch GmbH	P30	9×19mm	A	0	
+276	hk45	Heckler & Koch GmbH	HK45	.45 ACP	A	0	
+277	psg1	Heckler & Koch GmbH	PSG1	7.62×51mm NATO	A	0	
+278	mr556a1	Heckler & Koch GmbH	MR556A1	5.56×45mm NATO	A	0	
+279	vp9	Heckler & Koch GmbH	VP9	9×19mm	A	0	
+280	mp7	Heckler & Koch GmbH	MP7A1	4.6×30mm	A	0	
+281	P210	SIG (Switzerland)	SIG P210	9×19mm	A	0	
+282	P225	SIG Sauer GmbH (Germany)	P225	9×19mm	A	0	
+283	P226	SIG Sauer GmbH (Germany)	P226	9×19mm	A	0	
+284	P226 Navy	SIG Sauer Inc. (USA)	P226	9×19mm	A	0	
+285	P229	SIG Sauer Inc. (USA)	P229	9×19mm	A	0	
+286	P239	SIG Sauer GmbH (Germany)	P239	9×19mm	A	0	
+287	P250	SIG Sauer Inc. (USA)	P250	9×19mm	A	0	
+288	P320 Compact	SIG Sauer Inc. (USA)	P320	9×19mm	A	0	
+289	P320 Full	SIG Sauer Inc. (USA)	P320	9×19mm	A	0	
+290	P320 X-Five	SIG Sauer Inc. (USA)	P320 X-Five	9×19mm	A	0	
+291	M17	SIG Sauer Inc. (USA)	M17	9×19mm	A	0	
+292	M18	SIG Sauer Inc. (USA)	M18	9×19mm	A	0	
+293	P365	SIG Sauer Inc. (USA)	P365	9×19mm	A	0	
+294	P365XL	SIG Sauer Inc. (USA)	P365XL	9×19mm	A	0	
+295	SP2022	SIG Sauer GmbH (Germany)	SP2022	9×19mm	A	0	
+296	MPX	SIG Sauer Inc. (USA)	MPX	9×19mm	A	0	
+297	MPX-K	SIG Sauer Inc. (USA)	MPX	9×19mm	A	0	
+298	SG 550	SIG Sauer AG (Swiss)	SG 550	5.56×45mm	A	0	
+299	SG 551	SIG Sauer AG (Swiss)	SG 551	5.56×45mm	A	0	
+300	SG 553	SIG Sauer AG (Swiss)	SG 553	5.56×45mm	A	0	
+301	SIG 556	SIG Sauer Inc. (USA)	SIG 556	5.56×45mm	A	0	
+302	MCX Virtus	SIG Sauer Inc. (USA)	MCX Virtus	5.56×45mm	A	0	
+303	MCX Rattler	SIG Sauer Inc. (USA)	MCX Rattler	7.62×35mm	?	7	unknown cartridge: 7.62×35mm
+304	MCX Spear	SIG Sauer Inc. (USA)	MCX Spear	.277 Fury	?	7	unknown cartridge: .277 Fury
+305	SIG Cross	SIG Sauer Inc. (USA)	Cross	.308 Winchester	A	0	
+306	M400 Tread	SIG Sauer Inc. (USA)	M400 Tread	5.56×45mm	A	0	
+307	SIG AMT	SIG (Switzerland)	SG 510-4	7.62×51mm	A	0	
+308	SIG Cross Magnum	SIG Sauer Inc. (USA)	Cross	.300 PRC	?	7	unknown cartridge: .300 PRC
+309	FN Hi-Power GP35	FN Herstal SA	GP35	9×19mm	A	0	
+310	FN Hi-Power HP-SFS	FN Herstal SA	HP-SFS	9×19mm	A	0	
+311	FN FAL 50.00	FN Herstal SA	FAL	7.62×51mm	A	0	
+312	FN FAL 50.61	FN Herstal SA	FAL	7.62×51mm	A	0	
+313	FN FAL 50.63	FN Herstal SA	FAL	7.62×51mm	A	0	
+314	FN FNC Standard	FN Herstal SA	FNC	5.56×45mm	A	0	
+315	FN FNC Para	FN Herstal SA	FNC	5.56×45mm	A	0	
+316	FN SCAR-L Mk16 CQC	FN Herstal SA	SCAR-L	5.56×45mm	A	0	
+317	FN SCAR-L Mk16 Std	FN Herstal SA	SCAR-L	5.56×45mm	A	0	
+318	FN SCAR-H Mk17 CQC	FN Herstal SA	SCAR-H	7.62×51mm	A	0	
+319	FN SCAR-H Mk17 Std	FN Herstal SA	SCAR-H	7.62×51mm	A	0	
+320	FN SCAR-SC	FN Herstal SA	SCAR-SC	5.56×45mm	A	0	
+321	FN F2000	FN Herstal SA	F2000	5.56×45mm	A	0	
+322	FN P90 TR	FN Herstal SA	P90	5.7×28mm	A	0	
+323	FN Five-seveN USG	FN Herstal SA	Five-seveN	5.7×28mm	A	0	
+324	FN Five-seveN MRD	FN Herstal SA	Five-seveN	5.7×28mm	A	0	
+325	FN FNX-45	FN Herstal SA	FNX-45	.45 ACP	A	0	
+326	FN FNX-45 Tactical	FN Herstal SA	FNX-45	.45 ACP	A	0	
+327	FN 509	FN Herstal SA	509	9×19mm	A	0	
+328	FN 509 Compact	FN Herstal SA	509	9×19mm	A	0	
+329	FN 509 Tactical	FN Herstal SA	509	9×19mm	A	0	
+330	FN 509 MRD	FN Herstal SA	509	9×19mm	A	0	
+331	FN 502 Tactical	FN Herstal SA	502	.22 LR	A	0	
+332	M2HB	FN Herstal SA	M2HB	.50 BMG	A	0	
+333	M240B	FN Herstal SA	M240B	7.62×51mm	A	0	
+334	M249 SAW	FN Herstal SA	M249	5.56×45mm	A	0	
+335	MAG 58	FN Herstal SA	MAG	7.62×51mm	A	0	
+336	Glock 17	Glock GmbH	G17	9×19mm	A	0	
+337	Glock 18	Glock GmbH	G18	9×19mm	A	0	
+338	Glock 19	Glock GmbH	G19	9×19mm	A	0	
+339	Glock 19X	Glock GmbH	G19X	9×19mm	A	0	
+340	Glock 20	Glock GmbH	G20	10mm Auto	A	0	
+341	Glock 21	Glock GmbH	G21	.45 ACP	A	0	
+342	Glock 22	Glock GmbH	G22	.40 S&W	A	0	
+343	Glock 26	Glock GmbH	G26	9×19mm	A	0	
+344	Glock 34	Glock GmbH	G34	9×19mm	A	0	
+345	Glock 35	Glock GmbH	G35	.40 S&W	A	0	
+346	Glock 41	Glock GmbH	G41	.45 ACP	A	0	
+347	Glock 42	Glock GmbH	G42	.380 ACP	A	0	
+348	Glock 43	Glock GmbH	G43	9×19mm	A	0	
+349	Glock 43X	Glock GmbH	G43X	9×19mm	A	0	
+350	Glock 44	Glock GmbH	G44	.22 LR	A	0	
+351	Glock 45	Glock GmbH	G45	9×19mm	A	0	
+352	ber_92f_m9	Beretta	92F	9×19mm	A	0	
+353	ber_92fs	Beretta	92FS	9×19mm	A	0	
+354	ber_92x	Beretta	92X	9×19mm	A	0	
+355	ber_px4_full	Beretta	Px4 Storm	9×19mm	A	0	
+356	ber_px4_compact	Beretta	Px4 Storm	9×19mm	A	0	
+357	ber_apx_full	Beretta	APX	9×19mm	A	0	
+358	ber_apx_carry	Beretta	APX	9×19mm	A	0	
+359	ber_84_cheetah	Beretta	84	.380 ACP	A	0	
+360	ber_21a_bobcat	Beretta	21A	.25 ACP	A	0	
+361	ber_3032_tomcat	Beretta	3032	.32 ACP	A	0	
+362	ber_pico	Beretta	Pico	.380 ACP	A	0	
+363	ber_cx4_storm	Beretta	Cx4 Storm	9×19mm	A	0	
+364	ber_arx160	Beretta	ARX160	5.56×45mm	A	0	
+365	ber_arx100	Beretta	ARX100	5.56×45mm	A	0	
+366	ber_bm59	Beretta	BM-59	7.62×51mm	A	0	
+367	ber_686_sp	Beretta	686	12 Gauge	A	0	
+368	ber_1301_tactical	Beretta	1301	12 Gauge	A	0	
+369	ber_a400	Beretta	A400	12 Gauge	A	0	
+370	ber_dt11	Beretta	DT11	12 Gauge	A	0	
+371	ben_m1s90	Benelli	M1	12 Gauge	A	0	
+372	ben_m2	Benelli	M2	12 Gauge	A	0	
+373	ben_m4	Benelli	M4	12 Gauge	A	0	
+374	ben_m3	Benelli	M3	12 Gauge	A	0	
+375	ben_nova	Benelli	Nova	12 Gauge	A	0	
+376	ben_supernova	Benelli	Super	12 Gauge	A	0	
+377	ben_vinci	Benelli	Vinci	12 Gauge	A	0	
+378	ben_ethos	Benelli	Ethos	12 Gauge	A	0	
+379	ben_lupo	Benelli	Lupo	.308 Win	A	0	
+380	fra_spas12	Franchi	SPAS-12	12 Gauge	A	0	
+381	fra_spas15	Franchi	SPAS-15	12 Gauge	A	0	
+382	fra_affinity	Franchi	Affinity	12 Gauge	A	0	
+383	fra_instinct	Franchi	Instinct	12 Gauge	A	0	
+384	CZ_75_B	CZ	75	9×19mm	A	0	
+385	CZ_75_BD	CZ	75	9×19mm	A	0	
+386	CZ_75_P01	CZ	75	9×19mm	A	0	
+387	CZ_75_SP01	CZ	75	9×19mm	A	0	
+388	CZ_75_Shadow_2	CZ	75	9×19mm	A	0	
+389	CZ_85	CZ	85	9×19mm	A	0	
+390	CZ_97_B	CZ	97	.45 ACP	A	0	
+391	CZ_P07	CZ	P-07	9×19mm	A	0	
+392	CZ_P09	CZ	P-09	9×19mm	A	0	
+393	CZ_P10_C	CZ	P-10	9×19mm	A	0	
+394	CZ_P10_F	CZ	P-10	9×19mm	A	0	
+395	CZ_P10_S	CZ	P-10	9×19mm	A	0	
+396	CZ_83	CZ	83	9×17mm	A	0	
+397	CZ_2075_RAMI	CZ	2075	9×19mm	A	0	
+398	CZ_BREN_2_556	CZ	BREN 2	5.56×45mm	A	0	
+399	CZ_BREN_2_762	CZ	BREN 2	7.62×39mm	A	0	
+400	CZ_BREN_2_Ms	CZ	BREN 2	5.56×45mm	A	0	
+401	CZ_Scorpion_Evo3_S1	CZ	Scorpion EVO 3	9×19mm	A	0	
+402	CZ_SKORPION_vz61	CZ	vz. 61	.32 ACP	A	0	
+403	CZ_457	CZ	457	22 LR	A	0	
+404	CZ_527	CZ	527	7.62×39mm	A	0	
+405	CZ_557	CZ	557	.308 Win	A	0	
+406	CZ_600_Trail	CZ	600	.300 BLK	A	0	
+407	CZ_600_Alpha	CZ	600	.308 Win	A	0	
+408	CZ_BREN_805	CZ	805	5.56×45mm	A	0	
+409	CZ_75_Automatic	CZ	75	9×19mm	A	0	
+410	CZ_550	CZ	550	308 Win	A	0	
+411	CZ_BRNO_ZKK	CZ	BRNO	308 Win	A	0	
+412	aug_a1_508	Steyr	AUG	5.56×45mm	A	0	
+413	aug_a1_417	Steyr	AUG	5.56×45mm	A	0	
+414	aug_a3	Steyr	AUG	5.56×45mm	A	0	
+415	aug_a3_m1	Steyr	AUG	5.56×45mm	A	0	
+416	aug_9mm	Steyr	AUG	9×19mm	A	0	
+417	aug_hbar	Steyr	AUG	5.56×45mm	A	0	
+418	aug_lmg	Steyr	AUG	5.56×45mm	A	0	
+419	aug_z	Steyr	AUG	5.56×45mm	A	0	
+420	ssg_04	Steyr	SSG	7.62×51mm	A	0	
+421	ssg_08	Steyr	SSG	7.62×51mm	A	0	
+422	ssg_69	Steyr	SSG	7.62×51mm	A	0	
+423	steyr_monobloc	Steyr	Monobloc	7.62×51mm	A	0	
+424	steyr_scout	Steyr	Scout	5.56×45mm	A	0	
+425	m9_a1	Steyr	M9-A1	9×19mm	A	0	
+426	m40_a1	Steyr	M40-A1	.40 S&W	A	0	
+427	s9_a1	Steyr	S9-A1	9×19mm	A	0	
+428	c9_a1	Steyr	C9-A1	9×19mm	A	0	
+429	mpi_69	Steyr	MPi	9×19mm	A	0	
+430	tmp	Steyr	TMP	9×19mm	A	0	
+431	spp	Steyr	SPP	9×19mm	A	0	
+432	hs_50	Steyr	HS	12.7×99mm	A	0	
+433	iws_2000	Steyr	IWS	14.5×114mm	?	7	unknown cartridge: 14.5×114mm
+434	uzi_std	IWI	Uzi	9×19mm	A	0	
+435	uzi_mini	IWI	Uzi	9×19mm	A	0	
+436	uzi_micro	IWI	Uzi	9×19mm	A	0	
+437	uzi_pro	IWI	Uzi	9×19mm	A	0	
+438	galil_arm	IMI	Galil	5.56×45mm	A	0	
+439	galil_sar	IMI	Galil	5.56×45mm	A	0	
+440	galil_ace_22	IWI	Galil ACE	5.56×45mm	A	0	
+441	galil_ace_31	IWI	Galil ACE	7.62×39mm	A	0	
+442	galil_ace_32	IWI	Galil ACE	7.62×51mm	A	0	
+443	tavor_x95	IWI	Tavor	5.56×45mm	A	0	
+444	tavor_7	IWI	Tavor	7.62×51mm	A	0	
+445	tavor_ts12	IWI	Tavor	12 gauge	A	0	
+446	jericho_941	IWI	Jericho	9×19mm	A	0	
+447	jericho_enhanced	IWI	Jericho	9×19mm	A	0	
+448	masada_9	IWI	Masada	9×19mm	A	0	
+449	masada_slim	IWI	Masada	9×19mm	A	0	
+450	negev_ng7	IWI	Negev	7.62×51mm	A	0	
+451	negev_ng5	IWI	Negev	5.56×45mm	A	0	
+452	carmel	IWI	Carmel	5.56×45mm	A	0	
+453	dan_338	IWI	Dan	.338 Lapua Mag	A	0	
+454	mark_iv	Sturm Ruger	Mark IV	.22 LR	A	0	
+455	sr22	Sturm Ruger	SR22	.22 LR	A	0	
+456	sr9	Sturm Ruger	SR9	9×19mm	A	0	
+457	sr9c	Sturm Ruger	SR9c	9×19mm	A	0	
+458	sr40	Sturm Ruger	SR40	.40 S&W	A	0	
+459	sr45	Sturm Ruger	SR45	.45 ACP	A	0	
+460	p89	Sturm Ruger	P89	9×19mm	A	0	
+461	p95	Sturm Ruger	P95	9×19mm	A	0	
+462	ruger_american_pistol_9mm	Sturm Ruger	American Pistol	9×19mm	A	0	
+463	ruger_american_pistol_45	Sturm Ruger	American Pistol	.45 ACP	A	0	
+464	security_9	Sturm Ruger	Security-9	9×19mm	A	0	
+465	lcp	Sturm Ruger	LCP	.380 ACP	A	0	
+466	lcp_ii	Sturm Ruger	LCP II	.380 ACP	A	0	
+467	lcp_max	Sturm Ruger	LCP Max	.380 ACP	A	0	
+468	ec9s	Sturm Ruger	EC9s	9×19mm	A	0	
+469	lc9s	Sturm Ruger	LC9s	9×19mm	A	0	
+470	max_9	Sturm Ruger	Max-9	9×19mm	A	0	
+471	gp100	Sturm Ruger	GP100	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+472	super_redhawk_44	Sturm Ruger	Super Redhawk	.44 Magnum	A	1	pressure=360.0 deviates 45% from typical 248
+473	super_redhawk_454	Sturm Ruger	Super Redhawk	.454 Casull	A	0	
+474	sp101	Sturm Ruger	SP101	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+475	lcr_38	Sturm Ruger	LCR	.38 Special	A	1	pressure=250.0 deviates 114% from typical 117
+476	blackhawk	Sturm Ruger	New Model Blackhawk	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+477	vaquero	Sturm Ruger	Vaquero	.45 Colt	A	0	
+478	wrangler	Sturm Ruger	Wrangler	.22 LR	A	0	
+479	ruger_1022	Sturm Ruger	10/22	.22 LR	A	0	
+480	mini_14	Sturm Ruger	Mini-14	5.56×45mm	A	0	
+481	mini_30	Sturm Ruger	Mini-30	7.62×39mm	A	0	
+482	ruger_ar556	Sturm Ruger	AR-556	5.56×45mm	A	0	
+483	ruger_american_308	Sturm Ruger	American Rifle	.308 Win	A	0	
+484	ruger_american_65	Sturm Ruger	American Rifle	6.5 Creedmoor	A	0	
+485	ruger_american_22	Sturm Ruger	American Rimfire	.22 LR	A	0	
+486	precision_rifle_308	Sturm Ruger	Precision Rifle	.308 Win	A	0	
+487	precision_rifle_65	Sturm Ruger	Precision Rifle	6.5 Creedmoor	A	0	
+488	ranch_rifle	Sturm Ruger	Ranch Rifle	5.56×45mm	A	0	
+489	gunsite_scout	Sturm Ruger	Gunsite Scout	.308 Win	A	0	
+490	pc_carbine	Sturm Ruger	PC Carbine	9×19mm	A	0	
+491	pc_charger	Sturm Ruger	PC Charger	9×19mm	A	0	
+492	no_1	Sturm Ruger	No. 1	.308 Win	A	0	
+493	m77_hawkeye	Sturm Ruger	Hawkeye	.308 Win	A	0	
+494	red_label	Sturm Ruger	Red Label	12 Gauge	C	2	twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+495	gold_label	Sturm Ruger	Gold Label	12 Gauge	C	2	twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+496	M&P9_M2_0	Smith & Wesson	M&P9 M2.0	9×19mm	A	0	
+497	M&P40	Smith & Wesson	M&P40	40 S&W	A	0	
+498	M&P45	Smith & Wesson	M&P45	45 ACP	A	0	
+499	M&P9_Compact	Smith & Wesson	M&P9 Compact	9×19mm	A	0	
+500	M&P9_Shield	Smith & Wesson	M&P9 Shield	9×19mm	A	0	
+501	Shield_Plus	Smith & Wesson	M&P9 Shield Plus	9×19mm	A	0	
+502	M&P9_Shield_EZ	Smith & Wesson	M&P9 Shield EZ	9×19mm	A	0	
+503	M&P40_Shield_EZ	Smith & Wesson	M&P Shield EZ	380 ACP	A	0	
+504	M&P_2_0_Compact	Smith & Wesson	M&P 2.0 Compact	9×19mm	A	0	
+505	M&P_2_0_Full	Smith & Wesson	M&P 2.0 Full	9×19mm	A	0	
+506	SD9_VE	Smith & Wesson	SD9 VE	9×19mm	A	0	
+507	SD40_VE	Smith & Wesson	SD40 VE	40 S&W	A	0	
+508	SW9	Smith & Wesson	SW9	9×19mm	A	0	
+509	SW40	Smith & Wesson	SW40	40 S&W	A	0	
+510	Bodyguard_380	Smith & Wesson	Bodyguard 380	380 ACP	A	0	
+511	Bodyguard_38	Smith & Wesson	Bodyguard 38	38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+512	Model_29	Smith & Wesson	Model 29	44 Magnum	A	1	pressure=360.0 deviates 45% from typical 248
+513	Model_686	Smith & Wesson	Model 686	357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+514	Model_19	Smith & Wesson	Model 19	357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+515	Model_60	Smith & Wesson	Model 60	357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+516	Model_36	Smith & Wesson	Model 36	38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+517	Model_66	Smith & Wesson	Model 66	357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+518	Model_640	Smith & Wesson	Model 640	357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+519	Model_986	Smith & Wesson	986	9×19mm	A	0	
+520	Governor	Smith & Wesson	Governor	45 ACP	A	0	
+521	M&P15	Smith & Wesson	M&P15	5.56×45mm	A	0	
+522	M&P15_22	Smith & Wesson	M&P15-22	22 LR	A	0	
+523	M&P10	Smith & Wesson	M&P10	308 Win	A	0	
+524	M&P15_Sport_II	Smith & Wesson	M&P15 Sport II	5.56×45mm	A	0	
+525	Model_39	Smith & Wesson	Model 39	9×19mm	A	0	
+526	Model_59	Smith & Wesson	Model 59	9×19mm	A	0	
+527	Model_645	Smith & Wesson	Model 645	45 ACP	A	0	
+528	Model_1006	Smith & Wesson	Model 1006	10mm Auto	A	0	
+529	Model_4506	Smith & Wesson	Model 4506	45 ACP	A	0	
+530	rem_700_308	Remington	Model 700	.308 Win	A	0	
+531	rem_700_300wm	Remington	Model 700	.300 Win Mag	A	0	
+532	rem_700_30_06	Remington	Model 700	.30-06 Sprg	?	7	unknown cartridge: .30-06 Sprg
+533	rem_700_6_5cm	Remington	Model 700	6.5 Creedmoor	A	0	
+534	rem_700_338lm	Remington	Model 700	.338 Lapua	A	0	
+535	rem_870_12ga	Remington	Model 870	12 Gauge	C	2	twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+536	rem_870_20ga	Remington	Model 870	20 Gauge	C	2	twist_dir=1.0 (rifled) but 20 Gauge expects smoothbore (dir=0)
+537	rem_1100_12ga	Remington	Model 1100	12 Gauge	C	2	twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+538	rem_1187_12ga	Remington	Model 11-87	12 Gauge	C	2	twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+539	rem_r1_1911	Remington	1911 R1	.45 ACP	A	0	
+540	rem_597_22lr	Remington	Model 597	.22 LR	A	0	
+541	rem_7600_308	Remington	Model 7600	.308 Win	A	0	
+542	rem_552_22lr	Remington	Model 552	.22 LR	A	0	
+543	mar_336_3030	Marlin	Model 336	.30-30 Win	A	0	
+544	mar_336_35rem	Marlin	Model 336	.35 Rem	?	7	unknown cartridge: .35 Rem
+545	mar_1895_4570	Marlin	Model 1895	.45-70 Govt	?	7	unknown cartridge: .45-70 Govt
+546	mar_1894_357	Marlin	Model 1894	.357 Mag	A	0	
+547	mar_1894_44	Marlin	Model 1894	.44 Rem Mag	?	7	unknown cartridge: .44 Rem Mag
+548	mar_60_22lr	Marlin	Model 60	.22 LR	A	0	
+549	mar_795_22lr	Marlin	Model 795	.22 LR	A	0	
+550	mar_39a_22lr	Marlin	Model 39A	.22 LR	A	0	
+551	sav_110_308	Savage	Model 110	.308 Win	A	0	
+552	sav_110_300wm	Savage	Model 110	.300 Win Mag	A	0	
+553	sav_110_6_5cm	Savage	Model 110	6.5 Creedmoor	A	0	
+554	sav_110_338lm	Savage	Model 110	.338 Lapua	A	0	
+555	sav_110_30_06	Savage	Model 110	.30-06 Sprg	?	7	unknown cartridge: .30-06 Sprg
+556	sav_axis_308	Savage	Axis	.308 Win	A	0	
+557	sav_axisii_6_5cm	Savage	Axis II	6.5 Creedmoor	A	0	
+558	sav_mkii_22lr	Savage	Mark II	.22 LR	A	0	
+559	sav_64_22lr	Savage	Model 64	.22 LR	A	0	
+560	sav_93r17_17hmr	Savage	Model 93R17	.17 HMR	?	7	unknown cartridge: .17 HMR
+561	sav_220_20ga	Savage	Model 220	20 Gauge	C	2	twist_dir=1.0 (rifled) but 20 Gauge expects smoothbore (dir=0)
+562	sav_stev320_12ga	Stevens	320	12 Gauge	C	2	twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+563	sav_99_308	Savage	Model 99	.308 Win	A	0	
+564	browning_bar_m1918	Browning	BAR	.30-06	A	0	
+565	browning_auto_5	Browning	Auto-5	12 Gauge	A	0	
+566	browning_m1919	Browning	M1919	30-06	A	0	
+567	browning_blr	Browning	BLR	308 Win	A	0	
+568	browning_buck_mark	Browning	Buck Mark	22 LR	A	0	
+569	browning_x_bolt	Browning	X-Bolt	308 Win	A	0	
+570	browning_silver	Browning	Silver	270 Win	?	7	unknown cartridge: 270 Win
+571	browning_leverage	Browning	Leverage	30-30 Win	A	0	
+572	browning_a_bolt	Browning	A-Bolt	300 Win Mag	A	0	
+573	browning_citori	Browning	Citori	12 Gauge	A	0	
+574	browning_cynergy	Browning	Cynergy	12 Gauge	A	0	
+575	browning_maxus	Browning	Maxus	12 Gauge	A	0	
+576	browning_sweet_sixteen	Browning	Sweet Sixteen	16 Gauge	?	7	unknown cartridge: 16 Gauge
+577	winchester_model_70_308	Winchester	Model 70	308 Win	A	0	
+578	winchester_model_70_300wm	Winchester	Model 70	300 Win Mag	A	0	
+579	winchester_model_94	Winchester	Model 94	30-30 Win	A	0	
+580	winchester_model_12	Winchester	Model 12	12 Gauge	A	0	
+581	winchester_sxp	Winchester	SXP	12 Gauge	A	0	
+582	winchester_model_1300	Winchester	Model 1300	12 Gauge	A	0	
+583	winchester_super_x	Winchester	Super X	12 Gauge	A	0	
+584	winchester_wildcat	Winchester	Wildcat	22 LR	A	0	
+585	winchester_model_1887	Winchester	Model 1887	12 Gauge	A	0	
+586	winchester_model_1897	Winchester	Model 1897	12 Gauge	A	0	
+587	winchester_model_88	Winchester	Model 88	308 Win	A	0	
+588	winchester_model_100	Winchester	Model 100	308 Win	A	0	
+589	winchester_model_69	Winchester	Model 69	22 LR	A	0	
+590	winchester_model_52	Winchester	Model 52	22 LR	A	0	
+591	mossberg_500_12g	Mossberg	500	12 Gauge	A	0	
+592	mossberg_500_20g	Mossberg	500	20 Gauge	A	0	
+593	mossberg_500_tac	Mossberg	500	12 Gauge	A	0	
+594	mossberg_hs410	Mossberg	500	.410 bore	C	2	twist_dir=1.0 (rifled) but .410 bore expects smoothbore (dir=0)
+595	mossberg_500_atp	Mossberg	500	12 Gauge	A	0	
+596	mossberg_590	Mossberg	590	12 Gauge	A	0	
+597	mossberg_590a1	Mossberg	590A1	12 Gauge	A	0	
+598	mossberg_930	Mossberg	930	12 Gauge	A	0	
+599	mossberg_935	Mossberg	935	"12 Gauge 3.5"""	A	0	
+600	taurus_g2c	Taurus	G2c	9×19mm	A	0	
+601	taurus_g3c	Taurus	G3c	9×19mm	A	0	
+602	taurus_tx22	Taurus	TX22	.22 LR	A	0	
+603	taurus_judge	Taurus	Judge	.45 Colt	A	0	
+604	taurus_raging_bull	Taurus	Raging Bull	.454 Casull	A	0	
+605	taurus_pt92	Taurus	PT92	9×19mm	A	0	
+606	taurus_pt111	Taurus	PT111	9×19mm	A	0	
+607	taurus_spectrum	Taurus	Spectrum	.380 ACP	A	0	
+608	taurus_curve	Taurus	Curve	.380 ACP	A	0	
+609	taurus_tcp	Taurus	TCP	.380 ACP	A	0	
+610	taurus_856	Taurus	856	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+611	taurus_605	Taurus	605	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+612	taurus_pt1911	Taurus	PT1911	.45 ACP	A	0	
+613	walther_pp_32acp	Walther	PP	.32 ACP	A	0	
+614	walther_ppk_32acp	Walther	PPK	.32 ACP	A	0	
+615	walther_ppk_380acp	Walther	PPK	.380 ACP	A	0	
+616	walther_ppks_380acp	Walther	PPK/S	.380 ACP	A	0	
+617	walther_ppq_9mm	Walther	PPQ	9×19mm	A	0	
+618	walther_p99_9mm	Walther	P99	9×19mm	A	0	
+619	walther_p99as_9mm	Walther	P99	9×19mm	A	0	
+620	walther_pps_9mm	Walther	PPS	9×19mm	A	0	
+621	walther_ccp_9mm	Walther	CCP	9×19mm	A	0	
+622	walther_pdp_9mm	Walther	PDP	9×19mm	A	0	
+623	walther_p22	Walther	P22	.22 LR	A	0	
+624	walther_q5sf_9mm	Walther	Q5	9×19mm	A	0	
+625	walther_q4sf_9mm	Walther	Q4	9×19mm	A	0	
+626	walther_sp22_m2	Walther	SP22	.22 LR	A	0	
+627	walther_ccpm2_380acp	Walther	CCP	.380 ACP	A	0	
+628	walther_pdpf_9mm	Walther	PDP	9×19mm	A	0	
+629	mauser_m1910_25acp	Mauser	M1910	.25 ACP	A	0	
+630	mauser_m1914_32acp	Mauser	M1914	.32 ACP	A	0	
+631	mauser_m1934_32acp	Mauser	M1934	.32 ACP	A	0	
+632	mauser_hsc_32acp	Mauser	HSc	.32 ACP	A	0	
+633	mauser_hsc_380acp	Mauser	HSc	.380 ACP	A	0	
+634	mauser_wtp1_25acp	Mauser	WTP	.25 ACP	A	0	
+635	mauser_wtp2_25acp	Mauser	WTP	.25 ACP	A	0	
+636	mauser_m1918_tankgewehr	Mauser	M1918	13.2×92mmSR	?	7	unknown cartridge: 13.2×92mmSR
+637	mauser_mg213_20mm	Mauser	MG	20×135mm	?	7	unknown cartridge: 20×135mm
+638	mauser_bk27_27mm	Mauser	BK-27	27×145mm	?	7	unknown cartridge: 27×145mm
+639	sa_m1_garand	Springfield Armory	M1 Garand	.30-06	A	0	
+640	sa_m1a_standard	Springfield Armory	M1A	7.62×51mm	A	0	
+641	sa_m1a_loaded	Springfield Armory	M1A	7.62×51mm	A	0	
+642	sa_m1a_scout	Springfield Armory	M1A	7.62×51mm	A	0	
+643	sa_m1a_socom	Springfield Armory	M1A	7.62×51mm	A	0	
+644	sa_1911_a1	Springfield Armory	1911	.45 ACP	A	0	
+645	sa_1911_operator	Springfield Armory	1911	.45 ACP	A	0	
+646	sa_1911_range_officer	Springfield Armory	1911	.45 ACP	A	0	
+647	sa_hellcat	Springfield Armory	Hellcat	9×19mm	A	0	
+648	sa_hellcat_pro	Springfield Armory	Hellcat	9×19mm	A	0	
+649	sa_xd9	Springfield Armory	XD	9×19mm	A	0	
+650	sa_xdm_525	Springfield Armory	XD-M	9×19mm	A	0	
+651	sa_xds	Springfield Armory	XD-S	9×19mm	A	0	
+652	sa_xde	Springfield Armory	XD-E	9×19mm	A	0	
+653	sa_saint	Springfield Armory	SAINT	5.56×45mm	A	0	
+654	sa_saint_edge_308	Springfield Armory	SAINT	7.62×51mm	A	0	
+655	sa_ronin	Springfield Armory	1911	.45 ACP	A	0	
+656	sa_emp	Springfield Armory	EMP	9×19mm	A	0	
+657	sa_911	Springfield Armory	911	.380 ACP	A	0	
+658	kimber_micro9	Kimber	Micro 9	9×19mm	A	0	
+659	kimber_micro_380	Kimber	Micro	.380 ACP	A	0	
+660	kimber_custom_ii	Kimber	1911	.45 ACP	A	0	
+661	kimber_stainless_ii	Kimber	1911	.45 ACP	A	0	
+662	kimber_tle_rl_ii	Kimber	1911	.45 ACP	A	0	
+663	kimber_pro_carry_hd	Kimber	1911	.45 ACP	A	0	
+664	kimber_ultra_carry_ii	Kimber	1911	.45 ACP	A	0	
+665	kimber_raptor_ii	Kimber	1911	.45 ACP	A	0	
+666	kimber_solo	Kimber	Solo	9×19mm	A	0	
+667	kimber_k6s_dcr	Kimber	K6s	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+668	kimber_k6s_target	Kimber	K6s	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+669	kimber_evo_sp	Kimber	EVO	9×19mm	A	0	
+670	kimber_rapide_black_ice	Kimber	1911	.45 ACP	A	0	
+671	kimber_warrior	Kimber	1911	.45 ACP	A	0	
+672	kimber_desert_warrior	Kimber	1911	.45 ACP	A	0	
+673	wby_mkv_300wm	Weatherby	Mark V	.300 Win Mag	A	0	
+674	wby_mkv_338lapua	Weatherby	Mark V	.338 Lapua	A	0	
+675	wby_mkv_3006	Weatherby	Mark V	.30-06	A	0	
+676	wby_mkv_65creed	Weatherby	Mark V	6.5 Creedmoor	A	0	
+677	wby_mkv_257wby	Weatherby	Mark V	.257 Wby Mag	?	7	unknown cartridge: .257 Wby Mag
+678	wby_mkv_460wby	Weatherby	Mark V	.460 Wby Mag	?	7	unknown cartridge: .460 Wby Mag
+679	wby_vang_308	Weatherby	Vanguard	.308 Win	A	0	
+680	wby_vang_65creed	Weatherby	Vanguard	6.5 Creedmoor	A	0	
+681	wby_vang_3006	Weatherby	Vanguard	.30-06	A	0	
+682	wby_vang_300wm	Weatherby	Vanguard	.300 Win Mag	A	0	
+683	nri_type56	Norinco	Type 56	7.62×39mm	A	0	
+684	nri_type56_1	Norinco	Type 56-1	7.62×39mm	A	0	
+685	nri_type56_2	Norinco	Type 56-2	7.62×39mm	A	0	
+686	nri_type81	Norinco	Type 81	7.62×39mm	A	0	
+687	nri_qbz95	Norinco	QBZ-95	5.8×42mm	?	7	unknown cartridge: 5.8×42mm
+688	nri_qbz03	Norinco	QBZ-03	5.8×42mm	?	7	unknown cartridge: 5.8×42mm
+689	nri_qbu88	Norinco	QBU-88	5.8×42mm	?	7	unknown cartridge: 5.8×42mm
+690	nri_type79_smg	Norinco	Type 79	7.62×25mm	A	0	
+691	nri_type85_smg	Norinco	Type 85	7.62×25mm	A	0	
+692	nri_type54	Norinco	Type 54	7.62×25mm	A	0	
+693	nri_type64_pistol	Norinco	Type 64	7.62×17mm	?	7	unknown cartridge: 7.62×17mm
+694	nri_type64_silenced	Norinco	Type 64	7.65×17mm	A	0	
+695	nri_cf98	Norinco	CF98	9×19mm	A	0	
+696	nri_qsz92	Norinco	QSZ-92	5.8×21mm	?	7	unknown cartridge: 5.8×21mm
+697	nri_1911a1	Norinco	1911A1	.45 ACP	A	0	
+698	nri_sks	Norinco	Type 56	7.62×39mm	A	0	
+699	nri_type84	Norinco	Type 84	5.56×45mm	A	0	
+700	canik_tp9_sf	Canik	TP9 SF	9×19mm	A	0	
+701	canik_tp9_sfx	Canik	TP9 SFx	9×19mm	A	0	
+702	canik_tp9_elite	Canik	TP9 Elite	9×19mm	A	0	
+703	canik_tp9_sa	Canik	TP9 SA	9×19mm	A	0	
+704	canik_mete_sf	Canik	Mete SF	9×19mm	A	0	
+705	canik_mete_sft	Canik	Mete SFT	9×19mm	A	0	
+706	canik_mete_mc9	Canik	Mete MC9	9×19mm	A	0	
+707	canik_rival	Canik	Rival	9×19mm	A	0	
+708	canik_rival_s	Canik	Rival-S	9×19mm	A	0	
+709	canik_elite_combat	Canik	Elite Combat	9×19mm	A	0	
+710	canik_executive	Canik	Executive	9×19mm	A	0	
+711	canik_tp9_sfx_mete	Canik	TP9 SFx METE	9×19mm	A	0	
+712	tur_sar_b6	Sarsilmaz	B6	9×19mm	A	0	
+713	tur_sar9	Sarsilmaz	SAR 9	9×19mm	A	0	
+714	tur_sar2000	Sarsilmaz	SAR 2000	9×19mm	A	0	
+715	tur_tisas_1911a1	Tisas	1911A1	.45 ACP	A	0	
+716	tur_tisas_zigana	Tisas	Zigana	9×19mm	A	0	
+717	tur_girsan_mc9	Girsan	MC9	9×19mm	A	0	
+718	wby_sa08_12ga	Weatherby	SA-08	12 Gauge	A	0	
+719	wby_sa459_12ga	Weatherby	SA-459	12 Gauge	A	0	
+720	wby_pa459_12ga	Weatherby	PA-459	12 Gauge	A	0	
+721	wby_element_12ga	Weatherby	Element	12 Gauge	A	0	
+722	wby_orion_12ga	Weatherby	Orion	12 Gauge	A	0	
+723	wby_athena_12ga	Weatherby	Athena	12 Gauge	A	0	
+724	wby_firstlite_22lr	Weatherby	First Lite	.22 LR	A	0	
+725	wby_backcountry_308	Weatherby	Backcountry	.308 Win	A	0	
+726	dw_715_357	Dan Wesson	715	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+727	dw_valor_45	Dan Wesson	Valor	.45 ACP	A	0	
+728	dw_specialist_45	Dan Wesson	Specialist	.45 ACP	A	0	
+729	dw_bruin_45	Dan Wesson	Bruin	.45 ACP	A	0	
+730	dw_wraith_45	Dan Wesson	Wraith	.45 ACP	A	0	
+731	dw_guardian_9mm	Dan Wesson	Guardian	9×19mm	A	0	
+732	dw_guardian_38super	Dan Wesson	Guardian	.38 Super	?	7	unknown cartridge: .38 Super
+733	dw_discretion_9mm	Dan Wesson	Discretion	9×19mm	A	0	
+734	dw_dwx_9mm	Dan Wesson	DWX	9×19mm	A	0	
+735	kahr_cm9	Kahr Arms	CM9	9×19mm	A	0	
+736	kahr_pm9	Kahr Arms	PM9	9×19mm	A	0	
+737	kahr_cw9	Kahr Arms	CW9	9×19mm	A	0	
+738	kahr_p380	Kahr Arms	P380	.380 ACP	A	0	
+739	kahr_cw380	Kahr Arms	CW380	.380 ACP	A	0	
+740	kahr_k9	Kahr Arms	K9	9×19mm	A	0	
+741	kahr_t9	Kahr Arms	T9	9×19mm	A	0	
+742	kahr_mk9	Kahr Arms	MK9	9×19mm	A	0	
+743	hs_hdm_22lr	High Standard	HDM	.22 LR	A	0	
+744	hs_supermatic_22lr	High Standard	Supermatic Citation	.22 LR	A	0	
+745	hs_victor_22lr	High Standard	Victor	.22 LR	A	0	
+746	hs_derringer_22mag	High Standard	Derringer	.22 WMR	?	7	unknown cartridge: .22 WMR
+747	ij_tp22	Iver Johnson	TP22	.22 LR	A	0	
+748	ij_tp25	Iver Johnson	TP25	.25 ACP	A	0	
+749	ij_38sw_rev	Iver Johnson	Safety Automatic	.38 S&W	?	7	unknown cartridge: .38 S&W
+750	ao_thompson_m1_45	Auto-Ordnance	Thompson	.45 ACP	A	0	
+751	ao_1911c_45	Auto-Ordnance	1911C	.45 ACP	A	0	
+752	ao_1911a1_45	Auto-Ordnance	1911A1	.45 ACP	A	0	
+753	amt_automag2_22wmr	AMT	Automag II	.22 WMR	?	7	unknown cartridge: .22 WMR
+754	amt_automag3_30carbine	AMT	Automag III	.30 Carbine	?	7	unknown cartridge: .30 Carbine
+755	amt_automag4_45winmag	AMT	Automag IV	.45 Win Mag	?	7	unknown cartridge: .45 Win Mag
+756	amt_hardballer_45	AMT	Hardballer	.45 ACP	A	0	
+757	charter_undercover_38	Charter Arms	Undercover	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+758	charter_bulldog_44spl	Charter Arms	Bulldog	.44 Special	A	1	pressure=145.0 deviates 36% from typical 107
+759	charter_pitbull_9mm	Charter Arms	Pitbull	9×19mm	A	0	
+760	tur_retay_mas	Retay	Mas	12 Gauge	A	0	
+761	tur_armsan	Armsan	Model A	12 Gauge	A	0	
+762	tur_hatsan_escort	Hatsan	Escort	12 Gauge	A	0	
+763	tur_stoeger	Stoeger	M3000	12 Gauge	A	0	
+764	sako_trg_62	Sako	Trg 62	5.56×45mm	A	0	
+765	sako_a7_308	Sako	A7 308	7.62×51mm	A	0	
+766	sako_a7_300wm	Sako	A7 300Wm	.300 Win Mag	A	0	
+767	tikka_t3x_lite_308	Tikka	T3X Lite 308	7.62×51mm	A	0	
+768	tikka_t3x_tact_308	Tikka	T3X Tact 308	7.62×51mm	A	0	
+769	tikka_t1x_mtr	Tikka	T1X Mtr	.22 LR	A	0	
+770	valmet_rk62	Valmet	Rk62	7.62×39mm	A	0	
+771	valmet_rk71	Valmet	Rk71	7.62×39mm	A	0	
+772	valmet_rk76	Valmet	Rk76	7.62×39mm	A	0	
+773	valmet_m78_762	Valmet	M78 762	7.62×51mm	A	0	
+774	howa_1500_308	Howa	1500 308	7.62×51mm	A	0	
+775	howa_m1500_6_5cm	Howa	M1500 6 5Cm	6.5 Creedmoor	A	0	
+776	howa_type89	Howa	Type89	5.56×45mm	A	0	
+777	howa_hogue_308	Howa	Hogue 308	7.62×51mm	A	0	
+778	kac_sr15_mod2_115	KAC	Sr15 Mod2 115	5.56×45mm NATO	A	0	
+779	kac_sr15_mod2_145	KAC	Sr15 Mod2 145	5.56×45mm NATO	A	0	
+780	kac_sr15_mod2_16	KAC	Sr15 Mod2 16	5.56×45mm NATO	A	0	
+781	kac_sr25_20	KAC	Sr25 20	7.62×51mm NATO	A	0	
+782	kac_sr25_ecc	KAC	Sr25 Ecc	7.62×51mm NATO	A	0	
+783	kac_pdw	KAC	Pdw	6×35mm	?	7	unknown cartridge: 6×35mm
+784	kac_sr16_cqb	KAC	Sr16 Cqb	5.56×45mm NATO	A	0	
+785	lmt_mars_l	LMT	Mars L	5.56×45mm NATO	A	0	
+786	lmt_mars_h	LMT	Mars H	7.62×51mm NATO	A	0	
+787	lmt_cqb_mrp_556	LMT	Cqb Mrp 556	5.56×45mm NATO	A	0	
+788	lmt_cqb_mrp_762	LMT	Cqb Mrp 762	7.62×51mm NATO	A	0	
+789	lmt_lm308mws	LMT	Lm308Mws	7.62×51mm NATO	A	0	
+790	dd_ddm4_v7	Daniel Defense	Ddm4 V7	5.56×45mm NATO	A	0	
+791	dd_m4a1_ris2	Daniel Defense	M4A1 Ris2	5.56×45mm NATO	A	0	
+792	dd_ddm4_pdw	Daniel Defense	Ddm4 Pdw	.300 BLK	A	0	
+793	dd_dd5_v4	Daniel Defense	Dd5 V4	7.62×51mm NATO	A	0	
+794	dd_dd5_v5	Daniel Defense	Dd5 V5	7.62×51mm NATO	A	0	
+795	dd_mk18	Daniel Defense	Mk18	5.56×45mm NATO	A	0	
+796	fb_radom_beryl	FB Radom	Beryl	5.56×45mm NATO	A	0	
+797	fb_radom_mini_beryl	FB Radom	Mini Beryl	5.56×45mm NATO	A	0	
+798	fb_radom_vis_100	FB Radom	Vis 100	9×19mm Parabellum	A	0	
+799	fb_radom_oniks	FB Radom	Oniks	5.45×39mm	A	0	
+800	cugir_wasr_10	Cugir	Wasr 10	7.62×39mm	A	0	
+801	cugir_draco	Cugir	Draco	7.62×39mm	A	0	
+802	cugir_psl	Cugir	Psl	7.62×54mmR	A	0	
+803	cugir_pm_md_63	Cugir	Pm Md 63	7.62×39mm	A	0	
+804	cugir_rh_10	Cugir	Rh 10	7.62×39mm	A	0	
+805	arsenal_ar_m1	Arsenal	Ar M1	7.62×39mm	A	0	
+806	arsenal_ar_m4sf	Arsenal	Ar M4Sf	5.56×45mm NATO	A	0	
+807	arsenal_ar_m9	Arsenal	Ar M9	7.62×39mm	A	0	
+808	arsenal_sam7r	Arsenal	Sam7R	7.62×39mm	A	0	
+809	arsenal_slr_95	Arsenal	Slr 95	7.62×39mm	A	0	
+810	arsenal_ak47_circle10	Arsenal	Ak47 Circle10	7.62×39mm	A	0	
+811	kel_tec_ks7	Kel-Tec	Ks7	12 Gauge	A	0	
+812	kel_tec_rdb	Kel-Tec	Rdb	5.56×45mm	A	0	
+813	kel_tec_rfb	Kel-Tec	Rfb	7.62×51mm	A	0	
+814	kel_tec_sub2000_9mm	Kel-Tec	Sub2000 9Mm	9×19mm	A	0	
+815	kel_tec_cmr30	Kel-Tec	Cmr30	.22 WMR	?	7	unknown cartridge: .22 WMR
+816	kel_tec_p50	Kel-Tec	P50	5.7×28mm	A	0	
+817	kel_tec_su16	Kel-Tec	Su16	5.56×45mm	A	0	
+818	henry_big_boy_steel_357	Henry	Big Boy Steel 357	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+819	henry_big_boy_x_357	Henry	Big Boy X 357	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+820	henry_golden_boy_22	Henry	Golden Boy 22	.22 LR	A	0	
+821	henry_all_weather_357	Henry	All Weather 357	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+822	henry_long_ranger_223	Henry	Long Ranger 223	.223 Rem	A	0	
+823	henry_3030_classic	Henry	3030 Classic	.30-30 Win	A	0	
+824	henry_single_shot_308	Henry	Single Shot 308	.308 Win	A	0	
+825	hi_point_995_9mm	Hi-Point	995 9Mm	9×19mm	A	0	
+826	hi_point_1095_10mm	Hi-Point	1095 10Mm	10mm Auto	A	0	
+827	hi_point_4595_45acp	Hi-Point	4595 45Acp	.45 ACP	A	0	
+828	tc_encore_308	Thompson-Center	Encore 308	.308 Win	A	0	
+829	tc_compass_308	Thompson-Center	Compass 308	.308 Win	A	0	
+830	star_z70b	Star	Z70B	9×19mm	A	0	
+831	star_z84	Star	Z84	9×19mm	A	0	
+832	star_bm	Star	Bm	9×19mm	A	0	
+833	star_pdri	Star	Pdri	9×19mm	A	0	
+834	astra_a80	Astra	A80	9×19mm	A	0	
+835	astra_a90	Astra	A90	9×19mm	A	0	
+836	astra_a100	Astra	A100	9×19mm	A	0	
+837	astra_constable	Astra	Constable	9×17mm	A	0	
+838	astra_falcon	Astra	Falcon	9×17mm	A	0	
+839	llama_omni	Llama	Omni	.45 ACP	A	0	
+840	llama_ixa	Llama	Ixa	.45 ACP	A	0	
+841	llama_xv	Llama	Xv	.45 ACP	A	0	
+842	llama_comanche	Llama	Comanche	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+843	llama_especial	Llama	Especial	9×19mm	A	0	
+844	cetme_modelc	CETME	Modelc	7.62×51mm	A	0	
+845	cetme_modell	CETME	Modell	5.56×45mm	A	0	
+846	cetme_modellc	CETME	Modellc	5.56×45mm	A	0	
+847	cetme_ameli	CETME	Ameli	5.56×45mm	A	0	
+848	iwi_tavor_7	IWI	Tavor 7	7.62×51mm	A	0	
+849	iwi_tavor_ts12	IWI	Tavor Ts12	12 Gauge	A	0	
+850	iwi_galil_ace_556	IWI	Galil Ace 556	5.56×45mm	A	0	
+851	iwi_galil_ace_762	IWI	Galil Ace 762	7.62×39mm	A	0	
+852	iwi_galil_ace_308	IWI	Galil Ace 308	7.62×51mm	A	0	
+853	iwi_galil_ace_gen2	IWI	Galil Ace Gen2	5.56×45mm	A	0	
+854	iwi_uzi_pro	IWI	Uzi Pro	9×19mm	A	0	
+855	iwi_negev_ng7	IWI	Negev Ng7	7.62×51mm	A	0	
+856	iwi_carmel	IWI	Carmel	5.56×45mm	A	0	
+857	bt_apc223	B&T	Apc223	5.56×45mm	A	0	
+858	bt_apc308	B&T	Apc308	7.62×51mm	A	0	
+859	bt_apc9	B&T	Apc9	9×19mm	A	0	
+860	bt_apc300	B&T	Apc300	.300 BLK	A	0	
+861	bt_spr300	B&T	Spr300	.300 BLK	A	0	
+862	bt_ghm9	B&T	Ghm9	9×19mm	A	0	
+863	bt_tp9	B&T	Tp9	9×19mm	A	0	
+864	bt_mp9	B&T	Mp9	9×19mm	A	0	
+865	mateba_autorevolver	Mateba	Mateba Autorevolver	9×19mm Parabellum	A	0	
+866	sterling_l2a3	Sterling Armaments Company	Sterling L2A3	9×19mm Parabellum	A	0	
+867	sten_mk5	Royal Small Arms Factory	Sten Mk5	9×19mm Parabellum	A	0	
+868	mke_mpt_76	MKE	Mpt 76	7.62×51mm	A	0	
+869	mke_mpt_55	MKE	Mpt 55	5.56×45mm	A	0	
+870	mke_mpt_76_k	MKE	Mpt 76 K	7.62×51mm	A	0	
+871	mke_knt_76	MKE	Knt 76	7.62×51mm	A	0	
+872	mke_g3	MKE	G3	7.62×51mm	A	0	
+873	mke_g3a4	MKE	G3A4	7.62×51mm	A	0	
+874	daewoo_k1a	Daewoo	K1A	5.56×45mm	A	0	
+875	daewoo_k2	Daewoo	K2	5.56×45mm	A	0	
+876	daewoo_k2c	Daewoo	K2C	5.56×45mm	A	0	
+877	daewoo_k3	Daewoo	K3	5.56×45mm	A	0	
+878	daewoo_k7	Daewoo	K7	9×19mm	A	0	
+879	daewoo_k14	Daewoo	K14	7.62×51mm	A	0	
+880	daewoo_usas_12	Daewoo	Usas 12	12 Gauge	A	0	
+881	tanfoglio_witness_hunter	Tanfoglio	Witness Hunter	10mm Auto	A	0	
+882	tanfoglio_witness_stock_ii	Tanfoglio	Witness Stock Ii	9×19mm	A	0	
+883	tanfoglio_witness_match	Tanfoglio	Witness Match	9×19mm	A	0	
+884	tanfoglio_witness_elite_gold	Tanfoglio	Witness Elite Gold	9×19mm	A	0	
+885	tanfoglio_witness_compact	Tanfoglio	Witness Compact	9×19mm	A	0	
+886	tanfoglio_force_99	Tanfoglio	Force 99	9×19mm	A	0	
+887	tanfoglio_limited_custom	Tanfoglio	Limited Custom	.45 ACP	A	0	
+888	tanfoglio_witness_pavona	Tanfoglio	Witness Pavona	9×19mm	A	0	
+889	honey_badger_q	Q	Q	.300 BLK	A	0	
+890	sugar_weasel_q	Q	Q	5.56×45mm	A	0	
+891	fix_q	Q	Q	6.5 Creedmoor	A	0	
+892	raccoon_q	Q	Q	.22 LR	A	0	
+893	vector_gen2_kriss	KRISS	Gen2 Kriss	.45 ACP	A	0	
+894	vector_crb_kriss	KRISS	Crb Kriss	.45 ACP	A	0	
+895	vector_sbr_kriss	KRISS	Sbr Kriss	.45 ACP	A	0	
+896	vector_9mm_kriss	KRISS	9Mm Kriss	9×19mm	A	0	
+897	vector_10mm_kriss	KRISS	10Mm Kriss	10mm Auto	A	0	
+898	rhino_20ds_chiappa	Chiappa	20Ds Chiappa	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+899	rhino_30ds_chiappa	Chiappa	30Ds Chiappa	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+900	rhino_40ds_chiappa	Chiappa	40Ds Chiappa	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+901	rhino_60ds_chiappa	Chiappa	60Ds Chiappa	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+902	m6_survival_chiappa	Chiappa	Survival Chiappa	.22 LR	A	0	
+903	m9_chiappa	Chiappa	M9	9×19mm	A	0	
+904	acr_bushmaster	Bushmaster	Bushmaster	5.56×45mm	A	0	
+905	acr_762_bushmaster	Bushmaster	762 Bushmaster	7.62×39mm	A	0	
+906	m4_type_bushmaster	Bushmaster	Bushmaster	5.56×45mm	A	0	
+907	qrc_bushmaster	Bushmaster	Bushmaster	5.56×45mm	A	0	
+908	orc_bushmaster	Bushmaster	Bushmaster	5.56×45mm	A	0	
+909	carbon_15_bushmaster	Bushmaster	Bushmaster	5.56×45mm	A	0	
+910	moe_bushmaster	Bushmaster	Bushmaster	5.56×45mm	A	0	
+911	r4_vektor	Vektor	R4	5.56×45mm	A	0	
+912	r5_vektor	Vektor	R5	5.56×45mm	A	0	
+913	r6_vektor	Vektor	R6	5.56×45mm	A	0	
+914	cr21_vektor	Vektor	Vektor	5.56×45mm	A	0	
+915	ss77_vektor	Vektor	Vektor	7.62×51mm	A	0	
+916	ntw20_vektor	Vektor	Vektor	20×82mm	?	7	unknown cartridge: 20×82mm
+917	ntw145_vektor	Vektor	Vektor	14.5×114mm	?	7	unknown cartridge: 14.5×114mm
+918	z88_vektor	Vektor	Vektor	9×19mm	A	0	
+919	sp1_vektor	Vektor	Vektor	9×19mm	A	0	
+920	sp2_vektor	Vektor	Vektor	9×19mm	A	0	
+921	amd65_feg	FÉG	Feg	7.62×39mm	A	0	
+922	amd63_feg	FÉG	Feg	7.62×39mm	A	0	
+923	ak63_feg	FÉG	Feg	7.62×39mm	A	0	
+924	ngm81_feg	FÉG	Feg	5.56×45mm	A	0	
+925	pa63_feg	FÉG	Feg	9×18mm Makarov	A	0	
+926	r61_feg	FÉG	Feg	9×19mm	A	0	
+927	b9r_feg	FÉG	Feg	9×19mm	A	0	
+928	kgp9_feg	FÉG	Feg	9×19mm	A	0	
+929	sar21_stkin	ST Kinetics	Stkin	5.56×45mm	A	0	
+930	sar21mms_stkin	ST Kinetics	Sar21Mms Stkin	5.56×45mm	A	0	
+931	sar21gl_stkin	ST Kinetics	Sar21Gl Stkin	5.56×45mm	A	0	
+932	sar21p_stkin	ST Kinetics	Sar21P Stkin	5.56×45mm	A	0	
+933	sar21a_stkin	ST Kinetics	Sar21A Stkin	5.56×45mm	A	0	
+934	ultimax100mk3_stkin	ST Kinetics	Ultimax100Mk3 Stkin	5.56×45mm	A	0	
+935	ultimax100mk5_stkin	ST Kinetics	Ultimax100Mk5 Stkin	5.56×45mm	A	0	
+936	cp1_stkin	ST Kinetics	Stkin	.22 LR	A	0	
+937	dsa_sa58_fal_std	DSA	Sa58 Fal Std	7.62×51mm	A	0	
+938	dsa_sa58_fal_carbine	DSA	Sa58 Fal Carbine	7.62×51mm	A	0	
+939	dsa_sa58_fal_para	DSA	Sa58 Fal Para	7.62×51mm	A	0	
+940	dsa_sa58_fal_21pbr	DSA	Sa58 Fal 21Pbr	7.62×51mm	A	0	
+941	dsa_sa58_osw	DSA	Sa58 Osw	7.62×51mm	A	0	
+942	dsa_sa58_rpc	DSA	Sa58 Rpc	7.62×51mm	A	0	
+943	dsa_xm16a1	DSA	Xm16A1	5.56×45mm	A	0	
+944	dsa_zm4	DSA	Zm4	5.56×45mm	A	0	
+945	rob_xcr_l_std	Robinson Armament	L Std	5.56×45mm	A	0	
+946	rob_xcr_l_micro	Robinson Armament	L Micro	5.56×45mm	A	0	
+947	rob_xcr_m	Robinson Armament	M	7.62×51mm	A	0	
+948	rob_xcr_l_762x39	Robinson Armament	L 762X39	7.62×39mm	A	0	
+949	rob_m96_expeditionary	Robinson Armament	Expeditionary	5.56×45mm	A	0	
+950	rob_m96_recon	Robinson Armament	Recon	5.56×45mm	A	0	
+951	blaser_r93_lrs2_308	Blaser	R93 Lrs2 308	7.62×51mm	A	0	
+952	blaser_r93_t2_338lm	Blaser	R93 T2 338Lm	.338 Lapua Magnum	A	0	
+953	blaser_r93_t2_300wm	Blaser	R93 T2 300Wm	.300 Winchester Magnum	A	0	
+954	blaser_r8_pro_308	Blaser	R8 Pro 308	7.62×51mm	A	0	
+955	blaser_r8_pro_300wm	Blaser	R8 Pro 300Wm	.300 Winchester Magnum	A	0	
+956	blaser_r8_pro_65creed	Blaser	R8 Pro 65Creed	6.5 Creedmoor	A	0	
+957	serbu_bfg50	Serbu	Bfg50	.50 BMG	A	0	
+958	serbu_bfg50a	Serbu	Bfg50A	.50 BMG	A	0	
+959	serbu_bfg50_carbine	Serbu	Bfg50 Carbine	.50 BMG	A	0	
+960	serbu_rn50	Serbu	Rn50	.50 BMG	A	0	
+961	serbu_super_shorty	Serbu	Super Shorty	12 Gauge	A	0	
+962	sg_550	SIG Sauer AG	550	5.56×45mm NATO	A	0	
+963	sg_552	SIG Sauer AG	552	5.56×45mm NATO	A	0	
+964	sg_553	SIG Sauer AG	553	5.56×45mm NATO	A	0	
+965	sg_510	SIG Sauer AG	510	7.62×51mm NATO	A	0	
+966	sg_510_stgw57	SIG Sauer AG	510 Stgw57	7.5×55mm Swiss	?	7	unknown cartridge: 7.5×55mm Swiss
+967	alpine_tactical	Alpine	Tactical	.308 Winchester	A	0	
+968	mannlicher_m1895	Steyr-Mannlicher	M1895	8×56mmR	?	7	unknown cartridge: 8×56mmR
+969	mannlicher_schoenauer	Steyr-Mannlicher	Schoenauer	6.5×54mm Mannlicher-Schönauer	?	7	unknown cartridge: 6.5×54mm Mannlicher-Schönauer
+970	mannlicher_m1888	Steyr-Mannlicher	M1888	8×50mmR	?	7	unknown cartridge: 8×50mmR
+971	mannlicher_m1890	Steyr-Mannlicher	M1890	8×50mmR	?	7	unknown cartridge: 8×50mmR
+972	breda_m37	Breda	M37	8×59mm RB Breda	?	7	unknown cartridge: 8×59mm RB Breda
+973	breda_m30	Breda	M30	6.5×52mm Carcano	?	7	unknown cartridge: 6.5×52mm Carcano
+974	breda_xanthos	Breda	Xanthos	12 Gauge	A	0	
+975	breda_m1_field	Breda	M1 Field	12 Gauge	A	0	
+976	charter_mag_pug	Charter Arms	Mag Pug	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+977	charter_patriot	Charter Arms	Patriot	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+978	charter_off_duty	Charter Arms	Off Duty	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+979	charter_target_bulldog	Charter Arms	Target Bulldog	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+980	charter_boomer	Charter Arms	Boomer	.44 Special	A	1	pressure=145.0 deviates 36% from typical 107
+981	charter_undercoverette	Charter Arms	Undercoverette	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+982	benelli_m2	Benelli	M2	12 Gauge	A	0	
+983	benelli_m3	Benelli	M3	12 Gauge	A	0	
+984	benelli_supernova	Benelli	Supernova	12 Gauge	A	0	
+985	benelli_nova	Benelli	Nova	12 Gauge	A	0	
+986	benelli_montefeltro	Benelli	Montefeltro	12 Gauge	A	0	
+987	benelli_vinci	Benelli	Vinci	12 Gauge	A	0	
+988	benelli_ethos	Benelli	Ethos	12 Gauge	A	0	
+989	benelli_raffaello	Benelli	Raffaello	12 Gauge	A	0	
+990	benelli_lupo	Benelli	Lupo	.308 Winchester	A	0	
+991	benelli_mr1	Benelli	Mr1	5.56×45mm NATO	A	0	
+992	benelli_argo	Benelli	Argo	.30-06 Springfield	A	0	
+993	benelli_828u	Benelli	828U	12 Gauge	A	0	
+994	franchi_affinity	Franchi	Affinity	12 Gauge	A	0	
+995	franchi_instinct	Franchi	Instinct	12 Gauge	A	0	
+996	franchi_momentum	Franchi	Momentum	.308 Winchester	A	0	
+997	franchi_horizon	Franchi	Horizon	.308 Winchester	A	0	
+998	franchi_al48	Franchi	Al48	12 Gauge	A	0	
+999	franchi_falconet	Franchi	Falconet	12 Gauge	A	0	
+1000	franchi_renaissance	Franchi	Renaissance	12 Gauge	A	0	
+1001	beretta_92fs	Beretta	92Fs	9×19mm Parabellum	A	0	
+1002	beretta_92x	Beretta	92X	9×19mm Parabellum	A	0	
+1003	beretta_px4_storm	Beretta	Px4 Storm	9×19mm Parabellum	A	0	
+1004	beretta_apx	Beretta	Apx	9×19mm Parabellum	A	0	
+1005	beretta_21a_bobcat	Beretta	21A Bobcat	.22 Long Rifle	A	0	
+1006	beretta_3032_tomcat	Beretta	3032 Tomcat	.32 ACP	A	0	
+1007	beretta_87_cheetah	Beretta	87 Cheetah	.22 Long Rifle	A	0	
+1008	beretta_1301_tactical	Beretta	1301 Tactical	12 Gauge	A	0	
+1009	beretta_686_silver_pigeon	Beretta	686 Silver Pigeon	12 Gauge	A	0	
+1010	beretta_a400_xtreme_plus	Beretta	A400 Xtreme Plus	12 Gauge	A	0	
+1011	beretta_cx4_storm	Beretta	Cx4 Storm	9×19mm Parabellum	A	0	
+1012	beretta_pmx	Beretta	Pmx	9×19mm Parabellum	A	0	
+1013	beretta_m12	Beretta	M12	9×19mm Parabellum	A	0	
+1014	colt_single_action_army	Colt	Single Action Army	.45 LC	A	1	pressure=110.0 slightly below .45 Colt min (115)
+1015	colt_king_cobra	Colt	King Cobra	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1016	colt_officers_acp	Colt	Officers Acp	.45 ACP	A	0	
+1017	colt_mustang	Colt	Mustang	.380 ACP	A	0	
+1018	colt_woodsman	Colt	Woodsman	.22 LR	A	0	
+1019	colt_ar15a4	Colt	Ar15A4	5.56×45mm NATO	A	0	
+1020	colt_new_service	Colt	New Service	.45 LC	A	1	pressure=110.0 slightly below .45 Colt min (115)
+1021	remington_700p	Remington	700P	7.62×51mm NATO	A	0	
+1022	remington_700_sendero	Remington	700 Sendero	7.62×51mm NATO	A	0	
+1023	remington_742	Remington	742	7.62×51mm NATO	A	0	
+1024	remington_xp_100	Remington	Xp 100	5.56×45mm NATO	A	0	
+1025	remington_model_8	Remington	Model 8	7.62×51mm NATO	A	0	
+1026	walther_ppks_22lr	Walther	Ppks 22Lr	.22 LR	A	0	
+1027	walther_tph	Walther	Tph	.22 LR	A	0	
+1028	walther_p38	Walther	P38	9×19mm Parabellum	A	0	
+1029	walther_p1	Walther	P1	9×19mm Parabellum	A	0	
+1030	walther_ppq_m2_5in	Walther	Ppq M2 5In	9×19mm Parabellum	A	0	
+1031	walther_pdp_compact	Walther	Pdp Compact	9×19mm Parabellum	A	0	
+1032	walther_pk380	Walther	Pk380	.380 ACP	A	0	
+1033	walther_gsp	Walther	Gsp	.22 LR	A	0	
+1034	walther_creed	Walther	Creed	9×19mm Parabellum	A	0	
+1035	fn_herstal_510	FN Herstal	510	10mm Auto	A	0	
+1036	fn_herstal_545	FN Herstal	545	.45 ACP	A	0	
+1037	fn_herstal_503	FN Herstal	503	9×19mm Parabellum	A	0	
+1038	fn_herstal_ps90	FN Herstal	Ps90	5.7×28mm	A	0	
+1039	fn_herstal_fs2000	FN Herstal	Fs2000	5.56×45mm NATO	A	0	
+1040	fn_herstal_model_1910	FN Herstal	Model 1910	.380 ACP	A	0	
+1041	fn_herstal_m1900	FN Herstal	M1900	.32 ACP	A	0	
+1042	fn_herstal_trombone	FN Herstal	Trombone	.22 Long Rifle	A	0	
+1043	heckler_koch_hk45ct	Heckler & Koch	Hk45Ct	.45 ACP	A	0	
+1044	heckler_koch_p30l	Heckler & Koch	P30L	9×19mm Parabellum	A	0	
+1045	heckler_koch_vp9l	Heckler & Koch	Vp9L	9×19mm Parabellum	A	0	
+1046	heckler_koch_vp40	Heckler & Koch	Vp40	.40 S&W	A	0	
+1047	heckler_koch_p2000	Heckler & Koch	P2000	9×19mm Parabellum	A	0	
+1048	heckler_koch_p2000sk	Heckler & Koch	P2000Sk	9×19mm Parabellum	A	0	
+1049	heckler_koch_hk433	Heckler & Koch	Hk433	5.56×45mm NATO	A	0	
+1050	heckler_koch_sl8	Heckler & Koch	Sl8	5.56×45mm NATO	A	0	
+1051	heckler_koch_sl6	Heckler & Koch	Sl6	.223 Remington	A	0	
+1052	heckler_koch_hk91	Heckler & Koch	Hk91	7.62×51mm NATO	A	0	
+1053	iwi_masada	IWI	Masada	9×19mm Parabellum	A	0	
+1054	iwi_jericho_941	IWI	Jericho 941	9×19mm Parabellum	A	0	
+1055	iwi_jericho_enhanced	IWI	Jericho Enhanced	9×19mm Parabellum	A	0	
+1056	iwi_arad	IWI	Arad	5.56×45mm NATO	A	0	
+1057	iwi_dan	IWI	Dan	.338 Lapua Magnum	A	0	
+1058	iwi_galil_mar	IWI	Galil Mar	5.56×45mm NATO	A	0	
+1059	iwi_galil_ace_545	IWI	Galil Ace 545	5.45×39mm	A	0	
+1060	iwi_negev_commando	IWI	Negev Commando	5.56×45mm NATO	A	0	
+1061	imi_mini_uzi	IMI	Mini Uzi	9×19mm Parabellum	A	0	
+1062	imi_micro_uzi	IMI	Micro Uzi	9×19mm Parabellum	A	0	
+1063	taurus_gx4	Taurus	Gx4	9×19mm Parabellum	A	0	
+1064	taurus_g3x	Taurus	G3X	9×19mm Parabellum	A	0	
+1065	taurus_th9	Taurus	Th9	9×19mm Parabellum	A	0	
+1066	taurus_raging_hunter	Taurus	Raging Hunter	.44 Remington Magnum	?	7	unknown cartridge: .44 Remington Magnum
+1067	webley_mk6	Webley & Scott	Mk6	.455 Webley	?	7	unknown cartridge: .455 Webley
+1068	webley_mk4_38	Webley & Scott	Mk4 38	.38 S&W	?	7	unknown cartridge: .38 S&W
+1069	webley_auto_455	Webley & Scott	Auto 455	.455 Webley Auto	?	7	unknown cartridge: .455 Webley Auto
+1070	webley_32acp	Webley & Scott	32Acp	.32 ACP	A	0	
+1071	webley_fosbery	Webley & Scott	Fosbery	.455 Webley	?	7	unknown cartridge: .455 Webley
+1072	korth_combat	Korth	Combat	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1073	korth_mongoose	Korth	Mongoose	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1074	korth_nxr_357	Korth	Nxr 357	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1075	korth_nxr_44	Korth	Nxr 44	.44 Remington Magnum	?	7	unknown cartridge: .44 Remington Magnum
+1076	naa_22lr	NAA	22Lr	.22 LR	A	0	
+1077	naa_22wmr	NAA	22Wmr	.22 WMR	?	7	unknown cartridge: .22 WMR
+1078	naa_pug	NAA	Pug	.22 WMR	?	7	unknown cartridge: .22 WMR
+1079	naa_sidewinder	NAA	Sidewinder	.22 WMR	?	7	unknown cartridge: .22 WMR
+1080	naa_earl	NAA	Earl	.22 WMR	?	7	unknown cartridge: .22 WMR
+1081	american180	American Arms International	American180	.22 LR	A	0	
+1082	rohrbaugh_r9	Rohrbaugh	R9	9×19mm Parabellum	A	0	
+1083	rohrbaugh_r9s	Rohrbaugh	R9S	9×19mm Parabellum	A	0	
+1084	rohrbaugh_stealth	Rohrbaugh	Stealth	9×19mm Parabellum	A	0	
+1085	mas_36	MAS	36	7.5×54mm French	?	7	unknown cartridge: 7.5×54mm French
+1086	mas_38	MAS	38	7.65mm Longue	?	7	unknown cartridge: 7.65mm Longue
+1087	mas_49	MAS	49	7.5×54mm French	?	7	unknown cartridge: 7.5×54mm French
+1088	mas_4956	MAS	4956	7.5×54mm French	?	7	unknown cartridge: 7.5×54mm French
+1089	mas_fr_f1	MAS	Fr F1	7.5×54mm French	?	7	unknown cartridge: 7.5×54mm French
+1090	bersa_thunder_380	Bersa	Thunder 380	.380 ACP	A	0	
+1091	bersa_thunder_9	Bersa	Thunder 9	9×19mm Parabellum	A	0	
+1092	bersa_tpr9	Bersa	Tpr9	9×19mm Parabellum	A	0	
+1093	bersa_bp9cc	Bersa	Bp9Cc	9×19mm Parabellum	A	0	
+1094	bersa_firestorm_22	Bersa	Firestorm 22	.22 LR	A	0	
+1095	luger_p08	Luger	P08	9×19mm Parabellum	A	0	
+1096	luger_artillery	Luger	Artillery	9×19mm Parabellum	A	0	
+1097	luger_navy	Luger	Navy	9×19mm Parabellum	A	0	
+1098	luger_swiss	Luger	Swiss	7.65×21mm Parabellum	?	7	unknown cartridge: 7.65×21mm Parabellum
+1099	nambu_type_14	Nambu	Type 14	8×22mm Nambu	?	7	unknown cartridge: 8×22mm Nambu
+1100	nambu_type_94	Nambu	Type 94	8×22mm Nambu	?	7	unknown cartridge: 8×22mm Nambu
+1101	nambu_type_100	Nambu	Type 100	8×22mm Nambu	?	7	unknown cartridge: 8×22mm Nambu
+1102	schmidt_rubin_k31	Schmidt-Rubin	K31	7.5×55mm Swiss	?	7	unknown cartridge: 7.5×55mm Swiss
+1103	schmidt_rubin_g1911	Schmidt-Rubin	G1911	7.5×55mm Swiss	?	7	unknown cartridge: 7.5×55mm Swiss
+1104	schmidt_rubin_m1889	Schmidt-Rubin	M1889	7.5×53.5mm Swiss	?	7	unknown cartridge: 7.5×53.5mm Swiss
+1105	para_p14_45	Para Ordnance	Para P14 45	.45 ACP	A	0	
+1106	para_p16_40	Para Ordnance	Para P16 40	.40 S&W	A	0	
+1107	para_p18_9	Para Ordnance	Para P18 9	9×19mm Parabellum	A	0	
+1108	para_carry_12	Para Ordnance	Para Carry 12	.45 ACP	A	0	
+1109	para_lda_14_45	Para Ordnance	Para Lda 14 45	.45 ACP	A	0	
+1110	ithaca_m37	Ithaca	M37	12 Gauge	A	0	
+1111	ithaca_m37_ds	Ithaca	M37 Ds	12 Gauge	A	0	
+1112	ithaca_m3a1	Ithaca	M3A1	.45 ACP	A	0	
+1113	tristar_c100	Tristar	C100	9×19mm Parabellum	A	0	
+1114	tristar_t120	Tristar	T120	9×19mm Parabellum	A	0	
+1115	tristar_compact	Tristar	Compact	9×19mm Parabellum	A	0	
+1116	tristar_viper_g2	Tristar	Viper G2	12 Gauge	A	0	
+1117	mendoza_hm3	Mendoza	Hm3	9×19mm Parabellum	A	0	
+1118	mendoza_c1934	Mendoza	C1934	.22 LR	A	0	
+1119	mendoza_rm1	Mendoza	Rm1	.30-30 Win	A	0	
+1120	jatimatic_gg95	Jatimatic	Gg95	9×19mm Parabellum	A	0	
+1121	sar_tur_9x	Sarsilmaz	9X	9×19mm Parabellum	A	0	
+1122	sar_tur_cm9	Sarsilmaz	Cm9	9×19mm Parabellum	A	0	
+1123	sar_tur_b6c	Sarsilmaz	B6C	9×19mm Parabellum	A	0	
+1124	sar_tur_st9	Sarsilmaz	St9	9×19mm Parabellum	A	0	
+1125	sar_tur_2000sport	Sarsilmaz	2000Sport	9×19mm Parabellum	A	0	
+1126	sar_tur_k12	Sarsilmaz	K12	9×19mm Parabellum	A	0	
+1127	sar_tur_940	Sarsilmaz	940	9×19mm Parabellum	A	0	
+1128	sar_tur_1911	Sarsilmaz	1911	.45 ACP	A	0	
+1129	snt_motiv_k5	SNT Motiv	K5	9×19mm Parabellum	A	0	
+1130	snt_motiv_k13	SNT Motiv	K13	5.56×45mm NATO	A	0	
+1131	snt_motiv_k15	SNT Motiv	K15	5.56×45mm NATO	A	0	
+1132	snt_motiv_k16	SNT Motiv	K16	.308 Win	A	0	
+1133	snt_motiv_stsm21	SNT Motiv	Stsm21	9×19mm Parabellum	A	0	
+1134	iof_insas_rifle	Indian Ordnance Factory	Insas Rifle	5.56×45mm NATO	A	0	
+1135	iof_insas_lmg	Indian Ordnance Factory	Insas Lmg	5.56×45mm NATO	A	0	
+1136	iof_1a1	Indian Ordnance Factory	1A1	7.62×51mm NATO	A	0	
+1137	iof_1a_pistol	Indian Ordnance Factory	1A Pistol	9×19mm Parabellum	A	0	
+1138	iof_32_revolver	Indian Ordnance Factory	32 Revolver	.32 S&W Long	?	7	unknown cartridge: .32 S&W Long
+1139	iof_22_revolver	Indian Ordnance Factory	22 Revolver	.22 LR	A	0	
+1140	iof_1a_smg	Indian Ordnance Factory	1A Smg	9×19mm Parabellum	A	0	
+1141	famae_saf	FAMAE	Saf	9×19mm Parabellum	A	0	
+1142	famae_mini_saf	FAMAE	Mini Saf	9×19mm Parabellum	A	0	
+1143	famae_fd200	FAMAE	Fd200	5.56×45mm NATO	A	0	
+1144	famae_fd520	FAMAE	Fd520	5.56×45mm NATO	A	0	
+1145	famae_sg542	FAMAE	Sg542	7.62×51mm NATO	A	0	
+1146	cobray_m11_9	Cobray	M11 9	9×19mm Parabellum	A	0	
+1147	cobray_m10_45	Cobray	M10 45	.45 ACP	A	0	
+1148	cobray_terminator	Cobray	Terminator	12 Gauge	A	0	
+1149	cobray_cm11	Cobray	Cm11	9×19mm Parabellum	A	0	
+1150	cobray_lady_cocker	Cobray	Lady Cocker	.22 LR	A	0	
+1151	bond_arms_texas_defender	Bond Arms	Texas Defender	.45 Colt	A	0	
+1152	bond_arms_cowboy_defender	Bond Arms	Cowboy Defender	.45 Colt	A	0	
+1153	bond_arms_snake_slayer	Bond Arms	Snake Slayer	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1154	bond_arms_roughneck	Bond Arms	Roughneck	9×19mm Parabellum	A	0	
+1155	phoenix_hp22	Phoenix Arms	Phoenix Hp22	.22 LR	A	0	
+1156	phoenix_hp22_target	Phoenix Arms	Phoenix Hp22 Target	.22 LR	A	0	
+1157	phoenix_hp25	Phoenix Arms	Phoenix Hp25	.25 ACP	A	0	
+1158	hammerli_208	Hämmerli	208	.22 LR	A	0	
+1159	hammerli_280	Hämmerli	280	.32 S&W Long	?	7	unknown cartridge: .32 S&W Long
+1160	hammerli_sp20	Hämmerli	Sp20	.22 LR	A	0	
+1161	hammerli_x_esse	Hämmerli	X Esse	.22 LR	A	0	
+1162	hammerli_tac_r1	Hämmerli	Tac R1	.22 LR	A	0	
+1163	sphinx_2000	Sphinx	2000	9×19mm Parabellum	A	0	
+1164	sphinx_3000	Sphinx	3000	9×19mm Parabellum	A	0	
+1165	sphinx_sdp_compact	Sphinx	Sdp Compact	9×19mm Parabellum	A	0	
+1166	sphinx_sdp_full	Sphinx	Sdp Full	9×19mm Parabellum	A	0	
+1167	sphinx_sa	Sphinx	Sa	9×19mm Parabellum	A	0	
+1168	sti_staccato_p	STI	Staccato P	9×19mm Parabellum	A	0	
+1169	sti_staccato_c	STI	Staccato C	9×19mm Parabellum	A	0	
+1170	sti_staccato_xl	STI	Staccato Xl	9×19mm Parabellum	A	0	
+1171	sti_dvc	STI	Dvc	9×19mm Parabellum	A	0	
+1172	sti_edge	STI	Edge	.40 S&W	A	0	
+1173	sauer_202	J.P. Sauer & Sohn	202	.308 Win	A	0	
+1174	sauer_303	J.P. Sauer & Sohn	303	.308 Win	A	0	
+1175	sauer_404	J.P. Sauer & Sohn	404	6.5 Creedmoor	A	0	
+1176	sauer_100	J.P. Sauer & Sohn	100	.308 Win	A	0	
+1177	miroku_mk70	Miroku	Mk70	12 Gauge	A	0	
+1178	miroku_3800	Miroku	3800	12 Gauge	A	0	
+1179	miroku_1873	Miroku	1873	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1180	miroku_1886	Miroku	1886	.45-70 Government	A	0	
+1181	parker_hale_m85	Parker-Hale	M85	7.62×51mm NATO	A	0	
+1182	parker_hale_1200tx	Parker-Hale	1200Tx	7.62×51mm NATO	A	0	
+1183	parker_hale_model81	Parker-Hale	Model81	.308 Win	A	0	
+1184	parker_hale_1100	Parker-Hale	1100	.303 British	?	7	unknown cartridge: .303 British
+1185	wildey_survivor_5in	Wildey	Survivor 5In	.45 Win Mag	?	7	unknown cartridge: .45 Win Mag
+1186	wildey_survivor_6in	Wildey	Survivor 6In	.45 Win Mag	?	7	unknown cartridge: .45 Win Mag
+1187	wildey_survivor_8in	Wildey	Survivor 8In	.44 Auto Mag	?	7	unknown cartridge: .44 Auto Mag
+1188	wildey_survivor_10in	Wildey	Survivor 10In	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1189	wildey_survivor_12in	Wildey	Survivor 12In	.44 Remington Magnum	?	7	unknown cartridge: .44 Remington Magnum
+1190	pedersoli_1858_remington	Pedersoli	1858 Remington	.45 Colt	A	0	
+1191	pedersoli_1873_trapdoor	Pedersoli	1873 Trapdoor	.45-70	A	0	
+1192	pedersoli_sharps	Pedersoli	Sharps	.45-70	A	0	
+1193	pedersoli_kodiak	Pedersoli	Kodiak	.45-70	A	0	
+1194	pedersoli_howdah	Pedersoli	Howdah	20 Gauge	A	0	
+1195	uberti_1873_cattleman	Uberti	1873 Cattleman	.45 Colt	A	0	
+1196	uberti_1873_cattleman_75	Uberti	1873 Cattleman 75	.45 Colt	A	0	
+1197	uberti_1866_yellowboy	Uberti	1866 Yellowboy	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+1198	uberti_1873_winchester	Uberti	1873 Winchester	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1199	uberti_1885_highwall	Uberti	1885 Highwall	.45-70	A	0	
+1200	uberti_stallion	Uberti	Stallion	.22 LR	A	0	
+1201	glock_17	Glock	17	9×19mm Parabellum	A	0	
+1202	glock_19	Glock	19	9×19mm Parabellum	A	0	
+1203	glock_22	Glock	22	.40 S&W	A	0	
+1204	glock_23	Glock	23	.40 S&W	A	0	
+1205	glock_26	Glock	26	9×19mm Parabellum	A	0	
+1206	glock_34	Glock	34	9×19mm Parabellum	A	0	
+1207	glock_42	Glock	42	.380 ACP	A	0	
+1208	glock_20	Glock	20	10mm Auto	A	0	
+1209	magnum_research_de_50	Magnum Research	De 50	.50 AE	A	1	pressure=345.0 deviates 43% from typical 241
+1210	magnum_research_de_44	Magnum Research	De 44	.44 Remington Magnum	?	7	unknown cartridge: .44 Remington Magnum
+1211	magnum_research_de_357	Magnum Research	De 357	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1212	magnum_research_de_50_10in	Magnum Research	De 50 10In	.50 AE	A	1	pressure=345.0 deviates 43% from typical 241
+1213	magnum_research_mr_eagle	Magnum Research	Mr Eagle	9×19mm Parabellum	A	0	
+1214	kahr_arms_cm9	Kahr Arms	Cm9	9×19mm Parabellum	A	0	
+1215	kahr_arms_pm9	Kahr Arms	Pm9	9×19mm Parabellum	A	0	
+1216	kahr_arms_cw9	Kahr Arms	Cw9	9×19mm Parabellum	A	0	
+1217	kahr_arms_p380	Kahr Arms	P380	.380 ACP	A	0	
+1218	mossberg_500_28	Mossberg	500 28	12 Gauge	A	0	
+1219	mossberg_maverick_88	Mossberg	Maverick 88	12 Gauge	A	0	
+1220	mossberg_mvp_223	Mossberg	Mvp 223	.223 Rem	A	0	
+1221	mossberg_mvp_308	Mossberg	Mvp 308	.308 Win	A	0	
+1222	mossberg_464_3030	Mossberg	464 3030	.30-30 Win	A	0	
+1223	mossberg_590a1_20	Mossberg	590A1 20	12 Gauge	A	0	
+1224	savage_42_22lr_410	Savage	42 22Lr 410	.22 LR	A	0	
+1225	savage_110_223	Savage	110 223	.223 Rem	A	0	
+1226	savage_10_308	Savage	10 308	.308 Win	A	0	
+1227	savage_10_6_5cm	Savage	10 6 5Cm	6.5 Creedmoor	A	0	
+1228	savage_axis_243	Savage	Axis 243	.243 Win	A	0	
+1229	savage_12_223	Savage	12 223	.223 Rem	A	0	
+1230	auto_ord_thompson_m1921	Auto-Ordnance	Thompson M1921	.45 ACP	A	0	
+1231	auto_ord_thompson_m1928	Auto-Ordnance	Thompson M1928	.45 ACP	A	0	
+1232	auto_ord_1911_9mm	Auto-Ordnance	1911 9Mm	9×19mm Parabellum	A	0	
+1233	auto_ord_1911a1_parkerized	Auto-Ordnance	1911A1 Parkerized	.45 ACP	A	0	
+1234	auto_ord_1911_commander	Auto-Ordnance	1911 Commander	.45 ACP	A	0	
+1235	auto_ord_thompson_m1928a1	Auto-Ordnance	Thompson M1928A1	.45 ACP	A	0	
+1236	mauser_gew98	Mauser	Gew98	7.92×57mm Mauser	A	0	
+1237	mauser_hsc	Mauser	Hsc	.32 ACP	A	0	
+1238	mauser_m1910	Mauser	M1910	.25 ACP	A	0	
+1239	mauser_m712	Mauser	M712	7.63×25mm Mauser	?	7	unknown cartridge: 7.63×25mm Mauser
+1240	mauser_m18	Mauser	M18	.308 Win	A	0	
+1241	canik_tp9_elite_sc	Canik	Tp9 Elite Sc	9×19mm Parabellum	A	0	
+1242	canik_tp9_da	Canik	Tp9 Da	9×19mm Parabellum	A	0	
+1243	canik_mete_sfx	Canik	Mete Sfx	9×19mm Parabellum	A	0	
+1244	tisas_1911a1	Tisas	1911A1	.45 ACP	A	0	
+1245	tisas_1911_b45	Tisas	1911 B45	.45 ACP	A	0	
+1246	tisas_zigana_f	Tisas	Zigana F	9×19mm Parabellum	A	0	
+1247	barrett_m82a1	Barrett	M82A1	.50 BMG	A	0	
+1248	barrett_m107a1	Barrett	M107A1	.50 BMG	A	0	
+1249	barrett_m98b	Barrett	M98B	.338 Lapua	A	0	
+1250	dan_wesson_715_4in	Dan Wesson	715 4In	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1251	dan_wesson_715_6in	Dan Wesson	715 6In	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1252	dan_wesson_715_8in	Dan Wesson	715 8In	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1253	dan_wesson_valor	Dan Wesson	Valor	.45 ACP	A	0	
+1254	stoeger_str9	Stoeger	Str9	9×19mm Parabellum	A	0	
+1255	stoeger_cougar_8000	Stoeger	Cougar 8000	9×19mm Parabellum	A	0	
+1256	stoeger_coach_gun	Stoeger	Coach Gun	12 Gauge	A	0	
+1257	girsan_mc28	Girsan	Mc28	9×19mm Parabellum	A	0	
+1258	girsan_regard	Girsan	Regard	9×19mm Parabellum	A	0	
+1259	girsan_mc1911	Girsan	Mc1911	.45 ACP	A	0	
+1260	high_standard_supermatic_trophy	High Standard	Supermatic Trophy	.22 LR	A	0	
+1261	high_standard_supermatic_tournament	High Standard	Supermatic Tournament	.22 LR	A	0	
+1262	high_standard_sport_king	High Standard	Sport King	.22 LR	A	0	
+1263	high_standard_sentinel	High Standard	Sentinel	.22 LR	A	0	
+1264	high_standard_double_nine	High Standard	Double Nine	.22 LR	A	0	
+1265	chiappa_rhino_50ds	Chiappa	Rhino 50Ds	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1266	chiappa_1911_22	Chiappa	1911 22	.22 LR	A	0	
+1267	chiappa_little_badger	Chiappa	Little Badger	.22 LR	A	0	
+1268	chiappa_m1_22	Chiappa	M1 22	.22 LR	A	0	
+1269	chiappa_1892_lever	Chiappa	1892 Lever	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1270	iver_johnson_safety_first	Iver Johnson	Safety First	.32 S&W	?	7	unknown cartridge: .32 S&W
+1271	iver_johnson_cadet_55a	Iver Johnson	Cadet 55A	.22 LR	A	0	
+1272	iver_johnson_champion	Iver Johnson	Champion	12 Gauge	C	2	twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+1273	iver_johnson_enforcer	Iver Johnson	Enforcer	.30 Carbine	?	7	unknown cartridge: .30 Carbine
+1274	iver_johnson_trailsman_66	Iver Johnson	Trailsman 66	.22 LR	A	0	
+1275	bersa_thunder_40	Bersa	Thunder 40	.40 S&W	A	0	
+1276	bersa_firestorm_380	Bersa	Firestorm 380	.380 ACP	A	0	
+1277	tc_encore_30_06	Thompson-Center	Encore 30 06	.30-06 Springfield	A	0	
+1278	tc_contender_223	Thompson-Center	Contender 223	.223 Rem	A	0	
+1279	tc_contender_357	Thompson-Center	Contender 357	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1280	tc_encore_243	Thompson-Center	Encore 243	.243 Win	A	0	
+1281	howa_m1500_hogue_308	Howa	M1500 Hogue 308	7.62×51mm NATO	A	0	
+1282	howa_m1500_varmint_223	Howa	M1500 Varmint 223	.223 Rem	A	0	
+1283	howa_m1500_game_king_30_06	Howa	M1500 Game King 30 06	.30-06 Springfield	A	0	
+1284	howa_type_89	Howa	Type 89	5.56×45mm NATO	A	0	
+1285	howa_type_64	Howa	Type 64	7.62×51mm NATO	A	0	
+1286	stevens_model_94	Stevens	Model 94	12 Gauge	C	2	twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+1287	stevens_model_311	Stevens	Model 311	12 Gauge	C	2	twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+1288	stevens_favorite	Stevens	Favorite	.22 LR	A	0	
+1289	stevens_model_87a	Stevens	Model 87A	.22 LR	A	0	
+1290	stevens_model_350	Stevens	Model 350	12 Gauge	C	2	twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+1291	hi_point_c9	Hi-Point	C9	9×19mm Parabellum	A	0	
+1292	hi_point_cf380	Hi-Point	Cf380	.380 ACP	A	0	
+1293	hi_point_jcp40	Hi-Point	Jcp40	.40 S&W	A	0	
+1294	hi_point_jhp45	Hi-Point	Jhp45	.45 ACP	A	0	
+1295	hi_point_4095	Hi-Point	4095	.40 S&W	A	0	
+1296	naa_mini_22_short	NAA	Mini 22 Short	.22 Short	?	7	unknown cartridge: .22 Short
+1297	naa_black_widow	NAA	Black Widow	.22 WMR	?	7	unknown cartridge: .22 WMR
+1298	naa_ranger_ii	NAA	Ranger Ii	.22 WMR	?	7	unknown cartridge: .22 WMR
+1299	naa_mini_master	NAA	Mini Master	.22 LR	A	0	
+1300	naa_guardian_32	NAA	Guardian 32	.32 ACP	A	0	
+1301	korth_sport	Korth	Sport	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1302	korth_target	Korth	Target	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1303	korth_ranger	Korth	Ranger	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1304	korth_nxs_357	Korth	Nxs 357	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1305	korth_prs_9mm	Korth	Prs 9Mm	9×19mm Parabellum	A	0	
+1306	star_model_b	Star	Model B	9×19mm Parabellum	A	0	
+1307	star_model_pd	Star	Model Pd	.45 ACP	A	0	
+1308	star_firestar_m45	Star	Firestar M45	.45 ACP	A	0	
+1309	star_megastar_10mm	Star	Megastar 10Mm	10mm Auto	A	0	
+1310	star_ultrastar	Star	Ultrastar	9×19mm Parabellum	A	0	
+1311	mas_44	MAS	44	7.5×54mm French	?	7	unknown cartridge: 7.5×54mm French
+1312	mas_50	MAS	50	9×19mm Parabellum	A	0	
+1313	mas_aa52	MAS	Aa52	7.5×54mm French	?	7	unknown cartridge: 7.5×54mm French
+1314	mas_36_cr39	MAS	36 Cr39	7.5×54mm French	?	7	unknown cartridge: 7.5×54mm French
+1315	mas_45	MAS	45	.22 LR	A	0	
+1316	bae_systems_l85a3	Heckler & Koch / Royal Ordnance	L85A3	5.56×45mm NATO	A	0	
+1317	bae_systems_l22a2	Heckler & Koch / Royal Ordnance	L22A2	5.56×45mm NATO	A	0	
+1318	bae_systems_l1a1_slr	RSAF Enfield / BSA	L1A1 SLR	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1319	bae_systems_l7a2_gpmg	FN Herstal / RSAF Enfield	L7A2 GPMG	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1320	bae_systems_l110a1_minimi	FN Herstal	L110A1 Minimi	5.56×45mm NATO	A	0	
+1321	colt_canada_l119a1	Colt Canada (Diemaco)	L119A1 C8SFW	5.56×45mm NATO	A	0	
+1322	benelli_l128a1	Benelli Armi	L128A1 (Benelli M4)	12 Gauge	A	0	
+1323	accuracy_international_l115a3	Accuracy International	L115A3 AWM	.338 Lapua Magnum	A	0	
+1324	sig_sauer_l107a1	SIG Sauer	L107A1 (SIG P228)	9×19mm Parabellum	A	0	
+1325	accuracy_international_l118a1_covert	Accuracy International	L118A1 Arctic Warfare Covert	.338 Lapua Magnum	A	0	
+1326	saab_nlaw	Saab Bofors Dynamics	NLAW (MBT LAW)	150mm HEAT	?	7	unknown cartridge: 150mm HEAT
+1327	heckler_koch_l134a1_gmg	Heckler & Koch	L134A1 (HK GMG)	40×53mm SR	?	7	unknown cartridge: 40×53mm SR
+1328	kalashnikov_concern_ak_104	Kalashnikov Concern	AK-104	7.62×39mm	A	1	caliber_mm=7.62 slightly outside ref [7.8,8.0]
+1329	kalashnikov_concern_an_94	Kalashnikov Concern (Izhmash)	AN-94 Nikonov	5.45×39mm	A	1	caliber_mm=5.45 slightly outside ref [5.55,5.75]
+1330	kalashnikov_concern_mp_443_grach	Izhevsk Mechanical Plant	MP-443 Grach (PYa)	9×19mm Parabellum	A	0	
+1331	degtyaryov_rpd	Degtyaryov Plant	RPD	7.62×39mm	A	1	caliber_mm=7.62 slightly outside ref [7.8,8.0]
+1332	tula_dshk_1938	Tula Arms Plant	DShK 1938	12.7×108mm	A	0	
+1333	kbp_pp_19_01_vityaz	KBP / Kalashnikov Concern	PP-19-01 Vityaz-SN	9×19mm Parabellum	A	0	
+1334	degtyaryov_ksvk_12_7	Degtyarev Plant	KSVK 12.7 (ASVK)	12.7×108mm	A	0	
+1335	izhmash_saiga_12k	Kalashnikov Concern (Izhmash)	Saiga-12K	12 Gauge	A	0	
+1336	heckler_koch_m27_iar	Heckler & Koch	M27 IAR	5.56×45mm NATO	A	0	
+1337	sage_m14_ebr	Sage International	Mk 14 EBR	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1338	fn_herstal_mk48	FN Herstal	Mk 48 Mod 0	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1339	m141_smaw_bdm	Talley Defense Systems (Nammo Talley)	M141 BDM (SMAW-D)	83mm HEDM	?	7	unknown cartridge: 83mm HEDM
+1340	saco_defense_m60e3	Saco Defense	M60E3	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1341	rsa_lee_enfield_no4_mk1	RSAF Enfield	No.4 Mk I	.303 British	?	7	unknown cartridge: .303 British
+1342	hasag_panzerfaust_60	HASAG (Hugo Schneider AG)	Panzerfaust 60	149mm HEAT	?	7	unknown cartridge: 149mm HEAT
+1343	zeveta_rpg_75	Zeveta (Uhersky Brod)	RPG-75	68mm HEAT	?	7	unknown cartridge: 68mm HEAT
+1344	accuracy_international_as50	Accuracy International	AS50	12.7×99mm NATO (.50 BMG)	A	0	
+1345	baikal_ij_70	Baikal	IJ-70	.380 ACP	A	0	
+1346	baikal_mp_27	Baikal	MP-27	12 Gauge	A	0	
+1347	baikal_mp_340	Baikal	MP-340	.38 Special	A	1	pressure=170.0 deviates 45% from typical 117
+1348	baikal_mp_443_grach	Baikal	MP-443 Grach (PYa)	9×19mm Parabellum	A	0	
+1349	baikal_mp_446	Baikal	MP-446 Viking	9×19mm Parabellum	A	0	
+1350	benelli_lupo_3006	Benelli	Lupo	.30-06 Springfield	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.9]
+1351	benelli_sbe3	Benelli	Super Black Eagle 3	12 Gauge	A	0	
+1352	benelli_sbe3_20	Benelli	Super Black Eagle 3	20 Gauge	A	0	
+1353	beretta_1301_comp_pro	Beretta	1301 Comp Pro	12 Gauge	A	0	
+1354	beretta_686_silver_pigeon_iii_20	Beretta	686 Silver Pigeon III	20 Gauge	A	0	
+1355	beretta_92g_elite_ltt	Beretta	92G Elite LTT	9×19mm Parabellum	A	0	
+1356	beretta_92x_performance	Beretta	92X Performance	9×19mm Parabellum	A	0	
+1357	beretta_92xi	Beretta	92XI	9×19mm Parabellum	A	0	
+1358	beretta_apx_compact	Beretta	APX Compact	9×19mm Parabellum	A	0	
+1359	beretta_px4_40	Beretta	Px4 Storm	.40 S&W	A	0	
+1360	beretta_px4_40_compact	Beretta	Px4 Storm	.40 S&W	A	0	
+1361	beretta_px4_45	Beretta	Px4 Storm	.45 ACP	A	0	
+1362	breda_930	Breda	Breda 930	12 Gauge	A	0	
+1363	breda_930_20	Breda	Breda 930	20 Gauge	A	0	
+1364	breda_b12i	Breda	Breda B12i	12 Gauge	A	0	
+1365	bt_apc45	B&T	APC45	.45 ACP	A	0	
+1366	bt_apc9sd	B&T	APC9SD	9×19mm Parabellum	A	0	
+1367	bt_ghm45	B&T	GHM45	.45 ACP	A	0	
+1368	bt_kh9	B&T	KH9	9×19mm Parabellum	A	0	
+1369	bt_spc9	B&T	SPC9	9×19mm Parabellum	A	0	
+1370	bt_tp380	B&T	TP380	.380 ACP	A	0	
+1371	bt_usw_a1	B&T	USW A1	9×19mm Parabellum	A	0	
+1372	cassull_model_410	Fausti / Cassull / Rizzini	Cassull Model 410	.410 Bore	A	0	
+1373	colt_cm901	Colt	CM901	7.62×51mm NATO	A	0	
+1374	colt_combat_commander	Colt	Combat Commander	.45 ACP	A	0	
+1375	colt_competition	Colt	Competition 1911	.45 ACP	A	0	
+1376	colt_defender	Colt	Defender	.45 ACP	A	0	
+1377	colt_gold_cup	Colt	Gold Cup 1911	.45 ACP	A	0	
+1378	cz_455_american	BRNO / CZ	CZ 455 American	.22 LR	A	0	
+1379	cz_455_varmint	BRNO / CZ	CZ 455 Varmint	.22 LR	A	0	
+1380	cz_512	BRNO / CZ	CZ 512	.22 LR	A	0	
+1381	cz_527_american	BRNO / CZ	CZ 527 American	.223 Remington	A	0	
+1382	cz_527_varmint	BRNO / CZ	CZ 527 Varmint	.223 Remington	A	0	
+1383	cz_550_american	BRNO / CZ	CZ 550 American	.30-06 Springfield	A	0	
+1384	cz_550_safari	BRNO / CZ	CZ 550 Safari Magnum	.375 Holland & Holland	?	7	unknown cartridge: .375 Holland & Holland
+1385	cz_557_american	BRNO / CZ	CZ 557 American	.308 Win	A	0	
+1386	diamondback_db10	Diamondback Firearms	DB10	.308 Win	A	0	
+1387	diamondback_db15	Diamondback Firearms	DB15	5.56×45mm NATO	A	0	
+1388	diamondback_db380	Diamondback Firearms	DB380	.380 ACP	A	0	
+1389	diamondback_db9	Diamondback Firearms	DB9	9×19mm Parabellum	A	0	
+1390	diamondback_sidekick	Diamondback Firearms	Sidekick	.22 LR	A	0	
+1391	fausti_dea_round	Fausti / Cassull / Rizzini	Fausti DEA Round	12 Gauge	A	0	
+1392	franchi_affinity_h2o	Franchi	Affinity H2O	12 Gauge	A	0	
+1393	franchi_horizon_3006	Franchi	Horizon	.30-06 Springfield	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.9]
+1394	franchi_law12	Franchi	Law-12	12 Gauge	A	0	
+1395	franchi_pa8	Franchi	PA-8	12 Gauge	A	0	
+1396	franchi_veloce	Franchi	Veloce	12 Gauge	A	0	
+1397	grand_power_k100	Grand Power	K100 X-Trim	9×19mm Parabellum	A	0	
+1398	grand_power_p1	Grand Power	P1	9×19mm Parabellum	A	0	
+1399	grand_power_p11	Grand Power	P11	9×19mm Parabellum	A	0	
+1400	grand_power_p40	Grand Power	P40	.40 S&W	A	0	
+1401	grand_power_stribog_sp45	Grand Power	Stribog SP45	.45 ACP	A	0	
+1402	grand_power_stribog_sp9a1	Grand Power	Stribog SP9A1	9×19mm Parabellum	A	0	
+1403	grand_power_stribog_sp9a3	Grand Power	Stribog SP9A3	9×19mm Parabellum	A	0	
+1404	gsg_firefly	German Sport Guns	Firefly	.22 LR	A	0	
+1405	gsg_gsg1911	German Sport Guns	GSG-1911	.22 LR	A	0	
+1406	gsg_gsg5	German Sport Guns	GSG-5	.22 LR	A	0	
+1407	gsg_gsg522	German Sport Guns	GSG-522	.22 LR	A	0	
+1408	gsg_gsg9	German Sport Guns	GSG-9	.22 LR	A	0	
+1409	gsg_mp22	German Sport Guns	MP22	.22 LR	A	0	
+1410	gsg_stg44	German Sport Guns	STG-44 .22	.22 LR	A	0	
+1411	henry_big_boy_44	Henry	Big Boy .44 Mag	.44 Magnum	A	1	pressure=360.0 deviates 45% from typical 248
+1412	henry_big_boy_45	Henry	Big Boy .45 Colt	.45 Colt	A	0	
+1413	henry_h001	Henry	H001 .22 LR	.22 LR	A	0	
+1414	henry_homesteader	Henry	Homesteader 9mm	9×19mm Parabellum	A	0	
+1415	henry_x_model_44	Henry	X Model .44 Mag	.44 Magnum	A	1	pressure=360.0 deviates 45% from typical 248
+1416	henry_x_model_4570	Henry	X Model .45-70	.45-70 Government	A	0	
+1417	hr_handi_rifle	H&R 1871	Handi-Rifle	.45-70 Government	A	0	
+1418	hr_model_949	H&R 1871	Model 949	.22 LR	A	0	
+1419	hr_model_999	H&R 1871	Model 999 Sportsman	.22 LR	A	0	
+1420	hr_pardner	H&R 1871	Pardner	12 Gauge	A	0	
+1421	hr_topper	H&R 1871	Topper	12 Gauge	A	0	
+1422	ithaca_model_37_defense	Ithaca	Model 37 Defense	12 Gauge	A	0	
+1423	ithaca_model_37_featherlight	Ithaca	Model 37 Featherlight	12 Gauge	A	0	
+1424	ithaca_model_37_stakeout	Ithaca	Model 37 Stakeout	12 Gauge	A	0	
+1425	ithaca_model_51	Ithaca	Model 51	12 Gauge	A	0	
+1426	kimber_hunter_308	Kimber	Hunter .308	.308 Win	A	0	
+1427	kimber_rapide_dawn	Kimber	Rapide Dawn	.45 ACP	A	0	
+1428	kimber_solo_cdp	Kimber	Solo CDP	9×19mm Parabellum	A	0	
+1429	kimber_target_ii	Kimber	Target II 1911	.45 ACP	A	0	
+1430	krieghoff_drilling	Krieghoff	Drilling	12 Gauge / .30-06	C	2	twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+1431	krieghoff_k20	Krieghoff	K-20	20 Gauge	A	0	
+1432	krieghoff_k80	Krieghoff	K-80	12 Gauge	A	0	
+1433	krieghoff_semprio	Krieghoff	Semprio	12 Gauge	A	0	
+1434	manurhin_f1	Manurhin	F1	.357 Magnum	A	0	
+1435	manurhin_mr73_gendarmerie	Manurhin	MR 73 Gendarmerie	.357 Magnum	A	0	
+1436	manurhin_mr73_gign	Manurhin	MR 73 GIGN	.357 Magnum	A	0	
+1437	manurhin_mr73_sport	Manurhin	MR 73 Sport	.357 Magnum	A	0	
+1438	marlin_1894_45colt	Marlin	Model 1894 .45 Colt	.45 Colt	A	0	
+1439	marlin_1894_csbl	Marlin	Model 1894 CSBL	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1440	marlin_1895_dark	Marlin	Model 1895 Dark Series	.45-70 Government	A	0	
+1441	marlin_336_dark	Marlin	Model 336 Dark Series	.30-30 Win	A	0	
+1442	marlin_70p_papoose	Marlin	Model 70P Papoose	.22 LR	A	0	
+1443	para_black_ops	Para Ordnance	Black Ops	.45 ACP	A	0	
+1444	para_carry_9	Para Ordnance	Carry 9	9×19mm Parabellum	A	0	
+1445	para_gi_expert	Para Ordnance	GI Expert	.45 ACP	A	0	
+1446	para_hawg_9	Para Ordnance	Hawg 9	9×19mm Parabellum	A	0	
+1447	para_p12_45	Para Ordnance	P12-45	.45 ACP	A	0	
+1448	para_p13_45	Para Ordnance	P13-45	.45 ACP	A	0	
+1449	para_tac_s	Para Ordnance	TAC-S	.45 ACP	A	0	
+1450	para_warthog	Para Ordnance	Warthog	.45 ACP	A	0	
+1451	ria_1911a1	Rock Island Armory	1911-A1	.45 ACP	A	0	
+1452	ria_compact	Rock Island Armory	Compact	.45 ACP	A	0	
+1453	ria_gi_standard_fs	Rock Island Armory	GI Standard FS	.45 ACP	A	0	
+1454	ria_m200	Rock Island Armory	M200	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+1455	ria_m206	Rock Island Armory	M206	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+1456	ria_mapp	Rock Island Armory	MAPP	9×19mm Parabellum	A	0	
+1457	ria_match	Rock Island Armory	Match	.45 ACP	A	0	
+1458	ria_pro_match_ultra	Rock Island Armory	Pro Match Ultra	.45 ACP	A	0	
+1459	ria_rock_ultra	Rock Island Armory	Rock Ultra	.45 ACP	A	0	
+1460	ria_tactical	Rock Island Armory	Tactical	.45 ACP	A	0	
+1461	ria_ultra_fs	Rock Island Armory	Ultra FS	.45 ACP	A	0	
+1462	rizzini_rb	Fausti / Cassull / Rizzini	Rizzini RB/BR	12 Gauge	A	0	
+1463	rohrbaugh_r380	Rohrbaugh	R380	.380 ACP	A	0	
+1464	rossi_brawler	Rossi	Brawler	.45 Colt	A	0	
+1465	rossi_circuit_judge	Rossi	Circuit Judge	.410 bore	A	0	
+1466	rossi_model_351	Rossi	Model 351	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+1467	rossi_model_461	Rossi	Model 461	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1468	rossi_model_92	Rossi	Model 92	.357 Magnum	C	2	pressure=345.0 deviates 43% from typical 241; velocity=720.0m/s unusual for .357 Magnum (ref [350,570])
+1469	rossi_r851	Rossi	R851	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+1470	rossi_r92	Rossi	R92	.44 Magnum	F	3	pressure=360.0 deviates 45% from typical 248; velocity=680.0m/s outside ref [360,520] for .44 Magnum
+1471	rossi_ranch_hand	Rossi	Ranch Hand	.45 Colt	A	0	
+1472	rossi_rm64	Rossi	RM64	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1473	ruger_1022_tactical	Sturm Ruger	10/22 Tactical	.22 LR	A	0	
+1474	ruger_1022_takedown	Sturm Ruger	10/22 Takedown	.22 LR	A	0	
+1475	ruger_22_charger	Sturm Ruger	22 Charger	.22 LR	A	0	
+1476	ruger_american_predator_308	Sturm Ruger	American Rifle Predator	.308 Win	A	0	
+1477	ruger_lcr_357	Sturm Ruger	LCR	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1478	ruger_lcr_9mm	Sturm Ruger	LCR	9×19mm Parabellum	A	0	
+1479	ruger_redhawk_357	Sturm Ruger	Redhawk	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1480	ruger_redhawk_44	Sturm Ruger	Redhawk	.44 Magnum	A	1	pressure=360.0 deviates 45% from typical 248
+1481	sccy_cpx1	SCCY Industries	CPX-1	9×19mm Parabellum	A	0	
+1482	sccy_cpx2	SCCY Industries	CPX-2	9×19mm Parabellum	A	0	
+1483	sccy_cpx3	SCCY Industries	CPX-3	.380 ACP	A	0	
+1484	sccy_dvg1	SCCY Industries	DVG-1	9×19mm Parabellum	A	0	
+1485	shadow_cr920	Shadow Systems	CR920	9×19mm Parabellum	A	0	
+1486	shadow_dr920	Shadow Systems	DR920	9×19mm Parabellum	A	0	
+1487	shadow_mr920	Shadow Systems	MR920	9×19mm Parabellum	A	0	
+1488	shadow_ss300	Shadow Systems	SS300	.300 BLK	A	0	
+1489	shadow_ss400	Shadow Systems	SS400	10mm Auto	A	0	
+1490	shadow_xr920	Shadow Systems	XR920	9×19mm Parabellum	A	0	
+1491	sig_556xi	Sig Sauer	556XI	5.56×45mm NATO	A	0	
+1492	sig_mcx_regulator	Sig Sauer	MCX-Regulator	5.56×45mm NATO	A	0	
+1493	sig_mcx_spear_lt	Sig Sauer	MCX Spear LT	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1494	sig_p224	Sig Sauer	P224	9×19mm Parabellum	A	0	
+1495	sig_p229_40	Sig Sauer	P229	.40 S&W	A	0	
+1496	sig_p238	Sig Sauer	P238	.380 ACP	A	0	
+1497	sig_p320_xcarry	Sig Sauer	P320 XCarry	9×19mm Parabellum	A	0	
+1498	sig_p320_xfive_legion	Sig Sauer	P320 XFive Legion	9×19mm Parabellum	A	0	
+1499	sig_p365_xmacro	Sig Sauer	P365 XMacro	9×19mm Parabellum	A	0	
+1500	sig_p938	Sig Sauer	P938	9×19mm Parabellum	A	0	
+1501	sw_model_442	Smith & Wesson	Model 442	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+1502	sw_model_627	Smith & Wesson	Model 627	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1503	sw_model_629	Smith & Wesson	Model 629	.44 Magnum	A	1	pressure=360.0 deviates 45% from typical 248
+1504	sw_model_642	Smith & Wesson	Model 642	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+1505	sw_mp12	Smith & Wesson	M&P12	12 Gauge	A	0	
+1506	sw_mp45_m2_0	Smith & Wesson	M&P45 M2.0	.45 ACP	A	0	
+1507	sw_sw1911_e_series	Smith & Wesson	SW1911 E-Series	.45 ACP	A	0	
+1508	sw_sw1911_pro_series	Smith & Wesson	SW1911 Pro Series	.45 ACP	A	0	
+1509	walther_pdp_pro_sd	Walther	PDP Pro SD	9×19mm Parabellum	A	0	
+1510	walther_ppx	Walther	PPX	9×19mm Parabellum	A	0	
+1511	zastava_arms_doo_m85	Zastava Arms d.o.o.	M85	5.56×45mm NATO	A	0	
+1512	zastava_arms_doo_m90	Zastava Arms d.o.o.	M90	5.56×45mm NATO	A	0	
+1513	zastava_arms_doo_m91	Zastava Arms d.o.o.	M91	7.62×54mmR	A	0	
+1514	zastava_arms_doo_m93_black_arrow	Zastava Arms d.o.o.	M93 Black Arrow	12.7×108mm	A	0	
+1515	zastava_arms_doo_m07	Zastava Arms d.o.o.	M07	7.62×51mm NATO	A	0	
+1516	zastava_arms_doo_m12	Zastava Arms d.o.o.	M12	7.62×39mm M67	A	0	
+1517	zastava_arms_doo_pap_m70	Zastava Arms d.o.o.	PAP M70	7.62×39mm M67	A	0	
+1518	zastava_arms_doo_pap_m85	Zastava Arms d.o.o.	PAP M85	5.56×45mm NATO	A	0	
+1519	zastava_arms_doo_pap_m92	Zastava Arms d.o.o.	PAP M92	7.62×39mm M67	A	0	
+1520	zastava_arms_doo_m21	Zastava Arms d.o.o.	M21	5.56×45mm NATO	A	0	
+1521	zastava_arms_doo_m21a	Zastava Arms d.o.o.	M21A	5.56×45mm NATO	A	0	
+1522	zastava_arms_doo_m20	Zastava Arms d.o.o.	M20	7.62×39mm M67	A	0	
+1523	fb_lucznik_radom_msbs_grot_c	"FB ""Lucznik"" Radom"	MSBS Grot C	5.56×45mm NATO	A	0	
+1524	fb_lucznik_radom_msbs_grot_r	"FB ""Lucznik"" Radom"	MSBS Grot R	5.56×45mm NATO	A	0	
+1525	fb_radom_beryl_762	FB Radom	Beryl 762	7.62×39mm	A	0	
+1526	fb_radom_p_83_wanad	FB Radom	P-83 Wanad	9×18mm Makarov	A	0	
+1527	fb_radom_p_64	FB Radom	P-64	9×18mm Makarov	A	0	
+1528	fb_radom_pm_63_rak	FB Radom	PM-63 RAK	9×18mm Makarov	A	0	
+1529	fb_radom_pm_84p_glauberyt	FB Radom	PM-84P Glauberyt	9×19mm Parabellum	A	0	
+1530	sig_sauer_ag_sg_552	SIG Sauer AG (Swiss)	SG 552	5.56×45mm NATO	A	0	
+1531	sig_sauer_ag_sg_556	SIG Sauer AG (Swiss)	SG 556	5.56×45mm NATO	A	0	
+1532	sig_sauer_ag_p220	SIG Sauer AG (Swiss)	P220	9×19mm Parabellum	A	0	
+1533	sig_sauer_ag_p225	SIG Sauer AG (Swiss)	P225	9×19mm Parabellum	A	0	
+1534	sig_sauer_ag_p228	SIG Sauer AG (Swiss)	P228	9×19mm Parabellum	A	0	
+1535	sig_sauer_ag_ssg_3000	SIG Sauer AG (Swiss)	SSG 3000	7.62×51mm NATO	A	0	
+1536	sig_sauer_ag_sg_553_r	SIG Sauer AG (Swiss)	SG 553 R	7.62×39mm	A	0	
+1537	arsenal_ar_m9f	Arsenal	AR-M9F	7.62×39mm	A	0	
+1538	arsenal_sam5	Arsenal	SAM5	5.56×45mm NATO	A	0	
+1539	arsenal_sam5k	Arsenal	SAM5K	5.56×45mm NATO	A	0	
+1540	arsenal_samr	Arsenal	SAMR	7.62×39mm	A	0	
+1541	arsenal_slr_106f	Arsenal	SLR-106F	5.56×45mm NATO	A	0	
+1542	arsenal_shipka	Arsenal	Shipka	9×19mm Parabellum	A	0	
+1543	arsenal_sporter_5_56	Arsenal	Sporter 5.56	5.56×45mm NATO	A	0	
+1544	arsenal_sporter_7_62	Arsenal	Sporter 7.62	7.62×39mm	A	0	
+1545	snt_motiv_k11	SNT Motiv	K11	5.56×45mm NATO	A	0	
+1546	snt_motiv_k12	SNT Motiv	K12	5.56×45mm NATO	A	0	
+1547	daewoo_dp_51	Daewoo	DP-51	9×19mm Parabellum	A	0	
+1548	daewoo_k2a	Daewoo	K2A	5.56×45mm NATO	A	0	
+1549	daewoo_k1a1	Daewoo	K1A1	5.56×45mm NATO	A	0	
+1550	daewoo_dp_380	Daewoo	DP-380	.380 ACP	A	1	pressure=200.0 deviates 35% from typical 148
+1551	kel-tec_p_32	Kel-Tec	P-32	.32 ACP	A	1	caliber_mm=7.94 slightly outside ref [7.6,7.7]
+1552	kel-tec_p_3at	Kel-Tec	P-3AT	.380 ACP	A	0	
+1553	kel-tec_pf_9	Kel-Tec	PF-9	9×19mm	A	0	
+1554	kel-tec_pmr_30	Kel-Tec	PMR-30	.22 WMR	?	7	unknown cartridge: .22 WMR
+1555	kel-tec_cp33	Kel-Tec	CP33	.22 LR	A	0	
+1556	kel-tec_plr_16	Kel-Tec	PLR-16	5.56×45mm	A	0	
+1557	kel-tec_sub_2000_cqb	Kel-Tec	SUB-2000 CQB	9×19mm	A	0	
+1558	kel-tec_su_16c	Kel-Tec	SU-16C	5.56×45mm	A	0	
+1559	kel-tec_r50	Kel-Tec	R50	5.7×28mm	A	0	
+1560	kel-tec_pr57	Kel-Tec	PR57	5.7×28mm	A	0	
+1561	kel-tec_p15	Kel-Tec	P15	9×19mm	A	0	
+1562	kel-tec_p17	Kel-Tec	P17	.22 LR	A	0	
+1563	kel-tec_ksg_25	Kel-Tec	KSG-25	12 Gauge	A	0	
+1564	kel-tec_ksg_compact	Kel-Tec	KSG Compact	12 Gauge	A	0	
+1565	kriss_usa_vector_crb_9mm	KRISS USA	Vector CRB 9mm	9×19mm	A	0	
+1566	kriss_usa_vector_sbr_9mm	KRISS USA	Vector SBR 9mm	9×19mm	A	0	
+1567	kriss_usa_vector_sdp_45	KRISS USA	Vector SDP .45	.45 ACP	A	0	
+1568	kriss_usa_vector_sdp_9mm	KRISS USA	Vector SDP 9mm	9×19mm	A	0	
+1569	kriss_usa_vector_22lr	KRISS USA	Vector .22LR	.22 LR	A	0	
+1570	kriss_usa_vector_gen_3_45	KRISS USA	Vector Gen 3 .45	.45 ACP	A	0	
+1571	kriss_usa_vector_gen_3_9mm	KRISS USA	Vector Gen 3 9mm	9×19mm	A	0	
+1572	kriss_usa_sphinx_sdp_compact	KRISS USA	Sphinx SDP Compact	9×19mm	A	0	
+1573	kriss_usa_sphinx_sdp_sub_compact	KRISS USA	Sphinx SDP Sub-Compact	9×19mm	A	0	
+1574	magnum_research_bfr_45_70	Magnum Research	BFR .45-70	.45-70 Government	A	1	pressure=241.0 deviates 66% from typical 145
+1575	magnum_research_bfr_454_casull	Magnum Research	BFR .454 Casull	.454 Casull	A	1	pressure=262.0 slightly below .454 Casull min (350); pressure=262.0 deviates 42% from typical 448
+1576	magnum_research_bfr_500_s&w	Magnum Research	BFR .500 S&W	.500 S&W Magnum	A	1	pressure=276.0 slightly below .500 S&W Magnum min (350); pressure=276.0 deviates 33% from typical 414
+1577	magnum_research_bfr_44_mag	Magnum Research	BFR .44 Mag	.44 Remington Magnum	?	7	unknown cartridge: .44 Remington Magnum
+1578	magnum_research_bfr_357_mag	Magnum Research	BFR .357 Mag	.357 Magnum	A	0	
+1579	magnum_research_micro_desert_eagle	Magnum Research	Micro Desert Eagle	.380 ACP	A	0	
+1580	magnum_research_baby_eagle_iii	Magnum Research	Baby Eagle III	9×19mm	A	0	
+1581	magnum_research_baby_eagle_iii_45	Magnum Research	Baby Eagle III .45	.45 ACP	A	0	
+1582	magnum_research_desert_eagle_429_de	Magnum Research	Desert Eagle .429 DE	.429 DE	?	7	unknown cartridge: .429 DE
+1583	magnum_research_mountain_eagle_308	Magnum Research	Mountain Eagle .308	.308 Winchester	A	0	
+1584	magnum_research_mountain_eagle_300_wm	Magnum Research	Mountain Eagle .300 WM	.300 Winchester Magnum	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.9]
+1585	magnum_research_lone_eagle_308	Magnum Research	Lone Eagle .308	.308 Winchester	A	0	
+1586	magnum_research_magnum_lite	Magnum Research	Magnum Lite	.22 LR	A	0	
+1587	magnum_research_desert_eagle_1911	Magnum Research	Desert Eagle 1911	.45 ACP	A	0	
+1588	armalite_ar_180b	ArmaLite	AR-180B	5.56×45mm NATO	A	0	
+1589	armalite_ar_10b	ArmaLite	AR-10B	7.62×51mm NATO	A	0	
+1590	armalite_ar_10_super_sass	ArmaLite	AR-10 Super SASS	7.62×51mm NATO	A	0	
+1591	armalite_m_15	ArmaLite	M-15	5.56×45mm NATO	A	0	
+1592	armalite_ar_30	ArmaLite	AR-30	.338 Lapua Magnum	A	0	
+1593	armalite_ar_30a1	ArmaLite	AR-30A1	.338 Lapua Magnum	A	0	
+1594	armalite_ar_31	ArmaLite	AR-31	.308 Winchester	A	0	
+1595	armalite_ar_50	ArmaLite	AR-50	12.7×99mm NATO (.50 BMG)	A	0	
+1596	armalite_ar_7	ArmaLite	AR-7	.22 LR	A	0	
+1597	armalite_ar_24	ArmaLite	AR-24	9×19mm Parabellum	A	0	
+1598	bushmaster_ba_50	Bushmaster	BA-50	12.7×99mm NATO (.50 BMG)	A	0	
+1599	bushmaster_m17s	Bushmaster	M17S	5.56×45mm NATO	A	0	
+1600	bushmaster_dissipator	Bushmaster	Dissipator	5.56×45mm NATO	A	0	
+1601	bushmaster__450_bushmaster	Bushmaster	.450 Bushmaster	.450 Bushmaster	?	7	unknown cartridge: .450 Bushmaster
+1602	bushmaster_bar_10	Bushmaster	BAR-10	7.62×51mm NATO	A	0	
+1603	bushmaster_arm_pistol	Bushmaster	Arm Pistol	.45 ACP	A	0	
+1604	bushmaster_xm_15_dmr	Bushmaster	XM-15 DMR	5.56×45mm NATO	A	0	
+1605	bushmaster_xm_15_a3g	Bushmaster	XM-15 A3G	5.56×45mm NATO	A	0	
+1606	bushmaster_xm_15_a4g	Bushmaster	XM-15 A4G	5.56×45mm NATO	A	0	
+1607	tikka_t3x_compact_243_win	Tikka	T3x Compact .243 Win	.243 Win	A	0	
+1608	tikka_t3x_compact_7mm_08	Tikka	T3x Compact 7mm-08	7mm-08	?	7	unknown cartridge: 7mm-08
+1609	tikka_t3x_varmint_223	Tikka	T3x Varmint .223	.223 Rem	A	0	
+1610	tikka_t3x_varmint_6_5_cm	Tikka	T3x Varmint 6.5 CM	6.5 Creedmoor	A	0	
+1611	tikka_t3x_super_varmint	Tikka	T3x Super Varmint	.223 Rem	A	0	
+1612	tikka_t3x_upr_308	Tikka	T3x UPR .308	.308 Win	A	0	
+1613	tikka_t3x_upr_6_5_cm	Tikka	T3x UPR 6.5 CM	6.5 Creedmoor	A	0	
+1614	tikka_t3x_upr_300_wm	Tikka	T3x UPR .300 WM	.300 Win Mag	A	0	
+1615	tikka_t3x_arctic	Tikka	T3x Arctic	7.62x51mm	?	7	unknown cartridge: 7.62x51mm
+1616	tikka_t3x_battue_30_06	Tikka	T3x Battue .30-06	.30-06	A	0	
+1617	tikka_t3x_roughtech_30_06	Tikka	T3x Roughtech .30-06	.30-06	A	0	
+1618	tikka_t3x_game_308	Tikka	T3x Game .308	.308 Win	A	0	
+1619	sako_s20_hunter_6_5_cm	Sako	S20 Hunter 6.5 CM	6.5 Creedmoor	A	0	
+1620	sako_s20_hunter_308	Sako	S20 Hunter .308	.308 Win	A	0	
+1621	sako_s20_precision_6_5_cm	Sako	S20 Precision 6.5 CM	6.5 Creedmoor	A	0	
+1622	sako_s20_precision_308	Sako	S20 Precision .308	.308 Win	A	0	
+1623	sako_85_finnlight_308	Sako	85 Finnlight .308	.308 Win	A	0	
+1624	sako_85_finnlight_6_5_cm	Sako	85 Finnlight 6.5 CM	6.5 Creedmoor	A	0	
+1625	sako_85_black_308	Sako	85 Black .308	.308 Win	A	0	
+1626	sako_85_classic_270	Sako	85 Classic .270	.270 Win	?	7	unknown cartridge: .270 Win
+1627	sako_85_hunter_30_06	Sako	85 Hunter .30-06	.30-06	A	0	
+1628	sako_90_hunter_6_5_cm	Sako	90 Hunter 6.5 CM	6.5 Creedmoor	A	0	
+1629	sako_100_308	Sako	100 .308	.308 Win	A	0	
+1630	sako_100_6_5_cm	Sako	100 6.5 CM	6.5 Creedmoor	A	0	
+1631	tristar_cobra_justice	Tristar	Cobra Justice	12 Gauge	A	0	
+1632	tristar_cobra_patriot	Tristar	Cobra Patriot	12 Gauge	A	0	
+1633	tristar_t_140	Tristar	T-140	12 Gauge	A	0	
+1634	tristar_tt_15	Tristar	TT-15	12 Gauge	A	0	
+1635	tristar_trap	Tristar	Trap	12 Gauge	A	0	
+1636	tristar_sporting	Tristar	Sporting	12 Gauge	A	0	
+1637	stoeger_str_9mc	Stoeger	STR-9MC	9x19mm Parabellum	?	7	unknown cartridge: 9x19mm Parabellum
+1638	stoeger_cougar_8000_40	Stoeger	Cougar 8000 .40	.40 S&W	A	0	
+1639	stoeger_cougar_8000_45	Stoeger	Cougar 8000 .45	.45 ACP	A	0	
+1640	stoeger_p_350	Stoeger	P-350	12 Gauge	A	0	
+1641	stoeger_m3500	Stoeger	M3500	"12 Gauge 3.5"""	A	0	
+1642	stoeger_condor	Stoeger	Condor	12 Gauge	A	0	
+1643	girsan_mc_1911_commander	Girsan	MC 1911 Commander	.45 ACP	A	0	
+1644	girsan_mc_14_tipat	Girsan	MC 14 Tipat	.380 ACP	A	0	
+1645	girsan_yavuz_16	Girsan	Yavuz 16	9x19mm Parabellum	?	7	unknown cartridge: 9x19mm Parabellum
+1646	girsan_pi	Girsan	PI	9x19mm Parabellum	?	7	unknown cartridge: 9x19mm Parabellum
+1647	girsan_m9	Girsan	M9	9x19mm Parabellum	?	7	unknown cartridge: 9x19mm Parabellum
+1648	girsan_regard_40	Girsan	Regard .40	.40 S&W	A	0	
+1649	hatsan_armsan_a620	Hatsan	Armsan A620	12 Gauge	A	0	
+1650	hatsan_armsan_a612	Hatsan	Armsan A612	12 Gauge	A	0	
+1651	hatsan_model_125	Hatsan	Model 125	12 Gauge Magnum	A	0	
+1652	hatsan_model_100	Hatsan	Model 100	12 Gauge	A	0	
+1653	hatsan_striker_12	Hatsan	Striker 12	12 Gauge	A	0	
+1654	derya_mk12	Derya	MK12	12 Gauge	A	0	
+1655	derya_820	Derya	820	12 Gauge	A	0	
+1656	derya_dy_9	Derya	DY-9	9x19mm Parabellum	?	7	unknown cartridge: 9x19mm Parabellum
+1657	derya_dy_11	Derya	DY-11	12 Gauge	A	0	
+1658	derya_ds_9	Derya	DS-9	9x19mm Parabellum	?	7	unknown cartridge: 9x19mm Parabellum
+1659	daniel_defense_ddm4_v7	Daniel Defense	DDM4 V7	5.56×45mm NATO	A	0	
+1660	daniel_defense_m4a1_riii	Daniel Defense	M4A1 RIII	5.56×45mm NATO	A	0	
+1661	daniel_defense_dd5_v4	Daniel Defense	DD5 V4	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1662	daniel_defense_dd5_v5	Daniel Defense	DD5 V5	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1663	daniel_defense_ddm4_pdw	Daniel Defense	DDM4 PDW	.300 AAC Blackout	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.88]
+1664	daniel_defense_mk18	Daniel Defense	MK18	5.56×45mm NATO	A	0	
+1665	daniel_defense_mk18_riii	Daniel Defense	MK18 RIII	5.56×45mm NATO	A	0	
+1666	daniel_defense_ddm4_v7_pro	Daniel Defense	DDM4 V7 PRO	5.56×45mm NATO	A	0	
+1667	daniel_defense_m4a1	Daniel Defense	M4A1	5.56×45mm NATO	A	0	
+1668	daniel_defense_ddm4_v7_slw	Daniel Defense	DDM4 V7 SLW	5.56×45mm NATO	A	0	
+1669	daniel_defense_spriii	Daniel Defense	SPRIII	5.56×45mm NATO	A	0	
+1670	daniel_defense_ddm4_v9	Daniel Defense	DDM4 V9	5.56×45mm NATO	A	0	
+1671	daniel_defense_ddm4_v7_k	Daniel Defense	DDM4 V7 K	5.56×45mm NATO	A	0	
+1672	daniel_defense_dd5_sbr	Daniel Defense	DD5 SBR	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1673	daniel_defense_ddm4_v1	Daniel Defense	DDM4 V1	5.56×45mm NATO	A	0	
+1674	daniel_defense_dd4_riii_s	Daniel Defense	DD4 RIII S	5.56×45mm NATO	A	0	
+1675	daniel_defense_gl/ssc	Daniel Defense	GL/SSC	5.56×45mm NATO	A	0	
+1676	daniel_defense_mk12	Daniel Defense	MK12	5.56×45mm NATO	A	0	
+1677	noveske_rifleworks_n4_patriot	Noveske Rifleworks	N4 Patriot	5.56×45mm NATO	A	0	
+1678	noveske_rifleworks_n4_300_blk	Noveske Rifleworks	N4 300 BLK	.300 AAC Blackout	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.88]
+1679	noveske_rifleworks_gen_4	Noveske Rifleworks	Gen 4	5.56×45mm NATO	A	0	
+1680	noveske_rifleworks_ghetto_blaster	Noveske Rifleworks	Ghetto Blaster	.300 AAC Blackout	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.88]
+1681	noveske_rifleworks_chainsaw	Noveske Rifleworks	Chainsaw	5.56×45mm NATO	A	0	
+1682	noveske_rifleworks_diplomat	Noveske Rifleworks	Diplomat	.300 AAC Blackout	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.88]
+1683	noveske_rifleworks_space_invader	Noveske Rifleworks	Space Invader	5.56×45mm NATO	A	0	
+1684	noveske_rifleworks_vis	Noveske Rifleworks	VIS	5.56×45mm NATO	A	0	
+1685	noveske_rifleworks_noveske9_carbine	Noveske Rifleworks	Noveske9 Carbine	9×19mm Parabellum	A	0	
+1686	noveske_rifleworks_noveske9_pistol	Noveske Rifleworks	Noveske9 Pistol	9×19mm Parabellum	A	0	
+1687	lmt_defense_cqb_mrp	LMT Defense	CQB MRP	5.56×45mm NATO	A	0	
+1688	lmt_defense_lm308mws	LMT Defense	LM308MWS	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1689	lmt_defense_l129a1	LMT Defense	L129A1	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1690	lmt_defense_mars_l	LMT Defense	MARS-L	5.56×45mm NATO	A	0	
+1691	lmt_defense_mars_h_308	LMT Defense	MARS-H .308	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1692	lmt_defense_mars_h_6_5_cm	LMT Defense	MARS-H 6.5 CM	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1693	lmt_defense_mars_h_300_blk	LMT Defense	MARS-H 300 BLK	.300 AAC Blackout	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.88]
+1694	lmt_defense_defender_l	LMT Defense	Defender-L	5.56×45mm NATO	A	0	
+1695	lmt_defense_defender_h	LMT Defense	Defender-H	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1696	knights_armament_co_sr_15_e3	Knight's Armament Co	SR-15 E3	5.56×45mm NATO	A	0	
+1697	knights_armament_co_sr_15_cqb	Knight's Armament Co	SR-15 CQB	5.56×45mm NATO	A	0	
+1698	knights_armament_co_sr_15_cqb_sbr	Knight's Armament Co	SR-15 CQB SBR	5.56×45mm NATO	A	0	
+1699	knights_armament_co_sr_25	Knight's Armament Co	SR-25	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1700	knights_armament_co_sr_25_apc_6_5	Knight's Armament Co	SR-25 APC 6.5	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1701	knights_armament_co_kac_pdw	Knight's Armament Co	KAC PDW	.300 AAC Blackout	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.88]
+1702	knights_armament_co_mk11_mod_0	Knight's Armament Co	MK11 Mod 0	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1703	knights_armament_co_m110	Knight's Armament Co	M110	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1704	knights_armament_co_ks_1	Knight's Armament Co	KS-1	5.56×45mm NATO	A	0	
+1705	lwrc_international_ic_spr	LWRC International	IC-SPR	5.56×45mm NATO	A	0	
+1706	lwrc_international_ic_di	LWRC International	IC-DI	5.56×45mm NATO	A	0	
+1707	lwrc_international_repr_7_62	LWRC International	REPR 7.62	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1708	lwrc_international_repr_6_5	LWRC International	REPR 6.5	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1709	lwrc_international_m6_ic	LWRC International	M6 IC	5.56×45mm NATO	A	0	
+1710	lwrc_international_smg_45	LWRC International	SMG-45	.45 ACP	A	0	
+1711	lwrc_international_m6a2	LWRC International	M6A2	5.56×45mm NATO	A	0	
+1712	lwrc_international_m6a4	LWRC International	M6A4	5.56×45mm NATO	A	0	
+1713	radian_weapons_model_1	Radian Weapons	Model 1	5.56×45mm NATO	A	0	
+1714	radian_weapons_model_1_carbine	Radian Weapons	Model 1 Carbine	5.56×45mm NATO	A	0	
+1715	radian_weapons_radian_9	Radian Weapons	Radian 9	9×19mm Parabellum	A	0	
+1716	lancer_systems_lch_5_56	Lancer Systems	LCH-5.56	5.56×45mm NATO	A	0	
+1717	lancer_systems_lch_5_56_carbine	Lancer Systems	LCH-5.56 Carbine	5.56×45mm NATO	A	0	
+1718	lancer_systems_lch_7_62	Lancer Systems	LCH-7.62	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1719	lancer_systems_lch_7_62_6_5cm	Lancer Systems	LCH-7.62 6.5CM	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1720	smith_wesson_m_p9_m2_0_full_size_15_1_4_25_barrel_9mm_striker_fired	Smith & Wesson	M&P9 M2.0 Full Size	9×19mm Parabellum	A	0	
+1721	smith_wesson_m_p9_shield_m2_0_7_1_or_8_1_3_1_barrel_slimline_9mm	Smith & Wesson	M&P9 Shield M2.0	9×19mm Parabellum	A	0	
+1722	smith_wesson_m_p9_shield_plus_10_1_or_13_1_3_1_barrel_9mm_optics_ready	Smith & Wesson	M&P9 Shield Plus	9×19mm Parabellum	A	0	
+1723	smith_wesson_m_p9_shield_ez_8_1_3_7_barrel_9mm_ez_rack_slide	Smith & Wesson	M&P9 Shield EZ	9×19mm Parabellum	A	0	
+1724	smith_wesson_csx_alloy_frame_micro_9mm_sao_3_1_barrel	Smith & Wesson	CSX	9×19mm Parabellum	A	0	
+1725	smith_wesson_model_686_plus_7_shot_357_mag_4_barrel_stainless	Smith & Wesson	Model 686 Plus	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1726	smith_wesson_model_29_6_44_mag_classic_blue	Smith & Wesson	Model 29	.44 Remington Magnum	?	7	unknown cartridge: .44 Remington Magnum
+1727	smith_wesson_model_327_8_shot_trr8_357_mag_5_barrel_performance_center	Smith & Wesson	Model 327	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1728	taurus_g2c_12_1_9mm_compact_3_2_barrel_striker_fired	Taurus	G2C	9×19mm Parabellum	A	0	
+1729	taurus_g3c_12_1_9mm_compact_3_2_barrel_upgraded_g2c	Taurus	G3C	9×19mm Parabellum	A	0	
+1730	taurus_gx4_11_1_9mm_micro_compact_3_06_barrel	Taurus	GX4	9×19mm Parabellum	A	0	
+1731	taurus_tx22_compact_13_1_22_lr_3_6_barrel_rimfire_pistol	Taurus	TX22 Compact	.22 Long Rifle	A	0	
+1732	taurus_judge_magnum_6_shot_410_45_colt_3_barrel_da_revolver	Taurus	Judge Magnum	.410 Bore / .45 Colt	C	2	twist_dir=0 (smoothbore) but .45 Colt expects rifled (dir=1)
+1733	taurus_raging_hunter_44_mag_6_5_barrel_da_revolver_ported	Taurus	Raging Hunter	.44 Remington Magnum	?	7	unknown cartridge: .44 Remington Magnum
+1734	taurus_model_856_6_shot_38_spl_2_barrel_da_revolver_steel_frame	Taurus	Model 856	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+1735	remington_model_870_wingmaster_28_barrel_walnut_stock_12ga_classic_pump	Remington	Model 870 Wingmaster	12 Gauge	A	0	
+1736	remington_model_870_express_18_5_barrel_synthetic_12ga_defense_pump	Remington	Model 870 Express	12 Gauge	A	0	
+1737	remington_model_700_cdl_24_30_06_walnut_classic_bolt_action	Remington	Model 700 CDL	.30-06 Springfield	A	0	
+1738	remington_model_700_sps_22_308_win_synthetic_stock_tactical_bolt	Remington	Model 700 SPS	.308 Winchester	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1739	remington_model_1100_28_12ga_semi_auto_field_grade_walnut	Remington	Model 1100	12 Gauge	A	0	
+1740	remington_rp9_18_1_9mm_striker_fired_4_5_barrel	Remington	RP9	9×19mm Parabellum	A	0	
+1741	winchester_model_70_featherweight_270_win_22_barrel_controlled_feed	Winchester	Model 70 Featherweight	.270 Winchester	?	7	unknown cartridge: .270 Winchester
+1742	winchester_model_70_super_grade_30_06_24_barrel_walnut_classic	Winchester	Model 70 Super Grade	.30-06 Springfield	A	0	
+1743	winchester_model_94_carbine_20_30_30_lever_action_blued_saddle_ring	Winchester	Model 94 Carbine	.30-30 Winchester	A	0	
+1744	winchester_sxp_defender_18_12ga_pump_action_synthetic_defense	Winchester	SXP Defender	12 Gauge	A	0	
+1745	winchester_sxp_waterfowl_28_12ga_pump_camo_max_4_1	Winchester	SXP Waterfowl	12 Gauge	A	0	
+1746	browning_x_bolt_hunter_308_win_22_barrel_composite_stock	Browning	X-Bolt Hunter	.308 Winchester	A	0	
+1747	browning_x_bolt_hell_s_canyon_speed_6_5_creedmoor_22_barrel_ceramic_coated	Browning	X-Bolt Hell's Canyon Speed	6.5 Creedmoor	A	0	
+1748	browning_bar_mk3_safari_30_06_22_barrel_auto_loader_walnut	Browning	BAR Mk3 Safari	.30-06 Springfield	A	0	
+1749	browning_bps_28_12ga_pump_walnut_bottom_eject	Browning	BPS	12 Gauge	A	0	
+1750	browning_citori_725_28_12ga_over_under_field_grade_adjustable_comb	Browning	Citori 725	12 Gauge	A	0	
+1751	springfield_hellcat_rfp_11_1_380_acp_micro_2_7_barrel_red_fiber_optic	Springfield Armory	Hellcat RFP	.380 ACP	A	0	
+1752	springfield_xd_m_elite_3_8_22_1_9mm_compact_grip_interchangeable_backstraps	Springfield Armory	"XD-M Elite 3.8"""	9×19mm Parabellum	A	0	
+1753	springfield_xd_m_elite_4_5_22_1_9mm_full_size_adjustable_rear_sight	Springfield Armory	"XD-M Elite 4.5"""	9×19mm Parabellum	A	0	
+1754	springfield_model_2020_waypoint_308_win_22_bolt_action_carbon_fiber	Springfield Armory	Model 2020 Waypoint	.308 Winchester	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1755	springfield_1911_emissary_5_45_acp_two_tone_commander_hammer	Springfield Armory	1911 Emissary	.45 ACP	A	0	
+1756	springfield_1911_garrison_5_45_acp_stainless_parkerized_gi_style	Springfield Armory	1911 Garrison	.45 ACP	A	0	
+1757	aero_precision_m4e1_enhanced_16_upper_m_lok_handguard_223_wylde_chamber	Aero Precision	M4E1 Enhanced	5.56×45mm NATO	A	0	
+1758	aero_precision_m4e1_enhanced_14_5_upper_m_lok_handguard_223_wylde_chamber	Aero Precision	M4E1 Enhanced	5.56×45mm NATO	A	0	
+1759	aero_precision_m5_16_308_ar_10_m_lok_handguard	Aero Precision	M5	.308 Winchester	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1760	aero_precision_m5_20_308_ar_10_m_lok_handguard	Aero Precision	M5	.308 Winchester	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1761	aero_precision_ac15_16_complete_rifle_5_56_nato	Aero Precision	AC15	5.56×45mm NATO	A	0	
+1762	aero_precision_ac16_18_complete_rifle_5_56_nato	Aero Precision	AC16	5.56×45mm NATO	A	0	
+1763	aero_precision_solus_18_bolt_action_308_5_round_aics	Aero Precision	Solus	.308 Winchester	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1764	aero_precision_solus_22_bolt_action_6_5_creedmoor_threaded	Aero Precision	Solus	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1765	bcm_bcm4_recce_16_16_lightweight_mlok_mid_length_gas	BCM	BCM4 RECCE-16	5.56×45mm NATO	A	0	
+1766	bcm_bcm4_recce_14_14_5_pinned_welded_mid_length_gas	BCM	BCM4 RECCE-14	5.56×45mm NATO	A	0	
+1767	bcm_bcm4_recce_18_18_rifle_length_gas_mcmr_handguard	BCM	BCM4 RECCE-18	5.56×45mm NATO	A	0	
+1768	bcm_bcm4_m4_carbine_16_m4_profile_carbine_a2_flash_hider	BCM	BCM4 M4 Carbine	5.56×45mm NATO	A	0	
+1769	bcm_bcm4_sbr_11_5_mlok_upper_carbine_gas	BCM	BCM4 SBR	5.56×45mm NATO	A	0	
+1770	bcm_bcm4_mk2_recce_16_16_mk2_upper_enhanced_feed_ramps	BCM	BCM4 MK2 RECCE-16	5.56×45mm NATO	A	0	
+1771	bcm_bcm_mk12_18_spr_profile_rifle_gas_mk12_clone	BCM	BCM MK12	5.56×45mm NATO	A	0	
+1772	bcm_bcm_bfh_16_16_hammer_forged_barrel_mlok	BCM	BCM BFH 16	5.56×45mm NATO	A	0	
+1773	bcm_bcm_bfh_14_5_14_5_hammer_forged_pinned_welded	BCM	BCM BFH 14.5	5.56×45mm NATO	A	0	
+1774	geissele_super_duty	Geissele	Super Duty	5.56×45mm NATO	A	0	
+1775	geissele_super_duty_2	Geissele	Super Duty	5.56×45mm NATO	A	0	
+1776	geissele_super_duty_3	Geissele	Super Duty	5.56×45mm NATO	A	0	
+1777	geissele_sentinel_14_5_lightweight_contour_carbon_handguard	Geissele	Sentinel	5.56×45mm NATO	A	0	
+1778	christensen_ca_10_20_308_battle_rifle_carbon_fiber_handguard	Christensen Arms	CA-10	.308 Winchester	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1779	christensen_ca_15_18_5_56_carbon_fiber_barrel_m_lok	Christensen Arms	CA-15	5.56×45mm NATO	A	0	
+1780	christensen_mhr_20_6_5_creedmoor_carbon_fiber_barrel_modern_hunting	Christensen Arms	MHR	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1781	christensen_ridgeline_24_6_5_creedmoor_carbon_fiber_titanium_action	Christensen Arms	Ridgeline	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1782	christensen_ridgeline_26_300_win_mag_carbon_fiber_muzzle_brake	Christensen Arms	Ridgeline	.300 Winchester Magnum	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.9]
+1783	christensen_traverse_22_6_5_creedmoor_folding_chassis_carbon_barrel	Christensen Arms	Traverse	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1784	christensen_mesa_fft_22_308_carbon_fiber_fft_stock	Christensen Arms	Mesa FFT	.308 Winchester	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1785	christensen_summit_24_6_5_creedmoor_carbon_barrel_summit_stock	Christensen Arms	Summit	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1786	savage_axis_stainless_22_stainless_243_win_synthetic_stock	Savage Arms	Axis Stainless	.243 Winchester	A	0	
+1787	savage_axis_ii_xp_22_308_win_accutrigger_3_9x_scope	Savage Arms	Axis II XP	.308 Winchester	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1788	savage_model_110_tactical_20_heavy_barrel_308_win_detachable_box_mag	Savage Arms	Model 110 Tactical	.308 Winchester	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1789	savage_model_110_scout_20_308_win_iron_sights_accutrigger	Savage Arms	Model 110 Scout	.308 Winchester	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1790	savage_model_110_predator_22_6_5_creedmoor_suppressor_ready	Savage Arms	Model 110 Predator	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1791	savage_model_110_storm_22_308_win_stainless_synthetic_stock	Savage Arms	Model 110 Storm	.308 Winchester	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1792	savage_model_110_ultralite_24_6_5_creedmoor_carbon_fiber_wrap_proof_barrel	Savage Arms	Model 110 Ultralite	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1793	savage_a17_22_17_hmr_semi_auto_heavy_barrel	Savage Arms	A17	.17 HMR	?	7	unknown cartridge: .17 HMR
+1794	savage_b17_22_17_hmr_bolt_action_accutrigger	Savage Arms	B17	.17 HMR	?	7	unknown cartridge: .17 HMR
+1795	bergara_bmr_18_22_lr_micro_mini_action_carbon_barrel	Bergara	BMR	.22 Long Rifle	A	0	
+1796	bergara_bmp_24_6_5_creedmoor_heavy_palma_m5_dbm	Bergara	BMP	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1797	bergara_bmp_24_308_win_heavy_contour_m5_dbm	Bergara	BMP	.308 Winchester	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1798	bergara_hmr_22_6_5_creedmoor_hunting_precision_hybrid	Bergara	HMR	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1799	bergara_hmr_22_308_win_hunting_precision_hybrid	Bergara	HMR	.308 Winchester	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1800	bergara_hmr_pro_22_6_5_creedmoor_ss_barrel_ceramic_coated	Bergara	HMR Pro	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1801	bergara_premier_lrp_26_6_5_creedmoor_heavy_palma_m5_dbm	Bergara	Premier LRP	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1802	bergara_b_14r_trainer_22_22_lr_heavy_barrel_aics_pattern	Bergara	B-14R Trainer	.22 Long Rifle	A	0	
+1803	bergara_bxr_18_22_lr_semi_auto_aluminum_receiver	Bergara	BXR	.22 Long Rifle	A	0	
+1804	cz_usa_bren_2_ms_11_9mm_conversion_folding_stock	CZ-USA	Bren 2 Ms	9×19mm Parabellum	A	0	
+1805	cz_usa_cz_600_range_24_6_5_creedmoor_heavy_barrel_chassis	CZ-USA	CZ 600 Range	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1806	cz_usa_cz_600_scout_18_5_7_62x39_manners_stock_iron_sights	CZ-USA	CZ 600 Scout	7.62×39mm	A	1	caliber_mm=7.62 slightly outside ref [7.8,8.0]
+1807	cz_usa_cz_600_lux_22_308_win_walnut_stock_open_sights	CZ-USA	CZ 600 Lux	.308 Winchester	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+1808	cz_usa_cz_600_ergo_22_6_5_creedmoor_ergonomic_stock	CZ-USA	CZ 600 Ergo	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1809	cz_usa_cz_600_premium_24_8_300_win_mag_walnut_floorplate	CZ-USA	CZ 600 Premium	.300 Winchester Magnum	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.9]
+1810	cz_usa_shadow_2_compact_9mm_compact_steel_frame_da_sa	CZ-USA	Shadow 2 Compact	9×19mm Parabellum	A	0	
+1811	cz_usa_ts_2_racing_9mm_competition_single_action_optics_ready	CZ-USA	TS 2 Racing	9×19mm Parabellum	A	0	
+1812	intratec_firearms_tec_9_full_auto_capable_original_32_round_mag	Intratec Firearms	TEC-9	9×19mm Parabellum	A	0	
+1813	intratec_firearms_tec_22_scorpion_22_lr_carbine_variant	Intratec Firearms	TEC-22	22 Long Rifle	?	7	unknown cartridge: 22 Long Rifle
+1814	intratec_firearms_tec_38_38_special_blowback_semi_auto	Intratec Firearms	TEC-38	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+1815	intratec_firearms_cat_9_protector_compact_9mm_3_barrel	Intratec Firearms	CAT-9	9×19mm Parabellum	A	0	
+1816	intratec_firearms_ab_10_dc_9_variant_with_10_round_mag_post_1994	Intratec Firearms	AB-10	9×19mm Parabellum	A	0	
+1817	webley_scott_1911_45_acp_1911_pattern_semi_auto_5_barrel	Webley & Scott	1911	.45 ACP	A	0	
+1818	webley_scott_webley_nemesis_ultra_compact_32_acp_pocket_pistol_2	Webley & Scott	Webley Nemesis	.32 ACP	A	0	
+1819	webley_scott_webley_alecto_multi_pump_pneumatic_target_pistol	Webley & Scott	Webley Alecto	.177	?	7	unknown cartridge: .177
+1820	webley_scott_webley_patriot_full_size_45_acp_1911_pattern_target_grade	Webley & Scott	Webley Patriot	.45 ACP	A	0	
+1821	webley_scott_webley_hurricane_22_lr_target_pistol_semi_auto	Webley & Scott	Webley Hurricane	.22 Long Rifle	A	0	
+1822	nambu_type_a_8mm_nambu_semi_auto_early_production_1902_1909	Nambu	Type A	8×22mm Nambu	?	7	unknown cartridge: 8×22mm Nambu
+1823	nambu_type_26_9mm_revolver_break_open_1893_design	Nambu	Type 26	9×22mm Japanese Revolver	?	7	unknown cartridge: 9×22mm Japanese Revolver
+1824	mendoza_c_1934_43_380_acp_mexican_service_sidearm	Mendoza	C-1934/43	.380 ACP	A	0	
+1825	mendoza_model_75_compact_380_acp_pocket_pistol	Mendoza	Model 75	.380 ACP	A	0	
+1826	mendoza_model_505_22_lr_bolt_action_sporting_rifle	Mendoza	Model 505	.22 Long Rifle	A	0	
+1827	sterling_l2a1_mk4_sterling_improved_l2a3_mag_catch_safety	Sterling Armaments Company	L2A1	9×19mm Parabellum	A	0	
+1828	sterling_l34a1_suppressed_sterling_integral_suppressor	Sterling Armaments Company	L34A1	9×19mm Parabellum	A	0	
+1829	sterling_sterling_pistol_semi_auto_pistol_version_of_l2a3_180mm_barrel	Sterling Armaments Company	Sterling Pistol	9×19mm Parabellum	A	0	
+1830	sterling_sar_7_62_7_62mm_battle_rifle_self_loading_20_barrel	Sterling Armaments Company	SAR 7.62	7.62×51mm NATO	A	0	
+1831	sterling_patchett_mk1_prototype_smg_predecessor_to_sterling_wooden_stock	Sterling Armaments Company	Patchett Mk1	9×19mm Parabellum	A	0	
+1832	beretta_92x_defense_dao_variant_for_law_enforcement_4_7_barrel	Beretta	92X Defense	9×19mm Parabellum	A	0	
+1833	beretta_92x_compact_compact_carry_variant_4_barrel	Beretta	92X Compact	9×19mm Parabellum	A	0	
+1834	beretta_92fs_brigadier_heavy_slide_variant_5_barrel_dovetail_front_sight	Beretta	92FS Brigadier	9×19mm Parabellum	A	0	
+1835	beretta_92fs_inox_stainless_steel_92fs_satin_finish	Beretta	92FS Inox	9×19mm Parabellum	A	0	
+1836	beretta_92a1_updated_92_with_picatinny_rail_removable_front_sight	Beretta	92A1	9×19mm Parabellum	A	0	
+1837	beretta_px4_storm_sd_special_duty_variant_40_s_w_with_accessory_rail	Beretta	Px4 Storm SD	.40 S&W	A	0	
+1838	beretta_apx_centurion_mid_size_apx_4_barrel_15_round	Beretta	APX Centurion	9×19mm Parabellum	A	0	
+1839	beretta_apx_a1_strike_updated_striker_optics_ready_4_25_barrel	Beretta	APX A1 Strike	9×19mm Parabellum	A	0	
+1840	beretta_cheetah_80_series_81_cheetah_32_acp_single_stack	Beretta	Cheetah 80	.32 ACP	A	0	
+1841	beretta_cheetah_81_series_81_cheetah_32_acp_blued_finish	Beretta	Cheetah 81	.32 ACP	A	0	
+1842	sig_sauer_p365_380_p365_platform_in_380_acp_3_1_barrel	Sig Sauer	P365-380	.380 ACP	A	0	
+1843	sig_sauer_p365_sas_sightless_anti_snag_variant_3_1_barrel	Sig Sauer	P365 SAS	9×19mm Parabellum	A	0	
+1844	sig_sauer_p320_axg_classic_aluminum_xgrip_frame_classic_slide_4_6_barrel	Sig Sauer	P320 AXG Classic	9×19mm Parabellum	A	0	
+1845	sig_sauer_p320_axg_pro_axg_frame_with_optic_cut_threaded_barrel_4_8	Sig Sauer	P320 AXG Pro	9×19mm Parabellum	A	0	
+1846	sig_sauer_p320_axg_legion_axg_frame_with_legion_trigger_tungsten_infused_grip	Sig Sauer	P320 AXG Legion	9×19mm Parabellum	A	0	
+1847	sig_sauer_p226_legion_legion_sa_da_g10_grips_x_ray_sights_4_4_barrel	Sig Sauer	P226 Legion	9×19mm Parabellum	A	0	
+1848	sig_sauer_p226_mk25_navy_issue_corrosion_resistant_finish_4_4_barrel	Sig Sauer	P226 MK25	9×19mm Parabellum	A	0	
+1849	sig_sauer_p226_elite_beavertail_skeletonized_hammer_front_cocking_serrations	Sig Sauer	P226 Elite	9×19mm Parabellum	A	0	
+1850	sig_sauer_p229_legion_legion_sa_da_carry_g10_grips_3_9_barrel	Sig Sauer	P229 Legion	9×19mm Parabellum	A	0	
+1851	sig_sauer_p938_sas_sightless_anti_snag_micro_1911_3_barrel	Sig Sauer	P938 SAS	9×19mm Parabellum	A	0	
+1852	sig_sauer_p238_sport_sport_variant_extended_barrel_380_acp	Sig Sauer	P238 Sport	.380 ACP	A	0	
+1853	sig_sauer_sig716_g2_7_62mm_battle_rifle_16_barrel_keymod_handguard	Sig Sauer	SIG716 G2	7.62×51mm NATO	A	0	
+1854	sig_sauer_m400_snakebite_bronze_cerakote_16_fluted_barrel_5_56mm	Sig Sauer	M400 Snakebite	5.56×45mm NATO	A	0	
+1855	colt_s_manufacturing_company_python_2020	Colt's Manufacturing Company	Python 2020	.357 Magnum	A	0	
+1856	colt_s_manufacturing_company_python_2020_2	Colt's Manufacturing Company	Python 2020	.357 Magnum	A	0	
+1857	colt_s_manufacturing_company_python_2020_3	Colt's Manufacturing Company	Python 2020	.357 Magnum	A	0	
+1858	colt_s_manufacturing_company_anaconda_2021	Colt's Manufacturing Company	Anaconda 2021	.44 Remington Magnum	?	7	unknown cartridge: .44 Remington Magnum
+1859	colt_s_manufacturing_company_anaconda_2021_2	Colt's Manufacturing Company	Anaconda 2021	.44 Remington Magnum	?	7	unknown cartridge: .44 Remington Magnum
+1860	colt_s_manufacturing_company_king_cobra_target_6_vent_rib_target_barrel_adjustable_target_sights	Colt's Manufacturing Company	King Cobra Target	.357 Magnum	A	0	
+1861	colt_s_manufacturing_company_cobra_2021_3_snubnose_6_round_38_special_dao	Colt's Manufacturing Company	Cobra 2021	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+1862	colt_s_manufacturing_company_gold_cup_trophy_5_national_match_barrel_adjustable_trigger_wraparound_grips	Colt's Manufacturing Company	Gold Cup Trophy	.45 ACP	A	0	
+1863	colt_s_manufacturing_company_gold_cup_national_match_5_barrel_target_sights_competition_trigger	Colt's Manufacturing Company	Gold Cup National Match	.45 ACP	A	0	
+1864	colt_s_manufacturing_company_lightweight_commander_4_25_barrel_aluminum_alloy_frame	Colt's Manufacturing Company	Lightweight Commander	.45 ACP	A	0	
+1865	colt_s_manufacturing_company_defender_3_barrel_compact_carry_38_super_variant	Colt's Manufacturing Company	Defender	.38 Super	?	7	unknown cartridge: .38 Super
+1866	benelli_lupo_6_5_creedmoor_20_barrel	Benelli	Lupo	6.5 Creedmoor	A	1	caliber_mm=6.5 slightly outside ref [6.65,6.78]
+1867	benelli_lupo_300_winchester_magnum_24_barrel	Benelli	Lupo	.300 Winchester Magnum	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.9]
+1868	benelli_lupo_300_wsm_24_barrel	Benelli	Lupo	.300 Winchester Short Magnum	?	7	unknown cartridge: .300 Winchester Short Magnum
+1869	benelli_lupo_243_winchester_22_barrel	Benelli	Lupo	.243 Winchester	A	0	
+1870	benelli_lupo_270_winchester_22_barrel	Benelli	Lupo	.270 Winchester	?	7	unknown cartridge: .270 Winchester
+1871	benelli_sbe_3_28_barrel_max_7_camo	Benelli	SBE 3	12 Gauge	A	0	
+1872	benelli_sbe_3_26_barrel_be_s_t_coating	Benelli	SBE 3	12 Gauge	A	0	
+1873	benelli_sbe_3_nwtf_turkey_edition_26	Benelli	SBE 3	12 Gauge	A	0	
+1874	benelli_ethos_cordoba_28_sporting	Benelli	Ethos	12 Gauge	A	0	
+1875	benelli_ethos_supersport_30	Benelli	Ethos	12 Gauge	A	0	
+1876	benelli_m2_tactical_18_5_ghost_ring	Benelli	M2	12 Gauge	A	0	
+1877	benelli_m2_field_28_comfortech_stock	Benelli	M2	12 Gauge	A	0	
+1878	benelli_supernova_tactical_18_5_ghost_ring_sights	Benelli	Supernova	12 Gauge	A	0	
+1879	benelli_raffaello_dellavo_28_walnut	Benelli	Raffaello	12 Gauge	A	0	
+1880	franchi_affinity_3_hunter_28_synthetic	Franchi	Affinity 3	12 Gauge	A	0	
+1881	franchi_affinity_3_waterfowl_26_camo	Franchi	Affinity 3	12 Gauge	A	0	
+1882	franchi_affinity_3_catalyst_26_compact	Franchi	Affinity 3	20 Gauge	A	0	
+1883	franchi_instinct_sl_28_over_under	Franchi	Instinct SL	12 Gauge	A	0	
+1884	franchi_instinct_sx_30_sporting_clays	Franchi	Instinct SX	12 Gauge	A	0	
+1885	franchi_instinct_lx_28_deluxe_walnut	Franchi	Instinct LX	12 Gauge	A	0	
+1886	franchi_inspire_bolt_action_308_22_barrel	Franchi	Inspire	.308 Winchester	A	0	
+1887	franchi_horizon_birdland_26_special_edition	Franchi	Horizon	12 Gauge	A	0	
+1888	franchi_renegade_12ga_defense_18_5	Franchi	Renegade	12 Gauge	A	0	
+1889	franchi_pa_7_pump_action_12ga_20	Franchi	PA-7	12 Gauge	A	0	
+1890	henry_big_boy_steel	Henry	Big Boy Steel	.44 Magnum	A	1	pressure=360.0 deviates 45% from typical 248
+1891	henry_big_boy_side_gate	Henry	Big Boy Side Gate	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1892	henry_big_boy_side_gate_2	Henry	Big Boy Side Gate	.45 Colt	A	0	
+1893	henry_golden_boy_22_wmr_20_octagonal	Henry	Golden Boy	.22 Winchester Magnum	?	7	unknown cartridge: .22 Winchester Magnum
+1894	henry_golden_boy_17_hmr_20_octagonal	Henry	Golden Boy	.17 HMR	?	7	unknown cartridge: .17 HMR
+1895	henry_frontier_22_lr_20_threaded	Henry	Frontier	.22 Long Rifle	A	0	
+1896	henry_frontier_22_wmr_20_threaded	Henry	Frontier	.22 Winchester Magnum	?	7	unknown cartridge: .22 Winchester Magnum
+1897	henry_long_ranger_308_winchester_20	Henry	Long Ranger	.308 Winchester	A	0	
+1898	henry_long_ranger_6_5_creedmoor_20	Henry	Long Ranger	6.5 Creedmoor	A	0	
+1899	henry_x_model_357_magnum_17_4_black_synthetic	Henry	X Model	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1900	henry_supreme_223_remington_20_lever_action	Henry	Supreme	.223 Remington	A	0	
+1901	henry_homesteader_40_s_w_16_5_semi_auto_carbine	Henry	Homesteader	.40 S&W	A	0	
+1902	marlin_model_336_texan_20_30_30	Marlin	Model 336	.30-30 Winchester	A	0	
+1903	marlin_model_336_sporting_20_walnut_30_30	Marlin	Model 336	.30-30 Winchester	A	0	
+1904	marlin_model_336_csbl_stainless_16_5_30_30	Marlin	Model 336	.30-30 Winchester	A	0	
+1905	marlin_model_1894_sbl_stainless_44_mag_19	Marlin	Model 1894	.44 Magnum	A	1	pressure=360.0 deviates 45% from typical 248
+1906	marlin_model_1894_trapper_357_mag_16_5	Marlin	Model 1894	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1907	marlin_model_1894_cowboy_45_colt_24_octagonal	Marlin	Model 1894	.45 Colt	A	0	
+1908	marlin_model_1895_guide_18_5_stainless_45_70	Marlin	Model 1895	.45-70 Government	A	0	
+1909	marlin_model_1895_trapper_16_5_45_70	Marlin	Model 1895	.45-70 Government	A	0	
+1910	marlin_model_1895_gbl_22_blued_walnut_45_70	Marlin	Model 1895	.45-70 Government	C	2	velocity=710.0m/s unusual for .45-70 Government (ref [380,610])
+1911	marlin_model_60_ss_stainless_19_22_lr	Marlin	Model 60	.22 Long Rifle	A	0	
+1912	marlin_model_795_ss_stainless_18_22_lr	Marlin	Model 795	.22 Long Rifle	A	0	
+1913	ithaca_model_37_deerslayer_iii_24_rifled_barrel	Ithaca	Model 37	12 Gauge	A	0	
+1914	ithaca_model_37_supreme_28_walnut	Ithaca	Model 37	12 Gauge	A	0	
+1915	ithaca_model_37_trap_30_vent_rib	Ithaca	Model 37	12 Gauge	A	0	
+1916	ithaca_model_37_waterfowl_28_camo	Ithaca	Model 37	12 Gauge	A	0	
+1917	ithaca_model_37_ds_ps_police_special_18_5_parkerized	Ithaca	Model 37 DS PS	12 Gauge	A	0	
+1918	ithaca_model_87_pump_12ga_28_field	Ithaca	Model 87	12 Gauge	A	0	
+1919	ithaca_model_72_saddlegun_lever_30_30_20	Ithaca	Model 72	.30-30 Winchester	A	0	
+1920	breda_breda_930_tactical_18_5_synthetic	Breda	Breda 930	12 Gauge	A	0	
+1921	breda_b12_12s_inertia_28	Breda	B12	12 Gauge	A	0	
+1922	breda_a1_semi_auto_28_field	Breda	A1	12 Gauge	A	0	
+1923	breda_a2_semi_auto_26_synthetic	Breda	A2	12 Gauge	A	0	
+1924	breda_breda_391_semi_auto_12ga_28	Breda	Breda 391	12 Gauge	A	0	
+1925	breda_x_pert_12ga_semi_auto_28_field	Breda	X-pert	12 Gauge	A	0	
+1926	stoeger_str_9_combat_4_5_barrel_9mm_striker	Stoeger	STR-9 Combat	.9×19mm Parabellum	A	0	
+1927	stoeger_p3000_defense_18_5_pump_action	Stoeger	P3000	12 Gauge	A	0	
+1928	stoeger_p3000_waterfowl_28_camo	Stoeger	P3000	12 Gauge	A	0	
+1929	stoeger_m3020_semi_auto_20ga_26	Stoeger	M3020	20 Gauge	A	0	
+1930	stoeger_double_defense_over_under_12ga_20	Stoeger	Double Defense	12 Gauge	A	0	
+1931	stoeger_condor_outback_26_matte_nickel	Stoeger	Condor	12 Gauge	A	0	
+1932	wc_edc_x9	Wilson Combat	EDC X9	9×19mm Parabellum	A	0	
+1933	wc_edc_x9s	Wilson Combat	EDC X9S	9×19mm Parabellum	A	0	
+1934	wc_sfx9	Wilson Combat	SFX9	9×19mm Parabellum	A	0	
+1935	wc_sfx9_4	Wilson Combat	"SFX9 4"""	9×19mm Parabellum	A	0	
+1936	wc_sfx9_5	Wilson Combat	"SFX9 5"""	9×19mm Parabellum	A	0	
+1937	wc_cqb	Wilson Combat	CQB	.45 ACP	A	0	
+1938	wc_cqb_compact	Wilson Combat	CQB Compact	.45 ACP	A	0	
+1939	wc_x_tac	Wilson Combat	X-TAC	.45 ACP	A	0	
+1940	wc_hunter	Wilson Combat	Hunter	.45 ACP	A	0	
+1941	wc_sentinel	Wilson Combat	Sentinel	.45 ACP	A	0	
+1942	wc_experior	Wilson Combat	Experior	9×19mm Parabellum	A	0	
+1943	wc_ar9	Wilson Combat	AR9	9×19mm Parabellum	A	0	
+1944	wc_recon_tactical	Wilson Combat	Recon Tactical	.223 Remington	A	0	
+1945	wc_92g_brigadier_tactical	Wilson Combat	92G Brigadier Tactical	9×19mm Parabellum	A	0	
+1946	zev_oz9	ZEV Technologies	OZ9	9×19mm Parabellum	A	0	
+1947	zev_oz9_combat	ZEV Technologies	OZ9 Combat	9×19mm Parabellum	A	0	
+1948	zev_oz9_hyper	ZEV Technologies	OZ9 Hyper	9×19mm Parabellum	A	0	
+1949	zev_oz9_compact	ZEV Technologies	OZ9 Compact	9×19mm Parabellum	A	0	
+1950	zev_oz9_compact_x	ZEV Technologies	OZ9 Compact-X	9×19mm Parabellum	A	0	
+1951	zev_z365	ZEV Technologies	Z365	9×19mm Parabellum	A	0	
+1952	zev_z365xl	ZEV Technologies	Z365XL	9×19mm Parabellum	A	0	
+1953	zev_oz9_duty	ZEV Technologies	OZ9 Duty	9×19mm Parabellum	A	0	
+1954	zev_citadel	ZEV Technologies	Citadel	9×19mm Parabellum	A	0	
+1955	rra_lar_15_standard_a2	Rock River Arms	LAR-15 Standard A2	5.56×45mm NATO	A	0	
+1956	rra_lar_15_entry_tactical	Rock River Arms	LAR-15 Entry Tactical	5.56×45mm NATO	A	0	
+1957	rra_lar_15_operator	Rock River Arms	LAR-15 Operator	5.56×45mm NATO	A	0	
+1958	rra_lar_15_elite_car	Rock River Arms	LAR-15 Elite CAR	5.56×45mm NATO	A	0	
+1959	rra_lar_15_national_match	Rock River Arms	LAR-15 National Match	5.56×45mm NATO	A	0	
+1960	rra_lar_8	Rock River Arms	LAR-8	7.62×51mm NATO	A	0	
+1961	rra_lar_8_operator	Rock River Arms	LAR-8 Operator	7.62×51mm NATO	A	0	
+1962	rra_lar_9	Rock River Arms	LAR-9	9×19mm Parabellum	A	0	
+1963	rra_lar_45	Rock River Arms	LAR-45	.45 ACP	A	0	
+1964	rra_1911_gi	Rock River Arms	1911 GI	.45 ACP	A	0	
+1965	rra_1911_compact	Rock River Arms	1911 Compact	.45 ACP	A	0	
+1966	ptr_ptr_91_a3s	PTR Industries	PTR-91 A3S	7.62×51mm NATO	A	0	
+1967	ptr_ptr_91_a3r	PTR Industries	PTR-91 A3R	7.62×51mm NATO	A	0	
+1968	ptr_ptr_91_kfr	PTR Industries	PTR-91 KFR	7.62×51mm NATO	A	0	
+1969	ptr_ptr_91_gir	PTR Industries	PTR-91 GIR	7.62×51mm NATO	A	0	
+1970	ptr_ptr_32	PTR Industries	PTR-32	7.62×39mm Soviet	A	0	
+1971	ptr_ptr_9ct	PTR Industries	PTR-9CT	9×19mm Parabellum	A	0	
+1972	ptr_ptr_9r	PTR Industries	PTR-9R	9×19mm Parabellum	A	0	
+1973	ptr_ptr_ms	PTR Industries	PTR-MS	7.62×51mm NATO	A	0	
+1974	jp_jp_15	JP Enterprises	JP-15	5.56×45mm NATO	A	0	
+1975	jp_scr_11	JP Enterprises	SCR-11	6.5 Creedmoor	A	0	
+1976	jp_lrp_07	JP Enterprises	LRP-07	.308 Winchester	A	0	
+1977	jp_gmr_15	JP Enterprises	GMR-15	9×19mm Parabellum	A	0	
+1978	jp_jp_5	JP Enterprises	JP-5	12 Gauge	A	0	
+1979	std_mfg_dp_12	Standard Manufacturing	DP-12	12 Gauge	A	0	
+1980	std_mfg_s333_thunderstruck	Standard Manufacturing	S333 Thunderstruck	.22 Winchester Magnum	?	7	unknown cartridge: .22 Winchester Magnum
+1981	std_mfg_1911_g_i	Standard Manufacturing	1911 G.I.	.45 ACP	A	0	
+1982	std_mfg_1911_commander	Standard Manufacturing	1911 Commander	.45 ACP	A	0	
+1983	std_mfg_1911_target	Standard Manufacturing	1911 Target	.45 ACP	A	0	
+1984	troy_m7a1	Troy Industries	M7A1	5.56×45mm NATO	A	0	
+1985	troy_m7a1_cqb	Troy Industries	M7A1 CQB	5.56×45mm NATO	A	0	
+1986	troy_m7a1_pdw	Troy Industries	M7A1 PDW	5.56×45mm NATO	A	0	
+1987	troy_m14_sopmod	Troy Industries	M14 SOPMOD	7.62×51mm NATO	A	0	
+1988	troy_par_5_56	Troy Industries	PAR 5.56	5.56×45mm NATO	A	0	
+1989	troy_par_308	Troy Industries	PAR .308	.308 Winchester	A	0	
+1990	colt_1991a1	Colt	1991A1	.45 ACP	A	0	
+1991	colt_government_xse	Colt	Government XSE	.45 ACP	A	0	
+1992	colt_series_70_government	Colt	Series 70 Government	.45 ACP	A	0	
+1993	colt_diamondback	Colt	Diamondback	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+1994	colt_trooper_mk_iii	Colt	Trooper Mk III	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+1995	colt_official_police	Colt	Official Police	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+1996	colt_1903_pocket_hammerless	Colt	1903 Pocket Hammerless	.32 ACP	A	0	
+1997	colt_buntline	Colt	Buntline	.45 Colt	A	0	
+1998	ruger_security_9_compact	Ruger	Security-9 Compact	9×19mm Parabellum	A	0	
+1999	ruger_super_blackhawk	Ruger	Super Blackhawk	.44 Magnum	A	1	pressure=360.0 deviates 45% from typical 248
+2000	ruger_single_six	Ruger	Single Six	.22 LR	A	0	
+2001	ruger_american_ranch	Ruger	American Ranch	5.56×45mm NATO	A	0	
+2002	ruger_mini_14_tactical	Ruger	Mini-14 Tactical	5.56×45mm NATO	A	0	
+2003	ruger_sfar	Ruger	SFAR	.308 Winchester	A	0	
+2004	ruger_lc_carbine	Ruger	LC Carbine	9×19mm Parabellum	A	0	
+2005	ruger_57	Ruger	57	5.7×28mm	A	0	
+2006	smw_model_27	Smith & Wesson	Model 27	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+2007	smw_model_28	Smith & Wesson	Model 28	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+2008	smw_model_57	Smith & Wesson	Model 57	.41 Magnum	A	0	
+2009	smw_model_617	Smith & Wesson	Model 617	.22 LR	A	0	
+2010	smw_model_460_xvr	Smith & Wesson	Model 460 XVR	.460 S&W Magnum	?	7	unknown cartridge: .460 S&W Magnum
+2011	smw_model_500	Smith & Wesson	Model 500	.500 S&W Magnum	A	0	
+2012	smw_model_586	Smith & Wesson	Model 586	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+2013	smw_m&p_22_compact	Smith & Wesson	M&P 22 Compact	.22 LR	A	0	
+2014	taurus_g3	Taurus	G3	9×19mm Parabellum	A	0	
+2015	taurus_gx4xl	Taurus	GX4XL	9×19mm Parabellum	A	0	
+2016	taurus_tx22_competition	Taurus	TX22 Competition	.22 LR	A	0	
+2017	taurus_tx22_compact	Taurus	TX22 Compact	.22 LR	A	0	
+2018	taurus_model_66	Taurus	Model 66	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+2019	taurus_model_692	Taurus	Model 692	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+2020	taurus_judge_public_defender	Taurus	Judge Public Defender	.45 Colt	A	0	
+2021	taurus_raging_hunter_454	Taurus	Raging Hunter .454	.454 Casull	A	0	
+2022	taurus_pt140	Taurus	PT140	.40 S&W	A	0	
+2023	taurus_th40	Taurus	TH40	.40 S&W	A	0	
+2024	mossberg_500_field	Mossberg	500 Field	12 Gauge	A	0	
+2025	mossberg_590_shockwave	Mossberg	590 Shockwave	12 Gauge	A	0	
+2026	mossberg_590_mariner	Mossberg	590 Mariner	12 Gauge	A	0	
+2027	mossberg_835_ulti_mag	Mossberg	835 Ulti-Mag	"12 Gauge 3.5"""	A	0	
+2028	mossberg_940_tactical	Mossberg	940 Tactical	12 Gauge	A	0	
+2029	mossberg_sa_20	Mossberg	SA-20	20 Gauge	A	0	
+2030	mossberg_mc1sc	Mossberg	MC1sc	9×19mm Parabellum	A	0	
+2031	mossberg_mc2c	Mossberg	MC2c	9×19mm Parabellum	A	0	
+2032	remington_model_700_xhr	Remington	Model 700 XHR	.300 Winchester Magnum	A	0	
+2033	remington_model_700_varmint	Remington	Model 700 Varmint	.223 Remington	A	0	
+2034	remington_model_870_fieldmaster	Remington	Model 870 Fieldmaster	12 Gauge	A	0	
+2035	remington_model_870_tactical	Remington	Model 870 Tactical	12 Gauge	A	0	
+2036	remington_v3_field	Remington	V3 Field	12 Gauge	A	0	
+2037	remington_v3_tactical	Remington	V3 Tactical	12 Gauge	A	0	
+2038	remington_rp45	Remington	RP45	.45 ACP	A	0	
+2039	remington_1911_r1_commander	Remington	1911 R1 Commander	.45 ACP	A	0	
+2040	sig_sauer_p227	Sig Sauer	P227	.45 ACP	A	0	
+2041	sig_sauer_p322	Sig Sauer	P322	.22 LR	A	0	
+2042	sig_sauer_p365_x_macro	Sig Sauer	P365 X-Macro	9×19mm Parabellum	A	0	
+2043	sig_sauer_p320_x_carry	Sig Sauer	P320 X-Carry	9×19mm Parabellum	A	0	
+2044	sig_sauer_mcx_virtus_16	Sig Sauer	"MCX Virtus 16"""	5.56×45mm NATO	A	0	
+2045	sig_sauer_cross_prf	Sig Sauer	Cross PRF	.277 Fury	?	7	unknown cartridge: .277 Fury
+2046	arc_archimedes	American Rifle Company	Archimedes	6.5 Creedmoor	A	0	
+2047	arc_mausingfield	American Rifle Company	Mausingfield	.308 Winchester	A	0	
+2048	arc_coup_de_grace	American Rifle Company	Coup de Grace	6.5 Creedmoor	A	0	
+2049	arc_mausingfield_300wm	American Rifle Company	Mausingfield .300WM	.300 Winchester Magnum	A	0	
+2050	arc_coup_de_grace_338	American Rifle Company	Coup de Grace .338	.338 Lapua Magnum	A	0	
+2051	ga_precision_gap_10	GA Precision	GAP-10	7.62×51mm NATO	A	0	
+2052	ga_precision_gap_10_crusader	GA Precision	GAP-10 Crusader	6.5 Creedmoor	A	0	
+2053	ga_precision_tempest	GA Precision	Tempest	6.5 Creedmoor	A	0	
+2054	ga_precision_gladius	GA Precision	Gladius	.308 Winchester	A	0	
+2055	ga_precision_psr	GA Precision	PSR	.300 Winchester Magnum	A	0	
+2056	surgeon_scalpel	Surgeon Rifles	Scalpel	.308 Winchester	A	0	
+2057	surgeon_scalpel_long	Surgeon Rifles	Scalpel Long	.300 Winchester Magnum	A	0	
+2058	surgeon_medium_action	Surgeon Rifles	Medium Action	.338 Lapua Magnum	A	0	
+2059	bighorn_tl3	Bighorn Arms	TL3	.308 Winchester	A	0	
+2060	bighorn_origin	Bighorn Arms	Origin	6.5 Creedmoor	A	0	
+2061	bighorn_zermatt_arms	Bighorn Arms	Zermatt Arms	.308 Winchester	A	0	
+2062	defiance_deviant	Defiance Machine	Deviant	.308 Winchester	A	0	
+2063	defiance_anti_x	Defiance Machine	AnTi-X	6.5 Creedmoor	A	0	
+2064	defiance_ruckus	Defiance Machine	Ruckus	6mm Dasher	?	7	unknown cartridge: 6mm Dasher
+2065	defiance_tenacity	Defiance Machine	Tenacity	.308 Winchester	A	0	
+2066	mack_bros_edm	Mack Brothers	EDM	.308 Winchester	A	0	
+2067	mack_bros_maco_ss	Mack Brothers	MACO SS	6.5 Creedmoor	A	0	
+2068	stiller_tac_300	Stiller Precision	Tac 300	.308 Winchester	A	0	
+2069	stiller_tac_400	Stiller Precision	Tac 400	.300 Winchester Magnum	A	0	
+2070	stiller_viper	Stiller Precision	Viper	6.5 Creedmoor	A	0	
+2071	stiller_predator	Stiller Precision	Predator	.308 Winchester	A	0	
+2072	beretta_1301_tactical_gen_2	Beretta	1301 Tactical Gen 2	12 Gauge	A	0	
+2073	beretta_1301_competition	Beretta	1301 Competition	12 Gauge	A	0	
+2074	beretta_a300_ultima_patrol	Beretta	A300 Ultima Patrol	12 Gauge	A	0	
+2075	beretta_a300_outlander	Beretta	A300 Outlander	12 Gauge	A	0	
+2076	beretta_a400_xcel	Beretta	A400 Xcel	12 Gauge	A	0	
+2077	beretta_80x_cheetah	Beretta	80X Cheetah	.380 ACP	A	1	pressure=200.0 deviates 35% from typical 148
+2078	beretta_92xi_squalo	Beretta	92XI Squalo	9×19mm Parabellum	A	0	
+2079	beretta_92x_performance_fr	Beretta	92X Performance FR	9×19mm Parabellum	A	0	
+2080	beretta_apx_a1_carry	Beretta	APX A1 Carry	9×19mm Parabellum	A	0	
+2081	beretta_apx_a1_compact	Beretta	APX A1 Compact	9×19mm Parabellum	A	0	
+2082	beretta_687_silver_pigeon_iii	Beretta	687 Silver Pigeon III	12 Gauge	A	0	
+2083	beretta_687_silver_pigeon_v	Beretta	687 Silver Pigeon V	12 Gauge	A	0	
+2084	beretta_dt11	Beretta	DT11	12 Gauge	A	0	
+2085	sig_sauer_p238_hd	Sig Sauer	P238 HD	.380 ACP	A	1	pressure=200.0 deviates 35% from typical 148
+2086	sig_sauer_p238_nitron	Sig Sauer	P238 Nitron	.380 ACP	A	1	pressure=200.0 deviates 35% from typical 148
+2087	sig_sauer_p938_sas	Sig Sauer	P938 SAS	9×19mm Parabellum	A	0	
+2088	sig_sauer_p938_extreme	Sig Sauer	P938 Extreme	9×19mm Parabellum	A	0	
+2089	sig_sauer_p320_x_five_legion	Sig Sauer	P320 X-Five Legion	9×19mm Parabellum	A	0	
+2090	sig_sauer_p320_x_carry_legion	Sig Sauer	P320 X-Carry Legion	9×19mm Parabellum	A	0	
+2091	sig_sauer_p320_axg_classic	Sig Sauer	P320 AXG Classic	9×19mm Parabellum	A	0	
+2092	sig_sauer_p365_x-macro_14	Sig Sauer	P365 X-Macro	9×19mm Parabellum	A	0	
+2093	sig_sauer_p365_axg_legion	Sig Sauer	P365 AXG Legion	9×19mm Parabellum	A	0	
+2094	sig_sauer_p226_x_five	Sig Sauer	P226 X-Five	9×19mm Parabellum	A	0	
+2095	sig_sauer_p226_x_six	Sig Sauer	P226 X-Six	9×19mm Parabellum	A	0	
+2096	sig_sauer_p226_legion	Sig Sauer	P226 Legion	9×19mm Parabellum	A	0	
+2097	sig_sauer_p229_elite	Sig Sauer	P229 Elite	.357 SIG	A	1	pressure=280.0 slightly below .357 SIG min (310)
+2098	sig_sauer_p229_scorpion	Sig Sauer	P229 Scorpion	.40 S&W	A	0	
+2099	sig_sauer_p229_legion	Sig Sauer	P229 Legion	9×19mm Parabellum	A	0	
+2100	sig_sauer_cross	Sig Sauer	Cross	.308 Winchester	A	0	
+2101	sig_sauer_mcx_canebrake	Sig Sauer	MCX CANEBRAKE	5.56×45mm NATO	A	0	
+2102	sig_sauer_mcx_rattler	Sig Sauer	MCX Rattler	.300 AAC Blackout	A	0	
+2103	sig_sauer_716i_tread	Sig Sauer	716i Tread	7.62×51mm NATO	A	0	
+2104	sig_sauer_716_dmr	Sig Sauer	716 DMR	7.62×51mm NATO	A	0	
+2105	walther_pdp_pro_sd_full	Walther	PDP Pro SD Full	9×19mm Parabellum	A	0	
+2106	walther_pdp_compact_4	Walther	"PDP Compact 4"""	9×19mm Parabellum	A	0	
+2107	walther_pps_m2	Walther	PPS M2	9×19mm Parabellum	A	0	
+2108	walther_ppk_s	Walther	PPK/S	.380 ACP	A	1	pressure=200.0 deviates 35% from typical 148
+2109	walther_ccp_m2	Walther	CCP M2	9×19mm Parabellum	A	0	
+2110	walther_p22_ca	Walther	P22 CA	.22 LR	A	0	
+2111	walther_q4_sf	Walther	Q4-SF	9×19mm Parabellum	A	0	
+2112	walther_q5_sf_steel_frame	Walther	Q5-SF Steel Frame	9×19mm Parabellum	A	0	
+2113	feg_pa_38	FÉG	PA-38	.380 ACP	A	1	pressure=200.0 deviates 35% from typical 148
+2114	feg_sfp_9	FÉG	SFP-9	9×18mm Makarov	A	0	
+2115	feg_r_9	FÉG	R-9	.357 Magnum	A	0	
+2116	feg_r_61	FÉG	R-61	.38 Special	A	1	pressure=240.0 deviates 105% from typical 117
+2117	feg_pmk_82	FÉG	PMK-82	9×18mm Makarov	A	0	
+2118	amt_automag_ii	AMT	Automag II	.22 Winchester Magnum	?	7	unknown cartridge: .22 Winchester Magnum
+2119	amt_automag_iii	AMT	Automag III	.30 Carbine	?	7	unknown cartridge: .30 Carbine
+2120	amt_automag_iv	AMT	Automag IV	10mm Auto	A	0	
+2121	amt_automag_v	AMT	Automag V	.50 Action Express	A	1	pressure=330.0 deviates 37% from typical 241
+2122	amt_on_duty	AMT	On Duty	9×19mm Parabellum	A	0	
+2123	amt_hardballer_longslide	AMT	Hardballer Longslide	.45 ACP	A	0	
+2124	amt_backup_380	AMT	Backup .380	.380 ACP	A	1	pressure=200.0 deviates 35% from typical 148
+2125	amt_backup_45	AMT	Backup .45	.45 ACP	A	0	
+2126	cetme_model_a	CETME	Model A	7.62×51mm NATO	A	0	
+2127	cetme_model_b	CETME	Model B	7.62×51mm NATO	A	0	
+2128	cetme_model_c	CETME	Model C	7.62×51mm NATO	A	0	
+2129	cetme_model_l	CETME	Model L	5.56×45mm NATO	A	0	
+2130	cetme_model_lc	CETME	Model LC	5.56×45mm NATO	A	0	
+2131	mateba_model_6_unica_hunter	Mateba	Model 6 Unica Hunter	.44 Magnum	A	1	pressure=360.0 deviates 45% from typical 248
+2132	mateba_model_6_unica_defense	Mateba	Model 6 Unica Defense	.357 Magnum	A	0	
+2133	mateba_grifone_carbine	Mateba	Grifone Carbine	.44 Magnum	A	1	pressure=360.0 deviates 45% from typical 248
+2134	mateba_grifone_short	Mateba	Grifone Short	.357 Magnum	A	0	
+2135	eaa_vindicator	EAA	Vindicator	.357 Magnum	A	0	
+2136	eaa_bounty_hunter_saa	EAA	Bounty Hunter SAA	.45 Colt	A	0	
+2137	eaa_witness_steel_full_size	EAA	Witness Steel Full Size	9×19mm Parabellum	A	0	
+2138	eaa_witness_hunter	EAA	Witness Hunter	10mm Auto	A	0	
+2139	eaa_witness_compact	EAA	Witness Compact	.45 ACP	A	0	
+2140	eaa_witness_match	EAA	Witness Match	9×19mm Parabellum	A	0	
+2141	molot_vepr_12	Molot	VEPR-12	12 Gauge	A	0	
+2142	molot_vepr_super	Molot	VEPR Super	.308 Winchester	A	0	
+2143	molot_vepr_7_62x54r	Molot	VEPR-7.62x54R	7.62×54mmR	A	0	
+2144	molot_vepr_k	Molot	VEPR-K	7.62×39mm Soviet	A	0	
+2145	molot_km_7	Molot	KM-7	7.62×39mm Soviet	A	0	
+2146	molot_ko_44	Molot	KO-44	7.62×54mmR	A	0	
+2147	q_fix_16_9	Q	Fix	9×19mm Parabellum	A	0	
+2148	q_fix_16_300blk	Q	Fix	.300 BLK	A	0	
+2149	q_mini_fix_300bo_9	Q	Mini Fix	.300 BLK	A	0	
+2150	q_erector_55_9	Q	Erector	9×19mm Parabellum	A	0	
+2151	q_spike_16_556	Q	Spike	5.56×45mm NATO	A	0	
+2152	silencerco_maxim_9_integrated_suppresso	SilencerCo	Maxim 9	9×19mm Parabellum	A	0	
+2153	silencerco_maxim_50_muzzleloader_pistol	SilencerCo	Maxim 50	.50 Caliber Muzzleloader	?	7	unknown cartridge: .50 Caliber Muzzleloader
+2154	silencerco_maxim_9_pdw_integrated_suppresso	SilencerCo	Maxim 9 PDW	9×19mm Parabellum	A	0	
+2155	heizer_ps1_1625_223	Heizer Defense	PS1	.223 Rem	A	0	
+2156	heizer_ps1_1625_300blk	Heizer Defense	PS1	.300 BLK	A	0	
+2157	heizer_pko-45_1625_45	Heizer Defense	PKO-45	.45 ACP	A	0	
+2158	seecamp_lws_25_pocket	Seecamp	LWS 25	.25 ACP	A	0	
+2159	seecamp_lws_32_pocket	Seecamp	LWS 32	.32 ACP	A	0	
+2160	seecamp_lws_380_pocket	Seecamp	LWS 380	.380 ACP	A	0	
+2161	freedom_model_83_454_75_casull	Freedom Arms	Model 83	.454 Casull	A	0	
+2162	freedom_model_83_10_454_casull	Freedom Arms	Model 83	.454 Casull	A	0	
+2163	freedom_model_83_357_6_magnum	Freedom Arms	Model 83	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+2164	freedom_model_83_44_75_magnum	Freedom Arms	Model 83	.44 Magnum	A	1	pressure=360.0 deviates 45% from typical 248
+2165	freedom_model_83_500_75_we	Freedom Arms	Model 83	.500 Wyoming Express	A	0	
+2166	freedom_model_97_357_55_magnum	Freedom Arms	Model 97	.357 Magnum	A	1	pressure=345.0 deviates 43% from typical 241
+2167	freedom_model_97_41_55_magnum	Freedom Arms	Model 97	.41 Magnum	A	0	
+2168	freedom_model_97_44_55_special	Freedom Arms	Model 97	.44 Special	A	1	pressure=145.0 deviates 36% from typical 107
+2169	freedom_model_97_45_55_colt	Freedom Arms	Model 97	.45 Colt	A	0	
+2170	nemo_omen_24_300wm	Nemo Arms	Omen	.300 Win Mag	A	0	
+2171	nemo_omen_26_338lm	Nemo Arms	Omen	.338 Lapua	A	0	
+2172	nemo_omen_16_308_watchman	Nemo Arms	Omen	.308 Win	A	0	
+2173	nemo_omen_18_308_recon	Nemo Arms	Omen	.308 Win	A	0	
+2174	nemo_omen_22_308_match	Nemo Arms	Omen	.308 Win	A	0	
+2175	nemo_sentinel_18_308	Nemo Arms	Sentinel	.308 Win	A	0	
+2176	nemo_hush_16_300blk	Nemo Arms	Hush	.300 BLK	A	0	
+2177	american_fxh-45_1911_45	American Tactical Imports	FXH-45	.45 ACP	A	0	
+2178	american_milsport_1911_45	American Tactical Imports	MilSport	.45 ACP	A	0	
+2179	american_bulldog_15_556_ar	American Tactical Imports	Bulldog	5.56×45mm NATO	A	0	
+2180	american_galeo_9_pistol	American Tactical Imports	Galeo	9×19mm Parabellum	A	0	
+2181	american_sc_1911_45_coander	American Tactical Imports	SC 1911	.45 ACP	A	0	
+2182	american_at12_12ga_shotgun_tactica	American Tactical Imports	AT12	12 Gauge	A	0	
+2183	cobra_derringer_380	Cobra Firearms	Derringer	.380 ACP	A	0	
+2184	cobra_derringer_38_special	Cobra Firearms	Derringer	.38 Special	A	0	
+2185	cobra_patriot_45	Cobra Firearms	Patriot	.45 ACP	A	0	
+2186	davis_p-380_380_pocket	Davis Industries	P-380	.380 ACP	A	0	
+2187	davis_p-32_32_pocket	Davis Industries	P-32	.32 ACP	A	0	
+2188	davis_d-series_38_derringer_spl	Davis Industries	D-Series	.38 Special	A	0	
+2189	lorcin_l-25_25_pocket	Lorcin Engineering	L-25	.25 ACP	A	0	
+2190	lorcin_l-22_22_lr_pocket	Lorcin Engineering	L-22	.22 LR	A	0	
+2191	lorcin_l-380_380_pocket	Lorcin Engineering	L-380	.380 ACP	A	0	
+2192	lorcin_l-9mm_9_full_size	Lorcin Engineering	L-9mm	9×19mm Parabellum	A	0	
+2193	lorcin_l-32_32_pocket	Lorcin Engineering	L-32	.32 ACP	A	0	
+2194	tristar_c-100_75_9_clone_cz	Tristar	C-100	9×19mm Parabellum	A	0	
+2195	tristar_can_r_9_full_size	Tristar	Can R	9×19mm Parabellum	A	0	
+2196	tristar_can_s_9_compact	Tristar	Can S	9×19mm Parabellum	A	0	
+2197	tristar_t-120_9_full_size	Tristar	T-120	9×19mm Parabellum	A	0	
+2198	tristar_kama_9_clone_compact_cz	Tristar	Kama	9×19mm Parabellum	A	0	
+2199	bryco_model_59_9_full_size	Bryco Arms	Model 59	9×19mm Parabellum	A	0	
+2200	bryco_model_38_380	Bryco Arms	Model 38	.380 ACP	A	0	
+2201	bryco_model_48_380_compact	Bryco Arms	Model 48	.380 ACP	A	0	

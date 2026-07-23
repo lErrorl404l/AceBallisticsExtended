@@ -1,0 +1,1712 @@
+{
+  "_meta": {
+    "description": "SAAMI/CIP cartridge reference ranges for ballistics validation",
+    "units": "pressure_mpa | projectile_mass_g | muzzle_velocity_ms | caliber_mm | twist_mm",
+    "source": "SAAMI, CIP, NATO EPVAT, manufacturer data",
+    "last_updated": "2026-07-23"
+  },
+  "9\u00d719mm Parabellum": {
+    "aliases": [
+      "9\u00d719mm",
+      "9mm Luger",
+      "9mm Parabellum",
+      "9mm",
+      "9x19mm",
+      "9mm NATO"
+    ],
+    "caliber_mm": {
+      "min": 8.95,
+      "max": 9.07,
+      "typical": 9.01
+    },
+    "twist_mm": {
+      "min": 240,
+      "max": 400,
+      "typical": 250
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 220,
+      "max": 300,
+      "typical": 241,
+      "saami": 241,
+      "cip": 250,
+      "nato": 252
+    },
+    "projectile_mass_g": {
+      "min": 5.8,
+      "max": 9.5,
+      "typical": 8.0
+    },
+    "muzzle_velocity_ms": {
+      "min": 280,
+      "max": 470,
+      "typical": 360,
+      "notes": "Varies from 280 (147gr subcompact) to 450 (115gr carbine)"
+    },
+    "is_shotgun": false
+  },
+  "5.56\u00d745mm NATO": {
+    "aliases": [
+      "5.56\u00d745mm",
+      "5.56mm",
+      "5.56 NATO"
+    ],
+    "caliber_mm": {
+      "min": 5.56,
+      "max": 5.7,
+      "typical": 5.69
+    },
+    "twist_mm": {
+      "min": 178,
+      "max": 305,
+      "typical": 178
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 370,
+      "max": 450,
+      "typical": 430,
+      "saami": 379,
+      "cip": 430,
+      "nato": 430
+    },
+    "projectile_mass_g": {
+      "min": 3.2,
+      "max": 5.0,
+      "typical": 4.0
+    },
+    "muzzle_velocity_ms": {
+      "min": 750,
+      "max": 1000,
+      "typical": 890,
+      "notes": "M855 62gr from 14.5-20in: 890-950 m/s"
+    },
+    "is_shotgun": false
+  },
+  ".45 ACP": {
+    "aliases": [
+      ".45 Auto",
+      "45 ACP",
+      ".45 ACP"
+    ],
+    "caliber_mm": {
+      "min": 11.35,
+      "max": 11.55,
+      "typical": 11.48
+    },
+    "twist_mm": {
+      "min": 380,
+      "max": 510,
+      "typical": 406
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 120,
+      "max": 170,
+      "typical": 145,
+      "saami": 145
+    },
+    "projectile_mass_g": {
+      "min": 12.0,
+      "max": 16.5,
+      "typical": 15.0
+    },
+    "muzzle_velocity_ms": {
+      "min": 220,
+      "max": 330,
+      "typical": 255,
+      "notes": "230gr ball: 255 m/s; 185gr: 290 m/s"
+    },
+    "is_shotgun": false
+  },
+  "7.62\u00d751mm NATO": {
+    "aliases": [
+      "7.62\u00d751mm",
+      "7.62mm",
+      "7.62 NATO"
+    ],
+    "caliber_mm": {
+      "min": 7.78,
+      "max": 7.86,
+      "typical": 7.82
+    },
+    "twist_mm": {
+      "min": 250,
+      "max": 320,
+      "typical": 279
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 370,
+      "max": 440,
+      "typical": 415,
+      "saami": 427,
+      "cip": 415,
+      "nato": 427
+    },
+    "projectile_mass_g": {
+      "min": 8.4,
+      "max": 11.7,
+      "typical": 9.5
+    },
+    "muzzle_velocity_ms": {
+      "min": 700,
+      "max": 900,
+      "typical": 840,
+      "notes": "M80 147gr: 840 m/s; 168gr: 770 m/s"
+    },
+    "is_shotgun": false
+  },
+  "12 Gauge": {
+    "aliases": [
+      "12ga",
+      "12 Gauge",
+      "12-Gauge"
+    ],
+    "caliber_mm": {
+      "min": 18.3,
+      "max": 19.0,
+      "typical": 18.5
+    },
+    "twist_mm": {
+      "min": 0,
+      "max": 0,
+      "typical": 0
+    },
+    "twist_dir": 0,
+    "pressure_mpa": {
+      "min": 55,
+      "max": 85,
+      "typical": 65,
+      "saami": 69,
+      "notes": "2.75in: 69 MPa; 3in: 76 MPa"
+    },
+    "projectile_mass_g": {
+      "min": 24,
+      "max": 36,
+      "typical": 28.4
+    },
+    "muzzle_velocity_ms": {
+      "min": 380,
+      "max": 510,
+      "typical": 420,
+      "notes": "1oz slug: ~420 m/s; 00 buck: ~400 m/s"
+    },
+    "is_shotgun": true
+  },
+  ".308 Winchester": {
+    "aliases": [
+      ".308 Win",
+      ".308"
+    ],
+    "caliber_mm": {
+      "min": 7.78,
+      "max": 7.86,
+      "typical": 7.82
+    },
+    "twist_mm": {
+      "min": 250,
+      "max": 320,
+      "typical": 279
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 370,
+      "max": 440,
+      "typical": 415,
+      "saami": 427
+    },
+    "projectile_mass_g": {
+      "min": 8.4,
+      "max": 11.7,
+      "typical": 9.5
+    },
+    "muzzle_velocity_ms": {
+      "min": 700,
+      "max": 900,
+      "typical": 820
+    },
+    "is_shotgun": false
+  },
+  ".357 Magnum": {
+    "aliases": [
+      ".357 Mag",
+      "357 Magnum"
+    ],
+    "caliber_mm": {
+      "min": 9.01,
+      "max": 9.12,
+      "typical": 9.07
+    },
+    "twist_mm": {
+      "min": 340,
+      "max": 480,
+      "typical": 356
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 200,
+      "max": 380,
+      "typical": 241,
+      "saami": 241
+    },
+    "projectile_mass_g": {
+      "min": 7.1,
+      "max": 12.0,
+      "typical": 8.1
+    },
+    "muzzle_velocity_ms": {
+      "min": 350,
+      "max": 570,
+      "typical": 420,
+      "notes": "125gr: 460-540 m/s; 158gr: 370-430 m/s"
+    },
+    "is_shotgun": false
+  },
+  "7.62\u00d739mm": {
+    "aliases": [
+      "7.62\u00d739",
+      "7.62 Soviet"
+    ],
+    "caliber_mm": {
+      "min": 7.8,
+      "max": 8.0,
+      "typical": 7.85
+    },
+    "twist_mm": {
+      "min": 230,
+      "max": 380,
+      "typical": 240
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 290,
+      "max": 370,
+      "typical": 355,
+      "cip": 355,
+      "saami": 310
+    },
+    "projectile_mass_g": {
+      "min": 7.0,
+      "max": 9.0,
+      "typical": 7.9
+    },
+    "muzzle_velocity_ms": {
+      "min": 650,
+      "max": 780,
+      "typical": 710,
+      "notes": "M43 122gr: 710-730 m/s"
+    },
+    "is_shotgun": false
+  },
+  "5.45\u00d739mm": {
+    "aliases": [
+      "5.45\u00d739",
+      "5.45 Soviet"
+    ],
+    "caliber_mm": {
+      "min": 5.55,
+      "max": 5.75,
+      "typical": 5.6
+    },
+    "twist_mm": {
+      "min": 180,
+      "max": 260,
+      "typical": 200
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 330,
+      "max": 370,
+      "typical": 355,
+      "cip": 355
+    },
+    "projectile_mass_g": {
+      "min": 3.2,
+      "max": 4.2,
+      "typical": 3.4
+    },
+    "muzzle_velocity_ms": {
+      "min": 800,
+      "max": 960,
+      "typical": 880,
+      "notes": "7N6 53gr: 880-900 m/s"
+    },
+    "is_shotgun": false
+  },
+  "7.62\u00d754mmR": {
+    "aliases": [
+      "7.62\u00d754R",
+      "7.62x54R",
+      "7.62 Russian"
+    ],
+    "caliber_mm": {
+      "min": 7.78,
+      "max": 8.0,
+      "typical": 7.82
+    },
+    "twist_mm": {
+      "min": 230,
+      "max": 320,
+      "typical": 240
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 360,
+      "max": 410,
+      "typical": 380,
+      "cip": 380
+    },
+    "projectile_mass_g": {
+      "min": 9.0,
+      "max": 13.0,
+      "typical": 9.6
+    },
+    "muzzle_velocity_ms": {
+      "min": 750,
+      "max": 880,
+      "typical": 830,
+      "notes": "LPS 147gr: 810-830 m/s"
+    },
+    "is_shotgun": false
+  },
+  ".22 LR": {
+    "aliases": [
+      ".22 Long Rifle",
+      "22 LR",
+      ".22 lr"
+    ],
+    "caliber_mm": {
+      "min": 5.58,
+      "max": 5.7,
+      "typical": 5.66
+    },
+    "twist_mm": {
+      "min": 380,
+      "max": 510,
+      "typical": 406
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 140,
+      "max": 175,
+      "typical": 165,
+      "saami": 165
+    },
+    "projectile_mass_g": {
+      "min": 2.0,
+      "max": 2.8,
+      "typical": 2.6
+    },
+    "muzzle_velocity_ms": {
+      "min": 250,
+      "max": 400,
+      "typical": 330,
+      "notes": "Standard: 330 m/s; HV: 370 m/s; subsonic: 310 m/s"
+    },
+    "is_shotgun": false
+  },
+  ".380 ACP": {
+    "aliases": [
+      "9mm Browning",
+      "9\u00d717mm",
+      "9mm Short"
+    ],
+    "caliber_mm": {
+      "min": 8.95,
+      "max": 9.1,
+      "typical": 9.02
+    },
+    "twist_mm": {
+      "min": 240,
+      "max": 400,
+      "typical": 250
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 120,
+      "max": 220,
+      "typical": 148,
+      "saami": 148
+    },
+    "projectile_mass_g": {
+      "min": 5.5,
+      "max": 7.5,
+      "typical": 6.0
+    },
+    "muzzle_velocity_ms": {
+      "min": 240,
+      "max": 320,
+      "typical": 284
+    },
+    "is_shotgun": false
+  },
+  ".38 Special": {
+    "aliases": [
+      ".38 Spl",
+      "38 Special"
+    ],
+    "caliber_mm": {
+      "min": 9.0,
+      "max": 9.15,
+      "typical": 9.06
+    },
+    "twist_mm": {
+      "min": 370,
+      "max": 510,
+      "typical": 381
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 95,
+      "max": 250,
+      "typical": 117,
+      "saami": 117,
+      "notes": "Standard: 117 MPa; +P: 145 MPa"
+    },
+    "projectile_mass_g": {
+      "min": 8.0,
+      "max": 11.7,
+      "typical": 10.2
+    },
+    "muzzle_velocity_ms": {
+      "min": 200,
+      "max": 350,
+      "typical": 260,
+      "notes": "158gr: 260 m/s; 125gr: 300 m/s"
+    },
+    "is_shotgun": false
+  },
+  "6.5 Creedmoor": {
+    "aliases": [
+      "6.5mm Creedmoor",
+      "6.5 CM"
+    ],
+    "caliber_mm": {
+      "min": 6.65,
+      "max": 6.78,
+      "typical": 6.71
+    },
+    "twist_mm": {
+      "min": 195,
+      "max": 230,
+      "typical": 203
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 390,
+      "max": 440,
+      "typical": 427,
+      "saami": 427
+    },
+    "projectile_mass_g": {
+      "min": 7.0,
+      "max": 11.0,
+      "typical": 9.0
+    },
+    "muzzle_velocity_ms": {
+      "min": 760,
+      "max": 960,
+      "typical": 820,
+      "notes": "140gr: 800-840 m/s; 120gr: 880-920 m/s"
+    },
+    "is_shotgun": false
+  },
+  ".300 Winchester Magnum": {
+    "aliases": [
+      ".300 Win Mag",
+      "300 Win Mag",
+      ".300 WM"
+    ],
+    "caliber_mm": {
+      "min": 7.78,
+      "max": 7.9,
+      "typical": 7.82
+    },
+    "twist_mm": {
+      "min": 240,
+      "max": 280,
+      "typical": 254
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 380,
+      "max": 455,
+      "typical": 441,
+      "saami": 441
+    },
+    "projectile_mass_g": {
+      "min": 10.0,
+      "max": 14.0,
+      "typical": 11.7
+    },
+    "muzzle_velocity_ms": {
+      "min": 850,
+      "max": 1050,
+      "typical": 910,
+      "notes": "180gr: 910 m/s; 150gr: 1000 m/s"
+    },
+    "is_shotgun": false
+  },
+  ".338 Lapua Magnum": {
+    "aliases": [
+      ".338 Lapua",
+      "338 Lapua",
+      ".338 LM"
+    ],
+    "caliber_mm": {
+      "min": 8.5,
+      "max": 8.65,
+      "typical": 8.58
+    },
+    "twist_mm": {
+      "min": 230,
+      "max": 280,
+      "typical": 254
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 390,
+      "max": 440,
+      "typical": 420,
+      "saami": 420,
+      "cip": 420
+    },
+    "projectile_mass_g": {
+      "min": 14.0,
+      "max": 21.0,
+      "typical": 16.2
+    },
+    "muzzle_velocity_ms": {
+      "min": 830,
+      "max": 950,
+      "typical": 900,
+      "notes": "250gr: 900 m/s; 300gr: 830 m/s"
+    },
+    "is_shotgun": false
+  },
+  ".300 AAC Blackout": {
+    "aliases": [
+      ".300 BLK",
+      "300 Blackout",
+      ".300 BO",
+      ".300 Whisper"
+    ],
+    "caliber_mm": {
+      "min": 7.78,
+      "max": 7.88,
+      "typical": 7.82
+    },
+    "twist_mm": {
+      "min": 150,
+      "max": 280,
+      "typical": 178
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 330,
+      "max": 400,
+      "typical": 379,
+      "saami": 379
+    },
+    "projectile_mass_g": {
+      "min": 7.5,
+      "max": 15.0,
+      "typical": 8.4
+    },
+    "muzzle_velocity_ms": {
+      "min": 290,
+      "max": 720,
+      "typical": 580,
+      "notes": "Subsonic 220gr: 320 m/s; Supersonic 125gr: 600-700 m/s"
+    },
+    "is_shotgun": false
+  },
+  ".40 S&W": {
+    "aliases": [
+      ".40 S&W",
+      "40 S&W",
+      ".40 Smith & Wesson"
+    ],
+    "caliber_mm": {
+      "min": 10.1,
+      "max": 10.25,
+      "typical": 10.17
+    },
+    "twist_mm": {
+      "min": 380,
+      "max": 510,
+      "typical": 406
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 210,
+      "max": 260,
+      "typical": 240,
+      "saami": 240
+    },
+    "projectile_mass_g": {
+      "min": 8.5,
+      "max": 12.5,
+      "typical": 10.0
+    },
+    "muzzle_velocity_ms": {
+      "min": 290,
+      "max": 400,
+      "typical": 340
+    },
+    "is_shotgun": false
+  },
+  "12.7\u00d799mm NATO (.50 BMG)": {
+    "aliases": [
+      ".50 BMG",
+      "12.7\u00d799mm",
+      "50 BMG",
+      "12.7\u00d799mm NATO"
+    ],
+    "caliber_mm": {
+      "min": 12.7,
+      "max": 13.1,
+      "typical": 12.95
+    },
+    "twist_mm": {
+      "min": 370,
+      "max": 510,
+      "typical": 381
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 350,
+      "max": 420,
+      "typical": 379,
+      "saami": 379,
+      "nato": 379
+    },
+    "projectile_mass_g": {
+      "min": 30.0,
+      "max": 53.0,
+      "typical": 42.8
+    },
+    "muzzle_velocity_ms": {
+      "min": 800,
+      "max": 930,
+      "typical": 860,
+      "notes": "M33 647gr: 860 m/s; M903 SLAP: 280 m/s"
+    },
+    "is_shotgun": false
+  },
+  "12.7\u00d7108mm": {
+    "aliases": [
+      ".50 Russian",
+      "12.7\u00d7108"
+    ],
+    "caliber_mm": {
+      "min": 12.7,
+      "max": 13.1,
+      "typical": 12.85
+    },
+    "twist_mm": {
+      "min": 370,
+      "max": 510,
+      "typical": 381
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 340,
+      "max": 390,
+      "typical": 360
+    },
+    "projectile_mass_g": {
+      "min": 40.0,
+      "max": 55.0,
+      "typical": 49.0
+    },
+    "muzzle_velocity_ms": {
+      "min": 770,
+      "max": 900,
+      "typical": 820,
+      "notes": "B-32 API 48g: 810-830 m/s"
+    },
+    "is_shotgun": false
+  },
+  ".44 Magnum": {
+    "aliases": [
+      ".44 Mag",
+      "44 Magnum"
+    ],
+    "caliber_mm": {
+      "min": 10.8,
+      "max": 11.0,
+      "typical": 10.9
+    },
+    "twist_mm": {
+      "min": 380,
+      "max": 610,
+      "typical": 508
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 200,
+      "max": 370,
+      "typical": 248,
+      "saami": 248
+    },
+    "projectile_mass_g": {
+      "min": 13.0,
+      "max": 18.0,
+      "typical": 15.6
+    },
+    "muzzle_velocity_ms": {
+      "min": 360,
+      "max": 520,
+      "typical": 440,
+      "notes": "240gr: 440 m/s (6-7.5in); 180gr: 500 m/s"
+    },
+    "is_shotgun": false
+  },
+  ".45 Colt": {
+    "aliases": [
+      ".45 LC",
+      ".45 Long Colt"
+    ],
+    "caliber_mm": {
+      "min": 11.4,
+      "max": 11.6,
+      "typical": 11.48
+    },
+    "twist_mm": {
+      "min": 380,
+      "max": 610,
+      "typical": 508
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 115,
+      "max": 160,
+      "typical": 145,
+      "saami": 145
+    },
+    "projectile_mass_g": {
+      "min": 14.0,
+      "max": 18.0,
+      "typical": 16.2
+    },
+    "muzzle_velocity_ms": {
+      "min": 210,
+      "max": 320,
+      "typical": 260
+    },
+    "is_shotgun": false
+  },
+  ".32 ACP": {
+    "aliases": [
+      "7.65mm Browning",
+      "7.65\u00d717mm"
+    ],
+    "caliber_mm": {
+      "min": 7.6,
+      "max": 7.7,
+      "typical": 7.65
+    },
+    "twist_mm": {
+      "min": 240,
+      "max": 400,
+      "typical": 250
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 120,
+      "max": 170,
+      "typical": 141,
+      "saami": 141
+    },
+    "projectile_mass_g": {
+      "min": 3.5,
+      "max": 5.5,
+      "typical": 4.6
+    },
+    "muzzle_velocity_ms": {
+      "min": 200,
+      "max": 310,
+      "typical": 268
+    },
+    "is_shotgun": false
+  },
+  ".25 ACP": {
+    "aliases": [
+      "6.35mm Browning",
+      "6.35\u00d716mm"
+    ],
+    "caliber_mm": {
+      "min": 6.35,
+      "max": 6.45,
+      "typical": 6.38
+    },
+    "twist_mm": {
+      "min": 240,
+      "max": 400,
+      "typical": 250
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 115,
+      "max": 185,
+      "typical": 172,
+      "saami": 172
+    },
+    "projectile_mass_g": {
+      "min": 2.8,
+      "max": 4.0,
+      "typical": 3.2
+    },
+    "muzzle_velocity_ms": {
+      "min": 190,
+      "max": 290,
+      "typical": 245
+    },
+    "is_shotgun": false
+  },
+  "9\u00d718mm Makarov": {
+    "aliases": [
+      "9x18mm Makarov",
+      "9mm Makarov"
+    ],
+    "caliber_mm": {
+      "min": 9.2,
+      "max": 9.35,
+      "typical": 9.27
+    },
+    "twist_mm": {
+      "min": 230,
+      "max": 260,
+      "typical": 240
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 145,
+      "max": 200,
+      "typical": 180,
+      "cip": 160
+    },
+    "projectile_mass_g": {
+      "min": 5.5,
+      "max": 7.0,
+      "typical": 6.1
+    },
+    "muzzle_velocity_ms": {
+      "min": 270,
+      "max": 340,
+      "typical": 310
+    },
+    "is_shotgun": false
+  },
+  "5.7\u00d728mm": {
+    "aliases": [
+      "5.7x28mm"
+    ],
+    "caliber_mm": {
+      "min": 5.6,
+      "max": 5.75,
+      "typical": 5.7
+    },
+    "twist_mm": {
+      "min": 220,
+      "max": 240,
+      "typical": 229
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 310,
+      "max": 370,
+      "typical": 345,
+      "cip": 345
+    },
+    "projectile_mass_g": {
+      "min": 1.8,
+      "max": 3.2,
+      "typical": 2.9
+    },
+    "muzzle_velocity_ms": {
+      "min": 550,
+      "max": 780,
+      "typical": 715,
+      "notes": "SS190 31gr: 715 m/s"
+    },
+    "is_shotgun": false
+  },
+  "7.62\u00d725mm Tokarev": {
+    "aliases": [
+      "7.62\u00d725",
+      "7.62 Tokarev"
+    ],
+    "caliber_mm": {
+      "min": 7.78,
+      "max": 7.95,
+      "typical": 7.85
+    },
+    "twist_mm": {
+      "min": 230,
+      "max": 260,
+      "typical": 240
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 230,
+      "max": 270,
+      "typical": 250,
+      "cip": 250
+    },
+    "projectile_mass_g": {
+      "min": 4.5,
+      "max": 6.5,
+      "typical": 5.5
+    },
+    "muzzle_velocity_ms": {
+      "min": 420,
+      "max": 580,
+      "typical": 470
+    },
+    "is_shotgun": false
+  },
+  ".30-06 Springfield": {
+    "aliases": [
+      ".30-06",
+      "30-06",
+      "7.62\u00d763mm"
+    ],
+    "caliber_mm": {
+      "min": 7.78,
+      "max": 7.9,
+      "typical": 7.82
+    },
+    "twist_mm": {
+      "min": 240,
+      "max": 320,
+      "typical": 254
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 360,
+      "max": 410,
+      "typical": 400,
+      "saami": 400
+    },
+    "projectile_mass_g": {
+      "min": 9.0,
+      "max": 12.0,
+      "typical": 11.3
+    },
+    "muzzle_velocity_ms": {
+      "min": 760,
+      "max": 930,
+      "typical": 850,
+      "notes": "M2 152gr: 850 m/s; 180gr: 810 m/s"
+    },
+    "is_shotgun": false
+  },
+  "7.92\u00d757mm Mauser": {
+    "aliases": [
+      "7.92\u00d757",
+      "8mm Mauser",
+      "8\u00d757mm"
+    ],
+    "caliber_mm": {
+      "min": 8.0,
+      "max": 8.3,
+      "typical": 8.08
+    },
+    "twist_mm": {
+      "min": 230,
+      "max": 260,
+      "typical": 240
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 350,
+      "max": 410,
+      "typical": 380,
+      "cip": 380
+    },
+    "projectile_mass_g": {
+      "min": 10.0,
+      "max": 13.0,
+      "typical": 12.8
+    },
+    "muzzle_velocity_ms": {
+      "min": 720,
+      "max": 880,
+      "typical": 780,
+      "notes": "sS 197gr: 780 m/s"
+    },
+    "is_shotgun": false
+  },
+  "6.5\u00d755mm Swedish": {
+    "aliases": [
+      "6.5\u00d755 SE",
+      "6.5 Swedish"
+    ],
+    "caliber_mm": {
+      "min": 6.65,
+      "max": 6.78,
+      "typical": 6.71
+    },
+    "twist_mm": {
+      "min": 190,
+      "max": 240,
+      "typical": 200
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 350,
+      "max": 400,
+      "typical": 380,
+      "cip": 380
+    },
+    "projectile_mass_g": {
+      "min": 8.0,
+      "max": 10.5,
+      "typical": 9.0
+    },
+    "muzzle_velocity_ms": {
+      "min": 740,
+      "max": 870,
+      "typical": 800
+    },
+    "is_shotgun": false
+  },
+  ".223 Remington": {
+    "aliases": [
+      ".223 Rem",
+      ".223"
+    ],
+    "caliber_mm": {
+      "min": 5.56,
+      "max": 5.7,
+      "typical": 5.69
+    },
+    "twist_mm": {
+      "min": 178,
+      "max": 310,
+      "typical": 305
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 350,
+      "max": 400,
+      "typical": 379,
+      "saami": 379
+    },
+    "projectile_mass_g": {
+      "min": 3.2,
+      "max": 5.0,
+      "typical": 3.6
+    },
+    "muzzle_velocity_ms": {
+      "min": 750,
+      "max": 970,
+      "typical": 850,
+      "notes": "55gr: 850-900 m/s (16-20in)"
+    },
+    "is_shotgun": false
+  },
+  ".243 Winchester": {
+    "aliases": [
+      ".243 Win",
+      "243 Win"
+    ],
+    "caliber_mm": {
+      "min": 6.12,
+      "max": 6.22,
+      "typical": 6.17
+    },
+    "twist_mm": {
+      "min": 240,
+      "max": 280,
+      "typical": 254
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 380,
+      "max": 420,
+      "typical": 400,
+      "saami": 400
+    },
+    "projectile_mass_g": {
+      "min": 5.5,
+      "max": 7.5,
+      "typical": 6.5
+    },
+    "muzzle_velocity_ms": {
+      "min": 800,
+      "max": 1000,
+      "typical": 900
+    },
+    "is_shotgun": false
+  },
+  "20 Gauge": {
+    "aliases": [
+      "20ga",
+      "20-Gauge"
+    ],
+    "caliber_mm": {
+      "min": 15.4,
+      "max": 16.0,
+      "typical": 15.6
+    },
+    "twist_mm": {
+      "min": 0,
+      "max": 0,
+      "typical": 0
+    },
+    "twist_dir": 0,
+    "pressure_mpa": {
+      "min": 50,
+      "max": 72,
+      "typical": 62
+    },
+    "projectile_mass_g": {
+      "min": 18,
+      "max": 28,
+      "typical": 22.0
+    },
+    "muzzle_velocity_ms": {
+      "min": 360,
+      "max": 460,
+      "typical": 400
+    },
+    "is_shotgun": true
+  },
+  ".410 bore": {
+    "aliases": [
+      ".410",
+      ".410 gauge"
+    ],
+    "caliber_mm": {
+      "min": 10.2,
+      "max": 10.6,
+      "typical": 10.4
+    },
+    "twist_mm": {
+      "min": 0,
+      "max": 0,
+      "typical": 0
+    },
+    "twist_dir": 0,
+    "pressure_mpa": {
+      "min": 55,
+      "max": 72,
+      "typical": 62
+    },
+    "projectile_mass_g": {
+      "min": 5.0,
+      "max": 10.0,
+      "typical": 6.0
+    },
+    "muzzle_velocity_ms": {
+      "min": 340,
+      "max": 420,
+      "typical": 380
+    },
+    "is_shotgun": true
+  },
+  "9\u00d739mm": {
+    "aliases": [
+      "9x39mm"
+    ],
+    "caliber_mm": {
+      "min": 8.9,
+      "max": 9.1,
+      "typical": 9.0
+    },
+    "twist_mm": {
+      "min": 230,
+      "max": 260,
+      "typical": 240
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 330,
+      "max": 380,
+      "typical": 355
+    },
+    "projectile_mass_g": {
+      "min": 15.0,
+      "max": 18.0,
+      "typical": 16.8
+    },
+    "muzzle_velocity_ms": {
+      "min": 260,
+      "max": 320,
+      "typical": 290
+    },
+    "is_shotgun": false
+  },
+  ".408 CheyTac": {
+    "aliases": [
+      ".408 CT",
+      "408 CheyTac"
+    ],
+    "caliber_mm": {
+      "min": 10.3,
+      "max": 10.42,
+      "typical": 10.36
+    },
+    "twist_mm": {
+      "min": 320,
+      "max": 360,
+      "typical": 330
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 420,
+      "max": 460,
+      "typical": 440,
+      "cip": 440
+    },
+    "projectile_mass_g": {
+      "min": 18.0,
+      "max": 23.0,
+      "typical": 19.8
+    },
+    "muzzle_velocity_ms": {
+      "min": 960,
+      "max": 1160,
+      "typical": 1067
+    },
+    "is_shotgun": false
+  },
+  ".50 AE": {
+    "aliases": [
+      ".50 Action Express",
+      "50 AE"
+    ],
+    "caliber_mm": {
+      "min": 12.6,
+      "max": 12.8,
+      "typical": 12.7
+    },
+    "twist_mm": {
+      "min": 380,
+      "max": 510,
+      "typical": 483
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 200,
+      "max": 370,
+      "typical": 241,
+      "saami": 241
+    },
+    "projectile_mass_g": {
+      "min": 16.0,
+      "max": 22.0,
+      "typical": 18.9
+    },
+    "muzzle_velocity_ms": {
+      "min": 370,
+      "max": 500,
+      "typical": 440
+    },
+    "is_shotgun": false
+  },
+  "10mm Auto": {
+    "aliases": [
+      "10mm",
+      "10mm Automatic"
+    ],
+    "caliber_mm": {
+      "min": 10.1,
+      "max": 10.25,
+      "typical": 10.17
+    },
+    "twist_mm": {
+      "min": 380,
+      "max": 510,
+      "typical": 406
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 220,
+      "max": 330,
+      "typical": 259,
+      "saami": 259
+    },
+    "projectile_mass_g": {
+      "min": 9.0,
+      "max": 14.0,
+      "typical": 11.7
+    },
+    "muzzle_velocity_ms": {
+      "min": 330,
+      "max": 470,
+      "typical": 370
+    },
+    "is_shotgun": false
+  },
+  ".357 SIG": {
+    "aliases": [
+      ".357 Sig"
+    ],
+    "caliber_mm": {
+      "min": 9.0,
+      "max": 9.12,
+      "typical": 9.07
+    },
+    "twist_mm": {
+      "min": 240,
+      "max": 280,
+      "typical": 254
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 310,
+      "max": 370,
+      "typical": 345,
+      "saami": 345
+    },
+    "projectile_mass_g": {
+      "min": 7.0,
+      "max": 10.0,
+      "typical": 8.1
+    },
+    "muzzle_velocity_ms": {
+      "min": 380,
+      "max": 480,
+      "typical": 420
+    },
+    "is_shotgun": false
+  },
+  ".41 Magnum": {
+    "aliases": [
+      ".41 Mag"
+    ],
+    "caliber_mm": {
+      "min": 10.3,
+      "max": 10.45,
+      "typical": 10.41
+    },
+    "twist_mm": {
+      "min": 380,
+      "max": 510,
+      "typical": 406
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 310,
+      "max": 370,
+      "typical": 345,
+      "saami": 345
+    },
+    "projectile_mass_g": {
+      "min": 11.0,
+      "max": 14.0,
+      "typical": 12.0
+    },
+    "muzzle_velocity_ms": {
+      "min": 340,
+      "max": 480,
+      "typical": 400
+    },
+    "is_shotgun": false
+  },
+  ".44 Special": {
+    "aliases": [
+      ".44 Spl"
+    ],
+    "caliber_mm": {
+      "min": 10.8,
+      "max": 11.0,
+      "typical": 10.9
+    },
+    "twist_mm": {
+      "min": 380,
+      "max": 610,
+      "typical": 508
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 95,
+      "max": 200,
+      "typical": 107,
+      "saami": 107,
+      "notes": "Standard: 107 MPa; +P: 145 MPa"
+    },
+    "projectile_mass_g": {
+      "min": 12.0,
+      "max": 17.0,
+      "typical": 15.6
+    },
+    "muzzle_velocity_ms": {
+      "min": 210,
+      "max": 310,
+      "typical": 260
+    },
+    "is_shotgun": false
+  },
+  ".454 Casull": {
+    "aliases": [
+      ".454 Casull"
+    ],
+    "caliber_mm": {
+      "min": 11.4,
+      "max": 11.6,
+      "typical": 11.48
+    },
+    "twist_mm": {
+      "min": 380,
+      "max": 510,
+      "typical": 457
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 350,
+      "max": 460,
+      "typical": 448,
+      "saami": 448
+    },
+    "projectile_mass_g": {
+      "min": 16.0,
+      "max": 22.0,
+      "typical": 19.4
+    },
+    "muzzle_velocity_ms": {
+      "min": 420,
+      "max": 560,
+      "typical": 490,
+      "notes": "250gr: 490 m/s; 300gr: 450 m/s"
+    },
+    "is_shotgun": false
+  },
+  ".500 Wyoming Express": {
+    "aliases": [
+      ".500 WE"
+    ],
+    "caliber_mm": {
+      "min": 12.6,
+      "max": 12.9,
+      "typical": 12.7
+    },
+    "twist_mm": {
+      "min": 380,
+      "max": 610,
+      "typical": 508
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 350,
+      "max": 430,
+      "typical": 400
+    },
+    "projectile_mass_g": {
+      "min": 20.0,
+      "max": 25.0,
+      "typical": 22.7
+    },
+    "muzzle_velocity_ms": {
+      "min": 420,
+      "max": 530,
+      "typical": 480
+    },
+    "is_shotgun": false
+  },
+  ".500 S&W Magnum": {
+    "aliases": [
+      ".500 S&W"
+    ],
+    "caliber_mm": {
+      "min": 12.6,
+      "max": 12.85,
+      "typical": 12.7
+    },
+    "twist_mm": {
+      "min": 380,
+      "max": 610,
+      "typical": 483
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 350,
+      "max": 430,
+      "typical": 414,
+      "saami": 414
+    },
+    "projectile_mass_g": {
+      "min": 20.0,
+      "max": 30.0,
+      "typical": 22.7
+    },
+    "muzzle_velocity_ms": {
+      "min": 430,
+      "max": 620,
+      "typical": 530
+    },
+    "is_shotgun": false
+  },
+  ".45-70 Government": {
+    "aliases": [
+      ".45-70",
+      "45-70"
+    ],
+    "caliber_mm": {
+      "min": 11.4,
+      "max": 11.6,
+      "typical": 11.48
+    },
+    "twist_mm": {
+      "min": 380,
+      "max": 610,
+      "typical": 508
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 120,
+      "max": 290,
+      "typical": 145,
+      "saami": 145,
+      "notes": "Trapdoor: 145 MPa; Modern lever: 280 MPa"
+    },
+    "projectile_mass_g": {
+      "min": 16.0,
+      "max": 30.0,
+      "typical": 19.9
+    },
+    "muzzle_velocity_ms": {
+      "min": 380,
+      "max": 610,
+      "typical": 490
+    },
+    "is_shotgun": false
+  },
+  ".30-30 Winchester": {
+    "aliases": [
+      ".30-30",
+      "30-30"
+    ],
+    "caliber_mm": {
+      "min": 7.78,
+      "max": 7.88,
+      "typical": 7.82
+    },
+    "twist_mm": {
+      "min": 280,
+      "max": 380,
+      "typical": 305
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 290,
+      "max": 350,
+      "typical": 331,
+      "saami": 331
+    },
+    "projectile_mass_g": {
+      "min": 9.0,
+      "max": 12.0,
+      "typical": 11.1
+    },
+    "muzzle_velocity_ms": {
+      "min": 600,
+      "max": 800,
+      "typical": 720
+    },
+    "is_shotgun": false
+  },
+  "20mm": {
+    "aliases": [],
+    "caliber_mm": {
+      "min": 19.5,
+      "max": 20.5,
+      "typical": 20.0
+    },
+    "twist_mm": {
+      "min": 0,
+      "max": 500,
+      "typical": 0
+    },
+    "twist_dir": 0,
+    "pressure_mpa": {
+      "min": 0,
+      "max": 450,
+      "typical": 0,
+      "notes": "Varies widely"
+    },
+    "projectile_mass_g": {
+      "min": 80,
+      "max": 130,
+      "typical": 101
+    },
+    "muzzle_velocity_ms": {
+      "min": 850,
+      "max": 1100,
+      "typical": 1030
+    },
+    "is_shotgun": false
+  },
+  "30mm": {
+    "aliases": [],
+    "caliber_mm": {
+      "min": 29,
+      "max": 31,
+      "typical": 30
+    },
+    "twist_mm": {
+      "min": 0,
+      "max": 0,
+      "typical": 0
+    },
+    "twist_dir": 0,
+    "pressure_mpa": {
+      "min": 0,
+      "max": 0,
+      "typical": 0
+    },
+    "projectile_mass_g": {
+      "min": 200,
+      "max": 450,
+      "typical": 350
+    },
+    "muzzle_velocity_ms": {
+      "min": 900,
+      "max": 1200,
+      "typical": 1000
+    },
+    "is_shotgun": false
+  },
+  "4.6\u00d730mm": {
+    "aliases": [
+      "4.6x30mm",
+      "4.6\u00d730",
+      "4.6mm H&K"
+    ],
+    "caliber_mm": {
+      "min": 4.55,
+      "max": 4.75,
+      "typical": 4.65
+    },
+    "twist_mm": {
+      "min": 150,
+      "max": 200,
+      "typical": 160
+    },
+    "twist_dir": 1,
+    "pressure_mpa": {
+      "min": 350,
+      "max": 420,
+      "typical": 400,
+      "cip": 400
+    },
+    "projectile_mass_g": {
+      "min": 1.5,
+      "max": 3.0,
+      "typical": 2.0
+    },
+    "muzzle_velocity_ms": {
+      "min": 550,
+      "max": 750,
+      "typical": 680,
+      "notes": "MP7 PDW: ~680 m/s"
+    },
+    "is_shotgun": false
+  }
+}

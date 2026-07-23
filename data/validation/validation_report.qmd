@@ -1,0 +1,284 @@
+---
+title: "Ballistic Data Validation Report"
+subtitle: "AceBallisticsExtention — real_weapons.tsv"
+date: "2026-07-23 01:28"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    embed-resources: true
+    theme: cosmo
+---
+
+## Executive Summary
+
+| Metric | Value |
+|--------|-------|
+| **Total entries** | 2145 |
+| **Grade A (clean)** | 1986 (92.6%) |
+| **Grade B (minor)** | 0 (0.0%) |
+| **Grade C (warning)** | 18 (0.8%) |
+| **Grade F (fail)** | 1 (0.0%) |
+| **Uncategorized** | 140 |
+| **Total issues flagged** | 405 |
+
+## Quality By Cartridge
+
+| Cartridge | Total | A | B | C | F |
+|----------|------|---|---|---|---|
+| 9×19mm Parabellum | 454 | 454 | 0 | 0 | 0 |
+| 5.56×45mm NATO | 279 | 279 | 0 | 0 | 0 |
+| 12 Gauge | 196 | 184 | 0 | 12 | 0 |
+| 7.62×51mm NATO | 152 | 152 | 0 | 0 | 0 |
+| .45 ACP | 142 | 142 | 0 | 0 | 0 |
+| .22 LR | 108 | 108 | 0 | 0 | 0 |
+| .308 Winchester | 85 | 85 | 0 | 0 | 0 |
+| .357 Magnum | 77 | 76 | 0 | 1 | 0 |
+| 7.62×39mm | 56 | 56 | 0 | 0 | 0 |
+| .380 ACP | 51 | 51 | 0 | 0 | 0 |
+| 6.5 Creedmoor | 49 | 49 | 0 | 0 | 0 |
+| .40 S&W | 28 | 28 | 0 | 0 | 0 |
+| .38 Special | 22 | 22 | 0 | 0 | 0 |
+| .338 Lapua Magnum | 20 | 20 | 0 | 0 | 0 |
+| 5.45×39mm | 20 | 20 | 0 | 0 | 0 |
+| .300 Winchester Magnum | 20 | 20 | 0 | 0 | 0 |
+| .32 ACP | 19 | 19 | 0 | 0 | 0 |
+| .45 Colt | 19 | 18 | 0 | 1 | 0 |
+| .30-06 Springfield | 18 | 18 | 0 | 0 | 0 |
+| 12.7×99mm NATO (.50 BMG) | 18 | 18 | 0 | 0 | 0 |
+| 7.62×54mmR | 17 | 17 | 0 | 0 | 0 |
+| .223 Remington | 14 | 14 | 0 | 0 | 0 |
+| .44 Magnum | 13 | 12 | 0 | 0 | 1 |
+| .300 AAC Blackout | 13 | 13 | 0 | 0 | 0 |
+| 10mm Auto | 12 | 12 | 0 | 0 | 0 |
+| .30-30 Winchester | 12 | 12 | 0 | 0 | 0 |
+| .45-70 Government | 12 | 11 | 0 | 1 | 0 |
+| 20 Gauge | 11 | 9 | 0 | 2 | 0 |
+| 5.7×28mm | 10 | 10 | 0 | 0 | 0 |
+| 7.92×57mm Mauser | 7 | 7 | 0 | 0 | 0 |
+| 9×18mm Makarov | 7 | 7 | 0 | 0 | 0 |
+| .25 ACP | 7 | 7 | 0 | 0 | 0 |
+| 7.62×25mm Tokarev | 5 | 5 | 0 | 0 | 0 |
+| 12.7×108mm | 5 | 5 | 0 | 0 | 0 |
+| .243 Winchester | 5 | 5 | 0 | 0 | 0 |
+| .50 AE | 4 | 4 | 0 | 0 | 0 |
+| .454 Casull | 4 | 4 | 0 | 0 | 0 |
+| .410 bore | 3 | 2 | 0 | 1 | 0 |
+| 9×39mm | 2 | 2 | 0 | 0 | 0 |
+| 4.6×30mm | 2 | 2 | 0 | 0 | 0 |
+| .44 Special | 2 | 2 | 0 | 0 | 0 |
+| .500 S&W Magnum | 2 | 2 | 0 | 0 | 0 |
+| .408 CheyTac | 1 | 1 | 0 | 0 | 0 |
+| .41 Magnum | 1 | 1 | 0 | 0 | 0 |
+| .357 SIG | 1 | 1 | 0 | 0 | 0 |
+
+### Unknown Cartridges
+The following entries use cartridge names not found in the reference table. These need cartridge_ref.json entries added.
+
+> 140 entries uncategorized.
+
+## Failed Entries (Grade F)
+
+These entries have values significantly outside SAAMI/CIP reference ranges.
+
+- **Saiga-12** (Kalashnikov Concern Saiga-12) — 12 Gauge — [C] twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+- **red_label** (Sturm Ruger Red Label) — 12 Gauge — [C] twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+- **gold_label** (Sturm Ruger Gold Label) — 12 Gauge — [C] twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+- **rem_870_12ga** (Remington Model 870) — 12 Gauge — [C] twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+- **rem_870_20ga** (Remington Model 870) — 20 Gauge — [C] twist_dir=1.0 (rifled) but 20 Gauge expects smoothbore (dir=0)
+- **rem_1100_12ga** (Remington Model 1100) — 12 Gauge — [C] twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+- **rem_1187_12ga** (Remington Model 11-87) — 12 Gauge — [C] twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+- **sav_220_20ga** (Savage Model 220) — 20 Gauge — [C] twist_dir=1.0 (rifled) but 20 Gauge expects smoothbore (dir=0)
+- **sav_stev320_12ga** (Stevens 320) — 12 Gauge — [C] twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+- **mossberg_hs410** (Mossberg 500) — .410 bore — [C] twist_dir=1.0 (rifled) but .410 bore expects smoothbore (dir=0)
+- **iver_johnson_champion** (Iver Johnson Champion) — 12 Gauge — [C] twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+- **stevens_model_94** (Stevens Model 94) — 12 Gauge — [C] twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+- **stevens_model_311** (Stevens Model 311) — 12 Gauge — [C] twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+- **stevens_model_350** (Stevens Model 350) — 12 Gauge — [C] twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+- **krieghoff_drilling** (Krieghoff Drilling) — 12 Gauge / .30-06 — [C] twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0)
+- **rossi_model_92** (Rossi Model 92) — .357 Magnum — [C] pressure=345.0 deviates 43% from typical 241; velocity=720.0m/s unusual for .357 Magnum (ref [350,570])
+- **rossi_r92** (Rossi R92) — .44 Magnum — [F] pressure=360.0 deviates 45% from typical 248; velocity=680.0m/s outside ref [360,520] for .44 Magnum
+- **taurus_judge_magnum_6_shot_410_45_colt_3_barrel_da_revolver** (Taurus Judge Magnum) — .410 Bore / .45 Colt — [C] twist_dir=0 (smoothbore) but .45 Colt expects rifled (dir=1)
+- **marlin_model_1895_gbl_22_blued_walnut_45_70** (Marlin Model 1895) — .45-70 Government — [C] velocity=710.0m/s unusual for .45-70 Government (ref [380,610])
+
+## Grade C Entries (Warnings)
+
+Entry with secondary issues that should be investigated.
+
+| Weapon ID | Manufacturer | Model | Cartridge | Issues |
+|-----------|-------------|-------|-----------|--------|
+| Saiga-12 | Kalashnikov Concern | Saiga-12 | 12 Gauge | twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0) |
+| red_label | Sturm Ruger | Red Label | 12 Gauge | twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0) |
+| gold_label | Sturm Ruger | Gold Label | 12 Gauge | twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0) |
+| rem_870_12ga | Remington | Model 870 | 12 Gauge | twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0) |
+| rem_870_20ga | Remington | Model 870 | 20 Gauge | twist_dir=1.0 (rifled) but 20 Gauge expects smoothbore (dir=0) |
+| rem_1100_12ga | Remington | Model 1100 | 12 Gauge | twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0) |
+| rem_1187_12ga | Remington | Model 11-87 | 12 Gauge | twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0) |
+| sav_220_20ga | Savage | Model 220 | 20 Gauge | twist_dir=1.0 (rifled) but 20 Gauge expects smoothbore (dir=0) |
+| sav_stev320_12ga | Stevens | 320 | 12 Gauge | twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0) |
+| mossberg_hs410 | Mossberg | 500 | .410 bore | twist_dir=1.0 (rifled) but .410 bore expects smoothbore (dir=0) |
+| iver_johnson_champion | Iver Johnson | Champion | 12 Gauge | twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0) |
+| stevens_model_94 | Stevens | Model 94 | 12 Gauge | twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0) |
+| stevens_model_311 | Stevens | Model 311 | 12 Gauge | twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0) |
+| stevens_model_350 | Stevens | Model 350 | 12 Gauge | twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0) |
+| krieghoff_drilling | Krieghoff | Drilling | 12 Gauge / .30-06 | twist_dir=1.0 (rifled) but 12 Gauge expects smoothbore (dir=0) |
+| rossi_model_92 | Rossi | Model 92 | .357 Magnum | pressure=345.0 deviates 43% from typical 241; velocity=720.0m/s unusual for .357 Magnum (ref [350,570]) |
+| taurus_judge_magnum_6_shot_410_45_colt_3_barrel_da_revolver | Taurus | Judge Magnum | .410 Bore / .45 Colt | twist_dir=0 (smoothbore) but .45 Colt expects rifled (dir=1) |
+| marlin_model_1895_gbl_22_blued_walnut_45_70 | Marlin | Model 1895 | .45-70 Government | velocity=710.0m/s unusual for .45-70 Government (ref [380,610]) |
+
+## All Issues by Severity
+
+141 critical (severity 3) \
+18 major (severity 2) \
+246 minor (severity 1)
+
+### Critical Issues (Severity 3)
+
+| Weapon ID | Cartridge | Issue |
+|-----------|----------|-------|
+| m1_carbine | .30 Carbine | unknown cartridge: .30 Carbine |
+| stg44 | 7.92×33mm Kurz | unknown cartridge: 7.92×33mm Kurz |
+| saab_bofors_dynamics_carl_gustaf_m3 | 84mm | unknown cartridge: 84mm |
+| saab_bofors_dynamics_carl_gustaf_m4 | 84mm | unknown cartridge: 84mm |
+| rpg_concern_rpg_7 | 40mm | unknown cartridge: 40mm |
+| rpg_concern_rpg_18 | 64mm | unknown cartridge: 64mm |
+| rpg_concern_rpg_26 | 72.5mm | unknown cartridge: 72.5mm |
+| rpg_concern_rpg_32 | 105mm | unknown cartridge: 105mm |
+| rgs_rpo_a_shmel | 93mm | unknown cartridge: 93mm |
+| tula_kbp_9k32_strela_2 | 72mm | unknown cartridge: 72mm |
+| mbda_fim_92_stinger | 70mm | unknown cartridge: 70mm |
+| raytheon_fgm_148_javelin | 127mm | unknown cartridge: 127mm |
+| raytheon_m136_at4 | 84mm | unknown cartridge: 84mm |
+| nammo_m72_law | 66mm | unknown cartridge: 66mm |
+| dynamit_nobel_m79_osa | 90mm | unknown cartridge: 90mm |
+| general_dynamics_lwmmg | .338 Norma Magnum | unknown cartridge: .338 Norma Magnum |
+| type_115 | 6.5mm Caseless | unknown cartridge: 6.5mm Caseless |
+| desert_eagle | .44 Remington Magnum | unknown cartridge: .44 Remington Magnum |
+| colt_anaconda | .44 Remington Magnum | unknown cartridge: .44 Remington Magnum |
+| MCX Rattler | 7.62×35mm | unknown cartridge: 7.62×35mm |
+| MCX Spear | .277 Fury | unknown cartridge: .277 Fury |
+| SIG Cross Magnum | .300 PRC | unknown cartridge: .300 PRC |
+| iws_2000 | 14.5×114mm | unknown cartridge: 14.5×114mm |
+| rem_700_30_06 | .30-06 Sprg | unknown cartridge: .30-06 Sprg |
+| mar_336_35rem | .35 Rem | unknown cartridge: .35 Rem |
+| mar_1895_4570 | .45-70 Govt | unknown cartridge: .45-70 Govt |
+| mar_1894_44 | .44 Rem Mag | unknown cartridge: .44 Rem Mag |
+| sav_110_30_06 | .30-06 Sprg | unknown cartridge: .30-06 Sprg |
+| sav_93r17_17hmr | .17 HMR | unknown cartridge: .17 HMR |
+| browning_silver | 270 Win | unknown cartridge: 270 Win |
+| browning_sweet_sixteen | 16 Gauge | unknown cartridge: 16 Gauge |
+| mauser_m1918_tankgewehr | 13.2×92mmSR | unknown cartridge: 13.2×92mmSR |
+| mauser_mg213_20mm | 20×135mm | unknown cartridge: 20×135mm |
+| mauser_bk27_27mm | 27×145mm | unknown cartridge: 27×145mm |
+| wby_mkv_257wby | .257 Wby Mag | unknown cartridge: .257 Wby Mag |
+| wby_mkv_460wby | .460 Wby Mag | unknown cartridge: .460 Wby Mag |
+| nri_qbz95 | 5.8×42mm | unknown cartridge: 5.8×42mm |
+| nri_qbz03 | 5.8×42mm | unknown cartridge: 5.8×42mm |
+| nri_qbu88 | 5.8×42mm | unknown cartridge: 5.8×42mm |
+| nri_type64_pistol | 7.62×17mm | unknown cartridge: 7.62×17mm |
+| nri_qsz92 | 5.8×21mm | unknown cartridge: 5.8×21mm |
+| dw_guardian_38super | .38 Super | unknown cartridge: .38 Super |
+| hs_derringer_22mag | .22 WMR | unknown cartridge: .22 WMR |
+| ij_38sw_rev | .38 S&W | unknown cartridge: .38 S&W |
+| amt_automag2_22wmr | .22 WMR | unknown cartridge: .22 WMR |
+| amt_automag3_30carbine | .30 Carbine | unknown cartridge: .30 Carbine |
+| amt_automag4_45winmag | .45 Win Mag | unknown cartridge: .45 Win Mag |
+| kac_pdw | 6×35mm | unknown cartridge: 6×35mm |
+| kel_tec_cmr30 | .22 WMR | unknown cartridge: .22 WMR |
+| ntw20_vektor | 20×82mm | unknown cartridge: 20×82mm |
+| ntw145_vektor | 14.5×114mm | unknown cartridge: 14.5×114mm |
+| sg_510_stgw57 | 7.5×55mm Swiss | unknown cartridge: 7.5×55mm Swiss |
+| mannlicher_m1895 | 8×56mmR | unknown cartridge: 8×56mmR |
+| mannlicher_schoenauer | 6.5×54mm Mannlicher-Schönauer | unknown cartridge: 6.5×54mm Mannlicher-Schönauer |
+| mannlicher_m1888 | 8×50mmR | unknown cartridge: 8×50mmR |
+| mannlicher_m1890 | 8×50mmR | unknown cartridge: 8×50mmR |
+| breda_m37 | 8×59mm RB Breda | unknown cartridge: 8×59mm RB Breda |
+| breda_m30 | 6.5×52mm Carcano | unknown cartridge: 6.5×52mm Carcano |
+| taurus_raging_hunter | .44 Remington Magnum | unknown cartridge: .44 Remington Magnum |
+| webley_mk6 | .455 Webley | unknown cartridge: .455 Webley |
+| webley_mk4_38 | .38 S&W | unknown cartridge: .38 S&W |
+| webley_auto_455 | .455 Webley Auto | unknown cartridge: .455 Webley Auto |
+| webley_fosbery | .455 Webley | unknown cartridge: .455 Webley |
+| korth_nxr_44 | .44 Remington Magnum | unknown cartridge: .44 Remington Magnum |
+| naa_22wmr | .22 WMR | unknown cartridge: .22 WMR |
+| naa_pug | .22 WMR | unknown cartridge: .22 WMR |
+| naa_sidewinder | .22 WMR | unknown cartridge: .22 WMR |
+| naa_earl | .22 WMR | unknown cartridge: .22 WMR |
+| mas_36 | 7.5×54mm French | unknown cartridge: 7.5×54mm French |
+| mas_38 | 7.65mm Longue | unknown cartridge: 7.65mm Longue |
+| mas_49 | 7.5×54mm French | unknown cartridge: 7.5×54mm French |
+| mas_4956 | 7.5×54mm French | unknown cartridge: 7.5×54mm French |
+| mas_fr_f1 | 7.5×54mm French | unknown cartridge: 7.5×54mm French |
+| luger_swiss | 7.65×21mm Parabellum | unknown cartridge: 7.65×21mm Parabellum |
+| nambu_type_14 | 8×22mm Nambu | unknown cartridge: 8×22mm Nambu |
+| nambu_type_94 | 8×22mm Nambu | unknown cartridge: 8×22mm Nambu |
+| nambu_type_100 | 8×22mm Nambu | unknown cartridge: 8×22mm Nambu |
+| schmidt_rubin_k31 | 7.5×55mm Swiss | unknown cartridge: 7.5×55mm Swiss |
+| schmidt_rubin_g1911 | 7.5×55mm Swiss | unknown cartridge: 7.5×55mm Swiss |
+| schmidt_rubin_m1889 | 7.5×53.5mm Swiss | unknown cartridge: 7.5×53.5mm Swiss |
+| iof_32_revolver | .32 S&W Long | unknown cartridge: .32 S&W Long |
+| hammerli_280 | .32 S&W Long | unknown cartridge: .32 S&W Long |
+| parker_hale_1100 | .303 British | unknown cartridge: .303 British |
+| wildey_survivor_5in | .45 Win Mag | unknown cartridge: .45 Win Mag |
+| wildey_survivor_6in | .45 Win Mag | unknown cartridge: .45 Win Mag |
+| wildey_survivor_8in | .44 Auto Mag | unknown cartridge: .44 Auto Mag |
+| wildey_survivor_12in | .44 Remington Magnum | unknown cartridge: .44 Remington Magnum |
+| magnum_research_de_44 | .44 Remington Magnum | unknown cartridge: .44 Remington Magnum |
+| mauser_m712 | 7.63×25mm Mauser | unknown cartridge: 7.63×25mm Mauser |
+| iver_johnson_safety_first | .32 S&W | unknown cartridge: .32 S&W |
+| iver_johnson_enforcer | .30 Carbine | unknown cartridge: .30 Carbine |
+| naa_mini_22_short | .22 Short | unknown cartridge: .22 Short |
+| naa_black_widow | .22 WMR | unknown cartridge: .22 WMR |
+| naa_ranger_ii | .22 WMR | unknown cartridge: .22 WMR |
+| mas_44 | 7.5×54mm French | unknown cartridge: 7.5×54mm French |
+| mas_aa52 | 7.5×54mm French | unknown cartridge: 7.5×54mm French |
+| mas_36_cr39 | 7.5×54mm French | unknown cartridge: 7.5×54mm French |
+| saab_nlaw | 150mm HEAT | unknown cartridge: 150mm HEAT |
+| heckler_koch_l134a1_gmg | 40×53mm SR | unknown cartridge: 40×53mm SR |
+| m141_smaw_bdm | 83mm HEDM | unknown cartridge: 83mm HEDM |
+| rsa_lee_enfield_no4_mk1 | .303 British | unknown cartridge: .303 British |
+| hasag_panzerfaust_60 | 149mm HEAT | unknown cartridge: 149mm HEAT |
+| zeveta_rpg_75 | 68mm HEAT | unknown cartridge: 68mm HEAT |
+| cz_550_safari | .375 Holland & Holland | unknown cartridge: .375 Holland & Holland |
+| rossi_r92 | .44 Magnum | velocity=680.0m/s outside ref [360,520] for .44 Magnum |
+| kel-tec_pmr_30 | .22 WMR | unknown cartridge: .22 WMR |
+| magnum_research_bfr_44_mag | .44 Remington Magnum | unknown cartridge: .44 Remington Magnum |
+| magnum_research_desert_eagle_429_de | .429 DE | unknown cartridge: .429 DE |
+| bushmaster__450_bushmaster | .450 Bushmaster | unknown cartridge: .450 Bushmaster |
+| tikka_t3x_compact_7mm_08 | 7mm-08 | unknown cartridge: 7mm-08 |
+| tikka_t3x_arctic | 7.62x51mm | unknown cartridge: 7.62x51mm |
+| sako_85_classic_270 | .270 Win | unknown cartridge: .270 Win |
+| stoeger_str_9mc | 9x19mm Parabellum | unknown cartridge: 9x19mm Parabellum |
+| girsan_yavuz_16 | 9x19mm Parabellum | unknown cartridge: 9x19mm Parabellum |
+| girsan_pi | 9x19mm Parabellum | unknown cartridge: 9x19mm Parabellum |
+| girsan_m9 | 9x19mm Parabellum | unknown cartridge: 9x19mm Parabellum |
+| derya_dy_9 | 9x19mm Parabellum | unknown cartridge: 9x19mm Parabellum |
+| derya_ds_9 | 9x19mm Parabellum | unknown cartridge: 9x19mm Parabellum |
+| smith_wesson_model_29_6_44_mag_classic_blue | .44 Remington Magnum | unknown cartridge: .44 Remington Magnum |
+| taurus_raging_hunter_44_mag_6_5_barrel_da_revolver_ported | .44 Remington Magnum | unknown cartridge: .44 Remington Magnum |
+| winchester_model_70_featherweight_270_win_22_barrel_controlled_feed | .270 Winchester | unknown cartridge: .270 Winchester |
+| savage_a17_22_17_hmr_semi_auto_heavy_barrel | .17 HMR | unknown cartridge: .17 HMR |
+| savage_b17_22_17_hmr_bolt_action_accutrigger | .17 HMR | unknown cartridge: .17 HMR |
+| intratec_firearms_tec_22_scorpion_22_lr_carbine_variant | 22 Long Rifle | unknown cartridge: 22 Long Rifle |
+| webley_scott_webley_alecto_multi_pump_pneumatic_target_pistol | .177 | unknown cartridge: .177 |
+| nambu_type_a_8mm_nambu_semi_auto_early_production_1902_1909 | 8×22mm Nambu | unknown cartridge: 8×22mm Nambu |
+| nambu_type_26_9mm_revolver_break_open_1893_design | 9×22mm Japanese Revolver | unknown cartridge: 9×22mm Japanese Revolver |
+| colt_s_manufacturing_company_anaconda_2021 | .44 Remington Magnum | unknown cartridge: .44 Remington Magnum |
+| colt_s_manufacturing_company_anaconda_2021_2 | .44 Remington Magnum | unknown cartridge: .44 Remington Magnum |
+| colt_s_manufacturing_company_defender_3_barrel_compact_carry_38_super_variant | .38 Super | unknown cartridge: .38 Super |
+| benelli_lupo_300_wsm_24_barrel | .300 Winchester Short Magnum | unknown cartridge: .300 Winchester Short Magnum |
+| benelli_lupo_270_winchester_22_barrel | .270 Winchester | unknown cartridge: .270 Winchester |
+| henry_golden_boy_22_wmr_20_octagonal | .22 Winchester Magnum | unknown cartridge: .22 Winchester Magnum |
+| henry_golden_boy_17_hmr_20_octagonal | .17 HMR | unknown cartridge: .17 HMR |
+| henry_frontier_22_wmr_20_threaded | .22 Winchester Magnum | unknown cartridge: .22 Winchester Magnum |
+| std_mfg_s333_thunderstruck | .22 Winchester Magnum | unknown cartridge: .22 Winchester Magnum |
+| smw_model_460_xvr | .460 S&W Magnum | unknown cartridge: .460 S&W Magnum |
+| sig_sauer_cross_prf | .277 Fury | unknown cartridge: .277 Fury |
+| defiance_ruckus | 6mm Dasher | unknown cartridge: 6mm Dasher |
+| amt_automag_ii | .22 Winchester Magnum | unknown cartridge: .22 Winchester Magnum |
+| amt_automag_iii | .30 Carbine | unknown cartridge: .30 Carbine |
+
+---
+*Report generated by validate_ballistics.py on 2026-07-23 01:28.*
+*Reference: cartridge_ref.json (SAAMI/CIP data)*
