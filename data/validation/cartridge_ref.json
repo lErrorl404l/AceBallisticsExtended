@@ -227,7 +227,9 @@
       "max": 900,
       "typical": 820
     },
-    "is_shotgun": false
+    "is_shotgun": false,
+    "velocity_ms_min": 250,
+    "velocity_ms_max": 920
   },
   ".357 Magnum": {
     "aliases": [
@@ -584,7 +586,9 @@
       "typical": 900,
       "notes": "250gr: 900 m/s; 300gr: 830 m/s"
     },
-    "is_shotgun": false
+    "is_shotgun": false,
+    "pressure_mpa_min": 350,
+    "pressure_mpa_max": 480
   },
   ".300 AAC Blackout": {
     "aliases": [
@@ -694,7 +698,9 @@
       "typical": 860,
       "notes": "M33 647gr: 860 m/s; M903 SLAP: 280 m/s"
     },
-    "is_shotgun": false
+    "is_shotgun": false,
+    "pressure_mpa_min": 350,
+    "pressure_mpa_max": 450
   },
   "12.7\u00d7108mm": {
     "aliases": [
@@ -1108,7 +1114,9 @@
       "typical": 850,
       "notes": "55gr: 850-900 m/s (16-20in)"
     },
-    "is_shotgun": false
+    "is_shotgun": false,
+    "pressure_mpa_min": 350,
+    "pressure_mpa_max": 430
   },
   ".243 Winchester": {
     "aliases": [

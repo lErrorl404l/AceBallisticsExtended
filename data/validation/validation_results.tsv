@@ -2199,3 +2199,97 @@ row	weapon_id	manufacturer	model	cartridge	grade	severity	issues
 2199	bryco_model_59_9_full_size	Bryco Arms	Model 59	9×19mm Parabellum	A	0	
 2200	bryco_model_38_380	Bryco Arms	Model 38	.380 ACP	A	0	
 2201	bryco_model_48_380_compact	Bryco Arms	Model 48	.380 ACP	A	0	
+2202	spencer_1860_carbine_civil_war_carbine_20	Spencer	1860 Carbine	.56-56 Spencer	?	7	unknown cartridge: .56-56 Spencer
+2203	spencer_1860_rifle_civil_war_rifle_30_b	Spencer	1860 Rifle	.56-56 Spencer	?	7	unknown cartridge: .56-56 Spencer
+2204	kelbly_panda_target_action_26_bar	Kelbly	Panda	6mm BR	?	7	unknown cartridge: 6mm BR
+2205	kelbly_panda_target_action_26_bar	Kelbly	Panda	6mm Creedmoor	?	7	unknown cartridge: 6mm Creedmoor
+2206	kelbly_panda_target_action_26_bar	Kelbly	Panda	6.5 Creedmoor	A	0	
+2207	kelbly_panda_target_action_22_bar	Kelbly	Panda	.308 Winchester	A	0	
+2208	kelbly_atlas_long_action_26_barre	Kelbly	Atlas	6.5 Creedmoor	A	0	
+2209	kelbly_atlas_long_action_26_barre	Kelbly	Atlas	6.5 PRC	?	7	unknown cartridge: 6.5 PRC
+2210	kelbly_atlas_long_action_24_barre	Kelbly	Atlas	.300 Winchester Short Magnum	?	7	unknown cartridge: .300 Winchester Short Magnum
+2211	kelbly_atlas_long_action_26_barre	Kelbly	Atlas	7mm Remington Magnum	?	7	unknown cartridge: 7mm Remington Magnum
+2212	kelbly_atlas_long_action_26_barre	Kelbly	Atlas	.300 Precision Rifle Cartridge	?	7	unknown cartridge: .300 Precision Rifle Cartridge
+2213	kelbly_nanook_magnum_action_27_bar	Kelbly	Nanook	.300 Precision Rifle Cartridge	?	7	unknown cartridge: .300 Precision Rifle Cartridge
+2214	kelbly_nanook_magnum_action_27_bar	Kelbly	Nanook	.338 Lapua Magnum	A	0	
+2215	kelbly_nanook_magnum_action_27_bar	Kelbly	Nanook	.300 Norma Magnum	?	7	unknown cartridge: .300 Norma Magnum
+2216	kelbly_nanook_magnum_action_29_bar	Kelbly	Nanook	.375 CheyTac	?	7	unknown cartridge: .375 CheyTac
+2217	lone_lone_star_15_ar-15_carbine_16_bar	Lone Star Ordnance	Lone Star 15	5.56×45mm NATO	A	0	
+2218	lone_lone_star_15_dmr_ar-15_dmr_18_barrel	Lone Star Ordnance	Lone Star 15 DMR	5.56×45mm NATO	A	0	
+2219	lone_lone_star_15_spr_ar-15_spr_20_barrel	Lone Star Ordnance	Lone Star 15 SPR	5.56×45mm NATO	A	0	
+2220	lone_lone_star_15_cqb_ar-15_pistol_105_bar	Lone Star Ordnance	Lone Star 15 CQB	5.56×45mm NATO	A	0	
+2221	lone_lone_star_15_ar-15_carbine_16_bar	Lone Star Ordnance	Lone Star 15	.300 AAC Blackout	A	0	
+2222	lone_lone_star_15_cqb_ar-15_pistol_105_bar	Lone Star Ordnance	Lone Star 15 CQB	.300 AAC Blackout	A	0	
+2223	lone_lone_star_15_ar-15_carbine_18_bar	Lone Star Ordnance	Lone Star 15	6.5mm Grendel	?	7	unknown cartridge: 6.5mm Grendel
+2224	lone_lone_star_15_ar-15_carbine_18_bar	Lone Star Ordnance	Lone Star 15	6mm ARC	?	7	unknown cartridge: 6mm ARC
+2225	lone_lone_star_10_ar-10_carbine_16_bar	Lone Star Ordnance	Lone Star 10	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+2226	lone_lone_star_10_ar-10_dmr_18_barrel	Lone Star Ordnance	Lone Star 10	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+2227	lone_lone_star_10_ar-10_spr_20_barrel	Lone Star Ordnance	Lone Star 10	7.62×51mm NATO	A	1	caliber_mm=7.62 slightly outside ref [7.78,7.86]
+2228	lone_lone_star_10_ar-10_dmr_22_barrel	Lone Star Ordnance	Lone Star 10	6.5 Creedmoor	A	0	
+2229	lone_mk_12_spr_ar-15_spr_18_barrel	Lone Star Ordnance	Mk 12 SPR	5.56×45mm NATO	A	0	
+2230	proof_elevation_mtr_65_creedmoor	Proof Research	Elevation MTR	6.5 Creedmoor	A	0	
+2231	proof_elevation_mtr_223_remington	Proof Research	Elevation MTR	.223 Remington	F	3	pressure=430.0 MPa outside ref [350,400] for .223 Remington
+2232	proof_elevation_mtr_308_winchester	Proof Research	Elevation MTR	.308 Winchester	A	0	
+2233	proof_glacier_steel_65_prc	Proof Research	Glacier Steel	6.5 PRC	?	7	unknown cartridge: 6.5 PRC
+2234	proof_transition_65_creedmoor	Proof Research	Transition	6.5 Creedmoor	A	0	
+2235	fierce_ct_rival_xp_65_creedmoor	Fierce Firearms	CT Rival XP	6.5 Creedmoor	A	0	
+2236	fierce_carbon_fury_65_prc	Fierce Firearms	Carbon Fury	6.5 PRC	?	7	unknown cartridge: 6.5 PRC
+2237	fierce_carbon_fury_300_prc	Fierce Firearms	Carbon Fury	.300 PRC	?	7	unknown cartridge: .300 PRC
+2238	fierce_edge_65_creedmoor	Fierce Firearms	Edge	6.5 Creedmoor	A	0	
+2239	fierce_strike_308_winchester	Fierce Firearms	Strike	.308 Winchester	A	0	
+2240	gunwerks_clymr_65_creedmoor	Gunwerks	ClymR	6.5 Creedmoor	A	0	
+2241	gunwerks_magnus_lr_300_prc	Gunwerks	Magnus LR	.300 PRC	?	7	unknown cartridge: .300 PRC
+2242	gunwerks_nexus_7mm_prc	Gunwerks	Nexus	7mm PRC	?	7	unknown cartridge: 7mm PRC
+2243	cadex_cdx-lite_tremor_65_creedmoor	Cadex Defense	CDX-Lite Tremor	6.5 Creedmoor	A	0	
+2244	cadex_cdx-lite_tremor_308_winchester	Cadex Defense	CDX-Lite Tremor	.308 Winchester	A	0	
+2245	cadex_cdx-lite_tremor_338_lapua	Cadex Defense	CDX-Lite Tremor	.338 Lapua Magnum	F	3	pressure=480.0 MPa outside ref [390,440] for .338 Lapua Magnum
+2246	cadex_cdx-mc_kraken_300_prc	Cadex Defense	CDX-MC Kraken	.300 PRC	?	7	unknown cartridge: .300 PRC
+2247	cadex_cdx-r7_crbn_65_creedmoor	Cadex Defense	CDX-R7 CRBN	6.5 Creedmoor	A	0	
+2248	cadex_cdx-40_shadow_375_cheytac	Cadex Defense	CDX-40 Shadow	.375 CheyTac	?	7	unknown cartridge: .375 CheyTac
+2249	masterpiece_ba_pmr_pro_65_creedmoor	MasterPiece Arms	BA PMR Pro	6.5 Creedmoor	A	0	
+2250	masterpiece_ba_comp_pro_65_creedmoor	MasterPiece Arms	BA Comp Pro	6.5 Creedmoor	A	0	
+2251	ai_ax50_50_bmg	Accuracy International	AX50	.50 BMG	F	3	pressure=450.0 MPa outside ref [350,420] for 12.7×99mm NATO (.50 BMG)
+2252	ai_ax308_308_winchester	Accuracy International	AX308	.308 Winchester	A	0	
+2253	ai_ae_mk_iii_308_winchester	Accuracy International	AE Mk III	.308 Winchester	A	0	
+2254	ai_aws_308_subso_winchester	Accuracy International	AWS	.308 Winchester	F	3	velocity=320.0m/s outside ref [700,900] for .308 Winchester
+2255	mcmillan_tac-300_300_magnu_winchester	McMillan	TAC-300	.300 Winchester Magnum	A	0	
+2256	mcmillan_tac-308_308_winchester	McMillan	TAC-308	.308 Winchester	A	0	
+2257	mcmillan_tac-338_338_lapua_magnum	McMillan	TAC-338	.338 Lapua Magnum	F	3	pressure=480.0 MPa outside ref [390,440] for .338 Lapua Magnum
+2258	mcmillan_tac-50_50_bmg	McMillan	TAC-50	.50 BMG	F	3	pressure=450.0 MPa outside ref [350,420] for 12.7×99mm NATO (.50 BMG)
+2259	sig_cross_308_winchester	SIG Sauer	CROSS	.308 Winchester	A	0	
+2260	sig_cross_prs_65_creedmoor	SIG Sauer	CROSS PRS	6.5 Creedmoor	A	0	
+2261	sig_cross_magnum_300_magnu_winchester	SIG Sauer	CROSS Magnum	.300 Winchester Magnum	A	0	
+2262	sig_cross_magnum_300_prc	SIG Sauer	CROSS Magnum	.300 PRC	?	7	unknown cartridge: .300 PRC
+2263	desert_srs-a1_308_winchester	Desert Tech	SRS-A1	.308 Winchester	A	0	
+2264	desert_srs-a1_65_creedmoor	Desert Tech	SRS-A1	6.5 Creedmoor	A	0	
+2265	desert_srs-a1_338_lapua_magnum	Desert Tech	SRS-A1	.338 Lapua Magnum	F	3	pressure=480.0 MPa outside ref [390,440] for .338 Lapua Magnum
+2266	desert_hti_50_bmg	Desert Tech	HTI	.50 BMG	F	3	pressure=450.0 MPa outside ref [350,420] for 12.7×99mm NATO (.50 BMG)
+2267	desert_mdr-x_308_winchester	Desert Tech	MDR-X	.308 Winchester	A	0	
+2268	desert_mdr-x_223_wylde	Desert Tech	MDR-X	.223 Wylde	?	7	unknown cartridge: .223 Wylde
+2269	christensen_mhr_65_creedmoor	Christensen Arms	MHR	6.5 Creedmoor	A	0	
+2270	christensen_traverse_65_prc	Christensen Arms	Traverse	6.5 PRC	?	7	unknown cartridge: 6.5 PRC
+2271	christensen_ridgeline_fft_65_creedmoor	Christensen Arms	Ridgeline FFT	6.5 Creedmoor	A	0	
+2272	springfield_m1a_loaded	Springfield Armory	M1A	.308 Winchester	A	0	
+2273	springfield_m1a_scout_squad	Springfield Armory	M1A	.308 Winchester	A	0	
+2274	springfield_m1a_16_socom	Springfield Armory	M1A	.308 Winchester	A	0	
+2275	springfield_sa-35_9mm	Springfield Armory	SA-35	9×19mm Parabellum	A	0	
+2276	springfield_saint_edge_556_nato	Springfield Armory	SAINT Edge	5.56×45mm NATO	A	0	
+2277	ruger_10/22_takedown_22_lr	Ruger	10/22 Takedown	.22 Long Rifle	A	0	
+2278	ruger_10/22_competition_22_lr	Ruger	10/22 Competition	.22 Long Rifle	A	0	
+2279	ruger_lcp_max_380_auto	Ruger	LCP MAX	.380 Automatic	?	7	unknown cartridge: .380 Automatic
+2280	ruger_max-9_9mm	Ruger	MAX-9	9×19mm Parabellum	A	0	
+2281	ruger_security-380_380_auto	Ruger	Security-380	.380 Automatic	?	7	unknown cartridge: .380 Automatic
+2282	ruger_american_ranch_556_nato	Ruger	American Ranch	5.56×45mm NATO	A	0	
+2283	ruger_gunsite_scout_308_winchester	Ruger	Gunsite Scout	.308 Winchester	A	0	
+2284	savage_110_scout_v2_556_nato	Savage	110 Scout V2	5.56×45mm NATO	A	0	
+2285	savage_110_timberline_65_creedmoor	Savage	110 Timberline	6.5 Creedmoor	A	0	
+2286	savage_110_trail_hunter_308_winchester	Savage	110 Trail Hunter	.308 Winchester	A	0	
+2287	savage_110_ultralite_65_prc	Savage	110 Ultralite	6.5 PRC	?	7	unknown cartridge: 6.5 PRC
+2288	savage_impulse_core_hunter_pro_22_creedmoor	Savage	Impulse Core Hunter Pro	22 Creedmoor	?	7	unknown cartridge: 22 Creedmoor
+2289	falkor_petra_300_magnu_winchester	Falkor Defense	Petra	.300 Winchester Magnum	A	0	
+2290	lmt_mars-h_762_nato	LMT Defense	MARS-H	7.62×51mm NATO	A	0	
+2291	lmt_l129a1_762_nato	LMT Defense	L129A1	7.62×51mm NATO	A	0	
+2292	jp_lrp-07_308_winchester	JP Enterprises	LRP-07	.308 Winchester	A	0	
+2293	jp_scr-11_223_remington	JP Enterprises	SCR-11	.223 Remington	F	3	pressure=430.0 MPa outside ref [350,400] for .223 Remington
+2294	jp_jp-5_9mm	JP Enterprises	JP-5	9×19mm Parabellum	A	0	
+2295	kuiu_singular_65_prc	KUIU	Singular	6.5 PRC	?	7	unknown cartridge: 6.5 PRC
