@@ -202,7 +202,7 @@ zastava_m84	Zastava Arms d.o.o.	M84	General-Purpose Machine Gun	7.62×54mmR	7.92
 zastava_m92	Zastava Arms d.o.o.	M92	Carbine	7.62×39mm M67	7.85	254	240	1	355	8.0	678	Zastava military catalogue 2013, Wikipedia	Researched
 zastava_m70	Zastava Arms d.o.o.	M70AB2	Assault Rifle	7.62×39mm M67	7.85	415	240	1	355	8.0	720	Weaponsystems.net, Wikipedia, Armatec	Researched
 dragunov_svd	Kalashnikov Concern (Izhevsk Machine-Building Plant)	SVD (Snayperskaya Vintovka Dragunova)	Designated Marksman Rifle	7.62×54mmR	7.92	620	240	1	390	9.6	830	Small Arms Survey, FSVT, Wikipedia	Researched
-AR-10	ArmaLite	AR-10		7.62×51mm NATO	7.82	508		1	415	9.5	820	Modern Firearms - ArmaLite AR-10; Wikipedia ArmaLite AR-10; Military Factory AR-10	researched
+AR-10	ArmaLite	AR-10		7.62×51mm NATO	7.82	508	280.0	1	415	9.5	820	Modern Firearms - ArmaLite AR-10; Wikipedia ArmaLite AR-10; Military Factory AR-10	researched
 AR-15	ArmaLite	AR-15	Prototype	.223 Remington	5.69	508	356	1	430	4.0	1006	American Rifleman May 1962 (NRA); Wikipedia ArmaLite AR-15; Forgotten Weapons AR-15 #6	researched
 AR-18	ArmaLite	AR-18		5.56×45mm NATO	5.69	464	305	1	430	4.0	991	American Rifleman AR-18/180 article; Wikipedia AR-18; ArmaLite AR-18 manual	researched
 M16A1	Colt's Manufacturing Co.	M16A1		5.56×45mm NATO	5.69	508	305	1	430	4.0	990	TM 9-1005-249-23&P; Weaponsystems.net M16A1; GlobalSecurity M16 specs	researched
@@ -222,7 +222,7 @@ M1911A1	Colt's Manufacturing Co.	M1911A1	Government	.45 ACP	11.48	127	406	1	145	
 Delta Elite	Colt's Manufacturing Co.	Delta Elite	Government	10mm Auto	10.17	128	406	2	290	10.0	405	Wikipedia Colt Delta Elite; Sportsman's Outdoor Superstore; Gunblast.com Delta Elite	researched
 Python	Colt's Manufacturing Co.	Python		.357 Magnum	9.07	152	356	2	345	8.1	420	Colt Python OEM manual; Gun Tests chronograph data; Buffalo Bore ballistic data	estimated
 Anaconda	Colt's Manufacturing Co.	Anaconda		.44 Magnum	10.90	152	508	2	360	15.6	410	Shooting Times Anaconda review; Gun Tests chronograph; Firearms News Anaconda test	researched
-Detective Special	Colt's Manufacturing Co.	Detective Special		.38 Special	9.06	51			240	10.2	230	Wikipedia Colt Detective Special; Firearms Bulletin; HandWiki Engineering Detective Special	estimated
+Detective Special	Colt's Manufacturing Co.	Detective Special		.38 Special	9.06	51	381.0	1	240	10.2	230	Wikipedia Colt Detective Special; Firearms Bulletin; HandWiki Engineering Detective Special	estimated
 Colt 9mm SMG	Colt's Manufacturing Co.	635	9mm SMG	9×19mm Parabellum	9.01	267	250	1	250	8.0	396	Military Factory Model 635; Modern Firearms Colt 635; Colt OEM spec sheet	researched
 AK-47 Type 3	Kalashnikov Concern	AK-47 Type 3	Standard	7.62×39mm	7.85	415	240	1	355	7.9	715	Modern Firearms; Small Arms Survey; Wikipedia	researched
 AKS-47	Kalashnikov Concern	AKS-47	Folding stock	7.62×39mm	7.85	415	240	1	355	7.9	715	Modern Firearms; Small Arms Survey; Wikipedia	researched
@@ -243,10 +243,10 @@ PKM	Degtyaryov Plant	PKM	Standard	7.62×54mmR	7.92	645	240	1	390	9.6	825	Modern 
 PKP Pecheneg	TsNIITochMash / Degtyaryov Plant	PKP Pecheneg	Standard	7.62×54mmR	7.92	658	240	1	390	9.6	825	Modern Firearms; Rosoboronexport (roe.ru); Wikipedia	researched
 SVD	Kalashnikov Concern	SVD	Standard	7.62×54mmR	7.92	620	240	1	390	9.6	830	Modern Firearms; Official SVD Service Manual; Wikipedia	researched
 SVDS	Kalashnikov Concern	SVDS	Folding stock	7.62×54mmR	7.92	565	240	1	390	9.6	810	Modern Firearms; Dragunov.net; Wikipedia	researched
-Saiga-12	Kalashnikov Concern	Saiga-12	Standard	12 Gauge	18.5	580		1	65	28.4		Modern Firearms; Wikipedia	researched
+Saiga-12	Kalashnikov Concern	Saiga-12	Standard	12 Gauge	18.5	580	0.0	1	65	28.4	420.0	Modern Firearms; Wikipedia	researched
 MP-443 Grach	Kalashnikov Concern	MP-443 Grach	Standard	9×19mm	9.01	112.5	250	1	250	8.0	450	Modern Firearms; Wikipedia; Weaponsystems.net	researched
 PP-19-01 Vityaz	Kalashnikov Concern	PP-19-01 Vityaz	Standard	9×19mm	9.01	238	240	1	250	8.0	380	Wikipedia; Weaponsystems.net; Military Factory	researched
-PP-2000	KBP Instrument Design Bureau	PP-2000	Standard	9×19mm	9.01	182	250	1	250	8.0		Modern Firearms; Wikipedia; Weaponsystems.net	researched
+PP-2000	KBP Instrument Design Bureau	PP-2000	Standard	9×19mm	9.01	182	250	1	250	8.0	360.0	Modern Firearms; Wikipedia; Weaponsystems.net	researched
 g3a3	Heckler & Koch GmbH	G3A3	Fixed stock	7.62×51mm NATO	7.82	450	305	1	415	9.5	800	Small Arms Survey SAS-weapons-rifles-Heckler-Koch-G3.pdf; Gunsopedia HK G3; Dockery Armory G3A3; Weaponsystems.net G3; bellum.nu HK G3	researched
 g3a4	Heckler & Koch GmbH	G3A4	Retractable stock	7.62×51mm NATO	7.82	450	305	1	415	9.5	800	Small Arms Survey SAS-weapons-rifles-Heckler-Koch-G3.pdf; Gunsopedia HK G3; Dockery Armory G3A4; Weaponsystems.net G3	researched
 g3sg1	Heckler & Koch GmbH	G3SG/1	Fixed stock with cheek riser	7.62×51mm NATO	7.82	450	305	1	415	9.5	800	Small Arms Survey SAS-weapons-rifles-Heckler-Koch-G3.pdf; Gunsopedia HK G3; Thinline Weapons G3 Models; Weaponsystems.net G3SG/1	researched
@@ -269,14 +269,14 @@ mp5sd	Heckler & Koch GmbH	MP5SD	Integrally suppressed, retractable stock	9×19mm
 ump9	Heckler & Koch GmbH	UMP9	9×19mm, folding stock	9×19mm	9.01	200	250	1	250	8.0	380	Wikipedia UMP; Modern Firearms UMP; HK UMP info sheet; HK UMP manual	researched
 ump40	Heckler & Koch GmbH	UMP40	.40 S&W, folding stock	.40 S&W	10.17	200	406	1	240	10.0	358	Wikipedia UMP; Modern Firearms UMP; HK UMP info sheet; HK UMP manual	researched
 ump45	Heckler & Koch GmbH	UMP45	.45 ACP, folding stock	.45 ACP	11.48	200	406	1	145	15.0	260	Wikipedia UMP; Modern Firearms UMP; HK UMP info sheet; HK UMP manual	researched
-usp9	Heckler & Koch GmbH	USP	Full-size, 9×19mm	9×19mm	9.01	108		1	250	8.0	360	Modern Firearms USP; Wikipedia USP; HK USP product page	researched
-usp40	Heckler & Koch GmbH	USP	Full-size, .40 S&W	.40 S&W	10.17	106		1	240	10.0	344	Modern Firearms USP; Wikipedia USP; HK USP product page	researched
-usp45	Heckler & Koch GmbH	USP	Full-size, .45 ACP	.45 ACP	11.48	112		1	145	15.0	264	Modern Firearms USP; Wikipedia USP; HK USP product page	researched
-p30	Heckler & Koch GmbH	P30	Standard	9×19mm	9.01	98		1	250	8.0	360	Wikipedia P30; Modern Firearms P30; HK P30 product page	researched
-hk45	Heckler & Koch GmbH	HK45	Full-size, .45 ACP	.45 ACP	11.48	113		1	145	15.0	260	Wikipedia HK45; HK USA HK45 product page; Modern Firearms HK45	researched
+usp9	Heckler & Koch GmbH	USP	Full-size, 9×19mm	9×19mm	9.01	108	250.0	1	250	8.0	360	Modern Firearms USP; Wikipedia USP; HK USP product page	researched
+usp40	Heckler & Koch GmbH	USP	Full-size, .40 S&W	.40 S&W	10.17	106	406.0	1	240	10.0	344	Modern Firearms USP; Wikipedia USP; HK USP product page	researched
+usp45	Heckler & Koch GmbH	USP	Full-size, .45 ACP	.45 ACP	11.48	112	406.0	1	145	15.0	264	Modern Firearms USP; Wikipedia USP; HK USP product page	researched
+p30	Heckler & Koch GmbH	P30	Standard	9×19mm	9.01	98	250.0	1	250	8.0	360	Wikipedia P30; Modern Firearms P30; HK P30 product page	researched
+hk45	Heckler & Koch GmbH	HK45	Full-size, .45 ACP	.45 ACP	11.48	113	406.0	1	145	15.0	260	Wikipedia HK45; HK USA HK45 product page; Modern Firearms HK45	researched
 psg1	Heckler & Koch GmbH	PSG1	Standard, adjustable stock	7.62×51mm NATO	7.82	650	279	1	415	9.5	868	Wikipedia PSG1; HK PSG1 product page; Modern Firearms PSG1	researched
 mr556a1	Heckler & Koch GmbH	MR556A1	Standard 16.5in barrel	5.56×45mm NATO	5.69	419	178	1	430	4.0	890	Wikipedia HK416 (MR556 section); HK USA MR556A1 product page; HK info sheet	researched
-vp9	Heckler & Koch GmbH	VP9	Standard	9×19mm	9.01	104		1	250	8.0	360	Modern Firearms VP9; Wikipedia VP9; HK VP9 product page	researched
+vp9	Heckler & Koch GmbH	VP9	Standard	9×19mm	9.01	104	250.0	1	250	8.0	360	Modern Firearms VP9; Wikipedia VP9; HK VP9 product page	researched
 mp7	Heckler & Koch GmbH	MP7A1	Standard, folding stock and foregrip	4.6×30mm	4.65	180	254	1	400	2.0	735	Wikipedia MP7; HK MP7 product page; Modern Firearms MP7	researched
 P210	SIG (Switzerland)	SIG P210	Standard	9×19mm	9.01	120	250	1	250	8.0	350	SIG OEM brochure 9mm/7.65mm/.22LR; Modern Firearms Popenker; Swiss Army procurement records	researched
 P225	SIG Sauer GmbH (Germany)	P225	P6	9×19mm	9.01	91	254	1	250	8.0	330	SIG Sauer P225 manual spec sheet; German police procurement (P6); Modern Firearms	researched
@@ -364,23 +364,23 @@ ber_cx4_storm	Beretta	Cx4 Storm		9×19mm	9.01	422	250	1	250	8.0	390	beretta.com 
 ber_arx160	Beretta	ARX160		5.56×45mm	5.69	406	178	1	430	4.0	920	berettadefense.com; Modern Firearms (Popenker)	researched
 ber_arx100	Beretta	ARX100		5.56×45mm	5.69	406	178	1	430	4.0	920	beretta.com; Buds Gun Shop manual; Modern Firearms (Popenker)	researched
 ber_bm59	Beretta	BM-59		7.62×51mm	7.82	491	305	1	415	9.5	800	Small Arms Review; weaponatlas.com; firearmsbulletin.com	researched
-ber_686_sp	Beretta	686	Silver Pigeon	12 Gauge	18.5	711			65	28.4	400	beretta.com; Beretta 2024 catalog	researched
-ber_1301_tactical	Beretta	1301	Tactical	12 Gauge	18.5	470			65	28.4	400	beretta.com; Beretta 2024 catalog	researched
-ber_a400	Beretta	A400	Series	12 Gauge	18.5	711			65	28.4	400	beretta.com; Beretta 2024 catalog	researched
-ber_dt11	Beretta	DT11		12 Gauge	18.5	762			65	28.4	400	beretta.com; Beretta 2024 catalog	researched
-ben_m1s90	Benelli	M1	Super 90	12 Gauge	18.5	470			65	28.4	400	benelliusa.com; Modern Firearms (Popenker)	researched
-ben_m2	Benelli	M2		12 Gauge	18.5	610			65	28.4	400	benelliusa.com; Modern Firearms (Popenker)	researched
-ben_m4	Benelli	M4	M1014	12 Gauge	18.5	470			65	28.4	400	benelliusa.com; US Army TM; Modern Firearms (Popenker)	researched
-ben_m3	Benelli	M3		12 Gauge	18.5	500			65	28.4	400	benelliusa.com; Modern Firearms (Popenker)	researched
-ben_nova	Benelli	Nova		12 Gauge	18.5	610			65	28.4	400	benelliusa.com; Modern Firearms (Popenker)	researched
-ben_supernova	Benelli	Super	Nova	12 Gauge	18.5	610			65	28.4	400	benelliusa.com; Modern Firearms (Popenker)	researched
-ben_vinci	Benelli	Vinci		12 Gauge	18.5	660			65	28.4	400	benelliusa.com; Modern Firearms (Popenker)	researched
-ben_ethos	Benelli	Ethos		12 Gauge	18.5	660			65	28.4	400	benelliusa.com; Modern Firearms (Popenker)	researched
+ber_686_sp	Beretta	686	Silver Pigeon	12 Gauge	18.5	711	0.0	0	65	28.4	400	beretta.com; Beretta 2024 catalog	researched
+ber_1301_tactical	Beretta	1301	Tactical	12 Gauge	18.5	470	0.0	0	65	28.4	400	beretta.com; Beretta 2024 catalog	researched
+ber_a400	Beretta	A400	Series	12 Gauge	18.5	711	0.0	0	65	28.4	400	beretta.com; Beretta 2024 catalog	researched
+ber_dt11	Beretta	DT11		12 Gauge	18.5	762	0.0	0	65	28.4	400	beretta.com; Beretta 2024 catalog	researched
+ben_m1s90	Benelli	M1	Super 90	12 Gauge	18.5	470	0.0	0	65	28.4	400	benelliusa.com; Modern Firearms (Popenker)	researched
+ben_m2	Benelli	M2		12 Gauge	18.5	610	0.0	0	65	28.4	400	benelliusa.com; Modern Firearms (Popenker)	researched
+ben_m4	Benelli	M4	M1014	12 Gauge	18.5	470	0.0	0	65	28.4	400	benelliusa.com; US Army TM; Modern Firearms (Popenker)	researched
+ben_m3	Benelli	M3		12 Gauge	18.5	500	0.0	0	65	28.4	400	benelliusa.com; Modern Firearms (Popenker)	researched
+ben_nova	Benelli	Nova		12 Gauge	18.5	610	0.0	0	65	28.4	400	benelliusa.com; Modern Firearms (Popenker)	researched
+ben_supernova	Benelli	Super	Nova	12 Gauge	18.5	610	0.0	0	65	28.4	400	benelliusa.com; Modern Firearms (Popenker)	researched
+ben_vinci	Benelli	Vinci		12 Gauge	18.5	660	0.0	0	65	28.4	400	benelliusa.com; Modern Firearms (Popenker)	researched
+ben_ethos	Benelli	Ethos		12 Gauge	18.5	660	0.0	0	65	28.4	400	benelliusa.com; Modern Firearms (Popenker)	researched
 ben_lupo	Benelli	Lupo		.308 Win	7.82	510	279	1	415	9.5	860	benelliusa.com; benelli.it	researched
-fra_spas12	Franchi	SPAS-12		12 Gauge	18.5	460			65	28.4	400	Franchi/Beretta Holding; Modern Firearms (Popenker); Weaponsystems.net	researched
-fra_spas15	Franchi	SPAS-15		12 Gauge	18.5	450			65	28.4	400	Franchi/Beretta Holding; Modern Firearms (Popenker); Weaponsystems.net	researched
-fra_affinity	Franchi	Affinity		12 Gauge	18.5	660			65	28.4	400	franchiusa.com; Franchi/Beretta Holding	researched
-fra_instinct	Franchi	Instinct		12 Gauge	18.5	711			65	28.4	400	franchiusa.com; Franchi/Beretta Holding	researched
+fra_spas12	Franchi	SPAS-12		12 Gauge	18.5	460	0.0	0	65	28.4	400	Franchi/Beretta Holding; Modern Firearms (Popenker); Weaponsystems.net	researched
+fra_spas15	Franchi	SPAS-15		12 Gauge	18.5	450	0.0	0	65	28.4	400	Franchi/Beretta Holding; Modern Firearms (Popenker); Weaponsystems.net	researched
+fra_affinity	Franchi	Affinity		12 Gauge	18.5	660	0.0	0	65	28.4	400	franchiusa.com; Franchi/Beretta Holding	researched
+fra_instinct	Franchi	Instinct		12 Gauge	18.5	711	0.0	0	65	28.4	400	franchiusa.com; Franchi/Beretta Holding	researched
 CZ_75_B	CZ	75	B	9×19mm	9.01	120	250	1	250	8.0	360	CZUB official catalog, CZ-USA product page, Modern Firearms, WeaponAtlas	researched
 CZ_75_BD	CZ	75	BD	9×19mm	9.01	120	250	1	250	8.0	360	CZUB official catalog, CZ-USA product page, Modern Firearms	researched
 CZ_75_P01	CZ	75	P-01	9×19mm	9.01	95.3	250	1	250	8.0	360	CZUB official catalog, CZ-USA product page, Genitron, TGDB	researched
@@ -429,8 +429,8 @@ c9_a1	Steyr	C9-A1		9×19mm	9.01	84	254	1	250	8.0	350	steyr-arms.com; modernfirea
 mpi_69	Steyr	MPi	69	9×19mm	9.01	260	254	1	250	8.0	380	modernfirearms.net; steyr-arms.com; weaponsystems.net	researched
 tmp	Steyr	TMP		9×19mm	9.01	130	254	1	250	8.0	380	modernfirearms.net; steyr-arms.com; en.wikipedia.org	researched
 spp	Steyr	SPP		9×19mm	9.01	130	254	1	250	8.0	380	modernfirearms.net; steyr-arms.com; en.wikipedia.org	researched
-hs_50	Steyr	HS	.50	12.7×99mm	12.98	833	381	1		.	850	modernfirearms.net; steyr-arms.com; weaponsystems.net	researched
-iws_2000	Steyr	IWS	2000	14.5×114mm	14.88	1000	560	1		.	1500	modernfirearms.net; steyr-arms.com; en.wikipedia.org	researched
+hs_50	Steyr	HS	.50	12.7×99mm	12.98	833	381	1	379.0	42.8	850	modernfirearms.net; steyr-arms.com; weaponsystems.net	researched
+iws_2000	Steyr	IWS	2000	14.5×114mm	14.88	1000	560	1	350.0	60.0	990.0	modernfirearms.net; steyr-arms.com; en.wikipedia.org	researched
 uzi_std	IWI	Uzi	Standard	9×19mm	9.01	260	254	1	250	8.0	400	iwi.net; modernfirearms.net; weaponsystems.net	researched
 uzi_mini	IWI	Uzi	Mini	9×19mm	9.01	197	254	1	250	8.0	375	iwi.net; modernfirearms.net; weaponsystems.net	researched
 uzi_micro	IWI	Uzi	Micro	9×19mm	9.01	117	254	1	250	8.0	350	iwi.net; modernfirearms.net; weaponsystems.net	researched
@@ -442,7 +442,7 @@ galil_ace_31	IWI	Galil ACE	31	7.62×39mm	7.85	460	240	1	355	7.9	710	iwi-weapons.
 galil_ace_32	IWI	Galil ACE	32	7.62×51mm	7.82	460	305	1	415	9.5	800	iwi-weapons.com; iwi.net; modernfirearms.net	researched
 tavor_x95	IWI	Tavor	X95	5.56×45mm	5.69	330	178	1	430	4.0	870	iwi-weapons.com; iwi.net; modernfirearms.net	researched
 tavor_7	IWI	Tavor	7	7.62×51mm	7.82	420	305	1	415	9.5	800	iwi-weapons.com; iwi.net; modernfirearms.net	researched
-tavor_ts12	IWI	Tavor	TS12	12 gauge	18.53	460				.	.	iwi-weapons.com; iwi.net; en.wikipedia.org	researched
+tavor_ts12	IWI	Tavor	TS12	12 gauge	18.53	460	0	0	65.0	28.4	420.0	iwi-weapons.com; iwi.net; en.wikipedia.org	researched
 jericho_941	IWI	Jericho	941	9×19mm	9.01	112	254	1	250	8.0	380	iwi.net; modernfirearms.net; ammo.com	researched
 jericho_enhanced	IWI	Jericho	Enhanced	9×19mm	9.01	112	254	1	250	8.0	380	iwi.net; iwi-weapons.com; modernfirearms.net	researched
 masada_9	IWI	Masada		9×19mm	9.01	109	254	1	250	8.0	380	iwi.net; iwi-weapons.com; ammo.com	researched
@@ -450,7 +450,7 @@ masada_slim	IWI	Masada	Slim	9×19mm	9.01	96	254	1	250	8.0	360	iwi.net; iwi-weapo
 negev_ng7	IWI	Negev	NG7	7.62×51mm	7.82	508	305	1	415	9.5	860	iwi-weapons.com; iwi.net; modernfirearms.net	researched
 negev_ng5	IWI	Negev	NG5	5.56×45mm	5.69	460	228	1	430	4.0	910	iwi-weapons.com; iwi.net; modernfirearms.net	researched
 carmel	IWI	Carmel		5.56×45mm	5.69	292	178	1	430	4.0	850	iwi-weapons.com; modernfirearms.net; en.wikipedia.org	researched
-dan_338	IWI	Dan	.338	.338 Lapua Mag	8.59	690	254	1		.	900	iwi-weapons.com; modernfirearms.net; en.wikipedia.org	researched
+dan_338	IWI	Dan	.338	.338 Lapua Mag	8.59	690	254	1	420.0	16.2	900	iwi-weapons.com; modernfirearms.net; en.wikipedia.org	researched
 mark_iv	Sturm Ruger	Mark IV	Target	.22 LR	5.66	140	406	1	165	2.6	320	ruger.com; americanrifleman.org	researched
 sr22	Sturm Ruger	SR22		.22 LR	5.66	102	406	1	165	2.6	290	ruger.com; thegundatabase.com	researched
 sr9	Sturm Ruger	SR9		9×19mm	9.01	103	254	1	250	8.0	370	ruger.com; americanrifleman.org	researched
@@ -491,51 +491,51 @@ pc_carbine	Sturm Ruger	PC Carbine		9×19mm	9.01	409	254	1	250	8.0	400	ruger.com;
 pc_charger	Sturm Ruger	PC Charger		9×19mm	9.01	168	254	1	250	8.0	370	ruger.com; americanrifleman.org	researched
 no_1	Sturm Ruger	No. 1		.308 Win	7.82	660	279	1	415	9.5	840	ruger.com; shootingillustrated.com	researched
 m77_hawkeye	Sturm Ruger	Hawkeye	Standard	.308 Win	7.82	559	279	1	415	9.5	820	ruger.com; americanrifleman.org	researched
-red_label	Sturm Ruger	Red Label		12 Gauge	18.50	711		1				americanrifleman.org	researched
-gold_label	Sturm Ruger	Gold Label		12 Gauge	18.50	711		1				americanrifleman.org	researched
-M&P9_M2_0	Smith & Wesson	M&P9 M2.0		9×19mm	9.01	108	250	1	250	8.0		Wikipedia; Modern Firearms	researched
-M&P40	Smith & Wesson	M&P40		40 S&W	10.17	108	406	1	240	10.0		Wikipedia; Modern Firearms	researched
-M&P45	Smith & Wesson	M&P45		45 ACP	11.48	114	406	1	145	15.0		Wikipedia; Modern Firearms	researched
-M&P9_Compact	Smith & Wesson	M&P9 Compact		9×19mm	9.01	89	250	1	250	8.0		Wikipedia; Modern Firearms	researched
-M&P9_Shield	Smith & Wesson	M&P9 Shield		9×19mm	9.01	79	250	1	250	8.0		Wikipedia; Modern Firearms	researched
-Shield_Plus	Smith & Wesson	M&P9 Shield Plus		9×19mm	9.01	79	250	1	250	8.0		Wikipedia; S&W product page	researched
-M&P9_Shield_EZ	Smith & Wesson	M&P9 Shield EZ		9×19mm	9.01	93	250	1	250	8.0		Wikipedia; American Rifleman	researched
-M&P40_Shield_EZ	Smith & Wesson	M&P Shield EZ		380 ACP	9.02	93	250	1	141	6.0		Wikipedia; American Rifleman	researched
-M&P_2_0_Compact	Smith & Wesson	M&P 2.0 Compact		9×19mm	9.01	102	250	1	250	8.0		Wikipedia; S&W product page	researched
-M&P_2_0_Full	Smith & Wesson	M&P 2.0 Full		9×19mm	9.01	108	250	1	250	8.0		Wikipedia; S&W product page	researched
-SD9_VE	Smith & Wesson	SD9 VE		9×19mm	9.01	102	250	1	250	8.0		Wikipedia; S&W product page	researched
-SD40_VE	Smith & Wesson	SD40 VE		40 S&W	10.17	102	406	1	240	10.0		Wikipedia; S&W product page	researched
-SW9	Smith & Wesson	SW9	Sigma	9×19mm	9.01	102	250	1	250	8.0		Wikipedia; Modern Firearms	researched
-SW40	Smith & Wesson	SW40	Sigma	40 S&W	10.17	102	406	1	240	10.0		Wikipedia; Modern Firearms	researched
-Bodyguard_380	Smith & Wesson	Bodyguard 380		380 ACP	9.02	70	250	1	141	6.0		Wikipedia; American Rifleman	researched
-Bodyguard_38	Smith & Wesson	Bodyguard 38		38 Special	9.06	51	381	1	240	10.2		Wikipedia; American Rifleman	researched
-Model_29	Smith & Wesson	Model 29		44 Magnum	10.90	165	508	1	360	15.6		Wikipedia; NRA publications	researched
-Model_686	Smith & Wesson	Model 686		357 Magnum	9.07	102	356	1	345	8.1		Wikipedia; NRA publications	researched
-Model_19	Smith & Wesson	Model 19		357 Magnum	9.07	102	356	1	345	8.1		Wikipedia; Modern Firearms	researched
-Model_60	Smith & Wesson	Model 60		357 Magnum	9.07	51	356	1	345	8.1		Wikipedia; Modern Firearms	researched
-Model_36	Smith & Wesson	Model 36		38 Special	9.06	51	381	1	240	10.2		Wikipedia; Modern Firearms	researched
-Model_66	Smith & Wesson	Model 66		357 Magnum	9.07	102	356	1	345	8.1		Wikipedia; NRA publications	researched
-Model_640	Smith & Wesson	Model 640		357 Magnum	9.07	54	356	1	345	8.1		Wikipedia; S&W product page	researched
-Model_986	Smith & Wesson	986		9×19mm	9.01	102	250	1	250	8.0		Wikipedia; S&W product page	researched
-Governor	Smith & Wesson	Governor		45 ACP	11.48	70	406	1	145	15.0		Wikipedia; S&W product page	researched
-M&P15	Smith & Wesson	M&P15		5.56×45mm	5.69	406	178	1	430	4.0		Wikipedia; S&W product page	researched
-M&P15_22	Smith & Wesson	M&P15-22		22 LR	5.66	406	406	1	165	2.6		Wikipedia; S&W product page	researched
-M&P10	Smith & Wesson	M&P10		308 Win	7.82	406	279	1	415	9.5		Wikipedia; S&W product page	researched
-M&P15_Sport_II	Smith & Wesson	M&P15 Sport II		5.56×45mm	5.69	406	178	1	430	4.0		Wikipedia; S&W product page	researched
-Model_39	Smith & Wesson	Model 39		9×19mm	9.01	102	250	1	250	8.0		Wikipedia; Modern Firearms	researched
-Model_59	Smith & Wesson	Model 59		9×19mm	9.01	102	250	1	250	8.0		Wikipedia; Modern Firearms	researched
-Model_645	Smith & Wesson	Model 645		45 ACP	11.48	102	406	1	145	15.0		Wikipedia; S&W product page	researched
-Model_1006	Smith & Wesson	Model 1006		10mm Auto	10.17	127	406	1	240	10.0		Wikipedia; Modern Firearms	researched
-Model_4506	Smith & Wesson	Model 4506		45 ACP	11.48	127	406	1	145	15.0		Wikipedia; S&W product page	researched
+red_label	Sturm Ruger	Red Label		12 Gauge	18.50	711	0.0	1	65.0	28.4	420.0	americanrifleman.org	researched
+gold_label	Sturm Ruger	Gold Label		12 Gauge	18.50	711	0.0	1	65.0	28.4	420.0	americanrifleman.org	researched
+M&P9_M2_0	Smith & Wesson	M&P9 M2.0		9×19mm	9.01	108	250	1	250	8.0	360.0	Wikipedia; Modern Firearms	researched
+M&P40	Smith & Wesson	M&P40		40 S&W	10.17	108	406	1	240	10.0	340.0	Wikipedia; Modern Firearms	researched
+M&P45	Smith & Wesson	M&P45		45 ACP	11.48	114	406	1	145	15.0	255.0	Wikipedia; Modern Firearms	researched
+M&P9_Compact	Smith & Wesson	M&P9 Compact		9×19mm	9.01	89	250	1	250	8.0	360.0	Wikipedia; Modern Firearms	researched
+M&P9_Shield	Smith & Wesson	M&P9 Shield		9×19mm	9.01	79	250	1	250	8.0	360.0	Wikipedia; Modern Firearms	researched
+Shield_Plus	Smith & Wesson	M&P9 Shield Plus		9×19mm	9.01	79	250	1	250	8.0	360.0	Wikipedia; S&W product page	researched
+M&P9_Shield_EZ	Smith & Wesson	M&P9 Shield EZ		9×19mm	9.01	93	250	1	250	8.0	360.0	Wikipedia; American Rifleman	researched
+M&P40_Shield_EZ	Smith & Wesson	M&P Shield EZ		380 ACP	9.02	93	250	1	141	6.0	280.0	Wikipedia; American Rifleman	researched
+M&P_2_0_Compact	Smith & Wesson	M&P 2.0 Compact		9×19mm	9.01	102	250	1	250	8.0	360.0	Wikipedia; S&W product page	researched
+M&P_2_0_Full	Smith & Wesson	M&P 2.0 Full		9×19mm	9.01	108	250	1	250	8.0	360.0	Wikipedia; S&W product page	researched
+SD9_VE	Smith & Wesson	SD9 VE		9×19mm	9.01	102	250	1	250	8.0	360.0	Wikipedia; S&W product page	researched
+SD40_VE	Smith & Wesson	SD40 VE		40 S&W	10.17	102	406	1	240	10.0	340.0	Wikipedia; S&W product page	researched
+SW9	Smith & Wesson	SW9	Sigma	9×19mm	9.01	102	250	1	250	8.0	360.0	Wikipedia; Modern Firearms	researched
+SW40	Smith & Wesson	SW40	Sigma	40 S&W	10.17	102	406	1	240	10.0	340.0	Wikipedia; Modern Firearms	researched
+Bodyguard_380	Smith & Wesson	Bodyguard 380		380 ACP	9.02	70	250	1	141	6.0	280.0	Wikipedia; American Rifleman	researched
+Bodyguard_38	Smith & Wesson	Bodyguard 38		38 Special	9.06	51	381	1	240	10.2	250.0	Wikipedia; American Rifleman	researched
+Model_29	Smith & Wesson	Model 29		44 Magnum	10.90	165	508	1	360	15.6	457.5	Wikipedia; NRA publications	researched
+Model_686	Smith & Wesson	Model 686		357 Magnum	9.07	102	356	1	345	8.1	420.0	Wikipedia; NRA publications	researched
+Model_19	Smith & Wesson	Model 19		357 Magnum	9.07	102	356	1	345	8.1	420.0	Wikipedia; Modern Firearms	researched
+Model_60	Smith & Wesson	Model 60		357 Magnum	9.07	51	356	1	345	8.1	420.0	Wikipedia; Modern Firearms	researched
+Model_36	Smith & Wesson	Model 36		38 Special	9.06	51	381	1	240	10.2	250.0	Wikipedia; Modern Firearms	researched
+Model_66	Smith & Wesson	Model 66		357 Magnum	9.07	102	356	1	345	8.1	420.0	Wikipedia; NRA publications	researched
+Model_640	Smith & Wesson	Model 640		357 Magnum	9.07	54	356	1	345	8.1	420.0	Wikipedia; S&W product page	researched
+Model_986	Smith & Wesson	986		9×19mm	9.01	102	250	1	250	8.0	360.0	Wikipedia; S&W product page	researched
+Governor	Smith & Wesson	Governor		45 ACP	11.48	70	406	1	145	15.0	255.0	Wikipedia; S&W product page	researched
+M&P15	Smith & Wesson	M&P15		5.56×45mm	5.69	406	178	1	430	4.0	896.0	Wikipedia; S&W product page	researched
+M&P15_22	Smith & Wesson	M&P15-22		22 LR	5.66	406	406	1	165	2.6	390.0	Wikipedia; S&W product page	researched
+M&P10	Smith & Wesson	M&P10		308 Win	7.82	406	279	1	415	9.5	820.0	Wikipedia; S&W product page	researched
+M&P15_Sport_II	Smith & Wesson	M&P15 Sport II		5.56×45mm	5.69	406	178	1	430	4.0	896.0	Wikipedia; S&W product page	researched
+Model_39	Smith & Wesson	Model 39		9×19mm	9.01	102	250	1	250	8.0	360.0	Wikipedia; Modern Firearms	researched
+Model_59	Smith & Wesson	Model 59		9×19mm	9.01	102	250	1	250	8.0	360.0	Wikipedia; Modern Firearms	researched
+Model_645	Smith & Wesson	Model 645		45 ACP	11.48	102	406	1	145	15.0	255.0	Wikipedia; S&W product page	researched
+Model_1006	Smith & Wesson	Model 1006		10mm Auto	10.17	127	406	1	240	10.0	370.0	Wikipedia; Modern Firearms	researched
+Model_4506	Smith & Wesson	Model 4506		45 ACP	11.48	127	406	1	145	15.0	255.0	Wikipedia; S&W product page	researched
 rem_700_308	Remington	Model 700	ADL/SPS	.308 Win	7.82	610	279	1	415	9.5	850	Wikipedia, remarms.com, midwayusa.com	researched
 rem_700_300wm	Remington	Model 700	SPS/BDL	.300 Win Mag	7.82	660	254	1	413	11.7	1000	Wikipedia, remarms.com, ammo.com	researched
 rem_700_30_06	Remington	Model 700	ADL/BDL	.30-06 Sprg	7.82	610	254	1	400	11.3	890	Wikipedia, remarms.com, nra.org	researched
 rem_700_6_5cm	Remington	Model 700	SPS	6.5 Creedmoor	6.71	610	203	1	415	9.0	880	Wikipedia, remarms.com, midwayusa.com	researched
 rem_700_338lm	Remington	Model 700	P LRS	.338 Lapua	8.58	660	254	1	420	19.4	900	Wikipedia, remarms.com, chuckhawks.com	researched
-rem_870_12ga	Remington	Model 870	Wingmaster/Express	12 Gauge	18.5	660		1	65	28.4	470	Wikipedia, remarms.com, midwayusa.com	researched
-rem_870_20ga	Remington	Model 870	Wingmaster/Express	20 Gauge	15.6	610		1	62	19.5	450	Wikipedia, remarms.com, midwayusa.com	researched
-rem_1100_12ga	Remington	Model 1100	Competition/Tactical	12 Gauge	18.5	711		1	65	28.4	470	Wikipedia, remarms.com, remingtonsociety.com	researched
-rem_1187_12ga	Remington	Model 11-87	Premier	12 Gauge	18.5	660		1	65	28.4	470	Wikipedia, remarms.com, shootingtimes.com	researched
+rem_870_12ga	Remington	Model 870	Wingmaster/Express	12 Gauge	18.5	660	0.0	1	65	28.4	470	Wikipedia, remarms.com, midwayusa.com	researched
+rem_870_20ga	Remington	Model 870	Wingmaster/Express	20 Gauge	15.6	610	0.0	1	62	19.5	450	Wikipedia, remarms.com, midwayusa.com	researched
+rem_1100_12ga	Remington	Model 1100	Competition/Tactical	12 Gauge	18.5	711	0.0	1	65	28.4	470	Wikipedia, remarms.com, remingtonsociety.com	researched
+rem_1187_12ga	Remington	Model 11-87	Premier	12 Gauge	18.5	660	0.0	1	65	28.4	470	Wikipedia, remarms.com, shootingtimes.com	researched
 rem_r1_1911	Remington	1911 R1	Enhanced	.45 ACP	11.48	127	406	1	145	15.0	250	Wikipedia, remarms.com, gunblast.com	researched
 rem_597_22lr	Remington	Model 597	Synthetic/Stainless	.22 LR	5.66	508	406	1	165	2.6	370	Wikipedia, remarms.com, midwayusa.com	researched
 rem_7600_308	Remington	Model 7600	Police/Standard	.308 Win	7.82	559	279	1	415	9.5	850	Wikipedia, remarms.com, americanrifleman.org	researched
@@ -558,11 +558,11 @@ sav_axisii_6_5cm	Savage	Axis II	XP	6.5 Creedmoor	6.71	559	203	1	415	9.0	880	sava
 sav_mkii_22lr	Savage	Mark II	F/BRJ/BV	.22 LR	5.66	533	406	1	165	2.6	370	savagearms.com, Wikipedia, rimfirecentral.com	researched
 sav_64_22lr	Savage	Model 64	F/FV-SR/Takedown	.22 LR	5.66	521	406	1	165	2.6	370	savagearms.com, Wikipedia	researched
 sav_93r17_17hmr	Savage	Model 93R17	FV/BTVSS	.17 HMR	4.37	533	229	1	255	1.1	775	savagearms.com, Wikipedia, midwayusa.com	researched
-sav_220_20ga	Savage	Model 220	Slug	20 Gauge	15.6	559		1	62	19.5	450	savagearms.com, Wikipedia	researched
-sav_stev320_12ga	Stevens	320	Field Grade	12 Gauge	18.5	711		1	65	28.4	470	savagearms.com, Wikipedia	researched
+sav_220_20ga	Savage	Model 220	Slug	20 Gauge	15.6	559	0.0	1	62	19.5	450	savagearms.com, Wikipedia	researched
+sav_stev320_12ga	Stevens	320	Field Grade	12 Gauge	18.5	711	0.0	1	65	28.4	470	savagearms.com, Wikipedia	researched
 sav_99_308	Savage	Model 99	EG/DL	.308 Win	7.82	559	279	1	415	9.5	850	savagearms.com, Wikipedia, americanrifleman.org	researched
 browning_bar_m1918	Browning	BAR	M1918	.30-06	7.82	610	254	1	400	11.3	850	Modern Firearms (Popenker), American Rifleman, US Army TM	researched
-browning_auto_5	Browning	Auto-5		12 Gauge	18.5	711			65	28.4	390	Modern Firearms (Popenker), browning.com, American Rifleman	researched
+browning_auto_5	Browning	Auto-5		12 Gauge	18.5	711	0.0	0	65	28.4	390	Modern Firearms (Popenker), browning.com, American Rifleman	researched
 browning_m1919	Browning	M1919		30-06	7.82	610	254	1	400	11.3	850	Modern Firearms (Popenker), US Army TM, American Rifleman	researched
 browning_blr	Browning	BLR		308 Win	7.82	508	279	1	415	9.5	805	browning.com, American Rifleman, Chuck Hawks	researched
 browning_buck_mark	Browning	Buck Mark		22 LR	5.66	140	406	1	165	2.6	305	browning.com, Modern Firearms, American Rifleman	researched
@@ -570,33 +570,33 @@ browning_x_bolt	Browning	X-Bolt		308 Win	7.82	559	279	1	415	9.5	820	browning.com
 browning_silver	Browning	Silver		270 Win	7.04	610	254	1	400	9.7	930	browning.com product page, Guns & Ammo, Winchester ballistic data	researched
 browning_leverage	Browning	Leverage		30-30 Win	7.82	508	305	1	331	11.1	740	Browning product literature, Chuck Hawks, American Rifleman	researched
 browning_a_bolt	Browning	A-Bolt		300 Win Mag	7.82	610	254	1	413	11.7	970	browning.com (discontinued), American Rifleman, Guns & Ammo	researched
-browning_citori	Browning	Citori		12 Gauge	18.5	711			65	28.4	390	browning.com product page, American Rifleman, Browning catalog	researched
-browning_cynergy	Browning	Cynergy		12 Gauge	18.5	711			65	28.4	390	browning.com product page, American Rifleman, Browning catalog	researched
-browning_maxus	Browning	Maxus		12 Gauge	18.5	660			65	28.4	390	browning.com product page, Guns & Ammo, American Rifleman	researched
-browning_sweet_sixteen	Browning	Sweet Sixteen		16 Gauge	16.8	660			62	28.4	385	browning.com product page, standard 16ga ballistic data	estimated
+browning_citori	Browning	Citori		12 Gauge	18.5	711	0.0	0	65	28.4	390	browning.com product page, American Rifleman, Browning catalog	researched
+browning_cynergy	Browning	Cynergy		12 Gauge	18.5	711	0.0	0	65	28.4	390	browning.com product page, American Rifleman, Browning catalog	researched
+browning_maxus	Browning	Maxus		12 Gauge	18.5	660	0.0	0	65	28.4	390	browning.com product page, Guns & Ammo, American Rifleman	researched
+browning_sweet_sixteen	Browning	Sweet Sixteen		16 Gauge	16.8	660	0	0	62	28.4	385	browning.com product page, standard 16ga ballistic data	estimated
 winchester_model_70_308	Winchester	Model 70	Featherweight	308 Win	7.82	559	279	1	415	9.5	820	winchesterguns.com product page (Model 70 Featherweight), Chuck Hawks, American Rifleman	researched
 winchester_model_70_300wm	Winchester	Model 70	Featherweight	300 Win Mag	7.82	610	254	1	413	11.7	970	winchesterguns.com product page (Model 70 Featherweight), Chuck Hawks, American Rifleman	researched
 winchester_model_94	Winchester	Model 94	 Carbine	30-30 Win	7.82	508	305	1	331	11.1	740	Chuck Hawks, American Rifleman, Winchester historical catalog	researched
-winchester_model_12	Winchester	Model 12		12 Gauge	18.5	711			65	28.4	390	American Rifleman archive, Winchester historical literature, shotgunworld.com	researched
-winchester_sxp	Winchester	SXP		12 Gauge	18.5	660			65	28.4	390	winchesterguns.com (SXP Defender/Field product pages), American Rifleman	researched
-winchester_model_1300	Winchester	Model 1300		12 Gauge	18.5	660			65	28.4	390	Guns & Ammo archives, Winchester product literature, American Rifleman	researched
-winchester_super_x	Winchester	Super X	Model 1	12 Gauge	18.5	711			65	28.4	390	Winchester historical literature, American Rifleman, Guns & Ammo	researched
+winchester_model_12	Winchester	Model 12		12 Gauge	18.5	711	0.0	0	65	28.4	390	American Rifleman archive, Winchester historical literature, shotgunworld.com	researched
+winchester_sxp	Winchester	SXP		12 Gauge	18.5	660	0.0	0	65	28.4	390	winchesterguns.com (SXP Defender/Field product pages), American Rifleman	researched
+winchester_model_1300	Winchester	Model 1300		12 Gauge	18.5	660	0.0	0	65	28.4	390	Guns & Ammo archives, Winchester product literature, American Rifleman	researched
+winchester_super_x	Winchester	Super X	Model 1	12 Gauge	18.5	711	0.0	0	65	28.4	390	Winchester historical literature, American Rifleman, Guns & Ammo	researched
 winchester_wildcat	Winchester	Wildcat		22 LR	5.66	419	406	1	165	2.6	390	winchesterguns.com (Wildcat 22 SR product page), American Rifleman	researched
-winchester_model_1887	Winchester	Model 1887		12 Gauge	18.5	508			65	28.4	390	Weaponsystems.net, American Rifleman, Winchester historical catalog	researched
-winchester_model_1897	Winchester	Model 1897		12 Gauge	18.5	508			65	28.4	390	American Rifleman archive, Winchester historical literature, US Army TM	researched
+winchester_model_1887	Winchester	Model 1887		12 Gauge	18.5	508	0.0	0	65	28.4	390	Weaponsystems.net, American Rifleman, Winchester historical catalog	researched
+winchester_model_1897	Winchester	Model 1897		12 Gauge	18.5	508	0.0	0	65	28.4	390	American Rifleman archive, Winchester historical literature, US Army TM	researched
 winchester_model_88	Winchester	Model 88		308 Win	7.82	559	279	1	415	9.5	820	Chuck Hawks (Winchester 88 article), Winchester catalog data, American Rifleman	researched
 winchester_model_100	Winchester	Model 100		308 Win	7.82	559	279	1	415	9.5	820	Winchester factory literature, American Rifleman, Guns & Ammo	researched
 winchester_model_69	Winchester	Model 69		22 LR	5.66	533	406	1	165	2.6	390	Winchester historical parts lists, American Rifleman, Rimfire Central	researched
 winchester_model_52	Winchester	Model 52		22 LR	5.66	711	406	1	165	2.6	390	Chuck Hawks, American Rifleman, Winchester factory literature	researched
-mossberg_500_12g	Mossberg	500	Cruiser	12 Gauge	18.5	470	smoothbore		65	28.4	403	Wikipedia: Mossberg 500	researched
-mossberg_500_20g	Mossberg	500	Cruiser	20 Gauge	15.6	470	smoothbore		62	19.5	390	Wikipedia: Mossberg 500	researched
-mossberg_500_tac	Mossberg	500	Tactical	12 Gauge	18.5	470	smoothbore		65	28.4	403	Wikipedia: Mossberg 500	researched
-mossberg_hs410	Mossberg	500	HS410	.410 bore	10.4	470	smoothbore		62	6.0	380	Wikipedia: Mossberg 500	researched
-mossberg_500_atp	Mossberg	500	ATP	12 Gauge	18.5	470	smoothbore		65	28.4	403	Wikipedia: Mossberg 500	researched
-mossberg_590	Mossberg	590		12 Gauge	18.5	508	smoothbore		65	28.4	403	Wikipedia: Mossberg 500	researched
-mossberg_590a1	Mossberg	590A1		12 Gauge	18.5	470	smoothbore		65	28.4	403	Wikipedia: Mossberg 590A1	researched
-mossberg_930	Mossberg	930		12 Gauge	18.5	470	smoothbore		65	28.4	403	Wikipedia: Mossberg 930	researched
-mossberg_935	Mossberg	935		12 Gauge 3.5"	18.5	559	smoothbore		83	34.0	430	Estimated from barrel length and load	researched
+mossberg_500_12g	Mossberg	500	Cruiser	12 Gauge	18.5	470	smoothbore	0	65	28.4	403	Wikipedia: Mossberg 500	researched
+mossberg_500_20g	Mossberg	500	Cruiser	20 Gauge	15.6	470	smoothbore	0	62	19.5	390	Wikipedia: Mossberg 500	researched
+mossberg_500_tac	Mossberg	500	Tactical	12 Gauge	18.5	470	smoothbore	0	65	28.4	403	Wikipedia: Mossberg 500	researched
+mossberg_hs410	Mossberg	500	HS410	.410 bore	10.4	470	smoothbore	1	62	6.0	380	Wikipedia: Mossberg 500	researched
+mossberg_500_atp	Mossberg	500	ATP	12 Gauge	18.5	470	smoothbore	0	65	28.4	403	Wikipedia: Mossberg 500	researched
+mossberg_590	Mossberg	590		12 Gauge	18.5	508	smoothbore	0	65	28.4	403	Wikipedia: Mossberg 500	researched
+mossberg_590a1	Mossberg	590A1		12 Gauge	18.5	470	smoothbore	0	65	28.4	403	Wikipedia: Mossberg 590A1	researched
+mossberg_930	Mossberg	930		12 Gauge	18.5	470	smoothbore	0	65	28.4	403	Wikipedia: Mossberg 930	researched
+mossberg_935	Mossberg	935		12 Gauge 3.5"	18.5	559	smoothbore	0	83	34.0	430	Estimated from barrel length and load	researched
 taurus_g2c	Taurus	G2c		9×19mm	9.01	83.8	250	1	250	8.0	340	Estimated from caliber and barrel length	estimated
 taurus_g3c	Taurus	G3c		9×19mm	9.01	83.8	250	1	250	8.0	340	Estimated from caliber and barrel length	estimated
 taurus_tx22	Taurus	TX22		.22 LR	5.66	104.1	406	1	165	2.6	330	Wikipedia: Taurus TX22	researched
@@ -684,16 +684,16 @@ nri_type56	Norinco	Type 56	assault rifle	7.62×39mm	7.85	414	240	1	355	7.9	735	W
 nri_type56_1	Norinco	Type 56-1	assault rifle	7.62×39mm	7.85	414	240	1	355	7.9	735	WIKI+POPS	researched
 nri_type56_2	Norinco	Type 56-2	assault rifle	7.62×39mm	7.85	414	240	1	355	7.9	735	WIKI+POPS	researched
 nri_type81	Norinco	Type 81	assault rifle	7.62×39mm	7.85	445	240	1	355	7.9	750	WIKI+POPS	researched
-nri_qbz95	Norinco	QBZ-95	assault rifle	5.8×42mm	5.80	463	244	1		4.15	930	WIKI	researched
-nri_qbz03	Norinco	QBZ-03	assault rifle	5.8×42mm	5.80	440	244	1		4.15	930	WIKI	researched
-nri_qbu88	Norinco	QBU-88	designated marksman rifle	5.8×42mm	5.80	640	206	1		4.50	930	WIKI	researched
+nri_qbz95	Norinco	QBZ-95	assault rifle	5.8×42mm	5.80	463	244	1	345.0	4.15	930	WIKI	researched
+nri_qbz03	Norinco	QBZ-03	assault rifle	5.8×42mm	5.80	440	244	1	345.0	4.15	930	WIKI	researched
+nri_qbu88	Norinco	QBU-88	designated marksman rifle	5.8×42mm	5.80	640	206	1	345.0	4.50	930	WIKI	researched
 nri_type79_smg	Norinco	Type 79	submachine gun	7.62×25mm	7.85	250	240	1	310	5.5	515	WIKI+POPS	researched
 nri_type85_smg	Norinco	Type 85	submachine gun	7.62×25mm	7.85	240	240	1	310	5.5	500	WIKI	researched
 nri_type54	Norinco	Type 54	pistol	7.62×25mm	7.85	116	240	1	310	5.5	420	WIKI	researched
 nri_type64_pistol	Norinco	Type 64	pistol	7.62×17mm	7.62	86.5	250	1	141	4.6	310	WIKI	researched
 nri_type64_silenced	Norinco	Type 64	silenced pistol	7.65×17mm	7.65	95	250	1	141	4.6	290	WIKI	researched
 nri_cf98	Norinco	CF98	pistol	9×19mm	9.01	111	250	1	250	8.0	350	WIKI	researched
-nri_qsz92	Norinco	QSZ-92	pistol	5.8×21mm	5.80	111	250	1		3.0	470	WIKI	researched
+nri_qsz92	Norinco	QSZ-92	pistol	5.8×21mm	5.80	111	250	1	240.0	3.0	470	WIKI	researched
 nri_1911a1	Norinco	1911A1	pistol	.45 ACP	11.48	127	406	1	145	15.0	250	WIKI	researched
 nri_sks	Norinco	Type 56	carbine	7.62×39mm	7.85	521	240	1	355	7.9	735	WIKI	researched
 nri_type84	Norinco	Type 84	assault rifle	5.56×45mm	5.69	414	178	1	430	4.0	940	WIKI	researched
@@ -715,12 +715,12 @@ tur_sar2000	Sarsilmaz	SAR 2000	pistol	9×19mm	9.01	102	250	1	250	8.0	355	WIKI	re
 tur_tisas_1911a1	Tisas	1911A1	pistol	.45 ACP	11.48	127	406	1	145	15.0	250	MANUF+WIKI	researched
 tur_tisas_zigana	Tisas	Zigana	pistol	9×19mm	9.01	122	250	1	250	8.0	360	MANUF+WIKI	researched
 tur_girsan_mc9	Girsan	MC9	pistol	9×19mm	9.01	125	250	1	250	8.0	360	MANUF	researched
-wby_sa08_12ga	Weatherby	SA-08	Synthetic	12 Gauge	18.5	660	smoothbore		65	28.4	420	weatherby.com,americanrifleman.org	researched
-wby_sa459_12ga	Weatherby	SA-459	Tactical	12 Gauge	18.5	470	smoothbore		65	28.4	420	weatherby.com,gunsandammo.com	estimated
-wby_pa459_12ga	Weatherby	PA-459	Tactical	12 Gauge	18.5	470	smoothbore		65	28.4	420	weatherby.com,gunsandammo.com	estimated
-wby_element_12ga	Weatherby	Element	Field	12 Gauge	18.5	660	smoothbore		65	28.4	420	weatherby.com,americanrifleman.org	researched
-wby_orion_12ga	Weatherby	Orion	I	12 Gauge	18.5	660	smoothbore		65	28.4	420	weatherby.com,basspro.com	researched
-wby_athena_12ga	Weatherby	Athena	Grade V	12 Gauge	18.5	660	smoothbore		65	28.4	420	weatherby.com,shotgunlife.com	researched
+wby_sa08_12ga	Weatherby	SA-08	Synthetic	12 Gauge	18.5	660	smoothbore	0	65	28.4	420	weatherby.com,americanrifleman.org	researched
+wby_sa459_12ga	Weatherby	SA-459	Tactical	12 Gauge	18.5	470	smoothbore	0	65	28.4	420	weatherby.com,gunsandammo.com	estimated
+wby_pa459_12ga	Weatherby	PA-459	Tactical	12 Gauge	18.5	470	smoothbore	0	65	28.4	420	weatherby.com,gunsandammo.com	estimated
+wby_element_12ga	Weatherby	Element	Field	12 Gauge	18.5	660	smoothbore	0	65	28.4	420	weatherby.com,americanrifleman.org	researched
+wby_orion_12ga	Weatherby	Orion	I	12 Gauge	18.5	660	smoothbore	0	65	28.4	420	weatherby.com,basspro.com	researched
+wby_athena_12ga	Weatherby	Athena	Grade V	12 Gauge	18.5	660	smoothbore	0	65	28.4	420	weatherby.com,shotgunlife.com	researched
 wby_firstlite_22lr	Weatherby	First Lite	.22 LR	.22 LR	5.66	420	406	1	165	2.6	365	weatherby.com,americanrifleman.org	researched
 wby_backcountry_308	Weatherby	Backcountry	2.0	.308 Win	7.82	560	279	1	415	9.5	860	weatherby.com,americanrifleman.org	researched
 dw_715_357	Dan Wesson	715	Standard	.357 Magnum	9.07	152	356	1	345	8.1	460	danwessonfirearms.com,americanrifleman.org	researched
@@ -757,10 +757,10 @@ amt_hardballer_45	AMT	Hardballer	Long Slide	.45 ACP	11.48	127	406	1	145	15.0	255
 charter_undercover_38	Charter Arms	Undercover	Steel	.38 Special	9.06	51	381	1	240	10.2	260	charterarms.com,americanrifleman.org	researched
 charter_bulldog_44spl	Charter Arms	Bulldog	Standard	.44 Special	10.90	64	508	1	360	15.6	270	charterarms.com,americanrifleman.org	researched
 charter_pitbull_9mm	Charter Arms	Pitbull	Standard	9×19mm	9.01	51	250	1	250	8.0	375	charterarms.com,gunsandammo.com	researched
-tur_retay_mas	Retay	Mas	shotgun	12 Gauge	18.50	660	smoothbore		65	28.4	420	MANUF	researched
-tur_armsan	Armsan	Model A	shotgun	12 Gauge	18.50	710	smoothbore		65	28.4	420	MANUF	researched
-tur_hatsan_escort	Hatsan	Escort	shotgun	12 Gauge	18.50	610	smoothbore		65	28.4	420	MANUF	researched
-tur_stoeger	Stoeger	M3000	shotgun	12 Gauge	18.50	660	smoothbore		65	28.4	420	MANUF	researched
+tur_retay_mas	Retay	Mas	shotgun	12 Gauge	18.50	660	smoothbore	0	65	28.4	420	MANUF	researched
+tur_armsan	Armsan	Model A	shotgun	12 Gauge	18.50	710	smoothbore	0	65	28.4	420	MANUF	researched
+tur_hatsan_escort	Hatsan	Escort	shotgun	12 Gauge	18.50	610	smoothbore	0	65	28.4	420	MANUF	researched
+tur_stoeger	Stoeger	M3000	shotgun	12 Gauge	18.50	660	smoothbore	0	65	28.4	420	MANUF	researched
 sako_trg_62	Sako	Trg 62	bolt	5.56×45mm	5.69	510	178	1	430	4.0	922	researched (sako.global, modernfirearms.net)	researched
 sako_a7_308	Sako	A7 308	bolt	7.62×51mm	7.82	570	279	1	415	9.5	842	researched (sako.global, thegundatabase.com)	estimated
 sako_a7_300wm	Sako	A7 300Wm	bolt	.300 Win Mag	7.82	620	254	1	413	11.7	936	researched (sako.global, thegundatabase.com)	estimated
@@ -808,7 +808,7 @@ arsenal_ar_m9	Arsenal	Ar M9	gas-operated, rotating bolt	7.62×39mm	7.85	415	240	
 arsenal_sam7r	Arsenal	Sam7R	gas-operated, rotating bolt	7.62×39mm	7.85	413	240	1	355	7.9	709	researched (arsenal-bg.com, arsenalinc.com, modernfirearms.net)	estimated
 arsenal_slr_95	Arsenal	Slr 95	gas-operated, rotating bolt	7.62×39mm	7.85	413	240	1	355	7.9	709	researched (arsenal-bg.com, thegundatabase.com, ammo.com)	estimated
 arsenal_ak47_circle10	Arsenal	Ak47 Circle10	gas-operated, rotating bolt	7.62×39mm	7.85	415	240	1	355	7.9	710	researched (en.wikipedia.org/wiki/AR-M1, arsenal-bg.com, modernfirearms.net/en/assault-rifles/bulgaria-assault-rifles/arsenal-ak-2/)	estimated
-kel_tec_ks7	Kel-Tec	Ks7	Pump	12 Gauge	18.5	470	0		65	28.4	410	researched (keltecweapons.com, Wikipedia)	researched
+kel_tec_ks7	Kel-Tec	Ks7	Pump	12 Gauge	18.5	470	0	0	65	28.4	410	researched (keltecweapons.com, Wikipedia)	researched
 kel_tec_rdb	Kel-Tec	Rdb	Semi-auto	5.56×45mm	5.69	439	178	1	430	4.0	892	researched (keltecweapons.com, modernfirearms.net)	researched
 kel_tec_rfb	Kel-Tec	Rfb	Semi-auto	7.62×51mm	7.82	470	286	1	415	9.5	804	researched (keltecweapons.com, American Rifleman)	researched
 kel_tec_sub2000_9mm	Kel-Tec	Sub2000 9Mm	Semi-auto	9×19mm	9.01	413	254	1	250	8.0	404	researched (keltecweapons.com, American Rifleman)	researched
@@ -846,7 +846,7 @@ cetme_modell	CETME	Modell	roller_delayed	5.56×45mm	5.69	400	178	1	430	4.0	875	r
 cetme_modellc	CETME	Modellc	roller_delayed	5.56×45mm	5.69	320	178	1	430	4.0	842	researched (Wikipedia, modernfirearms.net, historical literature)	researched
 cetme_ameli	CETME	Ameli	roller_delayed	5.56×45mm	5.69	400	178	1	430	4.0	875	researched (Wikipedia, modernfirearms.net, Jane's Infantry Weapons)	researched
 iwi_tavor_7	IWI	Tavor 7	bullpup	7.62×51mm	7.82	420	305	1	415	9.5	785	researched (iwi.net iwi-weapons.com modernfirearms.net thegundatabase.com)	researched
-iwi_tavor_ts12	IWI	Tavor Ts12	bullpup	12 Gauge	18.5	460	0		65	28.4	410	researched (iwi.net iwi-weapons.com modernfirearms.net soldier-systems.net)	researched
+iwi_tavor_ts12	IWI	Tavor Ts12	bullpup	12 Gauge	18.5	460	0	0	65	28.4	410	researched (iwi.net iwi-weapons.com modernfirearms.net soldier-systems.net)	researched
 iwi_galil_ace_556	IWI	Galil Ace 556	assault-rifle	5.56×45mm	5.69	419	228	1	430	4.0	883	researched (iwi.net iwi-weapons.com modernfirearms.net weaponsystems.net)	researched
 iwi_galil_ace_762	IWI	Galil Ace 762	assault-rifle	7.62×39mm	7.85	419	240	1	355	7.9	711	researched (iwi.net iwi-weapons.com modernfirearms.net smallarmsreview.com)	researched
 iwi_galil_ace_308	IWI	Galil Ace 308	assault-rifle	7.62×51mm	7.82	460	305	1	415	9.5	801	researched (iwi.net iwi-weapons.com modernfirearms.net thegundatabase.com)	researched
@@ -877,7 +877,7 @@ daewoo_k2c	Daewoo	K2C	gas_select	5.56×45mm	5.69	310	185	1	430	4.0	838	researche
 daewoo_k3	Daewoo	K3	gas_select	5.56×45mm	5.69	533	178	1	430	4.0	931	researched (en.wikipedia.org/wiki/Daewoo_Precision_Industries_K3, modernfirearms.net)	researched
 daewoo_k7	Daewoo	K7	blowback_select	9×19mm	9.01	134	250	1	250	8.0	363	researched (en.wikipedia.org/wiki/Daewoo_Telecom_K7, sntmotiv.com)	researched
 daewoo_k14	Daewoo	K14	bolt_semi	7.62×51mm	7.82	610	279	1	415	9.5	858	researched (en.wikipedia.org/wiki/S%26T_Motiv_K14, sntmotiv.com)	researched
-daewoo_usas_12	Daewoo	Usas 12	gas_select	12 Gauge	18.5	460	0		65	28.4	410	researched (en.wikipedia.org/wiki/Daewoo_Precision_Industries_USAS-12, modernfirearms.net)	researched
+daewoo_usas_12	Daewoo	Usas 12	gas_select	12 Gauge	18.5	460	0	0	65	28.4	410	researched (en.wikipedia.org/wiki/Daewoo_Precision_Industries_USAS-12, modernfirearms.net)	researched
 tanfoglio_witness_hunter	Tanfoglio	Witness Hunter	recoil_sa_da	10mm Auto	10.17	150	406	1	310	10.0	358	researched (en.wikipedia.org/wiki/Tanfoglio, en.wikipedia.org/wiki/CZ_75)	researched
 tanfoglio_witness_stock_ii	Tanfoglio	Witness Stock Ii	recoil_sa_da	9×19mm	9.01	120	250	1	250	8.0	360	researched (en.wikipedia.org/wiki/Tanfoglio, tanfoglio.it)	researched
 tanfoglio_witness_match	Tanfoglio	Witness Match	recoil_sa_da	9×19mm	9.01	130	250	1	250	8.0	362	researched (en.wikipedia.org/wiki/Tanfoglio, en.wikipedia.org/wiki/CZ_75)	researched
@@ -913,8 +913,8 @@ r5_vektor	Vektor	R5	gas	5.56×45mm	5.69	332	305	1	430	4.0	847	researched (Wikipe
 r6_vektor	Vektor	R6	gas	5.56×45mm	5.69	280	305	1	430	4.0	825	researched (Wikipedia(en), Tilstra Small Arms For Urban Combat)	estimated
 cr21_vektor	Vektor	Vektor	gas	5.56×45mm	5.69	460	305	1	430	4.0	901	researched (Wikipedia(en), world.guns.ru)	estimated
 ss77_vektor	Vektor	Vektor	gas	7.62×51mm	7.82	550	279	1	415	9.5	835	researched (Wikipedia(en), defenceweb.co.za fact file)	estimated
-ntw20_vektor	Vektor	Vektor	bolt	20×82mm		1000	560	1			880	researched (Wikipedia(en), Denel Land Systems brochure)	estimated
-ntw145_vektor	Vektor	Vektor	bolt	14.5×114mm		1220	408	1			928	researched (Wikipedia(en), Denel Land Systems brochure)	estimated
+ntw20_vektor	Vektor	Vektor	bolt	20×82mm	20.0	1000	560	1	320.0	39.0	880	researched (Wikipedia(en), Denel Land Systems brochure)	estimated
+ntw145_vektor	Vektor	Vektor	bolt	14.5×114mm	14.5	1220	408	1	350.0	60.0	928	researched (Wikipedia(en), Denel Land Systems brochure)	estimated
 z88_vektor	Vektor	Vektor	recoil	9×19mm	9.01	125	250	1	250	8.0	361	researched (Wikipedia(en) Beretta 92, modernfirearms.net)	estimated
 sp1_vektor	Vektor	Vektor	recoil	9×19mm	9.01	118	250	1	250	8.0	360	researched (Wikipedia(en), modernfirearms.net)	estimated
 sp2_vektor	Vektor	Vektor	recoil	9×19mm	9.01	105	250	1	250	8.0	358	researched (Wikipedia(en), Cutshaw Tactical Small Arms)	estimated
@@ -958,66 +958,66 @@ serbu_bfg50	Serbu	Bfg50	bolt	.50 BMG	12.95	914	381	1	379	42.0	906	researched (Wi
 serbu_bfg50a	Serbu	Bfg50A	gas	.50 BMG	12.95	914	381	1	379	42.0	906	researched (Wikipedia Serbu Firearms, Forgotten Weapons BFG-50A review, Ballistic Magazine 2019)	estimated
 serbu_bfg50_carbine	Serbu	Bfg50 Carbine	bolt	.50 BMG	12.95	660	381	1	379	42.0	830	estimated (Serbu BFG-50 platform; carbine barrel length from dealer listings/forums)	estimated
 serbu_rn50	Serbu	Rn50	break	.50 BMG	12.95	559	381	1	379	42.0	800	researched (Wikipedia Serbu Firearms, GunsAmerica RN-50 review 2017, Recoil Web 2016)	estimated
-serbu_super_shorty	Serbu	Super Shorty	pump	12 Gauge	18.5	210	0		65	28.4	398	researched (Wikipedia Serbu Firearms, Defense Review Super-Shorty 2002, Shooting Illustrated 2019)	estimated
+serbu_super_shorty	Serbu	Super Shorty	pump	12 Gauge	18.5	210	0	0	65	28.4	398	researched (Wikipedia Serbu Firearms, Defense Review Super-Shorty 2002, Shooting Illustrated 2019)	estimated
 sg_550	SIG Sauer AG	550	assault rifle	5.56×45mm NATO	5.69	528	254	1	430	4.0	929	researched (Wikipedia: SIG SG 550, modernfirearms.net, sigsauer.swiss)	estimated
 sg_552	SIG Sauer AG	552	assault rifle	5.56×45mm NATO	5.69	226	254	1	430	4.0	802	researched (Wikipedia: SIG SG 550, modernfirearms.net, sigsauer.swiss)	estimated
 sg_553	SIG Sauer AG	553	assault rifle	5.56×45mm NATO	5.69	226	254	1	430	4.0	802	researched (Wikipedia: SIG SG 550, modernfirearms.net, sigsauer.swiss)	estimated
 sg_510	SIG Sauer AG	510	battle rifle	7.62×51mm NATO	7.82	505	305	1	415	9.5	818	researched (Wikipedia: SIG SG 510, modernfirearms.net)	estimated
-sg_510_stgw57	SIG Sauer AG	510 Stgw57	battle rifle	7.5×55mm Swiss		609	270	1				researched (Wikipedia: SIG SG 510, modernfirearms.net, Swiss Army manual)	estimated
-alpine_tactical	Alpine	Tactical	bolt-action rifle	.308 Winchester		610	305	1				researched (alpinecustomrifles.com)	estimated
-mannlicher_m1895	Steyr-Mannlicher	M1895	bolt-action rifle	8×56mmR		765	240	1				researched (Wikipedia: Mannlicher M1895, modernfirearms.net)	estimated
-mannlicher_schoenauer	Steyr-Mannlicher	Schoenauer	bolt-action rifle	6.5×54mm Mannlicher-Schönauer		610	254	1				researched (Wikipedia: Mannlicher-Schönauer, americanrifleman.org)	estimated
-mannlicher_m1888	Steyr-Mannlicher	M1888	bolt-action rifle	8×50mmR		735	240	1				researched (Wikipedia: Mannlicher M1886/88, modernfirearms.net)	estimated
-mannlicher_m1890	Steyr-Mannlicher	M1890	bolt-action rifle	8×50mmR		500	240	1				researched (Wikipedia: Mannlicher M1890, modernfirearms.net)	estimated
-breda_m37	Breda	M37	light machine gun	8×59mm RB Breda		635	305	1				researched (Wikipedia: Breda M37, Comando Supremo)	estimated
-breda_m30	Breda	M30	light machine gun	6.5×52mm Carcano		620	240	1				researched (Wikipedia: Breda M30, modernfirearms.net)	estimated
-breda_xanthos	Breda	Xanthos	semi-auto shotgun	12 Gauge	18.5	610	0		65	28.4	418	researched (bredafirearms.com, all4shooters.com)	estimated
-breda_m1_field	Breda	M1 Field	semi-auto shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (bredafirearms.com, shotgunworld.com)	estimated
+sg_510_stgw57	SIG Sauer AG	510 Stgw57	battle rifle	7.5×55mm Swiss	7.82	609	270	1	360.0	11.3	861.0	researched (Wikipedia: SIG SG 510, modernfirearms.net, Swiss Army manual)	estimated
+alpine_tactical	Alpine	Tactical	bolt-action rifle	.308 Winchester	7.82	610	305	1	415.0	9.5	812.5	researched (alpinecustomrifles.com)	estimated
+mannlicher_m1895	Steyr-Mannlicher	M1895	bolt-action rifle	8×56mmR	8.0	765	240	1	340.0	13.0	620.0	researched (Wikipedia: Mannlicher M1895, modernfirearms.net)	estimated
+mannlicher_schoenauer	Steyr-Mannlicher	Schoenauer	bolt-action rifle	6.5×54mm Mannlicher-Schönauer	6.7	610	254	1	320.0	10.0	700.0	researched (Wikipedia: Mannlicher-Schönauer, americanrifleman.org)	estimated
+mannlicher_m1888	Steyr-Mannlicher	M1888	bolt-action rifle	8×50mmR	8.0	735	240	1	340.0	13.0	620.0	researched (Wikipedia: Mannlicher M1886/88, modernfirearms.net)	estimated
+mannlicher_m1890	Steyr-Mannlicher	M1890	bolt-action rifle	8×50mmR	8.0	500	240	1	340.0	13.0	620.0	researched (Wikipedia: Mannlicher M1890, modernfirearms.net)	estimated
+breda_m37	Breda	M37	light machine gun	8×59mm RB Breda	8.0	635	305	1	360.0	12.6	760.0	researched (Wikipedia: Breda M37, Comando Supremo)	estimated
+breda_m30	Breda	M30	light machine gun	6.5×52mm Carcano	6.7	620	240	1	320.0	10.5	680.0	researched (Wikipedia: Breda M30, modernfirearms.net)	estimated
+breda_xanthos	Breda	Xanthos	semi-auto shotgun	12 Gauge	18.5	610	0	0	65	28.4	418	researched (bredafirearms.com, all4shooters.com)	estimated
+breda_m1_field	Breda	M1 Field	semi-auto shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (bredafirearms.com, shotgunworld.com)	estimated
 charter_mag_pug	Charter Arms	Mag Pug	revolver	.357 Magnum	9.07	56	406	1	345	8.1	402	researched (charterarms.com, gunblast.com, americanrifleman.org)	estimated
 charter_patriot	Charter Arms	Patriot	revolver	.357 Magnum	9.07	76	406	1	345	8.1	406	researched (charterarms.com, gunsandammo.com)	estimated
-charter_off_duty	Charter Arms	Off Duty	revolver	.38 Special	9.06	51	381	1	240	10.2		researched (charterarms.com, americanrifleman.org)	estimated
+charter_off_duty	Charter Arms	Off Duty	revolver	.38 Special	9.06	51	381	1	240	10.2	250.0	researched (charterarms.com, americanrifleman.org)	estimated
 charter_target_bulldog	Charter Arms	Target Bulldog	revolver	.357 Magnum	9.07	102	406	1	345	8.1	413	researched (charterarms.com, gunblast.com)	estimated
-charter_boomer	Charter Arms	Boomer	revolver	.44 Special		102	508	1				researched (charterarms.com, americanrifleman.org)	estimated
-charter_undercoverette	Charter Arms	Undercoverette	revolver	.38 Special	9.06	51	381	1	240	10.2		researched (charterarms.com, americanrifleman.org)	estimated
-benelli_m2	Benelli	M2	semi-auto shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (Wikipedia, Benelli official website)	estimated
-benelli_m3	Benelli	M3	semi-auto shotgun	12 Gauge	18.5	500	0		65	28.4	412	researched (Wikipedia, Benelli official website)	estimated
-benelli_supernova	Benelli	Supernova	pump shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (Wikipedia, Benelli official website)	estimated
-benelli_nova	Benelli	Nova	pump shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (Wikipedia, Benelli official website)	estimated
-benelli_montefeltro	Benelli	Montefeltro	semi-auto shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (Wikipedia, Benelli official website)	estimated
-benelli_vinci	Benelli	Vinci	semi-auto shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (Wikipedia, Benelli official website)	estimated
-benelli_ethos	Benelli	Ethos	semi-auto shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (Wikipedia, Benelli official website)	estimated
-benelli_raffaello	Benelli	Raffaello	semi-auto shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (Wikipedia, Benelli official website)	estimated
-benelli_lupo	Benelli	Lupo	bolt-action rifle	.308 Winchester		559	254	1				researched (Wikipedia, Benelli official website)	estimated
+charter_boomer	Charter Arms	Boomer	revolver	.44 Special	10.9	102	508	1	360.0	15.6	270.0	researched (charterarms.com, americanrifleman.org)	estimated
+charter_undercoverette	Charter Arms	Undercoverette	revolver	.38 Special	9.06	51	381	1	240	10.2	250.0	researched (charterarms.com, americanrifleman.org)	estimated
+benelli_m2	Benelli	M2	semi-auto shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (Wikipedia, Benelli official website)	estimated
+benelli_m3	Benelli	M3	semi-auto shotgun	12 Gauge	18.5	500	0	0	65	28.4	412	researched (Wikipedia, Benelli official website)	estimated
+benelli_supernova	Benelli	Supernova	pump shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (Wikipedia, Benelli official website)	estimated
+benelli_nova	Benelli	Nova	pump shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (Wikipedia, Benelli official website)	estimated
+benelli_montefeltro	Benelli	Montefeltro	semi-auto shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (Wikipedia, Benelli official website)	estimated
+benelli_vinci	Benelli	Vinci	semi-auto shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (Wikipedia, Benelli official website)	estimated
+benelli_ethos	Benelli	Ethos	semi-auto shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (Wikipedia, Benelli official website)	estimated
+benelli_raffaello	Benelli	Raffaello	semi-auto shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (Wikipedia, Benelli official website)	estimated
+benelli_lupo	Benelli	Lupo	bolt-action rifle	.308 Winchester	7.82	559	254	1	415.0	9.5	812.5	researched (Wikipedia, Benelli official website)	estimated
 benelli_mr1	Benelli	Mr1	semi-auto rifle	5.56×45mm NATO	5.69	406	178	1	430	4.0	878	researched (Wikipedia, Benelli official website)	estimated
-benelli_argo	Benelli	Argo	semi-auto rifle	.30-06 Springfield		559	254	1				researched (Wikipedia, Benelli official website)	estimated
-benelli_828u	Benelli	828U	over-under shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (Wikipedia, Benelli official website)	estimated
-franchi_affinity	Franchi	Affinity	semi-auto shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (Wikipedia, Franchi official website)	estimated
-franchi_instinct	Franchi	Instinct	over-under shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (Wikipedia, Franchi official website)	estimated
-franchi_momentum	Franchi	Momentum	bolt-action rifle	.308 Winchester		559	254	1				researched (Wikipedia, Franchi official website)	estimated
-franchi_horizon	Franchi	Horizon	bolt-action rifle	.308 Winchester		559	254	1				researched (Wikipedia, Franchi official website)	estimated
-franchi_al48	Franchi	Al48	semi-auto shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (Wikipedia, Franchi official website)	estimated
-franchi_falconet	Franchi	Falconet	over-under shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (Wikipedia, Franchi official website)	estimated
-franchi_renaissance	Franchi	Renaissance	over-under shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (Wikipedia, Franchi official website)	estimated
+benelli_argo	Benelli	Argo	semi-auto rifle	.30-06 Springfield	7.82	559	254	1	380.0	9.7	850.0	researched (Wikipedia, Benelli official website)	estimated
+benelli_828u	Benelli	828U	over-under shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (Wikipedia, Benelli official website)	estimated
+franchi_affinity	Franchi	Affinity	semi-auto shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (Wikipedia, Franchi official website)	estimated
+franchi_instinct	Franchi	Instinct	over-under shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (Wikipedia, Franchi official website)	estimated
+franchi_momentum	Franchi	Momentum	bolt-action rifle	.308 Winchester	7.82	559	254	1	415.0	9.5	812.5	researched (Wikipedia, Franchi official website)	estimated
+franchi_horizon	Franchi	Horizon	bolt-action rifle	.308 Winchester	7.82	559	254	1	415.0	9.5	812.5	researched (Wikipedia, Franchi official website)	estimated
+franchi_al48	Franchi	Al48	semi-auto shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (Wikipedia, Franchi official website)	estimated
+franchi_falconet	Franchi	Falconet	over-under shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (Wikipedia, Franchi official website)	estimated
+franchi_renaissance	Franchi	Renaissance	over-under shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (Wikipedia, Franchi official website)	estimated
 beretta_92fs	Beretta	92Fs	pistol	9×19mm Parabellum	9.01	125	250	1	250	8.0	361	researched (Wikipedia, Beretta official website)	estimated
 beretta_92x	Beretta	92X	pistol	9×19mm Parabellum	9.01	125	250	1	250	8.0	361	researched (Wikipedia, Beretta official website)	estimated
 beretta_px4_storm	Beretta	Px4 Storm	pistol	9×19mm Parabellum	9.01	102	250	1	250	8.0	358	researched (Wikipedia, Beretta official website)	estimated
 beretta_apx	Beretta	Apx	pistol	9×19mm Parabellum	9.01	108	250	1	250	8.0	359	researched (Wikipedia, Beretta official website)	estimated
-beretta_21a_bobcat	Beretta	21A Bobcat	pistol	.22 Long Rifle		61	406	1				researched (Wikipedia, Beretta official website)	estimated
-beretta_3032_tomcat	Beretta	3032 Tomcat	pistol	.32 ACP	7.65	74	406	1	141	4.6		researched (Wikipedia, Beretta official website)	estimated
-beretta_87_cheetah	Beretta	87 Cheetah	pistol	.22 Long Rifle		93	406	1				researched (Wikipedia, Beretta official website)	estimated
-beretta_1301_tactical	Beretta	1301 Tactical	semi-auto shotgun	12 Gauge	18.5	470	0		65	28.4	410	researched (Wikipedia, Beretta official website)	estimated
-beretta_686_silver_pigeon	Beretta	686 Silver Pigeon	over-under shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (Wikipedia, Beretta official website)	estimated
-beretta_a400_xtreme_plus	Beretta	A400 Xtreme Plus	semi-auto shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (Wikipedia, Beretta official website)	estimated
+beretta_21a_bobcat	Beretta	21A Bobcat	pistol	.22 Long Rifle	5.66	61	406	1	165.0	2.6	340.0	researched (Wikipedia, Beretta official website)	estimated
+beretta_3032_tomcat	Beretta	3032 Tomcat	pistol	.32 ACP	7.65	74	406	1	141	4.6	264.0	researched (Wikipedia, Beretta official website)	estimated
+beretta_87_cheetah	Beretta	87 Cheetah	pistol	.22 Long Rifle	5.66	93	406	1	165.0	2.6	340.0	researched (Wikipedia, Beretta official website)	estimated
+beretta_1301_tactical	Beretta	1301 Tactical	semi-auto shotgun	12 Gauge	18.5	470	0	0	65	28.4	410	researched (Wikipedia, Beretta official website)	estimated
+beretta_686_silver_pigeon	Beretta	686 Silver Pigeon	over-under shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (Wikipedia, Beretta official website)	estimated
+beretta_a400_xtreme_plus	Beretta	A400 Xtreme Plus	semi-auto shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (Wikipedia, Beretta official website)	estimated
 beretta_cx4_storm	Beretta	Cx4 Storm	carbine	9×19mm Parabellum	9.01	422	250	1	250	8.0	406	researched (Wikipedia, Beretta official website)	estimated
 beretta_pmx	Beretta	Pmx	submachine gun	9×19mm Parabellum	9.01	280	250	1	250	8.0	384	researched (Wikipedia, Beretta official website)	estimated
 beretta_m12	Beretta	M12	submachine gun	9×19mm Parabellum	9.01	200	250	1	250	8.0	372	researched (Wikipedia, Beretta official website)	estimated
-colt_single_action_army	Colt	Single Action Army	revolver	.45 LC		140	508	2				"researched (Colt official catalog; ""The Peacemaker"" by R.L. Wilson; SAAMI)"	estimated
+colt_single_action_army	Colt	Single Action Army	revolver	.45 LC	11.48	140	508	2	110.0	15.0	253.0	"researched (Colt official catalog; ""The Peacemaker"" by R.L. Wilson; SAAMI)"	estimated
 colt_king_cobra	Colt	King Cobra	revolver	.357 Magnum	9.07	102	356	2	345	8.1	413	researched (Colt official specs; Shooting Times; SAAMI Z299.3)	estimated
 colt_officers_acp	Colt	Officers Acp	pistol	.45 ACP	11.48	89	406	2	145	15.0	253	researched (Colt official manual; Gun Digest 2020; SAAMI)	estimated
 colt_mustang	Colt	Mustang	pistol	.380 ACP	9.02	70	250	1	141	6.0	280	researched (Colt official specs; American Rifleman; SAAMI)	estimated
 colt_woodsman	Colt	Woodsman	pistol	.22 LR	5.66	152	406	1	165	2.6	233	researched (Colt official catalog 1950s; Gun Digest; SAAMI)	estimated
 colt_ar15a4	Colt	Ar15A4	semi-automatic rifle	5.56×45mm NATO	5.69	508	178	1	430	4.0	921	researched (Colt AR-15A4 product spec sheet; NATO EPVAT; SAAMI)	estimated
-colt_new_service	Colt	New Service	revolver	.45 LC		140	508	2				"researched (Colt official catalog; ""Colt New Service"" by T. H. Nelson; SAAMI)"	estimated
+colt_new_service	Colt	New Service	revolver	.45 LC	11.48	140	508	2	110.0	15.0	253.0	"researched (Colt official catalog; ""Colt New Service"" by T. H. Nelson; SAAMI)"	estimated
 remington_700p	Remington	700P	bolt-action rifle	7.62×51mm NATO	7.82	660	254	1	415	9.5	877	researched (Remington LE catalog; Modern Firearms; SAAMI .308/M80)	estimated
 remington_700_sendero	Remington	700 Sendero	bolt-action rifle	7.62×51mm NATO	7.82	660	254	1	415	9.5	877	researched (Remington official catalog; SAAMI/190gr)	estimated
 remington_742	Remington	742	semi-automatic rifle	7.62×51mm NATO	7.82	559	254	1	415	9.5	838	researched (Remington official manual; Gun Digest; SAAMI)	estimated
@@ -1038,17 +1038,17 @@ fn_herstal_503	FN Herstal	503	semi	9×19mm Parabellum	9.01	87	250	1	250	8.0	356	
 fn_herstal_ps90	FN Herstal	Ps90	carbine	5.7×28mm	5.70	407	231	1	345	2.9	758	researched (FN America PS90 product page, Wikipedia FN PS90, FN Herstal PS90 manual)	estimated
 fn_herstal_fs2000	FN Herstal	Fs2000	gas	5.56×45mm NATO	5.69	400	178	1	430	4.0	875	researched (Wikipedia FN FS2000, FN Herstal F2000 maintenance manual, Modern Firearms FN F2000/FS2000)	estimated
 fn_herstal_model_1910	FN Herstal	Model 1910	blowback	.380 ACP	9.02	89	250	1	141	6.0	283	researched (Wikipedia FN Model 1910, John Browning biography, Forgotten Weapons FN 1910, Modern Firearms)	estimated
-fn_herstal_m1900	FN Herstal	M1900	blowback	.32 ACP	7.65	102	250	1	141	4.6		researched (Wikipedia FN Browning M1900, Modern Firearms FN 1900, FN Herstal historical archives, American Rifleman)	estimated
-fn_herstal_trombone	FN Herstal	Trombone	pump	.22 Long Rifle		510	406	1				researched (Wikipedia FN Trombone, American Rifleman FN Trombone article, FN Herstal historical catalog)	estimated
+fn_herstal_m1900	FN Herstal	M1900	blowback	.32 ACP	7.65	102	250	1	141	4.6	264.0	researched (Wikipedia FN Browning M1900, Modern Firearms FN 1900, FN Herstal historical archives, American Rifleman)	estimated
+fn_herstal_trombone	FN Herstal	Trombone	pump	.22 Long Rifle	5.66	510	406	1	165.0	2.6	340.0	researched (Wikipedia FN Trombone, American Rifleman FN Trombone article, FN Herstal historical catalog)	estimated
 heckler_koch_hk45ct	Heckler & Koch	Hk45Ct	semi	.45 ACP	11.48	122	406	1	145	15.0	258	researched (HK USA official product page (hk-usa.com), Wikipedia HK45, Small Arms Review HK45CT)	estimated
 heckler_koch_p30l	Heckler & Koch	P30L	semi	9×19mm Parabellum	9.01	113	250	1	250	8.0	359	researched (HK USA P30 product page, Wikipedia HK P30, Modern Firearms HK P30)	estimated
 heckler_koch_vp9l	Heckler & Koch	Vp9L	semi	9×19mm Parabellum	9.01	127	250	1	250	8.0	362	researched (HK USA VP9L product page, Wikipedia HK VP9, Shooting Illustrated VP9L review)	estimated
-heckler_koch_vp40	Heckler & Koch	Vp40	semi	.40 S&W	10.17	104	406	1	240	10.0		researched (HK USA VP40 product page, Wikipedia HK VP9 variants, HK VP40 specs brochure)	estimated
+heckler_koch_vp40	Heckler & Koch	Vp40	semi	.40 S&W	10.17	104	406	1	240	10.0	340.0	researched (HK USA VP40 product page, Wikipedia HK VP9 variants, HK VP40 specs brochure)	estimated
 heckler_koch_p2000	Heckler & Koch	P2000	semi	9×19mm Parabellum	9.01	93	250	1	250	8.0	356	researched (HK USA P2000 product page, Wikipedia HK P2000, Polizei Technik P2000 specs)	estimated
 heckler_koch_p2000sk	Heckler & Koch	P2000Sk	semi	9×19mm Parabellum	9.01	83	250	1	250	8.0	355	researched (HK USA P2000SK product page, Wikipedia HK P2000, HK P2000SK technical data sheet)	estimated
 heckler_koch_hk433	Heckler & Koch	Hk433	gas	5.56×45mm NATO	5.69	368	178	1	430	4.0	862	researched (HK USA HK433 announcement, Wikipedia HK433, The Firearm Blog HK433 SHOT Show 2017, Modern Firearms)	estimated
 heckler_koch_sl8	Heckler & Koch	Sl8	gas	5.56×45mm NATO	5.69	510	178	1	430	4.0	922	researched (Wikipedia HK SL8, HK USA SL8 product catalog, G36 technical data sheet (HK), American Rifleman SL8 review)	estimated
-heckler_koch_sl6	Heckler & Koch	Sl6	bolt	.223 Remington		535	305	1				researched (Wikipedia HK SL6/SL7, HK SL6 catalog, Modern Firearms HK sporting rifles)	estimated
+heckler_koch_sl6	Heckler & Koch	Sl6	bolt	.223 Remington	5.56	535	305	1	379.5	4.0	942.5	researched (Wikipedia HK SL6/SL7, HK SL6 catalog, Modern Firearms HK sporting rifles)	estimated
 heckler_koch_hk91	Heckler & Koch	Hk91	roller	7.62×51mm NATO	7.82	450	305	1	415	9.5	797	researched (Wikipedia HK 91, HK G3 technical data sheet, Small Arms Survey G3/HK91, Modern Firearms G3)	estimated
 iwi_masada	IWI	Masada	semi	9×19mm Parabellum	9.01	109	250	1	250	8.0	359	researched (IWI US official product page (iwi.us), Wikipedia IWI Masada, Guns & Ammo Masada review, SAAMI 9mm)	estimated
 iwi_jericho_941	IWI	Jericho 941	semi	9×19mm Parabellum	9.01	112	250	1	250	8.0	359	researched (IWI US Jericho product page, Wikipedia Jericho 941, Modern Firearms Jericho 941, SAAMI 9mm)	estimated
@@ -1063,16 +1063,16 @@ imi_micro_uzi	IMI	Micro Uzi	open	9×19mm Parabellum	9.01	134	250	1	250	8.0	363	r
 taurus_gx4	Taurus	Gx4	semi	9×19mm Parabellum	9.01	84	250	1	250	8.0	355	researched (Taurus USA GX4 product page (taurususa.com), Wikipedia Taurus GX4, Shooting Illustrated GX4 review)	estimated
 taurus_g3x	Taurus	G3X	semi	9×19mm Parabellum	9.01	89	250	1	250	8.0	356	researched (Taurus USA G3X product page, Wikipedia Taurus G3 series, Gun Builders Depot G3X specs)	estimated
 taurus_th9	Taurus	Th9	semi	9×19mm Parabellum	9.01	102	250	1	250	8.0	358	researched (Taurus USA TH9 product page, Wikipedia Taurus TH series, American Rifleman TH9 review)	estimated
-taurus_raging_hunter	Taurus	Raging Hunter	revolver	.44 Remington Magnum		165	508	1				researched (Taurus USA Raging Hunter product page, Wikipedia Taurus Raging Hunter, Gunblast Raging Hunter review, SAAMI .44 Magnum)	estimated
-webley_mk6	Webley & Scott	Mk6	revolver	.455 Webley		150	508	1			180	researched (Wikipedia: Webley Revolver)	estimated
-webley_mk4_38	Webley & Scott	Mk4 38	revolver	.38 S&W		125	380	1			185	researched (Wikipedia: Webley Revolver, Wikipedia: .38 S&W)	estimated
-webley_auto_455	Webley & Scott	Auto 455	semi-automatic pistol	.455 Webley Auto		127	406	1				researched (Wikipedia: Webley Self-Loading Pistol)	estimated
-webley_32acp	Webley & Scott	32Acp	semi-automatic pistol	.32 ACP	7.65	89	254	1	141	4.6		researched (Wikipedia: Webley & Scott)	estimated
-webley_fosbery	Webley & Scott	Fosbery	revolver	.455 Webley		152	508	1			180	researched (Wikipedia: Webley Revolver)	estimated
+taurus_raging_hunter	Taurus	Raging Hunter	revolver	.44 Remington Magnum	10.9	165	508	1	360.0	15.6	450.0	researched (Taurus USA Raging Hunter product page, Wikipedia Taurus Raging Hunter, Gunblast Raging Hunter review, SAAMI .44 Magnum)	estimated
+webley_mk6	Webley & Scott	Mk6	revolver	.455 Webley	11.6	150	508	1	95.0	14.0	180	researched (Wikipedia: Webley Revolver)	estimated
+webley_mk4_38	Webley & Scott	Mk4 38	revolver	.38 S&W	9.06	125	380	1	145.0	10.2	185	researched (Wikipedia: Webley Revolver, Wikipedia: .38 S&W)	estimated
+webley_auto_455	Webley & Scott	Auto 455	semi-automatic pistol	.455 Webley Auto	11.6	127	406	1	100.0	14.0	230.0	researched (Wikipedia: Webley Self-Loading Pistol)	estimated
+webley_32acp	Webley & Scott	32Acp	semi-automatic pistol	.32 ACP	7.65	89	254	1	141	4.6	264.0	researched (Wikipedia: Webley & Scott)	estimated
+webley_fosbery	Webley & Scott	Fosbery	revolver	.455 Webley	11.6	152	508	1	95.0	14.0	180	researched (Wikipedia: Webley Revolver)	estimated
 korth_combat	Korth	Combat	revolver	.357 Magnum	9.07	102	476	1	345	8.1	413	estimated (Korth company product line, NO_RELIABLE_SOURCE)	estimated
 korth_mongoose	Korth	Mongoose	revolver	.357 Magnum	9.07	51	476	1	345	8.1	400	estimated (Korth company product line, NO_RELIABLE_SOURCE)	estimated
 korth_nxr_357	Korth	Nxr 357	revolver	.357 Magnum	9.07	152	476	1	345	8.1	426	estimated (Korth company product line, NO_RELIABLE_SOURCE)	estimated
-korth_nxr_44	Korth	Nxr 44	revolver	.44 Remington Magnum		152	508	1			406	estimated (Korth company product line, NO_RELIABLE_SOURCE)	estimated
+korth_nxr_44	Korth	Nxr 44	revolver	.44 Remington Magnum	10.9	152	508	1	360.0	15.6	406	estimated (Korth company product line, NO_RELIABLE_SOURCE)	estimated
 naa_22lr	NAA	22Lr	revolver	.22 LR	5.66	41	406	1	165	2.6	200	researched (Wikipedia: North American Arms)	estimated
 naa_22wmr	NAA	22Wmr	revolver	.22 WMR	5.66	41	406	1	179	2.6	452	researched (Wikipedia: North American Arms)	estimated
 naa_pug	NAA	Pug	revolver	.22 WMR	5.66	28	406	1	179	2.6	447	estimated (Wikipedia: North American Arms)	estimated
@@ -1082,11 +1082,11 @@ american180	American Arms International	American180	submachine gun	.22 LR	5.66	3
 rohrbaugh_r9	Rohrbaugh	R9	semi-automatic pistol	9×19mm Parabellum	9.01	74	254	1	250	8.0	354	researched (Wikipedia: Rohrbaugh R9)	estimated
 rohrbaugh_r9s	Rohrbaugh	R9S	semi-automatic pistol	9×19mm Parabellum	9.01	74	254	1	250	8.0	354	researched (Wikipedia: Rohrbaugh R9)	estimated
 rohrbaugh_stealth	Rohrbaugh	Stealth	semi-automatic pistol	9×19mm Parabellum	9.01	74	254	1	250	8.0	354	researched (Wikipedia: Rohrbaugh R9)	estimated
-mas_36	MAS	36	bolt	7.5×54mm French		575	254	1			818	researched (Wikipedia)	estimated
-mas_38	MAS	38	blowback	7.65mm Longue		224	254	1			350	researched (Wikipedia)	estimated
-mas_49	MAS	49	gas_semi_auto	7.5×54mm French		580	254	1			820	researched (Wikipedia)	estimated
-mas_4956	MAS	4956	gas_semi_auto	7.5×54mm French		525	254	1			798	researched (Wikipedia)	estimated
-mas_fr_f1	MAS	Fr F1	bolt	7.5×54mm French		552	300	1			809	researched (Wikipedia)	estimated
+mas_36	MAS	36	bolt	7.5×54mm French	7.82	575	254	1	350.0	9.0	818	researched (Wikipedia)	estimated
+mas_38	MAS	38	blowback	7.65mm Longue	7.65	224	254	1	240.0	5.8	350	researched (Wikipedia)	estimated
+mas_49	MAS	49	gas_semi_auto	7.5×54mm French	7.82	580	254	1	350.0	9.0	820	researched (Wikipedia)	estimated
+mas_4956	MAS	4956	gas_semi_auto	7.5×54mm French	7.82	525	254	1	350.0	9.0	798	researched (Wikipedia)	estimated
+mas_fr_f1	MAS	Fr F1	bolt	7.5×54mm French	7.82	552	300	1	350.0	9.0	809	researched (Wikipedia)	estimated
 bersa_thunder_380	Bersa	Thunder 380	blowback	.380 ACP	9.02	90	254	1	141	6.0	284	researched (Wikipedia)	estimated
 bersa_thunder_9	Bersa	Thunder 9	short_recoil	9×19mm Parabellum	9.01	110	254	1	250	8.0	359	researched (Wikipedia)	estimated
 bersa_tpr9	Bersa	Tpr9	short_recoil	9×19mm Parabellum	9.01	110	254	1	250	8.0	359	researched (Wikipedia)	estimated
@@ -1095,25 +1095,25 @@ bersa_firestorm_22	Bersa	Firestorm 22	blowback	.22 LR	5.66	89	406	1	165	2.6	214	
 luger_p08	Luger	P08	toggle_lock	9×19mm Parabellum	9.01	100	254	1	250	8.0	358	researched (Wikipedia)	estimated
 luger_artillery	Luger	Artillery	toggle_lock	9×19mm Parabellum	9.01	200	254	1	250	8.0	372	researched (Wikipedia)	estimated
 luger_navy	Luger	Navy	toggle_lock	9×19mm Parabellum	9.01	150	254	1	250	8.0	365	researched (Wikipedia)	estimated
-luger_swiss	Luger	Swiss	toggle_lock	7.65×21mm Parabellum		120	254	1				researched (Wikipedia)	estimated
-nambu_type_14	Nambu	Type 14	recoil_locked	8×22mm Nambu		117	254	1			308	researched (Wikipedia)	estimated
-nambu_type_94	Nambu	Type 94	recoil_locked	8×22mm Nambu		96	254	1			304	researched (Wikipedia)	estimated
-nambu_type_100	Nambu	Type 100	blowback	8×22mm Nambu		230	254	1			324	researched (Wikipedia)	estimated
-schmidt_rubin_k31	Schmidt-Rubin	K31	straight_pull_bolt	7.5×55mm Swiss		652	270	1			861	researched (Wikipedia)	estimated
-schmidt_rubin_g1911	Schmidt-Rubin	G1911	straight_pull_bolt	7.5×55mm Swiss		780	270	1			912	researched (Wikipedia)	estimated
-schmidt_rubin_m1889	Schmidt-Rubin	M1889	straight_pull_bolt	7.5×53.5mm Swiss		780	254	1			912	researched (Wikipedia)	estimated
+luger_swiss	Luger	Swiss	toggle_lock	7.65×21mm Parabellum	7.65	120	254	1	250.0	6.0	370.0	researched (Wikipedia)	estimated
+nambu_type_14	Nambu	Type 14	recoil_locked	8×22mm Nambu	8.13	117	254	1	200.0	6.8	308	researched (Wikipedia)	estimated
+nambu_type_94	Nambu	Type 94	recoil_locked	8×22mm Nambu	8.13	96	254	1	200.0	6.8	304	researched (Wikipedia)	estimated
+nambu_type_100	Nambu	Type 100	blowback	8×22mm Nambu	8.13	230	254	1	200.0	6.8	324	researched (Wikipedia)	estimated
+schmidt_rubin_k31	Schmidt-Rubin	K31	straight_pull_bolt	7.5×55mm Swiss	7.82	652	270	1	360.0	11.3	861	researched (Wikipedia)	estimated
+schmidt_rubin_g1911	Schmidt-Rubin	G1911	straight_pull_bolt	7.5×55mm Swiss	7.82	780	270	1	360.0	11.3	912	researched (Wikipedia)	estimated
+schmidt_rubin_m1889	Schmidt-Rubin	M1889	straight_pull_bolt	7.5×53.5mm Swiss	7.82	780	254	1	350.0	11.3	912	researched (Wikipedia)	estimated
 para_p14_45	Para Ordnance	Para P14 45	semi-automatic pistol	.45 ACP	11.48	127	406	1	145	15.0	259	researched (SAAMI .45 ACP 1911 chamber spec, Para-Ordnance product literature)	estimated
 para_p16_40	Para Ordnance	Para P16 40	semi-automatic pistol	.40 S&W	10.17	127	406	1	240	10.0	325	researched (SAAMI .40 S&W chamber spec, Para-Ordnance product literature)	estimated
 para_p18_9	Para Ordnance	Para P18 9	semi-automatic pistol	9×19mm Parabellum	9.01	127	250	1	250	8.0	362	researched (CIP 9×19mm Parabellum chamber spec, Para-Ordnance product literature)	estimated
 para_carry_12	Para Ordnance	Para Carry 12	semi-automatic pistol	.45 ACP	11.48	89	406	1	145	15.0	253	estimated (Para-Ordnance compact 1911 variant, barrel/twist consistent with standard .45 ACP 1911)	estimated
 para_lda_14_45	Para Ordnance	Para Lda 14 45	semi-automatic pistol	.45 ACP	11.48	127	406	1	145	15.0	259	estimated (Para-Ordnance LDA trigger variant of P14-45, barrel/twist same as standard 1911)	estimated
-ithaca_m37	Ithaca	M37	pump shotgun	12 Gauge	18.5	470	0		65	28.4	410	researched (Ithaca Gun Co. catalog, NRA Firearms Sourcebook)	estimated
-ithaca_m37_ds	Ithaca	M37 Ds	pump shotgun	12 Gauge	18.5	510	0		65	28.4	412	researched (Ithaca Deerslayer product catalog)	estimated
+ithaca_m37	Ithaca	M37	pump shotgun	12 Gauge	18.5	470	0	0	65	28.4	410	researched (Ithaca Gun Co. catalog, NRA Firearms Sourcebook)	estimated
+ithaca_m37_ds	Ithaca	M37 Ds	pump shotgun	12 Gauge	18.5	510	0	0	65	28.4	412	researched (Ithaca Deerslayer product catalog)	estimated
 ithaca_m3a1	Ithaca	M3A1	submachine gun	.45 ACP	11.48	203	406	1	145	15.0	270	researched (US Army TM 9-1005-229-35/M3A1 Grease Gun, Ithaca wartime production)	estimated
 tristar_c100	Tristar	C100	semi-automatic pistol	9×19mm Parabellum	9.01	102	250	1	250	8.0	358	researched (Tristar Arms catalog, CZ-75 clone manufacturer specs)	estimated
 tristar_t120	Tristar	T120	semi-automatic pistol	9×19mm Parabellum	9.01	114	250	1	250	8.0	360	researched (Tristar Arms catalog, CZ-75 clone manufacturer specs)	estimated
 tristar_compact	Tristar	Compact	semi-automatic pistol	9×19mm Parabellum	9.01	89	250	1	250	8.0	356	estimated (Tristar compact model based on CZ-75 compact/ subcompact family)	estimated
-tristar_viper_g2	Tristar	Viper G2	semi-automatic shotgun	12 Gauge	18.5	610	0		65	28.4	418	researched (Tristar Arms Viper G2 product specifications)	estimated
+tristar_viper_g2	Tristar	Viper G2	semi-automatic shotgun	12 Gauge	18.5	610	0	0	65	28.4	418	researched (Tristar Arms Viper G2 product specifications)	estimated
 mendoza_hm3	Mendoza	Hm3	submachine gun	9×19mm Parabellum	9.01	254	250	1	250	8.0	381	researched (Mexican defense industry documentation, Jane's Infantry Weapons)	estimated
 mendoza_c1934	Mendoza	C1934	semi-automatic pistol	.22 LR	5.66	100	406	1	165	2.6	218	estimated (Mendoza .22 LR pistol typical .22 LR rifling specs)	estimated
 mendoza_rm1	Mendoza	Rm1	bolt-action rifle	.30-30 Win	7.82	559	305	1	331	11.1	695	estimated (Mendoza RM-1 sporting rifle consistent with typical .30-30 barrel specs)	estimated
@@ -1135,7 +1135,7 @@ iof_insas_rifle	Indian Ordnance Factory	Insas Rifle	assault rifle	5.56×45mm NAT
 iof_insas_lmg	Indian Ordnance Factory	Insas Lmg	light machine gun	5.56×45mm NATO	5.69	535	254	1	430	4.0	932	researched (en.wikipedia.org/wiki/INSAS_rifle, ofbindia.gov.in)	estimated
 iof_1a1	Indian Ordnance Factory	1A1	semi-automatic rifle	7.62×51mm NATO	7.82	554	305	1	415	9.5	836	researched (en.wikipedia.org/wiki/L1A1_Self-Loading_Rifle, ofbindia.gov.in)	estimated
 iof_1a_pistol	Indian Ordnance Factory	1A Pistol	semi-automatic pistol	9×19mm Parabellum	9.01	118	250	1	250	8.0	360	researched (en.wikipedia.org/wiki/Pistol_Auto_9mm_1A, ofbindia.gov.in)	estimated
-iof_32_revolver	Indian Ordnance Factory	32 Revolver	revolver	.32 S&W Long		76.2	190	1			159	researched (en.wikipedia.org/wiki/Indian_Ordnance_Factories_.32_Revolver, ofbindia.gov.in)	estimated
+iof_32_revolver	Indian Ordnance Factory	32 Revolver	revolver	.32 S&W Long	7.94	76.2	190	1	120.0	6.5	159	researched (en.wikipedia.org/wiki/Indian_Ordnance_Factories_.32_Revolver, ofbindia.gov.in)	estimated
 iof_22_revolver	Indian Ordnance Factory	22 Revolver	revolver	.22 LR	5.66	76.2	190	1	165	2.6	210	researched (en.wikipedia.org/wiki/IOF_.22_revolver, ofbindia.gov.in)	estimated
 iof_1a_smg	Indian Ordnance Factory	1A Smg	submachine gun	9×19mm Parabellum	9.01	196	250	1	250	8.0	372	researched (en.wikipedia.org/wiki/Sterling_submachine_gun, ofbindia.gov.in)	estimated
 famae_saf	FAMAE	Saf	blowback	9×19mm Parabellum	9.01	220	250	1	250	8.0	376	estimated (standard 9mm SMG rifling, caliber_ref twist 250mm)	estimated
@@ -1145,18 +1145,18 @@ famae_fd520	FAMAE	Fd520	gas-operated	5.56×45mm NATO	5.69	406	178	1	430	4.0	878	
 famae_sg542	FAMAE	Sg542	gas-operated	7.62×51mm NATO	7.82	420	279	1	415	9.5	785	estimated (standard 7.62mm NATO rifling 1:11in, caliber_ref twist 279mm)	estimated
 cobray_m11_9	Cobray	M11 9	blowback	9×19mm Parabellum	9.01	127	250	1	250	8.0	362	estimated (standard 9mm SMG rifling, 5in barrel, caliber_ref twist 250mm)	estimated
 cobray_m10_45	Cobray	M10 45	blowback	.45 ACP	11.48	127	406	1	145	15.0	259	estimated (standard .45 ACP rifling, caliber_ref twist 406mm)	estimated
-cobray_terminator	Cobray	Terminator	break-action	12 Gauge	18.5	76	0		65	28.4	391	estimated (12ga smoothbore derringer, 3in barrel)	estimated
+cobray_terminator	Cobray	Terminator	break-action	12 Gauge	18.5	76	0	0	65	28.4	391	estimated (12ga smoothbore derringer, 3in barrel)	estimated
 cobray_cm11	Cobray	Cm11	blowback	9×19mm Parabellum	9.01	127	250	1	250	8.0	362	estimated (semi-auto M-11/9 variant, standard 9mm rifling)	estimated
 cobray_lady_cocker	Cobray	Lady Cocker	break-action	.22 LR	5.66	64	406	1	165	2.6	207	estimated (.22 LR pocket derringer, standard .22 LR rifling)	estimated
 bond_arms_texas_defender	Bond Arms	Texas Defender	break-action	.45 Colt	11.48	76	508	1	145	16.2	225	estimated (derringer rifled for .45 Colt, caliber_ref twist 508mm)	estimated
 bond_arms_cowboy_defender	Bond Arms	Cowboy Defender	break-action	.45 Colt	11.48	64	508	1	145	16.2	223	estimated (shorter barrel derringer, .45 Colt rifling)	estimated
 bond_arms_snake_slayer	Bond Arms	Snake Slayer	break-action	.357 Magnum	9.07	89	356	1	345	8.1	410	estimated (derringer rifled for .357 Mag, caliber_ref twist 356mm)	estimated
-bond_arms_roughneck	Bond Arms	Roughneck	break-action	9×19mm Parabellum	9.01	76	0		250	8.0	354	estimated (9mm derringer smoothbore per Bond Arms pattern, 2-shot break-action)	estimated
+bond_arms_roughneck	Bond Arms	Roughneck	break-action	9×19mm Parabellum	9.01	76	0	1	250	8.0	354	estimated (9mm derringer smoothbore per Bond Arms pattern, 2-shot break-action)	estimated
 phoenix_hp22	Phoenix Arms	Phoenix Hp22	blowback	.22 LR	5.66	61	406	1	165	2.6	206	estimated (standard .22 LR rifling, caliber_ref twist 406mm)	estimated
 phoenix_hp22_target	Phoenix Arms	Phoenix Hp22 Target	blowback	.22 LR	5.66	95	406	1	165	2.6	216	estimated (target variant, longer barrel, standard .22 LR rifling)	estimated
 phoenix_hp25	Phoenix Arms	Phoenix Hp25	blowback	.25 ACP	6.38	61	250	1	141	3.2	232	estimated (standard .25 ACP rifling, caliber_ref twist 250mm)	estimated
 hammerli_208	Hämmerli	208	semi-auto	.22 LR	5.66	153	406	1	165	2.6	234	estimated (WIKIPEDIA_HAMMERLI, HAMMERLI_ARMS_DE)	estimated
-hammerli_280	Hämmerli	280	semi-auto	.32 S&W Long		150	380	1				estimated (WIKIPEDIA_HAMMERLI, HAMMERLI_ARMS_DE)	estimated
+hammerli_280	Hämmerli	280	semi-auto	.32 S&W Long	7.94	150	380	1	120.0	6.5	194.5	estimated (WIKIPEDIA_HAMMERLI, HAMMERLI_ARMS_DE)	estimated
 hammerli_sp20	Hämmerli	Sp20	semi-auto	.22 LR	5.66	150	406	1	165	2.6	233	estimated (WIKIPEDIA_HAMMERLI, HAMMERLI_ARMS_DE)	estimated
 hammerli_x_esse	Hämmerli	X Esse	semi-auto	.22 LR	5.66	122	406	1	165	2.6	224	estimated (WIKIPEDIA_HAMMERLI, HAMMERLI_ARMS_DE)	estimated
 hammerli_tac_r1	Hämmerli	Tac R1	semi-auto	.22 LR	5.66	406	406	1	165	2.6	309	estimated (WIKIPEDIA_HAMMERLI, HAMMERLI_ARMS_DE)	estimated
@@ -1174,29 +1174,29 @@ sauer_202	J.P. Sauer & Sohn	202	bolt-action	.308 Win	7.82	610	305	1	415	9.5	858	
 sauer_303	J.P. Sauer & Sohn	303	semi-automatic	.308 Win	7.82	560	305	1	415	9.5	839	researched (Wikipedia: Sauer 303, J.P. Sauer & Sohn official site)	researched
 sauer_404	J.P. Sauer & Sohn	404	bolt-action	6.5 Creedmoor	6.71	560	203	1	415	9.0	830	researched (Wikipedia: Sauer 404, J.P. Sauer & Sohn official site)	researched
 sauer_100	J.P. Sauer & Sohn	100	bolt-action	.308 Win	7.82	560	305	1	415	9.5	839	researched (Wikipedia: Sauer 100, J.P. Sauer & Sohn official site)	researched
-miroku_mk70	Miroku	Mk70	over-under	12 Gauge	18.5	711	0		65	28.4	423	researched (Browning/Miroku official site, Gun Mart review)	researched
-miroku_3800	Miroku	3800	over-under	12 Gauge	18.5	762	0		65	28.4	425	researched (Browning/Miroku official site, Gun Mart review)	researched
+miroku_mk70	Miroku	Mk70	over-under	12 Gauge	18.5	711	0	0	65	28.4	423	researched (Browning/Miroku official site, Gun Mart review)	researched
+miroku_3800	Miroku	3800	over-under	12 Gauge	18.5	762	0	0	65	28.4	425	researched (Browning/Miroku official site, Gun Mart review)	researched
 miroku_1873	Miroku	1873	lever-action	.357 Magnum	9.07	510	406	1	345	8.1	515	researched (Wikipedia: Winchester rifle, Miroku Corp., Browning official site)	researched
-miroku_1886	Miroku	1886	lever-action	.45-70 Government		560	508	1				researched (Wikipedia: Winchester Model 1886, Browning official site)	researched
+miroku_1886	Miroku	1886	lever-action	.45-70 Government	11.48	560	508	1	180.0	19.9	660.0	researched (Wikipedia: Winchester Model 1886, Browning official site)	researched
 parker_hale_m85	Parker-Hale	M85	bolt-action	7.62×51mm NATO	7.82	622	305	1	415	9.5	862	researched (Wikipedia: Parker-Hale M85, Sniper Central, Rifleman.org.uk)	researched
 parker_hale_1200tx	Parker-Hale	1200Tx	bolt-action	7.62×51mm NATO	7.82	660	305	1	415	9.5	877	researched (Wikipedia: Parker-Hale, Parker-Hale catalogues)	researched
 parker_hale_model81	Parker-Hale	Model81	bolt-action	.308 Win	7.82	610	305	1	415	9.5	858	researched (Wikipedia: Parker-Hale, Parker-Hale catalogues)	researched
-parker_hale_1100	Parker-Hale	1100	bolt-action	.303 British	7.90	610	254	1	365	11.7		researched (Wikipedia: Parker-Hale, Parker-Hale catalogues)	researched
-wildey_survivor_5in	Wildey	Survivor 5In	gas-operated semi-automatic	.45 Win Mag		127	406	1			375	estimated	estimated
-wildey_survivor_6in	Wildey	Survivor 6In	gas-operated semi-automatic	.45 Win Mag		152	406	1			380	estimated	estimated
-wildey_survivor_8in	Wildey	Survivor 8In	gas-operated semi-automatic	.44 Auto Mag	10.90	203	406	1	345	15.6		estimated	estimated
+parker_hale_1100	Parker-Hale	1100	bolt-action	.303 British	7.90	610	254	1	365	11.7	744.0	researched (Wikipedia: Parker-Hale, Parker-Hale catalogues)	researched
+wildey_survivor_5in	Wildey	Survivor 5In	gas-operated semi-automatic	.45 Win Mag	11.48	127	406	1	345.0	15.6	375	estimated	estimated
+wildey_survivor_6in	Wildey	Survivor 6In	gas-operated semi-automatic	.45 Win Mag	11.48	152	406	1	345.0	15.6	380	estimated	estimated
+wildey_survivor_8in	Wildey	Survivor 8In	gas-operated semi-automatic	.44 Auto Mag	10.90	203	406	1	345	15.6	457.5	estimated	estimated
 wildey_survivor_10in	Wildey	Survivor 10In	gas-operated semi-automatic	.357 Magnum	9.07	254	356	1	345	8.1	451	estimated	estimated
-wildey_survivor_12in	Wildey	Survivor 12In	gas-operated semi-automatic	.44 Remington Magnum		305	406	1			452	estimated	estimated
+wildey_survivor_12in	Wildey	Survivor 12In	gas-operated semi-automatic	.44 Remington Magnum	10.9	305	406	1	360.0	15.6	452	estimated	estimated
 pedersoli_1858_remington	Pedersoli	1858 Remington	single-action revolver	.45 Colt	11.48	203	406	1	145	16.2	251	estimated	estimated
-pedersoli_1873_trapdoor	Pedersoli	1873 Trapdoor	trapdoor falling-block	.45-70	11.48	828	559	1	180	19.9		estimated	estimated
-pedersoli_sharps	Pedersoli	Sharps	falling-block rifle	.45-70	11.48	762	457	1	180	19.9		estimated	estimated
-pedersoli_kodiak	Pedersoli	Kodiak	break-action double rifle	.45-70	11.48	610	457	1	180	19.9		estimated	estimated
-pedersoli_howdah	Pedersoli	Howdah	break-action pistol	20 Gauge	15.6	279	0		62	19.5		estimated	estimated
+pedersoli_1873_trapdoor	Pedersoli	1873 Trapdoor	trapdoor falling-block	.45-70	11.48	828	559	1	180	19.9	700.0	estimated	estimated
+pedersoli_sharps	Pedersoli	Sharps	falling-block rifle	.45-70	11.48	762	457	1	180	19.9	700.0	estimated	estimated
+pedersoli_kodiak	Pedersoli	Kodiak	break-action double rifle	.45-70	11.48	610	457	1	180	19.9	700.0	estimated	estimated
+pedersoli_howdah	Pedersoli	Howdah	break-action pistol	20 Gauge	15.6	279	0	0	62	19.5	435.0	estimated	estimated
 uberti_1873_cattleman	Uberti	1873 Cattleman	single-action revolver	.45 Colt	11.48	120	406	1	145	16.2	234	estimated	estimated
 uberti_1873_cattleman_75	Uberti	1873 Cattleman 75	single-action revolver	.45 Colt	11.48	190	406	1	145	16.2	248	estimated	estimated
-uberti_1866_yellowboy	Uberti	1866 Yellowboy	lever-action rifle	.38 Special	9.06	508	406	1	240	10.2		estimated	estimated
+uberti_1866_yellowboy	Uberti	1866 Yellowboy	lever-action rifle	.38 Special	9.06	508	406	1	240	10.2	250.0	estimated	estimated
 uberti_1873_winchester	Uberti	1873 Winchester	lever-action rifle	.357 Magnum	9.07	508	356	1	345	8.1	514	estimated	estimated
-uberti_1885_highwall	Uberti	1885 Highwall	falling-block single-shot	.45-70	11.48	762	457	1	180	19.9		estimated	estimated
+uberti_1885_highwall	Uberti	1885 Highwall	falling-block single-shot	.45-70	11.48	762	457	1	180	19.9	700.0	estimated	estimated
 uberti_stallion	Uberti	Stallion	single-action revolver	.22 LR	5.66	120	356	1	165	2.6	224	estimated	estimated
 glock_17	Glock	17	short-recoil	9×19mm Parabellum	9.01	114	250	1	250	8.0	360	estimated	estimated
 glock_19	Glock	19	short-recoil	9×19mm Parabellum	9.01	102	250	1	250	8.0	358	estimated	estimated
@@ -1207,7 +1207,7 @@ glock_34	Glock	34	short-recoil	9×19mm Parabellum	9.01	135	250	1	250	8.0	363	est
 glock_42	Glock	42	short-recoil	.380 ACP	9.02	83	250	1	141	6.0	282	estimated	estimated
 glock_20	Glock	20	short-recoil	10mm Auto	10.17	117	250	1	310	10.0	351	estimated	estimated
 magnum_research_de_50	Magnum Research	De 50	gas-operated	.50 AE	12.70	152	483	1	345	18.9	433	estimated	estimated
-magnum_research_de_44	Magnum Research	De 44	gas-operated	.44 Remington Magnum		152	457	1			406	estimated	estimated
+magnum_research_de_44	Magnum Research	De 44	gas-operated	.44 Remington Magnum	10.9	152	457	1	360.0	15.6	406	estimated	estimated
 magnum_research_de_357	Magnum Research	De 357	gas-operated	.357 Magnum	9.07	152	356	1	345	8.1	426	estimated	estimated
 magnum_research_de_50_10in	Magnum Research	De 50 10In	gas-operated	.50 AE	12.70	254	483	1	345	18.9	458	estimated	estimated
 magnum_research_mr_eagle	Magnum Research	Mr Eagle	short-recoil	9×19mm Parabellum	9.01	109	250	1	250	8.0	359	estimated	estimated
@@ -1215,17 +1215,17 @@ kahr_arms_cm9	Kahr Arms	Cm9	short-recoil	9×19mm Parabellum	9.01	76	250	1	250	8.
 kahr_arms_pm9	Kahr Arms	Pm9	short-recoil	9×19mm Parabellum	9.01	76	250	1	250	8.0	354	estimated	estimated
 kahr_arms_cw9	Kahr Arms	Cw9	short-recoil	9×19mm Parabellum	9.01	88	250	1	250	8.0	356	estimated	estimated
 kahr_arms_p380	Kahr Arms	P380	short-recoil	.380 ACP	9.02	68	250	1	141	6.0	280	estimated	estimated
-mossberg_500_28	Mossberg	500 28	pump-action	12 Gauge	18.5	711	0		65	28.4	423	estimated	estimated
-mossberg_maverick_88	Mossberg	Maverick 88	pump-action	12 Gauge	18.5	470	0		65	28.4	410	estimated	estimated
+mossberg_500_28	Mossberg	500 28	pump-action	12 Gauge	18.5	711	0	0	65	28.4	423	estimated	estimated
+mossberg_maverick_88	Mossberg	Maverick 88	pump-action	12 Gauge	18.5	470	0	0	65	28.4	410	estimated	estimated
 mossberg_mvp_223	Mossberg	Mvp 223	bolt-action	.223 Rem	5.69	559	229	1	379	4.0	900	estimated	estimated
 mossberg_mvp_308	Mossberg	Mvp 308	bolt-action	.308 Win	7.82	559	254	1	415	9.5	838	estimated	estimated
 mossberg_464_3030	Mossberg	464 3030	lever-action	.30-30 Win	7.82	508	254	1	331	11.1	680	estimated	estimated
-mossberg_590a1_20	Mossberg	590A1 20	pump-action	12 Gauge	18.5	508	0		65	28.4	412	estimated	estimated
+mossberg_590a1_20	Mossberg	590A1 20	pump-action	12 Gauge	18.5	508	0	0	65	28.4	412	estimated	estimated
 savage_42_22lr_410	Savage	42 22Lr 410	break-action	.22 LR	5.66	508	406	1	165	2.6	340	estimated	estimated
 savage_110_223	Savage	110 223	bolt-action	.223 Rem	5.69	559	229	1	379	4.0	900	estimated	estimated
 savage_10_308	Savage	10 308	bolt-action	.308 Win	7.82	559	254	1	415	9.5	838	estimated	estimated
 savage_10_6_5cm	Savage	10 6 5Cm	bolt-action	6.5 Creedmoor	6.71	559	203	1	415	9.0	830	estimated	estimated
-savage_axis_243	Savage	Axis 243	bolt-action	.243 Win	6.17	559	254	1	400	6.5		estimated	estimated
+savage_axis_243	Savage	Axis 243	bolt-action	.243 Win	6.17	559	254	1	400	6.5	920.0	estimated	estimated
 savage_12_223	Savage	12 223	bolt-action	.223 Rem	5.69	610	229	1	379	4.0	921	estimated	estimated
 auto_ord_thompson_m1921	Auto-Ordnance	Thompson M1921	blowback	.45 ACP	11.48	267	406	1	145	15.0	280	estimated	estimated
 auto_ord_thompson_m1928	Auto-Ordnance	Thompson M1928	blowback	.45 ACP	11.48	267	406	1	145	15.0	280	estimated	estimated
@@ -1233,10 +1233,10 @@ auto_ord_1911_9mm	Auto-Ordnance	1911 9Mm	short-recoil	9×19mm Parabellum	9.01	12
 auto_ord_1911a1_parkerized	Auto-Ordnance	1911A1 Parkerized	short-recoil	.45 ACP	11.48	127	406	1	145	15.0	259	estimated	estimated
 auto_ord_1911_commander	Auto-Ordnance	1911 Commander	short-recoil	.45 ACP	11.48	108	406	1	145	15.0	256	estimated	estimated
 auto_ord_thompson_m1928a1	Auto-Ordnance	Thompson M1928A1	blowback	.45 ACP	11.48	267	406	1	145	15.0	280	estimated	estimated
-mauser_gew98	Mauser	Gew98	bolt-action	7.92×57mm Mauser		740	240	1				estimated	estimated
+mauser_gew98	Mauser	Gew98	bolt-action	7.92×57mm Mauser	8.0	740	240	1	390.0	11.8	755.0	estimated	estimated
 mauser_hsc	Mauser	Hsc	blowback	.32 ACP	7.65	86	250	1	141	4.6	263	estimated	estimated
 mauser_m1910	Mauser	M1910	blowback	.25 ACP	6.38	78	250	1	141	3.2	235	estimated	estimated
-mauser_m712	Mauser	M712	blowback	7.63×25mm Mauser		140	240	1				estimated	estimated
+mauser_m712	Mauser	M712	blowback	7.63×25mm Mauser	7.63	140	240	1	280.0	5.5	440.0	estimated	estimated
 mauser_m18	Mauser	M18	bolt-action	.308 Win	7.82	584	305	1	415	9.5	848	estimated	estimated
 canik_tp9_elite_sc	Canik	Tp9 Elite Sc	short-recoil	9×19mm Parabellum	9.01	94	250	1	250	8.0	357	estimated	estimated
 canik_tp9_da	Canik	Tp9 Da	short-recoil	9×19mm Parabellum	9.01	104	250	1	250	8.0	358	estimated	estimated
@@ -1253,7 +1253,7 @@ dan_wesson_715_8in	Dan Wesson	715 8In	revolver	.357 Magnum	9.07	203	356	1	345	8.
 dan_wesson_valor	Dan Wesson	Valor	short-recoil	.45 ACP	11.48	127	406	1	145	15.0	259	estimated	estimated
 stoeger_str9	Stoeger	Str9	short-recoil	9×19mm Parabellum	9.01	106	250	1	250	8.0	358	estimated	estimated
 stoeger_cougar_8000	Stoeger	Cougar 8000	short-recoil	9×19mm Parabellum	9.01	92	250	1	250	8.0	356	estimated	estimated
-stoeger_coach_gun	Stoeger	Coach Gun	break-action	12 Gauge	18.5	508	0		65	28.4	412	estimated	estimated
+stoeger_coach_gun	Stoeger	Coach Gun	break-action	12 Gauge	18.5	508	0	0	65	28.4	412	estimated	estimated
 girsan_mc28	Girsan	Mc28	short-recoil	9×19mm Parabellum	9.01	127	250	1	250	8.0	362	estimated	estimated
 girsan_regard	Girsan	Regard	short-recoil	9×19mm Parabellum	9.01	125	250	1	250	8.0	361	estimated	estimated
 girsan_mc1911	Girsan	Mc1911	short-recoil	.45 ACP	11.48	127	406	1	145	15.0	259	estimated	estimated
@@ -1267,20 +1267,20 @@ chiappa_1911_22	Chiappa	1911 22	blowback	.22 LR	5.66	127	406	1	165	2.6	226	resea
 chiappa_little_badger	Chiappa	Little Badger	break-action	.22 LR	5.66	419	406	1	165	2.6	313	researched (Wikipedia, American Rifleman)	researched
 chiappa_m1_22	Chiappa	M1 22	blowback	.22 LR	5.66	457	406	1	165	2.6	325	estimated (Chiappa product line, standard .22 LR carbine twist)	estimated
 chiappa_1892_lever	Chiappa	1892 Lever	lever-action	.357 Magnum	9.07	508	483	1	345	8.1	514	estimated (Chiappa lever-action rifle, standard .357 twist)	estimated
-iver_johnson_safety_first	Iver Johnson	Safety First	Double-action top-break revolver	.32 S&W		76	381	1				estimated (Iver Johnson historical product line)	estimated
+iver_johnson_safety_first	Iver Johnson	Safety First	Double-action top-break revolver	.32 S&W	7.94	76	381	1	110.0	6.0	200.0	estimated (Iver Johnson historical product line)	estimated
 iver_johnson_cadet_55a	Iver Johnson	Cadet 55A	Double-action swing-out revolver	.22 LR	5.66	102	406	1	165	2.6	218	estimated (Iver Johnson Cadet 55-A, standard .22 LR revolver twist)	estimated
 iver_johnson_champion	Iver Johnson	Champion	break-action	12 Gauge	18.5	711	0	1	65	28.4	423	estimated (Iver Johnson Champion shotgun, smoothbore)	estimated
 iver_johnson_enforcer	Iver Johnson	Enforcer	gas-operated	.30 Carbine	7.62	241	508	1	276	7.1	582	researched (Wikipedia: Iver Johnson Enforcer)	researched
 iver_johnson_trailsman_66	Iver Johnson	Trailsman 66	Double-action swing-out revolver	.22 LR	5.66	140	406	1	165	2.6	230	estimated (Iver Johnson Trailsman product line)	estimated
 bersa_thunder_40	Bersa	Thunder 40	recoil-operated	.40 S&W	10.17	99	254	1	240	10.0	320	estimated (Bersa Thunder series, standard .40 S&W twist)	estimated
 bersa_firestorm_380	Bersa	Firestorm 380	blowback	.380 ACP	9.02	89	254	1	141	6.0	283	estimated (Bersa Firestorm, same platform as Thunder 380)	estimated
-tc_encore_30_06	Thompson-Center	Encore 30 06	break-action	.30-06 Springfield		559	254	1				estimated (TC Encore product line, standard .30-06 1:10in twist)	estimated
+tc_encore_30_06	Thompson-Center	Encore 30 06	break-action	.30-06 Springfield	7.82	559	254	1	380.0	9.7	850.0	estimated (TC Encore product line, standard .30-06 1:10in twist)	estimated
 tc_contender_223	Thompson-Center	Contender 223	break-action	.223 Rem	5.69	254	305	1	379	4.0	778	estimated (TC Contender G1, standard .223 Rem 1:12in twist)	estimated
 tc_contender_357	Thompson-Center	Contender 357	break-action	.357 Magnum	9.07	267	483	1	345	8.1	454	estimated (TC Contender G2, standard .357 Mag twist)	estimated
-tc_encore_243	Thompson-Center	Encore 243	break-action	.243 Win	6.17	559	254	1	400	6.5		estimated (TC Encore product line, standard .243 Win 1:10in twist)	estimated
+tc_encore_243	Thompson-Center	Encore 243	break-action	.243 Win	6.17	559	254	1	400	6.5	920.0	estimated (TC Encore product line, standard .243 Win 1:10in twist)	estimated
 howa_m1500_hogue_308	Howa	M1500 Hogue 308	bolt-action	7.62×51mm NATO	7.82	508	305	1	415	9.5	819	estimated (Howa M1500 product line, standard 1:12in twist)	estimated
 howa_m1500_varmint_223	Howa	M1500 Varmint 223	bolt-action	.223 Rem	5.69	610	305	1	379	4.0	921	estimated (Howa M1500 Varmint, standard .223 1:12in twist)	estimated
-howa_m1500_game_king_30_06	Howa	M1500 Game King 30 06	bolt-action	.30-06 Springfield		559	254	1				estimated (Howa M1500 Game King, standard .30-06 1:10in twist)	estimated
+howa_m1500_game_king_30_06	Howa	M1500 Game King 30 06	bolt-action	.30-06 Springfield	7.82	559	254	1	380.0	9.7	850.0	estimated (Howa M1500 Game King, standard .30-06 1:10in twist)	estimated
 howa_type_89	Howa	Type 89	gas-operated	5.56×45mm NATO	5.69	508	178	1	430	4.0	921	estimated (Howa Type 89, standard 5.56 1:7in twist)	estimated
 howa_type_64	Howa	Type 64	gas-operated	7.62×51mm NATO	7.82	450	305	1	415	9.5	797	estimated (Howa Type 64, standard 7.62 1:12in twist)	estimated
 stevens_model_94	Stevens	Model 94	break-action	12 Gauge	18.5	711	0	1	65	28.4	423	estimated (Stevens Model 94, smoothbore shotgun)	estimated
@@ -1293,7 +1293,7 @@ hi_point_cf380	Hi-Point	Cf380	blowback	.380 ACP	9.02	89	254	1	141	6.0	283	resear
 hi_point_jcp40	Hi-Point	Jcp40	blowback	.40 S&W	10.17	89	254	1	240	10.0	318	estimated (Hi-Point product line, standard .40 S&W twist)	estimated
 hi_point_jhp45	Hi-Point	Jhp45	blowback	.45 ACP	11.48	102	406	1	145	15.0	255	estimated (Hi-Point product line, standard .45 ACP 1:16in twist)	estimated
 hi_point_4095	Hi-Point	4095	blowback	.40 S&W	10.17	444	254	1	240	10.0	389	researched (Hi-Point carbine series)	researched
-naa_mini_22_short	NAA	Mini 22 Short	Single-action revolver	.22 Short		41	406	1				estimated (NAA Mini product line)	estimated
+naa_mini_22_short	NAA	Mini 22 Short	Single-action revolver	.22 Short	5.66	41	406	1	140.0	1.9	280.0	estimated (NAA Mini product line)	estimated
 naa_black_widow	NAA	Black Widow	Single-action revolver	.22 WMR	5.66	51	406	1	179	2.6	455	researched (NAA Black Widow product info)	researched
 naa_ranger_ii	NAA	Ranger Ii	Single-action top-break revolver	.22 WMR	5.66	63.5	305	1	179	2.6	459	researched (American Rifleman: Tested NAA Ranger II)	researched
 naa_mini_master	NAA	Mini Master	Single-action revolver	.22 LR	5.66	102	406	1	165	2.6	218	estimated (NAA Mini Master product line)	estimated
@@ -1308,10 +1308,10 @@ star_model_pd	Star	Model Pd	recoil-operated	.45 ACP	11.48	100	406	1	145	15.0	255
 star_firestar_m45	Star	Firestar M45	recoil-operated	.45 ACP	11.48	89	406	1	145	15.0	253	estimated (Star Firestar product line, standard .45 ACP twist)	estimated
 star_megastar_10mm	Star	Megastar 10Mm	recoil-operated	10mm Auto	10.17	117	406	1	310	10.0	351	estimated (Star Megastar, standard 10mm/1:16in twist)	estimated
 star_ultrastar	Star	Ultrastar	recoil-operated	9×19mm Parabellum	9.01	86	254	1	250	8.0	355	estimated (Star Ultrastar, standard 9mm twist)	estimated
-mas_44	MAS	44	gas-operated	7.5×54mm French		580	254	1				researched (Wikipedia: MAS-44)	researched
+mas_44	MAS	44	gas-operated	7.5×54mm French	7.82	580	254	1	350.0	9.0	818.0	researched (Wikipedia: MAS-44)	researched
 mas_50	MAS	50	recoil-operated	9×19mm Parabellum	9.01	111	254	1	250	8.0	359	researched (Wikipedia: MAC 50)	researched
-mas_aa52	MAS	Aa52	lever-delayed blowback	7.5×54mm French		600	254	1				researched (Wikipedia: AA-52)	researched
-mas_36_cr39	MAS	36 Cr39	bolt-action	7.5×54mm French		490	254	1				estimated (MAS 36 CR 39 variant, standard MAS 7.5mm twist)	estimated
+mas_aa52	MAS	Aa52	lever-delayed blowback	7.5×54mm French	7.82	600	254	1	350.0	9.0	818.0	researched (Wikipedia: AA-52)	researched
+mas_36_cr39	MAS	36 Cr39	bolt-action	7.5×54mm French	7.82	490	254	1	350.0	9.0	818.0	estimated (MAS 36 CR 39 variant, standard MAS 7.5mm twist)	estimated
 mas_45	MAS	45	bolt-action	.22 LR	5.66	580	406	1	165	2.6	362	estimated (MAS 45 training rifle, standard .22 LR 1:16in twist)	estimated
 bae_systems_l85a3	Heckler & Koch / Royal Ordnance	L85A3	SA80A3	5.56×45mm NATO	5.56	518	178	1	380	4.02	940	researched (Wikipedia SA80 / British Army specs)	researched
 bae_systems_l22a2	Heckler & Koch / Royal Ordnance	L22A2	SA80 Carbine	5.56×45mm NATO	5.56	318	178	1	380	4.02	850	researched (Wikipedia SA80 / Modern Firearms)	researched
@@ -1628,33 +1628,33 @@ sako_85_hunter_30_06	Sako	85 Hunter .30-06	Bolt-action	.30-06	7.82	600	254	1	400
 sako_90_hunter_6_5_cm	Sako	90 Hunter 6.5 CM	Bolt-action	6.5 Creedmoor	6.71	570	203	1	415	9.0	795	researched (manufacturer specifications)	researched
 sako_100_308	Sako	100 .308	Bolt-action	.308 Win	7.82	620	279	1	415	9.5	855	researched (manufacturer specifications)	researched
 sako_100_6_5_cm	Sako	100 6.5 CM	Bolt-action	6.5 Creedmoor	6.71	620	203	1	415	9.0	810	researched (manufacturer specifications)	researched
-tristar_cobra_justice	Tristar	Cobra Justice	Semi-auto Shotgun	12 Gauge	18.5	508	0		65	28.4	405	researched (manufacturer specifications)	researched
-tristar_cobra_patriot	Tristar	Cobra Patriot	Semi-auto Shotgun	12 Gauge	18.5	610	0		65	28.4	418	researched (manufacturer specifications)	researched
-tristar_t_140	Tristar	T-140	Semi-auto Shotgun	12 Gauge	18.5	610	0		65	28.4	418	researched (manufacturer specifications)	researched
-tristar_tt_15	Tristar	TT-15	Semi-auto Shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (manufacturer specifications)	researched
-tristar_trap	Tristar	Trap	Over/Under Shotgun	12 Gauge	18.5	760	0		65	28.4	430	researched (manufacturer specifications)	researched
-tristar_sporting	Tristar	Sporting	Over/Under Shotgun	12 Gauge	18.5	710	0		65	28.4	425	researched (manufacturer specifications)	researched
+tristar_cobra_justice	Tristar	Cobra Justice	Semi-auto Shotgun	12 Gauge	18.5	508	0	0	65	28.4	405	researched (manufacturer specifications)	researched
+tristar_cobra_patriot	Tristar	Cobra Patriot	Semi-auto Shotgun	12 Gauge	18.5	610	0	0	65	28.4	418	researched (manufacturer specifications)	researched
+tristar_t_140	Tristar	T-140	Semi-auto Shotgun	12 Gauge	18.5	610	0	0	65	28.4	418	researched (manufacturer specifications)	researched
+tristar_tt_15	Tristar	TT-15	Semi-auto Shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (manufacturer specifications)	researched
+tristar_trap	Tristar	Trap	Over/Under Shotgun	12 Gauge	18.5	760	0	0	65	28.4	430	researched (manufacturer specifications)	researched
+tristar_sporting	Tristar	Sporting	Over/Under Shotgun	12 Gauge	18.5	710	0	0	65	28.4	425	researched (manufacturer specifications)	researched
 stoeger_str_9mc	Stoeger	STR-9MC	Semi-auto Pistol	9x19mm Parabellum	9.01	89	250	1	250	8.0	352	researched (manufacturer specifications)	researched
 stoeger_cougar_8000_40	Stoeger	Cougar 8000 .40	Semi-auto Pistol	.40 S&W	10.17	92	406	1	240	10.0	320	researched (manufacturer specifications)	researched
 stoeger_cougar_8000_45	Stoeger	Cougar 8000 .45	Semi-auto Pistol	.45 ACP	11.48	92	406	1	145	15.0	250	researched (manufacturer specifications)	researched
-stoeger_p_350	Stoeger	P-350	Pump Shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (manufacturer specifications)	researched
-stoeger_m3500	Stoeger	M3500	Semi-auto Shotgun	12 Gauge 3.5"	18.5	660	0		83	34.0	440	researched (manufacturer specifications)	researched
-stoeger_condor	Stoeger	Condor	Over/Under Shotgun	12 Gauge	18.5	710	0		65	28.4	425	researched (manufacturer specifications)	researched
+stoeger_p_350	Stoeger	P-350	Pump Shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (manufacturer specifications)	researched
+stoeger_m3500	Stoeger	M3500	Semi-auto Shotgun	12 Gauge 3.5"	18.5	660	0	0	83	34.0	440	researched (manufacturer specifications)	researched
+stoeger_condor	Stoeger	Condor	Over/Under Shotgun	12 Gauge	18.5	710	0	0	65	28.4	425	researched (manufacturer specifications)	researched
 girsan_mc_1911_commander	Girsan	MC 1911 Commander	Semi-auto Pistol	.45 ACP	11.48	108	406	1	145	15.0	250	researched (manufacturer specifications)	researched
 girsan_mc_14_tipat	Girsan	MC 14 Tipat	Semi-auto Pistol	.380 ACP	9.02	102	250	1	141	6.0	300	researched (manufacturer specifications)	researched
 girsan_yavuz_16	Girsan	Yavuz 16	Semi-auto Pistol	9x19mm Parabellum	9.01	127	250	1	250	8.0	362	researched (manufacturer specifications)	researched
 girsan_pi	Girsan	PI	Semi-auto Pistol	9x19mm Parabellum	9.01	127	250	1	250	8.0	362	researched (manufacturer specifications)	researched
 girsan_m9	Girsan	M9	Semi-auto Pistol	9x19mm Parabellum	9.01	125	250	1	250	8.0	361	researched (manufacturer specifications)	researched
 girsan_regard_40	Girsan	Regard .40	Semi-auto Pistol	.40 S&W	10.17	125	406	1	240	10.0	340	researched (manufacturer specifications)	researched
-hatsan_armsan_a620	Hatsan	Armsan A620	Semi-auto Shotgun	12 Gauge	18.5	660	0		65	28.4	420	researched (manufacturer specifications)	researched
-hatsan_armsan_a612	Hatsan	Armsan A612	Semi-auto Shotgun	12 Gauge	18.5	508	0		65	28.4	405	researched (manufacturer specifications)	researched
-hatsan_model_125	Hatsan	Model 125	Magnum Shotgun	12 Gauge Magnum	18.5	610	0		76	32.0	425	researched (manufacturer specifications)	researched
-hatsan_model_100	Hatsan	Model 100	Semi-auto Shotgun	12 Gauge	18.5	610	0		65	28.4	418	researched (manufacturer specifications)	researched
-hatsan_striker_12	Hatsan	Striker 12	Pump Shotgun	12 Gauge	18.5	381	0		65	28.4	385	researched (manufacturer specifications)	researched
-derya_mk12	Derya	MK12	Semi-auto Shotgun	12 Gauge	18.5	470	0		65	28.4	400	researched (manufacturer specifications)	researched
-derya_820	Derya	820	Semi-auto Shotgun	12 Gauge	18.5	610	0		65	28.4	418	researched (manufacturer specifications)	researched
+hatsan_armsan_a620	Hatsan	Armsan A620	Semi-auto Shotgun	12 Gauge	18.5	660	0	0	65	28.4	420	researched (manufacturer specifications)	researched
+hatsan_armsan_a612	Hatsan	Armsan A612	Semi-auto Shotgun	12 Gauge	18.5	508	0	0	65	28.4	405	researched (manufacturer specifications)	researched
+hatsan_model_125	Hatsan	Model 125	Magnum Shotgun	12 Gauge Magnum	18.5	610	0	0	76	32.0	425	researched (manufacturer specifications)	researched
+hatsan_model_100	Hatsan	Model 100	Semi-auto Shotgun	12 Gauge	18.5	610	0	0	65	28.4	418	researched (manufacturer specifications)	researched
+hatsan_striker_12	Hatsan	Striker 12	Pump Shotgun	12 Gauge	18.5	381	0	0	65	28.4	385	researched (manufacturer specifications)	researched
+derya_mk12	Derya	MK12	Semi-auto Shotgun	12 Gauge	18.5	470	0	0	65	28.4	400	researched (manufacturer specifications)	researched
+derya_820	Derya	820	Semi-auto Shotgun	12 Gauge	18.5	610	0	0	65	28.4	418	researched (manufacturer specifications)	researched
 derya_dy_9	Derya	DY-9	Semi-auto Pistol	9x19mm Parabellum	9.01	114	250	1	250	8.0	360	researched (manufacturer specifications)	researched
-derya_dy_11	Derya	DY-11	Semi-auto Shotgun	12 Gauge	18.5	610	0		65	28.4	418	researched (manufacturer specifications)	researched
+derya_dy_11	Derya	DY-11	Semi-auto Shotgun	12 Gauge	18.5	610	0	0	65	28.4	418	researched (manufacturer specifications)	researched
 derya_ds_9	Derya	DS-9	Semi-auto Pistol	9x19mm Parabellum	9.01	127	250	1	250	8.0	362	researched (manufacturer specifications)	researched
 daniel_defense_ddm4_v7	Daniel Defense	DDM4 V7	Rifle	5.56×45mm NATO	5.56	406.4	177.8	1	430	3.56	945	researched (manufacturer specifications)	researched
 daniel_defense_m4a1_riii	Daniel Defense	M4A1 RIII	Carbine	5.56×45mm NATO	5.56	368.3	177.8	1	430	3.56	915	researched (manufacturer specifications)	researched
